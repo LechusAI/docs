@@ -47,31 +47,56 @@ This section allows you to configure optional features that improve call control
 
 ## Step 5: Agent behavior and integrations
 
+This section defines how your agent will behave and whether it will use external services:
+
 - **Agent Type**:
-  - `Standard Agent`: Uses predefined prompts and categories.
-  - `Knowledge-Based Agent`: Uses uploaded documents as a knowledge base.
-- **Google Calendar Integration**: Connect a calendar to enable appointment scheduling.
+  - `Standard Agent`: Uses predefined prompts and categories. Ideal for simple interaction flows.
+  - `Knowledge-Based Agent`: Leverages uploaded documents as a knowledge base for smarter responses.
+
+- **Google Calendar Integration**: Connect a Google account to enable real-time appointment scheduling directly from calls.
+
+![Agent behavior and integrations](../images/img%205.png)
 
 ## Step 6: Define actions and messages
 
-- **Call to Action**: Choose actions like scheduling appointments or transferring to a human agent.
-- **Greeting Message**: The first message the AI will say.
-- **Category**: Choose a theme for the conversation (e.g., e-commerce).
-- **System Prompt**: The system-level instruction guiding the agent's behavior.
+In this section, you configure the **Call to Action** and the **Greeting Message** that the AI agent will use.
 
-## Step 7: Use dynamic variables
+- **Call to Action**: Choose optional actions the AI can take at the end of a call. Available options include:
+  - **Schedule Appointment** – Allows the AI to book appointments directly on your calendar.
+  - **Transfer to Human Agent** – Enables the AI to transfer the call to a human operator.
 
-You can personalize responses using the following variables:
+  These actions can be selected from the **Select actions** dropdown and are customizable based on your needs.
 
-```plaintext
-[agent_name]       Name of the AI agent  
-[appointment_date] Appointment date and time  
-[appointment_type] Type of appointment  
-[company_name]     Your company name  
-[contact_name]     Name of the person being called  
-[email]            Email of the customer  
-[first_name]       First name of the customer 
-[name]             Name of the Customer
-[product_name]     Name of the product
-[time_of_day]      Morning/Afternoon/Evening based on local time 
-```
+- **Greeting Message**: This is the first thing your AI agent says when the call begins. You can personalize this message using dynamic variables like `[Agent Name]`, `[Store Name]`, and others.
+
+![AI Agent action and greeting message](../images/img%206.png)
+
+## Step 7: Define category and system prompt
+
+In this step, you will define the **Category** of your agent and write the **System Prompt**, which guides the AI’s overall behavior.
+
+- **Category**: Choose the domain your agent will operate in (e.g., E-commerce, Financial services, Home services).
+- **System Prompt**: Write a high-level instruction that the AI will follow during interactions.
+
+![Agent category and prompt configuration](../images/img%207.png)
+
+## Step 8: Use dynamic variables
+
+To personalize the AI agent's responses, you can use dynamic variables that will be replaced automatically during the conversation. These variables allow your AI agent to address users more naturally and adapt its messages in real time.
+
+The available dynamic variables are:
+
+- `[agent_name]`: Name of the AI Agent  
+- `[appointment_date]`: Date and time of the appointment  
+- `[appointment_type]`: Type of appointment  
+- `[company_name]`: Your company name  
+- `[contact_name]`: Name of the person being called  
+- `[email]`: Email of the customer  
+- `[first_name]`: First name of customer  
+- `[name]`: Full name of the customer  
+- `[product_name]`: Name of the product  
+- `[time_of_day]`: Morning, Afternoon or Evening based on the local time
+
+These variables can be inserted into prompts or greeting messages to create a more personalized and effective user experience.
+
+![Dynamic variables screen](../images/img%208.png)
