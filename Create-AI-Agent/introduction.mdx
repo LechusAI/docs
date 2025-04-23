@@ -1,33 +1,63 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Step-by-step guide to creating an AI agent in Callin.io'
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+<Callout type="info">
+This guide explains how to create and configure an AI agent through the Callin.io interface.
+</Callout>
 
-## Welcome
+## Step 1: Open the AI Agents module
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+From the left sidebar, click on **AI Agents** and then on the **Create Agent** button to begin.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+## Step 2: Fill in basic information
 
-## Authentication
+Complete the following fields:
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+- **Agent Title**: A name to identify the agent.
+- **Agent Type**:
+  - `Inbound`: Handles incoming calls.
+  - `Outbound`: Makes automated outbound calls.
+- **Maximum Call Duration (Minutes)**: Maximum length of each call.
+- **Language**: The primary language the agent will use.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+## Step 3: Choose a voice
+
+Select a voice from the list provided based on the selected language. You can click the play button to preview each voice.
+
+## Step 4: Advanced settings
+
+Optionally enable or configure:
+
+- **Machine Answering Detection**: Detects voicemail and auto-responders.
+- **Office Ambience Sound**: Adds background sound for a realistic experience.
+- **Retry Settings**: Define the retry interval (e.g., `0 - 30` seconds).
+- **Webhook URL**: URL to receive call event notifications (e.g., call results or transcripts).
+
+## Step 5: Agent behavior and integrations
+
+- **Agent Type**:
+  - `Standard Agent`: Uses predefined prompts and categories.
+  - `Knowledge-Based Agent`: Uses uploaded documents as a knowledge base.
+- **Google Calendar Integration**: Connect a calendar to enable appointment scheduling.
+
+## Step 6: Define actions and messages
+
+- **Call to Action**: Choose actions like scheduling appointments or transferring to a human agent.
+- **Greeting Message**: The first message the AI will say.
+- **Category**: Choose a theme for the conversation (e.g., e-commerce).
+- **System Prompt**: The system-level instruction guiding the agent's behavior.
+
+## Step 7: Use dynamic variables
+
+You can personalize responses using the following variables:
+
+```plaintext
+[agent_name]       Name of the AI agent  
+[appointment_date] Appointment date and time  
+[appointment_type] Type of appointment  
+[company_name]     Your company name  
+[contact_name]     Name of the person being called  
+[email]            Email of the customer  
+[first_name]       First name of the customer  
