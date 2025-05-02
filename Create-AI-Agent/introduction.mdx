@@ -1,135 +1,64 @@
 ---
-title: "How to Create Your AI Agent"
-description: "This guide walks you through the steps to create an AI agent in Callin.io, including all configurable options and features."
+title: "Create Your AI Agent"
+description: "This guide walks you through the updated 3-step process to create an AI agent in Callin.io."
 ---
 
-## Step 1: Open the AI Agents module
+## Step 1: Basic Information
 
-From the left sidebar, click on **AI Agents** and then on the **Create Agent** button to begin.
+Begin by entering the core settings for your agent:
+
+- **Agent Name**: The internal name used to identify your agent.
+- **Agent Type**:
+  - **Inbound**: Handles incoming calls to your number.
+  - **Outbound**: Makes calls to your contacts.
+- **Maximum Call Duration**: Set the time limit (in minutes) for each call.
+- **Intelligence Type**:
+  - **Standard AI**: Uses general AI knowledge.
+  - **Knowledge-Based**: Uses your documents to answer.
+- **Optional Call Settings**:
+  - Answering machine detection
+  - Background ambience
+- **Webhook URL**: (Optional) To receive events and transcripts.
 
 <img
-  src="/gifs/cag1.gif"
-  alt="Step 1 - Open AI Agents"
+  src="/gifs/NCAG1.gif"
+  alt="Step 1 - Agent Basic Settings"
   style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1rem' }}
 />
 
+---
 
-## Step 2: Fill in basic information
+## Step 2: Voice & Language
 
-Complete the following fields:
+In this step, configure the language and select the voice that your agent will use:
 
-- **Agent Title**: A name to identify the agent.
-- **Agent Type**:
-  - `Inbound`: Handles incoming calls.
-  - `Outbound`: Makes automated outbound calls.
-- **Maximum Call Duration (Minutes)**: Maximum length of each call.
-- **Language**: The primary language the agent will use.
+- **Language**: Choose the language your agent will speak.
+- **Voice**: Select from a list of available male/female voices.
+- Use the play icon to preview each voice before selecting.
 
 <img
-  src="/gifs/cag2.gif"
-  alt="Step 2 - Fill in agent information"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
+  src="/gifs/NCAG2.gif"
+  alt="Step 2 - Voice & Language"
+  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1rem' }}
 />
 
-## Step 3: Choose a voice
+---
 
-In this step, you can select the voice your agent will use based on the previously selected language.
+## Step 3: Prompt & Behavior
 
-Each voice includes a short description (e.g., “Friendly conversational voice”, “American accent”) and a preview button that allows you to listen before making your choice.
+Define how your agent behaves and responds during conversations:
 
-Make sure to select a voice that fits the tone and purpose of your calls.
-
-<img
-  src="/gifs/cag3.gif"
-  alt="Step 3 - Choose a voice"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
-/>
-
-
-## Step 4: Advanced settings
-
-This section allows you to configure optional features that improve call control and customization:
-
-- **Machine Answering Detection**: Automatically detects voicemail and auto-responders.
-- **Office Ambience Sound**: Adds simulated background noise to make the agent sound like it's in a real office.
-- **Retry Settings**: Set the time interval between retries if a call is not answered (e.g., between 0 and 30 seconds).
-- **Webhook URL**: Enter a URL to receive real-time events such as call results or transcripts.
+- **Category**: Select a predefined category.
+- **Greeting Message**: What the agent says first on call.
+- **Conversation Prompt**: Write instructions for your agent.
+- **Available Variables**: Use smart tags like `[first_name]`, `[company_name]`, `[appointment_date]`, etc.
+- **Call Actions**:
+  - Schedule Appointments
+  - Forward to Human
+- **Google Calendar Integration** (optional): Allows agents to book directly in your calendar.
 
 <img
-  src="/gifs/cag4.gif"
-  alt="Step 4 - Advanced settings"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
-/>
-
-
-## Step 5: Agent behavior and integrations
-
-This section defines how your agent will behave and whether it will use external services:
-
-- **Agent Type**:
-  - `Standard Agent`: Uses predefined prompts and categories. Ideal for simple interaction flows.
-  - `Knowledge-Based Agent`: Leverages uploaded documents as a knowledge base for smarter responses.
-
-- **Google Calendar Integration**: Connect a Google account to enable real-time appointment scheduling directly from calls.
-
-<img
-  src="/gifs/cag8.gif"
-  alt="Step 5 - Agent behavior and integrations"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
-/>
-
-## Step 6: Define actions and messages
-
-In this section, you configure the **Call to Action** and the **Greeting Message** that the AI agent will use.
-
-- **Call to Action**: Choose optional actions the AI can take at the end of a call. Available options include:
-  - **Schedule Appointment** – Allows the AI to book appointments directly on your calendar.
-  - **Transfer to Human Agent** – Enables the AI to transfer the call to a human operator.
-
-  These actions can be selected from the **Select actions** dropdown and are customizable based on your needs.
-
-- **Greeting Message**: This is the first thing your AI agent says when the call begins. You can personalize this message using dynamic variables like `[Agent Name]`, `[Store Name]`, and others.
-
-<img
-  src="/gifs/cag5.gif"
-  alt="Step 5 - Agent behavior and integrations"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
-/>
-
-## Step 7: Define category and system prompt
-
-In this step, you will define the **Category** of your agent and write the **System Prompt**, which guides the AI’s overall behavior.
-
-- **Category**: Choose the domain your agent will operate in (e.g., E-commerce, Financial services, Home services).
-- **System Prompt**: Write a high-level instruction that the AI will follow during interactions.
-
-<img
-  src="/gifs/cag6.gif"
-  alt="Step 5 - Agent behavior and integrations"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
-/>
-
-## Step 8: Use dynamic variables
-
-To personalize the AI agent's responses, you can use dynamic variables that will be replaced automatically during the conversation. These variables allow your AI agent to address users more naturally and adapt its messages in real time.
-
-The available dynamic variables are:
-
-- `[agent_name]`: Name of the AI Agent  
-- `[appointment_date]`: Date and time of the appointment  
-- `[appointment_type]`: Type of appointment  
-- `[company_name]`: Your company name  
-- `[contact_name]`: Name of the person being called  
-- `[email]`: Email of the customer  
-- `[first_name]`: First name of customer  
-- `[name]`: Full name of the customer  
-- `[product_name]`: Name of the product  
-- `[time_of_day]`: Morning, Afternoon or Evening based on the local time
-
-These variables can be inserted into prompts or greeting messages to create a more personalized and effective user experience.
-
-<img
-  src="/gifs/cag7.gif"
-  alt="Step 8 - Final review"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1.5rem' }}
+  src="/gifs/NCAG3.gif"
+  alt="Step 3 - Agent Prompt Configuration"
+  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1rem' }}
 />
