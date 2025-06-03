@@ -1,6 +1,88 @@
 ---
-title: "New file"
-description: "Description of your new file."
+title: "AI Call Automation using WhatConverts, Zapier, and Callin.io"
 ---
 
-## Zapier
+# AI Call Automation using WhatConverts, Zapier, and Callin.io
+
+This guide provides a step-by-step explanation of how to automate outbound calls with an AI agent using WhatConverts as the lead source, Zapier as the automation engine, and Callin.io as the call platform. It also describes how to handle the post-call workflow via webhook and automate follow-up actions like sending emails, creating calendar events, and updating the lead in the CRM.
+
+## Step 1: Triggering the Call when a New Lead is Received
+
+### Trigger: WhatConverts – New Lead
+
+Triggered when a new lead is captured in WhatConverts.\
+Retrieves lead data, especially the phone number.\
+This step initiates the automation workflow.
+
+### Code by Zapier – Run Javascript
+
+Used to clean or format the phone number before launching the call.\
+Logic: remove any characters that are not digits or plus sign. If the number doesn’t start with "\+", add "\+39".
+
+### Delay by Zapier – Delay For
+
+Adds a delay (e.g. 5 minutes) before making the call.\
+Useful to avoid calling the lead instantly and to allow validation time.
+
+### Callin.io – Activate Task
+
+Triggers an AI-powered outbound call to the lead.
+
+**Fields to configure:**
+
+- Phone: formatted number
+- Task: name or ID of the Callin.io task
+- Webhook: URL to receive post-call results
+
+**Callin.io settings:**
+
+- Enable answering machine detection (optional)
+- Set retry interval (e.g. 30 min)
+- Paste the Zapier webhook URL in the “Make Webhook” field
+
+## Step 2: Post-Call Automation via Webhook
+
+### Trigger: Webhooks by Zapier – Catch Hook
+
+Triggered when Callin.io sends back call results (answered, notes, etc.).
+
+### Filter by Zapier – Filter Conditions
+
+Used to continue only if call was successful or appointment was accepted.\
+Example: `call_status` contains "success".
+
+### Formatter by Zapier – Date / Time
+
+Used to convert raw dates into Google Calendar format.\
+Example: "10 July 2025 at 11:00" → `2025-07-10T11:00:00+02:00`.
+
+### Code by Zapier – Run Javascript (optional)
+
+For parsing transcripts, extracting date/time, or cleaning data.
+
+### Google Calendar – Create Detailed Event
+
+Creates an event with the formatted date/time, title, and description.
+
+### Calendly – Create One-Off Meeting (optional)
+
+Creates a personalized meeting link if you prefer Calendly over Google Calendar.
+
+### Gmail – Send Email
+
+Sends automated follow-up emails with appointment or summary info.
+
+### WhatConverts – Find Lead / Update Lead
+
+Searches and updates the lead record with:
+
+- Call result
+- Scheduled date/time
+- Client name
+- Updated status
+
+## Final Notes
+
+- Zapier allows full customization of conditions and logic.
+- Callin.io must have tasks and webhooks configured properly.
+- WhatConverts serves as the central hub for lead tracking.
