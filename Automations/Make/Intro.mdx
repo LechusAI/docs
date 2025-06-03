@@ -1,8 +1,3 @@
----
-title: Automating AI Calls with GoHighLevel, Make.com, and Callin.io
-description: Learn how to create a fully automated workflow that connects GHL, Make, and Callin.io to handle calls and update contact records.
----
-
 # Automating AI Calls with GoHighLevel, Make.com, and Callin.io
 
 This guide explains how to create a fully automated system that connects **GoHighLevel**, **Make.com**, and **Callin.io**. The goal is to automatically initiate a phone call with an AI agent when a contact is created in GoHighLevel, receive the transcription of the call, and update the contact record in GHL without any manual intervention.
@@ -11,32 +6,28 @@ This guide explains how to create a fully automated system that connects **GoHig
 
 The automation begins in GoHighLevel using a **Workflow**. This workflow should include:
 
-- **Trigger**: `Contact Created`  
+- **Trigger**: `Contact Created`\
   This ensures that the process begins any time a new contact is added—whether manually, through a form, or via integration.
-
-- **Action**: `Webhook`  
+- **Action**: `Webhook`\
   This step sends the contact's data (such as name, phone number, or email) to a Webhook URL in Make.com. The phone number must be valid, as it will be used to initiate the AI call.
 
 ## Step 2: Scenario in Make.com
 
 In Make.com, you will build a scenario with the following logic:
 
-1. **Webhook Module**  
+1. **Webhook Module**\
    This is the entry point of the scenario. It receives the data sent by GoHighLevel and parses the necessary contact details.
-
-2. **(Optional) Number Validation**  
+2. **(Optional) Number Validation**\
    You can add a module to format or validate the phone number before passing it to Callin.io.
-
-3. **Callin.io – Activate Task**  
+3. **Callin.io – Activate Task**\
    This module starts the AI phone call by triggering a predefined task in Callin.io. The AI agent will handle the call based on the configuration defined in that task. Once the call is completed, Callin.io will send the transcription to a second webhook.
 
 ## Step 3: Configuring the Task in Callin.io
 
 In your Callin.io dashboard, make sure the task includes the following:
 
-- **Callback Webhook (Make)**  
+- **Callback Webhook (Make)**\
   This webhook is where Callin.io sends the transcription and metadata once the AI call has finished.
-
 - **Optional Task Settings**:
   - Answering machine detection
   - Retry logic (number of retries and interval)
@@ -48,13 +39,11 @@ These options help ensure that calls are delivered effectively and reliably.
 
 The second half of the Make.com scenario is triggered by the webhook that Callin.io calls after completing the call. This part includes:
 
-1. **Receiving the Transcription**  
+1. **Receiving the Transcription**\
    The webhook captures the transcribed text and related data.
-
-2. **Searching the Contact in GHL**  
+2. **Searching the Contact in GHL**\
    Use the `Search Contact` module to locate the original contact in GHL, typically using the phone number or email as an identifier.
-
-3. **Updating the Contact**  
+3. **Updating the Contact**\
    Use the `Update Contact` module to insert the transcription into the contact’s record. You can store the transcription in a custom field, as a note, or log it as an activity.
 
 ## Final Result
