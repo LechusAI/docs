@@ -1,3 +1,7 @@
+---
+title: "GoHihgLevel Work Flow"
+---
+
 # Automating AI Calls with GoHighLevel and Callin.io
 
 This guide provides a step-by-step explanation of how to automate outbound calls with an AI agent using GoHighLevel as the CRM and Callin.io as the call platform. It describes how to connect your GoHighLevel account, set up the workflow trigger in GoHighLevel, and configure AI workflows in Callin.io to automatically launch calls when contacts are tagged.
@@ -14,9 +18,9 @@ This step is required before any automation can run.
 
 **Instructions:**
 
-- Go to the **Integrations** page in Callin.io.\
-- Find the **GoHighLevel** integration card.\
-- Click **Connect** and follow the authentication flow.\
+- Go to the **Integrations** page in Callin.io.\\
+- Find the **GoHighLevel** integration card.\\
+- Click **Connect** and follow the authentication flow.\\
 - Grant the necessary permissions when prompted.
 
 ---
@@ -30,11 +34,11 @@ This event initiates the automation workflow.
 
 **Instructions:**
 
-- Log in to your **GoHighLevel** account.\
-- Navigate to **Workflows** in the left sidebar.\
-- Click **Create Workflow**.\
-- Add a **Trigger** step:\
-  - Choose **When Contact is added to Tag**.\
+- Log in to your **GoHighLevel** account.\\
+- Navigate to **Workflows** in the left sidebar.\\
+- Click **Create Workflow**.\\
+- Add a **Trigger** step:\\
+  - Choose **When Contact is added to Tag**.\\
   - Select the tag you want to use as your trigger.
 
 ---
@@ -46,11 +50,13 @@ The HTTP Request step sends lead details to Callin.io’s webhook.
 
 **Fields to configure:**
 
-- **Method:**  
+- **Method:**
+
   ```
   POST
   ```
-- **URL:**  
+- **URL:**
+
   ```
   https://api.callin.io/api/v1/gohighlevel/webhook?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJjMWEzNGNmZi04MDRkLTQ2NTAtOGEzMi0zNzhhZWIwMjllZTAiLCJpYXQiOjE3NTA5Mjg0MDJ9.t5_j9Zl7xl34bjpq0HxxhWIocVVz5U-93CGEucDECwE
   ```
@@ -59,8 +65,8 @@ The HTTP Request step sends lead details to Callin.io’s webhook.
 
 **GoHighLevel settings:**
 
-- Use different tags to trigger different workflows.\
-- Make sure the HTTP Request step is placed after the Tag trigger.\
+- Use different tags to trigger different workflows.\\
+- Make sure the HTTP Request step is placed after the Tag trigger.\\
 - Test your workflow to ensure it fires correctly.
 
 ---
@@ -74,10 +80,10 @@ This launches the outbound AI call automatically.
 
 **Instructions:**
 
-- Go to the **AI Workflows** tab in Callin.io.\
-- Click **Create Workflow**.\
-- Select your AI Agent to handle the outbound call.\
-- Choose which **GoHighLevel tags** should trigger this workflow.\
+- Go to the **AI Workflows** tab in Callin.io.\\
+- Click **Create Workflow**.\\
+- Select your AI Agent to handle the outbound call.\\
+- Choose which **GoHighLevel tags** should trigger this workflow.\\
 - Save your workflow.
 
 When a contact in GoHighLevel is tagged with one of your selected tags, Callin.io will automatically trigger your AI agent to call that lead.
@@ -86,19 +92,17 @@ When a contact in GoHighLevel is tagged with one of your selected tags, Callin.i
 
 ## Final Notes
 
-- Ensure your API token in the HTTP Request URL is correct.\
-- Tags in GoHighLevel act as the trigger mechanism for outbound calls.\
-- Callin.io must be properly authorized in the Integrations page.\
+- Ensure your API token in the HTTP Request URL is correct.\\
+- Tags in GoHighLevel act as the trigger mechanism for outbound calls.\\
+- Callin.io must be properly authorized in the Integrations page.\\
 - Test your workflow end-to-end to ensure seamless automation.
 
 ### Video: Connecting Your GoHighLevel Account in Callin.io
 
 Watch this video to learn how to connect your GoHighLevel account through the Callin.io Integrations page. This step is required to authorize your CRM and enable automation triggers.
 
-
 <img
   src="/gifs/cghlg.gif"
   alt="Step 1 - Agent Basic Settings"
   style={{ borderRadius:"12px",maxWidth:"100%",marginBottom:"1rem" }}
 />
-
