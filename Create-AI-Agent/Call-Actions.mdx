@@ -1,27 +1,83 @@
 ---
 title: "Call History"
-description: "In this section, you’ll find a detailed overview of all inbound and outbound calls made through your Callin.io AI agents."
+description: "Review call logs, recordings, transcripts, extracted data, and export your results."
 ---
 
-The **Call History** dashboard gives you complete visibility into your system's activity, including:
+<div style={{
+  border: "2px solid #e5e7eb",
+  borderRadius: "12px",
+  padding: "8px",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.10)",
+  maxWidth: "100%",
+  overflow: "hidden",
+  backgroundColor: "#000",
+  marginBottom: "1.5rem"
+}}>
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube-nocookie.com/embed/CS5QQ2ZboQU"
+    title="Call History Tutorial"
+    frameBorder="0"
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
 
-- **Filters** to narrow down results by date (e.g. last 7 days), direction (inbound/outbound), or specific numbers.
-- **Search functionality** to instantly locate a call by number, agent name, or other details.
-- **Export option** to download the call log as a CSV file, ideal for backups or external analysis.
+## Overview
+The **Call History** page lists all recent calls with key details and quick actions:
+- Search by number, agent, or keyword.
+- Filter by **date range** and **direction** (All / Inbound / Outbound).
+- Open **transcripts**, **recordings**, and **extracted data**; export results to **CSV**.
 
-Each call entry includes:
+> **Note:** To access **recordings**, **transcripts**, and **extracted data**, call recording must be **enabled** for the agent.
 
-- **Date & Time** of the interaction.
-- **Direction** (inbound or outbound).
-- **Phone Number** and **Caller Name** involved.
-- **Call Duration**, **Cost**, and **Assigned AI Agent**.
-- Any linked **appointment** or **automated process** triggered during the call.
+---
 
-  This log is essential for performance analysis, auditing, and troubleshooting.  
-  It provides your team with accurate, real-time records of every customer interaction made through the platform.
+## Filters & Search
+- **Search calls…** – Free text search (number, agent, etc.).
+- **Date range** – e.g., *7 Days* (customizable).
+- **Direction** – *All / Inbound / Outbound*.
+- **More Filters** – Additional filters when available.
+- **Export CSV** – Exports the current filtered view.
 
-  <img
-  src="/gifs/callg1.gif"
-  alt="Step 1 - Open AI Agents"
-  style={{ borderRadius: '12px', maxWidth: '100%', marginBottom: '1rem' }}
-  />
+---
+
+## Table Columns
+- **Start Date/Time** – When the call started (local time).
+- **Direction** – *Inbound* or *Outbound*.
+- **Agent Name** – The agent that handled the call.
+- **Agent Type** – e.g., *Standard AI* (or other types you configure).
+- **Phone Number** – Counterparty number.
+- **Call Duration** – HH:MM length.
+- **Call Origin** – Source of the call (e.g., application).
+- **Status** – Final outcome (e.g., *Completed*).
+- **Machine** – Whether an answering machine was detected.
+- **Appointment** – Shows *Yes/No* if a booking was created during the call.
+- **Extracted Data** – Indicates if entities were captured from the transcript.
+
+---
+
+## Row Actions
+Each call row provides quick actions on the right:
+- **Transcript** – Opens the full conversation transcript in a modal.
+- **Recording** – Play/download the audio recording.
+- **Extracted Data** – View structured entities (e.g., appointment date, name, intent).  
+  > Entities come from your **Data Extraction Configuration** set in the agent.
+
+---
+
+## Export & Pagination
+- Use **Export CSV** to download the current filtered results.
+- Control **Rows per page** and navigate with **Prev/Next**.
+
+---
+
+## Troubleshooting
+- **No transcript/recording shown:** Verify **Record calls** is enabled for that agent.
+- **Extracted Data empty:** Ensure the agent has **Data Extraction** entities configured and the call content matched those rules.
+- **Missing appointments:** Confirm **Schedule Appointments** is enabled and the calendar is correctly selected in the agent.
+
+
