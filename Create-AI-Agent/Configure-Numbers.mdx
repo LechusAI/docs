@@ -1,33 +1,102 @@
 ---
-title: "Numbers"
-description: "Set up or import phone numbers to connect with your AI agents in Callin.io."
+title: "Add Number"
+description: "Learn how to purchase, import, or verify a phone number so your AI agents can place and receive calls."
 ---
 
-In this section, you’ll learn how to **set up** or **import** phone numbers into your Callin.io platform. These numbers are essential for enabling outbound and inbound call capabilities for your AI agents.
+<div style={{
+  border: "2px solid #e5e7eb",
+  borderRadius: "12px",
+  padding: "8px",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.10)",
+  maxWidth: "100%",
+  overflow: "hidden",
+  backgroundColor: "#000",
+  marginBottom: "1.5rem"
+}}>
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube-nocookie.com/embed/T4aB6SrDYCY"
+    title="Add Number Tutorial"
+    frameBorder="0"
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
 
-### Option 1: Purchase a Number
+## Overview
 
-1. From the left sidebar, go to **Numbers**.
-2. Click the **Purchase Number** button at the top.
-3. A popup will appear where you can:
-   - Select your **country**.
-   - Choose the number type: **Local Number** or **Toll-Free Number**.
-   - Optionally, specify an **area code**.
-4. Click **Search Available Numbers**.
-5. Select a number and click **Purchase Selected Number**.
+Use this page to connect phone numbers to the platform. You can:
+- **Purchase** a new number (instant provisioning).
+- **Import** existing numbers from **Twilio**.
+- **Add a personal number** (verify caller ID for outbound).
 
-💡 Monthly pricing is shown before confirming your purchase.
+The numbers list shows country, status (**Active**), and added date. Use the search bar to quickly find numbers. The trash icon removes a number from your account.
 
-### Option 2: Import from Twilio
+---
 
-1. Click the **Import from Twilio** button.
-2. Enter your **Twilio Account SID** and **Twilio Auth Token**.
-3. Click **Search Twilio Numbers** to retrieve and import your existing numbers.
+## Option 1 — Purchase a Number
 
-Once added, the numbers will be available for assignment to your agents and campaigns.
+- **Open:** `Purchase Number`.
+- **Country:** Select the country where you need the number.
+- **Number Type:**
+  - **Local Number** – Standard local area code (typical choice).
+  - **Toll-Free Number** – 800/888/… prefixes.
+- **Area Code (Optional):** Enter a **3-digit** area code to filter (e.g., `415` for US).
+- Click **Search Available Numbers** → choose one from the results.
+- Review the **monthly price** shown (e.g., `$2.25/month` local, `$2.99/month` toll-free; varies by country).
+- Click **Purchase Selected Number** to provision it.
 
-<img
-  src="/gifs/cyng1.gif"
-  alt="Configure Numbers Flow"
-  style={{ borderRadius:"12px",maxWidth:"100%",marginTop:"1rem",marginBottom:"1rem" }}
-/>
+> Notes  
+> • Availability and pricing depend on country and area code.  
+> • Numbers are billed monthly while active.  
+> • After purchasing, the number appears in your list as **Active**.
+
+---
+
+## Option 2 — Import from Twilio
+
+Bring numbers you already own in Twilio:
+
+- **Open:** `Import from Twilio`.
+- Enter your **Twilio Account SID** (starts with `AC…`) and **Auth Token**.
+- Click **Search Twilio Numbers** to fetch your inventory.
+- Select one or more numbers from **Your Twilio Numbers**.
+- Click **Import Selected Number** to add them to your account.
+
+> Tips  
+> • Ensure your Twilio credentials are correct and have permission to read numbers.  
+> • Imported numbers keep their country/capabilities (voice/SMS) as configured in Twilio.
+
+---
+
+## Option 3 — Add Personal Number (Outbound Caller ID)
+
+Use your own phone as verified caller ID for **outbound** calls.
+
+- **Open:** `Add Personal Number`.
+- Enter your number in **E.164** format (e.g., `+14155550123`).
+- **Verification process:**
+  1. Submit your number.  
+  2. You’ll receive a verification call.  
+  3. Enter the code when prompted.  
+  4. The number will be verified and added to your account.
+
+> Notes  
+> • This is for **outbound caller ID/return calls**, not for inbound routing.  
+> • You must be able to answer the verification call to complete setup.
+
+---
+
+## Manage Numbers
+
+- **Status:** Newly added numbers appear as **Active**.  
+- **Delete:** Use the trash icon on a number card to remove it from your account.  
+- **Search:** Use the top-right search box to filter by number.
+
+> Best Practices  
+> • Keep at least one **local** number per target region to improve pickup rates.  
+> • Reserve toll-free for national campaigns or support lines.  
+> • Name/label numbers consistently if your team manages multiple regions.
