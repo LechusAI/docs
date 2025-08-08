@@ -1,5 +1,74 @@
 ---
-title: 'Profile'
-description: 'Description of your new file.'
+title: "Connect Google Calendar "
+description: "Connect Google Calendar to check availability and schedule appointments during calls."
 ---
 
+<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
+<iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/86uMQXtz_o0?start=71" title="Google Calendar Integration" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+
+</div>
+
+## Overview
+
+Connect your Google Calendar so agents can **check availability** and **book appointments** directly during calls.\
+Setup happens in **Actions → Google Calendar** and then is **enabled per agent**.
+
+---
+
+## Prerequisites
+
+- A Google account with Calendar enabled.
+- Access to **Actions → Google Calendar** in the platform.
+- (Optional) Recording enabled if you rely on transcripts/extracted data elsewhere.
+
+---
+
+## Step 1 — Connect Google Calendar (Actions)
+
+1. Go to **Actions → Google Calendar** and click **Add Account** (or **Connect**).
+2. Select the Google account and grant the requested permissions.
+3. In the **Appointments** tab, choose the **calendar** that will be used for availability checks and bookings.
+
+> You can connect multiple accounts and switch the selected calendar at any time.
+
+---
+
+## Step 2 — Appointment Action (required)
+
+Open the **Appointment Action** tab and complete the required fields:
+
+- **Appointment Title** _(required)_ — Title used when creating events.
+- **Description** _(optional)_ — Context for the booked meeting.
+- **Timezone** _(required)_ — Timezone applied to all appointments.
+- **Working Hours** — Define the time ranges when booking is allowed.
+
+> **Important:** If **Appointment Title** or **Timezone** are not set, **the agent will not book or log appointments correctly**.
+
+---
+
+## Step 3 — Enable Scheduling in the Agent
+
+1. Edit your agent and go to **Call Actions**.
+2. Toggle **Schedule Appointments** to **On**.
+3. In **Google Calendar Integration**, select the **connected account** and **calendar** you configured in Actions.
+4. Save your changes.
+
+---
+
+## Usage
+
+- During a call, the agent proposes times within your **Working Hours** and books on the **selected calendar**.
+- Existing events on that calendar are treated as **busy** and won’t be double-booked.
+
+---
+
+## Troubleshooting
+
+- **No event created?** Check that **Appointment Title** and **Timezone** are set in **Appointment Action**.
+- **Agent says it can’t schedule:** Ensure **Schedule Appointments** is enabled and a **calendar** is selected in the agent.
+- **Availability looks wrong:** Verify the correct **calendar** is selected and **Working Hours** reflect your real schedule.
+- **Permissions changed:** Reconnect the Google account in **Actions → Google Calendar**.
+
+---
+
+**Tip:** Keep one dedicated “Bookings” calendar to avoid mixing personal events with call-scheduled appointments.
