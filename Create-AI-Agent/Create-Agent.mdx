@@ -1,0 +1,124 @@
+---
+title: "Create Agent"
+description: "This guide walks you through the updated step-by-step process to create and configure an AI agent."
+---
+
+<div style={{
+  border: "2px solid #e5e7eb",
+  borderRadius: "12px",
+  padding: "8px",
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.10)",
+  maxWidth: "100%",
+  overflow: "hidden",
+  backgroundColor: "#000",
+  marginBottom: "1.5rem"
+}}>
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube-nocookie.com/embed/cpvaxOqd13w"
+    title="Create AI Agent Tutorial"
+    frameBorder="0"
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  ></iframe>
+</div>
+
+## Step 1: Basic Information
+
+Begin by entering the core settings for your agent:
+
+- **Agent Name**  
+  Internal name used to identify your agent in the platform.
+
+- **Agent Type**
+  - **Inbound** – Handles incoming calls to your number.  
+  - **Outbound** – Makes calls to your contacts.
+
+- **Maximum Call Duration**  
+  Time limit per call (allowed range: **1–30 minutes**). Use lower values for triage or high-volume flows.
+
+- **Intelligence Type**
+  - **Standard AI** – Uses general AI knowledge for conversations.  
+  - **Knowledge-Based** – Uses your uploaded documents to answer domain-specific questions.
+
+- **Optional Call Settings**
+  - **Enable answering machine detection** – Detects voicemail/answering machines.  
+  - **Add office background ambience** – Subtle noise to sound more natural.  
+  - **Record calls** – Required to access **transcriptions**, **recordings**, and **extracted data**.  
+    > If disabled, transcripts/recordings and any extracted entities won’t be available.
+
+- **Retry Attempts & Delay**
+  - **Retry Count** – Number of retry attempts if the call fails (e.g., **0** by default).  
+  - **Retry Delay (minutes)** – Time between retries (e.g., **30** by default).
+
+- **Welcome Prompt Delay (ms)**  
+  Delay before playing the initial greeting (e.g., **1000 ms** for a natural pause).
+
+- **Webhook URL (Optional)**  
+  Endpoint to receive **call events** and **transcripts** in real time. Ensure it returns **200 OK**.
+
+---
+
+## Step 2: Voice & Language
+
+Configure language and voice so your agent sounds right for the use case:
+
+- **Language** – Primary conversation language (e.g., English, Spanish, etc.).  
+- **Audio Speed** – Slider to set **Slow / Normal / Fast** pacing.  
+- **Voices** – Choose from **Default Voices** (male/female options) or **Cloned Voices**.  
+- **Preview** – Use the play icon to audition a voice before saving.
+
+> Tip: Keep speed at *Normal* for booking/sales flows; increase slightly only if users are impatient or scripts are short.
+
+---
+
+## Step 3: Prompts & Behavior
+
+Define how the agent greets, behaves, and extracts information:
+
+- **Category**  
+  Select the category that best matches your use case.
+
+- **Greeting Message**  
+  First sentence the caller hears when the call connects. Keep it short, friendly, and on-brand.
+
+- **Conversation Prompt**  
+  Detailed instructions that set **role**, **tone**, **policy boundaries**, and **objectives**.  
+  Include guidance for tricky cases (e.g., rescheduling, objections, emergencies).
+
+- **Available Variables**  
+  Use dynamic tags to personalize content. Examples seen in the UI include:  
+  `[address]`, `[agent_name]`, `[amount]`, `[appointment_date]`, `[appointment_type]`, `[city]`,  
+  `[company_name]`, `[contact_name]`, `[date]`, `[email]`, `[first_name]`, `[name]`,  
+  `[product_name]`, `[state]`, `[time_of_day]`, `[zipcode]`.  
+  > Variables are replaced at runtime. Unknown tags resolve to empty values.
+
+---
+
+## Step 4: Call Actions & Data Extraction
+
+Make your agent actually do things (schedule, handoff) and capture structured data:
+
+- **Call Actions**
+  - **Schedule Appointments** – Enables booking flows.  
+  - **Forward to Human** – Transfers the call when escalation is required.
+
+- **Calendar Integration (Google Calendar)**  
+  Choose the account and specific calendar used for **availability checks** and **booking**.  
+  Events from the **selected** calendar are respected when scheduling.
+
+- **Data Extraction Configuration**
+  - Define **entities** you want to capture from the conversation (name + definition).  
+    Example:  
+    - **Entity:** `Appointment`  
+      **Definition:** “Extract appointment details (date/time) from the transcript.”  
+  - Extracted entities appear in call reports and can be used by integrations.
+
+---
+
+**Save Changes** to activate your agent and start using it.
+
+
