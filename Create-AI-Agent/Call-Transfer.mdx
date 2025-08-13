@@ -1,0 +1,70 @@
+---
+title: "Call Transfer"
+description: "Configure call transfer settings so your AI Call Agent can forward calls to a human."
+---
+
+<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
+  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/dLOKyG5rbt4" title="Call Transfer – AI Call Agent" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+</div>
+
+## Overview
+Use **Call Transfer** to route an active call from your AI agent to a human representative.  
+Transfers are managed through configurations that group one or more transfer details.
+
+## Steps
+
+### 1. Create a Transfer Configuration
+1. Open **Call Transfer** settings.
+2. Click **Create Configuration**.
+3. Fill in:
+   - **Configuration Name** — Internal name for this transfer setup.
+   - **Department Name** — The department the calls will be routed to.
+4. In **Transfer Details**, click **Add Transfer Detail**.
+
+---
+
+### 2. Add Transfer Details
+1. Fill in:
+   - **Agent Name** — Must be set to `default` for the transfer to work.
+   - **Transfer Number** — Destination phone number in E.164 format (e.g., +34642802285).
+   - **Transfer Message** — Short message played before the transfer (e.g., “Please hold while we connect you with our sales representative”).
+2. Save the transfer detail.
+3. You can add multiple transfer details if needed.
+
+---
+
+### 3. Edit or Manage Configurations
+- Use the pencil icon to edit transfer details.
+- Use the trash icon to remove a detail.
+- Changes are saved per configuration.
+
+---
+
+### 4. Assign a Transfer Configuration to an Agent
+1. Edit your AI agent.
+2. In **Call Actions**, enable **Forward to Human**.
+3. Select the transfer configuration you created.
+4. Save the agent.
+
+---
+
+## Tips & Notes
+- **Agent Name must be `default`** for the transfer to trigger correctly.
+- Include a clear, polite transfer message so the caller knows what is happening.
+- You can set up multiple configurations for different departments and select them per agent.
+
+## Troubleshooting
+**Symptom:** Transfer doesn’t happen.  
+**Probable Cause:** Agent Name is not set to `default` or number is not in E.164 format.  
+**Solution:** Correct the Agent Name and phone number format.
+
+**Symptom:** Caller is disconnected instead of transferred.  
+**Probable Cause:** Invalid destination number or network restrictions.  
+**Solution:** Test the number manually before assigning it.
+
+## Related
+- [[Create-AI-Agent/Call-Actions]]
+- [[Create-AI-Agent/Create-Agent]]
+
+
+
