@@ -1,0 +1,84 @@
+---
+title: "Connect Zapier"
+description: "Step-by-step guide to use Callin.io with Zapier to either trigger calls or receive transcriptions."
+---
+
+<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
+  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/G8xeV-CwoOA" title="Connect Zapier" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+</div>
+
+## Overview
+Zapier allows you to automate workflows between Callin.io and thousands of external platforms. With the Callin.io Zapier integration, you can:
+
+- **Trigger Zaps when a call transcription is available** (e.g. log it, send it to Slack, store in Google Sheets).
+- **Start an outbound call from a Zap** using the `Activate Agent` action (e.g. from a CRM form or webhook).
+
+These are **two separate use cases** and should usually be implemented as **two different Zaps**.
+
+---
+
+## Use Case 1: Trigger a Call from a Zap (Activate Agent)
+
+This setup allows external events to start a phone call using your agent.
+
+1. **Create a New Zap** → Use Any Trigger (form, webhook, schedule...)  
+   You can trigger the call from any app or event (e.g. Typeform, webhook, CRM update).
+
+2. **Add an Action Step**: Callin.io → `Activate Agent`  
+   Select **Callin.io** as the action app, and choose `Activate Agent`.
+
+3. **Configure Required Fields**  
+   Fill in:
+   - `Phone`
+   - `Name`
+   - `Email`
+   - `Agent Name`
+
+   These can be static or mapped from previous steps. You can also connect this to dynamic sources like Google Sheets, a CRM system, or a database to fetch contact data automatically.
+
+4. **Publish the Zap**  
+   Once published, this Zap will trigger a live call from your AI agent using the data provided.
+
+---
+
+## Use Case 2: Trigger a Zap When a Transcription Is Ready
+
+This setup listens for completed calls and performs follow-up actions.
+
+1. **Go to Integrations in Callin.io**  
+   Navigate to **Actions → Integrations**, find Zapier, and click **Connect**.
+
+2. **Accept the Zapier App Invite**  
+   Click `Accept Invite & Build a Zap` to use the Callin.io integration.
+
+3. **Create a New Zap** → Set Trigger as `Get Transcription`  
+   Select **Callin.io** as the app and `Get Transcription` as the trigger event.
+
+4. **Copy Webhook URL from Zapier**  
+   Zapier will provide a unique webhook URL. Copy it.
+
+5. **Paste Webhook in Callin.io Agent Settings**  
+   Edit your agent, locate `Webhook URL (Optional)`, and paste the Zapier URL. Save.
+
+6. **Test the Trigger**  
+   Run a call or use a recent one to validate that the webhook works.
+
+7. **Add Any Action** (e.g. log transcription, send Slack, update database)  
+   Zapier will now run this Zap whenever the agent completes a transcribed call. You can connect the data to any external platform like Google Sheets, Notion, CRMs, or databases for logging and analysis.
+
+---
+
+## Tips & Notes
+- Keep `Get Transcription` and `Activate Agent` in **separate Zaps** for clarity.
+- Always test using real or sandbox data.
+- Call recording must be **enabled** to receive transcriptions.
+- You can combine both workflows to create feedback loops (e.g., Call → Transcription → CRM → New Call).
+
+## Troubleshooting
+**Symptom:** Zap doesn’t trigger on call completion.  
+**Cause:** Webhook not saved or no transcribed call.  
+**Fix:** Ensure recording is enabled and webhook URL is correct.
+
+**Symptom:** Zap doesn’t place a call.  
+**Cause:** Missing required fields or wrong Agent Name.  
+**Fix:** Double-check data mapping and agent availability.
