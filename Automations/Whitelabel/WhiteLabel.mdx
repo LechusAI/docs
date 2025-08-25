@@ -1,132 +1,57 @@
 ---
-title: "White Label Settings"
+title: "White Label Setup Guide"
+description: "Make your application fully match your brand by customizing the domain, logo, colors, and advanced behavior."
 ---
 
-# White Label Settings
+## Overview
+White Label allows you to make your application look completely your own. You will no longer see the Callin.io branding, but instead your logo, your colors, and your domain. This means that when your customers log in, everything they see will match your brand, from the browser tab to the buttons in the interface.
 
-This guide explains how to customize the appearance of your application using the White Label Settings in the CMS. You can update your app name, domain, brand colors, logo, favicon, and advanced call settings to deliver a fully branded experience to your users.
+## Step 1: Access the White Label CMS
+First, you need to reach the place where all these options are configured. From your main dashboard, click on the settings icon in the upper right corner. This will open the configuration CMS. In the left-hand menu, select White Label. This is where you will define how your application looks and how it is accessed. Tip: take a few minutes to explore this section. Every field you complete here has a direct impact on how your users perceive your product.
 
----
+## Step 2: DNS Configuration
+Before changing logos or colors, the first and most important step is making sure your domain is properly configured. It is recommended to always use a subdomain (for example: app.yourdomain.io) rather than pointing the root domain. Using the root domain (yourdomain.io) may cause conflicts with your main website or with other services already running. In your DNS provider (Cloudflare, GoDaddy, Namecheap, etc.), add the following records:
 
-## Step 1: Accessing the CMS
+Type: A  
+Host: app  
+Value: 3.84.157.237  
+TTL: Automatic or 3600 seconds  
 
-### Location: CMS → White Label
+Type: CNAME  
+Host: www  
+Value: app.yourdomain.io  
+TTL: Automatic or 3600 seconds  
 
-This is where you can manage all white label configuration for your instance.
+With this setup, anyone typing app.yourdomain.io will access your application directly, and if they type www.yourdomain.io, it will redirect correctly. Practical advice: if you manage multiple services under your domain, create a separate subdomain for each one. For example:  
+app.yourdomain.io → your application  
+api.yourdomain.io → your API  
+help.yourdomain.io → your help center  
+This keeps everything organized and prevents conflicts. Keep in mind that DNS changes are not instant. They can take anywhere from a few minutes to 24 hours to propagate depending on your provider. Be patient and avoid making repeated changes thinking it is not working.
 
-**Instructions:**
+## Step 3: General Application Settings
+Once the domain is set, you can move on to giving your application its identity.  
+App Name: This is where you decide what your app will be called. This text will appear in the browser tab and in some internal notifications. Example: if your company is Finance Pro, you can write “Finance Pro” or “Finance Pro Manager”. Tip: use a short, recognizable name. Very long names may be cut off in the browser tab.  
+Domain: This field is where you must enter the exact subdomain you configured in DNS, for example: app.yourdomain.io. If it does not match your DNS configuration, the application will not load.  
+Logo: Here you upload the main image of your brand. This is not just a visual detail: this logo will be the first thing your customers see when they log in. Recommendation: use a high-quality PNG with a transparent background, 200x200px in size, and under 2MB. Example: if your logo has different versions (horizontal, vertical, icon-only), choose the one that looks best in a square format.  
+Favicon: The favicon is the small icon that appears in the browser tab next to the page title. Even though it may seem minor, it adds professionalism when your customers work with multiple tabs open. Use a favicon of 32x32px or 64x64px in PNG format. Keep it simple so it is instantly recognizable.  
+Colors: Here you customize buttons, links, and key interface elements. This is one of the strongest ways to reflect your brand identity. Practical tip: if you already have a corporate website, use the same HEX codes here. Example: #003366 for your brand’s blue. This ensures consistency and builds trust with your customers. Avoid colors that are too similar to each other (for example, light gray background with dark gray text), as it can affect readability.
 
-- Log in to your **CMS**.\\
-- Click on the **White Label** section in the left sidebar.\\
-- The White Label Settings page will load with all available customization options.
+## Step 4: Advanced Options
+Now that you have defined the visual identity, you can fine-tune technical settings.  
+Currency: Define the currency in which prices and payments will be displayed in your app. Example: USD for dollars, EUR for euros. Tip: choose the currency most commonly used by your customers. This will prevent confusion in billing.  
+BYOC (Bring Your Own Carrier): This option allows you to connect your own telephony provider instead of the built-in one. It is useful if you already have better rates or an active contract. Advantage: greater control over call costs.  
+Custom Recording: Enable this feature if you want your calls to be recorded for free within the platform. This prevents additional Twilio charges. Tip: check your local regulations on call recording to make sure you comply with legal requirements.  
+Custom AMD (Answering Machine Detection): This automatically detects voicemail boxes. Configuring it here saves costs and improves your call flows. Example: if your team runs mass calling campaigns, this option prevents wasting time with voicemail.
 
----
+## Common Mistakes and Solutions
+Logo or favicon not displayed → make sure they meet the recommended size and format.  
+Domain not working → double-check your DNS setup and confirm you are using a subdomain.  
+Colors not applied correctly → verify the HEX code entered is accurate.  
+Changes not saved → always click Save Settings before leaving.
 
-## Step 2: Changing the App Name
+## Your Brand, Your Application
+With this setup, your platform is now ready to reflect your brand identity and custom domain. Every detail, from the logo to the colors, helps your customers feel they are working directly with your company rather than a generic service.
 
-Your app name will appear in the browser title and throughout the UI.
-
-**Instructions:**
-
-- Find the **App Name** field at the top of the settings page.\\
-- Enter your preferred application name.\\
-- This change will be visible in browser tabs and headers.
-
----
-
-## Step 3: Configuring the Domain
-
-The domain is used for generating links and callbacks.
-
-**Instructions:**
-
-- Locate the **Domain** field next to App Name.\\
-- Enter the domain where your application is hosted.\\
-- Make sure it is unique and properly set up in your DNS.
-
----
-
-## Step 4: Updating Primary and Secondary Colors
-
-These colors control buttons, links, and UI highlights.
-
-**Instructions:**
-
-- Scroll down to **Primary Color**.\\
-  - Enter the hex code for your brand’s main color.\\
-  - Example:
-
-    ```
-    #3b82f6
-    ```
-- Adjust **Secondary Color** for hover states and gradients.\\
-  - Example:
-
-    ```
-    #1e40af
-    ```
-- Changes apply immediately to buttons, links, and UI elements.
-
----
-
-## Step 5: Uploading Logo and Favicon
-
-Your logo and favicon are displayed throughout the app.
-
-**Instructions:**
-
-- Under **Logo**, click **Upload Logo**.\\
-  - Recommended size: 200x200px.\\
-  - Max file size: 2MB.
-- Under **Favicon**, click **Upload Favicon**.\\
-  - Recommended size: 32x32px or 64x64px.\\
-  - Max file size: 1MB.
-- These images will appear in headers and browser tabs.
-
----
-
-## Step 6: Advanced Call Settings
-
-Advanced settings give you greater control over call costs and behavior.
-
-### BYOC (Bring Your Own Carrier)
-
-Low-cost calling option that requires setup with your telephony provider.
-
-**Instructions:**
-
-- Enable **BYOC** if you want to use your own carrier.\\
-- Coordinate with your provider and complete BYOC setup in Twilio.
-
----
-
-### Custom Recording
-
-Free call recording option to avoid Twilio’s recording fees.
-
-**Instructions:**
-
-- Enable **Custom Recording** to use your own storage and recording setup.\\
-- Without this option, Twilio’s standard recording fees apply.
-
----
-
-### Custom AMD (Answering Machine Detection)
-
-Free AMD feature to detect answering machines without Twilio charges.
-
-**Instructions:**
-
-- Enable **Custom AMD** to use your own detection configuration.\\
-- Without this, Twilio’s AMD feature is used and may incur charges.
-
----
-
-## Final Notes
-
-- All changes apply to **all users** on your instance.\\
-- Make sure DNS records are correctly configured if you change your domain.\\
-- Test all changes to verify branding consistency.
 
 ---
 
