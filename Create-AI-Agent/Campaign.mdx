@@ -1,85 +1,125 @@
 ---
 title: "Create Campaigns"
-description: "Design, launch, and analyze AI-powered calling campaigns that connect your agents with real people."
+description: "Build campaigns, pick contacts, assign agents, and launch calls step by step."
 ---
 
 ## Overview
+Campaigns in **Callin.io** allow you to automate outbound communication at scale. They combine AI agents, contact lists, and scheduling logic so your agents can handle large volumes of calls naturally and efficiently.
 
-In Callin.io, **Campaigns** let your AI Agents take real action at scale.\
-They’re how your virtual team makes outbound calls, reminds customers, follows up on leads, and gathers feedback — all automatically.
+A campaign consists of three key elements:
 
-You design the mission once: decide **who** to call, **what** to say, and **when** to do it.\
-From that point, your AI Agent handles everything while you watch progress unfold in real time.
+- **AI Agent** – the configured voice that executes the calls.
+- **Contact List** – drawn from your [Contacts](https://app.callin.io/contacts) section or imported via CSV.
+- **Execution Plan** – determines when and how the campaign runs (immediate launch or scheduled window).
 
-You can view and manage your campaigns directly from the [Campaigns](https://app.callin.io/campaigns) page.
+By combining these components, you can create large-scale, personalized outreach operations — from lead generation and reminders to surveys and customer follow-ups.
 
----
+## Before You Start
+Campaigns depend on data and configuration from other parts of your Callin.io workspace:
 
-## Why Campaigns Matter
+- Ensure your [Contacts](https://app.callin.io/contacts) are properly uploaded and validated.
+- Have at least one **AI agent** ready with a tested prompt and voice setup.
+- Verify your time zone and scheduling preferences for accurate campaign timing.
 
-Campaigns are designed to save time while keeping the **human touch**.\
-They’re useful for situations like:
+Each campaign is capable of calling hundreds or thousands of contacts, but success depends on well-prepared data and clear AI conversation flows.
 
-- **Appointment reminders:** “Hi Emma, just confirming your appointment for tomorrow at 10 AM.”
-- **Lead follow-ups:** “Hi Alex, would you like to book your demo this week?”
-- **Customer surveys:** “Press 1 if you’re happy with your last delivery.”
-- **Mass updates:** “We’ve just released new features — here’s what’s new.”
+## Steps
 
-Instead of having humans manually dial every number, you train your AI once and it scales that tone and logic across every conversation.
+### 1. Access Campaigns
+Go to [Campaigns](https://app.callin.io/campaigns) in the left sidebar. You’ll find two main tabs:
 
----
+- **Campaigns:** lists all active, scheduled, and completed campaigns.
+- **Campaigns Analytics:** shows visual reports with key metrics like total calls, call duration, and appointments.
 
-## How Campaigns Connect with Contacts and Agents
+Each campaign card includes:
+- Campaign name
+- Assigned AI agent
+- Current status (e.g., *Completed*, *In Progress*, *Scheduled*)
 
-Every campaign depends on two key parts:
+Click **View** to inspect details or **+ Create Campaign** to build a new one.
 
-1. **Contacts** – the people your AI will reach.\
-   You can manage them from the [Contacts](https://app.callin.io/contacts) section: add, edit, or import a CSV file.
-2. **AI Agent** – the voice and personality of your campaign.\
-   The agent defines how to speak, what to do when no one answers, and how to respond in different situations.
+### 2. Create a New Campaign
+Click **+ Create Campaign**, then complete the setup form:
 
-Once you link an agent and a contact list, Callin.io takes over: it calls each contact, waits for connection, speaks naturally, listens, and logs the outcome.
+- **Campaign Name:** Choose a clear and descriptive title.
+- **AI Agent:** Select the agent who will make the calls.
+- **Select Contacts:** Choose an existing contact list or upload a new CSV file.
 
----
+If you upload a file, make sure to:
+1. Map your columns correctly for **Phone**, **Name**, and **Email**.
+2. Assign a default country if your phone numbers lack the `+` prefix.
+3. Validate the data preview before confirming the import.
 
-## Creating a Campaign
+Once imported or selected, your contact list becomes part of the campaign configuration.
 
-1. Go to [Campaigns](https://app.callin.io/campaigns).
-2. Click **Create Campaign**.
-3. Enter a descriptive **Campaign Name** (e.g., “October Renewals”).
-4. Choose your **AI Agent** — this will handle all conversations.
-5. Select **Contacts**:
-   - Choose manually, or
-   - Upload a CSV file (you can download a sample template).
-6. Choose whether to:
-   - **Launch Now**, or
-   - **Schedule for Later** (set start time, end time, and timezone).
-7. Click **Launch** or **Schedule** — and you’re done.
+### 3. Select and Manage Contacts
+After setting up the basics, review your contact list within the campaign editor:
 
-Each campaign will appear in your dashboard with its current status: _Waiting_, _Running_, or _Completed_.
+- Check the box next to each contact you want to include.
+- Use stored data fields such as **name**, **email**, or **phone number** in your AI agent’s prompt via dynamic variables like `{{name}}` or `{{email}}`.
 
----
+Example:
+```
+Hi {{name}}, I’m calling to confirm your appointment tomorrow at {{hour}}.
+```
 
-## Understanding Campaign Analytics
+Each variable dynamically pulls the real data from your contacts, allowing for personalized AI calls without manual editing.
 
-Once a campaign starts running, head over to the **Campaigns Analytics** tab.\
-You’ll see live performance data, such as:
+### 4. Choose How to Launch
+You have two ways to start your campaign:
 
-- Total calls made
-- Average call duration
-- AMD detection rate (voicemail vs. human)
-- Connected call volume
-- Conversion or appointment rate
+- **Launch Now:** The campaign begins immediately. The AI agent will start contacting selected contacts sequentially.
+- **Schedule for Later:** Choose a specific start and end time, and define the time zone.
 
-These insights help you improve: maybe your calls are too early, or your agent’s script could be shorter.\
-Analytics is your guide for smarter campaigns.
+Scheduling is ideal for time-sensitive operations — for example, ensuring calls are placed during local business hours or specific follow-up periods.
 
----
+After configuring your schedule, click **Launch** or **Schedule** to confirm.
 
-## Helpful Advice
+### 5. Analyze Performance
+Once your campaign is running or completed, open the **Campaigns Analytics** tab to monitor key metrics. You’ll see:
 
-- **Start small** — test before scaling.
-- **Name clearly** — “Follow-up Week 42” beats “Test 2”.
-- **Respect time zones** — no one likes 3 AM calls.
-- **Keep contacts clean** — remove duplicates or outdated numbers.
-- **Check analytics often** — small tweaks create big wins.
+- **Total Appointments:** Number of meetings successfully scheduled.
+- **Total Calls:** The overall number of calls made by your agents.
+- **Average Call Duration:** The mean length of conversations.
+- **AMD Detection Rate:** Percentage of calls that reached an answering machine.
+
+You’ll also find graphical reports, such as:
+
+- **Connected Calls Volume Over Time** – helps identify engagement peaks.
+- **Appointments by Hour** – visualizes when conversions occur.
+- **Call Outcomes & Key Metrics** – shows distribution between completed, missed, or failed calls.
+
+These analytics are refreshed automatically after each campaign completes, allowing you to measure effectiveness and refine your strategy.
+
+### 6. Why Campaigns Matter
+Campaigns allow you to combine automation, personalization, and scalability within one workflow. They provide:
+
+- **Scale:** Reach hundreds or thousands of people automatically.
+- **Automation:** Eliminate manual dialing; let AI handle repetitive communication.
+- **Personalization:** Each call sounds unique, referencing contact-specific data.
+- **Analytics:** Gain actionable insights from every call and conversion.
+
+Use campaigns to automate follow-ups, reminders, lead generation, or customer feedback collection — all while maintaining human-like engagement.
+
+## Troubleshooting
+
+### No Contacts Available
+- **Cause:** No contacts have been uploaded or selected.
+- **Fix:** Go to [Contacts](https://app.callin.io/contacts) and import or add contacts before starting your campaign.
+
+### Campaign Won’t Start
+- **Cause:** Missing configuration, such as no agent assigned or no contacts selected.
+- **Fix:** Ensure both an AI agent and at least one contact are included before launching.
+
+### No Analytics Data
+- **Cause:** Campaign data is still processing or hasn’t completed.
+- **Fix:** Wait a few minutes after completion; analytics refresh automatically once results are finalized.
+
+### Incorrect Timezone or Schedule
+- **Cause:** Campaign timezone not set properly.
+- **Fix:** Double-check the timezone settings before scheduling to ensure local time accuracy.
+
+## Final Note
+Campaigns in Callin.io transform your AI agents into scalable communication systems. By combining automation with intelligent conversation design, they enable outreach that’s efficient, data-driven, and personal.
+
+Once your campaign is set up, your agents can automatically connect with real people, capture results, and continuously improve through analytics — helping your business maintain consistent, meaningful engagement at scale.
