@@ -3,81 +3,83 @@ title: "Call History"
 description: "Review call logs, recordings, transcripts, extracted data, and export your results."
 ---
 
-<div style={{
-  border: "2px solid #e5e7eb",
-  borderRadius: "12px",
-  padding: "8px",
-  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.10)",
-  maxWidth: "100%",
-  overflow: "hidden",
-  backgroundColor: "#000",
-  marginBottom: "1.5rem"
-}}>
-  <iframe
-    width="100%"
-    height="420"
-    src="https://www.youtube-nocookie.com/embed/CS5QQ2ZboQU"
-    title="Call History Tutorial"
-    frameBorder="0"
-    loading="lazy"
-    referrerPolicy="strict-origin-when-cross-origin"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  ></iframe>
-</div>
-
 ## Overview
-The **Call History** page lists all recent calls with key details and quick actions:
-- Search by number, agent, or keyword.
-- Filter by **date range** and **direction** (All / Inbound / Outbound).
-- Open **transcripts**, **recordings**, and **extracted data**; export results to **CSV**.
+The Call History panel lets you review and analyze every call made or received by your AI agents. From here, you can:
 
-> **Note:** To access **recordings**, **transcripts**, and **extracted data**, call recording must be **enabled** for the agent.
 
----
+- View detailed call information (origin, duration, status, and agent)
+- Listen to or download recordings
+- Read complete transcripts
+- Filter by specific outcomes such as scheduled appointments or machine answers
 
-## Filters & Search
-- **Search calls…** – Free text search (number, agent, etc.).
-- **Date range** – e.g., *7 Days* (customizable).
-- **Direction** – *All / Inbound / Outbound*.
-- **More Filters** – Additional filters when available.
-- **Export CSV** – Exports the current filtered view.
 
----
+Navigate to [Evaluate → Call History](https://app.callin.io/call-history) from the left menu.
 
-## Table Columns
-- **Start Date/Time** – When the call started (local time).
-- **Direction** – *Inbound* or *Outbound*.
-- **Agent Name** – The agent that handled the call.
-- **Agent Type** – e.g., *Standard AI* (or other types you configure).
-- **Phone Number** – Counterparty number.
-- **Call Duration** – HH:MM length.
-- **Call Origin** – Source of the call (e.g., application).
-- **Status** – Final outcome (e.g., *Completed*).
-- **Machine** – Whether an answering machine was detected.
-- **Appointment** – Shows *Yes/No* if a booking was created during the call.
-- **Extracted Data** – Indicates if entities were captured from the transcript.
 
----
+## Steps
 
-## Row Actions
-Each call row provides quick actions on the right:
-- **Transcript** – Opens the full conversation transcript in a modal.
-- **Recording** – Play/download the audio recording.
-- **Extracted Data** – View structured entities (e.g., appointment date, name, intent).  
-  > Entities come from your **Data Extraction Configuration** set in the agent.
 
----
+### 1. Explore Your Call History
+Once inside the Call History panel, you'll see a table showing all calls. Each row displays key details:
 
-## Export & Pagination
-- Use **Export CSV** to download the current filtered results.
-- Control **Rows per page** and navigate with **Prev/Next**.
 
----
+- **Call Info:** number, date, and time
+- **Agent:** the AI assistant that handled the call
+- **Duration:** total length of the conversation
+- **Origin:** whether the call came from the app or an integration
+- **Status:** Completed, Busy, or No-answer
+
+
+Use the toggle to switch between **Inbound**, **Outbound**, or **All** calls.
+
+
+### 2. Use Filters to Segment Your Calls
+Click the filter icon to open the Filters panel. You can filter calls by:
+
+
+- **Appointment:** with or without a scheduled appointment
+- **Machine:** if the call reached an answering machine
+- **Status:** outcome of the call (Completed, Busy, etc.)
+
+
+Click **Clear All** to reset your filters.
+
+
+### 3. Play or Download Recordings
+In the **Actions** column, click the play icon to open the recording player:
+
+
+- Listen to the recording in your browser
+- Adjust playback speed
+- Download the audio file for offline access
+
+
+### 4. Review Full Transcripts
+Next to the play icon, click the transcript icon. This opens the full transcript of the conversation:
+
+
+- Messages are labeled clearly as **User** or **AI Agent**
+- Use the **Copy** button to extract the full text
+
+
+## Tips & Notes
+- Combine filters for precise search results
+- Use transcripts and recordings to evaluate call quality and agent performance
+
 
 ## Troubleshooting
-- **No transcript/recording shown:** Verify **Record calls** is enabled for that agent.
-- **Extracted Data empty:** Ensure the agent has **Data Extraction** entities configured and the call content matched those rules.
-- **Missing appointments:** Confirm **Schedule Appointments** is enabled and the calendar is correctly selected in the agent.
 
 
+### Can’t Hear Playback
+- **Cause:** Internet or audio configuration issues
+- **Fix:** Verify your connection and audio output settings
+
+
+### Recent Calls Not Showing
+- **Cause:** Temporary sync delay
+- **Fix:** Refresh the page (updates are real-time)
+
+
+### Audio Won’t Download
+- **Cause:** Browser permission settings
+- **Fix:** Allow file downloads in your browser configuration
