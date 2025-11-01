@@ -1,73 +1,110 @@
 ---
-title: "White Label Setup Guide"
-description: "Make your application fully match your brand by customizing the domain, logo, colors, and advanced behavior."
+title: "Set Up White-Label and DNS"
+description: "Customize your app with your own brand and domain using Callin CMS. Includes DNS setup, SSL, branding, and tips."
 ---
 
 ## Overview
-White Label allows you to make your application look completely your own. You will no longer see the Callin.io branding, but instead your logo, your colors, and your domain. This means that when your customers log in, everything they see will match your brand, from the browser tab to the buttons in the interface.
+Customize your Callin app with your brand name, logo, and domain. This guide walks you through white-label setup and domain configuration (automatic or manual), plus logo and currency options.
 
-## Step 1: Access the White Label CMS
-First, you need to reach the place where all these options are configured. From your main dashboard, click on the settings icon in the upper right corner. This will open the configuration CMS. In the left-hand menu, select White Label. This is where you will define how your application looks and how it is accessed. Tip: take a few minutes to explore this section. Every field you complete here has a direct impact on how your users perceive your product.
+Before starting:
+- Own a domain and have DNS access (Cloudflare, GoDaddy, Namecheap, etc).
+- Prefer using a subdomain like `app.yourdomain.com`.
+- For automatic DNS, prepare API credentials with DNS edit permissions.
+- Open [CMS → White-Label Settings](https://app.callin.io/cms).
 
-## Step 2: DNS Configuration
-Before changing logos or colors, the first and most important step is making sure your domain is properly configured. It is recommended to always use a subdomain (for example: app.yourdomain.io) rather than pointing the root domain. Using the root domain (yourdomain.io) may cause conflicts with your main website or with other services already running. In your DNS provider (Cloudflare, GoDaddy, Namecheap, etc.), add the following records:
+## Steps
 
-Type: A  
-Host: app  
-Value: 3.84.157.237  
-TTL: Automatic or 3600 seconds  
+### 1. Name Your App
+In **App Name**, enter your brand. This name appears across your UI and emails.
 
-Type: CNAME  
-Host: www  
-Value: app.yourdomain.io  
-TTL: Automatic or 3600 seconds  
+### 2. Connect Your Domain
+Go to **Custom Domain**.
+Choose automatic (recommended) or manual DNS setup.
 
-With this setup, anyone typing app.yourdomain.io will access your application directly, and if they type www.yourdomain.io, it will redirect correctly. Practical advice: if you manage multiple services under your domain, create a separate subdomain for each one. For example:  
-app.yourdomain.io → your application  
-api.yourdomain.io → your API  
-help.yourdomain.io → your help center  
-This keeps everything organized and prevents conflicts. Keep in mind that DNS changes are not instant. They can take anywhere from a few minutes to 24 hours to propagate depending on your provider. Be patient and avoid making repeated changes thinking it is not working.
+**Enter your full subdomain**, e.g., `app.yourdomain.com`.
 
-## Step 3: General Application Settings
-Once the domain is set, you can move on to giving your application its identity.  
-App Name: This is where you decide what your app will be called. This text will appear in the browser tab and in some internal notifications. Example: if your company is Finance Pro, you can write “Finance Pro” or “Finance Pro Manager”. Tip: use a short, recognizable name. Very long names may be cut off in the browser tab.  
-Domain: This field is where you must enter the exact subdomain you configured in DNS, for example: app.yourdomain.io. If it does not match your DNS configuration, the application will not load.  
-Logo: Here you upload the main image of your brand. This is not just a visual detail: this logo will be the first thing your customers see when they log in. Recommendation: use a high-quality PNG with a transparent background, 200x200px in size, and under 2MB. Example: if your logo has different versions (horizontal, vertical, icon-only), choose the one that looks best in a square format.  
-Favicon: The favicon is the small icon that appears in the browser tab next to the page title. Even though it may seem minor, it adds professionalism when your customers work with multiple tabs open. Use a favicon of 32x32px or 64x64px in PNG format. Keep it simple so it is instantly recognizable.  
-Colors: Here you customize buttons, links, and key interface elements. This is one of the strongest ways to reflect your brand identity. Practical tip: if you already have a corporate website, use the same HEX codes here. Example: #003366 for your brand’s blue. This ensures consistency and builds trust with your customers. Avoid colors that are too similar to each other (for example, light gray background with dark gray text), as it can affect readability.
+#### DNS in 2 Minutes
+- An **A record** maps a name to an IP address.
+- A **CNAME** maps a name to another hostname (alias).
+- **TTL** (Time To Live) sets caching duration; use 300 for fast updates.
+- **Propagation** may take 5–30 mins, up to 24h depending on providers.
 
-## Step 4: Advanced Options
-Now that you have defined the visual identity, you can fine-tune technical settings.  
-Currency: Define the currency in which prices and payments will be displayed in your app. Example: USD for dollars, EUR for euros. Tip: choose the currency most commonly used by your customers. This will prevent confusion in billing.  
-BYOC (Bring Your Own Carrier): This option allows you to connect your own telephony provider instead of the built-in one. It is useful if you already have better rates or an active contract. Advantage: greater control over call costs.  
-Custom Recording: Enable this feature if you want your calls to be recorded for free within the platform. This prevents additional Twilio charges. Tip: check your local regulations on call recording to make sure you comply with legal requirements.  
-Custom AMD (Answering Machine Detection): This automatically detects voicemail boxes. Configuring it here saves costs and improves your call flows. Example: if your team runs mass calling campaigns, this option prevents wasting time with voicemail.
+**Tip:** Use a subdomain (not `@`) to avoid affecting your main website.
 
-## Common Mistakes and Solutions
-Logo or favicon not displayed → make sure they meet the recommended size and format.  
-Domain not working → double-check your DNS setup and confirm you are using a subdomain.  
-Colors not applied correctly → verify the HEX code entered is accurate.  
-Changes not saved → always click Save Settings before leaving.
+#### Option A — Automatic Configuration
+1. Pick your **DNS Provider**: Cloudflare, GoDaddy, or Namecheap.
+2. Enter credentials:
+   - **Cloudflare**: API Token (Edit DNS on the zone).
+   - **GoDaddy**: API Key + Secret.
+   - **Namecheap**: API User, Key, and whitelisted Client IP.
+3. Click **Discover Provider**.
+4. Callin validates access and creates the records.
+5. SSL is issued automatically.
 
-## Your Brand, Your Application
-With this setup, your platform is now ready to reflect your brand identity and custom domain. Every detail, from the logo to the colors, helps your customers feel they are working directly with your company rather than a generic service.
+**Important (Cloudflare):** If validation fails with **orange cloud (proxied)**, switch to **DNS Only (grey)**, complete SSL issuance, then re-enable proxy if needed.
 
+#### Option B — Manual Configuration
+1. Select **Manual**.
+2. Add the DNS records shown in the CMS table at your registrar:
+   - `Type: A` → `Host: @ or subdomain` → `Value: <IP>` → `TTL: 300`
+   - `Type: CNAME` → `Host: www` (if shown) → `Value: <host>` → `TTL: 300`
+3. Go back to CMS and click **Install SSL**.
 
----
+**Warning:** Avoid duplicate or conflicting records — they block verification.
 
-### Video: Configuring White Label Settings Video 1
+### 3. Colors & Logos
+Set your **Primary/Secondary Colors** and upload:
+- **Logo** (PNG/SVG, transparent background).
+- **Favicon** (ICO/PNG, 32×32 or 48×48).
 
-Watch this video to see a full walkthrough of configuring your White Label Settings in the CMS.
+### 4. Default Currency
+Pick your **Default Currency** for plan pricing. See [[Create-AI-Agent/Billing]].
 
-<img
-  src="/gifs/VWL1.gif"
-  alt="Step 1 - White Label Settings"
-  style={{ borderRadius:"12px",maxWidth:"100%",marginBottom:"1rem" }}
-/>
+### 5. Advanced Call Settings (Optional)
+- **[BYOC]**: Bring Your Own Carrier (add your SIP trunk).
+- **[Recordings]**: Store call recordings in your own S3-compatible bucket.
+- **[AMD]**: Fine-tune human vs voicemail detection.
 
-### Video: Configuring White Label Settings Video 2
-<img
-  src="/gifs/VWL2.gif"
-  alt="Step 2 - White Label Settings"
-  style={{ borderRadius:"12px",maxWidth:"100%",marginBottom:"1rem" }}
-/>
+## Tips & Notes
+- Prefer `app.yourdomain.com` to avoid breaking your root domain.
+- TTL 300 ensures fast propagation during setup.
+- Use **DNS Only (grey)** for Cloudflare when issuing SSL.
+
+## Troubleshooting
+
+**Domain verification failed**  
+**Cause:** Wrong host, conflicts, or propagation delay.  
+**Fix:**
+- Double-check the host (`app`, not `www`).
+- Remove duplicate records.
+- Set TTL to 300.
+- Wait up to 30 mins.
+
+**SSL not issued**  
+**Cause:** Verification incomplete.  
+**Fix:**
+- Click **Install SSL**.
+- Confirm hostname resolves to Callin IP.
+- Ensure HSTS/proxies aren’t blocking ACME challenge.
+
+**Invalid API credentials**  
+**Fix:**
+- Ensure tokens have **Edit DNS** on the correct zone.
+- Namecheap: whitelist your IP.
+
+**Apex site broke**  
+**Fix:** Always use a subdomain (like `app.`). Don’t change `@` records.
+
+**Changes not visible**  
+**Fix:** Clear DNS cache or switch networks. Use a DNS lookup to confirm records.
+
+## Video
+<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
+  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/" title="White-Label and DNS Setup in Callin" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+</div>
+
+## Related
+- [[Create-AI-Agent/Billing]]
+- [CMS → White-Label Settings](https://app.callin.io/cms)
+- [[Create-AI-Agent/Settings]]
+- [[Create-AI-Agent/Call-Actions]]
