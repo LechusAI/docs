@@ -1,146 +1,145 @@
 ---
-title: "Add Number"
-description: "Learn how to purchase, import, or verify a phone number so your AI agents can place and receive calls."
+title: "Add a Number"
+description: "Learn how to purchase, import, or verify a phone number so your AI agents can make and receive calls."
 ---
 
-## Overview
-Phone numbers are the foundation of communication in Callin.io. Every AI agent needs at least one active number to make or receive calls. Numbers connect your virtual agents with real users — enabling two-way voice conversations powered by AI.
-
-Callin.io provides flexible ways to manage your numbers depending on your infrastructure and business needs:
-
-- **Buy new numbers directly** from Callin.io using Twilio integration.
-- **Import existing numbers** from Twilio or Telnyx accounts.
-- **Connect your own SIP trunk** through BYOC (Bring Your Own Carrier) if you already have telecom infrastructure.
-- **Add personal numbers** for outbound calling, such as mobile phones.
-
-> Keep in mind: Callin.io charges only for AI processing time (the intelligence running during calls). The actual call costs are billed separately by your telecom provider (Twilio, Telnyx, or your SIP carrier).
+## Description
+Learn how to purchase, import, or verify a phone number so your AI agents can make and receive calls.
 
 ## Before You Start
-Each phone number you connect will serve as the unique caller identity for your AI agent. It determines how your calls appear to recipients, where incoming calls are routed, and how integrations like CRMs recognize customer contacts.
+In Callin.io, phone numbers are the foundation of your AI communication system.  
+Without at least one active number, your assistant won’t be able to make or receive calls.
 
-If you’re new to telephony:
-- A **SIP trunk** is a virtual phone line that connects your call software (Callin.io) to the public telephone network.
-- **BYOC (Bring Your Own Carrier)** lets you use your preferred provider instead of relying only on built-in options.
-- Providers like **Twilio** and **Telnyx** offer global coverage, meaning you can call internationally and choose local numbers for specific markets.
+You can add numbers in three different ways:
 
-## Steps
+- Purchase them directly from Callin.io (Twilio-managed).  
+- Import them from a provider such as Twilio or Telnyx.  
+- Connect your own SIP trunk using BYOC (Bring Your Own Carrier).
 
-### 1. Connect Your Provider via BYOC
-Go to [Telephony → BYOC](https://app.callin.io/byoc) to integrate your telecom provider with Callin.io. This setup ensures that calls flow correctly between your provider and the Callin.io platform.
+Each option has its own advantages depending on your needs. Let’s quickly go through them so you can decide which one fits your setup best.
 
-There are two ways to connect: using **Telnyx**, or any **other SIP provider**.
+## Understanding Your Options
 
-#### If You Use Telnyx
-Telnyx offers a direct integration pathway that automates much of the setup process.
+### 1. Twilio
+Twilio is a cloud-based communications platform that offers APIs for calls, messaging, and video.  
+It’s the simplest and fastest way to start making calls in Callin.io, because everything — from number provisioning to routing — is fully managed by Twilio’s infrastructure.
 
-1. In the **BYOC** page, select the **Telnyx** tab.
-2. Paste your **Telnyx API Key** from your Telnyx account dashboard.
-3. Click **Start** to begin synchronization.
+You should choose Twilio if you want:
 
-Once connected, Callin.io will automatically:
-- Retrieve all active numbers (DIDs) from your Telnyx account.
-- Allow you to choose which numbers to activate in Callin.io.
-- Set up the SIP trunk to handle inbound and outbound traffic securely.
+- A quick, no-maintenance setup.  
+- Built-in reliability with minimal configuration.  
+- Global coverage with easy number search and purchase.
 
-The Telnyx integration also supports encrypted SIP connections, ensuring secure and compliant communications, which is crucial for regulated industries like healthcare or finance.
+When you buy or import a Twilio number, Callin.io automatically connects it for use within the platform — you don’t need to handle SIP credentials or routing manually.
 
-#### If You Use Another SIP Provider
-You can manually configure your SIP connection using the **Other SIP Provider** tab. This method gives you more control but requires technical details from your telecom provider.
+### 2. Telnyx
+Telnyx is also a cloud communications provider, but it gives you much deeper control over how your calls are routed and connected.  
+Telnyx provides direct access to its SIP trunking layer, so you can configure call encryption, codecs, and routing rules as you prefer.
 
-The setup is divided into three main sections:
+You should choose Telnyx if you want:
 
-**Basic Information**
-- Enter a **name** for the connection so you can identify it later.
-- Provide your phone number in **E.164 format** (for example: `+14155552600`). This format is globally recognized and ensures international compatibility.
+- Full control over SIP trunks and routing.  
+- Advanced technical settings (QoS, codecs, regional routing).  
+- A more flexible setup for compliance or enterprise-scale telephony.
 
-**Inbound Configuration**
-- Define the **SBC (Session Border Controller)** or **FQDN (Fully Qualified Domain Name)** where inbound calls will be sent.
-- Choose your transport protocol — typically **TLS** for secure transmission or **UDP** for simpler setups.
-- Enable **media encryption** (SRTP) if your provider supports it.
+Telnyx requires a slightly more technical setup, but once connected, it’s more customizable and can integrate easily with other network systems.
 
-**Outbound Configuration**
-- Enter your **SBC address**, **username**, and **password** for authentication.
-- Configure outbound calling permissions by country to prevent unauthorized international calls.
+### 3. SIP Trunking (BYOC)
+SIP trunking stands for Session Initiation Protocol trunking.  
+It’s a method that allows you to connect your own telecom infrastructure (your carrier) directly to Callin.io.  
+You can do this using BYOC (Bring Your Own Carrier).
 
-After completing the setup, click **Save & Import**. Callin.io will test the SIP connection to confirm that signaling and audio streams are functioning correctly.
+Choose this option if:
 
-### 2. Add Numbers to Your Account
-Once a provider is connected, head to [Telephony → Numbers](https://app.callin.io/numbers). This section is your central dashboard for number management. You can see every number currently linked to your workspace, along with their provider, type, and status.
+- You already have an existing SIP carrier (for example, your own PBX or corporate system).  
+- You need to manage your own routing, SBCs, or regional carriers.  
+- You want to use Callin.io as a voice automation layer over your current telecom setup.
 
-Click **+ Add Number** to open the options menu. You can choose one of the following paths depending on your needs.
+With BYOC, you’ll manually configure your SIP credentials and routes — ideal for advanced users or telecom teams.
 
-#### Option 1: Purchase Number (Callin.io Direct)
-Buying directly from Callin.io is the fastest way to get started. These numbers are provided via Twilio and managed entirely within the platform.
+## Step 1. Connect Your Provider Through BYOC
+From the left menu, open **Telephony → BYOC**.  
+Here you can link your Telnyx account or any other SIP provider.
 
-1. Click **Purchase Number**.
-2. Select the **country** where you need the number.
-3. Choose the **number type** — either Local (geographic) or Toll-Free.
-4. Search by area code or prefix if you need a specific region.
-5. Select the number and confirm your purchase.
+### If You Use Telnyx
+- Select the **Telnyx** tab and enter your **API Key**.  
+- Callin.io will automatically retrieve your active numbers (DIDs).  
+- Choose which numbers you want to activate.  
+- The system will set up the SIP trunk for inbound and outbound calls.  
+- Click **Start** to begin synchronization.  
+Once complete, your Telnyx numbers will appear in your account.
 
-Purchased numbers are immediately available and automatically linked to your workspace. You can assign them to agents or campaigns right away.
+### If You Use Another SIP Provider
+- Go to the **Other SIP Provider** tab.  
+- Configure your SIP trunk manually in three parts:
 
-#### Option 2: Import From Twilio
-If your company already uses Twilio for telephony, you can seamlessly bring those numbers into Callin.io.
+**Basic:** Set a name and enter your number in E.164 format.  
+**Inbound:** Define where inbound calls will be sent (your SBC/FQDN).  
+Choose TLS or UDP as the transport protocol.  
+Allow media encryption if your provider supports it.  
+**Outbound:** Enter your SIP credentials (SBC address, username, password) and select outbound country permissions.  
 
-1. Click **Import from Twilio**.
-2. Enter your **Twilio Account SID** and **Auth Token**.
-3. Review the list of available numbers.
-4. Select which ones to import.
+Click **Save & Import** when done.
 
-After import, Callin.io syncs with Twilio in real-time, so any future changes to your numbers (like reassignments or new DIDs) will be reflected automatically.
+**Note:** Make sure your SBC address and credentials are correct; otherwise, your trunk won’t connect.
 
-#### Option 3: Add Personal Number (Outbound Only)
-This option is useful if you want your AI agent to use your personal or business mobile number for outbound calls. Note that inbound calls to these numbers will **not** be routed back to Callin.io.
+## Step 2. Add Numbers to Your Account
+After connecting a provider, go to **Telephony → Numbers**.  
+This section lists all numbers associated with your account.
 
-Steps to verify a personal number:
-1. Enter your phone number.
-2. You’ll receive an automated verification call.
-3. When prompted, enter the verification code displayed on-screen.
-4. Once verified, your number becomes available for outbound calls.
+Click **+ Add Number**, then choose how you want to add it.
 
-Outbound-only numbers are ideal for testing AI call flows or when you want calls to appear from a familiar local number.
+### Option 1. Purchase Number
+Buy a number directly through Callin.io.  
+These are Twilio-managed numbers and can only be used within the platform.
 
-#### Option 4: Add Telnyx Number
-If you’ve connected Telnyx earlier, you can directly import your numbers without additional credentials.
+Choose the country, type (local or toll-free), search by area code, and select your preferred number to purchase.
 
-1. Open the **Telnyx** tab under **Numbers**.
-2. Select the numbers you wish to bring in.
-3. Click **Import** to activate them.
+### Option 2. Import From Twilio
+If you already have a Twilio account, you can import your existing numbers.  
+Enter your **Account SID** and **Auth Token**, then select which numbers to import.
 
-Telnyx’s infrastructure allows granular control of routing, codecs, and call quality settings. This makes it an excellent choice for enterprises that want full control of their telecom configuration.
+Once imported, Callin.io will link your Twilio numbers automatically.  
+You can then assign them to your AI agents to start placing and receiving calls.
 
-### 3. Verify Your Numbers
-After adding numbers, each entry in the Numbers dashboard displays key attributes:
+### Option 3. Add Personal Number
+You can also use your personal number (for example, your mobile phone).  
+These numbers are outbound-only, meaning they can make calls but not receive them.
 
-- Number format and type (Local, Toll-Free, Mobile, SIP)
-- Assigned provider (Twilio, Telnyx, BYOC)
-- Connection type (Managed or External)
-- Renewal, billing, and activation status
+**Verification steps:**
 
-If any number shows a warning or inactive label, click **Details** to review the issue. You can test connectivity and run call simulations to verify everything is working.
+1. Enter your phone number.  
+2. You’ll receive a verification call.  
+3. Enter the code when prompted.  
+4. Your number will be verified and added to your account.
 
-Verification is crucial because if a number is not properly verified or connected, outbound calls may fail or display as “unavailable” to recipients.
+### Option 4. Add Telnyx Number
+If your Telnyx account is already connected, you can directly import your active numbers.  
+Select the ones you want and click **Import**.
 
-## Troubleshooting
+Telnyx allows more granular control than Twilio, including:
 
-### Can’t Make Calls
-- **Possible Cause:** The number is inactive or not linked to a valid SIP trunk.
-- **Fix:** Check your provider connection under BYOC or Numbers. Ensure that outbound routes are properly configured.
+- Managing your own routing logic.  
+- Adjusting codecs and audio encryption.  
+- Enabling multi-region redundancy.
 
-### Personal Number Doesn’t Receive Calls
-- **Cause:** Personal numbers only support outbound operations.
-- **Fix:** Use a purchased or imported number for two-way call capability.
+This is ideal for technical users or companies that already manage telecom networks.
 
-### Imported Numbers Missing
-- **Cause:** Incorrect credentials or insufficient permissions in Twilio or Telnyx.
-- **Fix:** Revalidate your API keys and ensure your DIDs are marked as “active” in the provider portal.
+## Step 3. Verify Your Numbers
+Each number card shows its type and provider.  
+From this view, you can check:
 
-### Calls Dropping or No Audio
-- **Cause:** SIP trunk misconfiguration or codec mismatch.
-- **Fix:** Check your provider’s supported codecs (G.711, G.729, Opus) and confirm they align with Callin.io settings.
+- Renewal date.  
+- Connection type (direct, SIP, Twilio, or Telnyx).  
+- Activation status.  
+
+Verify that all numbers are active and properly linked.
+
+## Common Issues and Fixes
+**Can’t make calls:** Make sure your number is active and connected to a valid provider.  
+**Personal number not receiving calls:** Personal numbers only support outbound calling.  
+**Missing imported numbers:** Double-check your API credentials and DID permissions.
 
 ## Final Note
-Adding numbers in Callin.io bridges the gap between your AI automation and real-world communication. Once your provider is connected and your numbers are active, your agents can handle inbound and outbound calls as naturally as a human team — logging data, generating transcripts, and following workflows automatically.
-
-Whether you rely on Twilio’s simplicity, Telnyx’s control, or your own BYOC setup, the flexibility of Callin.io’s telephony integration ensures your business stays connected, scalable, and intelligent.
+Phone numbers are the link between your AI agents and your real customers.  
+Whether you choose Twilio for simplicity, Telnyx for control, or your own SIP trunk for full customization, once configured, your agents can call, answer, and automate conversations like a real team — only faster, smarter, and more efficient.
