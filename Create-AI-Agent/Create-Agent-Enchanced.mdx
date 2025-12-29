@@ -1,5 +1,5 @@
 ---
-title: "Create Enhanced Agent"
+title: "Create Agent"
 description: "Complete guide to configure an advanced agent with LLM, calendar and transfers."
 ---
 
@@ -10,6 +10,7 @@ An Enhanced agent handles complex flows: nuanced intent, long instructions, accu
 If you only need greetings, simple FAQs, or basic data capture at low cost, a Basic agent is enough.
 
 External actions (set up separately, then link):
+
 - [Scheduling: Google Calendar](https://app.callin.io/actions/GoogleCalendar)
 - [Transfers: Call Transfer](https://app.callin.io/call-transfer)
 
@@ -23,13 +24,13 @@ Name by function + language to avoid confusion later.
 
 In **Agent → Call Direction**, pick what mirrors your operation:
 
-**Inbound:** the agent receives calls. Use for help desks, reception, service lines.  
+**Inbound:** the agent receives calls. Use for help desks, reception, service lines.\
 Tip: enable **Transfer Call** to escalate when needed.
 
-**Outbound:** the agent initiates calls. Use for reminders, confirmations, surveys, collections.  
+**Outbound:** the agent initiates calls. Use for reminders, confirmations, surveys, collections.\
 Tip: keep scripts short and set allowed hours.
 
-**Both Directions:** one agent for inbound and outbound.  
+**Both Directions:** one agent for inbound and outbound.\
 Use when tone and logic are shared; it requires more testing to avoid mixed goals.
 
 Also set:
@@ -38,6 +39,7 @@ Also set:
 - **Greeting Message:** first thing the caller hears.
 
 **Greeting (EN):**
+
 ```
 Hi, this is {{agent_name}}. How can I help you today? This call may be recorded for quality purposes.
 ```
@@ -105,6 +107,7 @@ In **Call Action**, toggle **Schedule Appointment on Google Calendar** and selec
 In the prompt, explain how to confirm time and timezone.
 
 **Booking line (EN):**
+
 ```
 I can offer Tuesday 10:30 or Wednesday 12:00 (your local time). Which works?
 ```
@@ -118,6 +121,7 @@ In **Call Action**, toggle **Transfer Call** and pick that configuration.
 Add a handoff line to the prompt.
 
 **Handoff (EN):**
+
 ```
 I’ll connect you with the right specialist now. Please stay on the line.
 ```
@@ -174,25 +178,25 @@ Click **Save** and place a real verification call. Check **Call History** for au
 
 ## Common Errors & Fixes
 
-**“This calendar does not have an appointment action.”**  
+**“This calendar does not have an appointment action.”**\
 The calendar lacks Appointments. Go to [Google Calendar](https://app.callin.io/actions/GoogleCalendar), enable it, or pick another calendar with the action active.
 
-**Banner: “Select a Google Calendar…”**  
+**Banner: “Select a Google Calendar…”**\
 In Call Action, open the gear on Schedule Appointment and select the correct calendar.
 
-**Banner: “Select a Transfer Configuration…”**  
+**Banner: “Select a Transfer Configuration…”**\
 Create and save a profile in [Call Transfer](https://app.callin.io/call-transfer), then select it in the agent.
 
-**Wrong-hour bookings**  
+**Wrong-hour bookings**\
 Align the agent Timezone with the calendar and confirm the caller’s local time.
 
-**Language mixing**  
+**Language mixing**\
 Keep the Prompt in one language; set Language/Secondary Language properly and pick a matching Voice.
 
-**Entities missing**  
+**Entities missing**\
 Define clear types (string/boolean/ISO), mention them in the prompt, lower Temperature, or try a more capable LLM.
 
-**Webhook enabled without URL (“Webhook Url is required…”)**  
+**Webhook enabled without URL (“Webhook Url is required…”)**\
 Add a valid endpoint before enabling Post-Call Webhook or disable it while testing.
 
 ## Motivating Close
