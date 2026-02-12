@@ -1,81 +1,81 @@
 ---
-title: "How to Connect SendGrid"
-description: "Set up SendGrid so your app can send reliable, professional emails."
+title: "Cómo conectar SendGrid"
+description: "Configura SendGrid para que tu app pueda enviar emails fiables y profesionales."
 ---
 
-## Why SendGrid Matters
-Imagine a user signing up for your app. They expect a confirmation email in seconds. If that email never arrives, their first experience is already broken. The same goes for password resets or notifications: without a trusted email service, your app feels unreliable.  
+## Por qué SendGrid es importante
+Imagina que un usuario se registra en tu app. Espera un email de confirmación en segundos. Si ese email nunca llega, su primera experiencia ya está rota. Lo mismo ocurre con restablecimientos de contraseña o notificaciones: sin un servicio de correo confiable, tu app parece poco fiable.  
 
-That’s exactly what SendGrid solves. It’s a professional email delivery platform that ensures your messages reach the inbox instead of spam. By connecting SendGrid, you’re giving your app a verified “mailman” who always delivers on time.  
+Eso es exactamente lo que resuelve SendGrid. Es una plataforma profesional de entrega de emails que ayuda a que tus mensajes lleguen a la bandeja de entrada y no a spam. Al conectar SendGrid, le das a tu app un “cartero” verificado que entrega a tiempo.  
 
-To make it work, your app needs two things:  
-- **An API Key** → this is the secure way for your app to log into SendGrid automatically.  
-- **A sender email** → this is the “From” address users will see in their inbox, and it needs to look professional.  
+Para que funcione, tu app necesita dos cosas:  
+- **Una API Key** → es la forma segura de que tu app inicie sesión en SendGrid automáticamente.  
+- **Un sender email** → es la dirección “From” que verán los usuarios y debe verse profesional.  
 
-## Step 1: Open the CMS and Go to SendGrid
-Start by logging into your CMS. On the left-hand side, click **Integrations**, and then choose **SendGrid**. You’ll see two fields: `api_key` and `sender_email`.  
+## Paso 1: Abre el CMS y entra en SendGrid
+Empieza iniciando sesión en tu CMS. En el menú de la izquierda, haz clic en **Integrations** y luego elige **SendGrid**. Verás dos campos: `api_key` y `sender_email`.  
 
-Think of these two like a lock and a name tag:  
-- The **API Key** is the lock-and-key system that gives your app access to SendGrid.  
-- The **Sender Email** is the name tag telling your users “this email comes from us.”  
+Piensa en estos dos como un candado y una etiqueta:  
+- La **API Key** es el sistema de acceso que permite a tu app usar SendGrid.  
+- El **Sender Email** es la etiqueta que dice a tus usuarios “este email viene de nosotros.”  
 
-Without both, your app can’t send emails.  
+Sin ambos, tu app no puede enviar emails.  
 
-## Step 2: Create Your API Key in SendGrid
-Now let’s get the key that will unlock SendGrid for your app.  
+## Paso 2: Crea tu API Key en SendGrid
+Ahora vamos a obtener la clave que “abre” SendGrid para tu app.  
 
-1. Log into [https://app.sendgrid.com](https://app.sendgrid.com).  
-2. Go to **Settings > API Keys**.  
-3. Click **Create API Key**. Name it something clear like “App Integration”.  
-4. Choose permissions. If you’re unsure, select **Full Access**, but at minimum you need **Mail Send**.  
-5. Copy the API Key.  
+1. Inicia sesión en [https://app.sendgrid.com](https://app.sendgrid.com).  
+2. Ve a **Settings > API Keys**.  
+3. Haz clic en **Create API Key**. Ponle un nombre claro como “App Integration”.  
+4. Elige permisos. Si no estás seguro, selecciona **Full Access**, pero como mínimo necesitas **Mail Send**.  
+5. Copia la API Key.  
 
-It will look something like this:  
+Tendrá un aspecto similar a:  
 `SG.YOUR_API_KEY_EXAMPLE`  
 
-This key is required every time your app sends an email. If the key is wrong, every single email will fail. Treat it like a password: safe and secret.  
+Esta clave es necesaria cada vez que tu app envía un email. Si la clave es incorrecta, fallarán todos los envíos. Trátala como una contraseña: segura y secreta.  
 
-## Step 3: Add the API Key to the CMS
-Back in your CMS, under SendGrid:  
-1. Click **Add API Key**.  
-2. Leave **Key Name** as `api_key` (do not change it).  
-3. Paste your SendGrid key into **Key Value**.  
-4. Add a description like “Main SendGrid Key”.  
-5. Mark it as **Active** and click **Save Key**.  
+## Paso 3: Añade la API Key al CMS
+De vuelta en tu CMS, dentro de SendGrid:  
+1. Haz clic en **Add API Key**.  
+2. Deja **Key Name** como `api_key` (no lo cambies).  
+3. Pega tu clave de SendGrid en **Key Value**.  
+4. Añade una descripción como “Main SendGrid Key”.  
+5. Márcalo como **Active** y haz clic en **Save Key**.  
 
-Now your app knows how to log in to SendGrid.  
+Ahora tu app ya sabe cómo autenticarse en SendGrid.  
 
-## Step 4: Add Your Sender Email
-The next question is: “When my app sends an email, who does it look like it’s from?”  
+## Paso 4: Añade tu sender email
+La siguiente pregunta es: “Cuando mi app envíe un email, ¿desde qué dirección aparecerá?”  
 
-This is where you set the `sender_email`. It should be professional and aligned with your brand. For example:  
-- `support@yourcompany.com`  
-- `notifications@yourcompany.com`  
+Aquí es donde configuras `sender_email`. Debe ser profesional y alineado con tu marca. Por ejemplo:  
+- `support@tuempresa.com`  
+- `notifications@tuempresa.com`  
 
-Avoid using personal Gmail or Outlook addresses, as they look unprofessional and often get flagged as spam.  
+Evita usar direcciones personales de Gmail u Outlook, porque se ven poco profesionales y suelen marcarse como spam.  
 
-Back in the CMS, click **Add API Key** again and fill it like this:  
-- Key Name: `sender_email` (leave it as is).  
-- Key Value: your chosen email address.  
-- Description: e.g. “Support Email Address”.  
-- Mark as Active and save.  
+En el CMS, haz clic en **Add API Key** otra vez y rellénalo así:  
+- Key Name: `sender_email` (déjalo tal cual).  
+- Key Value: tu dirección de email elegida.  
+- Description: por ejemplo “Support Email Address”.  
+- Márcalo como Active y guarda.  
 
-Important: SendGrid will only send emails from domains you’ve verified. That means if you add `support@yourcompany.com`, you must authenticate `yourcompany.com` inside SendGrid first. Otherwise, emails might go straight to spam.  
+Importante: SendGrid solo enviará emails desde dominios que hayas verificado. Eso significa que si pones `support@tuempresa.com`, primero debes autenticar `tuempresa.com` dentro de SendGrid. De lo contrario, los emails pueden terminar en spam.  
 
-## Step 5: Test Your Setup
-Do not just trust the settings — test them.  
+## Paso 5: Prueba la configuración
+No te fíes solo de la configuración — pruébala.  
 
-Try signing up with a new test account in your app or requesting a password reset. Within a few seconds, you should see the email in your inbox.  
+Intenta registrarte con una cuenta de prueba en tu app o solicita un restablecimiento de contraseña. En pocos segundos deberías ver el email en tu bandeja de entrada.  
 
-If it doesn’t show up, check spam first, then confirm your sender domain is verified in SendGrid.  
+Si no aparece, revisa primero spam y luego confirma que el dominio del remitente esté verificado en SendGrid.  
 
-## Mistakes People Often Make
-- Leaving keys inactive: if the toggle isn’t marked Active, your app won’t try sending.  
-- Changing key names: the system only recognizes `api_key` and `sender_email`.  
-- Using unverified domains: always authenticate your sender domain in SendGrid.  
-- Copying the wrong key: SendGrid only shows the full API Key once. If you lose it, you must generate a new one.  
+## Errores comunes
+- Dejar claves inactivas: si no está marcado como Active, tu app no intentará enviar.  
+- Cambiar nombres de clave: el sistema solo reconoce `api_key` y `sender_email`.  
+- Usar dominios sin verificar: autentica siempre tu dominio remitente en SendGrid.  
+- Copiar la clave equivocada: SendGrid solo muestra la API Key completa una vez. Si la pierdes, tendrás que generar una nueva.  
 
-## Your App, Ready to Send Emails
-With SendGrid connected, your users will always get their confirmations, resets, and updates right on time. No manual sending, no guessing if it landed in spam — just smooth, reliable communication.  
+## Tu app lista para enviar emails
+Con SendGrid conectado, tus usuarios recibirán confirmaciones, restablecimientos y actualizaciones a tiempo. Sin envíos manuales, sin dudas de si cayó en spam: comunicación fiable y fluida.  
 
-Once this is in place, you’ve removed one of the biggest frustrations for new users: “I signed up but never got the email.”
+Cuando esto esté listo, habrás eliminado una de las mayores frustraciones para usuarios nuevos: “Me registré, pero nunca me llegó el email.”
