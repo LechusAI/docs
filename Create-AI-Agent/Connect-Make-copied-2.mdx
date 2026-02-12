@@ -1,90 +1,91 @@
 ---
-title: "Connect Make"
-description: "Integrate Callin.io with Make and build visual automations using your API Key."
+title: "Conectar Make"
+description: "Integra Callin.io con Make y crea automatizaciones visuales usando tu API Key."
 ---
 
-## Before You Begin
+## Antes de empezar
 
-Make (formerly Integromat) is a visual automation platform that lets you connect Callin.io with thousands of applications and design workflows without writing code.  
-You can build automation “scenarios” by linking modules that perform specific actions — each representing a step in your process.
+Make (antes Integromat) es una plataforma de automatización visual que te permite conectar Callin.io con miles de aplicaciones y diseñar flujos de trabajo sin escribir código.  
+Puedes crear “scenarios” de automatización enlazando módulos que realizan acciones específicas — cada uno representa un paso dentro de tu proceso.
 
-With this integration, you can:
+Con esta integración, puedes:
 
-- Automatically receive call transcriptions.  
-- Trigger outbound calls from your CRM or web forms.  
-- Save call data in spreadsheets or databases.  
-- Notify your team when a new call is received.
+- Recibir transcripciones de llamadas automáticamente.  
+- Disparar llamadas salientes desde tu CRM o formularios web.  
+- Guardar datos de llamadas en hojas de cálculo o bases de datos.  
+- Notificar a tu equipo cuando se recibe una nueva llamada.
 
-## Step 1. Access the Integrations Panel in Callin.io
+## Paso 1. Accede al panel de integraciones en Callin.io
 
-Log in to your [Callin.io account](https://app.callin.io).  
-From the left sidebar, open [Actions](https://app.callin.io/actions).
+Inicia sesión en tu [cuenta de Callin.io](https://app.callin.io).  
+Desde la barra lateral izquierda, abre [Actions](https://app.callin.io/actions).
 
-Under **All Integrations**, find **Make.com** and click **Connect**.  
-A new window will open to take you to your Make account.
+En **All Integrations**, busca **Make.com** y haz clic en **Connect**.  
+Se abrirá una nueva ventana para llevarte a tu cuenta de Make.
 
-## Step 2. Create or Log In to Your Make Account
+## Paso 2. Crea o inicia sesión en tu cuenta de Make
 
-Go to [Make.com](https://www.make.com) and log in, or create a free account.  
-Once inside, click **Create a new scenario** to start building your automation.
+Ve a [Make.com](https://www.make.com) e inicia sesión, o crea una cuenta gratis.  
+Una vez dentro, haz clic en **Create a new scenario** para empezar a construir tu automatización.
 
-## Step 3. Get Your API Key from Callin.io
+## Paso 3. Obtén tu API Key en Callin.io
 
-Make needs your API Key to authenticate your Callin.io account.
+Make necesita tu API Key para autenticar tu cuenta de Callin.io.
 
-In Callin.io, open your [profile](https://app.callin.io/profile?subSection=api).  
-Select **API Keys** to view your key.
+En Callin.io, abre tu [perfil](https://app.callin.io/profile?subSection=api).  
+Selecciona **API Keys** para ver tu clave.
 
-Copy your API Key.  
-If you don’t have one, click **Regenerate Key** to create a new one.  
-Keep this key secure. If it’s compromised, regenerate it immediately.
+Copia tu API Key.  
+Si no tienes una, haz clic en **Regenerate Key** para crear una nueva.  
+Mantén esta clave segura. Si se ve comprometida, regénérala inmediatamente.
 
-## Step 4. Connect Callin.io to Make
+## Paso 4. Conecta Callin.io con Make
 
-In your Make scenario, click the **+** icon and search for “Callin.io”.  
-Select the desired module, such as **Get Transcription** or **Make Call**.
+En tu escenario de Make, haz clic en el icono **+** y busca “Callin.io”.  
+Selecciona el módulo que quieras, como **Get Transcription** o **Make Call**.
 
-When prompted, click **Add** to connect a new account.  
-Paste your API Key in the authentication window.  
-Click **Save**.
+Cuando se te solicite, haz clic en **Add** para conectar una cuenta nueva.  
+Pega tu API Key en la ventana de autenticación.  
+Haz clic en **Save**.
 
-Your Callin.io account will now appear as connected.
+Tu cuenta de Callin.io aparecerá ahora como conectada.
 
-## Step 5. Build Your First Scenario
+## Paso 5. Crea tu primer escenario
 
-Let’s create a simple example: saving every call transcription in Google Sheets.
+Vamos a crear un ejemplo simple: guardar cada transcripción de llamada en Google Sheets.
 
-1. Choose **Callin.io – Get Transcription** as the trigger module.  
-2. Add a second module: **Google Sheets – Add a Row**.  
-3. Link both modules together.  
-4. Select the sheet and map Callin.io fields (such as Caller, Date, Transcription) to your spreadsheet columns.  
-5. Save and run the scenario.
+1. Elige **Callin.io – Get Transcription** como módulo trigger.  
+2. Añade un segundo módulo: **Google Sheets – Add a Row**.  
+3. Enlaza ambos módulos.  
+4. Selecciona la hoja y mapea los campos de Callin.io (como Caller, Date, Transcription) a las columnas de tu spreadsheet.  
+5. Guarda y ejecuta el escenario.
 
-From now on, every completed call will automatically send its transcription to your sheet.
+A partir de ahora, cada llamada completada enviará automáticamente su transcripción a tu hoja.
 
-## Advanced Configuration
+## Configuración avanzada
 
-With Make, you can combine multiple actions and conditions to create powerful automations:
+Con Make, puedes combinar múltiples acciones y condiciones para crear automatizaciones potentes:
 
-- Automatically initiate calls when new leads are created.  
-- Send Slack notifications when specific criteria are met.  
-- Store transcriptions and recordings in Google Drive or another cloud service.
+- Iniciar llamadas automáticamente cuando se crean nuevos leads.  
+- Enviar notificaciones a Slack cuando se cumplan criterios específicos.  
+- Guardar transcripciones y grabaciones en Google Drive u otro servicio cloud.
 
-All your Callin.io modules are available within the Make interface for maximum flexibility.  
-You can also manage integrations directly from [Actions → Make](https://app.callin.io/actions) in your Callin.io dashboard.
+Todos tus módulos de Callin.io están disponibles dentro de Make para máxima flexibilidad.  
+También puedes gestionar integraciones directamente desde [Actions → Make](https://app.callin.io/actions) en tu panel de Callin.io.
 
-## Common Issues and Solutions
+## Problemas comunes y soluciones
 
-**Connection fails when entering the API Key.**  
-Make sure there are no extra spaces when pasting. If the issue persists, regenerate the key from the [API Keys section](https://app.callin.io/profile?subSection=api).
+**La conexión falla al introducir la API Key.**  
+Asegúrate de que no haya espacios extra al pegarla. Si el problema continúa, regenera la clave desde la [sección de API Keys](https://app.callin.io/profile?subSection=api).
 
-**Scenario doesn’t receive data.**  
-Check that the selected event in Callin.io (e.g., Get Transcription) is active.
+**El escenario no recibe datos.**  
+Comprueba que el evento seleccionado en Callin.io (por ejemplo, Get Transcription) esté activo.
 
-**Scenario doesn’t run automatically.**  
-Ensure it’s saved and activated. You can test it manually using **Run once**.
+**El escenario no se ejecuta automáticamente.**  
+Asegúrate de que esté guardado y activado. Puedes probarlo manualmente usando **Run once**.
 
-## Final Note
+## Nota final
 
-Integrating Callin.io with Make allows you to design custom workflows visually and automate communication tasks effortlessly.  
-Once your first scenario is up and running, you’ll find it easy to expand and connect Callin.io to any other system you use daily.
+Integrar Callin.io con Make te permite diseñar flujos personalizados de forma visual y automatizar tareas de comunicación sin esfuerzo.  
+Cuando tu primer escenario esté funcionando, te resultará fácil ampliar y conectar Callin.io con cualquier otro sistema que uses a diario.
+
