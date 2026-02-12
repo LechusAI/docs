@@ -1,101 +1,101 @@
 ---
-title: "Transfer To Human"
-description: "Learn how to configure, activate, and manage call transfers within Callin.io to ensure your AI agent connects customers to the right team."
+title: "Transferir a un humano"
+description: "Aprende a configurar, activar y gestionar transferencias de llamadas dentro de Callin.io para que tu agente de IA conecte a los clientes con el equipo adecuado."
 ---
 
-## Overview
+## Resumen
 
-Call transfers allow your AI assistant to seamlessly redirect incoming calls to the correct department, team, or external number — without hanging up or causing delays. This feature ensures a professional customer experience and helps your organization manage calls efficiently.
+Las transferencias de llamadas permiten que tu asistente de IA redirija llamadas entrantes sin interrupciones al departamento, equipo o número externo correcto — sin colgar ni provocar retrasos. Esta función garantiza una experiencia profesional para el cliente y ayuda a tu organización a gestionar las llamadas de forma eficiente.
 
-You’ll complete this setup in two main steps: creating a **transfer configuration** and linking it to your **AI agent**.
-
----
-
-## Step 1: Create a Transfer Configuration
-
-1. **Open the Call Transfer Page**\
-   In your Callin.io dashboard, open the left-hand menu and select **Call Transfer**.
-   - If you’re setting this up for the first time, you’ll see a message saying **“No Call Transfer Configurations found.”**
-   - Click **\+ Create Configuration** to begin.
-2. **Complete the Basic Information Section**\
-   This section helps identify and organize your transfer rules.
-   - **Title:** The internal name for this configuration (for example, _Sales LATAM_ or _Support Team_).
-   - **Department:** The team or group responsible for handling the transferred calls.
-
-   Both fields are required. If left blank, a red alert (e.g., _“Title is required!”_) will appear to prompt completion.
-3. **Add Transfer Details**\
-   Define where the call should be redirected and what happens during the transfer process.
-   - Click **\+ Add** and complete these fields:
-     - **Agent Name:** This is pre-filled by default, identifying the current AI agent.
-     - **Transfer Phone Number:** The phone number to which calls will be transferred (for example, `+44 700123456`).
-     - **Transfer Message:** The short message your AI agent says before transferring the call (for example, _“Let me connect you with our sales department, one moment please.”_).
-
-   Click **Save** once you’ve filled in all fields. The configuration will now appear in your **Call Transfer** list.
+Completarás esta configuración en dos pasos principales: crear una **configuración de transferencia** y vincularla a tu **agente de IA**.
 
 ---
 
-## Step 2: Activate Call Transfer for an AI Agent
+## Paso 1: Crea una configuración de transferencia
 
-Once the configuration is ready, you can activate it for any of your AI agents.
+1. **Abre la página de transferencia de llamadas**\
+   En tu panel de Callin.io, abre el menú lateral izquierdo y selecciona **Call Transfer**.
+   - Si estás configurándolo por primera vez, verás un mensaje que dice **“No Call Transfer Configurations found.”**
+   - Haz clic en **\+ Create Configuration** para empezar.
+2. **Completa la sección de información básica**\
+   Esta sección ayuda a identificar y organizar tus reglas de transferencia.
+   - **Title:** El nombre interno de esta configuración (por ejemplo, _Ventas LATAM_ o _Equipo de soporte_).
+   - **Department:** El equipo o grupo responsable de gestionar las llamadas transferidas.
 
-1. Go to **AI Agents** in the main navigation menu.
-2. Select the agent you want to enable call transfers for.
-3. Open the **Call Action** tab in the agent settings.
-4. Locate the **Transfer Call** option and toggle it on. The toggle will turn blue to indicate activation.
-5. Click the ⚙️ **gear icon** next to the toggle. This opens a configuration panel listing all available transfer setups.
-6. Select the configuration you just created (for example, _Sales LATAM_). Once selected, it will appear as **Selected** in green text.
+   Ambos campos son obligatorios. Si se dejan en blanco, aparecerá una alerta roja (por ejemplo, _“Title is required!”_) para solicitar que los completes.
+3. **Añade los detalles de transferencia**\
+   Define a dónde debe redirigirse la llamada y qué ocurre durante el proceso de transferencia.
+   - Haz clic en **\+ Add** y completa estos campos:
+     - **Agent Name:** Se completa automáticamente por defecto, identificando al agente de IA actual.
+     - **Transfer Phone Number:** El número de teléfono al que se transferirán las llamadas (por ejemplo, `+44 700123456`).
+     - **Transfer Message:** El mensaje breve que tu agente de IA dice antes de transferir la llamada (por ejemplo, _“Déjame conectarte con nuestro departamento de ventas, un momento por favor.”_).
 
-This process links the configuration to your agent and prepares it for use in live calls.
-
----
-
-## Step 3: Save and Test the Setup
-
-After assigning the transfer rule, scroll to the lower-right corner of the agent page and click **Save**.
-
-If a message appears saying _“You have unsaved changes,”_ the configuration has not been stored yet — click **Save** again to confirm.
-
-Once saved, your AI agent can now detect when a call should be redirected and perform the transfer automatically in real time.
-
-### Testing Your Configuration
-
-To ensure the setup works as expected:
-
-- Go to your AI agent profile.
-- Use the **Test Call** feature to simulate an incoming call.
-- Trigger a transfer scenario (for example, the customer requests to speak to sales) to verify the correct number and message are used.
+   Haz clic en **Save** cuando hayas rellenado todos los campos. La configuración aparecerá ahora en tu lista de **Call Transfer**.
 
 ---
 
-## Tips & Best Practices
+## Paso 2: Activa la transferencia de llamadas para un agente de IA
 
-- **Create separate configurations for each department.**\
-  Example: _Sales_, _Support_, _Billing_, and _Customer Success_. Assign each to the corresponding AI agent.
-- **Use clear, consistent naming.**\
-  This helps you quickly identify configurations when managing multiple agents.
-- **Keep transfer messages short and professional.**\
-  Example: _“I’ll connect you with our support team now.”_ Avoid long or repetitive phrasing.
-- **Update or delete configurations anytime.**\
-  You can modify them in **Call Transfer**, and changes will take effect once the associated agents are re-saved.
+Cuando la configuración esté lista, puedes activarla para cualquiera de tus agentes de IA.
 
----
+1. Ve a **AI Agents** en el menú principal de navegación.
+2. Selecciona el agente para el que quieres habilitar transferencias.
+3. Abre la pestaña **Call Action** en los ajustes del agente.
+4. Localiza la opción **Transfer Call** y actívala. El interruptor se pondrá azul para indicar que está activada.
+5. Haz clic en el icono ⚙️ **gear** junto al interruptor. Esto abre un panel de configuración con todas las transferencias disponibles.
+6. Selecciona la configuración que acabas de crear (por ejemplo, _Ventas LATAM_). Una vez seleccionada, aparecerá como **Selected** en texto verde.
 
-## Troubleshooting
-
-**Issue:** No gear icon next to Transfer Call\
-**Cause:** No transfer configurations exist yet.\
-**Fix:** Create one first in **Call Transfer**.
-
-**Issue:** Changes not saving\
-**Cause:** Required fields are incomplete or unsaved.\
-**Fix:** Fill all fields and click **Save** again.
-
-**Issue:** Calls not transferring correctly\
-**Cause:** Invalid phone number format or wrong configuration selected.\
-**Fix:** Ensure the phone number includes the international code and that the configuration shows as **Selected**.
+Este proceso vincula la configuración al agente y lo deja listo para usar en llamadas reales.
 
 ---
 
-## Summary
+## Paso 3: Guarda y prueba la configuración
 
-Your AI agents can now route callers directly to the appropriate person or department without interruption. This setup improves efficiency, ensures consistent call handling, and provides a seamless experience for customers.
+Después de asignar la regla de transferencia, desplázate a la esquina inferior derecha de la página del agente y haz clic en **Save**.
+
+Si aparece un mensaje que dice _“You have unsaved changes,”_ la configuración todavía no se ha guardado — vuelve a hacer clic en **Save** para confirmar.
+
+Una vez guardado, tu agente de IA ya puede detectar cuándo debe redirigirse una llamada y realizar la transferencia automáticamente en tiempo real.
+
+### Prueba de tu configuración
+
+Para asegurarte de que todo funciona como esperas:
+
+- Ve al perfil de tu agente de IA.
+- Usa la función **Test Call** para simular una llamada entrante.
+- Dispara un escenario de transferencia (por ejemplo, el cliente pide hablar con ventas) para verificar que se usa el número y el mensaje correctos.
+
+---
+
+## Consejos y buenas prácticas
+
+- **Crea configuraciones separadas para cada departamento.**\
+  Ejemplo: _Ventas_, _Soporte_, _Facturación_ y _Customer Success_. Asigna cada una al agente de IA correspondiente.
+- **Usa nombres claros y consistentes.**\
+  Esto te ayuda a identificar rápidamente configuraciones cuando gestionas varios agentes.
+- **Mantén los mensajes de transferencia cortos y profesionales.**\
+  Ejemplo: _“Te conecto ahora con nuestro equipo de soporte.”_ Evita frases largas o repetitivas.
+- **Actualiza o elimina configuraciones en cualquier momento.**\
+  Puedes modificarlas en **Call Transfer**, y los cambios se aplicarán cuando vuelvas a guardar los agentes asociados.
+
+---
+
+## Solución de problemas
+
+**Problema:** No aparece el icono de engranaje junto a Transfer Call\
+**Causa:** Todavía no existen configuraciones de transferencia.\
+**Solución:** Crea una primero en **Call Transfer**.
+
+**Problema:** Los cambios no se guardan\
+**Causa:** Faltan campos obligatorios o los cambios no se han guardado.\
+**Solución:** Completa todos los campos y haz clic en **Save** otra vez.
+
+**Problema:** Las llamadas no se transfieren correctamente\
+**Causa:** Formato de número inválido o se seleccionó la configuración equivocada.\
+**Solución:** Asegúrate de que el número incluya el prefijo internacional y de que la configuración aparezca como **Selected**.
+
+---
+
+## Resumen
+
+Tus agentes de IA ya pueden enrutar a los llamantes directamente a la persona o departamento adecuado sin interrupciones. Esta configuración mejora la eficiencia, garantiza un manejo consistente de llamadas y ofrece una experiencia fluida para los clientes.
