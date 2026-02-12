@@ -1,148 +1,150 @@
 ---
-title: "Crear contactos"
-description: "Añade, importa y organiza contactos con mapeo de columnas, validación y acciones masivas."
+title: "Create Contacts"
+description: "Add, import, and organize contacts with column mapping, validation, and bulk actions."
 ---
 
-## Resumen
-La sección **Contacts** en Callin.io es donde almacenas, gestionas y organizas a todas las personas a las que tus agentes de IA pueden contactar — incluyendo clientes, leads o incluso usuarios internos de prueba. Cada registro en esta sección actúa como un punto de referencia para futuras interacciones, permitiendo que tus agentes realicen llamadas personalizadas, automatizadas o directas usando datos dinámicos.
+## Overview
+The **Contacts** section in Callin.io is where you store, manage, and organize all the people your AI agents can reach — including clients, leads, or even internal test users. Every entry in this section acts as a reference point for future interactions, enabling your agents to make personalized, automated, or direct calls using dynamic data.
 
-Los contactos cumplen tres funciones esenciales en el ecosistema de Callin.io:
+Contacts play three essential roles in the Callin.io ecosystem:
 
-- **Llamadas directas:** Te permite seleccionar a una o varias personas e iniciar llamadas inmediatamente usando cualquier agente de IA.
-- **Campañas:** Los contactos sirven como datos de origen para flujos de outreach automatizados, permitiendo comunicación masiva sin marcar manualmente.
-- **Variables dinámicas:** Información como nombre, email u hora de cita puede insertarse dinámicamente en prompts para personalizar conversaciones.
+- **Direct Calls:** Allows you to select one or multiple people and initiate calls immediately using any AI agent.
+- **Campaigns:** Contacts serve as the source data for automated outreach workflows, enabling mass communication without manual dialing.
+- **Dynamic Variables:** Information such as name, email, or appointment time can be inserted dynamically into prompts to personalize conversations.
 
-Ejemplo:Hola {{name}}, llamo para confirmar tu cita de mañana a las {{hour}}.
+Example:
 
+```
+Hi {{name}}, I’m calling to confirm your appointment tomorrow at {{hour}}.
+```
 
-Cuando el agente de IA se ejecute, `{{name}}` y `{{hour}}` se completarán automáticamente con la información específica de cada contacto. Este mecanismo permite a Callin.io ofrecer conversaciones personalizadas y naturales a escala.
+When the AI agent runs, `{{name}}` and `{{hour}}` will automatically populate with each contact’s specific information. This mechanism allows Callin.io to deliver customized and natural-sounding conversations at scale.
 
-## Antes de empezar
-Antes de crear o importar contactos, es importante entender cómo se integran con tu sistema:
+## Before You Start
+Before creating or importing contacts, it’s important to understand how they integrate with your overall system:
 
-- Los contactos se almacenan de forma centralizada y se usan en varias herramientas como [Telephony → Contacts](https://app.callin.io/contacts) y [Campaigns](https://app.callin.io/campaigns).
-- Cada registro de contacto contiene al menos un campo obligatorio — el **Phone Number** — que actúa como identificador único para las llamadas.
-- Puedes enriquecer los contactos con campos opcionales como **Name** y **Email**, que pasan a ser utilizables como variables en prompts.
-- Los datos importados se validan automáticamente para evitar duplicados y errores de formato.
+- Contacts are stored centrally and used across multiple tools like [Telephony → Contacts](https://app.callin.io/contacts) and [Campaigns](https://app.callin.io/campaigns).
+- Each contact record contains at least one required field — the **Phone Number** — which acts as the unique identifier for calls.
+- You can enrich contacts with optional fields like **Name** and **Email**, which become usable as variables in prompts.
+- Imported contact data is validated automatically to prevent duplicates and formatting errors.
 
-Mantener una lista de contactos limpia y estructurada garantiza una ejecución de campañas más fluida, mejores analíticas y un rendimiento más natural del agente.
+Maintaining a clean, structured contact list ensures smoother campaign execution, better analytics, and more natural agent performance.
 
-## Paso
+## Steps
 
-### 1. Abre la sección de contactos
-Para empezar a gestionar tus contactos, ve a [Telephony → Contacts](https://app.callin.io/contacts) desde la barra lateral izquierda.
+### 1. Open the Contacts Section
+To start managing your contacts, go to [Telephony → Contacts](https://app.callin.io/contacts) from the left sidebar.
 
-Encontrarás una tabla dinámica que lista tus contactos existentes con columnas para:
-- **Name** — el nombre completo de la persona.
-- **Phone Number** — debe incluir el prefijo internacional en formato internacional.
-- **Email** — opcional, pero útil para verificación o automatizaciones de seguimiento.
+You’ll find a dynamic table that lists your existing contacts with columns for:
+- **Name** — the person’s full name.
+- **Phone Number** — must include the country code in international format.
+- **Email** — optional, but useful for verification or follow-up automation.
 
-Desde esta vista, puedes:
-- Añadir contactos nuevos de forma individual.
-- Subir una lista de contactos usando un archivo CSV.
-- Editar detalles de contactos existentes.
-- Eliminar contactos seleccionados.
-- Exportar tu lista de contactos para backup o migración de datos.
+From this view, you can:
+- Add new contacts individually.
+- Upload a list of contacts using a CSV file.
+- Edit existing contact details.
+- Delete selected contacts.
+- Export your contact list for backup or data migration.
 
-La interfaz soporta tanto gestión individual como acciones masivas, permitiéndote manejar grandes bases de datos de forma eficiente.
+The interface supports both single-entry management and bulk actions, allowing you to handle large databases efficiently.
 
-### 2. Añade un contacto manualmente
-La creación manual es útil cuando estás probando o añadiendo un número pequeño de contactos.
+### 2. Add a Contact Manually
+Manual creation is useful when testing or adding a small number of contacts.
 
-1. Haz clic en **+ Add Contact**.
-2. Rellena los datos requeridos:
-   - **Name:** El nombre de la persona (por ejemplo, *Laura Perez*).
-   - **Phone Number:** Obligatorio. Usa formato internacional completo (por ejemplo, *+15551234567*).
-   - **Email:** Opcional pero recomendado para engagement multicanal.
-3. Haz clic en **Save Contact** para guardarlo.
+1. Click **+ Add Contact**.
+2. Fill in the required details:
+   - **Name:** The person’s name (e.g., *Laura Perez*).
+   - **Phone Number:** Required. Use full international format (e.g., *+15551234567*).
+   - **Email:** Optional but recommended for multi-channel engagement.
+3. Click **Save Contact** to store it.
 
-El contacto recién añadido aparecerá inmediatamente en tu tabla. Ya puedes asignarlo a un agente o incluirlo en una campaña.
+The newly added contact will appear immediately in your contact table. You can now assign it to an agent or include it in a campaign.
 
-### 3. Sube contactos con un archivo CSV
-Si necesitas importar varios contactos a la vez, puedes subirlos mediante un archivo CSV con el formato correcto. Este método es ideal para datasets grandes como listas de leads, exportaciones de CRM o registros de clientes existentes.
+### 3. Upload Contacts With a CSV File
+If you need to import multiple contacts at once, you can upload them using a properly formatted CSV file. This method is ideal for large datasets such as lead lists, CRM exports, or existing client records.
 
-Sigue estos pasos:
+Follow these steps:
 
-1. Haz clic en **Upload CSV**.
-2. Elige tu archivo desde tu dispositivo.
-3. Mapea las columnas del CSV con los campos correspondientes de Callin.io:
-   - **Phone (required)** — se usa como identificador único.
-   - **Name** — permite que los agentes saluden a los clientes por su nombre.
-   - **Email (optional)** — útil para mensajes personalizados o seguimientos.
-4. Si tus números no incluyen el signo “+” o el prefijo internacional, selecciona un **default country** en el desplegable.
-5. Haz clic en **Continue** para previsualizar el mapeo y verificar que los datos se alinean con el formato de Callin.io.
-6. Una vez validado, haz clic en **Confirm** para finalizar la importación.
+1. Click **Upload CSV**.
+2. Choose your file from your local device.
+3. Map your CSV columns to the corresponding Callin.io fields:
+   - **Phone (required)** — used as the unique identifier.
+   - **Name** — ensures agents can greet customers by name.
+   - **Email (optional)** — useful for personalized messages or follow-ups.
+4. If your numbers don’t include the “+” sign or country code, select a **default country** from the dropdown.
+5. Click **Continue** to preview your mapping and verify that the data aligns with Callin.io’s format.
+6. Once validated, click **Confirm** to finalize the import.
 
-> Tip: Puedes descargar un **sample CSV template** desde la pantalla de subida. Esto ayuda a asegurar que los encabezados y el formato coinciden con los requisitos de Callin.io.
+> Tip: You can download a **sample CSV template** from the upload screen. This helps ensure your file headers and formatting match Callin.io’s requirements.
 
-**Comportamiento de validación e importación:**
-- El sistema comprueba automáticamente duplicados según el número de teléfono.
-- Los registros sin un número válido se omiten.
-- Los errores se muestran con números de fila específicos para que puedas corregirlos y volver a subir el archivo fácilmente.
+**Validation and Import Behavior:**
+- The system automatically checks for duplicates based on phone number.
+- Records missing a valid phone number are skipped.
+- Errors are displayed with specific row numbers so you can fix and reupload easily.
 
-Esta validación asegura que tus datos de contactos se mantengan limpios y consistentes.
+This validation ensures your contact data remains clean and consistent.
 
-### 4. Usa contactos con agentes
-Tu lista de contactos está vinculada directamente a tus agentes de IA, lo que permite outreach rápido y pruebas en tiempo real.
+### 4. Use Contacts With Agents
+Your contact list is directly linked to your AI agents, enabling fast outreach and real-time testing.
 
-En la parte superior de la página de contactos encontrarás un desplegable **Select Agent**. Sigue estos pasos:
+At the top of the Contacts page, you’ll find a **Select Agent** dropdown. Follow these steps:
 
-1. Abre **Select Agent** y elige qué agente de IA debe hacer las llamadas.
-2. Selecciona uno o más contactos usando las casillas junto a sus nombres.
-3. Haz clic en **Call Selected** para iniciar las llamadas a esos contactos.
+1. Open **Select Agent** and choose which AI agent should make the calls.
+2. Select one or more contacts using the checkboxes beside their names.
+3. Click **Call Selected** to start calling those contacts.
 
-El agente de IA seleccionado empezará a llamar automáticamente a cada contacto según su prompt asignado, comportamiento y configuración de voz. Esto es especialmente útil para:
+The selected AI agent will automatically begin calling each contact according to its assigned prompt, behavior, and voice configuration. This is especially useful for:
 
-- Hacer llamadas rápidas de prueba para validar guiones.
-- Hacer seguimiento manual a leads o clientes.
-- Realizar outreach segmentado sin crear una campaña completa.
+- Running quick test calls to validate scripts.
+- Following up with leads or customers manually.
+- Conducting targeted outreach without creating an entire campaign.
 
-También puedes realizar **borrados masivos** usando la opción **Delete Selected** para eliminar contactos desactualizados o inválidos. El sistema pedirá confirmación antes de borrar cualquier dato.
+You can also perform **bulk deletions** using the **Delete Selected** option to remove outdated or invalid contacts from your list. The system will ask for confirmation before deleting any data.
 
-### 5. Usa contactos en campañas
-Cada contacto que creas o importas en Callin.io está disponible inmediatamente en [Telephony → Campaigns](https://app.callin.io/campaigns). Puedes agrupar y segmentar contactos según tus necesidades, asignándolos a campañas o agentes específicos.
+### 5. Use Contacts in Campaigns
+Every contact you create or import in Callin.io is immediately available in [Telephony → Campaigns](https://app.callin.io/campaigns). You can group and segment contacts based on your needs, assigning them to specific campaigns or AI agents.
 
-La integración con campañas te permite:
+Campaign integration allows you to:
 
-- Construir flujos de llamadas automatizados usando tu base de contactos.
-- Segmentar listas por **agent**, **location** o **purpose**.
-- Automatizar secuencias de outreach como recordatorios, solicitudes de feedback o calificación de leads.
-- Medir métricas de engagement — por ejemplo, cuántos contactos contestaron o programaron una cita.
+- Build automated call flows using your contact database.
+- Segment lists by **agent**, **location**, or **purpose**.
+- Automate outreach sequences such as reminders, feedback requests, or lead qualification.
+- Track engagement metrics — for example, how many contacts answered or scheduled an appointment.
 
-Cuando lanzas una campaña, Callin.io referencia dinámicamente tus datos de contacto. Esto significa que cualquier cambio que hagas en la sección Contacts (como correcciones de nombre o número) se reflejará automáticamente en todas las campañas relacionadas.
+When you launch a campaign, Callin.io dynamically references your contact data. This means any updates you make in the Contacts section (like name or phone number corrections) will automatically reflect in all related campaigns.
 
-## Por qué importa
-Tener tus contactos centralizados en Callin.io crea una única fuente de verdad para todas tus comunicaciones. Esto garantiza que tus agentes de IA siempre tengan datos precisos y actualizados para personalizar cada llamada.
+## Why It Matters
+Having your contacts centralized within Callin.io creates a single source of truth for all your communications. This ensures that your AI agents always have accurate, up-to-date data to personalize every call.
 
-Ventajas de una buena gestión de contactos:
-- **Organización:** Mantén todos los clientes y leads en una base estructurada.
-- **Automatización:** Lanza campañas sin tener que re-subir datos.
-- **Personalización:** Usa campos dinámicos para que las interacciones suenen humanas y relevantes.
-- **Escalabilidad:** Gestiona miles de registros eficientemente con acciones masivas e importaciones CSV.
-- **Integridad de datos:** La validación integrada evita duplicados o números mal formateados.
+Advantages of proper contact management:
+- **Organization:** Keep all clients and leads in one structured database.
+- **Automation:** Launch campaigns seamlessly without re-uploading contact data.
+- **Personalization:** Use dynamic fields to make interactions sound human and relevant.
+- **Scalability:** Manage thousands of records efficiently through bulk actions and CSV imports.
+- **Data Integrity:** Built-in validation prevents duplicate entries or malformed numbers.
 
-Cuando tu base de contactos está bien mantenida, tus agentes pueden contactar a las personas correctas más rápido, con mayor precisión, y producir resultados medibles de negocio.
+When your contact database is well maintained, your agents can reach the right people faster, perform at higher accuracy, and produce measurable business outcomes.
 
-## Solución de problemas
+## Troubleshooting
 
-### Falta el número de teléfono
-- **Causa:** Cada contacto debe incluir un número válido con prefijo internacional.
-- **Solución:** Revisa tu lista y actualiza entradas incompletas. El sistema las marcará automáticamente durante la importación.
+### Missing Phone Number
+- **Cause:** Each contact must include a valid number with a country code.
+- **Fix:** Review your contact list and update any incomplete entries. The system will flag these automatically during import.
 
-### Falló la subida de CSV
-- **Causa:** El archivo supera los 10 MB o las columnas no coinciden con los encabezados requeridos.
-- **Solución:** Reduce el tamaño del archivo o verifica que las columnas estén correctamente mapeadas (Phone, Name, Email). Guarda el archivo en UTF-8 para evitar errores.
+### CSV Upload Failed
+- **Cause:** File size exceeds 10 MB or columns don’t match required headers.
+- **Fix:** Reduce file size or verify that your columns are correctly mapped (Phone, Name, Email). Save the file in UTF-8 encoding to avoid errors.
 
-### El agente no llama
-- **Causa:** No se seleccionó ningún agente antes de hacer clic en **Call Selected**.
-- **Solución:** Asegúrate de elegir un agente de IA en el desplegable superior antes de iniciar la llamada.
+### Agent Not Calling
+- **Cause:** No agent was selected before clicking **Call Selected**.
+- **Fix:** Ensure you choose an AI agent from the dropdown at the top of the page before initiating a call.
 
-### Contactos duplicados tras importar
-- **Causa:** El mismo número aparece varias veces en tu CSV.
-- **Solución:** Usa la validación de duplicados integrada o limpia tus datos antes de subirlos.
+### Duplicated Contacts After Import
+- **Cause:** The same number appears multiple times in your CSV.
+- **Fix:** Use the built-in duplicate validation feature or clean your data before upload.
 
-## Nota final
-Tu lista de contactos es la base de toda operación dentro de Callin.io. Cuando está configurada correctamente, permite que tus agentes de IA llamen a personas reales, lancen campañas y personalicen cada conversación sin fricción.
+## Final Note
+Your contact list is the foundation of every operation within Callin.io. Once it’s set up correctly, it enables your AI agents to call real people, launch campaigns, and personalize every conversation seamlessly.
 
-Piensa en tus Contacts como el corazón de tu flujo de trabajo con IA — cada interacción, campaña o prompt empieza aquí. Mantener esta sección actualizada, validada y organizada garantiza que tus agentes siempre se comuniquen de forma relevante, profesional y humana.
-
+Think of your Contacts as the heartbeat of your AI workflow — every interaction, campaign, or prompt begins here. Keeping this section updated, validated, and organized ensures your agents always communicate in a way that feels relevant, professional, and human-like.
