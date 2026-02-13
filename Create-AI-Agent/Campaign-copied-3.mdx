@@ -1,127 +1,107 @@
 ---
 title: "Creare campagne"
-description: "Crea campagne, seleziona contatti, assegna agenti e avvia le chiamate passo dopo passo."
+description: "Crea campagne, seleziona i contatti, assegna gli agenti e avvia le chiamate passo dopo passo."
 ---
 
 ## Panoramica
-Le campagne in **Callin.io** ti permettono di automatizzare la comunicazione in uscita su larga scala. Combinano agenti AI, liste di contatti e logica di pianificazione, così i tuoi agenti possono gestire grandi volumi di chiamate in modo naturale ed efficiente.
+Le campagne in **Callin.io** ti permettono di automatizzare la comunicazione in uscita su larga scala. Combinano agenti IA, liste di contatti e logiche di pianificazione, così i tuoi agenti possono gestire grandi volumi di chiamate in modo naturale ed efficiente.
 
 Una campagna è composta da tre elementi chiave:
 
-- **Agente AI** – la voce configurata che esegue le chiamate.
-- **Lista contatti** – presa dalla sezione [Contatti](https://app.callin.io/contacts) o importata tramite CSV.
-- **Piano di esecuzione** – determina quando e come la campagna viene eseguita (avvio immediato o finestra programmata).
+- **Agente IA** – la voce configurata che esegue le chiamate.
+- **Lista contatti** – selezionata dalla sezione [Contatti](https://app.callin.io/contacts) oppure importata tramite CSV.
+- **Piano di esecuzione** – definisce quando e come viene eseguita la campagna (avvio immediato o finestra programmata).
 
-Combinando questi componenti, puoi creare operazioni di outreach personalizzate su larga scala — dalla generazione di lead e promemoria fino a sondaggi e follow-up con i clienti.
+Combinando questi componenti, puoi creare attività di outreach personalizzate e su larga scala: dalla generazione di lead ai promemoria, fino a sondaggi e follow-up con i clienti.
 
 ## Prima di iniziare
-Le campagne dipendono da dati e configurazioni presenti in altre parti del tuo workspace Callin.io:
+Le campagne dipendono da dati e configurazioni presenti in altre aree del tuo workspace Callin.io:
 
-- Assicurati che i tuoi [Contatti](https://app.callin.io/contacts) siano caricati e validati correttamente.
-- Abbi almeno un **agente AI** pronto con un prompt testato e la configurazione voce completata.
-- Verifica il tuo fuso orario e le preferenze di pianificazione per una corretta programmazione della campagna.
+- Assicurati che i tuoi [Contatti](https://app.callin.io/contacts) siano stati caricati correttamente e validati.
+- Avere almeno un **agente IA** pronto, con prompt testato e configurazione vocale verificata.
+- Verifica il tuo fuso orario e le preferenze di pianificazione per garantire orari corretti.
 
-Ogni campagna può chiamare centinaia o migliaia di contatti, ma il successo dipende da dati ben preparati e da flussi di conversazione AI chiari.
+Ogni campagna può chiamare centinaia o migliaia di contatti, ma il successo dipende da dati ben preparati e da flussi conversazionali chiari.
 
 ## Passaggi
 
-### 1. Accedi alle campagne
+### 1. Accedi a Campagne
 Vai su [Campagne](https://app.callin.io/campaigns) nella barra laterale sinistra. Troverai due schede principali:
 
 - **Campagne:** elenca tutte le campagne attive, programmate e completate.
-- **Analisi delle campagne:** mostra report visivi con metriche chiave come chiamate totali, durata delle chiamate e appuntamenti.
+- **Analisi campagne:** mostra report visuali con metriche chiave come chiamate totali, durata delle chiamate e appuntamenti.
 
 Ogni scheda campagna include:
 - Nome della campagna
-- Agente AI assegnato
-- Stato corrente (ad esempio, *Completata*, *In corso*, *Programmata*)
+- Agente IA assegnato
+- Stato attuale (ad es. *Completata*, *In corso*, *Programmata*)
 
-Clicca **Visualizza** per vedere i dettagli oppure **+ Crea campagna** per crearne una nuova.
+Fai clic su **Visualizza** per vedere i dettagli oppure su **+ Crea campagna** per crearne una nuova.
 
 ### 2. Crea una nuova campagna
-Clicca **+ Crea campagna**, poi completa il modulo di configurazione:
+Fai clic su **+ Crea campagna**, poi completa il modulo di configurazione:
 
 - **Nome campagna:** scegli un titolo chiaro e descrittivo.
-- **Agente AI:** seleziona l’agente che effettuerà le chiamate.
-- **Seleziona contatti:** scegli una lista contatti esistente oppure carica un nuovo file CSV.
+- **Agente IA:** seleziona l’agente che effettuerà le chiamate.
+- **Seleziona contatti:** scegli una lista di contatti esistente oppure carica un nuovo file CSV.
 
 Se carichi un file, assicurati di:
-1. Mappare correttamente le colonne per **Telefono**, **Nome** e **Email**.
-2. Assegnare un paese predefinito se i numeri di telefono non includono il prefisso `+`.
-3. Validare l’anteprima dei dati prima di confermare l’importazione.
+1. Mappare correttamente le colonne per **Telefono**, **Nome** ed **Email**.
+2. Impostare un paese predefinito se i numeri non includono il prefisso `+`.
+3. Verificare l’anteprima dei dati prima di confermare l’importazione.
 
 Una volta importata o selezionata, la lista contatti diventa parte della configurazione della campagna.
 
 ### 3. Seleziona e gestisci i contatti
 Dopo aver configurato le basi, rivedi la lista contatti nell’editor della campagna:
 
-- Spunta la casella accanto a ciascun contatto che vuoi includere.
-- Usa i campi memorizzati come **nome**, **email** o **numero di telefono** nel prompt dell’agente AI tramite variabili dinamiche come `{{name}}` o `{{email}}`.
+- Spunta la casella accanto a ogni contatto che vuoi includere.
+- Usa i campi dati salvati come **nome**, **email** o **numero di telefono** nel prompt del tuo agente IA tramite variabili dinamiche come `{{name}}` o `{{email}}`.
 
-Esempio:
-
- 
-Ciao {{name}}, ti chiamo per confermare il tuo appuntamento di domani alle {{hour}}.
- 
-
-Ogni variabile recupera dinamicamente i dati reali dei tuoi contatti, permettendo chiamate AI personalizzate senza modifiche manuali.
+Ogni variabile inserisce automaticamente i dati reali del contatto, consentendo chiamate IA personalizzate senza modifiche manuali.
 
 ### 4. Scegli come avviare la campagna
 Hai due modi per avviare la campagna:
 
-- **Avvia ora:** la campagna parte immediatamente. L’agente AI inizierà a contattare i contatti selezionati in sequenza.
-- **Programma per dopo:** scegli un orario specifico di inizio e fine e definisci il fuso orario.
+- **Avvia ora:** la campagna parte immediatamente. L’agente IA inizierà a contattare i contatti selezionati in sequenza.
+- **Programma per dopo:** scegli un orario di inizio e fine specifico e definisci il fuso orario.
 
-La pianificazione è ideale per operazioni sensibili al tempo — ad esempio per assicurare che le chiamate vengano effettuate durante l’orario lavorativo locale o in specifici periodi di follow-up.
+La programmazione è ideale per operazioni sensibili all’orario, ad esempio per chiamare durante l’orario lavorativo locale o in finestre di follow-up specifiche.
 
-Dopo aver configurato la pianificazione, clicca **Avvia** o **Programma** per confermare.
+Dopo aver configurato la pianificazione, fai clic su **Avvia** o **Programma** per confermare.
 
 ### 5. Analizza le prestazioni
-Quando la campagna è in corso o completata, apri la scheda **Analisi delle campagne** per monitorare le metriche chiave. Vedrai:
+Quando la campagna è in corso o completata, apri la scheda **Analisi campagne** per monitorare le metriche principali. Vedrai:
 
-- **Appuntamenti totali:** numero di appuntamenti prenotati con successo.
-- **Chiamate totali:** numero complessivo di chiamate effettuate dai tuoi agenti.
+- **Appuntamenti totali:** numero di meeting programmati con successo.
+- **Chiamate totali:** numero complessivo di chiamate effettuate dagli agenti.
 - **Durata media chiamata:** durata media delle conversazioni.
 - **Tasso di rilevamento AMD:** percentuale di chiamate che hanno raggiunto una segreteria telefonica.
 
-Troverai anche report grafici, come:
+Troverai anche report grafici, ad esempio:
 
-- **Volume di chiamate connesse nel tempo** – aiuta a identificare i picchi di coinvolgimento.
-- **Appuntamenti per ora** – visualizza quando avvengono le conversioni.
-- **Esiti delle chiamate e metriche chiave** – mostra la distribuzione tra chiamate completate, perse o fallite.
+- **Volume chiamate connesse nel tempo** – aiuta a identificare i picchi di engagement.
+- **Appuntamenti per ora** – mostra quando avvengono più conversioni.
+- **Esiti chiamate e metriche chiave** – distribuzione tra chiamate completate, perse o fallite.
 
-Queste analisi vengono aggiornate automaticamente al completamento di ogni campagna, permettendoti di misurare l’efficacia e migliorare la strategia.
+Le analisi si aggiornano automaticamente dopo il completamento di ogni campagna, così puoi misurare l’efficacia e ottimizzare la strategia.
 
 ### 6. Perché le campagne sono importanti
-Le campagne ti permettono di unire automazione, personalizzazione e scalabilità in un unico flusso di lavoro. Offrono:
+Le campagne ti permettono di combinare automazione, personalizzazione e scalabilità in un unico flusso di lavoro. Offrono:
 
-- **Scala:** raggiungi automaticamente centinaia o migliaia di persone.
-- **Automazione:** elimina la composizione manuale; lascia che l’AI gestisca la comunicazione ripetitiva.
-- **Personalizzazione:** ogni chiamata suona unica, facendo riferimento ai dati specifici del contatto.
-- **Analisi:** ottieni insight operativi da ogni chiamata e conversione.
+- **Scalabilità:** raggiungi centinaia o migliaia di persone automaticamente.
+- **Automazione:** elimina la composizione manuale; l’IA gestisce la comunicazione ripetitiva.
+- **Personalizzazione:** ogni chiamata è unica e usa i dati specifici del contatto.
+- **Analisi:** ottieni insight concreti da ogni chiamata e conversione.
 
-Usa le campagne per automatizzare follow-up, promemoria, generazione lead o raccolta feedback dei clienti — mantenendo un coinvolgimento naturale e “umano”.
+Usa le campagne per automatizzare follow-up, promemoria, lead generation o raccolta feedback clienti, mantenendo un’esperienza conversazionale naturale.
 
 ## Risoluzione dei problemi
 
 ### Nessun contatto disponibile
 - **Causa:** non sono stati caricati o selezionati contatti.
-- **Soluzione:** vai su [Contatti](https://app.callin.io/contacts) e importa o aggiungi contatti prima di avviare la campagna.
+- **Soluzione:** vai su [Contatti](https://app.callin.io/contacts) e importa o aggiungi contatti prima di avviare una campagna.
 
 ### La campagna non parte
-- **Causa:** configurazione mancante, ad esempio nessun agente assegnato o nessun contatto selezionato.
-- **Soluzione:** assicurati che siano presenti sia un agente AI sia almeno un contatto prima del lancio.
-
-### Nessun dato nelle analisi
-- **Causa:** i dati della campagna sono ancora in elaborazione o la campagna non è stata completata.
-- **Soluzione:** attendi qualche minuto dopo il completamento; le analisi si aggiornano automaticamente quando i risultati sono finalizzati.
-
-### Fuso orario o pianificazione errati
-- **Causa:** il fuso orario della campagna non è impostato correttamente.
-- **Soluzione:** ricontrolla le impostazioni del fuso orario prima di programmare, per garantire l’orario locale corretto.
-
-## Nota finale
-Le campagne in Callin.io trasformano i tuoi agenti AI in sistemi di comunicazione scalabili. Combinando automazione e progettazione intelligente delle conversazioni, consentono un outreach efficiente, basato sui dati e personalizzato.
-
-Una volta configurata la campagna, i tuoi agenti possono connettersi automaticamente con persone reali, registrare risultati e migliorare continuamente grazie alle analisi — aiutando la tua azienda a mantenere un coinvolgimento coerente e significativo su larga scala.
-1
+- **Causa:** manca una configurazione (ad esempio nessun agente assegnato o nessun contatto selezionato).
+- **Soluzione:** assicurati che siano presenti sia un agente IA
