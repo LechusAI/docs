@@ -1,50 +1,50 @@
 ---
-title: "How to Create Subscriptions"
-description: "Connect Stripe and design pricing plans for your users."
+title: "Come creare abbonamenti"
+description: "Collega Stripe e progetta piani tariffari per i tuoi utenti."
 ---
 
-## Overview
-Every business model needs a way to bill customers. With Subscription Plans, you can define flat monthly fees, one-time packages, or flexible pay-as-you-go models. But before you create any plan, you must connect your Stripe account.
+## Panoramica
+Ogni modello di business ha bisogno di un modo per fatturare i clienti. Con i **Piani di abbonamento**, puoi definire canoni mensili fissi, pacchetti una tantum o modelli flessibili **pay-as-you-go**. Ma prima di creare qualsiasi piano, devi collegare il tuo account Stripe.
 
-## Steps
-1. **Connect Your Stripe Account**  
-   Go to the CMS and open the **Subscription Plans** section. If Stripe isn’t connected, you’ll see a “Stripe Not Connected” message. Click it and follow the on-screen steps. Once linked, the warning will disappear.
+## Passaggi
+1. **Collega il tuo account Stripe**  
+   Vai nel CMS e apri la sezione **Subscription Plans**. Se Stripe non è collegato, vedrai il messaggio **“Stripe Not Connected”**. Fai clic e segui i passaggi mostrati a schermo. Una volta collegato, l’avviso scomparirà.
 
-2. **Add Your First Plan**  
-   Click **Add New** to open the plan form.
-   - **Plan Name**: Use labels like `Starter`, `Pro`, or `Growth`.
-   - **Description**: Be user-oriented: “Perfect for small teams who make a few calls every day.”
-   - **Status**: Set to **Active** if you want it immediately visible.
+2. **Aggiungi il tuo primo piano**  
+   Fai clic su **Add New** per aprire il modulo di creazione del piano.
+   - **Plan Name**: usa nomi come `Starter`, `Pro` o `Growth`.
+   - **Description**: scrivi una descrizione orientata all’utente, ad esempio: “Perfetto per piccoli team che fanno qualche chiamata ogni giorno.”
+   - **Status**: imposta su **Active** se vuoi che sia subito visibile.
 
-3. **Choose the Right Billing Model**  
-   Select one of three:
-   - **Monthly Subscription**: Predictable revenue. Ex: $39/mo for 50 minutes.
-   - **One Time Purchase**: No commitment. Ex: $20 for 100 minutes.
-   - **Pay As You Go**: Usage-based. Ex: $0.10 per minute.
+3. **Scegli il modello di fatturazione corretto**  
+   Seleziona una delle tre opzioni:
+   - **Monthly Subscription**: ricavi prevedibili. Esempio: $39/mese per 50 minuti.
+   - **One Time Purchase**: nessun vincolo. Esempio: $20 per 100 minuti.
+   - **Pay As You Go**: basato sul consumo. Esempio: $0,10 al minuto.
 
-4. **Define the Details**  
-   - **Available Minutes**: Included in the plan.
-   - **Rate Per Minute**: Required for pay-as-you-go.
-   - **Monthly Price**: For recurring subscriptions.
-   - **Features**: List benefits. Ex:
-     - 100 minutes/month
-     - Choose from 5 standard voices
-     - Priority email support
+4. **Definisci i dettagli**  
+   - **Available Minutes**: minuti inclusi nel piano.
+   - **Rate Per Minute**: obbligatorio per il modello pay-as-you-go.
+   - **Monthly Price**: prezzo mensile per gli abbonamenti ricorrenti.
+   - **Features**: elenca i vantaggi. Esempi:
+     - 100 minuti/mese
+     - Selezione tra 5 voci standard
+     - Supporto email prioritario
 
-5. **See It Live**  
-   Once saved, plans appear in-app. Customers can select and pay via Stripe.
+5. **Verifica che sia attivo nell’app**  
+   Una volta salvato, i piani appariranno nell’app. I clienti potranno selezionare il piano e pagare tramite Stripe.
 
-## Tips & Notes
-- Activate your plan or it won’t appear.
-- Avoid vague names/descriptions.
-- Start with 2–3 clear options.
-- Test as a real user before going live.
+## Suggerimenti e note
+- Attiva il piano, altrimenti non comparirà.
+- Evita nomi o descrizioni troppo vaghi.
+- Inizia con 2–3 opzioni chiare.
+- Testa come utente reale prima di andare in produzione.
 
-## Troubleshooting
-**Symptom:** Plan doesn’t show up in app  
-**Cause:** Status is set to Inactive  
-**Solution:** Edit and activate the plan.
+## Risoluzione dei problemi
+**Sintomo:** Il piano non compare nell’app  
+**Causa:** Lo stato è impostato su Inactive  
+**Soluzione:** Modifica il piano e impostalo su Active.
 
-**Symptom:** Stripe connection fails  
-**Cause:** Incomplete OAuth process  
-**Solution:** Go back to the CMS and re-initiate Stripe connection.
+**Sintomo:** La connessione a Stripe fallisce  
+**Causa:** Processo OAuth non completato  
+**Soluzione:** Torna nel CMS e riavvia la connessione a Stripe.
