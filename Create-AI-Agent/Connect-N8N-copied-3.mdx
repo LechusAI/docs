@@ -1,96 +1,96 @@
 ---
-title: "Connect N8n "
-description: "Create powerful automations between Callin.io and your favorite tools using n8n."
+title: "Collega n8n"
+description: "Crea potenti automazioni tra Callin.io e i tuoi strumenti preferiti usando n8n."
 ---
 
-## Overview
+## Panoramica
 
-Create powerful automations between Callin.io and your favorite tools with n8n.
+Crea potenti automazioni tra Callin.io e i tuoi strumenti preferiti con n8n.
 
-## Steps
+## Passaggi
 
-### Step 1: What is n8n and Why Use It with Callin.io?
+### Passaggio 1: Cos’è n8n e perché usarlo con Callin.io?
 
-n8n (pronounced “en-eight-en”) is a workflow automation tool that connects different apps so they work together seamlessly.
+n8n (si pronuncia “en-eight-en”) è uno strumento di automazione dei flussi di lavoro che collega diverse app, facendole lavorare insieme in modo fluido.
 
-With Callin.io, this integration lets you:
+Con Callin.io, questa integrazione ti permette di:
 
-Send call data (caller, agent, duration, recording, etc.) to external apps.
+Inviare i dati delle chiamate (chiamante, agente, durata, registrazione, ecc.) ad app esterne.
 
-Create automations like sending Slack alerts after a call or adding call data to Google Sheets.
+Creare automazioni come inviare avvisi su Slack dopo una chiamata o aggiungere i dati delle chiamate su Google Sheets.
 
-Trigger outbound calls based on external events, such as a new CRM lead.
+Attivare chiamate in uscita in base a eventi esterni, ad esempio un nuovo lead nel CRM.
 
-In short: n8n turns your calls into triggers or actions for any automation flow.
+In breve: n8n trasforma le tue chiamate in trigger o azioni per qualsiasi flusso di automazione.
 
-### Step 2: Access the Callin.io Integrations Panel
+### Passaggio 2: Accedi al pannello integrazioni di Callin.io
 
-Log in to your Callin.io account.
+Accedi al tuo account Callin.io.
 
-From the left menu, click Actions.
+Dal menu a sinistra, clicca **Actions**.
 
-In the dashboard, select the Automation or All Integrations tab.
+Nella dashboard, seleziona la scheda **Automation** o **All Integrations**.
 
-Find the n8n card and click Connect.
+Trova la card di n8n e clicca **Connect**.
 
-You’ll be redirected to a login page like this one: [Callin.io Integrations](https://app.callin.io/actions)
+Verrai reindirizzato a una pagina di accesso come questa: [Integrazioni Callin.io](https://app.callin.io/actions)
 
-### Step 3: Sign In to Your n8n Account
+### Passaggio 3: Accedi al tuo account n8n
 
-A new tab will open with the URL n8n.callin.io.
+Si aprirà una nuova scheda con l’URL n8n.callin.io.
 
-Enter your n8n email and password.
+Inserisci email e password di n8n.
 
-If you don’t have access yet, contact your Callin.io administrator.
+Se non hai ancora accesso, contatta l’amministratore Callin.io.
 
-Once inside, you’ll see the visual workflow builder of n8n.
+Una volta dentro, vedrai il builder visuale dei workflow di n8n.
 
-### Step 4: Build Your First Automation
+### Passaggio 4: Crea la tua prima automazione
 
-Click + New Workflow and add the following nodes:
+Clicca **+ New Workflow** e aggiungi i seguenti nodi:
 
-Trigger: Select “Callin.io → New Call” to start the flow when a new call arrives.
+Trigger: seleziona “Callin.io → New Call” per avviare il flusso quando arriva una nuova chiamata.
 
-Action: Add an action such as:
+Action: aggiungi un’azione come:
 
-“Slack → Send Message” to alert your team.
+“Slack → Send Message” per avvisare il tuo team.
 
-“Google Sheets → Add Row” to log call data.
+“Google Sheets → Add Row” per registrare i dati della chiamata.
 
-“Webhook → POST” to send data to a custom app.
+“Webhook → POST” per inviare dati a un’app personalizzata.
 
-Example:
+Exampio:
 
 ```json
 {   "Trigger": "Callin.io (New Call)",   "Action": "Google Sheets (Add Row)",   "Fields": ["Number", "Agent", "Duration", "Date"] }
 ```
 
-### Step 5: Activate and Test
+### Passaggio 5: Attiva e testa
 
-Save the workflow.
+Salva il workflow.
 
-Turn it on using the Active toggle.
+Attivalo usando l’interruttore **Active**.
 
-Make a test call from Callin.io and check if your automation works.
+Esegui una chiamata di test da Callin.io e verifica che l’automazione funzioni.
 
-## Tips & Notes
+## Suggerimenti e note
 
-- **Custom Variables**: Use `{{callerName}}`, `{{callDuration}}`, or `{{agentEmail}}` to personalize your flows.
-- **Conditional Logic**: Add IF or Switch nodes for more complex automations.
-- **Chained Flows**: Combine Callin.io with CRMs and messaging tools in one continuous process.
+- **Variabili personalizzate**: usa `{{callerName}}`, `{{callDuration}}` o `{{agentEmail}}` per personalizzare i tuoi flussi.
+- **Logica condizionale**: aggiungi nodi IF o Switch per automazioni più complesse.
+- **Flussi concatenati**: combina Callin.io con CRM e strumenti di messaggistica in un processo continuo.
 
-## Troubleshooting
+## Risoluzione dei problemi
 
-**Symptom:** “Not Connected” error\
-**Likely Cause:** Check your n8n credentials and integration permissions.
+**Sintomo:** errore “Not Connected”\
+**Causa probabile:** controlla le credenziali n8n e i permessi dell’integrazione.
 
-**Symptom:** Flow not running\
-**Likely Cause:** Ensure the workflow is Active in n8n.
+**Sintomo:** il flusso non parte\
+**Causa probabile:** assicurati che il workflow sia **Active** in n8n.
 
-**Symptom:** Missing data\
-**Likely Cause:** Verify that all Callin.io fields are properly mapped.
+**Sintomo:** dati mancanti\
+**Causa probabile:** verifica che tutti i campi Callin.io siano mappati correttamente.
 
-## Final Note
+## Nota finale
 
-Connecting Callin.io with n8n unlocks a world of smart automation.\
-Start small—like sending a Slack message after each call—and soon you’ll see how n8n turns Callin.io into an intelligent automation hub.
+Collegare Callin.io a n8n sblocca un mondo di automazioni intelligenti.\
+Inizia in piccolo — ad esempio inviando un messaggio Slack dopo ogni chiamata — e presto vedrai come n8n trasforma Callin.io in un hub di automazione davvero potente.
