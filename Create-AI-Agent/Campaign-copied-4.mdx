@@ -1,125 +1,156 @@
 ---
-title: "Create Campaigns"
-description: "Build campaigns, pick contacts, assign agents, and launch calls step by step."
+title: "Créer des campagnes"
+description: "Créer des campagnes, sélectionner des contacts, attribuer des agents et lancer des appels étape par étape."
 ---
 
-## Overview
-Campaigns in **Callin.io** allow you to automate outbound communication at scale. They combine AI agents, contact lists, and scheduling logic so your agents can handle large volumes of calls naturally and efficiently.
+## Vue d’ensemble
 
-A campaign consists of three key elements:
+Les **campagnes** dans [Callin.io](http://Callin.io) vous permettent d’automatiser la communication sortante à grande échelle. Elles combinent des **agents IA**, des **listes de contacts** et une logique de **planification**, afin que vos agents puissent gérer de gros volumes d’appels de façon naturelle et efficace.
 
-- **AI Agent** – the configured voice that executes the calls.
-- **Contact List** – drawn from your [Contacts](https://app.callin.io/contacts) section or imported via CSV.
-- **Execution Plan** – determines when and how the campaign runs (immediate launch or scheduled window).
+Une campagne se compose de **trois éléments clés** :
 
-By combining these components, you can create large-scale, personalized outreach operations — from lead generation and reminders to surveys and customer follow-ups.
+- **Agent IA** — la voix configurée qui exécute les appels.
+- **Liste de contacts** — issue de votre section **Contacts** ou importée via **CSV**.
+- **Plan d’exécution** — définit quand et comment la campagne s’exécute (lancement immédiat ou fenêtre planifiée).
 
-## Before You Start
-Campaigns depend on data and configuration from other parts of your Callin.io workspace:
+En combinant ces composants, vous pouvez créer des opérations d’outreach personnalisées à grande échelle — de la génération de leads et des rappels, jusqu’aux sondages et aux relances clients.
 
-- Ensure your [Contacts](https://app.callin.io/contacts) are properly uploaded and validated.
-- Have at least one **AI agent** ready with a tested prompt and voice setup.
-- Verify your time zone and scheduling preferences for accurate campaign timing.
+---
 
-Each campaign is capable of calling hundreds or thousands of contacts, but success depends on well-prepared data and clear AI conversation flows.
+## Avant de commencer
 
-## Steps
+Les campagnes dépendent de données et de configurations provenant d’autres parties de votre espace [Callin.io](http://Callin.io) :
 
-### 1. Access Campaigns
-Go to [Campaigns](https://app.callin.io/campaigns) in the left sidebar. You’ll find two main tabs:
+- Assurez-vous que vos **Contacts** sont correctement importés et validés.
+- Ayez au moins **un agent IA** prêt, avec un prompt testé et une configuration de voix validée.
+- Vérifiez votre **fuseau horaire** et vos préférences de planification pour un timing de campagne précis.
 
-- **Campaigns:** lists all active, scheduled, and completed campaigns.
-- **Campaigns Analytics:** shows visual reports with key metrics like total calls, call duration, and appointments.
+Chaque campagne peut appeler des centaines ou des milliers de contacts, mais la réussite dépend de données propres et de flux conversationnels IA clairs.
 
-Each campaign card includes:
-- Campaign name
-- Assigned AI agent
-- Current status (e.g., *Completed*, *In Progress*, *Scheduled*)
+---
 
-Click **View** to inspect details or **+ Create Campaign** to build a new one.
+## Étapes
 
-### 2. Create a New Campaign
-Click **+ Create Campaign**, then complete the setup form:
+### 1. Accéder aux campagnes
 
-- **Campaign Name:** Choose a clear and descriptive title.
-- **AI Agent:** Select the agent who will make the calls.
-- **Select Contacts:** Choose an existing contact list or upload a new CSV file.
+Allez dans **Campaigns** (Campagnes) dans la barre latérale gauche. Vous y trouverez deux onglets principaux :
 
-If you upload a file, make sure to:
-1. Map your columns correctly for **Phone**, **Name**, and **Email**.
-2. Assign a default country if your phone numbers lack the `+` prefix.
-3. Validate the data preview before confirming the import.
+- **Campaigns** : liste toutes les campagnes actives, planifiées et terminées.
+- **Campaigns Analytics** : affiche des rapports visuels avec des indicateurs clés comme le total d’appels, la durée des appels et les rendez-vous.
 
-Once imported or selected, your contact list becomes part of the campaign configuration.
+Chaque carte de campagne inclut :
 
-### 3. Select and Manage Contacts
-After setting up the basics, review your contact list within the campaign editor:
+- **Nom de la campagne**
+- **Agent IA assigné**
+- **Statut actuel** (par ex. _Completed_, _In Progress_, _Scheduled_)
 
-- Check the box next to each contact you want to include.
-- Use stored data fields such as **name**, **email**, or **phone number** in your AI agent’s prompt via dynamic variables like `{{name}}` or `{{email}}`.
+Cliquez sur **View** pour consulter les détails ou sur **\+ Create Campaign** pour créer une nouvelle campagne.
 
-Example:
-```
-Hi {{name}}, I’m calling to confirm your appointment tomorrow at {{hour}}.
-```
+---
 
-Each variable dynamically pulls the real data from your contacts, allowing for personalized AI calls without manual editing.
+### 2. Créer une nouvelle campagne
 
-### 4. Choose How to Launch
-You have two ways to start your campaign:
+Cliquez sur **\+ Create Campaign**, puis complétez le formulaire de configuration :
 
-- **Launch Now:** The campaign begins immediately. The AI agent will start contacting selected contacts sequentially.
-- **Schedule for Later:** Choose a specific start and end time, and define the time zone.
+- **Campaign Name** : choisissez un titre clair et descriptif.
+- **AI Agent** : sélectionnez l’agent qui effectuera les appels.
+- **Select Contacts** : choisissez une liste de contacts existante ou importez un nouveau fichier CSV.
 
-Scheduling is ideal for time-sensitive operations — for example, ensuring calls are placed during local business hours or specific follow-up periods.
+Si vous importez un fichier, assurez-vous de :
 
-After configuring your schedule, click **Launch** or **Schedule** to confirm.
+- Mapper correctement vos colonnes pour **Phone**, **Name** et **Email**.
+- Définir un **pays par défaut** si vos numéros n’ont pas le préfixe **\+**.
+- Valider l’aperçu des données avant de confirmer l’import.
 
-### 5. Analyze Performance
-Once your campaign is running or completed, open the **Campaigns Analytics** tab to monitor key metrics. You’ll see:
+Une fois importée ou sélectionnée, votre liste de contacts fait partie de la configuration de la campagne.
 
-- **Total Appointments:** Number of meetings successfully scheduled.
-- **Total Calls:** The overall number of calls made by your agents.
-- **Average Call Duration:** The mean length of conversations.
-- **AMD Detection Rate:** Percentage of calls that reached an answering machine.
+---
 
-You’ll also find graphical reports, such as:
+### 3. Sélectionner et gérer les contacts
 
-- **Connected Calls Volume Over Time** – helps identify engagement peaks.
-- **Appointments by Hour** – visualizes when conversions occur.
-- **Call Outcomes & Key Metrics** – shows distribution between completed, missed, or failed calls.
+Après la configuration de base, vérifiez votre liste de contacts dans l’éditeur de campagne :
 
-These analytics are refreshed automatically after each campaign completes, allowing you to measure effectiveness and refine your strategy.
+- Cochez la case à côté de chaque contact que vous souhaitez inclure.
+- Utilisez des champs stockés (comme le nom, l’email ou le téléphone) dans le prompt de l’agent via des variables dynamiques telles que **{{name}}** ou **{{email}}**.
 
-### 6. Why Campaigns Matter
-Campaigns allow you to combine automation, personalization, and scalability within one workflow. They provide:
+**Exemple :**\
+Hi {{name}}, je vous appelle pour confirmer votre rendez-vous demain à {{hour}}.
 
-- **Scale:** Reach hundreds or thousands of people automatically.
-- **Automation:** Eliminate manual dialing; let AI handle repetitive communication.
-- **Personalization:** Each call sounds unique, referencing contact-specific data.
-- **Analytics:** Gain actionable insights from every call and conversion.
+Chaque variable récupère automatiquement les données réelles du contact, ce qui permet de personnaliser les appels sans modification manuelle.
 
-Use campaigns to automate follow-ups, reminders, lead generation, or customer feedback collection — all while maintaining human-like engagement.
+---
 
-## Troubleshooting
+### 4. Choisir le mode de lancement
 
-### No Contacts Available
-- **Cause:** No contacts have been uploaded or selected.
-- **Fix:** Go to [Contacts](https://app.callin.io/contacts) and import or add contacts before starting your campaign.
+Vous avez deux façons de démarrer votre campagne :
 
-### Campaign Won’t Start
-- **Cause:** Missing configuration, such as no agent assigned or no contacts selected.
-- **Fix:** Ensure both an AI agent and at least one contact are included before launching.
+- **Launch Now** : la campagne démarre immédiatement. L’agent IA commencera à contacter les contacts sélectionnés de manière séquentielle.
+- **Schedule for Later** : choisissez une heure de début et de fin spécifiques et définissez le fuseau horaire.
 
-### No Analytics Data
-- **Cause:** Campaign data is still processing or hasn’t completed.
-- **Fix:** Wait a few minutes after completion; analytics refresh automatically once results are finalized.
+La planification est idéale pour les opérations sensibles au timing — par exemple, pour garantir que les appels ont lieu pendant les horaires de bureau locaux ou sur des créneaux de relance précis.
 
-### Incorrect Timezone or Schedule
-- **Cause:** Campaign timezone not set properly.
-- **Fix:** Double-check the timezone settings before scheduling to ensure local time accuracy.
+Après avoir configuré le planning, cliquez sur **Launch** ou **Schedule** pour confirmer.
 
-## Final Note
-Campaigns in Callin.io transform your AI agents into scalable communication systems. By combining automation with intelligent conversation design, they enable outreach that’s efficient, data-driven, and personal.
+---
 
-Once your campaign is set up, your agents can automatically connect with real people, capture results, and continuously improve through analytics — helping your business maintain consistent, meaningful engagement at scale.
+### 5. Analyser les performances
+
+Une fois la campagne en cours ou terminée, ouvrez l’onglet **Campaigns Analytics** pour suivre les indicateurs clés. Vous verrez notamment :
+
+- **Total Appointments** : nombre de rendez-vous planifiés avec succès.
+- **Total Calls** : nombre total d’appels passés par vos agents.
+- **Average Call Duration** : durée moyenne des conversations.
+- **AMD Detection Rate** : pourcentage d’appels ayant abouti à un répondeur.
+
+Vous trouverez aussi des rapports graphiques, par exemple :
+
+- **Connected Calls Volume Over Time** — aide à identifier les pics d’engagement.
+- **Appointments by Hour** — montre quand les conversions ont lieu.
+- **Call Outcomes & Key Metrics** — répartit les résultats (terminés, manqués, échoués, etc.).
+
+Ces analyses se mettent à jour automatiquement après la fin de chaque campagne, ce qui vous permet de mesurer l’efficacité et d’ajuster votre stratégie.
+
+---
+
+### 6. Pourquoi les campagnes sont importantes
+
+Les campagnes vous permettent de combiner **automatisation**, **personnalisation** et **scalabilité** dans un seul workflow. Elles offrent :
+
+- **Échelle** : atteindre automatiquement des centaines ou des milliers de personnes.
+- **Automatisation** : supprimer la numérotation manuelle ; laisser l’IA gérer les tâches répétitives.
+- **Personnalisation** : chaque appel paraît unique grâce aux données spécifiques du contact.
+- **Analytics** : obtenir des insights actionnables sur chaque appel et chaque conversion.
+
+Utilisez les campagnes pour automatiser les relances, les rappels, la génération de leads ou la collecte de retours clients — tout en conservant un engagement proche de l’humain.
+
+---
+
+## Dépannage
+
+### Aucun contact disponible
+
+- **Cause :** aucun contact n’a été importé ou sélectionné.
+- **Solution :** allez dans **Contacts** et importez ou ajoutez des contacts avant de démarrer votre campagne.
+
+### La campagne ne démarre pas
+
+- **Cause :** configuration manquante (par ex. aucun agent assigné ou aucun contact sélectionné).
+- **Solution :** assurez-vous qu’un **agent IA** et au moins **un contact** sont inclus avant le lancement.
+
+### Aucune donnée d’analytics
+
+- **Cause :** les données de campagne sont en cours de traitement ou la campagne n’est pas terminée.
+- **Solution :** attendez quelques minutes après la fin ; les analytics se rafraîchissent automatiquement une fois les résultats finalisés.
+
+### Fuseau horaire ou planning incorrect
+
+- **Cause :** le fuseau horaire de la campagne n’est pas correctement configuré.
+- **Solution :** vérifiez soigneusement les paramètres de fuseau horaire avant de planifier, pour garantir une heure locale correcte.
+
+---
+
+## Note finale
+
+Les campagnes dans [Callin.io](http://Callin.io) transforment vos agents IA en systèmes de communication évolutifs. En combinant l’automatisation et une conception conversationnelle intelligente, elles rendent l’outreach plus efficace, orienté données et personnalisé.
+
+Une fois votre campagne configurée, vos agents peuvent se connecter automatiquement à de vraies personnes, capturer les résultats et s’améliorer en continu via les analytics — afin d’assurer un engagement cohérent et significatif à grande échelle.
