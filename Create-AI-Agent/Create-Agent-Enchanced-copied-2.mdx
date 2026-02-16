@@ -1,0 +1,219 @@
+---
+title: "Créez votre agent"
+description: "Guide complet pour configurer un agent avancé avec un LLM, un calendrier et des transferts d’appels."
+---
+
+## Video 
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
+  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/jnsyavqL8CI" title="YouTube video" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+</div>
+
+## Avant de commencer
+
+Un agent peut gérer des flux complexes : intention nuancée, instructions longues, capture de données précise, et appels **entrants**, **sortants** ou **les deux**.
+
+Si vous n’avez besoin que de salutations, de FAQ simples ou d’une collecte de données basique à faible coût, un agent **Basic** suffit.
+
+**Actions externes (à configurer séparément, puis à relier) :**
+
+- **Planification :** Google Calendar
+- **Transferts :** Transfert d’appel (Call Transfer)
+
+---
+
+## Étape 1. Créer l’agent
+
+Allez dans **AI Agents → Create Agent → Start from Scratch**, saisissez un nom clair (par exemple : « Support EN – Sales »), sélectionnez la **Version** appropriée, puis cliquez sur **Create Agent**.
+
+**Recommandation :** nommez vos agents par **fonction + langue** pour éviter toute confusion plus tard.
+
+---
+
+## Étape 2. Choisir la direction des appels : entrant, sortant ou les deux
+
+Dans **Agent → Call Direction**, choisissez ce qui correspond à votre activité :
+
+**Entrant (Inbound)** : l’agent reçoit des appels. Idéal pour support, accueil, lignes de service.\
+**Astuce :** activez **Transfer Call** pour escalader vers un humain si nécessaire.
+
+**Sortant (Outbound)** : l’agent initie des appels. Idéal pour rappels, confirmations, sondages, recouvrement.\
+**Astuce :** gardez les scripts courts et définissez des horaires autorisés.
+
+**Les deux (Both Directions)** : un seul agent gère entrant + sortant.\
+À utiliser quand le ton et la logique sont partagés ; cela demande plus de tests pour éviter des objectifs mélangés.
+
+Configurez aussi :
+
+- **Durée maximale d’appel (minutes)** : seuil de coupure automatique (par exemple 10).
+- **Message d’accueil (Greeting Message)** : première phrase entendue par l’appelant.
+
+**Exemple d’accueil (EN) :**\
+Hi, this is agent_name. How can I help you today? This call may be recorded for quality purposes.
+
+---
+
+## Étape 3. Voix, langue et température
+
+Dans **Voice & Language** :
+
+- **Language / Secondary Language** : définissez une langue principale et n’ajoutez une seconde langue que si nécessaire.
+- **Voice** : choisissez un ton / accent cohérent avec votre marque.
+- **Speed** : commencez sur Normal, puis ajustez après tests.
+- **Temperature** : contrôle la créativité.
+
+**Repères rapides pour la température :**
+
+- **0,2–0,5** : plus déterministe (idéal pour prise de rendez-vous / conformité).
+- **0,6–0,8** : plus conversationnel (FAQ, vente).
+
+Utilisez **Test Call** pour écouter et ajuster.
+
+---
+
+## Étape 4. LLM : ce que c’est et comment choisir
+
+**Définition :** le LLM (Large Language Model) est le “cerveau” qui comprend et génère les réponses. Vous pouvez choisir un fournisseur/modèle pour équilibrer **précision**, **latence** et **coût**.
+
+**Règle rapide :**
+
+- Flux courts / simples (triage, FAQ) : modèle rapide et peu coûteux.
+- Flux multi-étapes et extraction de données : modèle équilibré.
+- Tâches longues, multilingues, haute précision : modèle avancé.
+
+**Signaux pour ajuster :**
+
+- Réponses vagues ou incohérentes : montez en gamme.
+- Réponses solides mais trop lentes / trop chères : descendez en gamme.
+
+Pour la prise de rendez-vous et les formulaires, associez un LLM stable à une **température faible**.
+
+**Important :** réglez le **fuseau horaire (Timezone)** de l’agent pour qu’il corresponde à vos clients ou au calendrier, afin d’éviter des rendez-vous à la mauvaise heure.
+
+---
+
+## Étape 5. Prompt de conversation (script opératoire)
+
+Définissez les objectifs, le ton et les règles.
+
+**Objectif :**
+
+- Accueil chaleureux et identification du besoin en 1–2 questions.
+- Résoudre ou router : planifier, transférer, ou envoyer un résumé.
+- Confirmer les informations critiques : nom, téléphone, date/heure.
+
+**Style :**
+
+- Simple, empathique, sans jargon.
+- Résumer les prochaines étapes avant de clôturer.
+
+**Règles :**
+
+- Pas de données sensibles.
+- Transférer sur demande ou en cas de blocage.
+
+**Outils :**
+
+- Utiliser Google Calendar et le transfert uniquement quand c’est approprié et après confirmation.
+
+---
+
+## Étape 6. Call Actions (actions d’appel)
+
+### 6.1 Planifier dans Google Calendar
+
+D’abord, configurez l’intégration dans Google Calendar et activez les **Appointments** (rendez-vous) pour le calendrier choisi.
+
+Dans **Call Action**, activez **Schedule Appointment on Google Calendar** et sélectionnez ce calendrier (icône d’engrenage si disponible).
+
+Dans le prompt, indiquez comment confirmer l’heure et le fuseau.
+
+**Phrase de réservation (EN) :**\
+I can offer Tuesday 10:30 or Wednesday 12:00 (your local time). Which works?
+
+### 6.2 Transférer l’appel
+
+Créez une configuration dans **Call Transfer** (destination, horaires, file d’attente).
+
+Dans **Call Action**, activez **Transfer Call** et sélectionnez cette configuration.
+
+Ajoutez une phrase de passation au prompt.
+
+**Phrase de passation (EN) :**\
+I’ll connect you with the right specialist now. Please stay on the line.
+
+### 6.3 Extraction de données
+
+Dans **Call Action → Data Extraction**, définissez les entités à capturer :
+
+- **firstName** : prénom du contact (texte ou nul).
+- **appointmentDate** : date/heure (format ISO ou nul).
+- **issueType** : raison principale (valeurs : billing, support, sales).
+
+Référencez ces entités dans le prompt avec un ou deux exemples pour améliorer la capture.
+
+### 6.4 Webhook après appel (Post-call webhook)
+
+Activez-le pour envoyer les détails d’appel à votre système.
+
+**Exemple de contenu (texte) :**\
+Agent : Support EN – Sales. Direction : both. Entités : firstName Alex ; appointmentDate 2025-10-30T10:30:00-03:00 ; issueType sales. Inclure aussi un lien d’enregistrement et un lien de transcription.
+
+---
+
+## Étape 7. Paramètres d’appel (Call Settings)
+
+Dans **Call Settings** :
+
+- **Record Calls** : enregistrer l’audio et les transcriptions (recommandé pour QA / conformité).
+- **Voicemail Detection** : raccrocher sur répondeur pour économiser des minutes.
+- **Background Ambience** : léger bruit ambiant pour un rendu plus naturel.
+- **Greeting Message Delay (ms)** : courte pause avant l’accueil (par exemple 1200).
+
+---
+
+## Étape 8. Tester et enregistrer
+
+Exécutez **Test Call** dans chaque onglet (Agent, Voice & Language, Call Action). Validez : accueil, langue, vitesse, prise de rendez-vous, transfert et entités.
+
+Cliquez sur **Save**, puis passez un vrai appel de vérification. Contrôlez **Call History** : audio, transcription et données extraites.
+
+---
+
+## Configuration avancée (optionnel)
+
+- **Routage par mots-clés** : dans le prompt, définissez les termes qui déclenchent la planification (book, reschedule) ou le transfert (talk to human, supervisor).
+- **Double confirmation** : demandez de répéter date/heure avant de réserver.
+- **Multilingue** : n’utilisez une langue secondaire que si vous servez réellement deux langues ; sinon, désactivez-la.
+- **Température selon l’objectif** : faible pour réservation/transfert ; moyenne pour FAQ/vente.
+
+---
+
+## Erreurs fréquentes et corrections
+
+**« This calendar does not have an appointment action. »**\
+Le calendrier n’a pas les Appointments. Activez-les dans Google Calendar ou choisissez un autre calendrier.
+
+**Bannière : « Select a Google Calendar… »**\
+Dans **Call Action**, ouvrez l’engrenage de la planification et sélectionnez le bon calendrier.
+
+**Bannière : « Select a Transfer Configuration… »**\
+Créez et sauvegardez une configuration dans **Call Transfer**, puis sélectionnez-la dans l’agent.
+
+**Rendez-vous à la mauvaise heure**\
+Alignez le fuseau horaire de l’agent sur celui du calendrier et confirmez l’heure locale de l’appelant.
+
+**Mélange de langues**\
+Gardez le prompt dans une seule langue, configurez correctement Language/Secondary Language et choisissez une voix cohérente.
+
+**Entités manquantes**\
+Définissez des types clairs (texte / booléen / ISO), mentionnez les entités dans le prompt, baissez la température ou utilisez un LLM plus performant.
+
+**Webhook activé sans URL (« Webhook Url is required… »)**\
+Ajoutez un endpoint valide avant d’activer le Post-call webhook, ou désactivez-le pendant les tests.
+
+---
+
+## Conclusion
+
+Votre agent peut maintenant comprendre des contextes complexes, réserver avec précision, transférer les appels, et envoyer des données propres à vos systèmes. Commencez avec un LLM équilibré, testez avec de vrais appels, puis ajustez : cette base vous permettra de monter en charge sans friction.
