@@ -1,91 +1,91 @@
 ---
-title: "Create Tools"
-description: "Use Webhooks in Callin to fetch or send real-time data from your agent to any external API or automation platform."
+title: "Créer des outils"
+description: "Utilisez des webhooks dans Callin pour récupérer ou envoyer des données en temps réel depuis votre agent vers n’importe quelle API externe ou plateforme d’automatisation."
 ---
 
-## Overview
+## Vue d’ensemble
 
-Webhooks let your Callin agent interact with external systems in real time. This means that every time your agent makes or receives a call, it can automatically **send or request data** from another service using a simple HTTP request.
+Les webhooks permettent à votre agent Callin d’interagir avec des systèmes externes en temps réel. Concrètement, à chaque fois que votre agent émet ou reçoit un appel, il peut automatiquement **envoyer ou demander des données** à un autre service via une simple requête HTTP.
 
-This is useful when you want your agent to fetch customer information, create records in external tools, or trigger automations — all during a live conversation.
+C’est utile si vous souhaitez que votre agent récupère des informations client, crée des enregistrements dans des outils externes, ou déclenche des automatisations — pendant une conversation en direct.
 
-In Callin, Webhooks are created as **Tools**, which are reusable components you can assign to any voice agent.
-
----
-
-## Step 1: Create a Webhook Tool
-
-To begin, you’ll need to create a new Tool inside the Callin dashboard:
-
-1. Go to [Tools](https://app.callin.io/tools) in your [Callin workspace](https://app.callin.io).
-2. Click on **\+ Add Tool**.
-3. Fill in the following fields:
-   - **Name**: `get-customer-data`
-   - **Description**: `Retrieves customer information by phone number.`
-   - **Method**: Choose `GET` if you're retrieving data, or `POST` if you're sending it.
-   - **URL**: Provide the external API endpoint, e.g. `https://api.mycompany.com/customers`
-
-> ✅ Make sure the URL uses HTTPS and is publicly accessible. Otherwise, the webhook won’t work.
-
-4. Click **Save** to create the Tool.
+Dans Callin, les webhooks sont créés sous forme d’**outils** (Tools), des composants réutilisables que vous pouvez attribuer à n’importe quel agent vocal.
 
 ---
 
-## Step 2: Assign the Tool to a Voice Agent
+## Étape 1 : Créer un outil Webhook
 
-Once your Tool is created, you need to connect it to the agent that will use it:
+Pour commencer, vous devez créer un nouvel outil dans le tableau de bord Callin :
 
-1. Navigate to [AI Agents](https://app.callin.io/agents).
-2. Choose the agent you want to configure.
-3. Scroll to the **Tools** section and click **\+ Add Tool**.
-4. Select the Tool you just created and save your changes.
+1. Allez dans [Tools](https://app.callin.io/tools) dans votre [espace de travail Callin](https://app.callin.io).
+2. Cliquez sur **\+ Add Tool**.
+3. Renseignez les champs suivants :
+   - **Name** : `get-customer-data`
+   - **Description** : `Récupère les informations client à partir du numéro de téléphone.`
+   - **Method** : choisissez `GET` si vous récupérez des données, ou `POST` si vous envoyez des données.
+   - **URL** : indiquez l’endpoint de l’API externe, par exemple `https://api.mycompany.com/customers`
 
-Now, your agent is equipped to run this webhook whenever it's needed during a call.
+> ✅ Assurez-vous que l’URL utilise HTTPS et qu’elle est accessible publiquement. Sinon, le webhook ne fonctionnera pas.
+
+4. Cliquez sur **Save** pour créer l’outil.
 
 ---
 
-## Step 3: Test Your Webhook
+## Étape 2 : Assigner l’outil à un agent vocal
 
-Before using it in production, it’s important to test that your webhook is correctly configured.
+Une fois l’outil créé, vous devez le relier à l’agent qui l’utilisera :
 
-You can use [Webhook.site](https://webhook.site) — a free tool that gives you a temporary URL to receive test requests and inspect the data.
+1. Allez dans [AI Agents](https://app.callin.io/agents).
+2. Choisissez l’agent que vous souhaitez configurer.
+3. Faites défiler jusqu’à la section **Tools** et cliquez sur **\+ Add Tool**.
+4. Sélectionnez l’outil que vous venez de créer et enregistrez vos modifications.
 
-Here's an example of a payload Callin might send:
+Votre agent est maintenant prêt à exécuter ce webhook dès qu’il en a besoin pendant un appel.
+
+---
+
+## Étape 3 : Tester votre webhook
+
+Avant de l’utiliser en production, il est important de tester que votre webhook est correctement configuré.
+
+Vous pouvez utiliser [Webhook.site](https://webhook.site) — un outil gratuit qui vous fournit une URL temporaire pour recevoir des requêtes de test et inspecter les données.
+
+Voici un exemple de payload que Callin peut envoyer :
 
 "call_id": "ab12cd34", "agent_name": "Laura AI", "duration": 145, "direction": "outbound", "caller_number": "+34123456789", "summary": "Customer requested a follow-up."
 
-Check that the payload arrives and matches what your external API expects.
+Vérifiez que le payload arrive bien et qu’il correspond à ce que votre API externe attend.
 
 ---
 
-## Step 4: Automate with Other Platforms
+## Étape 4 : Automatiser avec d’autres plateformes
 
-Once your webhook works, you can plug it into automation tools like:
+Une fois que votre webhook fonctionne, vous pouvez l’utiliser avec des outils d’automatisation comme :
 
-- [**Zapier**](https://support.callin.io/Create-AI-Agent/Connect-Zapier): Trigger automations in 3,000+ apps.
-- [**n8n**](https://support.callin.io/Create-AI-Agent/Connect-N8N): Build conditional flows and advanced workflows visually.
-- [**Make.com**](https://support.callin.io/Create-AI-Agent/Connect-Make): Design powerful scenarios without writing code.
+- [**Zapier**](https://support.callin.io/Create-AI-Agent/Connect-Zapier) : déclenchez des automatisations dans plus de 3 000 applications.
+- [**n8n**](https://support.callin.io/Create-AI-Agent/Connect-N8N) : créez des flux conditionnels et des workflows avancés de manière visuelle.
+- [**Make.com**](https://support.callin.io/Create-AI-Agent/Connect-Make) : concevez des scénarios puissants sans écrire de code.
 
-These tools can take your webhook response and send Slack messages, create CRM leads, trigger emails, and much more.
-
----
-
-## Common Errors and How to Fix Them
-
-| Problem             | Likely Cause              | Solution                                   |
-| ------------------- | ------------------------- | ------------------------------------------ |
-| Missing webhook URL | URL field is empty        | Add a valid HTTPS endpoint                 |
-| Tool doesn’t run    | Not assigned to the agent | Go to agent \> Tools tab \> re-assign Tool |
-| No data received    | API is not reachable      | Test URL using Webhook.site                |
-| Timeout error       | API takes too long        | Increase webhook response timeout in Tool  |
+Ces outils peuvent exploiter la réponse du webhook pour envoyer des messages Slack, créer des leads CRM, déclencher des emails, et bien plus encore.
 
 ---
 
-## Final Tip
+## Erreurs courantes et solutions
 
-Webhooks are one of the most powerful ways to extend what your Callin agent can do.
+| Problème                 | Cause probable                         | Solution                                                   |
+| ------------------------ | -------------------------------------- | ---------------------------------------------------------- |
+| URL du webhook manquante | Le champ URL est vide                  | Ajoutez un endpoint HTTPS valide                           |
+| L’outil ne s’exécute pas | L’outil n’est pas assigné à l’agent    | Allez dans l’agent \> onglet Tools \> ré-assignez l’outil   |
+| Aucune donnée reçue      | L’API n’est pas accessible             | Testez l’URL avec Webhook.site                             |
+| Erreur de timeout        | L’API met trop de temps à répondre     | Augmentez le délai de réponse du webhook dans l’outil      |
 
-Start with something simple:\
-Set up a `GET` webhook to fetch customer details by phone number. Once that works, move on to advanced flows with **Zapier**, **n8n**, or **Make.com**.
+---
 
-By combining real-time voice with automation, your AI agent can not only talk — it can fetch data, trigger actions, and drive outcomes across all your tools.
+## Conseil final
+
+Les webhooks sont l’un des moyens les plus puissants d’étendre les capacités de votre agent Callin.
+
+Commencez par quelque chose de simple :\
+mettez en place un webhook `GET` pour récupérer les informations client par numéro de téléphone. Une fois que cela fonctionne, passez à des flux plus avancés avec **Zapier**, **n8n** ou **Make.com**.
+
+En combinant la voix en temps réel et l’automatisation, votre agent IA peut non seulement parler — il peut aussi récupérer des données, déclencher des actions et générer des résultats dans tous vos outils.
