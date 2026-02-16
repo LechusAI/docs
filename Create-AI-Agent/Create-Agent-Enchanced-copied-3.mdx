@@ -1,169 +1,169 @@
 ---
-title: "Crea agente"
-description: "Guida completa per configurare un agente avanzato con LLM, calendario e trasferimenti."
+title: "Create Agent"
+description: "Complete guide to configure an advanced agent with LLM, calendar and transfers."
 ---
 
-## Video 
+## Video Guide
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
   <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/jnsyavqL8CI" title="YouTube video" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
 </div>
 
-## Prima di iniziare
+## Before You Begin
 
-**Un agente** può gestire flussi complessi: intenti sfumati, istruzioni lunghe, acquisizione dati accurata e chiamate **in entrata**, **in uscita** o **in entrambe le direzioni**.
+**An agent** can handle complex flows: nuanced intent, long instructions, accurate data capture, and **inbound**, **outbound**, or **both** call directions.
 
-Se ti servono solo saluti, **FAQ semplici** o **raccolta dati di base** a basso costo, un agente **Basic** è sufficiente.
+If you only need greetings, **simple FAQs**, or **basic data capture** at low cost, a **Basic** agent is enough.
 
-**Azioni esterne (configurale separatamente, poi collegale):**
+**External actions (set up separately, then link):**
 
-- **Pianificazione:** Google Calendar
-- **Trasferimenti:** Call Transfer
-
----
-
-## Step 1. Creare l’agente
-
-Vai su **AI Agents** → **Create Agent** → **Start from Scratch**, inserisci un nome chiaro (ad esempio: **“Support EN – Sales”**), seleziona la **Version** appropriata e clicca **Create Agent**.
-
-Consiglio: nomina gli agenti per **funzione + lingua** per evitare confusione in seguito.
+- **Scheduling:** Google Calendar
+- **Transfers:** Call Transfer
 
 ---
 
-## Step 2. Scegliere la direzione chiamate: Inbound, Outbound o Both
+## Step 1. Create the agent
 
-In **Agent** → **Call Direction**, scegli ciò che rispecchia la tua operatività:
+Go to **AI Agents** → **Create Agent** → **Start from Scratch**, enter a clear name (for example: **“Support EN – Sales”**), select the appropriate **Version**, and click **Create Agent**.
 
-**Inbound:** l’agente riceve chiamate. Utile per supporto, reception, numeri di servizio.\
-Suggerimento: abilita **Transfer Call** per escalare quando serve.
+Recommendation: name agents by **function + language** to avoid confusion later.
 
-**Outbound:** l’agente avvia chiamate. Utile per promemoria, conferme, sondaggi, recupero crediti.\
-Suggerimento: mantieni gli script brevi e imposta **orari consentiti**.
+---
 
-**Both Directions:** un solo agente per chiamate in entrata e in uscita.\
-Utile quando tono e logica sono condivisi; richiede più test per evitare obiettivi misti.
+## Step 2. Choose call direction: Inbound, Outbound, or Both
 
-**Imposta anche:**
+In **Agent** → **Call Direction**, pick what mirrors your operation:
 
-- **Maximum Call Duration (minutes):** soglia di chiusura automatica (ad esempio, 10).
-- **Greeting Message:** la prima cosa che sente chi chiama.
+**Inbound:** the agent receives calls. Use for support desks, reception, service lines.\
+Tip: enable **Transfer Call** to escalate when needed.
 
-**Esempio di saluto (EN):**\
+**Outbound:** the agent initiates calls. Use for reminders, confirmations, surveys, collections.\
+Tip: keep scripts short and set **allowed hours**.
+
+**Both Directions:** one agent for inbound and outbound.\
+Use when tone and logic are shared; it requires more testing to avoid mixed goals.
+
+**Also set:**
+
+- **Maximum Call Duration (minutes):** auto-hang threshold (for example, 10).
+- **Greeting Message:** the first thing the caller hears.
+
+**Greeting example (EN):**\
 Hi, this is {{agent_name}}. How can I help you today? This call may be recorded for quality purposes.
 
 ---
 
-## Step 3. Voce, lingua e Temperature
+## Step 3. Voice, language, and Temperature
 
 In **Voice & Language**:
 
-- **Language / Secondary Language:** imposta una lingua principale e aggiungi una secondaria solo se necessario.
-- **Voice:** scegli un tono/accento coerente con il brand.
-- **Speed:** parti da **Normal** e regola dopo i test.
-- **Temperature:** controlla la creatività.
+- **Language / Secondary Language:** set a primary language and add a secondary only if needed.
+- **Voice:** choose a tone/accent that fits your brand.
+- **Speed:** start at **Normal**, then tune after testing.
+- **Temperature:** controls creativity.
 
-**Guida rapida alla Temperature:**
+**Quick Temperature guidance:**
 
-- **0.2–0.5:** più deterministico (ideale per prenotazioni/compliance).
-- **0.6–0.8:** più conversazionale (FAQ, vendite).
+- **0.2–0.5:** more deterministic (best for booking/compliance).
+- **0.6–0.8:** more conversational (FAQs, sales).
 
-Usa **Test Call** per ascoltare e regolare.
-
----
-
-## Step 4. LLM: cos’è e come sceglierlo
-
-**Cos’è:** l’LLM (Large Language Model) è il “cervello” che comprende e genera risposte. Puoi scegliere provider/modello per bilanciare **precisione**, **latenza** e **costo**.
-
-**Come scegliere (regola rapida):**
-
-- **Flussi brevi/semplici** (triage, FAQ): modello veloce ed economico.
-- **Flussi multi-step** e **data extraction**: modello bilanciato.
-- **Task lunghi**, **multilingua** e di **alta precisione**: modello avanzato.
-
-**Segnali per cambiare:**
-
-- Risposte vaghe o incoerenti: sali di livello.
-- Risposte buone ma troppo lente/costose: scendi di livello.
-
-Per prenotazioni e moduli, abbina un LLM stabile a una **Temperature bassa**.
-
-Importante: imposta la **Timezone** dell’agente in linea con i clienti o con il calendario per evitare prenotazioni con orari sbagliati.
+Use **Test Call** to listen and adjust.
 
 ---
 
-## Step 5. Conversation Prompt (script operativo)
+## Step 4. LLM: what it is and how to choose
 
-Definisci **obiettivi**, **tono** e **regole** dell’agente.
+**What it is:** the LLM (Large Language Model) is the “brain” that understands and generates responses. You can choose a provider/model to balance **accuracy**, **latency**, and **cost**.
 
-**Obiettivo:**
+**How to choose (quick rule):**
 
-1. Saluto caloroso e identificare il motivo con 1–2 domande.
-2. Risolvere o instradare: pianificare, trasferire o inviare un riepilogo.
-3. Confermare i dettagli critici: nome, telefono, data/ora.
+- **Short/simple flows** (triage, FAQs): fast/low-cost model.
+- **Multi-step flows** and **data extraction**: balanced model.
+- **Long**, **multilingual**, **high-precision** tasks: advanced model.
 
-**Stile:**
+**Signals to adjust:**
 
-- Semplice, empatico, senza gergo.
-- Riassumere i prossimi passi prima di chiudere.
+- Vague or inconsistent answers: move up a tier.
+- Solid answers but too slow/expensive: move down a tier.
 
-**Regole:**
+For booking and forms, pair a stable LLM with **low Temperature**.
 
-- Niente dati sensibili.
-- Trasferire su richiesta o quando bloccato.
+Important: set the agent **Timezone** to match your customers or the calendar to prevent wrong-hour bookings.
 
-**Strumenti:**
+---
 
-- Usare Google Calendar e Transfer **solo** quando appropriato e **dopo conferma**.
+## Step 5. Conversation Prompt (operating script)
+
+Define the agent’s **goals**, **tone**, and **rules**.
+
+**Goal:**
+
+1. Warm greeting and identify the reason in 1–2 questions.
+2. Resolve or route: schedule, transfer, or send a summary.
+3. Confirm critical details: name, phone, date/time.
+
+**Style:**
+
+- Plain, empathetic, no jargon.
+- Summarize next steps before closing.
+
+**Rules:**
+
+- No sensitive data.
+- Transfer on request or when blocked.
+
+**Tools:**
+
+- Use Google Calendar and Transfer **only** when appropriate and **after confirmation**.
 
 ---
 
 ## Step 6. Call Actions
 
-### 6.1 Pianificare su Google Calendar
+### 6.1 Schedule on Google Calendar
 
-Prima configura l’integrazione in **Google Calendar** e abilita **Appointments** per il calendario scelto.
+First, set up the integration in **Google Calendar** and enable **Appointments** for the chosen calendar.
 
-In **Call Action**, abilita **Schedule Appointment on Google Calendar** e seleziona quel calendario (usa l’icona ingranaggio se presente).
+In **Call Action**, enable **Schedule Appointment on Google Calendar** and select that calendar (use the gear icon if shown).
 
-Nel prompt, spiega come confermare **orario** e **fuso orario**.
+In the prompt, explain how to confirm **time** and **timezone**.
 
-**Frase di prenotazione (EN):**\
+**Booking line (EN):**\
 I can offer Tuesday 10:30 or Wednesday 12:00 (your local time). Which works?
 
 ---
 
-### 6.2 Trasferire la chiamata
+### 6.2 Transfer call
 
-Crea una configurazione in **Call Transfer** (destinazione, orari, coda).
+Create a configuration in **Call Transfer** (destination, hours, queue).
 
-In **Call Action**, abilita **Transfer Call** e seleziona quella configurazione.
+In **Call Action**, enable **Transfer Call** and select that configuration.
 
-Aggiungi una frase di handoff nel prompt.
+Add a handoff line to the prompt.
 
-**Frase di handoff (EN):**\
+**Handoff line (EN):**\
 I’ll connect you with the right specialist now. Please stay on the line.
 
 ---
 
 ### 6.3 Data Extraction
 
-In **Call Action** → **Data Extraction**, definisci le entità da acquisire:
+In **Call Action** → **Data Extraction**, define the entities to capture:
 
-- **firstName:** nome del contatto (stringa o null).
-- **appointmentDate:** data/ora (stringa ISO o null).
-- **issueType:** motivo principale (valori: billing, support, sales).
+- **firstName:** contact’s first name (string or null).
+- **appointmentDate:** date/time (ISO string or null).
+- **issueType:** main reason (values: billing, support, sales).
 
-Cita le entità nel prompt con uno o due esempi per migliorare la cattura.
+Reference them in the prompt with one or two examples to improve capture.
 
 ---
 
-### 6.4 Webhook post-chiamata
+### 6.4 Post-call webhook
 
-Abilitalo per inviare i dettagli al tuo sistema.
+Enable it to push call details to your system.
 
-Esempio di contenuto (testo normale):\
-Agente: Support EN – Sales. Direzione: both. Entità: firstName Alex; appointmentDate 2025-10-30T10:30:00-03:00; issueType sales. Inoltre: link registrazione e link trascrizione.
+Example content (plain text):\
+Agent: Support EN – Sales. Direction: both. Entities: firstName Alex; appointmentDate 2025-10-30T10:30:00-03:00; issueType sales. Also: recording link and transcript link.
 
 ---
 
@@ -171,55 +171,55 @@ Agente: Support EN – Sales. Direzione: both. Entità: firstName Alex; appointm
 
 In **Call Settings**:
 
-- **Record Calls:** salva audio e trascrizioni (consigliato per QA/compliance).
-- **Voicemail Detection:** chiudi su segreteria per risparmiare minuti.
-- **Background Ambience:** rumore leggero per un effetto naturale.
-- **Greeting Message Delay (ms):** breve pausa prima del saluto (ad esempio, 1200).
+- **Record Calls:** store audio and transcripts (recommended for QA/compliance).
+- **Voicemail Detection:** hang up on voicemail to save minutes.
+- **Background Ambience:** subtle background noise for a natural feel.
+- **Greeting Message Delay (ms):** a short pause before the greeting (for example, 1200).
 
 ---
 
-## Step 8. Test e salvataggio
+## Step 8. Test and save
 
-Esegui **Test Call** in ogni scheda (Agent, Voice & Language, Call Action). Verifica saluto, lingua, velocità, prenotazioni, trasferimenti ed entità.
+Run **Test Call** in each tab (Agent, Voice & Language, Call Action). Validate greeting, language, speed, booking, transfers, and entities.
 
-Clicca **Save** e fai una chiamata reale di verifica. Controlla **Call History** per audio, trascrizione e valori estratti.
-
----
-
-## Configurazione avanzata (opzionale)
-
-- **Keyword routing:** nel prompt, definisci termini che attivano prenotazione (book, reschedule) o trasferimento (talk to human, supervisor).
-- **Doppia conferma:** chiedi di ripetere data/ora prima di prenotare.
-- **Multilingua:** usa Secondary Language solo se servi davvero due lingue; altrimenti disattivalo.
-- **Temperature per obiettivo:** bassa per prenotazione/trasferimento; media per FAQ/vendite.
+Click **Save** and place a real verification call. Check **Call History** for audio, transcript, and extracted values.
 
 ---
 
-## Errori comuni e soluzioni
+## Advanced setup (optional)
+
+- **Keyword routing:** in the prompt, define terms that trigger booking (book, reschedule) or transfer (talk to human, supervisor).
+- **Double confirmations:** ask callers to repeat date/time before booking.
+- **Multilingual:** use Secondary Language only if you truly serve two languages; otherwise disable it.
+- **Temperature by goal:** low for booking/transfer; medium for FAQs/sales.
+
+---
+
+## Common errors and fixes
 
 **“This calendar does not have an appointment action.”**\
-Il calendario non ha Appointments. Vai su Google Calendar, abilitalo oppure scegli un altro calendario con l’azione attiva.
+The calendar lacks Appointments. Go to Google Calendar, enable it, or pick another calendar with the action active.
 
 **Banner: “Select a Google Calendar…”**\
-In Call Action, apri l’ingranaggio su Schedule Appointment e seleziona il calendario corretto.
+In Call Action, open the gear on Schedule Appointment and select the correct calendar.
 
 **Banner: “Select a Transfer Configuration…”**\
-Crea e salva un profilo in Call Transfer, poi selezionalo nell’agente.
+Create and save a profile in Call Transfer, then select it in the agent.
 
-**Prenotazioni con orario errato**\
-Allinea la Timezone dell’agente al calendario e conferma l’ora locale di chi chiama.
+**Wrong-hour bookings**\
+Align the agent Timezone with the calendar and confirm the caller’s local time.
 
-**Mix di lingue**\
-Tieni il prompt in una sola lingua; imposta Language/Secondary Language correttamente e scegli una voce coerente.
+**Language mixing**\
+Keep the prompt in one language; set Language/Secondary Language properly and pick a matching voice.
 
-**Entità mancanti**\
-Definisci tipi chiari (stringa/booleano/ISO), menziona le entità nel prompt, abbassa la Temperature o usa un LLM più potente.
+**Entities missing**\
+Define clear types (string/boolean/ISO), mention entities in the prompt, lower Temperature, or try a more capable LLM.
 
-**Webhook abilitato senza URL (“Webhook Url is required…”)**\
-Inserisci un endpoint valido prima di abilitare Post-Call Webhook o disabilitalo durante i test.
+**Webhook enabled without URL (“Webhook Url is required…”)**\
+Add a valid endpoint before enabling Post-Call Webhook or disable it while testing.
 
 ---
 
-## Chiusura
+## Close
 
-Il tuo agente ora può comprendere contesti complessi, prenotare con precisione, escalare chiamate e inviare dati puliti ai tuoi sistemi. Parti con un LLM bilanciato, testa con chiamate reali e ottimizza: questa base ti permetterà di scalare senza attriti.
+Your agent can now understand complex contexts, book accurately, escalate calls, and feed clean data to your systems. Start with a balanced LLM, test with real calls, and tune—this foundation will let you scale without friction.
