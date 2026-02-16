@@ -1,0 +1,182 @@
+---
+title: "Créer des contacts"
+description: "Ajouter, importer et organiser des contacts avec mappage des colonnes, validation et actions en masse."
+---
+
+## Vue d’ensemble
+
+La section **Contacts** de [Callin.io](http://Callin.io) est l’endroit où vous stockez, gérez et organisez toutes les personnes que vos agents IA peuvent contacter — y compris des clients, des prospects, ou même des utilisateurs de test internes. Chaque entrée sert de point de référence pour de futures interactions, permettant à vos agents de passer des appels personnalisés, automatisés ou directs en utilisant des données dynamiques.
+
+Les contacts jouent trois rôles essentiels dans l’écosystème [Callin.io](http://Callin.io) :
+
+- **Appels directs :** vous permet de sélectionner une ou plusieurs personnes et de lancer des appels immédiatement avec n’importe quel agent IA.
+- **Campagnes :** les contacts servent de données source pour les workflows d’outreach automatisés, permettant une communication de masse sans numérotation manuelle.
+- **Variables dynamiques :** des informations comme le nom, l’email ou l’heure d’un rendez-vous peuvent être insérées dynamiquement dans les prompts pour personnaliser les conversations.
+
+**Exemple :**\
+Hi {{name}}, je vous appelle pour confirmer votre rendez-vous demain à {{hour}}.
+
+Lorsque l’agent IA s’exécute, **{{name}}** et **{{hour}}** se remplissent automatiquement avec les informations spécifiques de chaque contact. Ce mécanisme permet à [Callin.io](http://Callin.io) de proposer des conversations personnalisées et naturelles à grande échelle.
+
+---
+
+## Avant de commencer
+
+Avant de créer ou d’importer des contacts, il est important de comprendre comment ils s’intègrent à votre système global :
+
+- Les contacts sont stockés de manière centralisée et utilisés dans plusieurs outils comme **Téléphonie → Contacts** et **Campagnes**.
+- Chaque fiche contact contient au moins un champ requis — le **numéro de téléphone** — qui sert d’identifiant unique pour les appels.
+- Vous pouvez enrichir vos contacts avec des champs optionnels comme le **nom** et l’**email**, utilisables comme variables dans les prompts.
+- Les données de contacts importées sont validées automatiquement afin d’éviter les doublons et les erreurs de format.
+
+Maintenir une liste de contacts propre et structurée garantit une exécution de campagne plus fluide, de meilleures analyses et des performances d’agent plus naturelles.
+
+---
+
+## Étapes
+
+### 1. Ouvrir la section Contacts
+
+Pour commencer à gérer vos contacts, allez dans **Téléphonie → Contacts** depuis la barre latérale gauche.
+
+Vous trouverez un tableau dynamique listant vos contacts existants avec des colonnes pour :
+
+- **Nom** — nom complet de la personne.
+- **Numéro de téléphone** — doit inclure l’indicatif pays au format international.
+- **Email** — optionnel, mais utile pour la vérification ou l’automatisation de suivi.
+
+Depuis cette vue, vous pouvez :
+
+- Ajouter de nouveaux contacts individuellement.
+- Importer une liste de contacts via un fichier CSV.
+- Modifier les informations des contacts existants.
+- Supprimer les contacts sélectionnés.
+- Exporter votre liste de contacts pour sauvegarde ou migration.
+
+L’interface prend en charge la gestion unitaire et les actions en masse, ce qui vous permet de traiter efficacement de grandes bases de données.
+
+---
+
+### 2. Ajouter un contact manuellement
+
+La création manuelle est utile pour tester ou ajouter un petit nombre de contacts.
+
+1. Cliquez sur **\+ Add Contact**.
+2. Renseignez les informations requises :
+   - **Nom :** le nom de la personne (par ex. _Laura Perez_).
+   - **Numéro de téléphone :** requis. Utilisez le format international complet (par ex. _\+15551234567_).
+   - **Email :** optionnel mais recommandé pour des scénarios multi-canal.
+3. Cliquez sur **Save Contact** pour l’enregistrer.
+
+Le nouveau contact apparaîtra immédiatement dans votre tableau. Vous pouvez maintenant l’assigner à un agent ou l’inclure dans une campagne.
+
+---
+
+### 3. Importer des contacts via un fichier CSV
+
+Si vous devez importer plusieurs contacts d’un coup, vous pouvez les importer via un fichier CSV correctement formaté. Cette méthode est idéale pour des ensembles de données volumineux comme des listes de leads, des exports CRM ou des bases clients existantes.
+
+Suivez ces étapes :
+
+1. Cliquez sur **Upload CSV**.
+2. Choisissez votre fichier depuis votre appareil.
+3. Mappez les colonnes CSV vers les champs [Callin.io](http://Callin.io) correspondants :
+   - **Phone (requis)** — utilisé comme identifiant unique.
+   - **Name** — permet aux agents de saluer les clients par leur nom.
+   - **Email (optionnel)** — utile pour des messages personnalisés ou des suivis.
+4. Si vos numéros n’incluent pas le signe “+” ou l’indicatif pays, sélectionnez un **pays par défaut** dans le menu déroulant.
+5. Cliquez sur **Continue** pour prévisualiser le mapping et vérifier l’alignement avec le format [Callin.io](http://Callin.io).
+6. Une fois validé, cliquez sur **Confirm** pour finaliser l’import.
+
+**Astuce :** vous pouvez télécharger un **modèle CSV d’exemple** depuis l’écran d’import. Cela aide à garantir que vos en-têtes et votre format correspondent aux exigences de [Callin.io](http://Callin.io).
+
+**Validation et comportement d’import :**
+
+- Le système vérifie automatiquement les doublons à partir du numéro de téléphone.
+- Les enregistrements sans numéro valide sont ignorés.
+- Les erreurs sont affichées avec des numéros de lignes précis pour vous permettre de corriger et réimporter facilement.
+
+Cette validation garantit que vos données de contacts restent propres et cohérentes.
+
+---
+
+### 4. Utiliser les contacts avec les agents
+
+Votre liste de contacts est directement liée à vos agents IA, permettant un outreach rapide et des tests en temps réel.
+
+En haut de la page Contacts, vous trouverez un menu déroulant **Select Agent**. Suivez ces étapes :
+
+1. Ouvrez **Select Agent** et choisissez quel agent IA doit passer les appels.
+2. Sélectionnez un ou plusieurs contacts via les cases à cocher à côté de leurs noms.
+3. Cliquez sur **Call Selected** pour démarrer les appels vers ces contacts.
+
+L’agent IA sélectionné commencera automatiquement à appeler chaque contact selon son prompt, son comportement et sa configuration de voix. C’est particulièrement utile pour :
+
+- Faire des appels de test rapides afin de valider des scripts.
+- Relancer des prospects ou des clients manuellement.
+- Réaliser un outreach ciblé sans créer une campagne complète.
+
+Vous pouvez aussi effectuer des suppressions en masse via l’option **Delete Selected** pour retirer des contacts obsolètes ou invalides. Le système demandera une confirmation avant toute suppression.
+
+---
+
+### 5. Utiliser les contacts dans les campagnes
+
+Chaque contact que vous créez ou importez dans [Callin.io](http://Callin.io) est immédiatement disponible dans **Téléphonie → Campagnes**. Vous pouvez regrouper et segmenter vos contacts selon vos besoins, puis les assigner à des campagnes ou à des agents IA spécifiques.
+
+L’intégration avec les campagnes vous permet de :
+
+- Construire des flux d’appels automatisés à partir de votre base de contacts.
+- Segmenter les listes par **agent**, **localisation** ou **objectif**.
+- Automatiser des séquences d’outreach comme des rappels, des demandes d’avis ou la qualification de leads.
+- Suivre des métriques d’engagement — par exemple, combien de contacts ont répondu ou ont pris un rendez-vous.
+
+Quand vous lancez une campagne, [Callin.io](http://Callin.io) référence dynamiquement vos données de contacts. Cela signifie que toute mise à jour dans la section Contacts (comme une correction de nom ou de numéro) se reflète automatiquement dans toutes les campagnes associées.
+
+---
+
+## Pourquoi c’est important
+
+Centraliser vos contacts dans [Callin.io](http://Callin.io) crée une source unique de vérité pour toutes vos communications. Cela garantit que vos agents IA disposent toujours de données exactes et à jour pour personnaliser chaque appel.
+
+**Avantages d’une bonne gestion des contacts :**
+
+- **Organisation :** garder tous les clients et prospects dans une base structurée.
+- **Automatisation :** lancer des campagnes facilement sans réimporter les données.
+- **Personnalisation :** utiliser des champs dynamiques pour rendre les interactions plus humaines et pertinentes.
+- **Scalabilité :** gérer des milliers d’enregistrements via des actions en masse et des imports CSV.
+- **Intégrité des données :** la validation intégrée empêche les doublons et les numéros mal formatés.
+
+Lorsque votre base de contacts est bien maintenue, vos agents peuvent joindre les bonnes personnes plus rapidement, être plus précis et produire des résultats mesurables.
+
+---
+
+## Dépannage
+
+### Numéro de téléphone manquant
+
+- **Cause :** chaque contact doit inclure un numéro valide avec indicatif pays.
+- **Solution :** révisez votre liste et mettez à jour les entrées incomplètes. Le système les signalera automatiquement lors de l’import.
+
+### Échec de l’import CSV
+
+- **Cause :** taille du fichier supérieure à 10 Mo ou colonnes ne correspondant pas aux en-têtes requis.
+- **Solution :** réduisez la taille du fichier ou vérifiez le mapping des colonnes (Phone, Name, Email). Enregistrez le fichier en encodage UTF-8 pour éviter les erreurs.
+
+### L’agent n’appelle pas
+
+- **Cause :** aucun agent n’a été sélectionné avant de cliquer sur **Call Selected**.
+- **Solution :** assurez-vous de choisir un agent IA dans le menu déroulant en haut de la page avant de lancer l’appel.
+
+### Contacts en double après import
+
+- **Cause :** le même numéro apparaît plusieurs fois dans votre CSV.
+- **Solution :** utilisez la validation anti-doublons intégrée ou nettoyez vos données avant l’import.
+
+---
+
+## Note finale
+
+Votre liste de contacts est la base de toutes les opérations dans [Callin.io](http://Callin.io). Une fois correctement configurée, elle permet à vos agents IA d’appeler de vraies personnes, de lancer des campagnes et de personnaliser chaque conversation de manière fluide.
+
+Considérez vos **Contacts** comme le cœur de votre workflow IA — chaque interaction, campagne ou prompt commence ici. Garder cette section à jour, validée et organisée garantit que vos agents communiquent de manière pertinente, professionnelle et naturelle.
