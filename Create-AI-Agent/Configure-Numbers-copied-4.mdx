@@ -1,269 +1,269 @@
 ---
-title: "Numbers"
-description: "Learn how to purchase, import, or verify a phone number so your AI agents can make and receive calls."
+title: "Numéros"
+description: "Apprenez à acheter, importer ou vérifier un numéro de téléphone afin que vos agents IA puissent passer et recevoir des appels."
 ---
 
-## Overview
+## Vue d’ensemble
 
-In Callin.io, phone numbers are the foundation of your AI communication system. Without at least one active number, your AI agent can’t make or receive calls.
+Dans Callin.io, les numéros de téléphone sont la base de votre système de communication IA. Sans au moins un numéro actif, votre agent IA ne peut ni passer ni recevoir d’appels.
 
-You can add numbers in four ways:
+Vous pouvez ajouter des numéros de quatre façons :
 
-- **Purchase** a number in Callin.io (Twilio-managed)
-- **Import from Twilio** (if you already have numbers there)
-- **Import from Telnyx** (after connecting Telnyx)
-- **Connect BYOC / SIP trunk** (Bring Your Own Carrier)
+- **Acheter** un numéro dans Callin.io (géré par Twilio)
+- **Importer depuis Twilio** (si vous y avez déjà des numéros)
+- **Importer depuis Telnyx** (après avoir connecté Telnyx)
+- **Connecter BYOC / trunk SIP** (Bring Your Own Carrier)
 
-This guide explains each option, how **Callin compute minutes** work, and the exact setup steps.
-
----
-
-## Before You Start
-
-- You need **at least one active number** to make or receive calls.
-- Carrier telephony costs (Twilio, Telnyx, or SIP) are billed **by your provider**, not inside Callin.io.
+Ce guide explique chaque option, comment fonctionnent les **minutes de calcul Callin**, ainsi que les étapes exactes de configuration.
 
 ---
 
-## How Minutes and Billing Work in Callin
+## Avant de commencer
 
-Callin tracks a single usage counter:
-
-### Callin Minutes (Compute Minutes)
-
-Compute minutes represent the time your AI agent is active: **listening, processing, and responding**.
-
-Callin does **not** maintain a second “call minutes” counter.
-
-### Test Call
-
-- Consumes **Callin compute minutes only**.
-
-### Real Calls (Inbound/Outbound)
-
-- Consume **Callin compute minutes** while the agent is active.
-- Carrier telephony costs depend on your provider and do **not** appear as a second minutes counter in Callin.
+- Vous avez besoin d’**au moins un numéro actif** pour passer ou recevoir des appels.
+- Les coûts de téléphonie opérateur (Twilio, Telnyx ou SIP) sont facturés **par votre fournisseur**, et non dans Callin.io.
 
 ---
 
-## Billing Rules for Outbound Calls Made in the App (Rounding Rule)
+## Comment fonctionnent les minutes et la facturation dans Callin
 
-### Default Billing
+Callin suit un seul compteur d’utilisation :
 
-- Outbound calls are billed **per second**.
+### Minutes Callin (minutes de calcul)
 
-### Short-Call Rounding Rule
+Les minutes de calcul représentent le temps pendant lequel votre agent IA est actif : **écoute, traitement et réponse**.
 
-If **50% or more** of your **last 100 outbound calls** made in the app have a duration **under 50 seconds**, then from that point forward Callin will bill the **first 60 seconds** of each outbound call (or any fraction of it) as **one full minute** (rounded up to 1 minute).
+Callin ne maintient **pas** un second compteur de « minutes d’appel ».
 
-### Scope of the Rule (Very Important)
+### Appel de test
 
-This rounding rule applies **only** when outbound calls in the app are made using:
+- Consomme **uniquement des minutes de calcul Callin**.
 
-- **Personal Number**
-- **Numbers purchased directly through Callin.io** (Twilio-managed)
+### Appels réels (entrant/sortant)
 
-This rounding rule **does not apply** to:
-
-- **Numbers imported from Twilio**
-- **Numbers imported from Telnyx**
-- **BYOC / SIP trunking numbers**
+- Consomment des **minutes de calcul Callin** pendant que l’agent est actif.
+- Les coûts de téléphonie opérateur dépendent de votre fournisseur et **n’apparaissent pas** comme un second compteur de minutes dans Callin.
 
 ---
 
-## Understanding Your Options
+## Règles de facturation des appels sortants effectués dans l’application (règle d’arrondi)
+
+### Facturation par défaut
+
+- Les appels sortants sont facturés **à la seconde**.
+
+### Règle d’arrondi pour les appels courts
+
+Si **50 % ou plus** de vos **100 derniers appels sortants** effectués dans l’application ont une durée **inférieure à 50 secondes**, alors à partir de ce moment Callin facturera les **60 premières secondes** de chaque appel sortant (ou toute fraction de celles-ci) comme **une minute entière** (arrondie à 1 minute).
+
+### Portée de la règle (très important)
+
+Cette règle d’arrondi s’applique **uniquement** lorsque les appels sortants dans l’application sont effectués avec :
+
+- **Numéro personnel**
+- **Numéros achetés directement via Callin.io** (gérés par Twilio)
+
+Cette règle d’arrondi **ne s’applique pas** à :
+
+- **Numéros importés depuis Twilio**
+- **Numéros importés depuis Telnyx**
+- **Numéros BYOC / trunk SIP**
+
+---
+
+## Comprendre vos options
 
 ### 1) Twilio
 
-Twilio is a cloud communications platform that offers APIs for calls, messaging, and video.
+Twilio est une plateforme de communications cloud qui propose des API pour les appels, la messagerie et la vidéo.
 
-Choose **Twilio** if you want:
+Choisissez **Twilio** si vous voulez :
 
-- A quick, low-maintenance setup
-- Built-in reliability with minimal configuration
-- Global coverage with easy number search and purchase
+- Une mise en place rapide et peu contraignante
+- Une fiabilité intégrée avec une configuration minimale
+- Une couverture mondiale avec recherche et achat de numéros simplifiés
 
-When you buy or import a Twilio number, Callin.io connects it automatically for use within the platform. You don’t need to manage SIP routing manually.
+Lorsque vous achetez ou importez un numéro Twilio, Callin.io le connecte automatiquement pour utilisation dans la plateforme. Vous n’avez pas besoin de gérer le routage SIP manuellement.
 
 ### 2) Telnyx
 
-Telnyx is a communications provider that offers deeper control over routing and SIP trunk configuration.
+Telnyx est un fournisseur de communications qui offre un contrôle plus avancé du routage et de la configuration des trunks SIP.
 
-Choose **Telnyx** if you want:
+Choisissez **Telnyx** si vous voulez :
 
-- Full control over SIP trunks and routing
-- Advanced settings (codecs, encryption, regional routing)
-- A flexible setup for compliance or enterprise telephony
+- Un contrôle total des trunks SIP et du routage
+- Des réglages avancés (codecs, chiffrement, routage régional)
+- Une configuration flexible pour la conformité ou la téléphonie entreprise
 
-Telnyx requires a slightly more technical setup, but becomes highly customizable once connected.
+Telnyx demande une configuration un peu plus technique, mais devient très personnalisable une fois connecté.
 
-### 3) SIP Trunking (BYOC)
+### 3) Trunk SIP (BYOC)
 
-SIP trunking lets you connect your own telecom infrastructure directly to Callin.io using **BYOC (Bring Your Own Carrier)**.
+Le trunk SIP vous permet de connecter directement votre infrastructure télécom à Callin.io via **BYOC (Bring Your Own Carrier)**.
 
-Choose **BYOC** if:
+Choisissez **BYOC** si :
 
-- You already have an existing SIP carrier (PBX/corporate system)
-- You need to manage routing, SBCs, or regional carriers
-- You want Callin.io as a voice automation layer over your existing telephony
+- Vous avez déjà un opérateur SIP existant (PBX / système d’entreprise)
+- Vous devez gérer le routage, les SBC ou des opérateurs régionaux
+- Vous voulez utiliser Callin.io comme couche d’automatisation vocale au-dessus de votre téléphonie existante
 
-With BYOC, you manually configure SIP credentials and routes. This is designed for advanced users or telecom teams.
-
----
-
-## Steps
-
-### 1) Connect Your Provider Through BYOC
-
-Go to **Telephony → BYOC** to link Telnyx or another SIP provider.
-
-#### If You Use Telnyx
-
-1. Select the **Telnyx** tab.
-2. Enter your **API Key**.
-3. Callin.io retrieves your active numbers (DIDs).
-4. Select the numbers you want to activate.
-5. Callin.io sets up inbound and outbound SIP trunking automatically.
-6. Click **Start** to begin synchronization.
-7. Once complete, your Telnyx numbers appear in your account.
-
-#### If You Use Another SIP Provider
-
-1. Open **Other SIP Provider** tab.
-2. Configure your SIP trunk in three sections:
-
-**Basic**
-
-- Set a name
-- Enter your number in **E.164** format
-
-**Inbound**
-
-- Define where inbound calls will be sent (your **SBC/FQDN**)
-- Choose **TLS** or **UDP** transport
-- Enable **media encryption** if supported
-
-**Outbound**
-
-- Enter SIP credentials (**SBC address**, **username**, **password**)
-- Select outbound country permissions
-
-3. Click **Save & Import**.
-
-> **Note:** If the SBC address or credentials are wrong, the trunk won’t connect.
+Avec BYOC, vous configurez manuellement les identifiants et les routes SIP. Cela s’adresse aux utilisateurs avancés ou aux équipes télécom.
 
 ---
 
-### 2) Add Numbers to Your Account
+## Étapes
 
-Go to **Telephony → Numbers**. This section lists all numbers associated with your account.
+### 1) Connecter votre fournisseur via BYOC
 
-Click **\+ Add Number**, then choose one option:
+Allez dans **Téléphonie → BYOC** pour lier Telnyx ou un autre fournisseur SIP.
 
-#### Option A) Purchase Number (Twilio-Managed)
+#### Si vous utilisez Telnyx
 
-Purchase a number directly through Callin.io (Twilio-managed).
+1. Sélectionnez l’onglet **Telnyx**.
+2. Saisissez votre **clé API**.
+3. Callin.io récupère vos numéros actifs (DID).
+4. Sélectionnez les numéros que vous souhaitez activer.
+5. Callin.io configure automatiquement les trunks SIP entrants et sortants.
+6. Cliquez sur **Démarrer** pour lancer la synchronisation.
+7. Une fois terminé, vos numéros Telnyx apparaissent dans votre compte.
 
-1. Choose the country.
-2. Choose the type (**local** or **toll-free**).
-3. Search by area code if needed.
-4. Select a number and purchase it.
+#### Si vous utilisez un autre fournisseur SIP
 
-**Rounding rule reminder:**\
-Outbound calls in the app using a **Callin-purchased** number may trigger the short-call rounding rule.
+1. Ouvrez l’onglet **Autre fournisseur SIP**.
+2. Configurez votre trunk SIP en trois sections :
 
----
+**De base**
 
-#### Option B) Import From Twilio
+- Définissez un nom
+- Saisissez votre numéro au format **E.164**
 
-Import existing numbers from your Twilio account.
+**Entrant**
 
-1. Enter your **Account SID** and **Auth Token**.
-2. Select the numbers to import.
-3. Callin.io links them automatically.
-4. Assign them to AI agents to start inbound/outbound calls.
+- Définissez où les appels entrants seront envoyés (votre **SBC/FQDN**)
+- Choisissez le transport **TLS** ou **UDP**
+- Activez le **chiffrement média** si pris en charge
 
-**Rounding rule reminder:**\
-Numbers imported from **Twilio** are **not** within the scope of the short-call rounding rule.
+**Sortant**
 
----
+- Saisissez les identifiants SIP (**adresse SBC**, **nom d’utilisateur**, **mot de passe**)
+- Sélectionnez les autorisations de pays pour les appels sortants
 
-#### Option C) Add Personal Number (Outbound-Only)
+3. Cliquez sur **Enregistrer et importer**.
 
-Add your personal number (e.g., your mobile phone) to place calls from the app.
-
-**Important limitation:** Personal numbers are **outbound-only** and cannot receive inbound calls in the app.
-
-**Verification steps**
-
-1. Enter your phone number.
-2. You’ll receive a verification call.
-3. Enter the code when prompted.
-4. Once verified, your number is added.
-
-**Rounding rule reminder:**\
-Outbound calls in the app using **Personal Number** may trigger the short-call rounding rule.
+> **Remarque :** si l’adresse SBC ou les identifiants sont incorrects, le trunk ne se connectera pas.
 
 ---
 
-#### Option D) Add Telnyx Number
+### 2) Ajouter des numéros à votre compte
 
-If your Telnyx account is already connected, import your active Telnyx numbers.
+Allez dans **Téléphonie → Numéros**. Cette section liste tous les numéros associés à votre compte.
 
-1. Select the numbers you want.
-2. Click **Import**.
+Cliquez sur **+ Ajouter un numéro**, puis choisissez une option :
 
-Telnyx supports advanced control such as:
+#### Option A) Acheter un numéro (géré par Twilio)
 
-- Managing routing logic
-- Adjusting codecs and audio encryption
-- Enabling multi-region redundancy
+Achetez un numéro directement via Callin.io (géré par Twilio).
 
-**Rounding rule reminder:**\
-Numbers imported from **Telnyx** are **not** within the scope of the short-call rounding rule.
+1. Choisissez le pays.
+2. Choisissez le type (**local** ou **numéro vert**).
+3. Recherchez par indicatif régional si nécessaire.
+4. Sélectionnez un numéro et achetez-le.
 
----
-
-### 3) Verify Your Numbers
-
-Each number card shows its type and provider.
-
-From **Telephony → Numbers**, verify:
-
-- Renewal date
-- Connection type (Direct, SIP, Twilio, or Telnyx)
-- Activation status
-
-Make sure all numbers are **active** and properly linked.
+**Rappel sur la règle d’arrondi :**\
+Les appels sortants effectués dans l’application avec un numéro **acheté via Callin** peuvent déclencher la règle d’arrondi des appels courts.
 
 ---
 
-## Tips & Notes
+#### Option B) Importer depuis Twilio
 
-- If you’re starting fast, use **Twilio** (purchase inside Callin.io).
-- If you need routing and encryption control, use **Telnyx** or **BYOC**.
-- Carrier charges are billed by your provider; Callin tracks only **compute minutes**.
+Importez des numéros existants depuis votre compte Twilio.
 
----
+1. Saisissez votre **Account SID** et votre **Auth Token**.
+2. Sélectionnez les numéros à importer.
+3. Callin.io les relie automatiquement.
+4. Assignez-les à des agents IA pour démarrer les appels entrants/sortants.
 
-## Troubleshooting
-
-**Symptom:** Can’t make calls\
-**Likely cause:** Number is inactive or not connected to a valid provider\
-**Fix:** Confirm status in **Telephony → Numbers** and validate your provider connection in **Telephony → BYOC**.
-
-**Symptom:** Personal number not receiving calls\
-**Likely cause:** Personal numbers are outbound-only\
-**Fix:** Use a Twilio/Telnyx/BYOC number for inbound calling.
-
-**Symptom:** Missing imported numbers\
-**Likely cause:** Wrong credentials or DID permissions\
-**Fix:** Re-check API keys/tokens and confirm the numbers are active in Twilio/Telnyx.
+**Rappel sur la règle d’arrondi :**\
+Les numéros importés depuis **Twilio** ne sont **pas** concernés par la règle d’arrondi des appels courts.
 
 ---
 
-## Final Note
+#### Option C) Ajouter un numéro personnel (sortant uniquement)
 
-Phone numbers connect your AI agents to real customers.
+Ajoutez votre numéro personnel (par exemple, votre mobile) pour passer des appels depuis l’application.
 
-Whether you choose **Twilio** for simplicity, **Telnyx** for control, or **BYOC** for full customization, once configured your agents can call, answer, and automate conversations at scale.
+**Limitation importante :** les numéros personnels sont **uniquement sortants** et ne peuvent pas recevoir d’appels entrants dans l’application.
+
+**Étapes de vérification**
+
+1. Saisissez votre numéro de téléphone.
+2. Vous recevrez un appel de vérification.
+3. Saisissez le code lorsque cela vous est demandé.
+4. Une fois vérifié, votre numéro est ajouté.
+
+**Rappel sur la règle d’arrondi :**\
+Les appels sortants dans l’application utilisant un **numéro personnel** peuvent déclencher la règle d’arrondi des appels courts.
+
+---
+
+#### Option D) Ajouter un numéro Telnyx
+
+Si votre compte Telnyx est déjà connecté, importez vos numéros Telnyx actifs.
+
+1. Sélectionnez les numéros que vous souhaitez.
+2. Cliquez sur **Importer**.
+
+Telnyx prend en charge des contrôles avancés tels que :
+
+- Gestion de la logique de routage
+- Ajustement des codecs et du chiffrement audio
+- Activation de la redondance multi-région
+
+**Rappel sur la règle d’arrondi :**\
+Les numéros importés depuis **Telnyx** ne sont **pas** concernés par la règle d’arrondi des appels courts.
+
+---
+
+### 3) Vérifier vos numéros
+
+Chaque carte de numéro affiche son type et son fournisseur.
+
+Depuis **Téléphonie → Numéros**, vérifiez :
+
+- Date de renouvellement
+- Type de connexion (Direct, SIP, Twilio ou Telnyx)
+- Statut d’activation
+
+Assurez-vous que tous les numéros sont **actifs** et correctement liés.
+
+---
+
+## Conseils et remarques
+
+- Si vous voulez démarrer rapidement, utilisez **Twilio** (achat dans Callin.io).
+- Si vous avez besoin d’un contrôle du routage et du chiffrement, utilisez **Telnyx** ou **BYOC**.
+- Les frais opérateur sont facturés par votre fournisseur ; Callin ne suit que les **minutes de calcul**.
+
+---
+
+## Dépannage
+
+**Symptôme :** impossible de passer des appels\
+**Cause probable :** le numéro est inactif ou n’est pas connecté à un fournisseur valide\
+**Correctif :** confirmez l’état dans **Téléphonie → Numéros** et validez la connexion de votre fournisseur dans **Téléphonie → BYOC**.
+
+**Symptôme :** le numéro personnel ne reçoit pas d’appels\
+**Cause probable :** les numéros personnels sont uniquement sortants\
+**Correctif :** utilisez un numéro Twilio/Telnyx/BYOC pour les appels entrants.
+
+**Symptôme :** numéros importés manquants\
+**Cause probable :** identifiants incorrects ou permissions DID\
+**Correctif :** revérifiez les clés API / tokens et confirmez que les numéros sont actifs dans Twilio/Telnyx.
+
+---
+
+## Note finale
+
+Les numéros de téléphone connectent vos agents IA à de vrais clients.
+
+Que vous choisissiez **Twilio** pour la simplicité, **Telnyx** pour le contrôle, ou **BYOC** pour une personnalisation complète, une fois configurés vos agents pourront appeler, répondre et automatiser des conversations à grande échelle.
