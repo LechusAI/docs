@@ -1,0 +1,142 @@
+---
+title: "Kontakte erstellen"
+description: "Kontakte hinzufügen, importieren und organisieren – mit Spaltenzuordnung, Validierung und Massenaktionen."
+---
+
+## Überblick
+Der Bereich **Contacts** in Callin.io ist der Ort, an dem du alle Personen speicherst, verwaltest und organisierst, die deine KI-Agenten erreichen können — einschließlich Kundinnen und Kunden, Leads oder sogar interner Testnutzer. Jeder Eintrag in diesem Bereich dient als Referenzpunkt für zukünftige Interaktionen und ermöglicht es deinen Agenten, personalisierte, automatisierte oder direkte Anrufe mithilfe dynamischer Daten zu tätigen.
+
+Kontakte übernehmen drei wesentliche Rollen im Callin.io-Ökosystem:
+
+- **Direkte Anrufe:** Ermöglicht dir, eine oder mehrere Personen auszuwählen und sofort Anrufe mit einem beliebigen KI-Agenten zu starten.
+- **Kampagnen:** Kontakte dienen als Quelldaten für automatisierte Outreach-Workflows und ermöglichen Massenkommunikation ohne manuelles Wählen.
+- **Dynamische Variablen:** Informationen wie Name, E-Mail oder Terminzeit können dynamisch in Prompts eingefügt werden, um Gespräche zu personalisieren.
+
+## Bevor du beginnst
+Bevor du Kontakte erstellst oder importierst, ist es wichtig zu verstehen, wie sie in dein Gesamtsystem integriert sind:
+
+- Kontakte werden zentral gespeichert und in mehreren Tools verwendet, z. B. in [Telephony → Contacts](https://app.callin.io/contacts) und [Campaigns](https://app.callin.io/campaigns).
+- Jeder Kontaktdatensatz enthält mindestens ein Pflichtfeld — die **Phone Number** — die als eindeutiger Identifikator für Anrufe dient.
+- Du kannst Kontakte mit optionalen Feldern wie **Name** und **Email** anreichern, die dann als Variablen in Prompts genutzt werden können.
+- Importierte Kontaktdaten werden automatisch validiert, um Duplikate und Formatierungsfehler zu vermeiden.
+
+Eine saubere, strukturierte Kontaktliste sorgt für reibungslosere Kampagnen, bessere Analysen und ein natürlicheres Agentenverhalten.
+
+## Schritte
+
+### 1. Den Bereich „Contacts“ öffnen
+Um deine Kontakte zu verwalten, gehe über die linke Seitenleiste zu [Telephony → Contacts](https://app.callin.io/contacts).
+
+Du findest dort eine dynamische Tabelle, die deine bestehenden Kontakte mit folgenden Spalten auflistet:
+- **Name** — der vollständige Name der Person.
+- **Phone Number** — muss den Ländercode im internationalen Format enthalten.
+- **Email** — optional, aber nützlich für Verifizierung oder Follow-up-Automatisierung.
+
+Von dieser Ansicht aus kannst du:
+- neue Kontakte einzeln hinzufügen,
+- eine Kontaktliste per CSV-Datei hochladen,
+- bestehende Kontaktdetails bearbeiten,
+- ausgewählte Kontakte löschen,
+- deine Kontaktliste für Backup oder Datenmigration exportieren.
+
+Die Oberfläche unterstützt sowohl die Verwaltung einzelner Einträge als auch Massenaktionen, damit du große Datenbanken effizient bearbeiten kannst.
+
+### 2. Einen Kontakt manuell hinzufügen
+Die manuelle Erstellung ist hilfreich zum Testen oder wenn du nur wenige Kontakte hinzufügen möchtest.
+
+1. Klicke auf **+ Add Contact**.
+2. Fülle die erforderlichen Angaben aus:
+   - **Name:** Der Name der Person (z. B. *Laura Perez*).
+   - **Phone Number:** Erforderlich. Verwende das vollständige internationale Format (z. B. *+15551234567*).
+   - **Email:** Optional, aber empfohlen für kanalübergreifende Kommunikation.
+3. Klicke auf **Save Contact**, um den Kontakt zu speichern.
+
+Der neu hinzugefügte Kontakt erscheint sofort in deiner Kontakttabelle. Du kannst ihn jetzt einem Agenten zuweisen oder in eine Kampagne aufnehmen.
+
+### 3. Kontakte mit einer CSV-Datei hochladen
+Wenn du mehrere Kontakte auf einmal importieren musst, kannst du sie über eine korrekt formatierte CSV-Datei hochladen. Diese Methode ist ideal für große Datensätze wie Lead-Listen, CRM-Exporte oder bestehende Kundenlisten.
+
+Gehe wie folgt vor:
+
+1. Klicke auf **Upload CSV**.
+2. Wähle die Datei von deinem Gerät aus.
+3. Ordne deine CSV-Spalten den entsprechenden Callin.io-Feldern zu:
+   - **Phone (required)** — wird als eindeutiger Identifikator verwendet.
+   - **Name** — damit Agenten Kundinnen und Kunden mit Namen begrüßen können.
+   - **Email (optional)** — nützlich für personalisierte Nachrichten oder Follow-ups.
+4. Wenn deine Nummern kein „+“ oder keinen Ländercode enthalten, wähle im Dropdown ein **default country** aus.
+5. Klicke auf **Continue**, um eine Vorschau deiner Zuordnung zu sehen und zu prüfen, ob die Daten mit dem Callin.io-Format übereinstimmen.
+6. Nach der Validierung klicke auf **Confirm**, um den Import abzuschließen.
+
+> Tipp: Du kannst auf dem Upload-Bildschirm eine **sample CSV template** herunterladen. Das hilft sicherzustellen, dass Header und Formatierung deiner Datei den Anforderungen von Callin.io entsprechen.
+
+**Validierung und Importverhalten:**
+- Das System prüft automatisch auf Duplikate anhand der Telefonnummer.
+- Datensätze ohne gültige Telefonnummer werden übersprungen.
+- Fehler werden mit konkreten Zeilennummern angezeigt, sodass du sie leicht korrigieren und erneut hochladen kannst.
+
+Diese Validierung stellt sicher, dass deine Kontaktdaten sauber und konsistent bleiben.
+
+### 4. Kontakte mit Agenten verwenden
+Deine Kontaktliste ist direkt mit deinen KI-Agenten verknüpft und ermöglicht schnelle Outreach-Aktionen sowie Tests in Echtzeit.
+
+Oben auf der Contacts-Seite findest du ein Dropdown **Select Agent**. Gehe wie folgt vor:
+
+1. Öffne **Select Agent** und wähle den KI-Agenten aus, der die Anrufe tätigen soll.
+2. Wähle einen oder mehrere Kontakte über die Checkboxen neben den Namen aus.
+3. Klicke auf **Call Selected**, um diese Kontakte anzurufen.
+
+Der ausgewählte KI-Agent beginnt automatisch, jeden Kontakt entsprechend seines zugewiesenen Prompts, Verhaltens und seiner Sprachkonfiguration anzurufen. Das ist besonders nützlich für:
+
+- schnelle Testanrufe zur Validierung von Skripten,
+- manuelle Follow-ups mit Leads oder Kundinnen und Kunden,
+- gezielten Outreach ohne eine komplette Kampagne zu erstellen.
+
+Du kannst auch **bulk deletions** über die Option **Delete Selected** durchführen, um veraltete oder ungültige Kontakte aus deiner Liste zu entfernen. Das System fordert vor dem Löschen eine Bestätigung an.
+
+### 5. Kontakte in Kampagnen verwenden
+Jeder Kontakt, den du in Callin.io erstellst oder importierst, ist sofort in [Telephony → Campaigns](https://app.callin.io/campaigns) verfügbar. Du kannst Kontakte nach Bedarf gruppieren und segmentieren und sie bestimmten Kampagnen oder KI-Agenten zuweisen.
+
+Die Kampagnen-Integration ermöglicht dir:
+
+- automatisierte Call-Flows auf Basis deiner Kontaktdatenbank zu erstellen,
+- Listen nach **agent**, **location** oder **purpose** zu segmentieren,
+- Outreach-Sequenzen wie Erinnerungen, Feedback-Anfragen oder Lead-Qualifizierung zu automatisieren,
+- Engagement-Metriken zu tracken — z. B. wie viele Kontakte geantwortet oder einen Termin gebucht haben.
+
+Wenn du eine Kampagne startest, referenziert Callin.io deine Kontaktdaten dynamisch. Das bedeutet: Alle Updates, die du im Contacts-Bereich vornimmst (z. B. Korrekturen am Namen oder an der Telefonnummer), werden automatisch in allen zugehörigen Kampagnen übernommen.
+
+## Warum das wichtig ist
+Wenn deine Kontakte in Callin.io zentralisiert sind, entsteht eine einzige verlässliche Quelle für deine gesamte Kommunikation. So haben deine KI-Agenten stets korrekte, aktuelle Daten, um jeden Anruf zu personalisieren.
+
+Vorteile einer sauberen Kontaktverwaltung:
+- **Organisation:** Alle Kundinnen, Kunden und Leads in einer strukturierten Datenbank.
+- **Automatisierung:** Kampagnen nahtlos starten, ohne Kontaktdaten erneut hochladen zu müssen.
+- **Personalisierung:** Dynamische Felder nutzen, damit Interaktionen menschlich und relevant wirken.
+- **Skalierbarkeit:** Tausende Datensätze effizient über Massenaktionen und CSV-Importe verwalten.
+- **Datenintegrität:** Integrierte Validierung verhindert Duplikate und fehlerhafte Nummernformate.
+
+Wenn deine Kontaktdatenbank gut gepflegt ist, erreichen deine Agenten die richtigen Personen schneller, arbeiten präziser und liefern messbare Geschäftsergebnisse.
+
+## Fehlerbehebung
+
+### Fehlende Telefonnummer
+- **Ursache:** Jeder Kontakt muss eine gültige Nummer mit Ländercode enthalten.
+- **Lösung:** Prüfe deine Kontaktliste und aktualisiere unvollständige Einträge. Das System markiert diese beim Import automatisch.
+
+### CSV-Upload fehlgeschlagen
+- **Ursache:** Dateigröße übersteigt 10 MB oder Spalten passen nicht zu den erforderlichen Headern.
+- **Lösung:** Reduziere die Dateigröße oder prüfe, ob deine Spalten korrekt zugeordnet sind (Phone, Name, Email). Speichere die Datei in UTF-8-Kodierung, um Fehler zu vermeiden.
+
+### Agent ruft nicht an
+- **Ursache:** Vor dem Klick auf **Call Selected** wurde kein Agent ausgewählt.
+- **Lösung:** Stelle sicher, dass du oben auf der Seite im Dropdown einen KI-Agenten auswählst, bevor du den Anruf startest.
+
+### Doppelte Kontakte nach dem Import
+- **Ursache:** Dieselbe Nummer kommt in deiner CSV mehrfach vor.
+- **Lösung:** Nutze die integrierte Duplikat-Validierung oder bereinige deine Daten vor dem Upload.
+
+## Abschlusshinweis
+Deine Kontaktliste ist die Grundlage jeder Operation in Callin.io. Wenn sie korrekt eingerichtet ist, ermöglicht sie deinen KI-Agenten, echte Personen anzurufen, Kampagnen zu starten und jedes Gespräch nahtlos zu personalisieren.
+
+Betrachte deine Contacts als das Herzstück deines KI-Workflows — jede Interaktion, Kampagne oder Prompt beginnt hier. Wenn du diesen Bereich aktuell, validiert und organisiert hältst, kommunizieren deine Agenten immer so, dass es relevant, professionell und menschlich wirkt.
