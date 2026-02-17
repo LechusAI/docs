@@ -1,72 +1,65 @@
 ---
-title: "How to Connect Intercom"
-description: "Enable Intercom chat in your app to talk to users in real time."
+title: "Comment connecter Intercom"
+description: "Activez le chat Intercom dans votre application pour parler aux utilisateurs en temps réel."
 ---
 
-## Before You Begin
-Intercom is more than just a chat box. It's a customer support platform that allows you to:
-- Show a chat widget inside your application so users can ask questions instantly.
-- Answer from a centralized console where your whole support team works.
-- Automate messages, send guided tours, and even integrate with other channels like email, WhatsApp, or Slack.
+## Avant de commencer
+Intercom est bien plus qu’une simple fenêtre de chat. C’est une plateforme de support client qui vous permet de :
+- Afficher un widget de chat dans votre application afin que les utilisateurs puissent poser des questions instantanément.
+- Répondre depuis une console centralisée où toute votre équipe support travaille.
+- Automatiser des messages, envoyer des visites guidées et même intégrer d’autres canaux comme l’e-mail, WhatsApp ou Slack.
 
-When you connect Intercom to your app, you're giving your users the chance to get help exactly when they need it, without leaving the screen.
+Lorsque vous connectez Intercom à votre application, vous donnez à vos utilisateurs la possibilité d’obtenir de l’aide exactement au moment où ils en ont besoin, sans quitter l’écran.
 
-But unlike Stripe or SendGrid, this integration isn't just about pasting a key. You, as the admin, configure the App ID in the CMS, and then a developer needs to insert a small code snippet in your application's frontend. That's what actually makes the chat appear for users.
+Mais contrairement à Stripe ou SendGrid, cette intégration ne consiste pas seulement à coller une clé. En tant qu’administrateur, vous configurez l’**App ID** dans le CMS, puis un développeur doit insérer un petit extrait de code dans le frontend de votre application. C’est ce qui fait réellement apparaître le chat pour les utilisateurs.
 
-## Step 1: Open the CMS and Go to Intercom
-Log into your CMS here: go to CMS.
-In the left-hand menu, click Integrations and then select Intercom.
-A panel will appear asking for a value called app_id. This is the unique identifier of your Intercom project and is what ties your application to your Intercom account.
+## Étape 1 : Ouvrir le CMS et aller sur Intercom
+Connectez-vous à votre CMS ici : allez dans le CMS.  
+Dans le menu de gauche, cliquez sur **Integrations**, puis sélectionnez **Intercom**.
 
-## Step 2: Find your App ID in Intercom
-To get your App ID:
-Log into Intercom.
-Go to Settings > Messenger > Install.
-There you'll see a code snippet like this:
+Un panneau s’affichera en demandant une valeur appelée `app_id`. Il s’agit de l’identifiant unique de votre projet Intercom, et c’est ce qui relie votre application à votre compte Intercom.
 
-```javascript
-Intercom({
-  app_id: "YOUR_APP_ID",
-  user_id: user.id,
-  name: user.name,
-  email: user.email,
-  created_at: user.createdAt
-});
-```
+## Étape 2 : Trouver votre App ID dans Intercom
+Pour récupérer votre App ID :
+1. Connectez-vous à Intercom.
+2. Allez dans **Settings > Messenger > Install**.
+3. Vous y verrez un extrait de code (snippet).
 
-The value you need is the one in app_id (replace "YOUR_APP_ID" with your actual Intercom App ID).
+La valeur dont vous avez besoin est celle de `app_id` (remplacez `"YOUR_APP_ID"` par votre App ID Intercom réel).
 
-## Step 3: Add the App ID to the CMS
-Back in the CMS, under the Intercom section:
-Click Add API Key.
-Leave the key name as app_id.
-Paste your Intercom App ID into Key Value.
-Mark it as Active and save the changes.
-Now your app "knows" which Intercom account it should connect to.
+## Étape 3 : Ajouter l’App ID dans le CMS
+De retour dans le CMS, dans la section Intercom :
+1. Cliquez sur **Add API Key**.
+2. Laissez le nom de clé sur `app_id`.
+3. Collez votre App ID Intercom dans **Key Value**.
+4. Marquez-le comme **Active** et enregistrez les modifications.
 
-## Step 4: Share the code snippet with your developer
-This is where your developer comes in. Adding the App ID in the CMS won't make the chat appear by itself. The code snippet you saw in Intercom must be inserted into your app's frontend.
+Votre application « sait » maintenant à quel compte Intercom elle doit se connecter.
 
-Where does it go?
-In a React app, your developer would usually place it in the main layout file.
-On a static website, it could be added in the `<head>` or just before the closing `</body>` tag.
+## Étape 4 : Partager l’extrait de code avec votre développeur
+C’est ici que votre développeur intervient. Ajouter l’App ID dans le CMS ne fera pas apparaître le chat à lui seul. L’extrait de code vu dans Intercom doit être inséré dans le frontend de votre application.
 
-Why the developer? Because the snippet can also be customized with your users' data (name, email, signup date). That way, when someone opens the chat, your support team already knows who they're talking to, making conversations faster and more personal.
+Où l’ajouter ?
+- Dans une application React, votre développeur le placera généralement dans le fichier de layout principal.
+- Sur un site statique, il peut être ajouté dans le `<head>` ou juste avant la balise de fermeture `</body>`.
 
-## Step 5: Test the chat
-Once your developer has added the code:
-Log into your application as a normal user.
-You should see the Intercom icon in the bottom-right corner.
-Open it and send a test message.
-Your support team should immediately see that message inside the Intercom console.
+Pourquoi un développeur ?
+Parce que l’extrait peut aussi être personnalisé avec les données de vos utilisateurs (nom, e-mail, date d’inscription). Ainsi, lorsqu’un utilisateur ouvre le chat, votre équipe support sait déjà à qui elle parle, ce qui rend les échanges plus rapides et plus personnalisés.
 
-## Common mistakes to avoid
-Forgetting to activate the App ID in the CMS → even if the code is installed, without an active App ID the chat won't connect.
-Using the wrong App ID → every Intercom project has its own ID; make sure you copy the correct one.
-Not testing with a real user → always test as a standard user, not just as an admin.
-Not sharing the snippet with your developer → remember: both steps are required, CMS + frontend code.
+## Étape 5 : Tester le chat
+Une fois que votre développeur a ajouté le code :
+1. Connectez-vous à votre application en tant qu’utilisateur normal.
+2. Vous devriez voir l’icône Intercom en bas à droite.
+3. Ouvrez-la et envoyez un message de test.
+4. Votre équipe support doit voir ce message immédiatement dans la console Intercom.
 
-## Intercom as your new front desk
-With Intercom connected, your app becomes more than just software. It becomes a space where users know they can reach you instantly. That builds trust, keeps users engaged, and gives your support team visibility into what's happening in real time.
+## Erreurs fréquentes à éviter
+- Oublier d’activer l’App ID dans le CMS → même si le code est installé, sans App ID actif le chat ne se connectera pas.
+- Utiliser le mauvais App ID → chaque projet Intercom a son propre identifiant ; assurez-vous de copier le bon.
+- Ne pas tester avec un vrai utilisateur → testez toujours en tant qu’utilisateur standard, pas uniquement en tant qu’administrateur.
+- Ne pas transmettre l’extrait à votre développeur → rappelez-vous : les deux étapes sont obligatoires, **CMS + code frontend**.
 
-So: configure your App ID, hand the snippet to your developer, and confirm the chat shows up. Once that's done, you've unlocked a direct communication channel inside your app.
+## Intercom comme nouveau point d’accueil
+Avec Intercom connecté, votre application devient plus qu’un simple logiciel. C’est un espace où les utilisateurs savent qu’ils peuvent vous joindre instantanément. Cela renforce la confiance, maintient l’engagement et donne à votre équipe support une visibilité en temps réel sur ce qui se passe.
+
+Donc : configurez votre **App ID**, transmettez l’extrait à votre développeur et vérifiez que le chat s’affiche. Une fois fait, vous avez débloqué un canal de communication direct dans votre application.
