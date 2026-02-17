@@ -1,75 +1,75 @@
 ---
-title: "Before You Build: How AI Call Agents Work"
-description: "Understand what AI Call Agents are, how they work, and how to connect numbers, costs, and integrations before building your first one."
+title: "Bevor du startest: So funktionieren KI-Telefonagenten"
+description: "Verstehe, was KI-Telefonagenten sind, wie sie funktionieren und wie du Nummern, Kosten und Integrationen verbindest, bevor du deinen ersten Agenten erstellst."
 ---
 
-## What Is an AI Call Agent
+## Was ist ein KI-Telefonagent?
 
-An AI Call Agent is an intelligent voice assistant that can talk, listen, and act like a trained human representative. It answers or initiates calls automatically — greeting callers, understanding intent, booking meetings, or transferring them to a real person when needed.
+Ein KI-Telefonagent ist ein intelligenter Sprachassistent, der sprechen, zuhören und wie eine geschulte menschliche Fachkraft handeln kann. Er nimmt Anrufe automatisch entgegen oder startet sie selbst — begrüßt Anrufende, versteht ihre Absicht, bucht Termine oder verbindet sie bei Bedarf mit einer echten Person.
 
-These agents handle real conversations 24/7, reducing missed calls and freeing your team from repetitive phone work. They sound natural, follow instructions, and can operate across multiple languages and time zones.
+Diese Agenten führen echte Gespräche rund um die Uhr, reduzieren verpasste Anrufe und entlasten dein Team von repetitiver Telefonarbeit. Sie klingen natürlich, befolgen Anweisungen und können in mehreren Sprachen und Zeitzonen eingesetzt werden.
 
-## Connecting a Phone Number
+## Eine Telefonnummer verbinden
 
-Every agent needs a phone number to make or receive calls. You have several options:
+Jeder Agent benötigt eine Telefonnummer, um Anrufe zu tätigen oder entgegenzunehmen. Du hast mehrere Optionen:
 
-- **Buy a new number** directly through Twilio within your Callin workspace.
-- **Import an existing number** from Telnyx or another provider.
-- **Connect your current business number** if you already have one assigned.
+- **Eine neue Nummer kaufen** direkt über Twilio in deinem Callin-Workspace.
+- **Eine vorhandene Nummer importieren** von Telnyx oder einem anderen Anbieter.
+- **Deine aktuelle Geschäftsnummer verbinden**, falls du bereits eine zugewiesene Nummer hast.
 
-Learn more in [Configure Numbers](https://support.callin.io/Create-AI-Agent/Configure-Numbers).
+Mehr dazu hier: [Nummern konfigurieren](https://support.callin.io/Create-AI-Agent/Configure-Numbers).
 
-Once your number is active, your AI agent will use it just like a real phone line—complete with caller ID, voicemail detection, and call history.
-
----
-
-## Understanding Call Usage and Costs
-
-Each call consumes two different types of minutes:
-
-1. **Carrier minutes** – charged by Twilio or your external provider for the actual phone connection.
-2. **Callin AI minutes** – cover the computation and LLM usage while the agent listens, processes, and responds.
-
-**Example:**\
-A 5-minute conversation = 5 Twilio minutes + 5 Callin AI minutes.
-
-Longer calls or agents using advanced LLM reasoning may consume slightly more AI minutes, but they allow richer, more human-like dialogue.
-
-You can track both costs in your **Callin Dashboard → Usage** section.
+Sobald deine Nummer aktiv ist, nutzt dein KI-Agent sie wie eine echte Telefonleitung — inklusive Anrufer-ID, Voicemail-Erkennung und Anrufhistorie.
 
 ---
 
-## Integrations and Webhooks
+## Anrufnutzung und Kosten verstehen
 
-Your AI Call Agent doesn’t have to work alone. It can connect to the tools you already use for scheduling, CRM, and automation.
+Jeder Anruf verbraucht zwei unterschiedliche Arten von Minuten:
 
-This is done through **webhooks** — simple URLs that receive data from each call in real time.
+1. **Carrier-Minuten** – werden von Twilio oder deinem externen Anbieter für die tatsächliche Telefonverbindung berechnet.
+2. **Callin-KI-Minuten** – decken die Rechenleistung und LLM-Nutzung ab, während der Agent zuhört, verarbeitet und antwortet.
 
-A webhook sends structured information such as caller details, extracted entities, timestamps, or transcripts to any system that can receive HTTP requests.
+**Beispiel:**\
+Ein 5-minütiges Gespräch = 5 Twilio-Minuten + 5 Callin-KI-Minuten.
 
-### Why It Matters
+Längere Anrufe oder Agenten, die erweitertes LLM-Reasoning nutzen, können geringfügig mehr KI-Minuten verbrauchen, ermöglichen dafür aber reichhaltigere, menschenähnlichere Dialoge.
 
-Webhooks open the door to thousands of integrations:
-
-- **Make (Integromat)** – build automated workflows without code.
-- **Zapier** – instantly connect Callin with Google Sheets, Slack, HubSpot, and more.
-- **n8n** – create custom logic flows in an open-source environment.
-- **GoHighLevel** – sync leads, calls, and transcripts directly into your CRM.
-
-**Example use cases:**
-
-- Send a Slack message after every missed call.
-- Create a new CRM lead with caller info and transcript.
-- Trigger a follow-up email when an appointment is booked.
-
-Webhooks are the bridge between Callin and your ecosystem—simple, flexible, and powerful.
+Du kannst beide Kosten in deinem **Callin Dashboard → Usage**-Bereich nachverfolgen.
 
 ---
 
-## What to Do Next
+## Integrationen und Webhooks
 
-Now that you understand what AI Call Agents are, how they connect to phone numbers, how minutes and costs work, and how integrations can expand their power, you're ready to start.
+Dein KI-Telefonagent muss nicht allein arbeiten. Er kann sich mit den Tools verbinden, die du bereits für Terminplanung, CRM und Automatisierung nutzt.
 
-Create your first agent here: [Create Agent](https://app.callin.io/agents/create?step=0&section=choose)
+Das geschieht über **Webhooks** — einfache URLs, die Daten aus jedem Anruf in Echtzeit empfangen.
 
-Experiment with a Basic setup, explore Enhanced later, and watch your AI agent handle real conversations for you.
+Ein Webhook sendet strukturierte Informationen wie Anruferdetails, extrahierte Entitäten, Zeitstempel oder Transkripte an jedes System, das HTTP-Anfragen empfangen kann.
+
+### Warum das wichtig ist
+
+Webhooks öffnen die Tür zu Tausenden von Integrationen:
+
+- **Make (Integromat)** – automatisierte Workflows ohne Code erstellen.
+- **Zapier** – Callin sofort mit Google Sheets, Slack, HubSpot und mehr verbinden.
+- **n8n** – benutzerdefinierte Logik-Flows in einer Open-Source-Umgebung erstellen.
+- **GoHighLevel** – Leads, Anrufe und Transkripte direkt in dein CRM synchronisieren.
+
+**Beispiel-Use-Cases:**
+
+- Nach jedem verpassten Anruf eine Slack-Nachricht senden.
+- Einen neuen CRM-Lead mit Anruferinformationen und Transkript erstellen.
+- Eine Follow-up-E-Mail auslösen, wenn ein Termin gebucht wurde.
+
+Webhooks sind die Brücke zwischen Callin und deinem Ökosystem — einfach, flexibel und leistungsstark.
+
+---
+
+## Was du als Nächstes tun solltest
+
+Jetzt, da du verstehst, was KI-Telefonagenten sind, wie du Telefonnummern verbindest, wie Minuten und Kosten funktionieren und wie Integrationen ihre Möglichkeiten erweitern, bist du bereit loszulegen.
+
+Erstelle deinen ersten Agenten hier: [Agent erstellen](https://app.callin.io/agents/create?step=0&section=choose)
+
+Experimentiere zuerst mit einem Basic-Setup, erkunde später Enhanced und sieh zu, wie dein KI-Agent echte Gespräche für dich führt.

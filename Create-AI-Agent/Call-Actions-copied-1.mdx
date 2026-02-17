@@ -1,85 +1,75 @@
 ---
-title: "Call History"
-description: "Review call logs, recordings, transcripts, extracted data, and export your results."
+title: "Bevor du startest: So funktionieren KI-Telefonagenten"
+description: "Verstehe, was KI-Telefonagenten sind, wie sie funktionieren und wie du Nummern, Kosten und Integrationen verbindest, bevor du deinen ersten Agenten erstellst."
 ---
 
-## Overview
-The Call History panel lets you review and analyze every call made or received by your AI agents. From here, you can:
+## Was ist ein KI-Telefonagent?
 
+Ein KI-Telefonagent ist ein intelligenter Sprachassistent, der sprechen, zuhören und wie eine geschulte menschliche Fachkraft handeln kann. Er nimmt Anrufe automatisch entgegen oder startet sie selbst — begrüßt Anrufende, versteht ihre Absicht, bucht Termine oder verbindet sie bei Bedarf mit einer echten Person.
 
-- View detailed call information (origin, duration, status, and agent)
-- Listen to or download recordings
-- Read complete transcripts
-- Filter by specific outcomes such as scheduled appointments or machine answers
+Diese Agenten führen echte Gespräche rund um die Uhr, reduzieren verpasste Anrufe und entlasten dein Team von repetitiver Telefonarbeit. Sie klingen natürlich, befolgen Anweisungen und können in mehreren Sprachen und Zeitzonen eingesetzt werden.
 
+## Eine Telefonnummer verbinden
 
-Navigate to [Evaluate → Call History](https://app.callin.io/call-history) from the left menu.
+Jeder Agent benötigt eine Telefonnummer, um Anrufe zu tätigen oder entgegenzunehmen. Du hast mehrere Optionen:
 
+- **Eine neue Nummer kaufen** direkt über Twilio in deinem Callin-Workspace.
+- **Eine vorhandene Nummer importieren** von Telnyx oder einem anderen Anbieter.
+- **Deine aktuelle Geschäftsnummer verbinden**, falls du bereits eine zugewiesene Nummer hast.
 
-## Steps
+Mehr dazu hier: [Nummern konfigurieren](https://support.callin.io/Create-AI-Agent/Configure-Numbers).
 
+Sobald deine Nummer aktiv ist, nutzt dein KI-Agent sie wie eine echte Telefonleitung — inklusive Anrufer-ID, Voicemail-Erkennung und Anrufhistorie.
 
-### 1. Explore Your Call History
-Once inside the Call History panel, you'll see a table showing all calls. Each row displays key details:
+---
 
+## Anrufnutzung und Kosten verstehen
 
-- **Call Info:** number, date, and time
-- **Agent:** the AI assistant that handled the call
-- **Duration:** total length of the conversation
-- **Origin:** whether the call came from the app or an integration
-- **Status:** Completed, Busy, or No-answer
+Jeder Anruf verbraucht zwei unterschiedliche Arten von Minuten:
 
+1. **Carrier-Minuten** – werden von Twilio oder deinem externen Anbieter für die tatsächliche Telefonverbindung berechnet.
+2. **Callin-KI-Minuten** – decken die Rechenleistung und LLM-Nutzung ab, während der Agent zuhört, verarbeitet und antwortet.
 
-Use the toggle to switch between **Inbound**, **Outbound**, or **All** calls.
+**Beispiel:**\
+Ein 5-minütiges Gespräch = 5 Twilio-Minuten + 5 Callin-KI-Minuten.
 
+Längere Anrufe oder Agenten, die erweitertes LLM-Reasoning nutzen, können geringfügig mehr KI-Minuten verbrauchen, ermöglichen dafür aber reichhaltigere, menschenähnlichere Dialoge.
 
-### 2. Use Filters to Segment Your Calls
-Click the filter icon to open the Filters panel. You can filter calls by:
+Du kannst beide Kosten in deinem **Callin Dashboard → Usage**-Bereich nachverfolgen.
 
+---
 
-- **Appointment:** with or without a scheduled appointment
-- **Machine:** if the call reached an answering machine
-- **Status:** outcome of the call (Completed, Busy, etc.)
+## Integrationen und Webhooks
 
+Dein KI-Telefonagent muss nicht allein arbeiten. Er kann sich mit den Tools verbinden, die du bereits für Terminplanung, CRM und Automatisierung nutzt.
 
-Click **Clear All** to reset your filters.
+Das geschieht über **Webhooks** — einfache URLs, die Daten aus jedem Anruf in Echtzeit empfangen.
 
+Ein Webhook sendet strukturierte Informationen wie Anruferdetails, extrahierte Entitäten, Zeitstempel oder Transkripte an jedes System, das HTTP-Anfragen empfangen kann.
 
-### 3. Play or Download Recordings
-In the **Actions** column, click the play icon to open the recording player:
+### Warum das wichtig ist
 
+Webhooks öffnen die Tür zu Tausenden von Integrationen:
 
-- Listen to the recording in your browser
-- Adjust playback speed
-- Download the audio file for offline access
+- **Make (Integromat)** – automatisierte Workflows ohne Code erstellen.
+- **Zapier** – Callin sofort mit Google Sheets, Slack, HubSpot und mehr verbinden.
+- **n8n** – benutzerdefinierte Logik-Flows in einer Open-Source-Umgebung erstellen.
+- **GoHighLevel** – Leads, Anrufe und Transkripte direkt in dein CRM synchronisieren.
 
+**Beispiel-Anwendungsfälle:**
 
-### 4. Review Full Transcripts
-Next to the play icon, click the transcript icon. This opens the full transcript of the conversation:
+- Nach jedem verpassten Anruf eine Slack-Nachricht senden.
+- Einen neuen CRM-Lead mit Anruferinformationen und Transkript erstellen.
+- Eine Follow-up-E-Mail auslösen, wenn ein Termin gebucht wird.
 
+Webhooks sind die Brücke zwischen Callin und deinem Ökosystem — einfach, flexibel und leistungsstark.
 
-- Messages are labeled clearly as **User** or **AI Agent**
-- Use the **Copy** button to extract the full text
+---
 
+## Was du als Nächstes tun solltest
 
-## Tips & Notes
-- Combine filters for precise search results
-- Use transcripts and recordings to evaluate call quality and agent performance
+Jetzt, da du verstehst, was KI-Telefonagenten sind, wie du Telefonnummern verbindest, wie Minuten und Kosten funktionieren und wie Integrationen ihre Möglichkeiten erweitern, bist du bereit loszulegen.
 
+Erstelle deinen ersten Agenten hier: [Agent erstellen](https://app.callin.io/agents/create?step=0&section=choose)
 
-## Troubleshooting
-
-
-### Can’t Hear Playback
-- **Cause:** Internet or audio configuration issues
-- **Fix:** Verify your connection and audio output settings
-
-
-### Recent Calls Not Showing
-- **Cause:** Temporary sync delay
-- **Fix:** Refresh the page (updates are real-time)
-
-
-### Audio Won’t Download
-- **Cause:** Browser permission settings
-- **Fix:** Allow file downloads in your browser configuration
+Experimentiere zuerst mit einem Basic-Setup, erkunde später Enhanced und sieh zu, wie dein KI-Agent echte Gespräche für dich führt.
