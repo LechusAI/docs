@@ -1,110 +1,99 @@
 ---
-title: "Set Up White-Label and DNS"
-description: "Customize your app with your own brand and domain using Callin CMS. Includes DNS setup, SSL, branding, and tips."
+title: "White-Label und DNS einrichten"
+description: "Passe deine App mit deiner eigenen Marke und Domain über das Callin CMS an. Enthält DNS-Setup, SSL, Branding und Tipps."
 ---
 
-## Overview
-Customize your Callin app with your brand name, logo, and domain. This guide walks you through white-label setup and domain configuration (automatic or manual), plus logo and currency options.
+## Überblick
+Passe deine Callin-App mit deinem Markennamen, Logo und deiner Domain an. Dieser Guide führt dich durch die White-Label-Einrichtung und die Domain-Konfiguration (automatisch oder manuell) sowie durch Logo- und Währungsoptionen.
 
-Before starting:
-- Own a domain and have DNS access (Cloudflare, GoDaddy, Namecheap, etc).
-- Prefer using a subdomain like `app.yourdomain.com`.
-- For automatic DNS, prepare API credentials with DNS edit permissions.
-- Open [CMS → White-Label Settings](https://app.callin.io/cms).
+Bevor du startest:
+- Du besitzt eine Domain und hast Zugriff auf DNS (Cloudflare, GoDaddy, Namecheap usw.).
+- Verwende bevorzugt eine Subdomain wie `app.deinedomain.com`.
+- Für automatische DNS-Konfiguration: Halte API-Zugangsdaten mit DNS-Edit-Rechten bereit.
+- Öffne [CMS → White-Label Settings](https://app.callin.io/cms).
 
-## Steps
+## Schritte
 
-### 1. Name Your App
-In **App Name**, enter your brand. This name appears across your UI and emails.
+### 1. Gib deiner App einen Namen
+Unter **App Name** gib deinen Markennamen ein. Dieser Name erscheint in der UI und in E-Mails.
 
-### 2. Connect Your Domain
-Go to **Custom Domain**.
-Choose automatic (recommended) or manual DNS setup.
+### 2. Verbinde deine Domain
+Gehe zu **Custom Domain**.  
+Wähle automatische (empfohlen) oder manuelle DNS-Konfiguration.
 
-**Enter your full subdomain**, e.g., `app.yourdomain.com`.
+**Gib deine vollständige Subdomain ein**, z. B. `app.deinedomain.com`.
 
-#### DNS in 2 Minutes
-- An **A record** maps a name to an IP address.
-- A **CNAME** maps a name to another hostname (alias).
-- **TTL** (Time To Live) sets caching duration; use 300 for fast updates.
-- **Propagation** may take 5–30 mins, up to 24h depending on providers.
+#### DNS in 2 Minuten
+- Ein **A-Record** ordnet einen Namen einer IP-Adresse zu.
+- Ein **CNAME** ordnet einen Namen einem anderen Hostnamen zu (Alias).
+- **TTL** (Time To Live) legt die Cache-Dauer fest; nutze 300 für schnelle Updates.
+- **Propagation** kann 5–30 Minuten dauern, je nach Provider bis zu 24 Std.
 
-**Tip:** Use a subdomain (not `@`) to avoid affecting your main website.
+**Tipp:** Nutze eine Subdomain (nicht `@`), um deine Hauptwebsite nicht zu beeinflussen.
 
-#### Option A — Automatic Configuration
-1. Pick your **DNS Provider**: Cloudflare, GoDaddy, or Namecheap.
-2. Enter credentials:
-   - **Cloudflare**: API Token (Edit DNS on the zone).
+#### Option A — Automatische Konfiguration
+1. Wähle deinen **DNS Provider**: Cloudflare, GoDaddy oder Namecheap.
+2. Gib die Zugangsdaten ein:
+   - **Cloudflare**: API Token (DNS bearbeiten in der Zone).
    - **GoDaddy**: API Key + Secret.
-   - **Namecheap**: API User, Key, and whitelisted Client IP.
-3. Click **Discover Provider**.
-4. Callin validates access and creates the records.
-5. SSL is issued automatically.
+   - **Namecheap**: API User, Key und whitelisted Client IP.
+3. Klicke auf **Discover Provider**.
+4. Callin validiert den Zugriff und erstellt die Records.
+5. SSL wird automatisch ausgestellt.
 
-**Important (Cloudflare):** If validation fails with **orange cloud (proxied)**, switch to **DNS Only (grey)**, complete SSL issuance, then re-enable proxy if needed.
+**Wichtig (Cloudflare):** Wenn die Validierung wegen **orange cloud (proxied)** fehlschlägt, stelle auf **DNS Only (grey)** um, schließe die SSL-Ausstellung ab und aktiviere Proxy bei Bedarf danach wieder.
 
-#### Option B — Manual Configuration
-1. Select **Manual**.
-2. Add the DNS records shown in the CMS table at your registrar:
-   - `Type: A` → `Host: @ or subdomain` → `Value: <IP>` → `TTL: 300`
-   - `Type: CNAME` → `Host: www` (if shown) → `Value: <host>` → `TTL: 300`
-3. Go back to CMS and click **Install SSL**.
+#### Option B — Manuelle Konfiguration
+1. Wähle **Manual**.
+2. Lege die DNS-Records aus der CMS-Tabelle bei deinem Registrar an:
+   - `Type: A` → `Host: @ oder Subdomain` → `Value: <IP>` → `TTL: 300`
+   - `Type: CNAME` → `Host: www` (falls angezeigt) → `Value: <host>` → `TTL: 300`
+3. Gehe zurück ins CMS und klicke auf **Install SSL**.
 
-**Warning:** Avoid duplicate or conflicting records — they block verification.
+**Warnung:** Vermeide doppelte oder widersprüchliche Records — sie blockieren die Verifizierung.
 
-### 3. Colors & Logos
-Set your **Primary/Secondary Colors** and upload:
-- **Logo** (PNG/SVG, transparent background).
-- **Favicon** (ICO/PNG, 32×32 or 48×48).
+### 3. Farben & Logos
+Setze deine **Primary/Secondary Colors** und lade hoch:
+- **Logo** (PNG/SVG, transparenter Hintergrund).
+- **Favicon** (ICO/PNG, 32×32 oder 48×48).
 
-### 4. Default Currency
-Pick your **Default Currency** for plan pricing. See [[Create-AI-Agent/Billing]].
+### 4. Standardwährung
+Wähle deine **Default Currency** für die Preisgestaltung der Pläne. Siehe [[Create-AI-Agent/Billing]].
 
-### 5. Advanced Call Settings (Optional)
-- **[BYOC]**: Bring Your Own Carrier (add your SIP trunk).
-- **[Recordings]**: Store call recordings in your own S3-compatible bucket.
-- **[AMD]**: Fine-tune human vs voicemail detection.
+### 5. Erweiterte Anruf-Einstellungen (optional)
+- **[BYOC]**: Bring Your Own Carrier (füge deinen SIP-Trunk hinzu).
+- **[Recordings]**: Speichere Aufzeichnungen in deinem eigenen S3-kompatiblen Bucket.
+- **[AMD]**: Feintuning der Erkennung Mensch vs. Voicemail.
 
-## Tips & Notes
-- Prefer `app.yourdomain.com` to avoid breaking your root domain.
-- TTL 300 ensures fast propagation during setup.
-- Use **DNS Only (grey)** for Cloudflare when issuing SSL.
+## Tipps & Hinweise
+- Bevorzuge `app.deinedomain.com`, um deine Root-Domain nicht zu beeinträchtigen.
+- TTL 300 sorgt während des Setups für schnelle Propagation.
+- Nutze bei Cloudflare **DNS Only (grey)** für die SSL-Ausstellung.
 
-## Troubleshooting
+## Fehlerbehebung
 
-**Domain verification failed**  
-**Cause:** Wrong host, conflicts, or propagation delay.  
-**Fix:**
-- Double-check the host (`app`, not `www`).
-- Remove duplicate records.
-- Set TTL to 300.
-- Wait up to 30 mins.
+**Domain-Verifizierung fehlgeschlagen**  
+**Ursache:** Falscher Host, Konflikte oder Verzögerung bei der Propagation.  
+**Lösung:**
+- Prüfe den Host (`app`, nicht `www`).
+- Entferne doppelte Records.
+- Setze TTL auf 300.
+- Warte bis zu 30 Minuten.
 
-**SSL not issued**  
-**Cause:** Verification incomplete.  
-**Fix:**
-- Click **Install SSL**.
-- Confirm hostname resolves to Callin IP.
-- Ensure HSTS/proxies aren’t blocking ACME challenge.
+**SSL nicht ausgestellt**  
+**Ursache:** Verifizierung nicht abgeschlossen.  
+**Lösung:**
+- Klicke auf **Install SSL**.
+- Prüfe, ob der Hostname auf die Callin-IP auflöst.
+- Stelle sicher, dass HSTS/Proxies die ACME-Challenge nicht blockieren.
 
-**Invalid API credentials**  
-**Fix:**
-- Ensure tokens have **Edit DNS** on the correct zone.
-- Namecheap: whitelist your IP.
+**Ungültige API-Zugangsdaten**  
+**Lösung:**
+- Stelle sicher, dass Tokens **Edit DNS** auf der richtigen Zone haben.
+- Namecheap: whiteliste deine IP.
 
-**Apex site broke**  
-**Fix:** Always use a subdomain (like `app.`). Don’t change `@` records.
+**Apex-Website funktioniert nicht mehr**  
+**Lösung:** Verwende immer eine Subdomain (wie `app.`). Ändere keine `@`-Records.
 
-**Changes not visible**  
-**Fix:** Clear DNS cache or switch networks. Use a DNS lookup to confirm records.
-
-## Video
-<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
-  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/" title="White-Label and DNS Setup in Callin" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
-</div>
-
-## Related
-- [[Create-AI-Agent/Billing]]
-- [CMS → White-Label Settings](https://app.callin.io/cms)
-- [[Create-AI-Agent/Settings]]
-- [[Create-AI-Agent/Call-Actions]]
+**Änderungen nicht sichtbar**  
+**Lösung:** Leere den DNS-Cache oder wechsle das Netzwerk. Nutze einen DNS-Lookup, um die Records zu prüfen.

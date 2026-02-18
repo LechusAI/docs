@@ -1,79 +1,78 @@
 ---
-title: "How to Connect Twilio"
-description: "Connect Twilio to enable calls and SMS in your application."
+title: "So verbindest du Twilio"
+description: "Verbinde Twilio, um Anrufe und SMS in deiner Anwendung zu aktivieren."
 ---
 
-## Before You Begin
-Twilio is the service that allows your application to make and receive calls as well as send SMS messages. Your app provides the interface; Twilio provides the global telecom infrastructure behind it.  
+## Bevor du beginnst
+Twilio ist der Dienst, mit dem deine Anwendung Anrufe tätigen und entgegennehmen sowie SMS-Nachrichten senden kann. Deine App stellt die Oberfläche bereit; Twilio liefert die globale Telekommunikations-Infrastruktur im Hintergrund.  
 
-To connect it, you will need two credentials from your Twilio account: Account SID and Auth Token. These are the “keys” that authorize your application to use your Twilio account.  
+Für die Verbindung brauchst du zwei Zugangsdaten aus deinem Twilio-Konto: Account SID und Auth Token. Das sind die „Schlüssel“, die deine Anwendung dazu autorisieren, dein Twilio-Konto zu verwenden.  
 
-Requirements:  
-- An active Twilio account.  
-- Administrator access to your application’s CMS.  
-- Recommended: enable two-factor authentication in Twilio and store your credentials in a secure password manager.  
+Voraussetzungen:  
+- Ein aktives Twilio-Konto.  
+- Administratorzugriff auf das CMS deiner Anwendung.  
+- Empfohlen: Aktiviere Zwei-Faktor-Authentifizierung in Twilio und speichere deine Zugangsdaten in einem sicheren Passwort-Manager.  
 
-## Step 1: Go to the CMS and Open Integrations
-Open the CMS from this direct link: go to CMS.  
-In the left-hand menu, select **Integrations** and then **Twilio**.  
+## Schritt 1: Ins CMS gehen und Integrationen öffnen
+Öffne das CMS über diesen direkten Link: go to CMS.  
+Wähle im linken Menü **Integrations** und anschließend **Twilio**.  
+Du siehst ein Panel mit zwei Einträgen: account_sid und auth_token. Twilio ist als „Required“ markiert, weil ohne diese Integration die Telefonie-Funktionen nicht funktionieren.
 
-You will see a panel with two entries: `account_sid` and `auth_token`. Twilio is marked as “Required” because without it, telephony features will not work.
+## Schritt 2: Zugangsdaten aus Twilio holen
+Melde dich in deiner Twilio Console an.  
+Auf dem Projekt-Dashboard findest du unter „Project Info“ deine Account SID und deinen Auth Token. Der Token kann verborgen sein; klicke auf „show“, um ihn anzuzeigen.  
 
-## Step 2: Get Your Credentials from Twilio
-Log in to your Twilio Console.  
-On the project Dashboard, you will see your Account SID and Auth Token under “Project Info” (the token may be hidden; click “show” to reveal it).  
+Kopiere beide Werte. Stelle sicher, dass du die Live-Zugangsdaten verwendest, nicht die Testdaten.  
 
-Copy both values. Make sure you are using the live credentials, not the test ones.  
+Beispiele:  
+Account SID: YOUR_ACCOUNT_SID  
+Auth Token: YOUR_AUTH_TOKEN  
 
-Examples:  
-Account SID: `YOUR_ACCOUNT_SID`  
-Auth Token: `YOUR_AUTH_TOKEN`  
+Tipp: Behandle den Auth Token wie ein Passwort. Teile ihn nicht per E-Mail oder Chat.
 
-Tip: treat the Auth Token like a password. Do not share it over email or chat.
+## Schritt 3: Keys im CMS hinzufügen
+Im Twilio-Bereich des CMS:  
+Klicke auf **Add API Key**.  
 
-## Step 3: Add the Keys to the CMS
-In the Twilio section of the CMS:  
-Click **Add API Key**.  
-
-Enter the Account SID details exactly as follows:  
-- Key Name: `account_sid` (default value – do not change it)  
-- Key Value: `YOUR_ACCOUNT_SID`  
+Gib die Account-SID-Daten genau wie folgt ein:  
+- Key Name: account_sid Standardwert, nicht ändern  
+- Key Value: YOUR_ACCOUNT_SID  
 - Description: Twilio Account SID  
-- Active: checked  
+- Active: aktiviert  
 
-Save with **Save Key**.  
+Speichere mit **Save Key**.  
 
-Repeat the process for the Auth Token:  
-- Key Name: `auth_token` (default value – do not change it)  
-- Key Value: `YOUR_AUTH_TOKEN`  
+Wiederhole den Vorgang für den Auth Token:  
+- Key Name: auth_token Standardwert, nicht ändern  
+- Key Value: YOUR_AUTH_TOKEN  
 - Description: Twilio Auth Token  
-- Active: checked  
+- Active: aktiviert  
 
-Save with **Save Key**.  
+Speichere mit **Save Key**.  
 
-Important notes:  
-- The key names must remain exactly `account_sid` and `auth_token` (all lowercase, with underscore).  
-- Always mark both keys as Active. If either one is inactive, the integration will not work.  
+Wichtige Hinweise:  
+- Die Key-Namen müssen exakt account_sid und auth_token sein — alles klein, mit Unterstrich.  
+- Markiere beide Keys immer als Active. Wenn einer inaktiv ist, funktioniert die Integration nicht.  
 
-## Step 4: Verify the Integration is Active
-After saving, you will see both keys listed with the status Active.  
+## Schritt 4: Prüfen, ob die Integration aktiv ist
+Nach dem Speichern siehst du beide Keys in der Liste mit dem Status Active.  
 
-Quick checks:  
-- Refresh the Integrations page and confirm that Twilio shows no warnings.  
-- If you already have an agent configured, run a test call from the Agents section. If the call connects, Twilio is correctly integrated.  
+Schnelle Checks:  
+- Aktualisiere die Integrations-Seite und prüfe, dass Twilio keine Warnungen anzeigt.  
+- Wenn du bereits einen Agenten konfiguriert hast, starte einen Testanruf im Bereich Agents. Wenn der Anruf verbunden wird, ist Twilio korrekt integriert.  
 
-## Advanced Configuration (Optional)
-- **Token rotation**: if you suspect your Auth Token may have been exposed, generate a new one in Twilio and update it immediately in the CMS.  
-- **Subaccounts**: if you manage multiple environments or clients, you can use a separate Twilio subaccount SID and token for each project to keep billing and usage isolated.  
-- **Security best practices**: keep the Auth Token in a password manager, limit who can view it, and control access to your Twilio Console.  
+## Erweiterte Konfiguration optional
+- **Token-Rotation**: Wenn du vermutest, dass dein Auth Token kompromittiert wurde, generiere in Twilio einen neuen und aktualisiere ihn sofort im CMS.  
+- **Subaccounts**: Wenn du mehrere Umgebungen oder Kunden verwaltest, kannst du pro Projekt eine eigene Twilio-Subaccount-SID und ein eigenes Token nutzen, um Abrechnung und Nutzung zu trennen.  
+- **Security-Best-Practices**: Bewahre den Auth Token in einem Passwort-Manager auf, beschränke, wer ihn sehen darf, und kontrolliere den Zugriff auf deine Twilio Console.  
 
-## Common Mistakes and Solutions
-- Keys left inactive: both `account_sid` and `auth_token` must be set to Active.  
-- Changing key names: they must remain exactly `account_sid` and `auth_token`. Any variation will break the integration.  
-- Copy/paste with extra spaces: ensure there are no leading or trailing spaces in the values.  
-- Using test credentials: production requires live credentials.  
-- Forgetting to save: always click Save Key after entering values.  
-- Regenerated token not updated: if you regenerate the Auth Token in Twilio but do not update it in the CMS, calls will fail.  
+## Häufige Fehler und Lösungen
+- Keys sind inaktiv: sowohl account_sid als auch auth_token müssen auf Active stehen.  
+- Key-Namen geändert: Sie müssen exakt account_sid und auth_token bleiben. Jede Abweichung bricht die Integration.  
+- Copy/Paste mit Leerzeichen: Stelle sicher, dass keine führenden oder nachgestellten Leerzeichen in den Werten sind.  
+- Test-Zugangsdaten verwendet: Für Produktion brauchst du Live-Zugangsdaten.  
+- Speichern vergessen: Nach dem Eintragen immer **Save Key** klicken.  
+- Neuer Token nicht aktualisiert: Wenn du den Auth Token in Twilio erneuerst, ihn aber nicht im CMS aktualisierst, werden Anrufe fehlschlagen.  
 
-## Reliable Communication with Twilio
-Once connected, your application can make calls and send SMS messages reliably. Keep your keys active, secure, and up to date, and you will have a solid foundation to scale your communication workflows.
+## Zuverlässige Kommunikation mit Twilio
+Nach der Verbindung kann deine Anwendung zuverlässig Anrufe durchführen und SMS senden. Halte deine Keys aktiv, sicher und aktuell — damit hast du eine solide Grundlage, um deine Kommunikations-Workflows zu skalieren.
