@@ -1,72 +1,61 @@
 ---
-title: "How to Connect Intercom"
-description: "Enable Intercom chat in your app to talk to users in real time."
+title: "So verbindest du Intercom"
+description: "Aktiviere den Intercom-Chat in deiner App, um in Echtzeit mit Nutzern zu sprechen."
 ---
 
-## Before You Begin
-Intercom is more than just a chat box. It's a customer support platform that allows you to:
-- Show a chat widget inside your application so users can ask questions instantly.
-- Answer from a centralized console where your whole support team works.
-- Automate messages, send guided tours, and even integrate with other channels like email, WhatsApp, or Slack.
+## Bevor du beginnst
+Intercom ist mehr als nur ein Chat-Fenster. Es ist eine Customer-Support-Plattform, mit der du:
+- Ein Chat-Widget in deiner Anwendung anzeigen kannst, damit Nutzer sofort Fragen stellen können.
+- Aus einer zentralen Konsole antworten kannst, in der dein gesamtes Support-Team arbeitet.
+- Nachrichten automatisieren, Guided Tours senden und sogar weitere Kanäle wie E-Mail, WhatsApp oder Slack integrieren kannst.
 
-When you connect Intercom to your app, you're giving your users the chance to get help exactly when they need it, without leaving the screen.
+Wenn du Intercom mit deiner App verbindest, gibst du deinen Nutzern die Möglichkeit, genau dann Hilfe zu bekommen, wenn sie sie brauchen — ohne den Bildschirm zu verlassen.
 
-But unlike Stripe or SendGrid, this integration isn't just about pasting a key. You, as the admin, configure the App ID in the CMS, and then a developer needs to insert a small code snippet in your application's frontend. That's what actually makes the chat appear for users.
+Aber anders als bei Stripe oder SendGrid geht es bei dieser Integration nicht nur darum, einen Key einzufügen. Du als Admin konfigurierst die App ID im CMS, und anschließend muss ein Entwickler ein kleines Code-Snippet im Frontend deiner Anwendung einfügen. Erst dadurch erscheint der Chat für die Nutzer.
 
-## Step 1: Open the CMS and Go to Intercom
-Log into your CMS here: go to CMS.
-In the left-hand menu, click Integrations and then select Intercom.
-A panel will appear asking for a value called app_id. This is the unique identifier of your Intercom project and is what ties your application to your Intercom account.
+## Schritt 1: CMS öffnen und zu Intercom gehen
+Melde dich hier in deinem CMS an: go to CMS.  
+Klicke im linken Menü auf Integrations und wähle anschließend Intercom.  
+Es erscheint ein Panel, das nach einem Wert namens app_id fragt. Das ist die eindeutige Kennung deines Intercom-Projekts und verbindet deine Anwendung mit deinem Intercom-Konto.
 
-## Step 2: Find your App ID in Intercom
-To get your App ID:
-Log into Intercom.
-Go to Settings > Messenger > Install.
-There you'll see a code snippet like this:
+## Schritt 2: App ID in Intercom finden
+So bekommst du deine App ID:
+Melde dich bei Intercom an.  
+Gehe zu Settings > Messenger > Install.
 
-```javascript
-Intercom({
-  app_id: "YOUR_APP_ID",
-  user_id: user.id,
-  name: user.name,
-  email: user.email,
-  created_at: user.createdAt
-});
-```
+Der Wert, den du brauchst, ist der in app_id; ersetze YOUR_APP_ID durch deine tatsächliche Intercom App ID.
 
-The value you need is the one in app_id (replace "YOUR_APP_ID" with your actual Intercom App ID).
+## Schritt 3: App ID im CMS hinzufügen
+Zurück im CMS, im Intercom-Bereich:
+Klicke auf Add API Key.  
+Lass den Key-Namen auf app_id.  
+Füge deine Intercom App ID in Key Value ein.  
+Markiere es als Active und speichere die Änderungen.  
+Jetzt „weiß“ deine App, mit welchem Intercom-Konto sie sich verbinden soll.
 
-## Step 3: Add the App ID to the CMS
-Back in the CMS, under the Intercom section:
-Click Add API Key.
-Leave the key name as app_id.
-Paste your Intercom App ID into Key Value.
-Mark it as Active and save the changes.
-Now your app "knows" which Intercom account it should connect to.
+## Schritt 4: Code-Snippet an deinen Entwickler weitergeben
+Hier kommt dein Entwickler ins Spiel. Das Eintragen der App ID im CMS sorgt nicht automatisch dafür, dass der Chat erscheint. Das Code-Snippet, das du in Intercom gesehen hast, muss im Frontend deiner App eingebunden werden.
 
-## Step 4: Share the code snippet with your developer
-This is where your developer comes in. Adding the App ID in the CMS won't make the chat appear by itself. The code snippet you saw in Intercom must be inserted into your app's frontend.
+Wo wird es eingefügt?
+In einer React-App platziert man es normalerweise in der Haupt-Layout-Datei.  
+Auf einer statischen Website kann es im head oder direkt vor dem schließenden body-Tag eingefügt werden.
 
-Where does it go?
-In a React app, your developer would usually place it in the main layout file.
-On a static website, it could be added in the `<head>` or just before the closing `</body>` tag.
+Warum der Entwickler? Weil das Snippet außerdem mit Nutzerdaten angepasst werden kann: Name, E-Mail, Registrierungsdatum. So weiß dein Support-Team beim Öffnen des Chats sofort, mit wem es spricht — Gespräche werden schneller und persönlicher.
 
-Why the developer? Because the snippet can also be customized with your users' data (name, email, signup date). That way, when someone opens the chat, your support team already knows who they're talking to, making conversations faster and more personal.
+## Schritt 5: Chat testen
+Sobald dein Entwickler den Code eingebunden hat:
+Melde dich in deiner Anwendung als normaler Nutzer an.  
+Du solltest das Intercom-Icon unten rechts sehen.  
+Öffne es und sende eine Testnachricht.  
+Dein Support-Team sollte diese Nachricht sofort in der Intercom-Konsole sehen.
 
-## Step 5: Test the chat
-Once your developer has added the code:
-Log into your application as a normal user.
-You should see the Intercom icon in the bottom-right corner.
-Open it and send a test message.
-Your support team should immediately see that message inside the Intercom console.
+## Häufige Fehler vermeiden
+App ID im CMS nicht aktiviert → selbst wenn der Code installiert ist, verbindet sich der Chat ohne aktive App ID nicht.  
+Falsche App ID verwendet → jedes Intercom-Projekt hat seine eigene ID; stelle sicher, dass du die richtige kopierst.  
+Nicht mit einem echten Nutzer testen → teste immer als Standardnutzer, nicht nur als Admin.  
+Snippet nicht an den Entwickler weitergegeben → beide Schritte sind erforderlich: CMS + Frontend-Code.
 
-## Common mistakes to avoid
-Forgetting to activate the App ID in the CMS → even if the code is installed, without an active App ID the chat won't connect.
-Using the wrong App ID → every Intercom project has its own ID; make sure you copy the correct one.
-Not testing with a real user → always test as a standard user, not just as an admin.
-Not sharing the snippet with your developer → remember: both steps are required, CMS + frontend code.
+## Intercom als deine neue „Rezeption“
+Mit verbundenem Intercom wird deine App mehr als nur Software. Sie wird zu einem Ort, an dem Nutzer wissen, dass sie dich sofort erreichen können. Das schafft Vertrauen, hält Nutzer engagiert und gibt deinem Support-Team in Echtzeit Einblick in das, was passiert.
 
-## Intercom as your new front desk
-With Intercom connected, your app becomes more than just software. It becomes a space where users know they can reach you instantly. That builds trust, keeps users engaged, and gives your support team visibility into what's happening in real time.
-
-So: configure your App ID, hand the snippet to your developer, and confirm the chat shows up. Once that's done, you've unlocked a direct communication channel inside your app.
+Also: Konfiguriere deine App ID, gib das Snippet an deinen Entwickler weiter und bestätige, dass der Chat erscheint. Danach hast du einen direkten Kommunikationskanal in deiner App freigeschaltet.
