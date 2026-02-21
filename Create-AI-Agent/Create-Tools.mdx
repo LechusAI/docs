@@ -28,25 +28,22 @@ If any of these 3 steps is missing, the tool will not run as expected.
 To create a tool in Callin:
 
 1. Go to **Tools** in the Callin dashboard.
-2. Click **+ Add Tool**.
+2. Click **\+ Add Tool**.
 3. Fill in the main fields:
 
-- **Name**  
-  Use a short, clear, stable name. Recommendation: **verb + objective**.  
+- **Name**\
+  Use a short, clear, stable name. Recommendation: **verb + objective**.\
   Examples: `send-signup-link`, `check-customer-status`, `create-lead`.
-
-- **Description**  
-  Explain **what it does** and, most importantly, **when it should be used**.  
+- **Description**\
+  Explain **what it does** and, most importantly, **when it should be used**.\
   Example: “Send the main signup link only when the user confirms they want to continue and their email and phone are confirmed.”
-
-- **Method**  
-  - Use **GET** if you are **retrieving** information.  
+- **Method**
+  - Use **GET** if you are **retrieving** information.
   - Use **POST** if you are **sending** information (most common when the agent collects data and sends it to a webhook).
-
-- **URL**  
+- **URL**\
   Paste the HTTPS endpoint for your API or your external platform’s webhook.
 
-> ✅ Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
+>  Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
 
 ### Configure “Body parameters” (if you use POST)
 
@@ -61,7 +58,7 @@ If your tool sends information (POST), define exactly what data it will send:
 - **Required**: enable this if the field is mandatory.
 - **Description**: explain what the field represents and the expected format (for example: “Phone number in international format” or “Valid email”).
 
-> ✅ Practical recommendation: if you mark a field as **Required**, your agent must be instructed (in the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
+>  Practical recommendation: if you mark a field as **Required**, your agent must be instructed (in the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
 
 ### Headers and authentication (if applicable)
 
@@ -78,10 +75,10 @@ Creating the tool is not enough. You must assign it to the agent:
 1. Go to **AI Agents**.
 2. Select the agent you want to configure.
 3. In the agent editor, scroll down to the **Tools** section.
-4. Click **+ Add Tool**.
+4. Click **\+ Add Tool**.
 5. Select the tool and save.
 
-**Quick check:**  
+**Quick check:**\
 If the tool appears listed in the agent, it’s assigned correctly. If it doesn’t appear, the agent won’t be able to run it.
 
 ---
@@ -100,11 +97,12 @@ This is the most important step. The agent will only run the tool if the **Conve
 
 Below is a complete (invented) example with two tools: one main link during the call and one portal access link at the end.
 
-**Tool 1: Send_Signup_Link (Link A)**  
-**Objective:** send the main link where the user completes the entire primary process.  
+**Tool 1: Send_Signup_Link (Link A)**\
+**Objective:** send the main link where the user completes the entire primary process.\
 **When to use it:** during the call, only when the user confirms they want to continue and the email + phone are confirmed.
 
 **Link A completes (inside the link itself):**
+
 1. Initial signup (required data)
 2. Verification/confirmation of information
 3. Plan or option selection
@@ -114,30 +112,35 @@ Below is a complete (invented) example with two tools: one main link during the 
 7. Final confirmation
 
 **Conditions to run “Send_Signup_Link”:**
+
 - The user clearly says they want to continue.
 - The email is confirmed (repeated and confirmed by the user).
 - The phone is confirmed (repeated and confirmed by the user).
 
 **Exact phrase after sending Link A (invented example):**
+
 > “Open the link we just sent and scroll down to the ‘Initial signup’ section. Complete your details and tell me when you’re ready to continue.”
 
 **Rules during the call (very important):**
+
 - Do not ask the user to leave Link A to do steps elsewhere during the call.
 - Do not ask them to log into a separate portal while they are completing the main process.
 - Guide the user step by step, always focusing on the step they are currently on.
 
 ---
 
-**Tool 2: Send_Portal_Link (Link B)**  
-**Objective:** send the secure portal access link to check progress later.  
+**Tool 2: Send_Portal_Link (Link B)**\
+**Objective:** send the secure portal access link to check progress later.\
 **When to use it:** only at the end of the call.
 
 **Exact phrases after sending Link B (invented example):**
-> “Here is the link to access your secure portal.”  
-> “We also sent you emails with your login details.”  
+
+> “Here is the link to access your secure portal.”\
+> “We also sent you emails with your login details.”\
 > “If you can’t find them, use your email search bar and type our company name to locate them.”
 
 **Final closing (invented example):**
+
 > “Thank you for your time. If you need help with any step, we’re available to assist you.”
 
 ---
@@ -157,12 +160,12 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 
 ## Common errors and how to fix them
 
-| Problem | Likely cause | Solution |
-| --- | --- | --- |
-| The tool does not run | It is not assigned to the agent | Go to **AI Agents > your agent > Tools** and add it |
-| No information reaches the endpoint | Endpoint not accessible or wrong URL | Verify the URL is **HTTPS** and publicly accessible |
-| Fields are missing | “Identifier / Required” are misconfigured or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
-| It runs at the wrong time | The Conversation Prompt doesn’t define clear conditions | Specify rules like “only at the end”, “only after confirming email and phone” |
+| Problem                             | Likely cause                                                                | Solution                                                                                          |
+| ----------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| The tool does not run               | It is not assigned to the agent                                             | Go to **AI Agents \> your agent \> Tools** and add it                                             |
+| No information reaches the endpoint | Endpoint not accessible or wrong URL                                        | Verify the URL is **HTTPS** and publicly accessible                                               |
+| Fields are missing                  | “Identifier / Required” are misconfigured or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
+| It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                     | Specify rules like “only at the end”, “only after confirming email and phone”                     |
 
 ---
 
@@ -173,7 +176,7 @@ To get a stable result:
 - Start with a simple tool.
 - Define only a few required fields at first.
 - In the Conversation Prompt, be explicit about:
-  - **run conditions**,  
-  - **flow order**,  
-  - **exact phrases** (if applicable),  
+  - **run conditions**,
+  - **flow order**,
+  - **exact phrases** (if applicable),
   - **and prohibitions** (what the agent must not do).
