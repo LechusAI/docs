@@ -1,91 +1,179 @@
 ---
 title: "Créer des outils"
-description: "Utilisez des webhooks dans Callin pour récupérer ou envoyer des données en temps réel depuis votre agent vers n’importe quelle API externe ou plateforme d’automatisation."
+description: "Créez des outils (webhooks) dans Callin et utilisez-les depuis le champ Conversation Prompt de votre agent pour envoyer ou récupérer des données en temps réel pendant un appel."
 ---
 
 ## Vue d’ensemble
 
-Les webhooks permettent à votre agent Callin d’interagir avec des systèmes externes en temps réel. Concrètement, à chaque fois que votre agent émet ou reçoit un appel, il peut automatiquement **envoyer ou demander des données** à un autre service via une simple requête HTTP.
+Les **outils** (webhooks) permettent à votre agent Callin de se connecter à des systèmes externes **en temps réel** pendant qu’il échange avec un utilisateur.
 
-C’est utile si vous souhaitez que votre agent récupère des informations client, crée des enregistrements dans des outils externes, ou déclenche des automatisations — pendant une conversation en direct.
+Avec un outil, votre agent peut :
 
-Dans Callin, les webhooks sont créés sous forme d’**outils** (Tools), des composants réutilisables que vous pouvez attribuer à n’importe quel agent vocal.
+- **Envoyer des données** fournies par l’utilisateur pendant l’appel (par exemple : nom, email, numéro de téléphone, motif).
+- **Récupérer des données** depuis un système externe (par exemple : statut, disponibilité, vérification).
+- **Déclencher des automatisations** sur des plateformes externes (CRM, tickets, messagerie, workflows, etc.).
 
----
+Dans Callin, la configuration correcte suit toujours cet ordre :
 
-## Étape 1 : Créer un outil Webhook
+1. **Créer l’outil** dans la section **Tools**.
+2. **Assigner l’outil** à l’agent dans **AI Agents**.
+3. **Préciser dans le champ Conversation Prompt** quand il doit s’exécuter et ce que l’agent doit faire avec le résultat.
 
-Pour commencer, vous devez créer un nouvel outil dans le tableau de bord Callin :
-
-1. Allez dans [Tools](https://app.callin.io/tools) dans votre [espace de travail Callin](https://app.callin.io).
-2. Cliquez sur **\+ Add Tool**.
-3. Renseignez les champs suivants :
-   - **Name** : `get-customer-data`
-   - **Description** : `Récupère les informations client à partir du numéro de téléphone.`
-   - **Method** : choisissez `GET` si vous récupérez des données, ou `POST` si vous envoyez des données.
-   - **URL** : indiquez l’endpoint de l’API externe, par exemple `https://api.mycompany.com/customers`
-
-> ✅ Assurez-vous que l’URL utilise HTTPS et qu’elle est accessible publiquement. Sinon, le webhook ne fonctionnera pas.
-
-4. Cliquez sur **Save** pour créer l’outil.
+Si l’une de ces 3 étapes manque, l’outil ne s’exécutera pas comme prévu.
 
 ---
 
-## Étape 2 : Assigner l’outil à un agent vocal
+## Étape 1 — Créer un outil (webhook)
 
-Une fois l’outil créé, vous devez le relier à l’agent qui l’utilisera :
+Pour créer un outil dans Callin :
 
-1. Allez dans [AI Agents](https://app.callin.io/agents).
-2. Choisissez l’agent que vous souhaitez configurer.
-3. Faites défiler jusqu’à la section **Tools** et cliquez sur **\+ Add Tool**.
-4. Sélectionnez l’outil que vous venez de créer et enregistrez vos modifications.
+1. Allez dans **Tools** dans le tableau de bord Callin.
+2. Cliquez sur **+ Add Tool**.
+3. Renseignez les champs principaux :
 
-Votre agent est maintenant prêt à exécuter ce webhook dès qu’il en a besoin pendant un appel.
+- **Name**  
+  Utilisez un nom court, clair et stable. Recommandation : **verbe + objectif**.  
+  Exemples : `envoyer-lien-inscription`, `verifier-statut-client`, `creer-lead`.
+
+- **Description**  
+  Expliquez **ce que fait** l’outil et, surtout, **quand il doit être utilisé**.  
+  Exemple : « Envoyer le lien principal d’inscription uniquement lorsque l’utilisateur confirme qu’il souhaite continuer et que son email et son téléphone sont confirmés. »
+
+- **Method**  
+  - Utilisez **GET** si vous **récupérez** des informations.  
+  - Utilisez **POST** si vous **envoyez** des informations (cas le plus courant lorsque l’agent collecte des données et les envoie à un webhook).
+
+- **URL**  
+  Collez l’endpoint HTTPS de votre API ou le webhook de votre plateforme externe.
+
+>  Assurez-vous que l’URL est en **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
+
+### Configurer « Body parameters » (si vous utilisez POST)
+
+Si votre outil envoie des informations (POST), définissez exactement quelles données seront envoyées :
+
+1. Allez dans **Body parameters**.
+2. Cliquez sur **Add property**.
+3. Configurez chaque champ :
+
+- **Type** : le type de donnée (texte, nombre, vrai/faux, etc.).
+- **Identifier** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `telephone`, `nom_complet`).
+- **Required** : activez cette option si le champ est obligatoire.
+- **Description** : décrivez ce que représente le champ et le format attendu (par exemple : « Numéro de téléphone au format international » ou « Email valide »).
+
+>  Recommandation pratique : si vous marquez un champ comme **Required**, vous devez instruire l’agent (dans le Conversation Prompt) à **le demander et le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
+
+### En-têtes et authentification (si applicable)
+
+Si votre endpoint nécessite une authentification (par exemple un jeton ou une clé), vous devez la configurer selon les exigences exactes de votre API (quels en-têtes sont nécessaires et quelles valeurs).
+
+4. Cliquez sur **Save** pour enregistrer l’outil.
 
 ---
 
-## Étape 3 : Tester votre webhook
+## Étape 2 — Assigner l’outil à un agent
 
-Avant de l’utiliser en production, il est important de tester que votre webhook est correctement configuré.
+Créer l’outil ne suffit pas. Vous devez l’assigner à l’agent :
 
-Vous pouvez utiliser [Webhook.site](https://webhook.site) — un outil gratuit qui vous fournit une URL temporaire pour recevoir des requêtes de test et inspecter les données.
+1. Allez dans **AI Agents**.
+2. Sélectionnez l’agent que vous souhaitez configurer.
+3. Dans l’éditeur de l’agent, faites défiler jusqu’à la section **Tools**.
+4. Cliquez sur **+ Add Tool**.
+5. Sélectionnez l’outil et enregistrez.
 
-Voici un exemple de payload que Callin peut envoyer :
-
-"call_id": "ab12cd34", "agent_name": "Laura AI", "duration": 145, "direction": "outbound", "caller_number": "+34123456789", "summary": "Customer requested a follow-up."
-
-Vérifiez que le payload arrive bien et qu’il correspond à ce que votre API externe attend.
-
----
-
-## Étape 4 : Automatiser avec d’autres plateformes
-
-Une fois que votre webhook fonctionne, vous pouvez l’utiliser avec des outils d’automatisation comme :
-
-- [**Zapier**](https://support.callin.io/Create-AI-Agent/Connect-Zapier) : déclenchez des automatisations dans plus de 3 000 applications.
-- [**n8n**](https://support.callin.io/Create-AI-Agent/Connect-N8N) : créez des flux conditionnels et des workflows avancés de manière visuelle.
-- [**Make.com**](https://support.callin.io/Create-AI-Agent/Connect-Make) : concevez des scénarios puissants sans écrire de code.
-
-Ces outils peuvent exploiter la réponse du webhook pour envoyer des messages Slack, créer des leads CRM, déclencher des emails, et bien plus encore.
+**Vérification rapide :**  
+Si l’outil apparaît dans la liste de l’agent, il est correctement assigné. S’il n’apparaît pas, l’agent ne pourra pas l’exécuter.
 
 ---
 
-## Erreurs courantes et solutions
+## Étape 3 — Indiquer comment utiliser l’outil dans le « Conversation Prompt »
 
-| Problème                 | Cause probable                         | Solution                                                   |
-| ------------------------ | -------------------------------------- | ---------------------------------------------------------- |
-| URL du webhook manquante | Le champ URL est vide                  | Ajoutez un endpoint HTTPS valide                           |
-| L’outil ne s’exécute pas | L’outil n’est pas assigné à l’agent    | Allez dans l’agent \> onglet Tools \> ré-assignez l’outil   |
-| Aucune donnée reçue      | L’API n’est pas accessible             | Testez l’URL avec Webhook.site                             |
-| Erreur de timeout        | L’API met trop de temps à répondre     | Augmentez le délai de réponse du webhook dans l’outil      |
+C’est l’étape la plus importante. L’agent n’exécutera l’outil que si le **Conversation Prompt** précise clairement :
+
+- **Quelles données il doit collecter** avant l’exécution (champs obligatoires).
+- **Comment confirmer ces données** (pour réduire les erreurs).
+- **Quand** l’exécuter (le moment exact dans l’appel).
+- **Ce qu’il doit dire juste après** l’exécution (y compris des phrases exactes si votre processus l’exige).
+- **Ce qu’il ne doit PAS faire** (pour éviter de mélanger des flux ou d’envoyer des liens au mauvais moment).
+
+### Que mettre dans le Conversation Prompt (exemple inventé et facile à adapter)
+
+Voici un exemple complet (inventé) avec deux outils : un lien principal pendant l’appel et un lien d’accès au portail à la fin.
+
+**Outil 1 : Envoyer_Lien_Inscription (Lien A)**  
+**Objectif :** envoyer le lien principal où l’utilisateur complète tout le processus principal.  
+**Quand l’utiliser :** pendant l’appel, uniquement lorsque l’utilisateur confirme vouloir continuer et que l’email + le téléphone sont confirmés.
+
+**Le Lien A inclut (dans le lien lui-même) :**
+1. Inscription initiale (données obligatoires)
+2. Vérification/confirmation des informations
+3. Choix d’un plan ou d’une option
+4. Configuration du paiement (si applicable)
+5. Acceptation des conditions ou signature (si applicable)
+6. Téléversement de documents (si applicable)
+7. Confirmation finale
+
+**Conditions pour exécuter « Envoyer_Lien_Inscription » :**
+- L’utilisateur indique clairement qu’il veut continuer.
+- L’email est confirmé (répété et confirmé par l’utilisateur).
+- Le téléphone est confirmé (répété et confirmé par l’utilisateur).
+
+**Phrase exacte après l’envoi du Lien A (exemple inventé) :**
+> « Ouvrez le lien que nous venons de vous envoyer et descendez jusqu’à la section “Inscription initiale”. Complétez vos informations et dites-moi quand vous êtes prêt à continuer. »
+
+**Règles pendant l’appel (très important) :**
+- Ne demandez pas à l’utilisateur de quitter le Lien A pour faire des étapes ailleurs pendant l’appel.
+- Ne demandez pas de se connecter à un portail séparé pendant qu’il complète le processus principal.
+- Guidez l’utilisateur étape par étape, en restant toujours sur l’étape en cours.
+
+---
+
+**Outil 2 : Envoyer_Lien_Portail (Lien B)**  
+**Objectif :** envoyer le lien d’accès au portail sécurisé pour vérifier l’avancement plus tard.  
+**Quand l’utiliser :** uniquement à la fin de l’appel.
+
+**Phrases exactes après l’envoi du Lien B (exemple inventé) :**
+> « Voici le lien pour accéder à votre portail sécurisé. »  
+> « Nous vous avons également envoyé des emails avec vos informations de connexion. »  
+> « Si vous ne les trouvez pas, utilisez la barre de recherche de votre email et tapez le nom de notre entreprise pour les retrouver. »
+
+**Clôture finale (exemple inventé) :**
+> « Merci pour votre temps. Si vous avez besoin d’aide à n’importe quelle étape, nous sommes disponibles pour vous accompagner. »
+
+---
+
+## Étape 4 — Tester l’outil avant utilisation en production
+
+Avant d’utiliser l’outil avec des clients, vérifiez que :
+
+- La requête s’exécute correctement.
+- Les champs arrivent avec les noms attendus (Identifier).
+- Les champs obligatoires (Required) sont toujours présents.
+- L’endpoint répond rapidement et de manière cohérente.
+
+Une bonne pratique consiste à tester le webhook avec une URL d’inspection temporaire (pour voir ce qui arrive) puis avec votre endpoint réel.
+
+---
+
+## Erreurs fréquentes et solutions
+
+| Problème | Cause probable | Solution |
+| --- | --- | --- |
+| L’outil ne s’exécute pas | Il n’est pas assigné à l’agent | Allez dans **AI Agents > votre agent > Tools** et ajoutez-le |
+| Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte | Vérifiez que l’URL est en **HTTPS** et accessible publiquement |
+| Des champs manquent | « Identifier / Required » mal configurés ou l’agent ne les collecte pas | Vérifiez **Body parameters** et ajustez le **Conversation Prompt** pour exiger et confirmer les données |
+| Exécution au mauvais moment | Le Conversation Prompt ne définit pas de conditions claires | Précisez des règles comme « uniquement à la fin », « uniquement après confirmation de l’email et du téléphone » |
 
 ---
 
 ## Conseil final
 
-Les webhooks sont l’un des moyens les plus puissants d’étendre les capacités de votre agent Callin.
+Pour obtenir un résultat stable :
 
-Commencez par quelque chose de simple :\
-mettez en place un webhook `GET` pour récupérer les informations client par numéro de téléphone. Une fois que cela fonctionne, passez à des flux plus avancés avec **Zapier**, **n8n** ou **Make.com**.
-
-En combinant la voix en temps réel et l’automatisation, votre agent IA peut non seulement parler — il peut aussi récupérer des données, déclencher des actions et générer des résultats dans tous vos outils.
+- Commencez avec un outil simple.
+- Définissez peu de champs obligatoires au départ.
+- Dans le Conversation Prompt, soyez explicite sur :
+  - **les conditions d’exécution**,  
+  - **l’ordre du flux**,  
+  - **les phrases exactes** (si applicable),  
+  - **et les interdictions** (ce que l’agent ne doit pas faire).
