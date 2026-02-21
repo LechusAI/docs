@@ -1,25 +1,40 @@
 ---
 title: "Create tools"
-description: "Create tools (webhooks) in Callin and use them from your agent’s Conversation Prompt field to send or retrieve data in real time during a call."
+description: "Create tools (webhooks) in Callin and use them from your agent’s Conversation Prompt field to send or query data in real time during a call."
 ---
 
 ## Overview
 
-**Tools** (webhooks) allow your Callin agent to connect to external systems **in real time** while speaking with a user.
+**Tools** (webhooks) allow your Callin agent to connect with external systems **in real time** while speaking with a user.
+
+Put simply: a tool is an **automatic action** the agent can run to **ask** or **send** information to another system (for example, your CRM) without interrupting the conversation.
 
 With a tool, your agent can:
 
-- **Send data** the user provides during the call (for example: name, email, phone number, reason).
-- **Retrieve data** from an external system (for example: status, availability, verification).
+- **Send data** the user says during the call (for example: name, email, phone, reason).
+- **Query data** from an external system (for example: status, availability, verification).
 - **Trigger automations** in external platforms (CRM, tickets, messaging, workflows, etc.).
 
-In Callin, the correct setup always follows this order:
+In Callin, correct operation always follows this order:
 
 1. **Create the tool** in the **Tools** section.
 2. **Assign the tool** to the agent in **AI Agents**.
-3. **Specify in the Conversation Prompt field** when it should run and what the agent must do with the result.
+3. **Specify in the Conversation Prompt field** when it must run and what the agent should do with the result.
 
 If any of these 3 steps is missing, the tool will not run as expected.
+
+---
+
+## Before you start (concepts in 60 seconds)
+
+- **Tool**: a connection that lets the agent “talk” to another system (for example, a CRM).
+- **URL**: the address Callin sends the request to.
+- **GET**: used to **query** information (“Does this contact exist?”).
+- **POST**: used to **send** information (“Create this lead with these details.”).
+- **Body parameters**: the **data** the agent will send (email, phone, name, etc.).
+- **Required**: **mandatory** fields. If one is missing, the result may be incomplete or the flow can fail.
+
+> If your user is not technical, keep this idea: **the tool creates the connection**, and the **Conversation Prompt decides when it is used and with which data**.
 
 ---
 
@@ -33,21 +48,21 @@ To create a tool in Callin:
 
 - **Name**\
   Use a short, clear, stable name. Recommendation: **verb + objective**.\
-  Examples: `send-signup-link`, `check-customer-status`, `create-lead`.
+  Examples: `query-crm-contact`, `create-crm-lead`, `send-registration-link`.
 - **Description**\
-  Explain **what it does** and, most importantly, **when it should be used**.\
-  Example: “Send the main signup link only when the user confirms they want to continue and their email and phone are confirmed.”
+  Explain **what it does** and, especially, **when it must be used** (at what moment in the call).\
+  Example: “Check whether the contact exists in the CRM only after confirming email and phone.”
 - **Method**
-  - Use **GET** if you are **retrieving** information.
-  - Use **POST** if you are **sending** information (most common when the agent collects data and sends it to a webhook).
+  - Use **GET** if you are going to **query** information.
+  - Use **POST** if you are going to **send** information (most common when the agent collects data and sends it).
 - **URL**\
-  Paste the HTTPS endpoint for your API or your external platform’s webhook.
+  Paste the HTTPS URL of your API or your external platform webhook.
 
->  Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
+> Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
 
 ### Configure “Body parameters” (if you use POST)
 
-If your tool sends information (POST), define exactly what data it will send:
+If your tool sends information (POST), define exactly which data it will send:
 
 1. Go to **Body parameters**.
 2. Click **Add property**.
@@ -55,16 +70,16 @@ If your tool sends information (POST), define exactly what data it will send:
 
 - **Type**: the data type (text, number, true/false, etc.).
 - **Identifier**: the exact field name your endpoint expects (for example: `email`, `phone`, `full_name`).
-- **Required**: enable this if the field is mandatory.
-- **Description**: explain what the field represents and the expected format (for example: “Phone number in international format” or “Valid email”).
+- **Required**: enable it if the field is mandatory.
+- **Description**: explain what it represents and the expected format (for example: “Phone in international format” or “Valid email address”).
 
->  Practical recommendation: if you mark a field as **Required**, your agent must be instructed (in the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
+> Practical recommendation: if you mark a field as **Required**, your agent must be forced (via the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
 
 ### Headers and authentication (if applicable)
 
-If your endpoint requires authentication (for example, a token or a key), you must configure it according to your API’s exact requirements (which headers it needs and what values).
+If your endpoint requires authentication (for example, a token or key), you must configure it following your API requirements exactly (which headers it needs and what values).
 
-4. Click **Save** to store the tool.
+4. Click **Save** to save the tool.
 
 ---
 
@@ -79,31 +94,129 @@ Creating the tool is not enough. You must assign it to the agent:
 5. Select the tool and save.
 
 **Quick check:**\
-If the tool appears listed in the agent, it’s assigned correctly. If it doesn’t appear, the agent won’t be able to run it.
+If the tool appears in the agent’s list, it is assigned correctly. If it does not appear, the agent will not be able to run it.
 
 ---
 
 ## Step 3 — Specify how to use the tool in “Conversation Prompt”
 
-This is the most important step. The agent will only run the tool if the **Conversation Prompt** makes it clear:
+This is the most important step. The agent will only run the tool if the **Conversation Prompt** clearly tells it:
 
 - **What data it must collect** before running it (required fields).
 - **How to confirm that data** (to reduce errors).
-- **When** it must run it (the exact moment in the call).
-- **What it must say immediately after** running it (including exact phrases if your process requires them).
-- **What it must NOT do** (to avoid mixing flows or sending links at the wrong time).
+- **When** it must run it (exact moment in the call).
+- **What it must say right after** running it (including exact phrases if your process requires them).
+- **What it must NOT do** (to avoid mixing flows or acting too early).
 
-### What to write in the Conversation Prompt (invented example, easy to adapt)
+### Key rule (for non-technical users)
 
-Below is a complete (invented) example with two tools: one main link during the call and one portal access link at the end.
+If you don’t tell the agent **“when”** and **“under what conditions”** to use the tool, the agent may:
+- use it too early,
+- use it with incomplete data,
+- or never use it at all.
 
-**Tool 1: Send_Signup_Link (Link A)**\
-**Objective:** send the main link where the user completes the entire primary process.\
-**When to use it:** during the call, only when the user confirms they want to continue and the email + phone are confirmed.
+---
 
-**Link A completes (inside the link itself):**
+## Example 1 — Connect to a CRM in real time (query + create)
 
-1. Initial signup (required data)
+This example covers a very common case: the agent speaks with a user and, **before continuing**, checks the CRM to see if the contact already exists. If it doesn’t, it creates the user as a lead and continues the call.
+
+### Tools used in this example
+
+**Tool 1: Query_CRM_Contact**\
+**Goal:** check whether the contact already exists in the CRM.\
+**When it is used:** right after confirming **email + phone**.\
+**Expected result:** “found / not found” and, if found, basic details (for example: name and status).
+
+**Tool 2: Create_CRM_Lead**\
+**Goal:** create a lead if the contact does not exist.\
+**When it is used:** only if the previous query returns “not found”.\
+**Minimum recommended data:** name, email, phone, reason.
+
+### Conditions to run the tools (very important)
+
+- The agent **must not** run any tool until:
+  - the **email** is confirmed (repeated and confirmed by the user),
+  - and the **phone** is confirmed (repeated and confirmed by the user).
+- If the user hesitates or corrects a detail, the agent must **update it and confirm again** before continuing.
+
+### What to write in the Conversation Prompt (invented text, easy to adapt)
+
+**Flow objective:**\
+1) Collect basic details → 2) Confirm them → 3) Query CRM → 4) If not found, create lead → 5) Continue the conversation.
+
+**Clear instructions for the agent (example):**
+
+- During the call, collect and confirm these details:
+  - **First and last name**
+  - **Email**
+  - **Phone**
+  - **Reason** (one short sentence)
+- To confirm:
+  - Repeat the email and ask: “Is that correct?”
+  - Repeat the phone and ask: “Is that correct?”
+- Only when email and phone are confirmed:
+  - Run **Query_CRM_Contact**.
+- If the result indicates the contact **exists**:
+  - Tell the user: “Perfect, I can already see your record. Let’s continue.”
+  - Do not invent details. If the status comes in the result, you may mention it neutrally.
+- If the result indicates the contact **does not exist**:
+  - Tell the user: “Perfect, I can’t find you yet. I’ll register you now and we’ll continue.”
+  - Run **Create_CRM_Lead** with the confirmed details.
+  - After creating, confirm: “Done, you are now registered. Let’s continue with the next step.”
+- If the tool fails or returns no response:
+  - Do not say technical information.
+  - Say: “I couldn’t check it right now. Let’s continue, and if needed we’ll review it at the end.”
+  - Do not repeat tools in a loop.
+
+### How it would look in a call (conversation example)
+
+**Agent:** “Perfect. To help you, I just need a few quick details. What’s your first and last name?”\
+**User:** “Laura Martin.”\
+**Agent:** “Thanks, Laura. What’s your email?”\
+**User:** “laura.martin@example.com”\
+**Agent:** “Great. I understood: laura dot martin at example dot com. Is that correct?”\
+**User:** “Yes.”\
+**Agent:** “Perfect. What’s your phone number?”\
+**User:** “Six six five, one two three, four five six.”\
+**Agent:** “Perfect. Confirming the phone: 665 123 456. Is that correct?”\
+**User:** “Yes.”\
+**Agent:** “Thanks. One last thing: in one sentence, what’s the reason for your call?”\
+**User:** “I want information about the plans.”\
+**Agent:** “Perfect. I’m going to check if you’re already registered and then we’ll continue.”
+
+(The agent runs **Query_CRM_Contact**)
+
+- **If found:**\
+  **Agent:** “Perfect, I can already see your record. Let’s continue with the information about plans.”
+
+- **If not found:**\
+  **Agent:** “Perfect, I can’t find you yet. I’ll register you now and we’ll continue.”
+
+(The agent runs **Create_CRM_Lead**)
+
+  **Agent:** “Done, you are now registered. Now yes—let’s go over the information about plans.”
+
+### Flow safety rules (to avoid errors)
+
+- Do not run tools with unconfirmed data.
+- Do not invent CRM results: only use what comes back in the response.
+- Do not retry the tool repeatedly if it fails: continue and offer to review it later.
+- Do not mix flows: first CRM (verify/create), then the rest of the process.
+
+---
+
+## Example 2 — Send links at the right moment (during the call and at the end)
+
+Below is a complete (invented) example with two tools: a main link during the call and an access link at the end.
+
+**Tool 1: Send_Registration_Link (Link A)**\
+**Goal:** send the main link where the user completes the full primary process.\
+**When it is used:** during the call, only when the user confirms they want to continue and email + phone are confirmed.
+
+**Link A includes (inside the link itself):**
+
+1. Initial registration (required details)
 2. Verification/confirmation of information
 3. Plan or option selection
 4. Payment setup (if applicable)
@@ -111,7 +224,7 @@ Below is a complete (invented) example with two tools: one main link during the 
 6. Document upload (if applicable)
 7. Final confirmation
 
-**Conditions to run “Send_Signup_Link”:**
+**Conditions to run “Send_Registration_Link”:**
 
 - The user clearly says they want to continue.
 - The email is confirmed (repeated and confirmed by the user).
@@ -119,25 +232,25 @@ Below is a complete (invented) example with two tools: one main link during the 
 
 **Exact phrase after sending Link A (invented example):**
 
-> “Open the link we just sent and scroll down to the ‘Initial signup’ section. Complete your details and tell me when you’re ready to continue.”
+> “Open the link we just sent you and scroll down to the ‘Initial registration’ section. Fill in your details and tell me when you’re ready to continue.”
 
 **Rules during the call (very important):**
 
-- Do not ask the user to leave Link A to do steps elsewhere during the call.
+- Do not ask the user to leave Link A to do steps somewhere else during the call.
 - Do not ask them to log into a separate portal while they are completing the main process.
-- Guide the user step by step, always focusing on the step they are currently on.
+- Guide the user step by step, always from where they currently are.
 
 ---
 
 **Tool 2: Send_Portal_Link (Link B)**\
-**Objective:** send the secure portal access link to check progress later.\
-**When to use it:** only at the end of the call.
+**Goal:** send the secure portal access link so the user can review progress later.\
+**When it is used:** only at the end of the call.
 
 **Exact phrases after sending Link B (invented example):**
 
 > “Here is the link to access your secure portal.”\
 > “We also sent you emails with your login details.”\
-> “If you can’t find them, use your email search bar and type our company name to locate them.”
+> “If you can’t find them, use your email search and type our company name to locate them.”
 
 **Final closing (invented example):**
 
@@ -147,36 +260,46 @@ Below is a complete (invented) example with two tools: one main link during the 
 
 ## Step 4 — Test the tool before using it in production
 
-Before using the tool with customers, confirm that:
+Before using the tool with customers, validate that:
 
-- The request runs correctly.
-- Fields arrive with the expected names (Identifier).
-- Required fields (Required) are always present.
+- The request runs successfully.
+- The fields arrive with the expected name (Identifier).
+- The required fields (Required) are always present.
 - The endpoint responds quickly and consistently.
 
 A good practice is to test the webhook with a temporary inspection URL (to see what arrives) and then with your real endpoint.
+
+### Quick checklist (30 seconds)
+
+- The tool is created and saved in **Tools**.
+- The tool is assigned to the agent in **AI Agents > your agent > Tools**.
+- The **Conversation Prompt** clearly specifies:
+  - what data to ask for,
+  - how to confirm it,
+  - when to run the tool,
+  - and what to say right after.
 
 ---
 
 ## Common errors and how to fix them
 
-| Problem                             | Likely cause                                                                | Solution                                                                                          |
-| ----------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| The tool does not run               | It is not assigned to the agent                                             | Go to **AI Agents \> your agent \> Tools** and add it                                             |
-| No information reaches the endpoint | Endpoint not accessible or wrong URL                                        | Verify the URL is **HTTPS** and publicly accessible                                               |
-| Fields are missing                  | “Identifier / Required” are misconfigured or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
-| It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                     | Specify rules like “only at the end”, “only after confirming email and phone”                     |
+| Problem                            | Likely cause                                                      | Solution                                                                                          |
+| ---------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| The tool does not run              | It is not assigned to the agent                                   | Go to **AI Agents \> your agent \> Tools** and add it                                             |
+| No information reaches the endpoint| Endpoint is inaccessible or URL is incorrect                       | Verify the URL is **HTTPS** and publicly accessible                                               |
+| Missing fields                     | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
+| It runs at the wrong time          | The Conversation Prompt doesn’t define clear conditions            | Specify rules like “only at the end”, “only after confirming email and phone”                     |
 
 ---
 
 ## Final tip
 
-To get a stable result:
+To achieve a stable result:
 
 - Start with a simple tool.
-- Define only a few required fields at first.
+- Define only a few required fields at the beginning.
 - In the Conversation Prompt, be explicit about:
-  - **run conditions**,
+  - **execution conditions**,
   - **flow order**,
   - **exact phrases** (if applicable),
   - **and prohibitions** (what the agent must not do).
