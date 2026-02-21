@@ -7,6 +7,8 @@ description: "Crea herramientas (webhooks) en Callin y úsalas desde el campo Co
 
 Las **herramientas** (webhooks) permiten que tu agente de Callin se conecte con sistemas externos **en tiempo real** mientras conversa con un usuario.
 
+Dicho de forma simple: una herramienta es una **acción automática** que el agente ejecuta para **preguntar** o **enviar** información a otro sistema (por ejemplo, tu CRM) sin cortar la conversación.
+
 Con una herramienta, tu agente puede:
 
 - **Enviar datos** que el usuario dicta durante la llamada (por ejemplo: nombre, email, teléfono, motivo).
@@ -23,6 +25,19 @@ Si falta cualquiera de estos 3 pasos, la herramienta no se ejecutará como esper
 
 ---
 
+## Antes de empezar (conceptos en 60 segundos)
+
+- **Tool / Herramienta**: conexión para que el agente pueda “hablar” con otro sistema (por ejemplo, un CRM).
+- **URL**: la dirección a la que Callin envía la solicitud.
+- **GET**: se usa para **consultar** información (“¿existe este contacto?”).
+- **POST**: se usa para **enviar** información (“crea este lead con estos datos”).
+- **Body parameters**: los **datos** que el agente enviará (email, teléfono, nombre, etc.).
+- **Required**: campos **obligatorios**. Si falta uno, el resultado será incompleto o el flujo puede fallar.
+
+> Si tu usuario no es técnico, quédate con esta idea: **la herramienta hace la conexión**, y el **Conversation Prompt decide cuándo se usa y con qué datos**.
+
+---
+
 ## Paso 1 — Crear una herramienta (webhook)
 
 Para crear una herramienta en Callin:
@@ -33,17 +48,17 @@ Para crear una herramienta en Callin:
 
 - **Name**\
   Usa un nombre corto, claro y estable. Recomendación: **verbo + objetivo**.\
-  Ejemplos: `enviar-enlace-registro`, `consultar-estado-cliente`, `crear-lead`.
+  Ejemplos: `consultar-contacto-crm`, `crear-lead-crm`, `enviar-enlace-registro`.
 - **Description**\
-  Explica **para qué sirve** y, sobre todo, **cuándo debe usarse**.\
-  Ejemplo: “Enviar el enlace principal de registro solo cuando el usuario confirme que desea continuar y su email y teléfono estén confirmados.”
+  Explica **para qué sirve** y, sobre todo, **cuándo debe usarse** (en qué momento de la llamada).\
+  Ejemplo: “Consultar si el contacto existe en el CRM solo después de confirmar email y teléfono.”
 - **Method**
   - Usa **GET** si vas a **consultar** información.
-  - Usa **POST** si vas a **enviar** información (lo más habitual cuando el agente recopila datos y los envía a un webhook).
+  - Usa **POST** si vas a **enviar** información (lo más habitual cuando el agente recopila datos y los envía).
 - **URL**\
-  Pega el endpoint HTTPS de tu API o el webhook de tu plataforma externa.
+  Pega la URL HTTPS de tu API o el webhook de tu plataforma externa.
 
->  Asegúrate de que la URL sea **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
+> Asegúrate de que la URL sea **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
 
 ### Configurar “Body parameters” (si usas POST)
 
@@ -58,7 +73,7 @@ Si tu herramienta envía información (POST), define exactamente qué datos envi
 - **Required**: actívalo si el campo es obligatorio.
 - **Description**: explica qué representa el campo y el formato esperado (por ejemplo: “Teléfono en formato internacional” o “Email válido”).
 
->  Recomendación práctica: si marcas un campo como **Required**, tu agente debe estar obligado (por instrucciones en el Conversation Prompt) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
+> Recomendación práctica: si marcas un campo como **Required**, tu agente debe estar obligado (por instrucciones en el Conversation Prompt) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
 
 ### Encabezados y autenticación (si aplica)
 
@@ -91,9 +106,107 @@ Este es el paso más importante. El agente solo ejecutará la herramienta si el 
 - **Cómo confirmar esos datos** (para reducir errores).
 - **Cuándo** debe ejecutarla (momento exacto de la llamada).
 - **Qué debe decir justo después** de ejecutarla (incluyendo frases exactas si tu proceso lo requiere).
-- **Qué NO debe hacer** (para evitar mezclar flujos o enviar enlaces fuera de tiempo).
+- **Qué NO debe hacer** (para evitar mezclar flujos o actuar demasiado pronto).
 
-### Qué escribir en el Conversation Prompt (ejemplo inventado y fácil de adaptar)
+### Regla clave (para usuarios no técnicos)
+
+Si tú no le dices al agente **“cuándo”** y **“bajo qué condiciones”** usar la herramienta, el agente puede:
+- usarla demasiado pronto,
+- usarla con datos incompletos,
+- o no usarla nunca.
+
+---
+
+## Ejemplo 1 — Conectar con un CRM en tiempo real (consulta + creación)
+
+Este ejemplo está pensado para un caso muy común: el agente habla con un usuario y, **antes de continuar**, comprueba en el CRM si ya existe. Si no existe, lo crea como lead y sigue la llamada.
+
+### Herramientas usadas en este ejemplo
+
+**Herramienta 1: Consultar_Contacto_CRM**\
+**Objetivo:** comprobar si el contacto ya existe en el CRM.\
+**Cuándo se usa:** justo después de confirmar **email + teléfono**.\
+**Resultado esperado:** “encontrado / no encontrado” y, si está encontrado, datos básicos (por ejemplo: nombre y estado).
+
+**Herramienta 2: Crear_Lead_CRM**\
+**Objetivo:** crear un lead si el contacto no existe.\
+**Cuándo se usa:** solo si la consulta anterior devuelve “no encontrado”.\
+**Datos mínimos recomendados:** nombre, email, teléfono, motivo.
+
+### Condiciones para ejecutar las herramientas (muy importante)
+
+- El agente **no puede** ejecutar ninguna herramienta hasta que:
+  - el **email** esté confirmado (repetido y confirmado por el usuario),
+  - y el **teléfono** esté confirmado (repetido y confirmado por el usuario).
+- Si el usuario duda o corrige un dato, el agente debe **actualizarlo y volver a confirmarlo** antes de continuar.
+
+### Qué escribir en el Conversation Prompt (texto inventado y fácil de adaptar)
+
+**Objetivo del flujo:**\
+1) Recoger datos básicos → 2) Confirmarlos → 3) Consultar CRM → 4) Si no existe, crear lead → 5) Continuar con la conversación.
+
+**Instrucciones claras para el agente (ejemplo):**
+
+- Durante la llamada, recopila y confirma estos datos:
+  - **Nombre y apellido**
+  - **Email**
+  - **Teléfono**
+  - **Motivo** (una frase corta)
+- Para confirmar:
+  - Repite el email y pregunta: “¿Es correcto?”
+  - Repite el teléfono y pregunta: “¿Es correcto?”
+- Solo cuando email y teléfono estén confirmados:
+  - Ejecuta **Consultar_Contacto_CRM**.
+- Si el resultado indica que el contacto **existe**:
+  - Dile al usuario: “Perfecto, ya veo tu ficha registrada. Vamos a continuar.”
+  - No inventes detalles. Si el estado viene en el resultado, puedes mencionarlo de forma neutral.
+- Si el resultado indica que el contacto **no existe**:
+  - Dile al usuario: “Perfecto, no te encuentro todavía. Te registro ahora y seguimos.”
+  - Ejecuta **Crear_Lead_CRM** con los datos confirmados.
+  - Después de crear, confirma: “Listo, ya estás registrado. Continuemos con el siguiente paso.”
+- Si la herramienta falla o no devuelve respuesta:
+  - No digas información técnica.
+  - Di: “No he podido comprobarlo ahora mismo. Vamos a continuar, y si hace falta lo revisamos al final.”
+  - No repitas herramientas en bucle.
+
+### Cómo se vería en una llamada (ejemplo de conversación)
+
+**Agente:** “Perfecto. Para ayudarte, necesito unos datos rápidos. ¿Cuál es tu nombre y apellido?”\
+**Usuario:** “Laura Martín.”\
+**Agente:** “Gracias, Laura. ¿Cuál es tu email?”\
+**Usuario:** “laura.martin@ejemplo.com”\
+**Agente:** “Perfecto. He entendido: laura punto martin arroba ejemplo punto com. ¿Es correcto?”\
+**Usuario:** “Sí.”\
+**Agente:** “Genial. ¿Cuál es tu teléfono?”\
+**Usuario:** “Seis seis cinco, uno dos tres, cuatro cinco seis.”\
+**Agente:** “Perfecto. Confirmo el teléfono: 665 123 456. ¿Es correcto?”\
+**Usuario:** “Sí.”\
+**Agente:** “Gracias. Un último dato: en una frase, ¿cuál es el motivo de tu llamada?”\
+**Usuario:** “Quiero información sobre los planes.”\
+**Agente:** “Perfecto. Voy a comprobar si ya estás registrada y seguimos.”
+
+(El agente ejecuta **Consultar_Contacto_CRM**)
+
+- **Si existe:**\
+  **Agente:** “Perfecto, ya veo tu ficha registrada. Vamos a continuar con la información sobre planes.”
+
+- **Si no existe:**\
+  **Agente:** “Perfecto, no te encuentro todavía. Te registro ahora y seguimos.”
+
+(El agente ejecuta **Crear_Lead_CRM**)
+
+  **Agente:** “Listo, ya estás registrada. Ahora sí, vamos con la información sobre planes.”
+
+### Reglas de seguridad del flujo (para evitar errores)
+
+- No ejecutes herramientas con datos sin confirmar.
+- No inventes resultados del CRM: solo usa lo que llegue como respuesta.
+- No repitas la herramienta varias veces si falla: continúa y ofrece revisarlo después.
+- No mezcles flujos: primero CRM (verificar/crear) y luego el resto del proceso.
+
+---
+
+## Ejemplo 2 — Enviar enlaces en el momento correcto (durante la llamada y al final)
 
 A continuación tienes un ejemplo completo (inventado) con dos herramientas: un enlace principal durante la llamada y un enlace de acceso al final.
 
@@ -155,6 +268,16 @@ Antes de usar la herramienta con clientes, valida que:
 - El endpoint responde de forma rápida y consistente.
 
 Una buena práctica es probar el webhook con una URL de inspección temporal (para ver qué llega) y luego con tu endpoint real.
+
+### Checklist rápida (30 segundos)
+
+- La herramienta está creada y guardada en **Tools**.
+- La herramienta está asignada al agente en **AI Agents > tu agente > Tools**.
+- El **Conversation Prompt** indica claramente:
+  - qué datos pedir,
+  - cómo confirmarlos,
+  - cuándo ejecutar la herramienta,
+  - y qué decir justo después.
 
 ---
 
