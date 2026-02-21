@@ -1,179 +1,305 @@
 ---
-title: "Tools erstellen"
-description: "Erstellen Sie Tools (Webhooks) in Callin und nutzen Sie sie über das Feld Conversation Prompt Ihres Agents, um während eines Anrufs Daten in Echtzeit zu senden oder abzurufen."
+title: "Créer des outils"
+description: "Créez des outils (webhooks) dans Callin et utilisez-les depuis le champ Conversation Prompt de votre agent pour envoyer ou consulter des données en temps réel pendant un appel."
 ---
 
-## Überblick
+## Vue d’ensemble
 
-**Tools** (Webhooks) ermöglichen es Ihrem Callin-Agent, sich **in Echtzeit** während eines Gesprächs mit externen Systemen zu verbinden.
+Les **outils** (webhooks) permettent à votre agent Callin de se connecter à des systèmes externes **en temps réel** pendant qu’il converse avec un utilisateur.
 
-Mit einem Tool kann Ihr Agent:
+Dit simplement : un outil est une **action automatique** que l’agent peut exécuter pour **demander** ou **envoyer** des informations à un autre système (par exemple, votre CRM) sans interrompre la conversation.
 
-- **Daten senden**, die der Nutzer während des Anrufs angibt (z. B. Name, E-Mail, Telefonnummer, Anliegen).
-- **Daten abrufen** aus einem externen System (z. B. Status, Verfügbarkeit, Verifizierung).
-- **Automatisierungen auslösen** in externen Plattformen (CRM, Tickets, Messaging, Workflows usw.).
+Avec un outil, votre agent peut :
 
-In Callin folgt die korrekte Einrichtung immer dieser Reihenfolge:
+- **Envoyer des données** dictées par l’utilisateur pendant l’appel (par exemple : nom, email, téléphone, motif).
+- **Consulter des données** dans un système externe (par exemple : statut, disponibilité, vérification).
+- **Déclencher des automatisations** sur des plateformes externes (CRM, tickets, messagerie, workflows, etc.).
 
-1. **Tool erstellen** im Bereich **Tools**.
-2. **Tool dem Agent zuweisen** im Bereich **AI Agents**.
-3. **Im Feld Conversation Prompt festlegen**, wann es ausgeführt werden soll und was der Agent mit dem Ergebnis tun muss.
+Dans Callin, le bon fonctionnement suit toujours cet ordre :
 
-Wenn einer dieser 3 Schritte fehlt, wird das Tool nicht wie erwartet ausgeführt.
+1. **Créer l’outil** dans la section **Tools**.
+2. **Assigner l’outil** à l’agent dans **AI Agents**.
+3. **Indiquer dans le champ Conversation Prompt** quand l’outil doit s’exécuter et ce que l’agent doit faire avec le résultat.
 
----
-
-## Schritt 1 — Ein Tool (Webhook) erstellen
-
-So erstellen Sie ein Tool in Callin:
-
-1. Öffnen Sie **Tools** im Callin-Dashboard.
-2. Klicken Sie auf **+ Add Tool**.
-3. Füllen Sie die wichtigsten Felder aus:
-
-- **Name**  
-  Verwenden Sie einen kurzen, klaren und stabilen Namen. Empfehlung: **Verb + Ziel**.  
-  Beispiele: `registrierungslink-senden`, `kundenstatus-pruefen`, `lead-erstellen`.
-
-- **Description**  
-  Erklären Sie **was** das Tool macht und vor allem **wann** es verwendet werden soll.  
-  Beispiel: „Den Haupt-Registrierungslink nur dann senden, wenn der Nutzer bestätigt hat, dass er fortfahren möchte, und E-Mail sowie Telefonnummer bestätigt sind.“
-
-- **Method**  
-  - Verwenden Sie **GET**, wenn Sie Informationen **abrufen**.  
-  - Verwenden Sie **POST**, wenn Sie Informationen **senden** (am häufigsten, wenn der Agent Daten sammelt und an einen Webhook sendet).
-
-- **URL**  
-  Fügen Sie den HTTPS-Endpoint Ihrer API oder den Webhook Ihrer externen Plattform ein.
-
-> Stellen Sie sicher, dass die URL **HTTPS** ist und öffentlich erreichbar. Wenn der Endpoint nicht erreichbar ist, funktioniert das Tool nicht.
-
-### „Body parameters“ konfigurieren (wenn Sie POST verwenden)
-
-Wenn Ihr Tool Informationen (POST) sendet, definieren Sie exakt, welche Daten gesendet werden:
-
-1. Gehen Sie zu **Body parameters**.
-2. Klicken Sie auf **Add property**.
-3. Konfigurieren Sie jedes Feld:
-
-- **Type**: Datentyp (Text, Zahl, wahr/falsch usw.).
-- **Identifier**: der exakte Feldname, den Ihr Endpoint erwartet (z. B. `email`, `telefon`, `voller_name`).
-- **Required**: aktivieren, wenn das Feld verpflichtend ist.
-- **Description**: erklären, was das Feld bedeutet und welches Format erwartet wird (z. B. „Telefonnummer im internationalen Format“ oder „Gültige E-Mail“).
-
-> Praktische Empfehlung: Wenn Sie ein Feld als **Required** markieren, muss der Agent (im Conversation Prompt) angewiesen werden, es **abzufragen und zu bestätigen**, bevor das Tool ausgeführt wird. Andernfalls erhält der Webhook unvollständige Daten oder der Ablauf scheitert.
-
-### Header und Authentifizierung (falls erforderlich)
-
-Wenn Ihr Endpoint Authentifizierung benötigt (z. B. Token oder Schlüssel), müssen Sie diese gemäß den exakten Anforderungen Ihrer API konfigurieren (welche Header notwendig sind und mit welchen Werten).
-
-4. Klicken Sie auf **Save**, um das Tool zu speichern.
+S’il manque l’une de ces 3 étapes, l’outil ne s’exécutera pas comme prévu.
 
 ---
 
-## Schritt 2 — Tool einem Agent zuweisen
+## Avant de commencer (concepts en 60 secondes)
 
-Das Erstellen des Tools reicht nicht aus. Sie müssen es dem Agent zuweisen:
+- **Outil / Tool** : connexion qui permet à l’agent de “parler” à un autre système (par exemple, un CRM).
+- **URL** : l’adresse à laquelle Callin envoie la requête.
+- **GET** : utilisé pour **consulter** une information (“Ce contact existe-t-il ?”).
+- **POST** : utilisé pour **envoyer** une information (“Créez ce lead avec ces données.”).
+- **Body parameters** : les **données** que l’agent enverra (email, téléphone, nom, etc.).
+- **Required** : champs **obligatoires**. S’il en manque un, le résultat peut être incomplet ou le flux peut échouer.
 
-1. Gehen Sie zu **AI Agents**.
-2. Wählen Sie den Agent aus, den Sie konfigurieren möchten.
-3. Scrollen Sie im Agent-Editor zur Sektion **Tools**.
-4. Klicken Sie auf **+ Add Tool**.
-5. Wählen Sie das Tool aus und speichern Sie.
-
-**Schnellcheck:**  
-Wenn das Tool im Agent aufgelistet ist, ist es korrekt zugewiesen. Wenn es nicht erscheint, kann der Agent es nicht ausführen.
+> Si votre utilisateur n’est pas technique, retenez cette idée : **l’outil crée la connexion**, et le **Conversation Prompt** décide quand il est utilisé et avec quelles données.
 
 ---
 
-## Schritt 3 — Verwendung des Tools im „Conversation Prompt“ festlegen
+## Étape 1 — Créer un outil (webhook)
 
-Das ist der wichtigste Schritt. Der Agent führt das Tool nur aus, wenn der **Conversation Prompt** klar festlegt:
+Pour créer un outil dans Callin :
 
-- **Welche Daten vor der Ausführung gesammelt werden müssen** (Pflichtfelder).
-- **Wie diese Daten bestätigt werden sollen** (zur Reduzierung von Fehlern).
-- **Wann** es ausgeführt werden soll (der genaue Zeitpunkt im Anruf).
-- **Was unmittelbar danach gesagt werden muss** (inklusive exakter Sätze, falls Ihr Prozess das verlangt).
-- **Was NICHT getan werden darf** (um Abläufe nicht zu vermischen oder Links zur falschen Zeit zu senden).
+1. Allez dans **Tools** dans le tableau de bord Callin.
+2. Cliquez sur **\+ Add Tool**.
+3. Remplissez les champs principaux :
 
-### Was Sie in den Conversation Prompt schreiben (erfundenes, leicht anpassbares Beispiel)
+- **Name**\
+  Utilisez un nom court, clair et stable. Recommandation : **verbe + objectif**.\
+  Exemples : `consulter-contact-crm`, `creer-lead-crm`, `envoyer-lien-inscription`.
+- **Description**\
+  Expliquez **à quoi ça sert** et surtout **quand l’utiliser** (à quel moment dans l’appel).\
+  Exemple : “Vérifier si le contact existe dans le CRM uniquement après confirmation de l’email et du téléphone.”
+- **Method**
+  - Utilisez **GET** si vous allez **consulter** des informations.
+  - Utilisez **POST** si vous allez **envoyer** des informations (le plus courant quand l’agent collecte des données et les envoie).
+- **URL**\
+  Collez l’URL HTTPS de votre API ou le webhook de votre plateforme externe.
 
-Unten steht ein vollständiges (erfundenes) Beispiel mit zwei Tools: ein Hauptlink während des Anrufs und ein Portal-Link am Ende.
+> Assurez-vous que l’URL est **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
 
-**Tool 1: Registrierungslink_Senden (Link A)**  
-**Ziel:** den Hauptlink senden, über den der Nutzer den gesamten Hauptprozess abschließt.  
-**Wann verwenden:** während des Anrufs, nur wenn der Nutzer bestätigt, dass er fortfahren möchte, und E-Mail + Telefonnummer bestätigt sind.
+### Configurer “Body parameters” (si vous utilisez POST)
 
-**Link A umfasst (im Link selbst):**
-1. Erstregistrierung (Pflichtdaten)
-2. Prüfung/Bestätigung der Informationen
-3. Auswahl eines Plans oder einer Option
-4. Zahlungseinrichtung (falls erforderlich)
-5. Annahme von Bedingungen oder Unterschrift (falls erforderlich)
-6. Dokumenten-Upload (falls erforderlich)
-7. Endbestätigung
+Si votre outil envoie des informations (POST), définissez exactement quelles données il enverra :
 
-**Bedingungen, um „Registrierungslink_Senden“ auszuführen:**
-- Der Nutzer sagt klar, dass er fortfahren möchte.
-- Die E-Mail ist bestätigt (wiederholt und vom Nutzer bestätigt).
-- Die Telefonnummer ist bestätigt (wiederholt und vom Nutzer bestätigt).
+1. Allez dans **Body parameters**.
+2. Cliquez sur **Add property**.
+3. Configurez chaque champ :
 
-**Exakter Satz nach dem Senden von Link A (erfundenes Beispiel):**
-> „Öffnen Sie den Link, den wir Ihnen gerade gesendet haben, und scrollen Sie zum Abschnitt ‚Erstregistrierung‘. Füllen Sie Ihre Angaben aus und sagen Sie mir Bescheid, wenn Sie bereit sind weiterzumachen.“
+- **Type** : le type de donnée (texte, nombre, vrai/faux, etc.).
+- **Identifier** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `telephone`, `nom_complet`).
+- **Required** : activez-le si le champ est obligatoire.
+- **Description** : expliquez ce que cela représente et le format attendu (par exemple : “Téléphone au format international” ou “Email valide”).
 
-**Regeln während des Anrufs (sehr wichtig):**
-- Bitten Sie den Nutzer nicht, Link A zu verlassen, um während des Anrufs Schritte an anderer Stelle zu erledigen.
-- Bitten Sie nicht um einen separaten Portal-Login, während der Hauptprozess abgeschlossen wird.
-- Führen Sie den Nutzer Schritt für Schritt und bleiben Sie stets bei dem aktuellen Schritt.
+> Recommandation pratique : si vous marquez un champ comme **Required**, votre agent doit être obligé (via le Conversation Prompt) de **le demander et de le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
 
----
+### En-têtes et authentification (si applicable)
 
-**Tool 2: Portal_Link_Senden (Link B)**  
-**Ziel:** den Link zum sicheren Portal senden, um später den Fortschritt zu prüfen.  
-**Wann verwenden:** ausschließlich am Ende des Anrufs.
+Si votre endpoint nécessite une authentification (par exemple, un token ou une clé), vous devrez la configurer selon les exigences exactes de votre API (quels en-têtes et quelles valeurs).
 
-**Exakte Sätze nach dem Senden von Link B (erfundenes Beispiel):**
-> „Hier ist der Link, um auf Ihr sicheres Portal zuzugreifen.“  
-> „Wir haben Ihnen außerdem E-Mails mit Ihren Zugangsdaten gesendet.“  
-> „Wenn Sie sie nicht finden, nutzen Sie die Suche in Ihrem E-Mail-Postfach und geben Sie den Namen unseres Unternehmens ein, um sie zu finden.“
-
-**Abschlusssatz (erfundenes Beispiel):**
-> „Vielen Dank für Ihre Zeit. Wenn Sie bei irgendeinem Schritt Hilfe benötigen, stehen wir Ihnen gerne zur Verfügung.“
+4. Cliquez sur **Save** pour enregistrer l’outil.
 
 ---
 
-## Schritt 4 — Tool testen, bevor Sie es produktiv nutzen
+## Étape 2 — Assigner l’outil à un agent
 
-Bevor Sie das Tool mit Kunden verwenden, prüfen Sie:
+Créer l’outil ne suffit pas. Vous devez l’assigner à l’agent :
 
-- Die Anfrage wird korrekt ausgeführt.
-- Felder kommen mit den erwarteten Namen an (Identifier).
-- Pflichtfelder (Required) sind immer vorhanden.
-- Der Endpoint antwortet schnell und konsistent.
+1. Allez dans **AI Agents**.
+2. Sélectionnez l’agent que vous voulez configurer.
+3. Dans l’éditeur de l’agent, descendez jusqu’à la section **Tools**.
+4. Cliquez sur **\+ Add Tool**.
+5. Sélectionnez l’outil et enregistrez.
 
-Eine gute Praxis ist, den Webhook zuerst mit einer temporären Prüf-URL zu testen (um zu sehen, was ankommt) und anschließend mit Ihrem echten Endpoint.
-
----
-
-## Häufige Fehler und Lösungen
-
-| Problem | Wahrscheinliche Ursache | Lösung |
-| --- | --- | --- |
-| Tool wird nicht ausgeführt | Es ist dem Agent nicht zugewiesen | Gehen Sie zu **AI Agents > Ihr Agent > Tools** und fügen Sie es hinzu |
-| Keine Daten erreichen den Endpoint | Endpoint nicht erreichbar oder falsche URL | Prüfen Sie, dass die URL **HTTPS** ist und öffentlich erreichbar |
-| Felder fehlen | „Identifier / Required“ falsch konfiguriert oder Agent sammelt sie nicht | Prüfen Sie **Body parameters** und passen Sie den **Conversation Prompt** an, um Daten einzufordern und zu bestätigen |
-| Ausführung zur falschen Zeit | Conversation Prompt definiert keine klaren Bedingungen | Definieren Sie Regeln wie „nur am Ende“, „nur nach Bestätigung von E-Mail und Telefonnummer“ |
+**Vérification rapide :**\
+Si l’outil apparaît dans la liste de l’agent, il est bien assigné. S’il n’apparaît pas, l’agent ne pourra pas l’exécuter.
 
 ---
 
-## Abschließender Hinweis
+## Étape 3 — Indiquer comment utiliser l’outil dans “Conversation Prompt”
 
-Für ein stabiles Ergebnis:
+C’est l’étape la plus importante. L’agent n’exécutera l’outil que si le **Conversation Prompt** lui indique clairement :
 
-- Starten Sie mit einem einfachen Tool.
-- Definieren Sie anfangs nur wenige Pflichtfelder.
-- Seien Sie im Conversation Prompt eindeutig bezüglich:
-  - **Ausführungsbedingungen**,  
-  - **Ablaufreihenfolge**,  
-  - **exakter Formulierungen** (falls erforderlich),  
-  - **und Verbote** (was der Agent nicht tun darf).
+- **Quelles données il doit collecter** avant d’exécuter l’outil (champs obligatoires).
+- **Comment confirmer ces données** (pour réduire les erreurs).
+- **Quand** exécuter l’outil (moment exact dans l’appel).
+- **Que dire juste après** l’exécution (y compris des phrases exactes si votre processus l’exige).
+- **Ce qu’il ne doit PAS faire** (pour éviter de mélanger les flux ou d’agir trop tôt).
+
+### Règle clé (pour les utilisateurs non techniques)
+
+Si vous ne dites pas à l’agent **“quand”** et **“dans quelles conditions”** utiliser l’outil, l’agent peut :
+- l’utiliser trop tôt,
+- l’utiliser avec des données incomplètes,
+- ou ne jamais l’utiliser.
+
+---
+
+## Exemple 1 — Se connecter à un CRM en temps réel (consultation + création)
+
+Cet exemple correspond à un cas très courant : l’agent parle avec un utilisateur et, **avant de continuer**, vérifie dans le CRM si le contact existe déjà. S’il n’existe pas, il le crée comme lead et continue l’appel.
+
+### Outils utilisés dans cet exemple
+
+**Outil 1 : Consulter_Contact_CRM**\
+**Objectif :** vérifier si le contact existe déjà dans le CRM.\
+**Quand l’utiliser :** juste après confirmation de **l’email + du téléphone**.\
+**Résultat attendu :** “trouvé / non trouvé” et, si trouvé, des informations de base (par exemple : nom et statut).
+
+**Outil 2 : Creer_Lead_CRM**\
+**Objectif :** créer un lead si le contact n’existe pas.\
+**Quand l’utiliser :** uniquement si la consultation précédente renvoie “non trouvé”.\
+**Données minimales recommandées :** nom, email, téléphone, motif.
+
+### Conditions pour exécuter les outils (très important)
+
+- L’agent **ne doit exécuter aucun outil** tant que :
+  - l’**email** n’est pas confirmé (répété et confirmé par l’utilisateur),
+  - et le **téléphone** n’est pas confirmé (répété et confirmé par l’utilisateur).
+- Si l’utilisateur hésite ou corrige une information, l’agent doit **la mettre à jour et confirmer à nouveau** avant de continuer.
+
+### Qu’écrire dans le Conversation Prompt (texte inventé et facile à adapter)
+
+**Objectif du flux :**\
+1) Collecter les informations → 2) Les confirmer → 3) Consulter le CRM → 4) Si non trouvé, créer le lead → 5) Continuer la conversation.
+
+**Instructions claires pour l’agent (exemple) :**
+
+- Pendant l’appel, collecte et confirme ces informations :
+  - **Prénom et nom**
+  - **Email**
+  - **Téléphone**
+  - **Motif** (une phrase courte)
+- Pour confirmer :
+  - Répète l’email et demande : “Est-ce correct ?”
+  - Répète le téléphone et demande : “Est-ce correct ?”
+- Uniquement lorsque l’email et le téléphone sont confirmés :
+  - Exécute **Consulter_Contact_CRM**.
+- Si le résultat indique que le contact **existe** :
+  - Dis à l’utilisateur : “Parfait, je vois déjà votre fiche. On continue.”
+  - N’invente pas de détails. Si le statut est présent dans le résultat, tu peux le mentionner de façon neutre.
+- Si le résultat indique que le contact **n’existe pas** :
+  - Dis à l’utilisateur : “Parfait, je ne vous trouve pas encore. Je vous enregistre maintenant et on continue.”
+  - Exécute **Creer_Lead_CRM** avec les informations confirmées.
+  - Après création, confirme : “C’est bon, vous êtes enregistré. On continue avec l’étape suivante.”
+- Si l’outil échoue ou ne renvoie pas de réponse :
+  - Ne donne pas d’informations techniques.
+  - Dis : “Je n’ai pas pu vérifier tout de suite. On continue, et si besoin on le reverra à la fin.”
+  - Ne répète pas les outils en boucle.
+
+### À quoi cela ressemble pendant un appel (exemple de conversation)
+
+**Agent :** “Parfait. Pour vous aider, j’ai juste besoin de quelques informations rapides. Quel est votre prénom et votre nom ?”\
+**Utilisateur :** “Laura Martin.”\
+**Agent :** “Merci, Laura. Quel est votre email ?”\
+**Utilisateur :** “laura.martin@exemple.com”\
+**Agent :** “Parfait. J’ai compris : laura point martin arobase exemple point com. Est-ce correct ?”\
+**Utilisateur :** “Oui.”\
+**Agent :** “Très bien. Quel est votre numéro de téléphone ?”\
+**Utilisateur :** “Six six cinq, un deux trois, quatre cinq six.”\
+**Agent :** “Parfait. Je confirme le téléphone : 665 123 456. Est-ce correct ?”\
+**Utilisateur :** “Oui.”\
+**Agent :** “Merci. Dernière question : en une phrase, quel est le motif de votre appel ?”\
+**Utilisateur :** “Je veux des infos sur les offres.”\
+**Agent :** “Parfait. Je vais vérifier si vous êtes déjà enregistrée, puis on continue.”
+
+(L’agent exécute **Consulter_Contact_CRM**)
+
+- **Si trouvé :**\
+  **Agent :** “Parfait, je vois déjà votre fiche. On continue avec les informations sur les offres.”
+
+- **Si non trouvé :**\
+  **Agent :** “Parfait, je ne vous trouve pas encore. Je vous enregistre maintenant et on continue.”
+
+(L’agent exécute **Creer_Lead_CRM**)
+
+  **Agent :** “C’est bon, vous êtes enregistré. Maintenant, passons aux informations sur les offres.”
+
+### Règles de sécurité du flux (pour éviter les erreurs)
+
+- N’exécute pas d’outils avec des informations non confirmées.
+- N’invente pas de résultats du CRM : utilise uniquement ce qui revient dans la réponse.
+- Ne relance pas l’outil plusieurs fois s’il échoue : continue et propose de revoir plus tard.
+- Ne mélange pas les flux : d’abord CRM (vérifier/créer), ensuite le reste du processus.
+
+---
+
+## Exemple 2 — Envoyer des liens au bon moment (pendant l’appel et à la fin)
+
+Voici un exemple complet (inventé) avec deux outils : un lien principal pendant l’appel et un lien d’accès à la fin.
+
+**Outil 1 : Envoyer_Lien_Inscription (Lien A)**\
+**Objectif :** envoyer le lien principal où l’utilisateur complète tout le processus principal.\
+**Quand l’utiliser :** pendant l’appel, uniquement lorsque l’utilisateur confirme vouloir continuer et que l’email + le téléphone sont confirmés.
+
+**Le lien A inclut (dans le lien lui-même) :**
+
+1. Inscription initiale (informations obligatoires)
+2. Vérification/confirmation des informations
+3. Choix d’un plan ou d’une option
+4. Configuration du paiement (si applicable)
+5. Acceptation des conditions ou signature (si applicable)
+6. Téléversement de documents (si applicable)
+7. Confirmation finale
+
+**Conditions pour exécuter “Envoyer_Lien_Inscription” :**
+
+- L’utilisateur dit clairement qu’il veut continuer.
+- L’email est confirmé (répété et confirmé par l’utilisateur).
+- Le téléphone est confirmé (répété et confirmé par l’utilisateur).
+
+**Phrase exacte après l’envoi du lien A (exemple inventé) :**
+
+> “Ouvrez le lien que nous venons de vous envoyer et descendez jusqu’à la section ‘Inscription initiale’. Complétez vos informations et dites-moi quand vous êtes prêt à continuer.”
+
+**Règles pendant l’appel (très important) :**
+
+- Ne demande pas à l’utilisateur de quitter le lien A pour faire des étapes ailleurs pendant l’appel.
+- Ne lui demande pas de se connecter à un portail séparé pendant qu’il complète le processus principal.
+- Guide l’utilisateur étape par étape, toujours depuis l’endroit où il se trouve.
+
+---
+
+**Outil 2 : Envoyer_Lien_Portal (Lien B)**\
+**Objectif :** envoyer le lien d’accès au portail sécurisé pour consulter l’avancement plus tard.\
+**Quand l’utiliser :** uniquement à la fin de l’appel.
+
+**Phrases exactes après l’envoi du lien B (exemple inventé) :**
+
+> “Voici le lien pour accéder à votre portail sécurisé.”\
+> “Nous vous avons aussi envoyé des emails avec vos identifiants de connexion.”\
+> “Si vous ne les trouvez pas, utilisez la recherche dans votre email et tapez le nom de notre entreprise pour les localiser.”
+
+**Clôture finale (exemple inventé) :**
+
+> “Merci pour votre temps. Si vous avez besoin d’aide à une étape quelconque, nous sommes disponibles pour vous assister.”
+
+---
+
+## Étape 4 — Tester l’outil avant de l’utiliser en production
+
+Avant d’utiliser l’outil avec des clients, vérifiez que :
+
+- La requête s’exécute correctement.
+- Les champs arrivent avec le nom attendu (Identifier).
+- Les champs obligatoires (Required) sont toujours présents.
+- L’endpoint répond rapidement et de manière cohérente.
+
+Une bonne pratique consiste à tester le webhook avec une URL d’inspection temporaire (pour voir ce qui arrive) puis avec votre endpoint réel.
+
+### Checklist rapide (30 secondes)
+
+- L’outil est créé et enregistré dans **Tools**.
+- L’outil est assigné à l’agent dans **AI Agents > votre agent > Tools**.
+- Le **Conversation Prompt** précise clairement :
+  - quelles informations demander,
+  - comment les confirmer,
+  - quand exécuter l’outil,
+  - et quoi dire juste après.
+
+---
+
+## Erreurs courantes et solutions
+
+| Problème                           | Cause probable                                                    | Solution                                                                                          |
+| ---------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| L’outil ne s’exécute pas           | Il n’est pas assigné à l’agent                                    | Allez dans **AI Agents \> votre agent \> Tools** et ajoutez-le                                    |
+| Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                      | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                       |
+| Champs manquants                   | “Identifier / Required” mal définis ou l’agent ne les collecte pas | Vérifiez **Body parameters** et ajustez le **Conversation Prompt** pour exiger et confirmer les données |
+| Exécution au mauvais moment        | Le Conversation Prompt ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
+
+---
+
+## Conseil final
+
+Pour obtenir un résultat stable :
+
+- Commencez par un outil simple.
+- Définissez peu de champs obligatoires au début.
+- Dans le Conversation Prompt, soyez explicite sur :
+  - **les conditions d’exécution**,
+  - **l’ordre du flux**,
+  - **les phrases exactes** (si applicable),
+  - **et les interdictions** (ce que l’agent ne doit pas faire).
