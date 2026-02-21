@@ -1,91 +1,182 @@
 ---
 title: "Crear herramientas"
-description: "Usa Webhooks en Callin para obtener o enviar datos en tiempo real desde tu agente a cualquier API externa o plataforma de automatización."
+description: "Crea herramientas (webhooks) en Callin y úsalas desde el campo Conversation Prompt de tu agente para enviar o consultar datos en tiempo real durante una llamada."
 ---
 
-## Resumen
+## Visión general
 
-Los webhooks permiten que tu agente de Callin interactúe con sistemas externos en tiempo real. Esto significa que, cada vez que tu agente hace o recibe una llamada, puede automáticamente **enviar o solicitar datos** a otro servicio mediante una simple petición HTTP.
+Las **herramientas** (webhooks) permiten que tu agente de Callin se conecte con sistemas externos **en tiempo real** mientras conversa con un usuario.
 
-Esto es útil cuando quieres que tu agente obtenga información del cliente, cree registros en herramientas externas o dispare automatizaciones — todo durante una conversación en vivo.
+Con una herramienta, tu agente puede:
 
-En Callin, los webhooks se crean como **Tools**, que son componentes reutilizables que puedes asignar a cualquier agente de voz.
+- **Enviar datos** que el usuario dicta durante la llamada (por ejemplo: nombre, email, teléfono, motivo).
+- **Consultar datos** en un sistema externo (por ejemplo: estado, disponibilidad, verificación).
+- **Activar automatizaciones** en plataformas externas (CRM, tickets, mensajería, flujos, etc.).
+
+En Callin, el funcionamiento correcto siempre sigue este orden:
+
+1. **Crear la herramienta** en la sección **Tools**.
+2. **Asignar la herramienta** al agente en **AI Agents**.
+3. **Indicar en el campo Conversation Prompt** cuándo debe ejecutarse y qué debe hacer el agente con el resultado.
+
+Si falta cualquiera de estos 3 pasos, la herramienta no se ejecutará como esperas.
 
 ---
 
-## Paso 1: Crea una herramienta de webhook
+## Paso 1 — Crear una herramienta (webhook)
 
-Para empezar, tendrás que crear una nueva Tool dentro del panel de Callin:
+Para crear una herramienta en Callin:
 
-1. Ve a [Tools](https://app.callin.io/tools) en tu [Callin workspace](https://app.callin.io).
+1. Entra en **Tools** dentro del panel de Callin.
 2. Haz clic en **\+ Add Tool**.
-3. Rellena los siguientes campos:
-   - **Name**: `get-customer-data`
-   - **Description**: `Recupera información del cliente por número de teléfono.`
-   - **Method**: Elige `GET` si vas a recuperar datos, o `POST` si vas a enviarlos.
-   - **URL**: Indica el endpoint de la API externa, por ejemplo `https://api.mycompany.com/customers`
+3. Completa los campos principales:
 
->  Asegúrate de que la URL use HTTPS y sea accesible públicamente. De lo contrario, el webhook no funcionará.
+- **Name**\
+  Usa un nombre corto, claro y estable. Recomendación: **verbo + objetivo**.\
+  Ejemplos: `enviar-enlace-registro`, `consultar-estado-cliente`, `crear-lead`.
+- **Description**\
+  Explica **para qué sirve** y, sobre todo, **cuándo debe usarse**.\
+  Ejemplo: “Enviar el enlace principal de registro solo cuando el usuario confirme que desea continuar y su email y teléfono estén confirmados.”
+- **Method**
+  - Usa **GET** si vas a **consultar** información.
+  - Usa **POST** si vas a **enviar** información (lo más habitual cuando el agente recopila datos y los envía a un webhook).
+- **URL**\
+  Pega el endpoint HTTPS de tu API o el webhook de tu plataforma externa.
 
-4. Haz clic en **Save** para crear la Tool.
+>  Asegúrate de que la URL sea **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
+
+### Configurar “Body parameters” (si usas POST)
+
+Si tu herramienta envía información (POST), define exactamente qué datos enviará:
+
+1. Ve a **Body parameters**.
+2. Haz clic en **Add property**.
+3. Configura cada campo:
+
+- **Type**: el tipo de dato (texto, número, verdadero/falso, etc.).
+- **Identifier**: el nombre exacto del campo que espera tu endpoint (por ejemplo: `email`, `telefono`, `nombre_completo`).
+- **Required**: actívalo si el campo es obligatorio.
+- **Description**: explica qué representa el campo y el formato esperado (por ejemplo: “Teléfono en formato internacional” o “Email válido”).
+
+>  Recomendación práctica: si marcas un campo como **Required**, tu agente debe estar obligado (por instrucciones en el Conversation Prompt) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
+
+### Encabezados y autenticación (si aplica)
+
+Si tu endpoint requiere autenticación (por ejemplo, un token o una clave), deberás configurarlo siguiendo los requisitos exactos de tu API (qué encabezados necesita y con qué valores).
+
+4. Haz clic en **Save** para guardar la herramienta.
 
 ---
 
-## Paso 2: Asigna la Tool a un agente de voz
+## Paso 2 — Asignar la herramienta a un agente
 
-Una vez creada tu Tool, tienes que conectarla al agente que la usará:
+Crear la herramienta no es suficiente. Debes asignarla al agente:
 
-1. Navega a [AI Agents](https://app.callin.io/agents).
-2. Elige el agente que quieres configurar.
-3. Desplázate hasta la sección **Tools** y haz clic en **\+ Add Tool**.
-4. Selecciona la Tool que acabas de crear y guarda los cambios.
+1. Ve a **AI Agents**.
+2. Selecciona el agente que vas a configurar.
+3. En el editor del agente, baja a la sección **Tools**.
+4. Haz clic en **\+ Add Tool**.
+5. Selecciona la herramienta y guarda.
 
-Ahora tu agente está preparado para ejecutar este webhook cuando sea necesario durante una llamada.
-
----
-
-## Paso 3: Prueba tu webhook
-
-Antes de usarlo en producción, es importante probar que tu webhook esté correctamente configurado.
-
-Puedes usar [Webhook.site](https://webhook.site) — una herramienta gratuita que te da una URL temporal para recibir peticiones de prueba e inspeccionar los datos.
-
-Aquí tienes un ejemplo de un payload que Callin podría enviar:
-
-"call_id": "ab12cd34", "agent_name": "Laura AI", "duration": 145, "direction": "outbound", "caller_number": "+34123456789", "summary": "Customer requested a follow-up."
-
-Comprueba que el payload llega y coincide con lo que espera tu API externa.
+**Comprobación rápida:**\
+Si la herramienta aparece listada en el agente, está asignada correctamente. Si no aparece, el agente no podrá ejecutarla.
 
 ---
 
-## Paso 4: Automatiza con otras plataformas
+## Paso 3 — Indicar cómo usar la herramienta en “Conversation Prompt”
 
-Cuando tu webhook funcione, puedes conectarlo a herramientas de automatización como:
+Este es el paso más importante. El agente solo ejecutará la herramienta si el **Conversation Prompt** le deja claro:
 
-- [**Zapier**](https://support.callin.io/Create-AI-Agent/Connect-Zapier): Dispara automatizaciones en más de 3.000 apps.
-- [**n8n**](https://support.callin.io/Create-AI-Agent/Connect-N8N): Crea flujos condicionales y workflows avanzados de forma visual.
-- [**Make.com**](https://support.callin.io/Create-AI-Agent/Connect-Make): Diseña escenarios potentes sin escribir código.
+- **Qué datos debe recopilar** antes de ejecutarla (campos obligatorios).
+- **Cómo confirmar esos datos** (para reducir errores).
+- **Cuándo** debe ejecutarla (momento exacto de la llamada).
+- **Qué debe decir justo después** de ejecutarla (incluyendo frases exactas si tu proceso lo requiere).
+- **Qué NO debe hacer** (para evitar mezclar flujos o enviar enlaces fuera de tiempo).
 
-Estas herramientas pueden tomar la respuesta del webhook y enviar mensajes a Slack, crear leads en un CRM, disparar emails y mucho más.
+### Qué escribir en el Conversation Prompt (ejemplo inventado y fácil de adaptar)
+
+A continuación tienes un ejemplo completo (inventado) con dos herramientas: un enlace principal durante la llamada y un enlace de acceso al final.
+
+**Herramienta 1: Enviar_Enlace_Registro (Enlace A)**\
+**Objetivo:** enviar el enlace principal donde el usuario completa todo el proceso principal.\
+**Cuándo se usa:** durante la llamada, solo cuando el usuario confirma que quiere continuar y el email + teléfono están confirmados.
+
+**Enlace A completa (dentro del propio enlace):**
+
+1. Registro inicial (datos obligatorios)
+2. Verificación/confirmación de información
+3. Selección de plan u opción
+4. Configuración de pago (si aplica)
+5. Aceptación de términos o firma (si aplica)
+6. Carga de documentación (si aplica)
+7. Confirmación final
+
+**Condiciones para ejecutar “Enviar_Enlace_Registro”:**
+
+- El usuario dice claramente que quiere continuar.
+- El email está confirmado (repetido y confirmado por el usuario).
+- El teléfono está confirmado (repetido y confirmado por el usuario).
+
+**Frase exacta después de enviar Enlace A (ejemplo inventado):**
+
+> “Abre el enlace que te acabamos de enviar y baja hasta la sección ‘Registro inicial’. Completa tus datos y dime cuando estés listo para continuar.”
+
+**Reglas durante la llamada (muy importante):**
+
+- No le pidas al usuario que salga del Enlace A para hacer pasos en otro sitio durante la llamada.
+- No le pidas iniciar sesión en un portal separado mientras está completando el proceso principal.
+- Guía al usuario paso a paso, siempre en el punto en el que se encuentre.
+
+---
+
+**Herramienta 2: Enviar_Enlace_Portal (Enlace B)**\
+**Objetivo:** enviar el enlace de acceso al portal seguro para revisar el progreso más tarde.\
+**Cuándo se usa:** únicamente al final de la llamada.
+
+**Frases exactas después de enviar Enlace B (ejemplo inventado):**
+
+> “Aquí tienes el enlace para entrar a tu portal seguro.”\
+> “También te enviamos correos con tus datos de acceso.”\
+> “Si no los encuentras, usa el buscador del email y escribe el nombre de nuestra empresa para localizarlos.”
+
+**Cierre final (ejemplo inventado):**
+
+> “Gracias por tu tiempo. Si necesitas ayuda con cualquier paso, estamos disponibles para asistirte.”
+
+---
+
+## Paso 4 — Probar la herramienta antes de usarla en producción
+
+Antes de usar la herramienta con clientes, valida que:
+
+- La petición se ejecuta correctamente.
+- Los campos llegan con el nombre esperado (Identifier).
+- Los campos obligatorios (Required) están siempre presentes.
+- El endpoint responde de forma rápida y consistente.
+
+Una buena práctica es probar el webhook con una URL de inspección temporal (para ver qué llega) y luego con tu endpoint real.
 
 ---
 
 ## Errores comunes y cómo solucionarlos
 
-| Problema             | Causa probable             | Solución                                         |
-| ------------------- | -------------------------- | ------------------------------------------------ |
-| Falta la URL del webhook | El campo URL está vacío     | Añade un endpoint HTTPS válido                   |
-| La Tool no se ejecuta    | No está asignada al agente  | Ve al agente \> pestaña Tools \> vuelve a asignar la Tool |
-| No se reciben datos      | La API no es accesible      | Prueba la URL usando Webhook.site                |
-| Error de timeout         | La API tarda demasiado      | Aumenta el timeout de respuesta del webhook en la Tool |
+| Problema                            | Causa probable                                                    | Solución                                                                                         |
+| ----------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| La herramienta no se ejecuta        | No está asignada al agente                                        | Ve a **AI Agents \> tu agente \> Tools** y añádela                                               |
+| No llega información al endpoint    | Endpoint inaccesible o URL incorrecta                             | Verifica que la URL sea **HTTPS** y accesible públicamente                                       |
+| Faltan campos                       | “Identifier / Required” mal definidos o el agente no los recopila | Revisa **Body parameters** y ajusta el **Conversation Prompt** para exigir y confirmar los datos |
+| Se ejecuta en el momento equivocado | El Conversation Prompt no define condiciones claras               | Especifica reglas del tipo “solo al final”, “solo tras confirmar email y teléfono”               |
 
 ---
 
 ## Consejo final
 
-Los webhooks son una de las formas más potentes de ampliar lo que tu agente de Callin puede hacer.
+Para conseguir un resultado estable:
 
-Empieza con algo simple:\
-Configura un webhook `GET` para obtener detalles del cliente por número de teléfono. Cuando eso funcione, pasa a flujos avanzados con **Zapier**, **n8n** o **Make.com**.
-
-Al combinar voz en tiempo real con automatización, tu agente de IA no solo puede hablar — también puede obtener datos, ejecutar acciones y generar resultados a través de todas tus herramientas.
+- Empieza con una herramienta simple.
+- Define pocos campos obligatorios al inicio.
+- En el Conversation Prompt, sé explícito con:
+  - **condiciones de ejecución**,
+  - **orden del flujo**,
+  - **frases exactas** (si aplican),
+  - **y prohibiciones** (qué no debe hacer el agente).
