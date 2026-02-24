@@ -1,75 +1,128 @@
 ---
-title: "Bevor du startest: So funktionieren KI-Telefonagenten"
-description: "Verstehe, was KI-Telefonagenten sind, wie sie funktionieren und wie du Nummern, Kosten und Integrationen verbindest, bevor du deinen ersten Agenten erstellst."
+title: "Anrufverlauf"
+description: "Filtern, exportieren und analysieren Sie vergangene Anrufe. Öffnen Sie die Anrufdetails, um Aufnahme, Transkript und Einblicke anzusehen, und laden Sie das Audio herunter, wenn verfügbar."
 ---
 
-## Was ist ein KI-Telefonagent?
+## Überblick
 
-Ein KI-Telefonagent ist ein intelligenter Sprachassistent, der sprechen, zuhören und wie eine geschulte menschliche Fachkraft handeln kann. Er nimmt Anrufe automatisch entgegen oder startet sie selbst — begrüßt Anrufende, versteht ihre Absicht, bucht Termine oder verbindet sie bei Bedarf mit einer echten Person.
+**Anrufverlauf** ist der Bereich, in dem Sie vergangene Anrufe in Ihrem Workspace überprüfen. Auf dieser Seite können Sie:
 
-Diese Agenten führen echte Gespräche rund um die Uhr, reduzieren verpasste Anrufe und entlasten dein Team von repetitiver Telefonarbeit. Sie klingen natürlich, befolgen Anweisungen und können in mehreren Sprachen und Zeitzonen eingesetzt werden.
+- **Anrufe suchen und filtern** (nach Telefonnummer, Agent, Status, Datumsbereich und mehr)
+- **Anrufergebnisse sehen** (z. B. ob ein Termin oder eine Mailbox erkannt wurde)
+- **Die aktuelle Liste** als **CSV** **exportieren**
+- **Anrufdetails öffnen**, um das Gespräch zu analysieren (Aufnahme, Transkript, Zusammenfassung, Schlüsselmomente, Stimmungen)
+- **Die Anrufaufnahme herunterladen** (wenn verfügbar)
 
-## Eine Telefonnummer verbinden
+Nutzen Sie diesen Direktlink, um die Seite zu öffnen:
+[Anrufverlauf öffnen](https://app.callin.io/call-history)
 
-Jeder Agent benötigt eine Telefonnummer, um Anrufe zu tätigen oder entgegenzunehmen. Du hast mehrere Optionen:
+> **Tipp:** Speichern Sie den Link als Lesezeichen, wenn Sie den Anrufverlauf täglich nutzen.
 
-- **Eine neue Nummer kaufen** direkt über Twilio in deinem Callin-Workspace.
-- **Eine vorhandene Nummer importieren** von Telnyx oder einem anderen Anbieter.
-- **Deine aktuelle Geschäftsnummer verbinden**, falls du bereits eine zugewiesene Nummer hast.
+## Anrufverlauf öffnen
 
-Mehr dazu hier: [Nummern konfigurieren](https://support.callin.io/Create-AI-Agent/Configure-Numbers).
+1. Gehen Sie in der linken Seitenleiste zum Bereich **Auswertung**.
+2. Klicken Sie auf **Anrufverlauf**.
 
-Sobald deine Nummer aktiv ist, nutzt dein KI-Agent sie wie eine echte Telefonleitung — inklusive Anrufer-ID, Voicemail-Erkennung und Anrufhistorie.
+## Anrufe filtern und suchen
 
----
+Oben auf der Seite sehen Sie in der Regel zwei Hauptaktionen:
 
-## Anrufnutzung und Kosten verstehen
+- **Filter** (um die Liste einzugrenzen)
+- **CSV exportieren** (um die Ergebnisse herunterzuladen)
 
-Jeder Anruf verbraucht zwei unterschiedliche Arten von Minuten:
+Der Filterbereich enthält Felder wie die folgenden (die Verfügbarkeit kann je nach Konto/Plan variieren):
 
-1. **Carrier-Minuten** – werden von Twilio oder deinem externen Anbieter für die tatsächliche Telefonverbindung berechnet.
-2. **Callin-KI-Minuten** – decken die Rechenleistung und LLM-Nutzung ab, während der Agent zuhört, verarbeitet und antwortet.
+| Filter | Wobei es hilft | Beispiel |
+| --- | --- | --- |
+| Telefonnummer | Anrufe für eine bestimmte Nummer finden | Suchen nach „+1 415…“ |
+| Anruf-ID | Direkt zu einem bestimmten Anruf springen | Anruf-ID einfügen |
+| Zuständiger Agent | Anrufe eines bestimmten Agents sehen | „Sales Agent 1“ |
+| Status | Nach Anrufstatus filtern | „Abgeschlossen“ |
+| Richtung | Eingehend vs. ausgehend trennen | „Eingehend“ |
+| Datumsbereich | Auf einen Zeitraum fokussieren | „Letzte 7 Tage“ |
+| Anrufdauer | Nach Dauer filtern | „Über 1 Minute“ |
+| Anrufursprung | Erkennen, woher der Anruf kommt | „Anwendung“ |
+| Kampagnen-ID | Nach Kampagnenkennung filtern | ID einfügen |
+| Termin | Anrufe mit erkanntem Termin finden | „Alle“ / gefiltert |
+| Anrufweiterleitung | Anrufe mit Weiterleitungen finden | „Alle“ / gefiltert |
+| Maschine | Anrufe mit erkannter Mailbox/Maschine finden | „Alle“ / gefiltert |
 
-**Beispiel:**\
-Ein 5-minütiges Gespräch = 5 Twilio-Minuten + 5 Callin-KI-Minuten.
+> **Häufiger Fehler:** Zu viele Filter gleichzeitig können zu keinen Ergebnissen führen. Wenn die Tabelle leer ist, entfernen Sie einen Filter und versuchen Sie es erneut.
 
-Längere Anrufe oder Agenten, die erweitertes LLM-Reasoning nutzen, können geringfügig mehr KI-Minuten verbrauchen, ermöglichen dafür aber reichhaltigere, menschenähnlichere Dialoge.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory1.png"
+    alt="Seite „Anrufverlauf“ mit Filterfeldern (Telefonnummer, Anruf-ID, zuständiger Agent, Status, Richtung, Datumsbereich usw.) sowie den Buttons für Filter und CSV-Export."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-Du kannst beide Kosten in deinem **Callin Dashboard → Usage**-Bereich nachverfolgen.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Nutzen Sie das Filterpanel, um die Liste einzugrenzen, bevor Sie exportieren oder Anrufdetails öffnen.
+</p>
 
----
+## Anrufergebnisse verstehen (Symbole)
 
-## Integrationen und Webhooks
+In der Anruftabelle sehen Sie möglicherweise eine Spalte mit **Anrufergebnissen** und Symbolen, die zusammenfassen, was während des Anrufs erkannt wurde.
 
-Dein KI-Telefonagent muss nicht allein arbeiten. Er kann sich mit den Tools verbinden, die du bereits für Terminplanung, CRM und Automatisierung nutzt.
+- **Kalender-Symbol**: Für diesen Anruf wurde ein **Termin** erkannt.  
+  - Wenn Sie mit der Maus über das Kalender-Symbol fahren, sehen Sie die Termindetails.
+- **Roboterkopf-Symbol**: Eine **Mailbox / ein Anrufbeantworter** wurde erkannt (der Agent hat eine Mailbox identifiziert).
 
-Das geschieht über **Webhooks** — einfache URLs, die Daten aus jedem Anruf in Echtzeit empfangen.
+> **Wichtig:** Welche Ergebnisse angezeigt werden, kann je nach Erkennung pro Anruf variieren.
 
-Ein Webhook sendet strukturierte Informationen wie Anruferdetails, extrahierte Entitäten, Zeitstempel oder Transkripte an jedes System, das HTTP-Anfragen empfangen kann.
+## Anrufverlauf als CSV exportieren
 
-### Warum das wichtig ist
+Sie können die aktuell angezeigten Anrufe exportieren (einschließlich angewendeter Filter).
 
-Webhooks öffnen die Tür zu Tausenden von Integrationen:
+1. Klicken Sie auf **CSV exportieren**.
+2. Wählen Sie im Exportfenster die **Spalten** aus, die enthalten sein sollen.
+   - Mit **Alles auswählen** oder **Alles abwählen** geht es schneller.
+3. Klicken Sie auf **CSV exportieren**, um die Datei herunterzuladen.
 
-- **Make (Integromat)** – automatisierte Workflows ohne Code erstellen.
-- **Zapier** – Callin sofort mit Google Sheets, Slack, HubSpot und mehr verbinden.
-- **n8n** – benutzerdefinierte Logik-Flows in einer Open-Source-Umgebung erstellen.
-- **GoHighLevel** – Leads, Anrufe und Transkripte direkt in dein CRM synchronisieren.
+> **Tipp:** Wenn Sie „alle Anrufe“ exportieren möchten, entfernen Sie vorher die Filter.
 
-**Beispiel-Anwendungsfälle:**
+## Anrufdetails öffnen, um einen Anruf zu analysieren
 
-- Nach jedem verpassten Anruf eine Slack-Nachricht senden.
-- Einen neuen CRM-Lead mit Anruferinformationen und Transkript erstellen.
-- Eine Follow-up-E-Mail auslösen, wenn ein Termin gebucht wird.
+So sehen Sie alle Details zu einem bestimmten Anruf:
 
-Webhooks sind die Brücke zwischen Callin und deinem Ökosystem — einfach, flexibel und leistungsstark.
+1. Klicken Sie in der Tabelle auf eine Anrufzeile.
+2. Rechts öffnet sich ein Panel **Anrufdetails**.
 
----
+In den **Anrufdetails** können Sie das Gespräch ansehen und analysieren. Je nach Konto/Plan sehen Sie möglicherweise:
 
-## Was du als Nächstes tun solltest
+- Einen Player für die **Anrufaufnahme** (mit Wiedergabesteuerung)
+- Ein Menü mit Optionen zur **Wiedergabegeschwindigkeit**
+- Tabs wie:
+  - **Anruftranskript**
+  - **Zusammenfassung**
+  - **Schlüsselmomente**
+  - **Stimmungen**
+- Aktionen wie **Kopieren** (z. B. um das Transkript oder ausgewählte Inhalte zu kopieren)
+- Optionen zum **Herunterladen** von Inhalten wie dem **Transkript** (Verfügbarkeit kann variieren)
 
-Jetzt, da du verstehst, was KI-Telefonagenten sind, wie du Telefonnummern verbindest, wie Minuten und Kosten funktionieren und wie Integrationen ihre Möglichkeiten erweitern, bist du bereit loszulegen.
+> **Tipp:** Nutzen Sie die Suche im Transkript, um schnell eine bestimmte Formulierung oder Stelle zu finden.
 
-Erstelle deinen ersten Agenten hier: [Agent erstellen](https://app.callin.io/agents/create?step=0&section=choose)
+## Anruf-Audio herunterladen (Aufnahme)
 
-Experimentiere zuerst mit einem Basic-Setup, erkunde später Enhanced und sieh zu, wie dein KI-Agent echte Gespräche für dich führt.
+So laden Sie das Audio eines Anrufs herunter (wenn eine Aufnahme verfügbar ist):
+
+1. Klicken Sie auf eine Anrufzeile, um die **Anrufdetails** zu öffnen.
+2. Klicken Sie in der Karte **Anrufaufnahme** auf das Menü **drei Punkte (… )**.
+3. Wählen Sie **Aufnahme herunterladen**.
+
+Im selben Menü können Sie auch die **Geschwindigkeit** anpassen (z. B. 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
+
+> **Wichtig:** Wenn **Aufnahme herunterladen** nicht angezeigt wird, ist die Aufnahme für diesen Anruf möglicherweise nicht verfügbar oder der Zugriff hängt von Plan und Berechtigungen ab.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory2.png"
+    alt="Panel „Anrufdetails“ mit dem Bereich zur Aufnahme und geöffnetem Drei-Punkte-Menü, inklusive Geschwindigkeitsoptionen und der Option zum Herunterladen des Audios."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Öffnen Sie einen Anruf und verwenden Sie das Menü „…“ in der Aufnahme, um die Geschwindigkeit zu ändern oder das Audio herunterzuladen.
+</p>
