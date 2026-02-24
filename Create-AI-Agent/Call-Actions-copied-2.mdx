@@ -1,85 +1,130 @@
 ---
 title: "Historial de llamadas"
-description: "Revisa registros de llamadas, grabaciones, transcripciones, datos extraídos y exporta tus resultados."
+description: "Filtra, exporta y analiza llamadas anteriores. Abre los detalles para revisar la grabación, la transcripción y los insights, y descarga el audio cuando esté disponible."
 ---
 
-## Resumen
-El panel de Historial de llamadas te permite revisar y analizar cada llamada realizada o recibida por tus agentes de IA. Desde aquí, puedes:
+## Visión general
 
+**Historial de llamadas** es el lugar donde revisas llamadas anteriores en tu espacio de trabajo. Desde esta página puedes:
 
-- Ver información detallada de la llamada (origen, duración, estado y agente)
-- Escuchar o descargar grabaciones
-- Leer transcripciones completas
-- Filtrar por resultados específicos como citas programadas o respuestas del contestador automático
+- **Buscar y filtrar** llamadas (por número de teléfono, agente, estado, rango de fechas y más)
+- **Ver resultados de la llamada** (por ejemplo, si se detectó una cita o un buzón de voz)
+- **Exportar** la lista actual a **CSV**
+- **Abrir los detalles de la llamada** para analizar la conversación (grabación, transcripción, resumen, momentos clave, sentimientos)
+- **Descargar** la grabación de la llamada (cuando esté disponible)
 
+Puedes abrir la página directamente desde este enlace:
+[Abrir Historial de llamadas](https://app.callin.io/call-history)
 
-Navega a [Evaluación → Historial de llamadas](https://app.callin.io/call-history) desde el menú izquierdo.
+> **Consejo:** Guarda el enlace anterior en favoritos si revisas llamadas todos los días.
 
+## Abrir el Historial de llamadas
 
-## Pasos
+1. En el menú lateral izquierdo, ve a la sección de evaluación.
+2. Abre **Historial de llamadas**.
 
+> **Importante:** Los nombres del menú pueden variar según tu cuenta o plan.
 
-### 1. Explora tu historial de llamadas
-Una vez dentro del panel de Historial de llamadas, verás una tabla con todas las llamadas. Cada fila muestra detalles clave:
+## Filtrar y buscar llamadas
 
+En la parte superior de la página normalmente verás dos acciones principales:
 
-- **Información de la llamada:** número, fecha y hora
-- **Agente:** el asistente de IA que gestionó la llamada
-- **Duración:** duración total de la conversación
-- **Origen:** si la llamada provino de la app o de una integración
-- **Estado:** Completada, Ocupado o Sin respuesta
+- Un botón para **filtrar** (para acotar la lista)
+- Un botón para **exportar a CSV** (para descargar los resultados)
 
+El área de filtros incluye campos como los siguientes (la disponibilidad puede variar según tu cuenta/plan):
 
-Usa el selector para cambiar entre llamadas **Entrantes**, **Salientes** o **Todas**.
+| Filtro | Para qué sirve | Ejemplo |
+| --- | --- | --- |
+| Número de teléfono | Encontrar llamadas de un número concreto | Buscar “+1 415…” |
+| ID de llamada | Ir a una llamada específica | Pegar un ID de llamada |
+| Agente que atendió | Ver llamadas gestionadas por un agente | “Agente de ventas 1” |
+| Estado | Filtrar por estado | “Completada” |
+| Dirección | Separar entrantes vs. salientes | “Entrante” |
+| Rango de fechas | Acotar por fechas | “Últimos 7 días” |
+| Duración de la llamada | Filtrar por duración | “Más de 1 minuto” |
+| Origen de la llamada | Identificar de dónde viene la llamada | “Aplicación” |
+| ID de campaña | Filtrar por identificador de campaña | Pegar un ID |
+| Cita | Encontrar llamadas con cita detectada | “Todas” / filtrado |
+| Transferencia de llamada | Encontrar llamadas con transferencia | “Todas” / filtrado |
+| Máquina | Encontrar llamadas donde se detectó buzón/máquina | “Todas” / filtrado |
 
+> **Error común:** Aplicar demasiados filtros a la vez puede devolver cero resultados. Si la tabla aparece vacía, quita un filtro y prueba de nuevo.
 
-### 2. Usa filtros para segmentar tus llamadas
-Haz clic en el icono de filtro para abrir el panel de filtros. Puedes filtrar llamadas por:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory1.png"
+    alt="Página de Historial de llamadas con los campos de filtro (número de teléfono, ID de llamada, agente, estado, dirección, rango de fechas y más) y los botones para filtrar y exportar."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: usa el panel de filtros para acotar llamadas antes de exportar o abrir los detalles.
+</p>
 
-- **Cita:** con o sin una cita programada
-- **Contestador automático:** si la llamada llegó a un contestador automático
-- **Estado:** resultado de la llamada (Completada, Ocupado, etc.)
+## Entender los resultados de la llamada (iconos)
 
+En la tabla de llamadas, puede aparecer una columna de **resultados** con iconos que resumen lo que se detectó durante la llamada.
 
-Haz clic en **Borrar todo** para restablecer tus filtros.
+- **Icono de calendario**: Se detectó una **cita** en esa llamada.  
+  - Si pones el **ratón encima** del calendario, verás los detalles de la cita.
+- **Icono de cabeza de robot**: Se detectó **buzón de voz / contestador** (el agente identificó un buzón de voz).
 
+> **Importante:** Qué resultados aparecen puede variar según lo que el sistema detecte en cada llamada.
 
-### 3. Reproduce o descarga grabaciones
-En la columna **Acciones**, haz clic en el icono de reproducción para abrir el reproductor de grabaciones:
+## Exportar el Historial de llamadas a CSV
 
+Puedes exportar las llamadas que estás viendo (incluyendo los filtros que hayas aplicado).
 
-- Escucha la grabación en tu navegador
-- Ajusta la velocidad de reproducción
-- Descarga el archivo de audio para acceso sin conexión
+1. Haz clic en el botón de **exportar a CSV**.
+2. En la ventana de exportación, selecciona las **columnas** que quieres incluir.
+   - Puedes usar las opciones de **seleccionar todo** o **deseleccionar todo** para hacerlo más rápido.
+3. Confirma la exportación para descargar el archivo.
 
+> **Consejo:** Si necesitas “todas las llamadas”, limpia los filtros antes de exportar.
 
-### 4. Revisa transcripciones completas
-Junto al icono de reproducción, haz clic en el icono de transcripción. Esto abre la transcripción completa de la conversación:
+## Abrir los detalles de una llamada para analizarla
 
+Para ver toda la información de una llamada concreta:
 
-- Los mensajes se etiquetan claramente como **Usuario** o **Agente de IA**
-- Usa el botón **Copiar** para extraer el texto completo
+1. Haz clic en cualquier fila de llamada de la tabla.
+2. Se abre un panel de **detalles de la llamada** a la derecha.
 
+Dentro de los detalles, puedes revisar y analizar la conversación. Según tu cuenta/plan, puedes ver:
 
-## Consejos y notas
-- Combina filtros para búsquedas más precisas
-- Usa transcripciones y grabaciones para evaluar la calidad de las llamadas y el rendimiento del agente
+- Reproductor de **grabación** (con controles de reproducción)
+- Un menú con opciones de **velocidad de reproducción**
+- Pestañas de análisis, como:
+  - **Transcripción de la llamada**
+  - **Resumen**
+  - **Momentos clave**
+  - **Sentimientos**
+- Acciones como **copiar** (por ejemplo, para copiar la transcripción o contenido seleccionado)
+- Opciones para **descargar** elementos como la **transcripción** (la disponibilidad puede variar)
 
+> **Consejo:** Usa el buscador de la transcripción para encontrar rápidamente una frase o momento concreto de la llamada.
 
-## Solución de problemas
+## Descargar el audio de la llamada (grabación)
 
+Para descargar el audio de una llamada (cuando haya grabación disponible):
 
-### No se escucha la reproducción
-- **Causa:** Problemas de Internet o de configuración de audio
-- **Solución:** Verifica tu conexión y la configuración de salida de audio
+1. Haz clic en una fila de llamada para abrir los **detalles**.
+2. En la tarjeta de **grabación**, haz clic en el menú de **tres puntos (… )**.
+3. Selecciona la opción de **descargar la grabación**.
 
+En ese mismo menú también puedes ajustar la **velocidad** (por ejemplo 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
 
-### No aparecen llamadas recientes
-- **Causa:** Retraso temporal de sincronización
-- **Solución:** Actualiza la página (las actualizaciones son en tiempo real)
+> **Importante:** Si no ves la opción de descarga, puede que no haya grabación para esa llamada, o que el acceso varíe según tu plan y permisos.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory2.png"
+    alt="Panel de detalles de la llamada mostrando la sección de grabación con el menú de tres puntos abierto, incluyendo controles de velocidad y la opción para descargar el audio."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-### El audio no se descarga
-- **Causa:** Configuración de permisos del navegador
-- **Solución:** Permite las descargas de archivos en la configuración de tu navegador
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: abre una llamada y usa el menú “…” de la grabación para cambiar la velocidad o descargar el audio.
+</p>
