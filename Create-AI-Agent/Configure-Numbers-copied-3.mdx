@@ -1,269 +1,128 @@
 ---
-title: "Numeri"
-description: "Scopri come acquistare, importare o verificare un numero di telefono affinché i tuoi agenti AI possano effettuare e ricevere chiamate."
+title: "Cronologia chiamate"
+description: "Filtra, esporta e analizza le chiamate passate. Apri i dettagli di una chiamata per consultare la registrazione, la trascrizione e gli insight, e scaricare l’audio quando disponibile."
 ---
 
 ## Panoramica
 
-In Callin.io, i numeri di telefono sono la base del tuo sistema di comunicazione AI. Senza almeno un numero attivo, il tuo agente AI non può effettuare né ricevere chiamate.
+**Cronologia chiamate** è la sezione in cui rivedi le chiamate passate del tuo workspace. Da questa pagina puoi:
 
-Puoi aggiungere numeri in quattro modi:
+- **Cercare e filtrare** le chiamate (per numero di telefono, agente, stato, intervallo di date e altro)
+- **Vedere gli esiti della chiamata** (ad esempio, se è stato rilevato un appuntamento o la segreteria)
+- **Esportare** l’elenco corrente in **CSV**
+- **Aprire i dettagli della chiamata** per analizzare la conversazione (registrazione, trascrizione, riepilogo, momenti chiave, sentiment)
+- **Scaricare** la registrazione della chiamata (quando disponibile)
 
-- **Acquistare** un numero in Callin.io (gestito da Twilio)
-- **Importare da Twilio** (se hai già numeri lì)
-- **Importare da Telnyx** (dopo aver collegato Telnyx)
-- **Collegare BYOC / SIP trunk** (Bring Your Own Carrier)
+Usa questo link diretto per aprire la pagina:
+[Apri la cronologia chiamate](https://app.callin.io/call-history)
 
-Questa guida spiega ogni opzione, come funzionano i **Callin compute minutes** e i passaggi esatti di configurazione.
+> **Suggerimento:** Salva il link tra i preferiti se consulti le chiamate ogni giorno.
 
----
+## Aprire la cronologia chiamate
 
-## Prima di iniziare
+1. Nella barra laterale sinistra, vai alla sezione **Valutazione**.
+2. Clicca su **Cronologia chiamate**.
 
-- Ti serve **almeno un numero attivo** per effettuare o ricevere chiamate.
-- I costi di telefonia del carrier (Twilio, Telnyx o SIP) vengono fatturati **dal tuo provider**, non all’interno di Callin.io.
+## Filtrare e cercare le chiamate
 
----
+In alto nella pagina vedrai in genere due azioni principali:
 
-## Come funzionano minuti e fatturazione in Callin
+- **Filtri** (per restringere l’elenco)
+- **Esporta CSV** (per scaricare i risultati)
 
-Callin traccia un unico contatore di utilizzo:
+L’area dei filtri include campi come i seguenti (la disponibilità può variare in base ad account/piano):
 
-### Minuti Callin (Compute Minutes)
+| Filtro | A cosa serve | Esempio |
+| --- | --- | --- |
+| Numero di telefono | Trovare chiamate di un numero specifico | Cerca “+1 415…” |
+| ID chiamata | Aprire una chiamata specifica | Incolla un ID chiamata |
+| Agente assegnato | Vedere le chiamate gestite da un agente | “Agente vendite 1” |
+| Stato | Filtrare per stato della chiamata | “Completata” |
+| Direzione | Separare entrate e uscite | “In entrata” |
+| Intervallo di date | Concentrarsi su un periodo | “Ultimi 7 giorni” |
+| Durata della chiamata | Filtrare per durata | “Oltre 1 minuto” |
+| Origine della chiamata | Identificare da dove arriva la chiamata | “Applicazione” |
+| ID campagna | Filtrare per identificatore campagna | Incolla un ID |
+| Appuntamento | Trovare chiamate con appuntamento rilevato | “Tutti” / filtrato |
+| Trasferimento chiamata | Trovare chiamate con trasferimenti | “Tutti” / filtrato |
+| Macchina | Trovare chiamate con segreteria/macchina rilevata | “Tutti” / filtrato |
 
-I compute minutes rappresentano il tempo in cui il tuo agente AI è attivo: **ascolta, elabora e risponde**.
+> **Errore comune:** Applicare troppi filtri insieme può non restituire risultati. Se la tabella è vuota, rimuovi un filtro e riprova.
 
-Callin **non** mantiene un secondo contatore di “call minutes”.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory1.png"
+    alt="Pagina della cronologia chiamate con i campi di filtro (numero di telefono, ID chiamata, agente assegnato, stato, direzione, intervallo di date, ecc.) e i pulsanti Filtri ed Esporta CSV."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-### Chiamata di test
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: usa il pannello dei filtri per restringere l’elenco prima di esportare o aprire i dettagli di una chiamata.
+</p>
 
-- Consuma **solo Callin compute minutes**.
+## Capire gli esiti della chiamata (icone)
 
-### Chiamate reali (Inbound/Outbound)
+Nella tabella delle chiamate potresti vedere una colonna di **esiti della chiamata** con icone che riassumono cosa è stato rilevato durante la chiamata.
 
-- Consumano **Callin compute minutes** mentre l’agente è attivo.
-- I costi di telefonia del carrier dipendono dal tuo provider e **non** compaiono come un secondo contatore di minuti in Callin.
+- **Icona calendario**: è stato rilevato un **appuntamento** per quella chiamata.  
+  - Se passi il mouse sopra l’icona del calendario, vedrai i dettagli dell’appuntamento.
+- **Icona testa di robot**: è stata rilevata una **segreteria / risposta automatica** (l’agente ha identificato una segreteria).
 
----
+> **Importante:** Gli esiti visualizzati possono variare in base a ciò che il sistema rileva per ogni chiamata.
 
-## Regole di fatturazione per le chiamate in uscita effettuate nell’app (Rounding Rule)
+## Esportare la cronologia chiamate in CSV
 
-### Fatturazione predefinita
+Puoi esportare le chiamate che stai visualizzando (inclusi i filtri applicati).
 
-- Le chiamate in uscita sono fatturate **al secondo**.
+1. Clicca su **Esporta CSV**.
+2. Nella finestra di esportazione, seleziona le **colonne** da includere.
+   - Puoi usare **Seleziona tutto** o **Deseleziona tutto** per fare più in fretta.
+3. Clicca su **Esporta CSV** per scaricare il file.
 
-### Regola di arrotondamento per chiamate brevi
+> **Suggerimento:** Se vuoi “tutte le chiamate”, rimuovi i filtri prima di esportare.
 
-Se **il 50% o più** delle tue **ultime 100 chiamate in uscita** effettuate nell’app ha una durata **inferiore a 50 secondi**, allora da quel momento in poi Callin fatturerà i **primi 60 secondi** di ogni chiamata in uscita (o qualsiasi frazione) come **un minuto intero** (arrotondato a 1 minuto).
+## Aprire i dettagli della chiamata per analizzarla
 
-### Ambito della regola (Molto importante)
+Per visualizzare tutto su una chiamata specifica:
 
-Questa regola di arrotondamento si applica **solo** quando le chiamate in uscita nell’app vengono effettuate usando:
+1. Clicca su una riga della tabella.
+2. Si apre un pannello **Dettagli della chiamata** sulla destra.
 
-- **Personal Number**
-- **Numeri acquistati direttamente tramite Callin.io** (gestiti da Twilio)
+Nei **dettagli della chiamata** puoi consultare e analizzare la conversazione. In base ad account/piano, potresti vedere:
 
-Questa regola di arrotondamento **non si applica** a:
+- Un lettore della **registrazione della chiamata** (con controlli di riproduzione)
+- Un menu con opzioni di **velocità di riproduzione**
+- Schede come:
+  - **Trascrizione della chiamata**
+  - **Riepilogo**
+  - **Momenti chiave**
+  - **Sentiment**
+- Azioni come **Copia** (ad esempio per copiare la trascrizione o contenuti selezionati)
+- Opzioni per **scaricare** elementi come la **trascrizione** (la disponibilità può variare)
 
-- **Numeri importati da Twilio**
-- **Numeri importati da Telnyx**
-- **Numeri BYOC / SIP trunking**
+> **Suggerimento:** Usa la ricerca nella trascrizione per trovare rapidamente una frase o un momento preciso.
 
----
+## Scaricare l’audio della chiamata (registrazione)
 
-## Comprendere le tue opzioni
-
-### 1) Twilio
-
-Twilio è una piattaforma di comunicazioni cloud che offre API per chiamate, messaggistica e video.
-
-Scegli **Twilio** se vuoi:
-
-- Una configurazione rapida e a bassa manutenzione
-- Affidabilità integrata con configurazione minima
-- Copertura globale con ricerca e acquisto numeri semplificati
-
-Quando acquisti o importi un numero Twilio, Callin.io lo collega automaticamente per l’uso all’interno della piattaforma. Non devi gestire manualmente il routing SIP.
-
-### 2) Telnyx
-
-Telnyx è un provider di comunicazioni che offre un controllo più profondo su routing e configurazione SIP trunk.
-
-Scegli **Telnyx** se vuoi:
-
-- Controllo completo su SIP trunk e routing
-- Impostazioni avanzate (codec, cifratura, routing regionale)
-- Una configurazione flessibile per compliance o telefonia enterprise
-
-Telnyx richiede una configurazione leggermente più tecnica, ma diventa altamente personalizzabile una volta collegato.
-
-### 3) SIP Trunking (BYOC)
-
-Il SIP trunking ti consente di collegare la tua infrastruttura telecom direttamente a Callin.io usando **BYOC (Bring Your Own Carrier)**.
-
-Scegli **BYOC** se:
-
-- Hai già un carrier SIP esistente (PBX/sistema aziendale)
-- Devi gestire routing, SBC o carrier regionali
-- Vuoi usare Callin.io come layer di automazione vocale sopra la tua telefonia esistente
-
-Con BYOC, configuri manualmente credenziali e rotte SIP. È pensato per utenti avanzati o team telecom.
-
----
-
-## Passaggi
-
-### 1) Collega il tuo provider tramite BYOC
-
-Vai a **Telephony → BYOC** per collegare Telnyx o un altro provider SIP.
-
-#### Se usi Telnyx
-
-1. Seleziona la scheda **Telnyx**.
-2. Inserisci la tua **API Key**.
-3. Callin.io recupera i tuoi numeri attivi (DID).
-4. Seleziona i numeri che vuoi attivare.
-5. Callin.io configura automaticamente SIP trunking in ingresso e in uscita.
-6. Clicca **Start** per avviare la sincronizzazione.
-7. Al termine, i tuoi numeri Telnyx appariranno nel tuo account.
-
-#### Se usi un altro provider SIP
-
-1. Apri la scheda **Other SIP Provider**.
-2. Configura il tuo trunk SIP in tre sezioni:
-
-**Basic**
-
-- Imposta un nome
-- Inserisci il tuo numero in formato **E.164**
-
-**Inbound**
-
-- Definisci dove verranno inoltrate le chiamate in ingresso (il tuo **SBC/FQDN**)
-- Scegli trasporto **TLS** o **UDP**
-- Abilita **media encryption** se supportato
-
-**Outbound**
-
-- Inserisci le credenziali SIP (**SBC address**, **username**, **password**)
-- Seleziona i permessi paese per le chiamate in uscita
-
-3. Clicca **Save & Import**.
-
-> **Nota:** Se l’indirizzo SBC o le credenziali sono errati, il trunk non si collegherà.
-
----
-
-### 2) Aggiungi numeri al tuo account
-
-Vai a **Telephony → Numbers**. Questa sezione elenca tutti i numeri associati al tuo account.
-
-Clicca **\+ Add Number**, poi scegli una delle opzioni:
-
-#### Opzione A) Acquista un numero (Twilio-Managed)
-
-Acquista un numero direttamente tramite Callin.io (gestito da Twilio).
-
-1. Scegli il paese.
-2. Scegli il tipo (**local** o **toll-free**).
-3. Cerca per prefisso/area code se necessario.
-4. Seleziona un numero e acquistalo.
-
-**Promemoria rounding rule:**\
-Le chiamate in uscita nell’app usando un numero **acquistato tramite Callin** possono attivare la regola di arrotondamento per chiamate brevi.
-
----
-
-#### Opzione B) Importa da Twilio
-
-Importa numeri esistenti dal tuo account Twilio.
-
-1. Inserisci **Account SID** e **Auth Token**.
-2. Seleziona i numeri da importare.
-3. Callin.io li collega automaticamente.
-4. Assegnali agli agenti AI per iniziare chiamate inbound/outbound.
-
-**Promemoria rounding rule:**\
-I numeri importati da **Twilio** **non** rientrano nell’ambito della regola di arrotondamento per chiamate brevi.
-
----
-
-#### Opzione C) Aggiungi un numero personale (solo outbound)
-
-Aggiungi il tuo numero personale (ad esempio, il tuo cellulare) per effettuare chiamate dall’app.
-
-**Limitazione importante:** I numeri personali sono **solo outbound** e non possono ricevere chiamate inbound nell’app.
-
-**Passaggi di verifica**
-
-1. Inserisci il tuo numero di telefono.
-2. Riceverai una chiamata di verifica.
-3. Inserisci il codice quando richiesto.
-4. Una volta verificato, il numero viene aggiunto.
-
-**Promemoria rounding rule:**\
-Le chiamate in uscita nell’app usando **Personal Number** possono attivare la regola di arrotondamento per chiamate brevi.
-
----
-
-#### Opzione D) Aggiungi un numero Telnyx
-
-Se il tuo account Telnyx è già collegato, importa i tuoi numeri Telnyx attivi.
-
-1. Seleziona i numeri che vuoi.
-2. Clicca **Import**.
-
-Telnyx supporta controlli avanzati come:
-
-- Gestione della logica di routing
-- Regolazione di codec e cifratura audio
-- Abilitazione della ridondanza multi-regione
-
-**Promemoria rounding rule:**\
-I numeri importati da **Telnyx** **non** rientrano nell’ambito della regola di arrotondamento per chiamate brevi.
-
----
-
-### 3) Verifica i tuoi numeri
-
-Ogni scheda numero mostra tipo e provider.
-
-Da **Telephony → Numbers**, verifica:
-
-- Data di rinnovo
-- Tipo di connessione (Direct, SIP, Twilio o Telnyx)
-- Stato di attivazione
-
-Assicurati che tutti i numeri siano **attivi** e correttamente collegati.
-
----
-
-## Consigli e note
-
-- Se vuoi partire velocemente, usa **Twilio** (acquisto dentro Callin.io).
-- Se ti serve controllo su routing e cifratura, usa **Telnyx** o **BYOC**.
-- I costi del carrier sono fatturati dal provider; Callin traccia solo i **compute minutes**.
-
----
-
-## Risoluzione dei problemi
-
-**Sintomo:** Impossibile effettuare chiamate\
-**Causa probabile:** Il numero è inattivo o non collegato a un provider valido\
-**Soluzione:** Conferma lo stato in **Telephony → Numbers** e valida la connessione del provider in **Telephony → BYOC**.
-
-**Sintomo:** Il numero personale non riceve chiamate\
-**Causa probabile:** I numeri personali sono solo outbound\
-**Soluzione:** Usa un numero Twilio/Telnyx/BYOC per le chiamate inbound.
-
-**Sintomo:** Mancano numeri importati\
-**Causa probabile:** Credenziali errate o permessi DID\
-**Soluzione:** Ricontrolla API keys/token e conferma che i numeri siano attivi in Twilio/Telnyx.
-
----
-
-## Nota finale
-
-I numeri di telefono collegano i tuoi agenti AI a clienti reali.
-
-Che tu scelga **Twilio** per semplicità, **Telnyx** per controllo o **BYOC** per la massima personalizzazione, una volta configurati i tuoi agenti potranno chiamare, rispondere e automatizzare conversazioni su larga scala.
+Per scaricare l’audio di una chiamata (quando è disponibile una registrazione):
+
+1. Clicca su una riga per aprire i **dettagli della chiamata**.
+2. Nella scheda **Registrazione della chiamata**, clicca sul menu **tre puntini (… )**.
+3. Seleziona **Scarica registrazione**.
+
+Nello stesso menu puoi anche regolare la **velocità** (ad esempio 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
+
+> **Importante:** Se non vedi **Scarica registrazione**, la registrazione potrebbe non essere disponibile per quella chiamata, oppure l’accesso può variare in base a piano e permessi.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory2.png"
+    alt="Pannello dei dettagli della chiamata che mostra la sezione di registrazione con il menu dei tre puntini aperto, incluse le opzioni di velocità e l’opzione per scaricare l’audio."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: apri una chiamata e usa il menu “…” nella registrazione per cambiare la velocità o scaricare l’audio.
+</p>
