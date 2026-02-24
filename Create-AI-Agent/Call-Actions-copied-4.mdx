@@ -1,76 +1,128 @@
 ---
 title: "Historique des appels"
-description: "Passez en revue les journaux d’appels, les enregistrements, les transcriptions, les données extraites et exportez vos résultats."
+description: "Filtrez, exportez et analysez les appels passés. Ouvrez les détails d’un appel pour consulter l’enregistrement, la transcription et les informations clés, et télécharger l’audio lorsqu’il est disponible."
 ---
 
-## Panoramica
+## Présentation
 
-Il pannello **Cronologia chiamate** ti permette di rivedere e analizzare ogni chiamata effettuata o ricevuta dai tuoi agenti AI. Da qui puoi:
+**Historique des appels** est l’endroit où vous consultez les appels passés dans votre espace de travail. Depuis cette page, vous pouvez :
 
-- Visualizzare i dettagli della chiamata (origine, durata, stato e agente)
-- Ascoltare o scaricare le registrazioni
-- Leggere le trascrizioni complete
-- Filtrare per risultati specifici, come appuntamenti fissati o segreteria telefonica
+- **Rechercher et filtrer** les appels (par numéro de téléphone, agent, statut, période, etc.)
+- **Voir les résultats de l’appel** (par exemple, si un rendez-vous ou une messagerie vocale a été détecté)
+- **Exporter** la liste actuelle en **CSV**
+- **Ouvrir les détails d’un appel** pour analyser la conversation (enregistrement, transcription, résumé, moments clés, sentiments)
+- **Télécharger** l’enregistrement de l’appel (lorsqu’il est disponible)
 
-Vai su **Evaluate → Call History** dal menu a sinistra.
+Utilisez ce lien direct pour ouvrir la page :
+[Ouvrir l’historique des appels](https://app.callin.io/call-history)
 
-## Passaggi
+> **Conseil :** Ajoutez le lien ci-dessus à vos favoris si vous consultez les appels chaque jour.
 
-### 1. Esplora la cronologia delle chiamate
+## Ouvrir l’historique des appels
 
-Una volta dentro il pannello **Cronologia chiamate**, vedrai una tabella con tutte le chiamate. Ogni riga mostra i dettagli principali:
+1. Dans la barre latérale gauche, allez dans la section **Évaluation**.
+2. Cliquez sur **Historique des appels**.
 
-- **Info chiamata:** numero, data e ora
-- **Agente:** l’assistente AI che ha gestito la chiamata
-- **Durata:** durata totale della conversazione
-- **Origine:** se la chiamata proviene dall’app o da un’integrazione
-- **Stato:** Completata, Occupato o Nessuna risposta
+## Filtrer et rechercher des appels
 
-Usa il selettore per passare tra **In entrata**, **In uscita** o **Tutte** le chiamate.
+En haut de la page, vous verrez généralement deux actions principales :
 
-### 2. Usa i filtri per segmentare le chiamate
+- **Filtres** (pour réduire la liste)
+- **Exporter en CSV** (pour télécharger les résultats)
 
-Clicca l’icona dei filtri per aprire il pannello **Filtri**. Puoi filtrare le chiamate per:
+La zone de filtres comprend des champs comme les suivants (la disponibilité peut varier selon votre compte/forfait) :
 
-- **Appuntamento:** con o senza appuntamento fissato
-- **Segreteria:** se la chiamata ha raggiunto una segreteria telefonica
-- **Stato:** esito della chiamata (Completata, Occupato, ecc.)
+| Filtre | À quoi ça sert | Exemple |
+| --- | --- | --- |
+| Numéro de téléphone | Trouver les appels d’un numéro précis | Rechercher “+1 415…” |
+| ID de l’appel | Accéder à un appel précis | Coller un ID d’appel |
+| Agent en charge | Voir les appels gérés par un agent | “Agent commercial 1” |
+| Statut | Filtrer par statut de l’appel | “Terminé” |
+| Sens | Séparer les entrants et les sortants | “Entrant” |
+| Plage de dates | Se concentrer sur une période | “7 derniers jours” |
+| Durée de l’appel | Filtrer par durée | “Plus d’1 minute” |
+| Origine de l’appel | Identifier la source de l’appel | “Application” |
+| ID de campagne | Filtrer par identifiant de campagne | Coller un ID |
+| Rendez-vous | Trouver les appels avec rendez-vous détecté | “Tous” / filtré |
+| Transfert d’appel | Trouver les appels avec transfert | “Tous” / filtré |
+| Machine | Trouver les appels avec messagerie/machine détectée | “Tous” / filtré |
 
-Clicca **Cancella tutto** per reimpostare i filtri.
+> **Erreur fréquente :** Appliquer trop de filtres à la fois peut ne renvoyer aucun résultat. Si le tableau est vide, retirez un filtre et réessayez.
 
-### 3. Riproduci o scarica le registrazioni
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory1.png"
+    alt="Page d’historique des appels avec les champs de filtre (numéro de téléphone, ID d’appel, agent en charge, statut, sens, plage de dates, etc.) et les boutons de filtres et d’export CSV."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-Nella colonna **Azioni**, clicca l’icona **Play** per aprire il lettore della registrazione:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : utilisez le panneau de filtres pour affiner la liste avant d’exporter ou d’ouvrir les détails d’un appel.
+</p>
 
-- Ascolta la registrazione nel browser
-- Regola la velocità di riproduzione
-- Scarica il file audio per l’accesso offline
+## Comprendre les résultats de l’appel (icônes)
 
-### 4. Rivedi le trascrizioni complete
+Dans le tableau des appels, vous pouvez voir une colonne de **résultats de l’appel** avec des icônes qui résument ce qui a été détecté pendant l’appel.
 
-Accanto all’icona Play, clicca l’icona della **trascrizione**. Si aprirà la trascrizione completa della conversazione:
+- **Icône calendrier** : un **rendez-vous** a été détecté pour cet appel.  
+  - Si vous survolez l’icône calendrier avec la souris, vous verrez les détails du rendez-vous.
+- **Icône tête de robot** : une **messagerie vocale / répondeur** a été détectée (l’agent a identifié une messagerie).
 
-- I messaggi sono etichettati chiaramente come **Utente** o **Agente AI**
-- Usa il pulsante **Copia** per estrarre il testo completo
+> **Important :** Les résultats affichés peuvent varier selon ce que le système détecte pour chaque appel.
 
-## Suggerimenti e note
+## Exporter l’historique des appels en CSV
 
-- Combina i filtri per ottenere risultati di ricerca più precisi
-- Usa trascrizioni e registrazioni per valutare la qualità delle chiamate e le performance dell’agente
+Vous pouvez exporter les appels que vous voyez actuellement (y compris les filtres appliqués).
 
-## Risoluzione dei problemi
+1. Cliquez sur **Exporter en CSV**.
+2. Dans la fenêtre d’export, sélectionnez les **colonnes** à inclure.
+   - Vous pouvez utiliser **Tout sélectionner** ou **Tout désélectionner** pour aller plus vite.
+3. Cliquez sur **Exporter en CSV** pour télécharger le fichier.
 
-### Non riesci a sentire l’audio
+> **Conseil :** Si vous voulez “tous les appels”, supprimez les filtres avant l’export.
 
-- **Causa:** problemi di connessione internet o configurazione audio
-- **Soluzione:** verifica la connessione e le impostazioni di uscita audio
+## Ouvrir les détails d’un appel pour l’analyser
 
-### Le chiamate recenti non compaiono
+Pour afficher tout ce qui concerne un appel précis :
 
-- **Causa:** ritardo temporaneo di sincronizzazione
-- **Soluzione:** aggiorna la pagina (gli aggiornamenti sono in tempo reale)
+1. Cliquez sur une ligne d’appel dans le tableau.
+2. Un panneau **Détails de l’appel** s’ouvre à droite.
 
-### L’audio non si scarica
+Dans les **détails de l’appel**, vous pouvez consulter et analyser la conversation. Selon votre compte/forfait, vous pouvez voir :
 
-- **Causa:** impostazioni di autorizzazione del browser
-- **Soluzione:** abilita i download dei file nelle impostazioni del browser
+- Un lecteur d’**enregistrement de l’appel** (avec des commandes de lecture)
+- Un menu avec des options de **vitesse de lecture**
+- Des onglets comme :
+  - **Transcription de l’appel**
+  - **Résumé**
+  - **Moments clés**
+  - **Sentiments**
+- Des actions comme **Copier** (par exemple pour copier la transcription ou un contenu sélectionné)
+- Des options pour **télécharger** des éléments comme la **transcription** (la disponibilité peut varier)
+
+> **Conseil :** Utilisez la barre de recherche de la transcription pour retrouver rapidement une phrase ou un moment précis.
+
+## Télécharger l’audio de l’appel (enregistrement)
+
+Pour télécharger l’audio d’un appel (lorsqu’un enregistrement est disponible) :
+
+1. Cliquez sur une ligne d’appel pour ouvrir les **détails de l’appel**.
+2. Dans la carte **Enregistrement de l’appel**, cliquez sur le menu **trois points (… )**.
+3. Sélectionnez **Télécharger l’enregistrement**.
+
+Dans ce même menu, vous pouvez aussi ajuster la **vitesse** (par exemple 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
+
+> **Important :** Si vous ne voyez pas **Télécharger l’enregistrement**, l’enregistrement n’est peut-être pas disponible pour cet appel, ou l’accès peut varier selon votre forfait et vos autorisations.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory2.png"
+    alt="Panneau des détails de l’appel montrant la section d’enregistrement avec le menu trois points ouvert, incluant les options de vitesse et l’option de téléchargement de l’audio."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : ouvrez un appel, puis utilisez le menu “…” dans l’enregistrement pour changer la vitesse ou télécharger l’audio.
+</p>
