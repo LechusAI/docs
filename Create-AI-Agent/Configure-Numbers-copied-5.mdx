@@ -1,0 +1,312 @@
+---
+title: "Numeri e BYOC"
+description: "Impara ad acquistare, importare o verificare numeri di telefono e a collegare BYOC (SIP Trunk) affinché i tuoi agenti IA possano effettuare e ricevere chiamate."
+---
+
+## Panoramica
+
+I numeri di telefono sono il collegamento tra i tuoi agenti IA e le chiamate reali. In Callin.io lo gestisci in due aree:
+
+- **Numeri**: Acquista numeri tramite Callin.io, importali dai provider oppure verifica un numero personale.
+- **BYOC (SIP Trunk)**: Porta il tuo carrier collegando Telnyx o qualsiasi provider SIP.
+
+Usa questi collegamenti rapidi per aprire ogni sezione nell’app:
+
+- Vai a **Numeri**: [Apri Numeri](https://app.callin.io/numbers)
+- Vai a **BYOC (SIP Trunk)**: [Apri BYOC](https://app.callin.io/byoc)
+
+> **Suggerimento:** Se vuoi partire subito, acquista un numero **Stati Uniti o Canada** (di solito è istantaneo). Per un numero internazionale, preparati a fornire dati e caricare documenti (le regole variano in base al Paese).
+
+---
+
+## Numeri
+
+La pagina **Numeri** mostra tutti i numeri collegati al tuo workspace (acquistati, importati, personale, Telnyx o BYOC). Da qui puoi aggiungere nuovi numeri, controllare lo stato e vedere avvisi importanti (ad esempio se un numero non è ancora assegnato a un agente).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/numbers1.png"
+    alt="Pagina Numeri con filtri per provider e un menu di aggiunta per acquistare o importare numeri"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: La pagina Numeri, con filtri per provider e il menu per acquistare o importare numeri.
+</p>
+
+### Cosa puoi fare da Numeri
+
+Cliccando sull’azione di aggiunta (ad esempio **+ Aggiungi numero**) vedrai di solito opzioni come (le diciture possono variare in base al tuo account, al piano o alla lingua dell’interfaccia):
+
+- Acquistare un numero tramite Callin.io
+- Importare da Twilio
+- Aggiungere un numero personale
+- Aggiungere un numero Telnyx (dopo aver collegato Telnyx)
+
+Spesso sono disponibili anche filtri per tipo/provenienza (acquistati, Twilio, personale, Telnyx, BYOC).
+
+---
+
+### Opzione A: Acquistare un numero tramite Callin.io
+
+Acquistare numeri tramite Callin.io è il modo più diretto per iniziare.
+
+#### Stati Uniti e Canada: acquisto istantaneo
+
+Per **Stati Uniti** e **Canada**, il flusso di acquisto è spesso rapido e immediato:
+
+1. Vai su [Apri Numeri](https://app.callin.io/numbers).
+2. Clicca sull’azione di aggiunta e scegli l’opzione di acquisto.
+3. Seleziona il **Paese**.
+4. Scegli il tipo:
+   - **Locale**
+   - **Numero verde** (se disponibile)
+5. (Opzionale) Cerca per **prefisso** (esempio: `415`).
+6. Avvia la ricerca.
+7. Seleziona un numero dall’elenco.
+8. Conferma l’acquisto del numero selezionato.
+
+> **Importante:** Se vedi un avviso che indica che il numero non è assegnato a nessun agente, il numero non è ancora pronto: prima devi assegnarlo a un agente.
+
+#### Altri Paesi: richiesta + documenti
+
+Per molti Paesi **al di fuori di Stati Uniti e Canada**, l’acquisto funziona come **richiesta**:
+
+- Selezioni Paese e tipo di numero (ad esempio **Locale** o **Mobile**).
+- Può comparire una sezione sul tipo di richiesta (ad esempio nuova richiesta vs portabilità).
+- Ti verrà chiesto di compilare dati obbligatori e caricare documenti.
+- Inoltri la richiesta, paghi eventuali costi e la pratica viene revisionata.
+
+Nella parte alta della sezione Numeri di solito c’è una scheda di monitoraggio delle richieste (ad esempio richieste numeri).
+
+#### Dati e documenti richiesti (esempi)
+
+I requisiti esatti dipendono dal Paese e dal tipo di numero, ma spesso troverai campi e caricamenti come:
+
+| Requisito | Cosa significa | Esempio |
+|---|---|---|
+| Indirizzo coerente con l’area del DID | Un indirizzo nella regione associata al numero | “Calle Gran Vía 12, Madrid” |
+| Identificativo fiscale o nazionale | Identificazione personale o aziendale | “DNI/NIE” o “numero di registrazione aziendale” |
+| Informazioni di contatto | Persona/azienda responsabile del numero | “María López, +34 600 123 456” |
+| Prova di indirizzo (caricamento) | Documento che dimostra l’indirizzo | Bolletta o estratto conto |
+| Copia passaporto/ID o registrazione aziendale (caricamento) | Verifica identità o azienda | Passaporto/ID o certificato di registrazione |
+
+> **Suggerimento:** In alcuni moduli ogni requisito può avere un proprio pulsante di salvataggio e può mostrare uno stato in attesa finché il salvataggio o il caricamento non è completato.
+
+#### Costi e revisione
+
+In alcune richieste vedrai un blocco di pagamento (ad esempio un costo di attivazione e un costo mensile). Una volta completato tutto:
+
+- Viene generato un identificativo richiesta
+- La richiesta viene revisionata da un operatore
+- Dopo l’approvazione, il numero appare nell’elenco Numeri
+
+> **Importante:** I tempi di revisione variano in base al Paese e alle regole del provider. Se hai una scadenza, avvia la richiesta con anticipo.
+
+---
+
+### Opzione B: Importare numeri da Twilio
+
+Se hai già numeri su Twilio, puoi importarli in Callin.io:
+
+1. Vai su [Apri Numeri](https://app.callin.io/numbers).
+2. Clicca sull’azione di aggiunta e scegli l’import da Twilio.
+3. Inserisci l’identificativo account Twilio e il token di autenticazione Twilio.
+4. Avvia la ricerca dei numeri Twilio e seleziona quelli da importare.
+5. Assegna i numeri importati a un agente quando vuoi usarli.
+
+> **Errore comune:** Usare credenziali Twilio sbagliate (ad esempio il progetto errato). Se non appare alcun numero, verifica identificativo, token e l’account o sotto-account corretto.
+
+---
+
+### Opzione C: Aggiungere un numero personale (solo chiamate in uscita)
+
+Un **numero personale** è utile per effettuare chiamate in uscita con il tuo numero, ma ha un limite fondamentale:
+
+- **Solo per chiamate in uscita**
+- **Non può ricevere chiamate in entrata** in Callin.io
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/numbers2.png"
+    alt="Finestra di aggiunta numero personale con selezione Paese, campo telefono e passaggi di verifica"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Aggiunta numero personale con flusso di verifica (ricevi una chiamata e completi il codice).
+</p>
+
+#### Come verificare il tuo numero personale
+
+1. Vai su [Apri Numeri](https://app.callin.io/numbers).
+2. Clicca sull’azione di aggiunta e scegli l’opzione numero personale.
+3. Seleziona il Paese e inserisci il numero.
+4. Avvia la verifica.
+5. Riceverai una **chiamata di verifica**.
+6. Inserisci il codice quando richiesto.
+7. Dopo la verifica, il numero viene aggiunto al tuo account.
+
+> **Importante:** Per ricevere chiamate in entrata, usa un numero acquistato/importato oppure BYOC (SIP Trunk).
+
+---
+
+### Opzione D: Aggiungere/importare numeri Telnyx
+
+Se hai già collegato Telnyx (tramite BYOC), potrai importare i tuoi numeri attivi:
+
+1. Vai su [Apri Numeri](https://app.callin.io/numbers).
+2. Clicca sull’azione di aggiunta e scegli l’opzione Telnyx.
+3. Seleziona i numeri da aggiungere/importare.
+4. Conferma e assegnali agli agenti quando necessario.
+
+---
+
+### Assegnare un numero a un agente
+
+Acquistare o importare un numero non è sempre l’ultimo passaggio. Nell’elenco Numeri, presta attenzione ad avvisi come:
+
+- il numero non è assegnato a nessun agente
+
+Se compare, assegna il numero all’agente corretto prima di effettuare chiamate reali.
+
+> **Suggerimento:** Tieni un numero “di test” separato dal numero di produzione mentre perfezioni istruzioni e flussi di chiamata.
+
+---
+
+## BYOC (SIP Trunk)
+
+BYOC (Bring Your Own Carrier) ti permette di usare il tuo provider di telefonia collegandolo tramite un **SIP Trunk**, invece di dipendere da numeri gestiti da Callin.io.
+
+Apri direttamente la configurazione qui: [Apri BYOC](https://app.callin.io/byoc)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/byoc1.png"
+    alt="Pagina BYOC che mostra la configurazione Telnyx con campo chiave API, pulsante di avvio e lista di passaggi"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Schermata BYOC per collegare Telnyx, sincronizzare i DIDs e predisporre il SIP Trunk.
+</p>
+
+### Che cos’è un SIP Trunk (in parole semplici)
+
+Un **SIP Trunk** è una connessione “telefonia via internet” tra il tuo carrier e il tuo sistema di chiamate. È molto usato in ambito aziendale per gestire chiamate in entrata e in uscita con controllo di instradamento, SBC, credenziali e policy.
+
+---
+
+### Opzione 1: Collegare Telnyx
+
+Se usi Telnyx, Callin.io guida il processo tramite una chiave API:
+
+1. Vai su [Apri BYOC](https://app.callin.io/byoc).
+2. Apri la scheda Telnyx.
+3. Incolla la chiave API Telnyx.
+4. Avvia la configurazione.
+
+Durante il processo vedrai di solito passaggi come:
+
+- Salvare la chiave API Telnyx
+- Recuperare numeri attivi (DIDs)
+- Salvare i numeri nel tuo account
+- Predisporre il SIP Trunk (chiamate in entrata e in uscita)
+
+Alla fine, i numeri Telnyx dovrebbero comparire in Numeri.
+
+> **Importante:** Se la chiave API non ha le autorizzazioni per leggere DIDs/numeri, Callin.io non potrà importarli.
+
+---
+
+### Opzione 2: Collegare un altro provider (trunk SIP generico)
+
+Se il tuo provider non è Telnyx, usa la scheda per altro provider SIP. In genere vedrai tre sezioni: **Base**, **Entrata** e **Uscita**.
+
+#### Base
+
+- **Etichetta**: un nome descrittivo (esempio: “HQ SIP Trunk”)
+- **Numero in formato E.164**: formato internazionale completo (esempio: `+15551234567`)
+- Opzioni per abilitare chiamate in entrata e in uscita
+
+#### Entrata
+
+- **SBC/FQDN in entrata**: indirizzo SIP di destinazione (esempio: `sip.example.com:5061`)
+- **Trasporto**: di solito TLS o UDP
+- **Crittografia media**: abilitala se supportata dal provider
+
+> **Suggerimento:** Per le chiamate in entrata spesso non servono credenziali. Molti carrier autenticano tramite configurazione del trunk o lista IP consentite.
+
+#### Uscita
+
+- **SBC/FQDN in uscita**: server SIP del provider
+- **Trasporto** e **crittografia media**
+- **Nome utente** e **password**: credenziali SIP
+- **Paesi consentiti (uscita)**: ad esempio tutto il mondo o lista personalizzata
+
+Una volta completato, salva e importa.
+
+> **Errore comune:** SBC/FQDN errato o credenziali non corrette. Se le chiamate in uscita non funzionano, verifica utente/password, trasporto e porte richieste dal provider.
+
+---
+
+## Minuti e fatturazione (le informazioni essenziali)
+
+La fatturazione di solito ha due componenti:
+
+- **Utilizzo Callin (compute minutes)**: tempo in cui l’agente è attivo (ascolta, elabora e risponde).
+- **Costi di telefonia**: dipendono da come colleghi il numero e dal provider utilizzato.
+
+### Avviso importante sulla fatturazione (primo minuto)
+
+Quando effettui chiamate usando telefonia instradata tramite il provider di Callin (ad esempio numeri acquistati tramite Callin.io), può applicarsi una regola di **fatturazione del primo minuto**:
+
+- Il minimo addebitato è **1 minuto**
+- Se la chiamata dura più di un minuto, dopo il primo minuto la fatturazione segue la durata reale (senza costi aggiuntivi oltre il minimo)
+
+Inoltre, quando acquisti un numero Telnyx/Twilio tramite Callin.io:
+
+- **Non viene aggiunta alcuna tariffa di piattaforma extra per il numero in sé**
+
+Questa regola del primo minuto di solito non si applica a:
+
+- Chiamate di test dal browser
+- Numeri importati (Twilio o Telnyx)
+- Trunk SIP esterno (BYOC)
+
+> **Importante:** Il comportamento esatto può variare in base alla configurazione di instradamento del tuo account. Se vuoi evitare regole legate a un provider gestito da Callin, usa numeri importati o BYOC (SIP Trunk).
+
+### Promemoria: fatturazione con numero personale
+
+Un **numero personale** è **solo per chiamate in uscita** e può rientrare nella fatturazione del provider di Callin a seconda di come vengono instradate le chiamate.
+
+> **Importante:** Anche se usi un numero personale per le chiamate in uscita, per le chiamate in entrata ti serve un numero acquistato/importato o BYOC (SIP Trunk).
+
+---
+
+## Risoluzione dei problemi
+
+### “Non riesco a effettuare chiamate”
+- Verifica di avere almeno **un numero attivo**
+- Controlla che il numero sia **assegnato a un agente**
+- Se usi BYOC (SIP Trunk), verifica **SBC/FQDN**, trasporto, crittografia media e credenziali
+
+### “Il mio numero personale non riceve chiamate in entrata”
+- È normale: un **numero personale è solo per chiamate in uscita**
+- Usa un numero acquistato/importato o BYOC (SIP Trunk) per ricevere chiamate
+
+### “I miei numeri importati non compaiono”
+- Verifica le credenziali (Twilio Account SID/Auth Token oppure chiave API Telnyx)
+- Conferma che i numeri siano attivi presso il provider
+- Controlla di usare l’account o sotto-account corretto
+
+---
+
+## Nota finale
+
+Se vuoi la configurazione più rapida, inizia con un numero **Stati Uniti o Canada** acquistato tramite Callin.io. Se hai già un carrier o ti serve più controllo sull’instradamento, collega BYOC (SIP Trunk).
+
+Una volta aggiunto e assegnato, i tuoi agenti IA potranno effettuare e ricevere chiamate reali su larga scala.
