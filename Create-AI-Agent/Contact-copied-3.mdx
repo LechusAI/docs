@@ -1,144 +1,154 @@
 ---
-title: "Crea contatti"
-description: "Aggiungi, importa e organizza i contatti con mappatura delle colonne, validazione e azioni in blocco."
+title: "Contatti"
+description: "Aggiungi contatti manualmente o da un CSV, gestisci la lista e avvia campagne dalla pagina Contacts."
 ---
 
 ## Panoramica
-La sezione **Contacts** in Callin.io è il luogo in cui archivi, gestisci e organizzi tutte le persone che i tuoi agenti IA possono contattare — inclusi clienti, lead o persino utenti interni di test. Ogni voce in questa sezione funge da punto di riferimento per interazioni future, consentendo ai tuoi agenti di effettuare chiamate personalizzate, automatizzate o dirette utilizzando dati dinamici.
 
-I contatti svolgono tre ruoli essenziali nell’ecosistema Callin.io:
+La pagina **Contacts** è il punto in cui gestisci chi chiamare.
 
-- **Chiamate dirette:** ti consente di selezionare una o più persone e avviare chiamate immediatamente usando qualsiasi agente IA.
-- **Campagne:** i contatti fungono da dati sorgente per workflow di outreach automatizzati, permettendo comunicazioni di massa senza chiamate manuali.
-- **Variabili dinamiche:** informazioni come nome, email o orario di un appuntamento possono essere inserite dinamicamente nei prompt per personalizzare le conversazioni.
+Da qui puoi:
+- **Aggiungere contatti manualmente** (uno o più)
+- **Caricare un CSV** per importare una lista più grande
+- **Cercare e filtrare** la tua lista contatti
+- **Esportare** i contatti in CSV
+- **Avviare campagne** usando i contatti selezionati
+- **Eliminare i selezionati** (azione permanente)
 
-Quando l’agente IA viene eseguito, name e hour si compileranno automaticamente con le informazioni specifiche di ciascun contatto. Questo meccanismo consente a Callin.io di offrire conversazioni personalizzate e naturali su larga scala.
+Per aprire Contacts direttamente: [Clicca qui per andare a Contacts](https://app.callin.io/contacts)
 
-## Prima di iniziare
-Prima di creare o importare contatti, è importante capire come si integrano nel tuo sistema complessivo:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/contacts1.png"
+    alt="Pagina Contacts con la tabella Contact List, i pulsanti Add Contact e Upload CSV, oltre a ricerca e filtri"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-- I contatti sono archiviati centralmente e utilizzati in diversi strumenti come [Telephony → Contacts](https://app.callin.io/contacts) e [Campaigns](https://app.callin.io/campaigns).
-- Ogni record contatto contiene almeno un campo obbligatorio — il **Phone Number** — che funge da identificatore univoco per le chiamate.
-- Puoi arricchire i contatti con campi opzionali come **Name** ed **Email**, che diventano utilizzabili come variabili nei prompt.
-- I dati dei contatti importati vengono validati automaticamente per prevenire duplicati ed errori di formattazione.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: La pagina Contacts dove puoi aggiungere/importare contatti e gestire la lista.
+</p>
 
-Mantenere una lista contatti pulita e strutturata garantisce un’esecuzione delle campagne più fluida, analisi migliori e prestazioni degli agenti più naturali.
+## Aggiungere contatti manualmente
 
-## Passaggi
+L’inserimento manuale è ideale quando devi aggiungere pochi contatti rapidamente (o incollare dati da un foglio di calcolo).
 
-### 1. Aprire la sezione Contacts
-Per iniziare a gestire i contatti, vai su [Telephony → Contacts](https://app.callin.io/contacts) dalla barra laterale sinistra.
+### Passaggi
 
-Troverai una tabella dinamica che elenca i contatti esistenti con colonne per:
-- **Name** — il nome completo della persona.
-- **Phone Number** — deve includere il prefisso paese in formato internazionale.
-- **Email** — opzionale, ma utile per la verifica o per automazioni di follow-up.
+1. Clicca **Add Contact**.
+2. Compila i campi necessari:
+   - **Name** (opzionale)
+   - **Phone Number** (obbligatorio)
+   - **Email** (opzionale)
+3. Aggiungi altre persone aggiungendo altre righe (se disponibile nella finestra).
 
-Da questa vista puoi:
-- Aggiungere nuovi contatti singolarmente.
-- Caricare una lista di contatti tramite file CSV.
-- Modificare i dettagli dei contatti esistenti.
-- Eliminare i contatti selezionati.
-- Esportare la lista contatti per backup o migrazione dati.
+> **Importante:** **Phone Number è obbligatorio** per ogni contatto.
 
-L’interfaccia supporta sia la gestione di singole voci sia le azioni in blocco, permettendoti di gestire database grandi in modo efficiente.
+### Suggerimenti di modifica (come un foglio di calcolo)
 
-### 2. Aggiungere un contatto manualmente
-La creazione manuale è utile per testare o aggiungere un piccolo numero di contatti.
+Nella griglia di aggiunta contatti in genere puoi:
+- Cliccare e trascinare per selezionare più celle
+- Copiare e incollare valori nella griglia
+- Fare doppio clic su una cella per modificarla
+- Premere **Enter** per aggiungere una nuova riga
+- Premere **Esc** per cancellare la selezione
 
-1. Clicca **+ Add Contact**.
-2. Inserisci i dettagli richiesti:
-   - **Name:** il nome della persona (es. *Laura Perez*).
-   - **Phone Number:** obbligatorio. Usa il formato internazionale completo (es. *+15551234567*).
-   - **Email:** opzionale ma consigliato per un engagement multicanale.
-3. Clicca **Save Contact** per salvarlo.
+> **Consiglio:** Se i contatti sono già in Google Sheets/Excel, copia le celle e incollale direttamente nella griglia.
 
-Il contatto appena aggiunto apparirà subito nella tabella. Ora puoi assegnarlo a un agente o includerlo in una campagna.
+### Colonne opzionali
 
-### 3. Caricare contatti con un file CSV
-Se devi importare più contatti contemporaneamente, puoi caricarli con un file CSV formattato correttamente. Questo metodo è ideale per dataset grandi come liste di lead, export da CRM o record clienti esistenti.
+Potresti vedere il pulsante **Add Column** nella finestra. Serve per includere campi extra se il tuo workspace li supporta.
 
-Segui questi passaggi:
+> **Importante:** Le colonne disponibili possono variare in base all’account o al piano.
+
+## Importare contatti da un CSV
+
+L’importazione CSV è consigliata per liste più grandi.
+
+### Requisiti di caricamento
+
+- **Tipo file:** solo CSV
+- **Dimensione massima:** 10MB
+- Puoi caricare selezionando un file oppure trascinandolo e rilasciandolo.
+
+> **Errore comune:** Caricare un file .xlsx. Esportalo prima in **CSV**.
+
+### Caricare un CSV
 
 1. Clicca **Upload CSV**.
-2. Scegli il file dal tuo dispositivo.
-3. Mappa le colonne del CSV ai campi corrispondenti di Callin.io:
-   - **Phone (required)** — usato come identificatore univoco.
-   - **Name** — assicura che gli agenti possano salutare i clienti per nome.
-   - **Email (optional)** — utile per messaggi personalizzati o follow-up.
-4. Se i numeri non includono il segno “+” o il prefisso paese, seleziona un **default country** dal menu a tendina.
-5. Clicca **Continue** per visualizzare l’anteprima della mappatura e verificare che i dati siano allineati al formato di Callin.io.
-6. Dopo la validazione, clicca **Confirm** per finalizzare l’import.
+2. (Opzionale) Clicca **Download Template** per partire dal formato consigliato.
+3. Carica il CSV cliccando **Select File** oppure trascinando il file nell’area di caricamento.
 
-> Suggerimento: puoi scaricare un **sample CSV template** dalla schermata di upload. Questo aiuta a garantire che intestazioni e formattazione rispettino i requisiti di Callin.io.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/contacts2.png"
+    alt="Finestra Upload CSV con Download Template e Select File, con indicazione CSV only e max 10MB"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-**Validazione e comportamento di import:**
-- Il sistema controlla automaticamente i duplicati in base al numero di telefono.
-- I record senza un numero di telefono valido vengono saltati.
-- Gli errori vengono mostrati con numeri di riga specifici, così puoi correggere e ricaricare facilmente.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Finestra di upload CSV, con requisito CSV only e limite di 10MB.
+</p>
 
-Questa validazione assicura che i dati dei contatti rimangano puliti e coerenti.
+### Mappare le colonne
 
-### 4. Usare i contatti con gli agenti
-La tua lista contatti è collegata direttamente ai tuoi agenti IA, consentendo outreach rapido e test in tempo reale.
+Dopo il caricamento, associ le intestazioni del CSV ai campi che Callin importerà.
 
-In cima alla pagina Contacts, troverai un menu a tendina **Select Agent**. Segui questi passaggi:
+- **Phone** (obbligatorio)
+- **Name** (opzionale)
+- **Email** (opzionale)
 
-1. Apri **Select Agent** e scegli quale agente IA deve effettuare le chiamate.
-2. Seleziona uno o più contatti usando le checkbox accanto ai nomi.
-3. Clicca **Call Selected** per iniziare a chiamare quei contatti.
+> **Importante:** Se **Phone** non è mappato, l’importazione non può continuare.
 
-L’agente IA selezionato inizierà automaticamente a chiamare ciascun contatto in base al prompt assegnato, al comportamento e alla configurazione vocale. Questo è particolarmente utile per:
+### Regole di validazione (valgono per manuale + CSV)
 
-- Eseguire chiamate di test rapide per validare gli script.
-- Fare follow-up manuali con lead o clienti.
-- Condurre outreach mirato senza creare un’intera campagna.
+- I numeri devono includere il **prefisso internazionale** (esempio: **+1234567890**)
+- I numeri devono avere **7–15 cifre** (escludendo il prefisso internazionale)
+- I numeri sono **obbligatori** per tutti i contatti
+- Gli email devono essere **validi** se forniti
+- I campi con errori di validazione sono evidenziati con un **bordo rosso**
+- I campi vuoti sono evidenziati con un **bordo rosso**
 
-Puoi anche eseguire **bulk deletions** tramite l’opzione **Delete Selected** per rimuovere contatti obsoleti o non validi. Il sistema chiederà conferma prima di eliminare dati.
+> **Consiglio:** Se nel CSV i numeri non hanno il prefisso internazionale, aggiungilo prima dell’importazione per evitare errori di validazione.
 
-### 5. Usare i contatti nelle campagne
-Ogni contatto che crei o importi in Callin.io è immediatamente disponibile in [Telephony → Campaigns](https://app.callin.io/campaigns). Puoi raggruppare e segmentare i contatti in base alle tue esigenze, assegnandoli a campagne specifiche o ad agenti IA.
+## Gestire la lista contatti
 
-L’integrazione con le campagne ti consente di:
+### Ricerca e filtri
 
-- Costruire flussi di chiamata automatizzati usando il tuo database contatti.
-- Segmentare le liste per **agent**, **location** o **purpose**.
-- Automatizzare sequenze di outreach come promemoria, richieste di feedback o qualificazione lead.
-- Tracciare metriche di engagement — ad esempio quanti contatti hanno risposto o prenotato un appuntamento.
+- Usa **Search contacts…** per trovare per nome, numero o email.
+- Clicca **Filters** per restringere la lista.
 
-Quando lanci una campagna, Callin.io fa riferimento ai tuoi dati contatto in modo dinamico. Ciò significa che qualsiasi aggiornamento nella sezione Contacts (come correzioni di nome o numero) si rifletterà automaticamente in tutte le campagne correlate.
+> **Importante:** Le opzioni di filtro possono variare in base all’account o al piano.
 
-## Perché è importante
-Centralizzare i contatti in Callin.io crea un’unica fonte di verità per tutte le tue comunicazioni. Questo garantisce che i tuoi agenti IA abbiano sempre dati accurati e aggiornati per personalizzare ogni chiamata.
+### Visualizzare e modificare
 
-Vantaggi di una corretta gestione dei contatti:
-- **Organizzazione:** mantieni tutti i clienti e i lead in un database strutturato.
-- **Automazione:** lancia campagne senza ricaricare nuovamente i dati dei contatti.
-- **Personalizzazione:** usa campi dinamici per far sembrare le interazioni umane e rilevanti.
-- **Scalabilità:** gestisci migliaia di record in modo efficiente con azioni in blocco e import CSV.
-- **Integrità dei dati:** la validazione integrata previene duplicati e numeri mal formattati.
+Nella colonna **Actions**, in genere puoi:
+- **Vedere** i dettagli del contatto
+- **Modificare** il contatto
 
-Quando il tuo database contatti è ben mantenuto, i tuoi agenti raggiungono più rapidamente le persone giuste, lavorano con maggiore accuratezza e producono risultati di business misurabili.
+### Esportare in CSV
 
-## Risoluzione dei problemi
+Clicca **Export to CSV** per scaricare la lista attuale dei contatti.
 
-### Numero di telefono mancante
-- **Causa:** ogni contatto deve includere un numero valido con prefisso paese.
-- **Soluzione:** rivedi la lista contatti e aggiorna le voci incomplete. Il sistema le segnalerà automaticamente durante l’import.
+## Avviare una campagna da Contacts
 
-### Upload CSV fallito
-- **Causa:** la dimensione del file supera 10 MB oppure le colonne non corrispondono alle intestazioni richieste.
-- **Soluzione:** riduci la dimensione del file o verifica che le colonne siano mappate correttamente (Phone, Name, Email). Salva il file in codifica UTF-8 per evitare errori.
+1. Seleziona uno o più contatti usando le caselle.
+2. Clicca **Start Campaign**.
+3. Inserisci un **campaign name** e **select an agent**.
+4. (Opzionale) Attiva **Follow-up Calls**.
 
-### L’agente non chiama
-- **Causa:** nessun agente è stato selezionato prima di cliccare **Call Selected**.
-- **Soluzione:** assicurati di scegliere un agente IA dal menu a tendina in cima alla pagina prima di avviare la chiamata.
+Quando attivi questa opzione, i follow-up vengono programmati per ogni contatto dopo una chiamata **unanswered** o **busy**:
+- Dopo **2 hours**
+- Dopo **1 day**
+- Dopo **3 days**
 
-### Contatti duplicati dopo l’import
-- **Causa:** lo stesso numero appare più volte nel CSV.
-- **Soluzione:** usa la validazione duplicati integrata o pulisci i dati prima del caricamento.
+> **Consiglio:** Se stai facendo una prova, inizia con una selezione piccola (5–10 contatti) per verificare che l’agente e lo script funzionino come previsto.
 
-## Nota finale
-La tua lista contatti è la base di ogni operazione in Callin.io. Una volta configurata correttamente, consente ai tuoi agenti IA di chiamare persone reali, lanciare campagne e personalizzare ogni conversazione in modo fluido.
+## Eliminare i contatti selezionati (permanent)
 
-Pensa ai tuoi Contacts come al cuore del tuo workflow IA — ogni interazione, campagna o prompt inizia qui. Mantenere questa sezione aggiornata, validata e organizzata garantisce che i tuoi agenti comunichino sempre in modo rilevante, professionale e naturale.
+1. Seleziona i contatti che vuoi rimuovere.
+2. Clicca **Delete Selected**.
+3. Conferma l’eliminazione (potrebbe essere necessario digitare **DELETE**).
+
+> **Importante:** Questa è un’azione **permanente** e non può essere annullata.
