@@ -1,121 +1,127 @@
 ---
-title: "Kampagnen erstellen"
-description: "Kampagnen erstellen, Kontakte auswählen, Agenten zuweisen und Anrufe Schritt für Schritt starten."
+title: "Kampagnen"
+description: "Erstellen Sie Outbound-Kampagnen, wählen Sie Kontakte aus, entscheiden Sie den Startzeitpunkt und verfolgen Sie Ergebnisse mit Campaigns Analytics."
 ---
 
 ## Überblick
-Kampagnen in **Callin.io** ermöglichen es dir, ausgehende Kommunikation in großem Maßstab zu automatisieren. Sie kombinieren KI-Agenten, Kontaktlisten und Zeitplanlogik, damit deine Agenten große Anrufvolumina natürlich und effizient abwickeln können.
 
-Eine Kampagne besteht aus drei zentralen Elementen:
+Der Bereich **Campaigns** ist der Ort, an dem Sie Outbound-Kampagnen einrichten und ausführen und anschließend die Performance auswerten.
 
-- **KI-Agent** – die konfigurierte Stimme, die die Anrufe ausführt.
-- **Kontaktliste** – stammt aus deinem Bereich [Contacts](https://app.callin.io/contacts) oder wird per CSV importiert.
-- **Ausführungsplan** – legt fest, wann und wie die Kampagne läuft (sofortiger Start oder geplantes Zeitfenster).
+Von hier aus können Sie:
+- Eine Kampagne mit einem **AI Agent** erstellen
+- Kontakte auswählen (oder während des Kampagnen-Flows eine CSV hochladen)
+- Sofort starten oder für später planen
+- Fortschritt und Ergebnisse verfolgen
+- Die Performance in **Campaigns Analytics** auswerten
 
-Durch die Kombination dieser Komponenten kannst du groß angelegte, personalisierte Outreach-Operationen aufbauen — von Lead-Generierung und Erinnerungen bis hin zu Umfragen und Kunden-Follow-ups.
+Um Campaigns direkt zu öffnen: [Klicken Sie hier, um zu Campaigns zu gehen](https://app.callin.io/campaigns?activeTab=campaigns&view=list)
 
-## Bevor du beginnst
-Kampagnen hängen von Daten und Konfigurationen aus anderen Bereichen deines Callin.io-Workspaces ab:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/campaigns1.png"
+    alt="Campaigns-Seite mit Kampagnen-Karten, Filters, dem Button Create Campaign sowie Filtern wie Status und Date Range"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-- Stelle sicher, dass deine [Contacts](https://app.callin.io/contacts) korrekt hochgeladen und validiert sind.
-- Halte mindestens einen **KI-Agenten** bereit, mit getestetem Prompt und Voice-Setup.
-- Prüfe deine Zeitzone und Zeitplan-Einstellungen, damit Kampagnen korrekt getimt werden.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Ihre Kampagnenliste – mit Filtern, der Möglichkeit neue Kampagnen zu erstellen und Kampagnen-Details zu öffnen.
+</p>
 
-Jede Kampagne kann Hunderte oder Tausende Kontakte anrufen — der Erfolg hängt jedoch von gut vorbereiteten Daten und klaren KI-Gesprächsabläufen ab.
+## Eine Kampagne erstellen
 
-## Schritte
+Klicken Sie auf **Create Campaign**, um das Setup-Panel zu öffnen.
 
-### 1. Kampagnen öffnen
-Gehe in der linken Seitenleiste zu [Campaigns](https://app.callin.io/campaigns). Dort findest du zwei Haupt-Tabs:
+### 1) Grundinformationen
 
-- **Campaigns:** listet alle aktiven, geplanten und abgeschlossenen Kampagnen auf.
-- **Campaigns Analytics:** zeigt visuelle Reports mit Kennzahlen wie Gesamtanzahl der Anrufe, Anrufdauer und Terminen.
+Füllen Sie aus:
+- **Campaign Name** (erforderlich)
+- **AI Agent** (erforderlich)
 
-Jede Kampagnenkarte enthält:
-- Kampagnenname
-- Zugewiesener KI-Agent
-- Aktueller Status (z. B. *Completed*, *In Progress*, *Scheduled*)
+> **Wichtig:** Die Oberfläche zeigt einen Hinweis: Der Agent sollte während der Kampagnen-Ausführung eine Nummer zugewiesen haben. Wenn der Agent keine Anrufe platzieren kann, funktioniert die Kampagne nicht korrekt.
 
-Klicke auf **View**, um Details anzusehen, oder auf **+ Create Campaign**, um eine neue Kampagne zu erstellen.
+### 2) Kontakte auswählen
 
-### 2. Eine neue Kampagne erstellen
-Klicke auf **+ Create Campaign** und fülle dann das Setup-Formular aus:
+Unter **Select Contacts** können Sie:
+- Kontakte mit **Search contacts…** suchen
+- Die Liste mit **Filters** eingrenzen
+- Einen oder mehrere Kontakte per Checkbox auswählen
+- Große Listen über die Pagination durchblättern
+- **Upload CSV** verwenden, wenn Sie Kontakte aus einer Datei zu dieser Kampagne hinzufügen möchten
 
-- **Campaign Name:** Wähle einen klaren, aussagekräftigen Titel.
-- **AI Agent:** Wähle den Agenten aus, der die Anrufe tätigen soll.
-- **Select Contacts:** Wähle eine bestehende Kontaktliste oder lade eine neue CSV-Datei hoch.
+> **Tipp:** Wenn Ihre Kontakte bereits in einer Tabelle sind, exportieren Sie sie als **.csv** Datei, bevor Sie sie hochladen.
 
-Wenn du eine Datei hochlädst, achte darauf:
+### 3) Spalten zuordnen (bei CSV-Upload)
 
-1. Ordne deine Spalten korrekt den Feldern **Phone**, **Name** und **Email** zu.
-2. Lege ein Default-Land fest, wenn deinen Telefonnummern das `+`-Präfix fehlt.
-3. Prüfe die Datenvorschau und validiere sie, bevor du den Import bestätigst.
+Wenn Sie eine CSV hochladen, müssen Sie vor dem Fortfahren Spalten zuordnen. Typische Felder sind:
+- **Phone** (erforderlich)
+- **Name** (optional)
+- **Email** (optional)
 
-Nach dem Import oder der Auswahl wird deine Kontaktliste Teil der Kampagnenkonfiguration.
+> **Häufiger Fehler:** **Phone** nicht zuordnen. Die Kampagne kann ohne Telefonnummer keine Kontakte hinzufügen.
 
-### 3. Kontakte auswählen und verwalten
-Nachdem du die Basics eingerichtet hast, überprüfe deine Kontaktliste im Kampagnen-Editor:
+### 4) Startoptionen
 
-- Setze ein Häkchen neben jedem Kontakt, den du einschließen möchtest.
-- Nutze gespeicherte Datenfelder wie **name**, **email** oder **phone number** im Prompt deines KI-Agenten über dynamische Variablen wie name oder email.
+Unter **Launch Options** wählen Sie, wie und wann die Kampagne läuft:
 
-Jede Variable zieht die echten Daten dynamisch aus deinen Kontakten, wodurch personalisierte KI-Anrufe ohne manuelle Bearbeitung möglich werden.
+- **Launch Now**: startet sofort.
+- **Schedule for Later**: hier können Sie festlegen:
+  - **Start Time**
+  - **End Time**
+  - **Timezone**
 
-### 4. Startmethode auswählen
-Du hast zwei Möglichkeiten, deine Kampagne zu starten:
+Zusätzlich können Sie **Follow-up Calls** aktivieren, um Kontakte automatisch erneut anzurufen, wenn sie nicht geantwortet haben oder besetzt waren.
 
-- **Launch Now:** Die Kampagne startet sofort. Der KI-Agent kontaktiert die ausgewählten Kontakte nacheinander.
-- **Schedule for Later:** Wähle eine konkrete Start- und Endzeit und definiere die Zeitzone.
+> **Wichtig:** Das Verhalten der Follow-ups kann je nach Workspace-Einstellungen variieren. Wenn Sie nicht sicher sind, wie Retries in Ihrem Account funktionieren, starten Sie zunächst eine kleine Testkampagne.
 
-Zeitplanung ist ideal für zeitkritische Abläufe — zum Beispiel, um Anrufe während lokaler Geschäftszeiten oder in bestimmten Follow-up-Fenstern zu platzieren.
+## Kampagnen verwalten
 
-Nach dem Konfigurieren klicke auf **Launch** oder **Schedule**, um zu bestätigen.
+### Kampagnen filtern und finden
 
-### 5. Performance analysieren
-Sobald deine Kampagne läuft oder abgeschlossen ist, öffne den Tab **Campaigns Analytics**, um Kennzahlen zu überwachen. Du siehst:
+Nutzen Sie die Filterleiste, um die Ansicht einzugrenzen, zum Beispiel:
+- Suchen nach **Campaign ID or Name**
+- Filtern nach **Status**
+- Eingrenzen über **Date Range**
+- **Show Deleted** aktivieren, um gelöschte Kampagnen anzuzeigen (falls in Ihrem Account verfügbar)
 
-- **Total Appointments:** Anzahl der erfolgreich gebuchten Termine.
-- **Total Calls:** Gesamtanzahl der Anrufe, die deine Agenten getätigt haben.
-- **Average Call Duration:** Durchschnittliche Gesprächsdauer.
-- **AMD Detection Rate:** Anteil der Anrufe, die einen Anrufbeantworter erreicht haben.
+### Kampagnen-Details ansehen
 
-Außerdem findest du grafische Auswertungen wie:
+Klicken Sie auf **View** auf einer Kampagnen-Karte, um die Details zu öffnen. Dort sehen Sie typischerweise:
+- Kampagnenfortschritt
+- Zähler (z. B. in Bearbeitung, besetzt, keine Antwort, abgeschlossen, fehlgeschlagen)
+- Eine Kontakt-Tabelle mit Status und Outcome
+- Eine **Refresh**-Option, um Ergebnisse zu aktualisieren
 
-- **Connected Calls Volume Over Time** – hilft, Engagement-Spitzen zu erkennen.
-- **Appointments by Hour** – visualisiert, wann Konversionen stattfinden.
-- **Call Outcomes & Key Metrics** – zeigt die Verteilung zwischen abgeschlossenen, verpassten oder fehlgeschlagenen Anrufen.
+### Eine Kampagne löschen (permanent)
 
-Diese Analysen werden nach Abschluss jeder Kampagne automatisch aktualisiert, sodass du die Wirksamkeit messen und deine Strategie optimieren kannst.
+Kampagnen-Karten können ein Löschen-Symbol (Papierkorb) haben. Beim Löschen einer Kampagne:
+- Erscheint ein Bestätigungsdialog
+- Möglicherweise müssen Sie **DELETE** eingeben, um zu bestätigen
 
-### 6. Warum Kampagnen wichtig sind
-Kampagnen ermöglichen es dir, Automatisierung, Personalisierung und Skalierbarkeit in einem Workflow zu kombinieren. Sie bieten:
+> **Wichtig:** Das Löschen einer Kampagne ist **permanent** und kann nicht rückgängig gemacht werden.
 
-- **Skalierung:** Erreiche Hunderte oder Tausende Personen automatisch.
-- **Automatisierung:** Kein manuelles Wählen; KI übernimmt repetitive Kommunikation.
-- **Personalisierung:** Jeder Anruf wirkt individuell, da kontaktbezogene Daten referenziert werden.
-- **Analysen:** Gewinne verwertbare Erkenntnisse aus jedem Anruf und jeder Konversion.
+## Campaigns Analytics
 
-Nutze Kampagnen, um Follow-ups, Erinnerungen, Lead-Generierung oder Kundenfeedback-Erfassung zu automatisieren — und dabei ein menschlich wirkendes Engagement aufrechtzuerhalten.
+Wechseln Sie zu **Campaigns Analytics**, um zu verstehen, wie Kampagnen im Zeitverlauf performt haben.
 
-## Fehlerbehebung
+### Was Sie auswerten können
 
-### Keine Kontakte verfügbar
-- **Ursache:** Es wurden keine Kontakte hochgeladen oder ausgewählt.
-- **Lösung:** Gehe zu [Contacts](https://app.callin.io/contacts) und importiere oder füge Kontakte hinzu, bevor du die Kampagne startest.
+In der Analytics-Übersicht können Sie typischerweise Metriken wie diese prüfen:
+- Gesamtanzahl Anrufe
+- Durchschnittliche Anrufdauer
+- Nutzung
+- Termine
+- Detection- und Erfolgsraten
+- Trends und Aufschlüsselungen (Volumen über die Zeit, Outcomes, Key Metrics)
 
-### Kampagne startet nicht
-- **Ursache:** Fehlende Konfiguration, z. B. kein Agent zugewiesen oder keine Kontakte ausgewählt.
-- **Lösung:** Stelle sicher, dass sowohl ein KI-Agent als auch mindestens ein Kontakt enthalten sind, bevor du startest.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/campaigns2.png"
+    alt="Campaigns Analytics Übersicht mit Kennzahlen-Karten und Diagrammen wie Anrufvolumen und Outcomes"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-### Keine Analytics-Daten
-- **Ursache:** Kampagnendaten werden noch verarbeitet oder die Kampagne ist noch nicht abgeschlossen.
-- **Lösung:** Warte nach Abschluss ein paar Minuten; Analytics werden automatisch aktualisiert, sobald die Ergebnisse final sind.
-
-### Falsche Zeitzone oder Zeitplan
-- **Ursache:** Die Kampagnen-Zeitzone ist nicht korrekt eingestellt.
-- **Lösung:** Prüfe die Zeitzonen-Einstellungen vor dem Planen, damit die lokale Zeit stimmt.
-
-## Abschlusshinweis
-Kampagnen in Callin.io verwandeln deine KI-Agenten in skalierbare Kommunikationssysteme. Durch die Kombination aus Automatisierung und intelligentem Gesprächsdesign ermöglichen sie Outreach, der effizient, datengetrieben und persönlich ist.
-
-Sobald deine Kampagne eingerichtet ist, können deine Agenten automatisch echte Personen erreichen, Ergebnisse erfassen und sich über Analytics kontinuierlich verbessern — damit dein Unternehmen konsistentes, bedeutungsvolles Engagement in großem Maßstab aufrechterhält.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Campaigns Analytics Übersicht, um Performance-Kennzahlen und Trends auszuwerten.
+</p>
