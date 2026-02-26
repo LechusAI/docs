@@ -1,125 +1,127 @@
 ---
-title: "Create Campaigns"
-description: "Build campaigns, pick contacts, assign agents, and launch calls step by step."
+title: "Campaigns"
+description: "Create outbound calling campaigns, select contacts, choose when to launch, and track results with Campaigns Analytics."
 ---
 
 ## Overview
-Campaigns in **Callin.io** allow you to automate outbound communication at scale. They combine AI agents, contact lists, and scheduling logic so your agents can handle large volumes of calls naturally and efficiently.
 
-A campaign consists of three key elements:
+The **Campaigns** section is where you set up and run outbound calling campaigns, then track how they performed.
 
-- **AI Agent** – the configured voice that executes the calls.
-- **Contact List** – drawn from your [Contacts](https://app.callin.io/contacts) section or imported via CSV.
-- **Execution Plan** – determines when and how the campaign runs (immediate launch or scheduled window).
+From here you can:
 
-By combining these components, you can create large-scale, personalized outreach operations — from lead generation and reminders to surveys and customer follow-ups.
+- Create a campaign with an **AI Agent**
+- Select contacts (or upload a CSV inside the campaign flow)
+- Launch immediately or schedule for later
+- Monitor progress and outcomes
+- Review performance in **Campaigns Analytics**
 
-## Before You Start
-Campaigns depend on data and configuration from other parts of your Callin.io workspace:
+To open Campaigns directly: [Click here to go to Campaigns](https://app.callin.io/campaigns?activeTab=campaigns&view=list)
 
-- Ensure your [Contacts](https://app.callin.io/contacts) are properly uploaded and validated.
-- Have at least one **AI agent** ready with a tested prompt and voice setup.
-- Verify your time zone and scheduling preferences for accurate campaign timing.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/campaigns1.png" alt="Campaigns page showing campaign cards, Filters, Create Campaign button, and filter fields like Status and Date Range" style={{ width:"100%", display:"block" }} />
+</div>
 
-Each campaign is capable of calling hundreds or thousands of contacts, but success depends on well-prepared data and clear AI conversation flows.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Your campaigns list, where you can filter, create new campaigns, and open a campaign to view details.
+</p>
 
-## Steps
+## Create a campaign
 
-### 1. Access Campaigns
-Go to [Campaigns](https://app.callin.io/campaigns) in the left sidebar. You’ll find two main tabs:
+Click **Create Campaign** to open the campaign setup panel.
 
-- **Campaigns:** lists all active, scheduled, and completed campaigns.
-- **Campaigns Analytics:** shows visual reports with key metrics like total calls, call duration, and appointments.
+### 1) Basic information
 
-Each campaign card includes:
-- Campaign name
-- Assigned AI agent
-- Current status (e.g., *Completed*, *In Progress*, *Scheduled*)
+Fill in:
 
-Click **View** to inspect details or **+ Create Campaign** to build a new one.
+- **Campaign Name** (required)
+- **AI Agent** (required)
 
-### 2. Create a New Campaign
-Click **+ Create Campaign**, then complete the setup form:
+> **Important:** The UI warns that the agent should have a number assigned during campaign execution. If the agent can’t place calls, the campaign won’t work properly.
 
-- **Campaign Name:** Choose a clear and descriptive title.
-- **AI Agent:** Select the agent who will make the calls.
-- **Select Contacts:** Choose an existing contact list or upload a new CSV file.
+### 2) Select contacts
 
-If you upload a file, make sure to:
-1. Map your columns correctly for **Phone**, **Name**, and **Email**.
-2. Assign a default country if your phone numbers lack the `+` prefix.
-3. Validate the data preview before confirming the import.
+In **Select Contacts**, you can:
 
-Once imported or selected, your contact list becomes part of the campaign configuration.
+- Search contacts using **Search contacts…**
+- Narrow the list with **Filters**
+- Select one or multiple contacts using the checkboxes
+- Navigate large lists using pagination
+- Use **Upload CSV** if you want to bring contacts into this campaign from a file
 
-### 3. Select and Manage Contacts
-After setting up the basics, review your contact list within the campaign editor:
+> **Tip:** If your contacts are already in a spreadsheet, export them as a **.csv** file before uploading.
 
-- Check the box next to each contact you want to include.
-- Use stored data fields such as **name**, **email**, or **phone number** in your AI agent’s prompt via dynamic variables like `{{name}}` or `{{email}}`.
+### 3) Map columns (when uploading CSV)
 
-Example:
-```
-Hi {{name}}, I’m calling to confirm your appointment tomorrow at {{hour}}.
-```
+If you upload a CSV, you’ll be asked to map columns before continuing. Typical fields include:
 
-Each variable dynamically pulls the real data from your contacts, allowing for personalized AI calls without manual editing.
+- **Phone** (required)
+- **Name** (optional)
+- **Email** (optional)
 
-### 4. Choose How to Launch
-You have two ways to start your campaign:
+> **Common mistake:** Not mapping **Phone**. The campaign can’t add contacts without a phone number.
 
-- **Launch Now:** The campaign begins immediately. The AI agent will start contacting selected contacts sequentially.
-- **Schedule for Later:** Choose a specific start and end time, and define the time zone.
+### 4) Launch options
 
-Scheduling is ideal for time-sensitive operations — for example, ensuring calls are placed during local business hours or specific follow-up periods.
+Under **Launch Options**, choose how and when the campaign runs:
 
-After configuring your schedule, click **Launch** or **Schedule** to confirm.
+- **Launch Now**: starts immediately.
+- **Schedule for Later**: lets you set:
+  - **Start Time**
+  - **End Time**
+  - **Timezone**
 
-### 5. Analyze Performance
-Once your campaign is running or completed, open the **Campaigns Analytics** tab to monitor key metrics. You’ll see:
+You can also enable **Follow-up Calls** to automatically retry calls for contacts who didn’t answer or were busy.
 
-- **Total Appointments:** Number of meetings successfully scheduled.
-- **Total Calls:** The overall number of calls made by your agents.
-- **Average Call Duration:** The mean length of conversations.
-- **AMD Detection Rate:** Percentage of calls that reached an answering machine.
+> **Important:** Follow-up behavior can vary by workspace settings. If you’re not sure how retries work in your account, run a small test campaign first.
 
-You’ll also find graphical reports, such as:
+## Manage campaigns
 
-- **Connected Calls Volume Over Time** – helps identify engagement peaks.
-- **Appointments by Hour** – visualizes when conversions occur.
-- **Call Outcomes & Key Metrics** – shows distribution between completed, missed, or failed calls.
+### Filter and find campaigns
 
-These analytics are refreshed automatically after each campaign completes, allowing you to measure effectiveness and refine your strategy.
+Use the filter bar to narrow down what you see, for example:
 
-### 6. Why Campaigns Matter
-Campaigns allow you to combine automation, personalization, and scalability within one workflow. They provide:
+- Search by **Campaign ID or Name**
+- Filter by **Status**
+- Limit results by **Date Range**
+- Toggle **Show Deleted** to view deleted campaigns (if available in your account)
 
-- **Scale:** Reach hundreds or thousands of people automatically.
-- **Automation:** Eliminate manual dialing; let AI handle repetitive communication.
-- **Personalization:** Each call sounds unique, referencing contact-specific data.
-- **Analytics:** Gain actionable insights from every call and conversion.
+### View campaign details
 
-Use campaigns to automate follow-ups, reminders, lead generation, or customer feedback collection — all while maintaining human-like engagement.
+Click **View** on a campaign card to open its details. Inside, you can typically see:
 
-## Troubleshooting
+- Campaign progress
+- Counters (e.g., in progress, busy, no answer, completed, failed)
+- A contact-level table with statuses and outcomes
+- A **Refresh** option to update results
 
-### No Contacts Available
-- **Cause:** No contacts have been uploaded or selected.
-- **Fix:** Go to [Contacts](https://app.callin.io/contacts) and import or add contacts before starting your campaign.
+### Delete a campaign (permanent)
 
-### Campaign Won’t Start
-- **Cause:** Missing configuration, such as no agent assigned or no contacts selected.
-- **Fix:** Ensure both an AI agent and at least one contact are included before launching.
+Campaign cards may include a delete (trash) icon. When you delete a campaign:
 
-### No Analytics Data
-- **Cause:** Campaign data is still processing or hasn’t completed.
-- **Fix:** Wait a few minutes after completion; analytics refresh automatically once results are finalized.
+- You’ll see a confirmation modal
+- You may be required to type **DELETE** to confirm
 
-### Incorrect Timezone or Schedule
-- **Cause:** Campaign timezone not set properly.
-- **Fix:** Double-check the timezone settings before scheduling to ensure local time accuracy.
+> **Important:** Deleting a campaign is a **permanent action** and cannot be undone.
 
-## Final Note
-Campaigns in Callin.io transform your AI agents into scalable communication systems. By combining automation with intelligent conversation design, they enable outreach that’s efficient, data-driven, and personal.
+## Campaigns Analytics
 
-Once your campaign is set up, your agents can automatically connect with real people, capture results, and continuously improve through analytics — helping your business maintain consistent, meaningful engagement at scale.
+Switch to **Campaigns Analytics** to understand how campaigns performed over time.
+
+### What you can review
+
+In the analytics overview, you can typically review metrics like:
+
+- Total calls
+- Average call duration
+- Usage
+- Appointments
+- Detection and success rates
+- Trends and breakdowns (volume over time, outcomes, key metrics)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/campaigns2.png" alt="Campaigns Analytics overview showing summary metric cards and charts such as call volume and outcomes" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Campaigns Analytics overview, where you can review performance metrics and trends.
+</p>
