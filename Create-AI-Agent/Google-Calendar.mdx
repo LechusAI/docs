@@ -1,146 +1,234 @@
 ---
-title: "Connect Google Calendar"
-description: "Connect Google Calendar and let your agent book appointments during calls."
+title: "Google Calendar Scheduling"
+description: "A step-by-step guide to connect Google Calendar in Callin.io, create an event template (availability + duration + reminders), and attach it to an AI Agent so it can book appointments during calls—without adding conflicting scheduling rules to your prompt."
 ---
 
-## Video Guide
+## What you’ll set up (and why it matters)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <iframe
-    width="100%"
-    height="420"
-    src="https://www.youtube-nocookie.com/embed/vEjRf0FklRc"
-    title="YouTube video"
-    frameBorder="0"
-    loading="lazy"
-    referrerPolicy="strict-origin-when-cross-origin"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
-  />
+Google Calendar scheduling in Callin.io is designed to be reliable and consistent. To achieve that, the setup is split into two parts:
+
+1. **Google Calendar integration setup**\
+   You connect your Google account and create an **Event Template**. This template is where you define the booking rules (days available, appointment duration, reminders, and conflict rules).
+2. **AI Agent setup (Call Action)**\
+   You enable **Schedule Appointment** inside your agent and select the template you created.
+
+> **Important:** Your booking rules should live in the **Event Template**, not in the agent prompt. Avoid adding instructions like “Only Monday to Friday” or “Only between 9am and 5pm” inside the prompt—those rules can conflict with the platform’s built-in scheduling logic once Google Calendar is connected.
+
+## Open the Google Calendar integration
+
+Use this direct link to open the Google Calendar integration page: [**click here**](https://app.callin.io/actions/google-calendar).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions1.png" alt="Google Calendar integration page showing Sync and Connect Google Account buttons, a calendar search bar, the connected account panel, and the Event Templates section" style={{ width:"100%", display:"block" }} />
 </div>
 
-## Before you start
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: This is the Google Calendar integration area where you connect your account, choose a calendar, and manage event templates.
+</p>
 
-Before clicking around, make sure you have the essentials so everything works on the first try:
+> **Tip:** If your UI looks slightly different, that’s normal—some elements can vary by account or plan.
 
-- A Callin account with permission to access Actions and edit AI Agents (if you can’t see them, check Roles & permissions).
-- A Google account that has access to the calendar where appointments should be created.
-- Pop-ups enabled in your browser (Google opens a separate authorization window).
-- Strong recommendation: confirm your agent’s timezone. Callin warns about this because mismatched timezones can shift appointment times (see Timezones).
+## Step 1: Connect your Google Account
 
-## Step 1: Go to “Actions” and open Google Calendar
+1. On the Google Calendar integration page, click **Connect Google Account**.
+2. A Google sign-in window opens. Choose the Google account you want to use for bookings.
+3. Approve the permissions screen so Callin.io can create events and check availability.
 
-1. In Callin’s left menu, click **Actions**.
-2. You’ll see integration cards (Google Calendar, GoHighLevel, Zoho, etc.).
-3. On **Google Calendar**, click **Connect** (or open it and use **Connect Google Account**).
+Once connected, you’ll typically see:
 
-**Tip:** If you already connected an account but don’t see new calendars, use **Sync** to refresh what Callin can access.
+- Your Google account displayed in the left panel
+- A list of calendars you can select
+- A **Disconnect Account** option (use it if you connected the wrong account)
 
-## Step 2: Connect your Google account (login + permissions)
+> **Important:** Use a calendar that represents your real availability. If your Google Calendar is always “busy” (or always “free”), the booking experience won’t match reality.
 
-Callin will redirect you through Google’s authorization flow:
+## Step 2: Choose the calendar where appointments should be created
 
-1. Select the Google account you want to connect.
-2. You’ll see a confirmation screen like “You’re signing in again to Callin/AI Calls.” Click **Continue**.
-3. Approve the permissions Google requests so Callin can read your calendar and create events when the agent books.
+In the left panel, select the calendar you want bookings to go into.
 
-When you return to Callin, you should see your Google account connected inside Google Calendar settings.
+Examples:
 
-**Warning:** If you connect the “wrong” Google account, it will look like “no calendars exist.” It’s not a bug—you’re just in a different account. Disconnect and repeat with the correct one.
+- A service business might use a calendar named “Appointments”
+- A sales team might use “Discovery Calls”
+- A clinic might use “Consultations”
 
-## Step 3: Select the right calendar inside Callin
+Why this selection matters:
 
-In **Actions → Google Calendar**, you’ll see:
+- Your template is built **for a specific calendar**
+- The agent will book into the calendar/template you assign later
 
-- On the left: the connected account and available calendars
-- On the right: **Event Templates**
+> **Tip:** If you have multiple calendars (for different teams or services), you can create different templates per calendar and assign the right one to each AI Agent.
 
-1. Click the calendar where bookings should be created (for example: your primary calendar, or a dedicated Sales calendar).
-2. Look at the right panel: this is where you create templates your agent will use when booking.
+## Step 3: Create an Event Template (this is where scheduling rules live)
 
-**Important:** Callin supports multiple templates per calendar, and you can assign templates from different calendars to different agents (see Booking templates).
+Before attaching scheduling to an AI Agent, you must create at least one **Event Template**.
 
-## Step 4: Create your first “Event Template” (your appointment blueprint)
+This template defines:
 
-A template is the appointment “mold”: name, description, duration, reminder, and available hours.
+- How long appointments are
+- How reminders work
+- Whether overlapping bookings are allowed
+- How conflicts are handled
+- Which days are available for bookings (Working Hours)
 
-1. Under **Event Templates**, click **Create Event Template**.
-2. A side panel opens with **Name** and **Description** (required).
+To create one:
 
-Here are ready-to-use examples you can copy and edit:
-
-**Name:**
-Intro assessment call (15 min)
-
-**Description:**
-A quick call to understand your situation and recommend the next step.  
-If you need to reschedule, reply to this message and we’ll help you.
-
-Configure the typical settings:
-
-- **Slot Duration:** how long each booking is (e.g., 30 minutes).
-- **Reminder Minutes:** how far in advance to send the reminder (e.g., 15).
-- **Reminder Type:** for example Email.
-- **Allow Event Overlap:** whether overlapping bookings are allowed (usually “No” to prevent double-booking).
-
-Scroll to **Working Hours** and define when the agent can offer appointments:
-
-- Check available days (Mon–Fri, for example).
-- Set the time range (e.g., 09:00–17:00).
-- Leave weekends as Unavailable if you don’t take meetings.
-
+1. In the **Event Templates** section, click **Create Event Template**.
+2. Fill out the fields (details below).
 3. Click **Save**.
 
-You’ll now see the template listed with a quick summary (duration, reminder, etc.).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions2.png" alt="Create Event Template panel with fields for Name, Description, Slot Duration, Reminder Minutes, Reminder Type, Allow Event Overlap, Conflict Handling, and Working Hours with weekday checkboxes" style={{ width:"100%", display:"block" }} />
+</div>
 
-**Practical tip:** Create separate templates per appointment type (e.g., Demo 30 min, Support 15 min, Follow-up 10 min). That way the agent always books the right format.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Event Template editor where you define duration, reminders, conflict rules, and working days.
+</p>
 
-## Step 5: Attach the template to an agent (Call Actions)
+### Field-by-field explanation (with practical examples)
 
-Now you’ll enable booking capability on an agent.
+| Field                   | What it controls                                                       | Example you can copy                       |
+| ----------------------- | ---------------------------------------------------------------------- | ------------------------------------------ |
+| **Name**                | The label for this appointment type (what you’ll recognize later)      | “30-min Intro Call”                        |
+| **Description**         | Helps your team understand what the appointment is for                 | “Quick intro + qualify needs + next steps” |
+| **Slot Duration**       | The length of each appointment in minutes                              | 30                                         |
+| **Reminder Minutes**    | How many minutes before the appointment the reminder is sent           | 15                                         |
+| **Reminder Type**       | The reminder channel (options may vary)                                | Email                                      |
+| **Allow Event Overlap** | Whether the system can book more than one appointment at the same time | No                                         |
+| **Conflict Handling**   | What happens when something overlaps                                   | Block overlapping events                   |
+| **Working Hours**       | Which days are eligible for booking                                    | Enable Monday–Friday                       |
 
-1. Go to **AI Agents**.
-2. Open the agent you want (click the agent name or edit).
-3. At the top, click the **Call Action** tab.
-4. Toggle **Schedule Appointment on Google Calendar** on.
-5. As soon as you enable it, Callin shows a configuration window where you choose:
-   - The connected account/calendar
-   - The Event Template (the one you just created)
-6. Select the right template and save.
+> **Common mistake:** Leaving **Working Hours** with no days selected. The template won’t be usable until at least one day is enabled.
 
-If you want guidance on how the agent should ask for date/time naturally, see Agent prompts and Conversation flows.
+### A complete example template (recommended starting point)
 
-## Optional: Advanced setup
+If you want a safe default:
 
-Once the basics work, these options help you scale cleanly:
+- **Name:** “Discovery Call (30 min)”
+- **Description:** “First call to understand needs and confirm next steps”
+- **Slot Duration:** 30
+- **Reminder Minutes:** 15
+- **Reminder Type:** Email
+- **Allow Event Overlap:** No
+- **Conflict Handling:** Block overlapping events
+- **Working Hours:** Monday–Friday
 
-- Multiple templates per calendar: create one template per appointment type and assign each to different agents (or teams).
-- Multiple calendars: keep Sales and Support separated and attach each calendar to the appropriate agents.
-- Sync after changes: if you created new calendars in Google or updated access, use **Sync** inside Callin’s Google Calendar page.
-- Timezones: if your team operates across countries, keep the agent timezone aligned with the calendar (see Timezones).
+This setup prevents double-bookings and gives a clean, predictable scheduling experience.
 
-## Common issues and fixes
+## Step 4: Attach Google Calendar scheduling to an AI Agent (Call Action)
 
-### “My calendars don’t show up”
+After you have:
 
-Most often: you connected a different Google account or permissions are missing. Disconnect, reconnect with the correct account, then hit **Sync**.
+- Connected a Google account, and
+- Created an Event Template,
 
-### “I created a template but it doesn’t appear on the agent”
+You can now enable booking inside an AI Agent.
 
-Make sure you created it under the correct calendar (left panel). Then reopen the agent’s **Schedule Appointment** configuration.
+1. Go to **AI Agents** in the left menu.
+2. Open the agent you want to configure and click **Edit**.
+3. Go to the **Call Action** tab.
+4. Turn on **Schedule Appointment**.
+5. Select **Google Calendar** as the provider.
+6. Click the **settings icon** (gear) to open configuration and select the template you created.
+7. Click **Save**.
 
-### “Appointments are created at the wrong time”
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions3.png" alt="Edit AI Agent screen on the Call Action tab showing Schedule Appointment enabled and Google Calendar selected for scheduling" style={{ width:"100%", display:"block" }} />
+</div>
 
-Usually a timezone mismatch between the agent and the calendar. Fix the agent timezone or use a calendar with the same timezone (see Timezones).
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Inside the agent’s Call Action settings, enable scheduling and choose Google Calendar as the booking provider.
+</p>
 
-### “Google won’t authorize / blank screen”
+> **Important:** For best results, ensure the agent’s timezone matches your calendar’s timezone. A mismatch can cause “wrong time” suggestions.
 
-Check pop-up blockers, privacy extensions, or try an incognito window.
+## How booking should work during a call (recommended conversation flow)
 
-### “Bookings are overlapping”
+Once everything is connected, the best experience is when the agent follows a simple, human flow:
 
-Review **Allow Event Overlap** in the template and disable it if you don’t want double-bookings.
+1. **Confirm intent**\
+   “Sure—do you want to book an appointment now?”
+2. **Collect the minimum required details**\
+   Ask for:
+   - Full name
+   - Phone number\
+     (Optionally: a short reason for the appointment, if relevant.)
+3. **Offer availability and confirm**\
+   The agent should propose times it can book (based on your template + calendar availability), then confirm the chosen slot.
+4. **Book and confirm details**\
+   The agent books the event and repeats:
+   - Date
+   - Time
+   - Duration
+   - What the appointment is for
 
-## Motivating wrap-up
+### Example (what “good” sounds like)
 
-Done! Your Google Calendar is connected, and your agent can now book appointments automatically—within working hours, with the right duration and reminders. Next, create 2–3 templates per use case and assign them across agents so every call ends with a perfectly scheduled next step.
+- Caller: “Can I book a time for a consultation?”
+- Agent: “Yes. What’s your full name and the best phone number for the appointment?”
+- Caller: “Jordan Lee, +1 555-010-2040.”
+- Agent: “Thanks. Do you prefer earlier in the day or later? I can book a 30-minute consultation.”
+- Caller: “Later is better.”
+- Agent: “Great—does Thursday at 4:00 PM work?”
+- Caller: “Yes.”
+- Agent: “Perfect. You’re booked for Thursday at 4:00 PM for 30 minutes. You’ll also receive a reminder before the appointment.”
+
+> **Tip:** Keep the prompt focused on **collecting details and confirming**. Let the template handle the scheduling rules.
+
+## Prompt rules: what to include (and what to avoid)
+
+### What you should include in the prompt
+
+Your prompt should instruct the agent to:
+
+- Ask for name and phone number before booking
+- Confirm the appointment purpose briefly (one sentence)
+- Confirm the selected time clearly before finalizing
+- Confirm booking details at the end
+
+A practical prompt instruction (written as plain guidance) could look like:
+
+- “When the caller wants to book, ask for their full name and phone number first. Then suggest available times and confirm the chosen time. After booking, repeat the date, time, and duration to confirm.”
+
+### What you should NOT include in the prompt
+
+Avoid instructions that duplicate or override the Event Template, such as:
+
+- “Only book Monday to Friday”
+- “Only book between 9am and 5pm”
+- “Never book same-day appointments”
+- “Only allow 1 appointment per day”
+
+Those rules should be configured in the **Event Template** (Working Hours, conflict rules, overlap rules). Keeping the prompt clean prevents conflicts and improves booking accuracy.
+
+> **Important:** Think of it this way:\
+> **Template = rules and availability**\
+> **Prompt = conversation and data collection**
+
+## Best LLM for scheduling: Gemini 2.5 Flash (recommended)
+
+For scheduling accuracy, Callin.io works best with **Gemini 2.5 Flash**.
+
+> **Tip:** If scheduling fails (wrong times, missed availability, confusion), switch the agent’s LLM to **Gemini 2.5 Flash**, save, and test again.
+
+## Troubleshooting checklist (quick fixes)
+
+### “I connected Google Calendar but I don’t see my calendar”
+
+- Click **Sync** on the Google Calendar page.
+- Confirm you connected the correct Google account.
+
+### “It says no availability”
+
+- Check **Working Hours** in your Event Template (at least one day must be enabled).
+- Confirm your Google Calendar isn’t fully blocked with busy events.
+
+### “The agent books at the wrong time”
+
+- Verify the agent timezone matches the calendar timezone.
+- If the behavior is inconsistent, switch to **Gemini 2.5 Flash**.
+
+### “Double bookings happen”
+
+- Set **Allow Event Overlap** to **No**.
+- Use a conflict option that blocks overlapping events.

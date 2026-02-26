@@ -1,147 +1,236 @@
 ---
-title: "Conectar Google Calendar"
-description: "Conecta Google Calendar y permite que tu agente reserve citas durante las llamadas."
+title: "Google Calendar"
+description: "Guía paso a paso para conectar Google Calendar en Callin.io, crear una plantilla de evento (disponibilidad + duración + recordatorios) y asignarla a un AI Agent para que reserve citas durante las llamadas, sin meter reglas de horario en el prompt que puedan interferir."
 ---
 
-## Guía en vídeo
+## Qué vas a configurar (y por qué es importante)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <iframe
-    width="100%"
-    height="420"
-    src="https://www.youtube-nocookie.com/embed/vEjRf0FklRc"
-    title="YouTube video"
-    frameBorder="0"
-    loading="lazy"
-    referrerPolicy="strict-origin-when-cross-origin"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowFullScreen
+La reserva con Google Calendar en Callin.io está pensada para ser consistente y confiable. Para lograrlo, la configuración se divide en dos partes:
+
+1) **Configuración de la integración de Google Calendar**  
+   Conectas tu cuenta de Google y creas una **Plantilla de Evento**. Esa plantilla es donde se definen las reglas de reserva (días disponibles, duración, recordatorios y manejo de conflictos).
+
+2) **Configuración del AI Agent (Call Action)**  
+   Activas **Schedule Appointment** dentro del agente y seleccionas la plantilla que creaste.
+
+> **Importante:** Las reglas de reserva deben vivir en la **Plantilla de Evento**, no en el prompt del agente. Evita instrucciones como “Solo de lunes a viernes” o “Solo entre 9am y 5pm” dentro del prompt—esas reglas pueden interferir con la lógica de agenda que ya trae la plataforma al conectar Google Calendar.
+
+## Abrir la integración de Google Calendar
+
+Usa este enlace directo para abrir la integración de Google Calendar: **[haz clic aquí](https://app.callin.io/actions/google-calendar)**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/Screens/actions1.png"
+    alt="Página de integración de Google Calendar mostrando los botones Sync y Connect Google Account, una barra de búsqueda de calendarios, el panel de cuenta conectada y la sección de Event Templates"
+    style={{ width:"100%", display:"block" }}
   />
 </div>
 
-## Antes de empezar
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: Esta es el área de Google Calendar donde conectas tu cuenta, eliges un calendario y administras plantillas de eventos.
+</p>
 
-Antes de ponerte a hacer clic, asegúrate de tener lo esencial para que todo funcione a la primera:
+> **Consejo:** Si tu interfaz se ve un poco diferente, es normal—algunos elementos pueden variar según tu cuenta o plan.
 
-- Una cuenta de Callin con permisos para acceder a Actions y editar AI Agents (si no los ves, revisa Roles & permissions).
-- Una cuenta de Google con acceso al calendario donde deben crearse las citas.
-- Pop-ups habilitados en tu navegador (Google abre una ventana de autorización separada).
-- Recomendación fuerte: confirma la zona horaria de tu agente. Callin avisa sobre esto porque las zonas horarias desalineadas pueden desplazar las horas de las citas (ver Timezones).
+## Paso 1: Conectar tu cuenta de Google
 
-## Paso 1: Ve a “Actions” y abre Google Calendar
+1) En la página de integración de Google Calendar, haz clic en **Connect Google Account**.  
+2) Se abre una ventana de inicio de sesión de Google. Elige la cuenta que quieres usar para reservas.  
+3) Acepta la pantalla de permisos para que Callin.io pueda crear eventos y comprobar disponibilidad.
 
-1. En el menú izquierdo de Callin, haz clic en **Actions**.
-2. Verás tarjetas de integraciones (Google Calendar, GoHighLevel, Zoho, etc.).
-3. En **Google Calendar**, haz clic en **Connect** (o ábrelo y usa **Connect Google Account**).
+Cuando se conecta correctamente, normalmente verás:
+- Tu cuenta de Google en el panel izquierdo
+- Un listado de calendarios para seleccionar
+- La opción **Disconnect Account** (úsala si conectaste la cuenta equivocada)
 
-**Tip:** Si ya conectaste una cuenta pero no ves calendarios nuevos, usa **Sync** para actualizar lo que Callin puede acceder.
+> **Importante:** Usa un calendario que refleje tu disponibilidad real. Si tu Google Calendar está siempre “ocupado” (o siempre “libre”), la experiencia de reserva no va a coincidir con la realidad.
 
-## Paso 2: Conecta tu cuenta de Google (inicio de sesión + permisos)
+## Paso 2: Elegir el calendario donde se crearán las citas
 
-Callin te redirigirá por el flujo de autorización de Google:
+En el panel izquierdo, selecciona el calendario donde quieres que se creen las reservas.
 
-1. Selecciona la cuenta de Google que quieres conectar.
-2. Verás una pantalla de confirmación como “You’re signing in again to Callin/AI Calls.” Haz clic en **Continue**.
-3. Aprueba los permisos que Google solicite para que Callin pueda leer tu calendario y crear eventos cuando el agente reserve.
+Ejemplos:
+- Un negocio de servicios puede usar un calendario llamado “Citas”
+- Un equipo de ventas puede usar “Discovery Calls”
+- Una clínica puede usar “Consultas”
 
-Cuando vuelvas a Callin, deberías ver tu cuenta de Google conectada dentro de la configuración de Google Calendar.
+Por qué esta selección importa:
+- Tu plantilla se crea **para un calendario específico**
+- Luego el agente reservará usando el calendario/plantilla que le asignes
 
-**Warning:** Si conectas la cuenta de Google “equivocada”, parecerá que “no existen calendarios”. No es un bug: simplemente estás en otra cuenta. Desconecta y repite con la correcta.
+> **Consejo:** Si tienes varios calendarios (por equipo o por servicio), puedes crear plantillas distintas por calendario y asignar la correcta a cada AI Agent.
 
-## Paso 3: Selecciona el calendario correcto dentro de Callin
+## Paso 3: Crear una Plantilla de Evento (aquí van las reglas de agenda)
 
-En **Actions → Google Calendar**, verás:
+Antes de conectar la agenda a un AI Agent, necesitas crear al menos una **Plantilla de Evento**.
 
-- A la izquierda: la cuenta conectada y los calendarios disponibles
-- A la derecha: **Event Templates**
+Esta plantilla define:
+- Cuánto dura cada cita
+- Cómo funcionan los recordatorios
+- Si se permite solapar reservas
+- Cómo se manejan conflictos
+- Qué días están disponibles (Working Hours)
 
-1. Haz clic en el calendario donde deben crearse las reservas (por ejemplo: tu calendario principal o un calendario dedicado a Sales).
-2. Mira el panel derecho: aquí es donde creas plantillas que tu agente usará al reservar.
+Para crearla:
+1) En la sección **Event Templates**, haz clic en **Create Event Template**.  
+2) Completa los campos (explicación abajo).  
+3) Haz clic en **Save**.
 
-**Important:** Callin soporta múltiples plantillas por calendario, y puedes asignar plantillas de distintos calendarios a diferentes agentes (ver Booking templates).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/Screens/actions2.png"
+    alt="Panel Create Event Template con campos para Name, Description, Slot Duration, Reminder Minutes, Reminder Type, Allow Event Overlap, Conflict Handling y Working Hours con casillas por día"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-## Paso 4: Crea tu primer “Event Template” (el molde de tu cita)
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: El editor de Plantilla de Evento donde defines duración, recordatorios, reglas de conflicto y días de trabajo.
+</p>
 
-Una plantilla es el “molde” de la cita: nombre, descripción, duración, recordatorio y horas disponibles.
+### Explicación campo por campo (con ejemplos prácticos)
 
-1. En **Event Templates**, haz clic en **Create Event Template**.
-2. Se abrirá un panel lateral con **Name** y **Description** (obligatorios).
+| Campo | Qué controla | Ejemplo listo para copiar |
+|---|---|---|
+| **Name** | La etiqueta del tipo de cita (para reconocerla luego) | “Llamada Intro (30 min)” |
+| **Description** | Ayuda al equipo a entender para qué es la cita | “Introducción + calificar + próximos pasos” |
+| **Slot Duration** | Duración de cada cita en minutos | 30 |
+| **Reminder Minutes** | Cuántos minutos antes se envía el recordatorio | 15 |
+| **Reminder Type** | Canal del recordatorio (puede variar) | Email |
+| **Allow Event Overlap** | Si se permite reservar más de una cita al mismo tiempo | No |
+| **Conflict Handling** | Qué pasa cuando hay solapamientos | Bloquear eventos solapados |
+| **Working Hours** | Qué días se pueden reservar | Habilitar lunes–viernes |
 
-Aquí tienes ejemplos listos para usar que puedes copiar y editar:
+> **Error común:** Dejar **Working Hours** sin días seleccionados. La plantilla no será usable hasta habilitar al menos un día.
 
-**Name:**
-Llamada de evaluación inicial (15 min)
+### Ejemplo de plantilla completa (recomendación inicial)
 
-**Description:**
-Una llamada rápida para entender tu situación y recomendar el siguiente paso.  
-Si necesitas reprogramar, responde a este mensaje y te ayudaremos.
+Si quieres un punto de partida seguro:
+- **Name:** “Discovery Call (30 min)”
+- **Description:** “Primera llamada para entender necesidad y definir próximos pasos”
+- **Slot Duration:** 30
+- **Reminder Minutes:** 15
+- **Reminder Type:** Email
+- **Allow Event Overlap:** No
+- **Conflict Handling:** Bloquear eventos solapados
+- **Working Hours:** Lunes–viernes
 
-Configura los ajustes típicos:
+Esta configuración evita dobles reservas y hace que la agenda sea predecible.
 
-- **Slot Duration:** cuánto dura cada reserva (por ejemplo, 30 minutos).
-- **Reminder Minutes:** cuántos minutos antes se envía el recordatorio (por ejemplo, 15).
-- **Reminder Type:** por ejemplo Email.
-- **Allow Event Overlap:** si se permiten reservas solapadas (normalmente “No” para evitar double-booking).
+## Paso 4: Conectar la reserva de Google Calendar a un AI Agent (Call Action)
 
-Baja hasta **Working Hours** y define cuándo el agente puede ofrecer citas:
+Una vez que:
+- Conectaste una cuenta de Google, y
+- Creaste una Plantilla de Evento,
 
-- Marca los días disponibles (Mon–Fri, por ejemplo).
-- Define el rango horario (por ejemplo, 09:00–17:00).
-- Deja los fines de semana como Unavailable si no haces reuniones.
+Ahora sí puedes habilitar reservas dentro de un AI Agent.
 
-3. Haz clic en **Save**.
+1) Ve a **AI Agents** en el menú izquierdo.  
+2) Abre el agente que quieres configurar y haz clic en **Edit**.  
+3) Entra a la pestaña **Call Action**.  
+4) Activa **Schedule Appointment**.  
+5) Selecciona **Google Calendar** como proveedor.  
+6) Haz clic en el **icono de configuración** (engranaje) para abrir la configuración y seleccionar la plantilla que creaste.  
+7) Haz clic en **Save**.
 
-Ahora verás la plantilla listada con un resumen rápido (duración, recordatorio, etc.).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/Screens/actions3.png"
+    alt="Pantalla Edit AI Agent en la pestaña Call Action mostrando Schedule Appointment activado y Google Calendar seleccionado como proveedor de agenda"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-**Practical tip:** Crea plantillas separadas por tipo de cita (por ejemplo, Demo 30 min, Support 15 min, Follow-up 10 min). Así el agente siempre reserva el formato correcto.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: Dentro de Call Action del agente, habilita reservas y elige Google Calendar como proveedor de agenda.
+</p>
 
-## Paso 5: Vincula la plantilla a un agente (Call Actions)
+> **Importante:** Para mejores resultados, asegúrate de que la zona horaria del agente coincida con la zona horaria del calendario. Si no coincide, el agente puede sugerir horarios “corridos”.
 
-Ahora habilitarás la capacidad de reservar en un agente.
+## Cómo debería funcionar la reserva durante la llamada (flujo recomendado)
 
-1. Ve a **AI Agents**.
-2. Abre el agente que quieras (haz clic en el nombre del agente o en edit).
-3. Arriba, haz clic en la pestaña **Call Action**.
-4. Activa **Schedule Appointment on Google Calendar**.
-5. En cuanto lo actives, Callin mostrará una ventana de configuración donde eliges:
-   - La cuenta/calendario conectado
-   - El Event Template (el que acabas de crear)
-6. Selecciona la plantilla correcta y guarda.
+Con todo conectado, la mejor experiencia se logra cuando el agente sigue un flujo sencillo y humano:
 
-Si quieres guía sobre cómo el agente debe pedir fecha/hora de forma natural, consulta Agent prompts y Conversation flows.
+1) **Confirmar intención**  
+   “Perfecto—¿quieres que te agende una cita ahora?”
 
-## Opcional: Configuración avanzada
+2) **Pedir los datos mínimos necesarios**  
+   Pide:
+   - Nombre completo
+   - Número de teléfono  
+   (Opcional: motivo breve de la cita, si aplica.)
 
-Cuando lo básico funcione, estas opciones te ayudan a escalar de forma ordenada:
+3) **Proponer disponibilidad y confirmar**  
+   El agente debe proponer horarios que pueda reservar (según tu plantilla + disponibilidad del calendario) y confirmar el horario elegido.
 
-- Múltiples plantillas por calendario: crea una plantilla por tipo de cita y asigna cada una a distintos agentes (o equipos).
-- Múltiples calendarios: separa Sales y Support y vincula cada calendario a los agentes correspondientes.
-- Sync después de cambios: si creaste calendarios nuevos en Google o actualizaste accesos, usa **Sync** dentro de la página de Google Calendar de Callin.
-- Timezones: si tu equipo opera entre países, mantén la zona horaria del agente alineada con la del calendario (ver Timezones).
+4) **Reservar y confirmar detalles**  
+   Tras reservar, repetir:
+   - Fecha
+   - Hora
+   - Duración
+   - Motivo de la cita
 
-## Problemas comunes y soluciones
+### Ejemplo (cómo suena una “buena” reserva)
 
-### “Mis calendarios no aparecen”
+- Persona: “¿Puedo agendar una consulta?”
+- Agente: “Sí. ¿Me dices tu nombre completo y el mejor número de teléfono para la cita?”
+- Persona: “Jordan Lee, +1 555-010-2040.”
+- Agente: “Gracias. ¿Prefieres más temprano o más tarde? Puedo agendar una consulta de 30 minutos.”
+- Persona: “Más tarde.”
+- Agente: “Perfecto—¿te va bien el jueves a las 4:00 PM?”
+- Persona: “Sí.”
+- Agente: “Listo. Quedas agendado para el jueves a las 4:00 PM por 30 minutos. También recibirás un recordatorio antes de la cita.”
 
-Lo más habitual: conectaste otra cuenta de Google o faltan permisos. Desconecta, reconecta con la cuenta correcta y luego pulsa **Sync**.
+> **Consejo:** Mantén el prompt enfocado en **pedir datos y confirmar**. Deja que la plantilla maneje las reglas de horario.
 
-### “Creé una plantilla pero no aparece en el agente”
+## Reglas del prompt: qué incluir (y qué evitar)
 
-Asegúrate de que la creaste bajo el calendario correcto (panel izquierdo). Después, vuelve a abrir la configuración de **Schedule Appointment** del agente.
+### Qué sí debes incluir en el prompt
 
-### “Las citas se crean a una hora incorrecta”
+Tu prompt debe indicar que el agente:
+- Pida nombre y teléfono antes de reservar
+- Confirme el motivo de la cita de forma breve (una frase)
+- Confirme claramente el horario antes de finalizar
+- Confirme los detalles de la reserva al final
 
-Normalmente es un desajuste de zona horaria entre el agente y el calendario. Corrige la zona horaria del agente o usa un calendario con la misma zona horaria (ver Timezones).
+Una instrucción práctica (en texto normal) puede ser:
+- “Cuando la persona quiera agendar, primero pide su nombre completo y su teléfono. Luego sugiere horarios disponibles y confirma el elegido. Después de reservar, repite fecha, hora y duración para confirmar.”
 
-### “Google no autoriza / pantalla en blanco”
+### Qué NO debes incluir en el prompt
 
-Revisa bloqueadores de pop-ups, extensiones de privacidad o prueba en una ventana de incógnito.
+Evita instrucciones que dupliquen o intenten reemplazar la Plantilla de Evento, como:
+- “Solo de lunes a viernes”
+- “Solo entre 9am y 5pm”
+- “Nunca reservar el mismo día”
+- “Solo permitir 1 cita por día”
 
-### “Las reservas se solapan”
+Esas reglas deben configurarse en la **Plantilla de Evento** (Working Hours, conflicto, solapamiento). Mantener el prompt “limpio” evita interferencias y mejora la precisión.
 
-Revisa **Allow Event Overlap** en la plantilla y desactívalo si no quieres double-bookings.
+> **Importante:** Piénsalo así:  
+> **Plantilla = reglas y disponibilidad**  
+> **Prompt = conversación y captura de datos**
 
-## Cierre motivador
+## Mejor LLM para reservas: Gemini 2.5 Flash (recomendado)
 
-¡Listo! Tu Google Calendar está conectado y tu agente ya puede reservar citas automáticamente—dentro del horario laboral, con la duración correcta y recordatorios. Ahora, crea 2–3 plantillas por caso de uso y asígnalas entre agentes para que cada llamada termine con un siguiente paso perfectamente programado.
+Para precisión de agenda, Callin.io funciona mejor con **Gemini 2.5 Flash**.
 
+> **Consejo:** Si la reserva falla (horarios incorrectos, disponibilidad mal interpretada, confusión), cambia el LLM del agente a **Gemini 2.5 Flash**, guarda y vuelve a probar.
+
+## Checklist de troubleshooting (arreglos rápidos)
+
+### “Conecté Google Calendar pero no veo mi calendario”
+- Haz clic en **Sync** en la página de Google Calendar.
+- Confirma que conectaste la cuenta correcta.
+
+### “No encuentra disponibilidad”
+- Revisa **Working Hours** en tu plantilla (debe haber al menos un día habilitado).
+- Asegúrate de que tu Google Calendar no esté completamente bloqueado con eventos ocupados.
+
+### “El agente agenda en una hora equivocada”
+- Verifica que la zona horaria del agente coincide con la del calendario.
+- Si el comportamiento es inconsistente, cambia a **Gemini 2.5 Flash**.
+
+### “Se están creando dobles reservas”
+- Configura **Allow Event Overlap** en **No**.
+- Usa una opción de conflicto que bloquee eventos solapados.
