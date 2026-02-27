@@ -1,37 +1,203 @@
 ---
-title: "Guida alla Gestione Utenti"
-description: "Controlla chi può accedere alla tua app, i suoi permessi e i livelli di abbonamento."
+title: "Configurazione White Label"
+description: "Configure your branded app: name, custom domain and DNS, billing defaults, and your customer-facing appearance (colors, logos, favicon, and theme)."
 ---
 
-## Prima di iniziare
-La sezione **Gestione Utenti** ti permette di controllare chi può accedere alla tua applicazione, quali permessi ha e a quale livello di abbonamento appartiene. Da qui puoi creare account per il tuo team, per i clienti o per chiunque abbia bisogno di usare la piattaforma.  
-Importante: non potrai aggiungere utenti finché non avrai configurato un dominio nella scheda **White Label**. Se non l’hai ancora fatto, completa prima quella configurazione e poi continua.
+## Cosa trovi in questa pagina
 
-## Passaggio 1: Accedere alla sezione Utenti
-All’interno del CMS, vai nel menu a sinistra e seleziona **Users**.  
-Se non hai ancora configurato un dominio in **White Label**, vedrai un avviso rosso che indica che non hai i permessi. Quando il dominio sarà pronto, questa sezione verrà abilitata e potrai gestire gli utenti normalmente.
+**Configurazione White Label** è il centro di controllo della tua app con brand. In alto vedrai due schede:
 
-## Passaggio 2: Aggiungere un nuovo utente
-Fai clic sul pulsante **Add User** in alto a destra. Si aprirà un modulo in cui dovrai completare le informazioni di base:  
-- **Email:** l’indirizzo email che l’utente userà per accedere. Assicurati che sia valido e attivo.  
-- **Password:** imposta una password sicura oppure lascia che l’utente la cambi in seguito.  
-- **Full Name:** nome e cognome della persona. Apparirà nei log di attività e rende più facile identificare ogni utente.  
-- **Company Name:** utile se stai gestendo clienti esterni. Puoi collegare l’utente all’azienda che rappresenta.  
-- **Role:** definisce il livello di accesso dell’utente (ad esempio: Manager, Admin o User). Il ruolo determina i permessi.  
-- **Subscription Tier:** seleziona il piano di abbonamento applicato all’utente, ad esempio Standard.
+- **Configurazione**: impostazioni di base che influenzano come funziona la tua app (soprattutto dominio e DNS).
+- **Aspetto**: l’identità visiva che vedranno i tuoi clienti (colori, loghi, favicon e tema predefinito).
 
-Esempio pratico:  
-Se stai aggiungendo un membro del tuo team di supporto, registralo con la sua email, assegnagli il ruolo **Manager** e impostalo sul piano **Standard**. In questo modo potrà visualizzare e gestire le chiamate, ma non potrà modificare le impostazioni avanzate.
+Aprila qui: [Apri Configurazione White Label](https://app.callin.io/cms/white-label-configuration)
 
-Una volta compilati tutti i campi, fai clic su **Add User** e l’account verrà creato immediatamente.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel1.png"
+    alt="Pagina White Label Configuration nella scheda Configuration con campi come App Name, Custom Domain (con il pulsante DNS Configuration), Currency, App Language e altro."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-## Passaggio 3: Cercare e gestire gli utenti
-Dopo la creazione, gli utenti appariranno nell’elenco di questa sezione. Usa la barra di ricerca per trovarli rapidamente per nome o email. Da qui puoi anche modificare i dettagli utente, cambiare ruoli, aggiornare password o rimuovere utenti che non devono più avere accesso.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la scheda “Configuration” dove definisci nome app, dominio personalizzato e impostazioni predefinite come valuta e lingua.
+</p>
 
-## Errori comuni e soluzioni
-**L’opzione Add User non è disponibile** → verifica di aver configurato il dominio White Label.  
-**Email non valida** → assicurati che l’email non contenga spazi o caratteri speciali.  
-**Ruoli errati** → se un utente non può accedere a determinate funzioni, controlla il ruolo assegnato.
+> **Importante:** Alcune impostazioni possono variare in base al tuo piano e ai permessi.
 
-## Il tuo team, il tuo controllo
-Questa sezione ti dà la flessibilità di concedere accesso solo a chi ne ha bisogno e di definire cosa può fare ogni persona. Una corretta gestione degli utenti riduce i rischi di sicurezza e mantiene la tua applicazione organizzata fin dal primo giorno.
+## Configurazione
+
+### Nome dell’app
+
+Il **Nome dell’app** è ciò che i clienti riconosceranno nell’esperienza: ad esempio nella navigazione e nei titoli delle pagine.
+
+Regola pratica: usa lo stesso nome che utilizzi nei materiali di vendita.  
+Esempio: se vendi “Northwind Reception”, imposta il nome dell’app su **Northwind Reception**.
+
+### Dominio personalizzato (consigliato: usare un sottodominio)
+
+In **Dominio personalizzato**, inserisci il dominio che i clienti useranno per accedere all’app.
+
+Callin consiglia di usare un **sottodominio che controlli**, ad esempio:
+
+- `app.iltuodominio.com`
+
+Perché il sottodominio è importante:
+
+- Il tuo **dominio principale** (come `iltuodominio.com`) di solito ospita il sito marketing, le landing page, il blog e gli script di tracciamento.
+- Tenere il prodotto su `app.iltuodominio.com` aiuta a evitare conflitti e mantiene il sito indipendente.
+
+> **Consiglio:** Scegli un sottodominio facile da ricordare: `app`, `portal` o `dashboard`.
+
+### DNS Configuration
+
+Dopo aver inserito il dominio personalizzato, clicca su **DNS Configuration**. Si apre una finestra con due modi per configurare il DNS:
+
+- **Provider** (configurazione guidata/automatica)
+- **Manual** (aggiungi i record manualmente)
+
+#### Provider (configurazione guidata/automatica)
+
+Usa **Provider** quando il tuo provider DNS è supportato. L’idea: selezioni il provider e Callin ti aiuta a “scoprire” cosa serve per completare la configurazione del dominio.
+
+Cosa fai:
+
+1. Apri la scheda **Provider**.
+2. In **DNS Provider**, seleziona il tuo provider (esempi: **Cloudflare**, **GoDaddy** e **Namecheap**).
+3. Clicca su **Discover**.
+
+Cosa aspettarti:
+
+- Callin proverà a guidarti per completare la configurazione DNS del dominio che hai indicato.
+- Se qualcosa non va, potresti vedere un banner di errore tipo “Something went wrong…”; di solito significa che la configurazione del dominio o i record DNS non corrispondono ancora a quanto atteso.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel2.png"
+    alt="Finestra DNS Configuration nella scheda Provider con un selettore di provider DNS (lista con Cloudflare, GoDaddy e Namecheap) e un pulsante Discover. In alto è visibile un banner di errore."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: configurazione DNS per provider, dove scegli il provider ed esegui Discover per un flusso guidato.
+</p>
+
+> **Errore comune:** Le modifiche DNS non sono immediate. Se hai appena aggiornato i record, aspetta un po’ e riprova.
+
+#### Manual (aggiungere i record DNS manualmente)
+
+Usa **Manual** se:
+
+- il tuo provider non è presente nell’elenco, oppure
+- il flusso tramite provider non funziona, oppure
+- preferisci gestire il DNS manualmente.
+
+Nella scheda **Manual**, Callin mostra una piccola tabella con i record DNS da creare presso il tuo registrar/provider DNS. La tabella include:
+
+- **Type** (ad esempio A o CNAME)
+- **Name** (ad esempio `@` o `app`)
+- **Value** (la destinazione)
+- **TTL** (spesso “300 or auto” a seconda del provider)
+
+Il tuo flusso è questo:
+
+1. Apri **Manual**.
+2. Aggiungi ogni record DNS esattamente come mostrato nella tabella.
+3. Quando hai finito, clicca su **Install SSL** per completare.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel3.png"
+    alt="Finestra DNS Configuration nella scheda Manual con una tabella di record DNS (Type, Name, Value, TTL) e un pulsante Install SSL."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: configurazione DNS manuale con i record esatti da aggiungere e il pulsante Install SSL per finalizzare.
+</p>
+
+> **Importante:** Clicca su **Install SSL** solo dopo aver aggiunto i record DNS e dopo che si sono propagati. I tempi di propagazione dipendono dal provider DNS.
+
+> **Consiglio:** Se non sai dove aggiungere i record, cerca nella documentazione del tuo provider “aggiungere record A” e “aggiungere record CNAME”. I nomi dei campi nella loro interfaccia possono variare.
+
+### Valuta
+
+La **Valuta** viene usata per i prezzi dei piani e per la visualizzazione della fatturazione. Impostala in base a come intendi addebitare i clienti (ad esempio EUR o USD).
+
+È particolarmente importante se creerai **piani di abbonamento** e addebiterai tramite un provider di pagamento (come Stripe), perché i clienti si aspettano coerenza tra prezzi e fatturazione.
+
+### Lingua dell’app
+
+La **Lingua dell’app** imposta la lingua predefinita che i clienti vedranno nell’interfaccia.
+
+Se servi clienti in più Paesi, scegli la lingua più adatta al tuo pubblico principale. (Le preferenze possono comunque variare in base alla configurazione e alle lingue disponibili.)
+
+### Posizione del server
+
+La **Posizione del server** ti consente di scegliere l’area geografica in cui i dati vengono ospitati per rispettare requisiti di residenza dei dati e conformità.
+
+Se lavori con clienti che hanno requisiti rigorosi (sanità, finanza, settore pubblico), allinea questa impostazione a ciò che hai promesso a livello contrattuale.
+
+### Informativa sulla privacy e Termini di utilizzo
+
+Questi campi ti permettono di collegare le tue pagine legali:
+
+- **Informativa sulla privacy**: come gestisci i dati personali.
+- **Termini di utilizzo**: le regole che i clienti accettano quando usano il tuo servizio.
+
+> **Consiglio:** Anche se sei un’agenzia, trattalo come un prodotto: pubblica queste pagine sul sito principale (dominio root) e collegale qui.
+
+## Aspetto
+
+Quando dominio e impostazioni di base sono pronti, passa alla scheda **Aspetto** per allineare l’interfaccia al tuo brand.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel4.png"
+    alt="Scheda Appearance con impostazioni dei colori, caricamento di Logo e Dark Logo, caricamento del favicon e selettore del tema predefinito (System/Light/Dark)."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la scheda Appearance dove personalizzi colori, loghi, favicon e il tema predefinito.
+</p>
+
+### Colori
+
+Di solito vedrai controlli colore come:
+
+- **Colore primario**: usato per pulsanti ed evidenziazioni principali.
+- **Colore secondario**: usato per accenti e stati dell’interfaccia.
+- **Colore primario email**: colore di accento principale nelle email transazionali.
+- **Colore pulsante CTA email**: colore usato per pulsanti principali e link nelle email.
+
+> **Consiglio:** Se hai già una brand guideline, parti dal colore principale e scegli un secondario che funzioni bene sia su sfondi chiari sia su sfondi scuri.
+
+### Loghi (chiaro e scuro)
+
+Di solito caricherai:
+
+- **Logo**: per sfondi chiari
+- **Dark Logo**: per sfondi scuri
+
+Questo è importante perché lo stesso logo non è sempre leggibile su entrambi i temi.
+
+> **Importante:** Usa **PNG** (idealmente con sfondo trasparente) o SVG se disponibile. Se il logo appare molto piccolo, spesso è perché l’immagine caricata ha un grande margine/cornice bianca attorno al logo: Callin riduce l’intera immagine per adattarla. Un PNG trasparente e ben “ritagliato” di solito risolve.
+
+### Favicon
+
+Il **Favicon** è la piccola icona mostrata nella scheda del browser e nei preferiti. Usa un ICO o un PNG adatto ai favicon (dimensioni comuni: 32×32 o 48×48).
+
+### Tema predefinito
+
+Il **Tema predefinito** controlla l’aspetto dell’app in modo predefinito:
+
+- **Sistema**: segue il tema del dispositivo dell’utente
+- **Chiaro**: forza la modalità chiara
+- **Scuro**: forza la modalità scura
+
+Un approccio pratico: scegliere **Sistema** se vuoi che l’app rispetti le preferenze di ogni utente.
