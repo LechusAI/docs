@@ -1,0 +1,203 @@
+---
+title: "Configuration White Label"
+description: "Configure your branded app: name, custom domain and DNS, billing defaults, and your customer-facing appearance (colors, logos, favicon, and theme)."
+---
+
+## Ce que vous trouverez sur cette page
+
+**Configuration White Label** est le centre de contrôle de votre application sous votre marque. En haut, vous verrez deux onglets :
+
+- **Configuration** : les paramètres de base qui influencent le fonctionnement de votre app (surtout le domaine et le DNS).
+- **Apparence** : l’identité visuelle que verront vos clients (couleurs, logos, favicon et thème par défaut).
+
+Ouvrez-la ici : [Ouvrir la configuration White Label](https://app.callin.io/cms/white-label-configuration)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel1.png"
+    alt="Page White Label Configuration sur l’onglet Configuration avec des champs comme App Name, Custom Domain (avec le bouton DNS Configuration), Currency, App Language, et plus."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet « Configuration » où vous définissez le nom de l’app, le domaine personnalisé et des valeurs par défaut comme la devise et la langue.
+</p>
+
+> **Important :** Certains paramètres peuvent varier selon votre offre et vos permissions.
+
+## Configuration
+
+### Nom de l’app
+
+Le **Nom de l’app** est ce que vos clients reconnaîtront dans l’expérience : par exemple dans la navigation et dans les titres de page.
+
+Bonne règle : utilisez le même nom que dans vos supports de vente.  
+Exemple : si vous vendez « Northwind Reception », définissez le nom de l’app sur **Northwind Reception**.
+
+### Domaine personnalisé (recommandé : utiliser un sous-domaine)
+
+Dans **Domaine personnalisé**, saisissez le domaine que vos clients utiliseront pour accéder à l’app.
+
+Callin recommande d’utiliser un **sous-domaine que vous contrôlez**, par exemple :
+
+- `app.votredomaine.com`
+
+Pourquoi un sous-domaine est important :
+
+- Votre **domaine racine** (comme `votredomaine.com`) héberge généralement votre site marketing, vos landing pages, votre blog et vos scripts de suivi.
+- Garder le produit sur `app.votredomaine.com` aide à éviter les conflits et à maintenir votre site indépendant.
+
+> **Conseil :** Choisissez un sous-domaine facile à mémoriser : `app`, `portal` ou `dashboard`.
+
+### Configuration DNS
+
+Après avoir saisi votre domaine personnalisé, cliquez sur **Configuration DNS**. Cela ouvre une fenêtre avec deux façons de configurer le DNS :
+
+- **Fournisseur** (configuration assistée/automatique)
+- **Manuel** (vous ajoutez vous-même les enregistrements)
+
+#### Fournisseur (configuration assistée/automatique)
+
+Utilisez **Fournisseur** lorsque votre fournisseur DNS est pris en charge. L’idée : vous sélectionnez votre fournisseur et Callin vous aide à « découvrir » ce qu’il faut pour que votre domaine fonctionne.
+
+Ce que vous faites :
+
+1. Ouvrez l’onglet **Fournisseur**.
+2. Dans **Fournisseur DNS**, sélectionnez votre fournisseur (exemples : **Cloudflare**, **GoDaddy** et **Namecheap**).
+3. Cliquez sur **Discover**.
+
+À quoi vous attendre :
+
+- Callin tentera de vous guider pour finaliser la configuration DNS du domaine que vous avez indiqué.
+- En cas d’échec, vous pouvez voir une bannière d’erreur du type « Something went wrong… » ; cela signifie généralement que la configuration du domaine ou les enregistrements DNS ne correspondent pas encore à ce qui est attendu.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel2.png"
+    alt="Fenêtre DNS Configuration sur l’onglet Fournisseur avec un sélecteur de fournisseur DNS (liste incluant Cloudflare, GoDaddy et Namecheap) et un bouton Discover. Une bannière d’erreur est visible en haut."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration DNS par fournisseur, où vous choisissez le fournisseur et lancez Discover pour un flux assisté.
+</p>
+
+> **Erreur fréquente :** Les changements DNS ne s’appliquent pas instantanément. Si vous venez de modifier des enregistrements, attendez un peu puis réessayez.
+
+#### Manuel (ajouter vous-même les enregistrements DNS)
+
+Utilisez **Manuel** si :
+
+- votre fournisseur n’apparaît pas dans la liste, ou
+- le flux par fournisseur échoue, ou
+- vous préférez gérer le DNS vous-même.
+
+Sur l’onglet **Manuel**, Callin affiche un petit tableau des enregistrements DNS à créer chez votre registrar/fournisseur DNS. Le tableau comprend :
+
+- **Type** (par exemple, A ou CNAME)
+- **Nom** (par exemple, `@` ou `app`)
+- **Valeur** (la destination)
+- **TTL** (souvent « 300 ou auto » selon votre fournisseur)
+
+Votre procédure ressemble à ceci :
+
+1. Ouvrez **Manuel**.
+2. Ajoutez chaque enregistrement DNS exactement comme indiqué dans le tableau.
+3. Une fois terminé, cliquez sur **Install SSL** pour finaliser.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel3.png"
+    alt="Fenêtre DNS Configuration sur l’onglet Manuel affichant un tableau d’enregistrements DNS (Type, Name, Value, TTL) et un bouton Install SSL."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration DNS manuelle avec les enregistrements exacts à ajouter et le bouton Install SSL pour finaliser.
+</p>
+
+> **Important :** Ne cliquez sur **Install SSL** qu’après avoir ajouté les enregistrements DNS et après leur propagation. Le temps de propagation dépend de votre fournisseur DNS.
+
+> **Conseil :** Si vous ne savez pas où ajouter les enregistrements, cherchez dans la documentation de votre fournisseur « ajouter un enregistrement A » et « ajouter un enregistrement CNAME ». Les libellés des champs peuvent varier.
+
+### Devise
+
+La **Devise** est utilisée pour les prix des plans et l’affichage de la facturation. Définissez-la pour qu’elle corresponde à la façon dont vous comptez facturer vos clients (par exemple EUR ou USD).
+
+C’est particulièrement important si vous allez créer des **plans d’abonnement** et facturer via un prestataire de paiement (comme Stripe), car les clients attendent une cohérence entre le prix et la facturation.
+
+### Langue de l’app
+
+La **Langue de l’app** définit la langue par défaut que verront vos clients dans l’interface.
+
+Si vous servez des clients dans plusieurs pays, choisissez la langue qui correspond à votre audience principale. (Les préférences peuvent ensuite varier selon votre configuration et les langues disponibles.)
+
+### Emplacement du serveur
+
+L’**Emplacement du serveur** vous permet de choisir la région géographique où les données sont hébergées afin de répondre aux exigences de résidence des données et de conformité.
+
+Si vous travaillez avec des clients ayant des exigences strictes (santé, finance, secteur public), alignez ce paramètre sur ce que vous avez promis contractuellement.
+
+### Politique de confidentialité et Conditions d’utilisation
+
+Ces champs permettent de lier vos pages légales :
+
+- **Politique de confidentialité** : comment vous gérez les données personnelles.
+- **Conditions d’utilisation** : les règles que les clients acceptent lorsqu’ils utilisent votre service.
+
+> **Conseil :** Même si vous êtes une agence, traitez cela comme un produit : publiez ces pages sur votre site principal (domaine racine) et liez-les ici.
+
+## Apparence
+
+Une fois votre domaine et vos paramètres de base prêts, passez à l’onglet **Apparence** pour aligner l’interface avec votre marque.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel4.png"
+    alt="Onglet Apparence avec des réglages de couleurs, le téléversement de Logo et Dark Logo, un téléversement de favicon et un sélecteur de thème par défaut (System/Light/Dark)."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Apparence où vous personnalisez les couleurs, les logos, le favicon et le thème par défaut.
+</p>
+
+### Couleurs
+
+Vous verrez généralement des contrôles de couleur comme :
+
+- **Couleur principale** : utilisée pour les boutons et les mises en avant clés.
+- **Couleur secondaire** : utilisée pour les accents et les états de l’interface.
+- **Couleur principale des emails** : couleur d’accent principale dans les emails transactionnels.
+- **Couleur du bouton CTA des emails** : couleur utilisée pour les boutons principaux et les liens dans les emails.
+
+> **Conseil :** Si votre marque a déjà une charte, commencez par votre couleur principale, puis choisissez une couleur secondaire qui reste lisible sur fond clair comme sur fond sombre.
+
+### Logos (clair et sombre)
+
+Vous téléverserez généralement :
+
+- **Logo** : pour les arrière-plans clairs
+- **Dark Logo** : pour les arrière-plans sombres
+
+C’est important, car un même logo n’est pas toujours lisible sur les deux thèmes.
+
+> **Important :** Utilisez du **PNG** (idéalement avec un fond transparent) ou du SVG si disponible. Si votre logo apparaît minuscule, c’est souvent parce que l’image téléversée contient une grande marge/cadre blanc autour du logo : Callin réduit l’image entière pour l’adapter. Un PNG transparent bien « recadré » règle généralement le problème.
+
+### Favicon
+
+Le **Favicon** est la petite icône affichée dans l’onglet du navigateur et les favoris. Utilisez un ICO ou un PNG adapté (tailles courantes : 32×32 ou 48×48).
+
+### Thème par défaut
+
+Le **Thème par défaut** définit l’apparence initiale de l’app :
+
+- **Système** : suit le thème de l’appareil de l’utilisateur
+- **Clair** : force le mode clair
+- **Sombre** : force le mode sombre
+
+Une approche pratique : choisir **Système** si vous souhaitez que l’app respecte les préférences de chaque utilisateur.
