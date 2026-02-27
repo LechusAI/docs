@@ -1,37 +1,203 @@
 ---
-title: "Leitfaden zur Benutzerverwaltung"
-description: "Steuere, wer auf deine App zugreifen kann, welche Berechtigungen sie haben und zu welchen Abo-Stufen sie gehören."
+title: "White-Label-Konfiguration"
+description: "Configure your branded app: name, custom domain and DNS, billing defaults, and your customer-facing appearance (colors, logos, favicon, and theme)."
 ---
 
-## Bevor du beginnst
-Der Bereich „Benutzerverwaltung“ ermöglicht dir zu steuern, wer auf deine Anwendung zugreifen kann, welche Berechtigungen diese Personen haben und welcher Abo-Stufe sie zugeordnet sind. Von hier aus kannst du Konten für dein Team, deine Kunden oder alle anlegen, die die Plattform nutzen sollen.  
-Wichtig: Du kannst keine Benutzer hinzufügen, bevor du im White-Label-Tab eine Domain eingerichtet hast. Wenn du das noch nicht gemacht hast, erledige das zuerst, bevor du fortfährst.
+## Was Sie auf dieser Seite finden
 
-## Schritt 1: Zum Bereich „Users“ wechseln
-Gehe im CMS in das linke Menü und wähle **Users**.  
-Wenn du noch keine Domain im White Label konfiguriert hast, siehst du eine rote Warnung, dass du keine Berechtigung hast. Sobald deine Domain bereit ist, wird dieser Bereich aktiviert und du kannst Benutzer normal verwalten.
+**White-Label-Konfiguration** ist das Kontrollzentrum für Ihre gebrandete App. Oben sehen Sie zwei Tabs:
 
-## Schritt 2: Einen neuen Benutzer hinzufügen
-Klicke oben rechts auf **Add User**. Es öffnet sich ein Formular, in dem du die Basisinformationen ausfüllen musst:  
-Email: die E-Mail-Adresse, die der Benutzer zum Einloggen verwendet. Stelle sicher, dass sie gültig und aktiv ist.  
-Password: lege ein sicheres Passwort fest oder lasse den Benutzer es später ändern.  
-Full Name: der vollständige Name der Person. Dieser erscheint in Aktivitätsprotokollen und erleichtert die Identifikation.  
-Company Name: hilfreich, wenn du externe Kunden verwaltest. Du kannst den Benutzer dem Unternehmen zuordnen, das er repräsentiert.  
-Role: definiert den Zugriffslevel des Benutzers. Zum Beispiel: Manager, Admin oder User. Die Rolle bestimmt die Berechtigungen.  
-Subscription Tier: wähle den Abo-Plan, der für den Benutzer gilt, zum Beispiel Standard.  
+- **Konfiguration**: Grundeinstellungen, die beeinflussen, wie Ihre App funktioniert (vor allem Domain und DNS).
+- **Erscheinungsbild**: die visuelle Identität, die Ihre Kunden sehen (Farben, Logos, Favicon und Standard-Theme).
 
-Praktisches Beispiel:  
-Wenn du ein Mitglied deines Support-Teams hinzufügst, registriere es mit seiner E-Mail, weise die Rolle Manager zu und ordne es dem Standard-Plan zu. So kann es Anrufe einsehen und verwalten, aber keine erweiterten Einstellungen ändern.  
+Öffnen Sie die Seite hier: [White-Label-Konfiguration öffnen](https://app.callin.io/cms/white-label-configuration)
 
-Sobald alle Felder ausgefüllt sind, klicke auf **Add User** und das Konto wird sofort erstellt.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel1.png"
+    alt="White Label Configuration Seite im Tab Configuration mit Feldern wie App Name, Custom Domain (mit DNS Configuration Button), Currency, App Language und mehr."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-## Schritt 3: Benutzer suchen und verwalten
-Nach dem Erstellen erscheinen die Benutzer in der Liste in diesem Bereich. Verwende die Suchleiste, um sie schnell nach Name oder E-Mail zu finden. Von hier aus kannst du außerdem Benutzerdaten bearbeiten, Rollen ändern, Passwörter aktualisieren oder Benutzer entfernen, die keinen Zugriff mehr haben sollen.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab „Configuration“, in dem Sie App-Name, eigene Domain und Standardwerte wie Währung und Sprache festlegen.
+</p>
 
-## Häufige Fehler und Lösungen
-Option „Add User“ nicht verfügbar → prüfe, ob du deine White-Label-Domain konfiguriert hast.  
-Ungültige E-Mail → stelle sicher, dass die E-Mail keine Leerzeichen oder Sonderzeichen enthält.  
-Falsche Rollen → wenn ein Benutzer bestimmte Funktionen nicht nutzen kann, überprüfe die zugewiesene Rolle.
+> **Wichtig:** Einige Einstellungen können je nach Plan und Berechtigungen variieren.
 
-## Dein Team, deine Kontrolle
-Dieser Bereich gibt dir die Flexibilität, Zugriff nur den Personen zu geben, die ihn benötigen, und genau festzulegen, was jede Person tun darf. Eine saubere Benutzerverwaltung verhindert Sicherheitsprobleme und hält deine Anwendung von Anfang an organisiert.
+## Konfiguration
+
+### App-Name
+
+Der **App-Name** ist das, was Kunden in der Erfahrung wiedererkennen – zum Beispiel in der Navigation und in Seitentiteln.
+
+Gute Faustregel: Verwenden Sie denselben Namen wie in Ihren Verkaufsunterlagen.  
+Beispiel: Wenn Sie „Northwind Reception“ verkaufen, setzen Sie den App-Namen auf **Northwind Reception**.
+
+### Eigene Domain (empfohlen: Subdomain verwenden)
+
+Unter **Eigene Domain** tragen Sie die Domain ein, über die Kunden die App öffnen.
+
+Callin empfiehlt eine **Subdomain, die Sie kontrollieren**, zum Beispiel:
+
+- `app.ihredomain.com`
+
+Warum eine Subdomain wichtig ist:
+
+- Ihre **Root-Domain** (z. B. `ihredomain.com`) hostet meist Ihre Marketing-Website, Landingpages, Blog und Tracking-Skripte.
+- Das Produkt auf `app.ihredomain.com` zu betreiben, hilft Konflikte zu vermeiden und hält Ihre Website unabhängig.
+
+> **Tipp:** Wählen Sie eine Subdomain, die sich leicht merken lässt: `app`, `portal` oder `dashboard`.
+
+### DNS-Konfiguration
+
+Nachdem Sie Ihre Domain eingetragen haben, klicken Sie auf **DNS Configuration**. Es öffnet sich ein Dialog mit zwei Möglichkeiten für die DNS-Einrichtung:
+
+- **Provider** (automatisch/geführt)
+- **Manual** (Sie tragen die Records selbst ein)
+
+#### Provider (automatisch/geführt)
+
+Nutzen Sie **Provider**, wenn Ihr DNS-Anbieter unterstützt wird. Die Idee: Sie wählen den Anbieter aus und Callin hilft beim „Discover“-Schritt, damit die Domain korrekt eingerichtet wird.
+
+So gehen Sie vor:
+
+1. Öffnen Sie den Tab **Provider**.
+2. Wählen Sie unter **DNS Provider** Ihren Anbieter (Beispiele: **Cloudflare**, **GoDaddy** und **Namecheap**).
+3. Klicken Sie auf **Discover**.
+
+Was Sie erwarten können:
+
+- Callin versucht, Sie durch die DNS-Einrichtung für die angegebene Domain zu führen.
+- Wenn etwas fehlschlägt, kann oben ein Fehlerbanner wie „Something went wrong…“ erscheinen; meist bedeutet das, dass Domain-Konfiguration oder DNS-Records noch nicht dem erwarteten Zustand entsprechen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel2.png"
+    alt="DNS Configuration Dialog im Provider-Tab mit einem auswählbaren DNS-Provider (Liste mit Cloudflare, GoDaddy und Namecheap) sowie einem Discover-Button. Oben ist ein Fehlerbanner zu sehen."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: DNS-Einrichtung per Provider, bei der Sie den Anbieter auswählen und Discover starten (geführter Flow).
+</p>
+
+> **Häufiger Fehler:** DNS-Änderungen greifen nicht sofort. Wenn Sie Records gerade erst geändert haben, warten Sie kurz und versuchen Sie es erneut.
+
+#### Manual (DNS-Records selbst anlegen)
+
+Nutzen Sie **Manual**, wenn:
+
+- Ihr Anbieter nicht in der Liste erscheint, oder
+- der Provider-Flow nicht funktioniert, oder
+- Sie DNS lieber selbst verwalten.
+
+Im Tab **Manual** zeigt Callin eine kleine Tabelle mit den DNS-Records, die Sie bei Ihrem Registrar/DNS-Anbieter anlegen müssen. Die Tabelle enthält:
+
+- **Type** (z. B. A oder CNAME)
+- **Name** (z. B. `@` oder `app`)
+- **Value** (das Ziel)
+- **TTL** (oft „300 or auto“, je nach Anbieter)
+
+Ihr Ablauf sieht so aus:
+
+1. Öffnen Sie **Manual**.
+2. Legen Sie jeden DNS-Record exakt so an, wie er in der Tabelle angezeigt wird.
+3. Wenn alles erledigt ist, klicken Sie auf **Install SSL**, um abzuschließen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel3.png"
+    alt="DNS Configuration Dialog im Manual-Tab mit einer Tabelle der DNS-Records (Type, Name, Value, TTL) und einem Install SSL Button."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: manuelle DNS-Einrichtung mit den exakt anzulegenden Records und dem Install SSL Button zum Finalisieren.
+</p>
+
+> **Wichtig:** Klicken Sie **Install SSL** erst, nachdem die DNS-Records angelegt wurden und propagiert sind. Die Propagationszeit hängt von Ihrem DNS-Anbieter ab.
+
+> **Tipp:** Wenn Sie nicht sicher sind, wo Sie Records anlegen, suchen Sie in der Doku Ihres Anbieters nach „A-Record anlegen“ und „CNAME-Record anlegen“. Die Feldnamen in deren UI können variieren.
+
+### Währung
+
+Die **Währung** wird für Planpreise und die Darstellung der Abrechnung verwendet. Wählen Sie eine Währung, die zu Ihrer Preisstrategie passt (z. B. EUR oder USD).
+
+Das ist besonders wichtig, wenn Sie **Abo-Pläne** erstellen und über einen Zahlungsanbieter (wie Stripe) abrechnen, weil Kunden Konsistenz zwischen Preis und Abrechnung erwarten.
+
+### App-Sprache
+
+Die **App-Sprache** legt die Standardsprache fest, die Ihre Kunden in der Oberfläche sehen.
+
+Wenn Sie Kunden in mehreren Ländern bedienen, wählen Sie die Sprache, die zu Ihrer Hauptzielgruppe passt. (Je nach Setup und verfügbaren Sprachen können Präferenzen dennoch variieren.)
+
+### Serverstandort
+
+Mit dem **Serverstandort** wählen Sie die geografische Region, in der Daten gehostet werden, um Anforderungen an Datenresidenz und Compliance zu erfüllen.
+
+Wenn Sie Kunden mit strengen Vorgaben betreuen (Gesundheit, Finanzen, öffentlicher Sektor), stimmen Sie diese Einstellung mit Ihren vertraglichen Zusagen ab.
+
+### Datenschutzrichtlinie und Nutzungsbedingungen
+
+Diese Felder verlinken Ihre rechtlichen Seiten:
+
+- **Datenschutzrichtlinie**: wie Sie personenbezogene Daten verarbeiten.
+- **Nutzungsbedingungen**: die Regeln, denen Kunden bei Nutzung Ihres Dienstes zustimmen.
+
+> **Tipp:** Auch wenn Sie eine Agentur sind: Behandeln Sie das wie ein Produkt. Veröffentlichen Sie diese Seiten auf Ihrer Hauptwebsite (Root-Domain) und verlinken Sie sie hier.
+
+## Erscheinungsbild
+
+Wenn Domain und Grundeinstellungen stehen, wechseln Sie zum Tab **Erscheinungsbild**, damit die UI zu Ihrer Marke passt.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel4.png"
+    alt="Appearance Tab mit Farbeinstellungen, Uploads für Logo und Dark Logo, einem Favicon-Upload und einer Auswahl für das Standard-Theme (System/Light/Dark)."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Appearance-Tab, in dem Sie Farben, Logos, Favicon und das Standard-Theme anpassen.
+</p>
+
+### Farben
+
+Typischerweise sehen Sie Farbeinstellungen wie:
+
+- **Primärfarbe**: für Buttons und wichtige Hervorhebungen.
+- **Sekundärfarbe**: für Akzente und UI-Status.
+- **E-Mail-Primärfarbe**: Haupt-Akzentfarbe in transaktionalen E-Mails.
+- **E-Mail-CTA-Buttonfarbe**: Farbe für primäre Buttons und Links in E-Mails.
+
+> **Tipp:** Wenn Sie eine Brand-Guideline haben, starten Sie mit Ihrer Primärfarbe und wählen Sie eine Sekundärfarbe, die sowohl auf hellen als auch auf dunklen Hintergründen gut aussieht.
+
+### Logos (hell und dunkel)
+
+In der Regel laden Sie hoch:
+
+- **Logo**: für helle Hintergründe
+- **Dark Logo**: für dunkle Hintergründe
+
+Das ist wichtig, weil dasselbe Logo nicht immer in beiden Themes gut lesbar ist.
+
+> **Wichtig:** Verwenden Sie **PNG** (idealerweise mit transparentem Hintergrund) oder SVG, wenn verfügbar. Wenn Ihr Logo sehr klein wirkt, liegt das oft daran, dass die hochgeladene Datei viel weißen Rand/Leerraum enthält: Callin skaliert das gesamte Bild herunter, um es einzupassen. Ein eng zugeschnittenes, transparentes PNG löst das meist.
+
+### Favicon
+
+Das **Favicon** ist das kleine Icon im Browser-Tab und in Lesezeichen. Verwenden Sie ICO oder PNG, das für Favicons optimiert ist (gängige Größen: 32×32 oder 48×48).
+
+### Standard-Theme
+
+Das **Standard-Theme** bestimmt, wie die App standardmäßig aussieht:
+
+- **System**: folgt dem Theme des Geräts des Nutzers
+- **Hell**: erzwingt hellen Modus
+- **Dunkel**: erzwingt dunklen Modus
+
+Praktischer Ansatz: **System** wählen, wenn die App die Präferenzen jedes Nutzers respektieren soll.
