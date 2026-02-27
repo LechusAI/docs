@@ -1,99 +1,131 @@
 ---
-title: "Configurar White-Label y DNS"
-description: "Personaliza tu app con tu propia marca y dominio usando Callin CMS. Incluye configuración de DNS, SSL, branding y consejos."
+title: "Antes de empezar la configuración de tu White Label"
+description: "Entiende qué significa White Label en Callin, dónde se gestiona desde la Consola y qué podrás administrar como agencia antes de empezar."
 ---
 
-## Resumen
-Personaliza tu app de Callin con el nombre de tu marca, logo y dominio. Esta guía te lleva paso a paso por la configuración white-label y la configuración del dominio (automática o manual), además de opciones de logo y moneda.
+## Qué significa “White Label” en Callin
 
-Antes de empezar:
-- Tener un dominio y acceso a DNS (Cloudflare, GoDaddy, Namecheap, etc).
-- Preferir usar un subdominio como `app.tudominio.com`.
-- Para DNS automático, preparar credenciales de API con permisos de edición de DNS.
-- Abrir [CMS → White-Label Settings](https://app.callin.io/cms).
+Un **White Label** en Callin está pensado para equipos (especialmente **agencias**) que quieren **revender la tecnología de Callin bajo su propia marca**.
 
-## Pasos
+En lugar de enviar a tus clientes a “Callin”, puedes presentar la experiencia como *tu producto*: tu nombre, tu dominio, tu apariencia y tu forma de facturar—mientras Callin se encarga de la infraestructura.
 
-### 1. Nombra tu app
-En **App Name**, introduce tu marca. Este nombre aparece en tu interfaz y en emails.
+> **Consejo:** Piensa en ello como “Callin por dentro, tu marca por fuera”.
 
-### 2. Conecta tu dominio
-Ve a **Custom Domain**.
-Elige configuración automática (recomendada) o manual de DNS.
+## Dónde se accede al White Label
 
-**Introduce tu subdominio completo**, por ejemplo `app.tudominio.com`.
+Todas las opciones de White Label se gestionan desde la **Consola**.
 
-#### DNS en 2 minutos
-- Un **registro A** asigna un nombre a una dirección IP.
-- Un **CNAME** asigna un nombre a otro hostname (alias).
-- **TTL** (Time To Live) define la duración del caché; usa 300 para actualizaciones rápidas.
-- La **propagación** puede tardar 5–30 min, hasta 24h según el proveedor.
+1. En la app principal, haz clic en **Consola** en la esquina superior derecha.
+2. Después, abre **Configuración de White Label**.
 
-**Tip:** Usa un subdominio (no `@`) para evitar afectar tu web principal.
+Para ir, haz clic aquí: [Abrir Configuración de White Label](https://app.callin.io/cms/white-label-configuration)
 
-#### Opción A — Configuración automática
-1. Elige tu **DNS Provider**: Cloudflare, GoDaddy o Namecheap.
-2. Introduce credenciales:
-   - **Cloudflare**: API Token (Edit DNS en la zona).
-   - **GoDaddy**: API Key + Secret.
-   - **Namecheap**: API User, Key y Client IP en lista blanca.
-3. Haz clic en **Discover Provider**.
-4. Callin valida el acceso y crea los registros.
-5. SSL se emite automáticamente.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/whitelabel1.png"
+    alt="Página de la Consola titulada “White Label Configuration” con las pestañas Configuration y Appearance, y ajustes como App Name, Custom Domain, botón DNS Configuration, Currency y App Language."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-**Important (Cloudflare):** Si la validación falla con **orange cloud (proxied)**, cambia a **DNS Only (grey)**, completa la emisión de SSL y luego vuelve a activar el proxy si lo necesitas.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la página de configuración de White Label en la Consola, donde defines el nombre de la app, el dominio y otros valores por defecto de cara al cliente.
+</p>
 
-#### Opción B — Configuración manual
-1. Selecciona **Manual**.
-2. Añade los registros DNS que aparecen en la tabla del CMS en tu registrador:
-   - `Type: A` → `Host: @ or subdomain` → `Value: <IP>` → `TTL: 300`
-   - `Type: CNAME` → `Host: www` (si aparece) → `Value: <host>` → `TTL: 300`
-3. Vuelve al CMS y haz clic en **Install SSL**.
+> **Importante:** Algunas opciones pueden variar según tu plan y permisos.
 
-**Warning:** Evita registros duplicados o en conflicto — bloquean la verificación.
+## Qué puedes hacer como agencia con White Label
 
-### 3. Colores y logos
-Configura tus **Primary/Secondary Colors** y sube:
-- **Logo** (PNG/SVG, fondo transparente).
-- **Favicon** (ICO/PNG, 32×32 o 48×48).
+White Label está diseñado para que puedas operar como una empresa de producto—aunque seas una agencia.
 
-### 4. Moneda por defecto
-Elige tu **Default Currency** para el precio de planes. Ver [[Create-AI-Agent/Billing]].
+Desde la Consola podrás:
 
-### 5. Ajustes avanzados de llamadas (opcional)
-- **[BYOC]**: Bring Your Own Carrier (añade tu troncal SIP).
-- **[Recordings]**: Guarda grabaciones en tu propio bucket compatible con S3.
-- **[AMD]**: Ajusta la detección de humano vs buzón de voz.
+- **Ofrecer una plataforma con tu marca** a tus clientes (tu nombre y presentación, no “Callin”).
+- **Usar tu propio dominio** para que el cliente sienta que está dentro de tu ecosistema.
+- **Crear planes de suscripción** que tú vendes a tus clientes (por ejemplo, “Starter”, “Pro”, “Enterprise”).
+- **Cobrar a tus clientes con Stripe** (cuando esté conectado) para que la facturación siga tu flujo.
+- **Gestionar clientes y miembros del equipo** desde un solo lugar, sin depender de múltiples herramientas.
 
-## Consejos y notas
-- Prefiere `app.tudominio.com` para evitar romper el dominio raíz.
-- TTL 300 asegura propagación rápida durante la configuración.
-- Usa **DNS Only (grey)** en Cloudflare al emitir SSL.
+### Un ejemplo realista
 
-## Solución de problemas
+Imagina que tienes una agencia llamada **Northwind Voice Studio**. Quieres vender un producto de “recepcionista con IA” a clínicas locales.
 
-**Falló la verificación del dominio**  
-**Causa:** Host incorrecto, conflictos o retraso de propagación.  
-**Solución:**
-- Revisa el host (`app`, no `www`).
-- Elimina registros duplicados.
-- Ajusta TTL a 300.
-- Espera hasta 30 min.
+- Tu cliente ve la plataforma con la marca **Northwind Reception**.
+- Accede desde un dominio como **app.northwindreception.com**.
+- Tú le vendes un **plan mensual** que creaste en la Consola.
+- Los pagos se procesan con **Stripe**, y tú gestionas el acceso del cliente desde **Usuarios**.
 
-**SSL no se emite**  
-**Causa:** Verificación incompleta.  
-**Solución:**
-- Haz clic en **Install SSL**.
-- Confirma que el hostname resuelve a la IP de Callin.
-- Asegúrate de que HSTS/proxies no bloquean el challenge de ACME.
+## Visión general de lo configurable en la Consola
 
-**Credenciales de API inválidas**  
-**Solución:**
-- Asegúrate de que los tokens tienen **Edit DNS** en la zona correcta.
-- Namecheap: añade tu IP a la whitelist.
+A continuación tienes una vista de alto nivel de las áreas que normalmente usarás al operar con White Label.
 
-**Se rompió el sitio apex**  
-**Solución:** Usa siempre un subdominio (como `app.`). No cambies registros `@`.
+### Configuración de White Label
 
-**Los cambios no se ven**  
-**Solución:** Limpia la caché DNS o cambia de red. Usa una búsqueda DNS para confirmar registros.
+Aquí defines los básicos que verá el cliente en tu app con marca.
+
+- **Nombre de la app**: el nombre que se muestra en zonas como navegación y títulos de página.
+- **Dominio personalizado**: el dominio/subdominio desde el que tus clientes accederán (la configuración de DNS se hace desde la acción de **Configuración DNS**).
+- **Moneda**: se usa para precios y visualización de facturación.
+- **Idioma de la app**: idioma por defecto de la experiencia para tus clientes.
+- **Pestaña Apariencia**: permite ajustar la presentación visual (las opciones disponibles pueden variar según cuenta/plan).
+
+### Integraciones
+
+Las integraciones conectan tu White Label con servicios de terceros esenciales.
+
+En la Consola puedes ver integraciones como:
+
+- **Stripe** (pagos)
+- **Twilio** (SMS y llamadas de voz; a veces marcado como obligatorio)
+- **SendGrid** (envío/automatización de emails)
+- **Intercom**, **Brevo Chat** (comunicación con clientes)
+- **Claves de API de Analítica y Seguimiento** (tracking y atribución)
+
+> **Consejo:** Si vas a cobrar a clientes, conecta Stripe pronto para poder probar el flujo completo.
+
+### Usuarios
+
+Esta es tu zona de gestión de clientes y miembros del equipo.
+
+Desde aquí normalmente podrás:
+
+- Buscar y revisar usuarios
+- Crear usuarios
+- Gestionar acceso y estado
+
+### Suscripciones
+
+Aquí es donde **ves y gestionas las suscripciones** de tus clientes.  
+Te ayuda a entender quién está suscrito y en qué plan (según tu configuración e integraciones).
+
+### Planes de suscripción
+
+Aquí creas y administras los planes que vendes.
+
+Elementos típicos que verás en un plan:
+
+- Nombre del plan
+- Periodicidad de cobro (por ejemplo, mensual)
+- Precio
+- Estado (activo/inactivo)
+
+### Analítica UTM
+
+La Analítica UTM te ayuda a entender la **atribución de marketing**—por ejemplo, qué fuentes o campañas generaron registros.
+
+Normalmente podrás:
+
+- Filtrar por rango de fechas
+- Exportar resultados (por ejemplo, CSV)
+- Revisar desgloses como fuente y campaña (cuando haya datos)
+
+## Orden recomendado de configuración (para no dejarte nada)
+
+Si es tu primera vez lanzando un White Label, este orden suele ser el más cómodo:
+
+1. Define **Nombre de la app**, **Moneda** e **Idioma de la app** en **Configuración de White Label**.
+2. Añade tu **Dominio personalizado** y completa la **Configuración DNS**.
+3. Conecta las **Integraciones** críticas (especialmente Stripe si vas a cobrar a clientes).
+4. Crea tus **Planes de suscripción**.
+5. Añade/gestiona clientes y equipo en **Usuarios**.
+6. Controla adopción y canales en **Analítica UTM**.
