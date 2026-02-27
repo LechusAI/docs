@@ -1,110 +1,159 @@
 ---
-title: "Set Up White-Label and DNS"
-description: "Customize your app with your own brand and domain using Callin CMS. Includes DNS setup, SSL, branding, and tips."
+title: "Before you start your White Label"
+description: "A friendly, high-level tour of what White Label means in Callin.io and what you can customize—so you know what to expect before doing any setup."
 ---
 
-## Overview
-Customize your Callin app with your brand name, logo, and domain. This guide walks you through white-label setup and domain configuration (automatic or manual), plus logo and currency options.
+[Go straight to your White Label settings here](https://app.callin.io/cms/white-label-configuration)
 
-Before starting:
-- Own a domain and have DNS access (Cloudflare, GoDaddy, Namecheap, etc).
-- Prefer using a subdomain like `app.yourdomain.com`.
-- For automatic DNS, prepare API credentials with DNS edit permissions.
-- Open [CMS → White-Label Settings](https://app.callin.io/cms).
-
-## Steps
-
-### 1. Name Your App
-In **App Name**, enter your brand. This name appears across your UI and emails.
-
-### 2. Connect Your Domain
-Go to **Custom Domain**.
-Choose automatic (recommended) or manual DNS setup.
-
-**Enter your full subdomain**, e.g., `app.yourdomain.com`.
-
-#### DNS in 2 Minutes
-- An **A record** maps a name to an IP address.
-- A **CNAME** maps a name to another hostname (alias).
-- **TTL** (Time To Live) sets caching duration; use 300 for fast updates.
-- **Propagation** may take 5–30 mins, up to 24h depending on providers.
-
-**Tip:** Use a subdomain (not `@`) to avoid affecting your main website.
-
-#### Option A — Automatic Configuration
-1. Pick your **DNS Provider**: Cloudflare, GoDaddy, or Namecheap.
-2. Enter credentials:
-   - **Cloudflare**: API Token (Edit DNS on the zone).
-   - **GoDaddy**: API Key + Secret.
-   - **Namecheap**: API User, Key, and whitelisted Client IP.
-3. Click **Discover Provider**.
-4. Callin validates access and creates the records.
-5. SSL is issued automatically.
-
-**Important (Cloudflare):** If validation fails with **orange cloud (proxied)**, switch to **DNS Only (grey)**, complete SSL issuance, then re-enable proxy if needed.
-
-#### Option B — Manual Configuration
-1. Select **Manual**.
-2. Add the DNS records shown in the CMS table at your registrar:
-   - `Type: A` → `Host: @ or subdomain` → `Value: <IP>` → `TTL: 300`
-   - `Type: CNAME` → `Host: www` (if shown) → `Value: <host>` → `TTL: 300`
-3. Go back to CMS and click **Install SSL**.
-
-**Warning:** Avoid duplicate or conflicting records — they block verification.
-
-### 3. Colors & Logos
-Set your **Primary/Secondary Colors** and upload:
-- **Logo** (PNG/SVG, transparent background).
-- **Favicon** (ICO/PNG, 32×32 or 48×48).
-
-### 4. Default Currency
-Pick your **Default Currency** for plan pricing. See [[Create-AI-Agent/Billing]].
-
-### 5. Advanced Call Settings (Optional)
-- **[BYOC]**: Bring Your Own Carrier (add your SIP trunk).
-- **[Recordings]**: Store call recordings in your own S3-compatible bucket.
-- **[AMD]**: Fine-tune human vs voicemail detection.
-
-## Tips & Notes
-- Prefer `app.yourdomain.com` to avoid breaking your root domain.
-- TTL 300 ensures fast propagation during setup.
-- Use **DNS Only (grey)** for Cloudflare when issuing SSL.
-
-## Troubleshooting
-
-**Domain verification failed**  
-**Cause:** Wrong host, conflicts, or propagation delay.  
-**Fix:**
-- Double-check the host (`app`, not `www`).
-- Remove duplicate records.
-- Set TTL to 300.
-- Wait up to 30 mins.
-
-**SSL not issued**  
-**Cause:** Verification incomplete.  
-**Fix:**
-- Click **Install SSL**.
-- Confirm hostname resolves to Callin IP.
-- Ensure HSTS/proxies aren’t blocking ACME challenge.
-
-**Invalid API credentials**  
-**Fix:**
-- Ensure tokens have **Edit DNS** on the correct zone.
-- Namecheap: whitelist your IP.
-
-**Apex site broke**  
-**Fix:** Always use a subdomain (like `app.`). Don’t change `@` records.
-
-**Changes not visible**  
-**Fix:** Clear DNS cache or switch networks. Use a DNS lookup to confirm records.
-
-## Video
-<div style={{ border:"2px solid #e5e7eb",borderRadius:"12px",padding:"8px",boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)",maxWidth:"100%",overflow:"hidden",backgroundColor:"#000",marginBottom:"1.5rem" }}>
-  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/" title="White-Label and DNS Setup in Callin" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/whitelabel1.png" alt="White Label Configuration screen showing the left sidebar sections and the main Configuration tab with settings like App Name, Custom Domain, Currency, App Language, Server location, and Privacy Policy" style={{ width:"100%", display:"block" }} />
 </div>
 
-## Related
-- [[Create-AI-Agent/Billing]]
-- [CMS → White-Label Settings](https://app.callin.io/cms)
-- [[Create-AI-Agent/Settings]]
-- [[Create-AI-Agent/Call-Actions]]
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture: this is the White Label area inside Console—notice the sections on the left and the main configuration options on the right.
+</p>
+
+## What White Label means in Callin.io
+
+White Label is how you make Callin.io feel like **your own product** to your customers.
+
+Instead of users seeing “Callin.io” everywhere, you can shape a customer-facing experience that matches your brand: the **name of the app**, the **domain they log into**, the **default language**, and other trust and billing-related details. The goal is simple: when your client signs in, it feels like they’re using _your platform_, not a third-party tool.
+
+A practical example: if you’re an agency running calling operations for multiple clients, White Label helps you present a clean, consistent experience—so onboarding, daily usage, and customer emails all look like they belong to your brand.
+
+> **Important:** Some options may vary depending on your plan or permissions, so what you see can differ slightly from another account.
+
+## How to reach White Label settings (the part many people miss)
+
+Most customers don’t find White Label on the first try because it lives inside **Console**, not in the “day-to-day” app screens.
+
+To get there:
+
+- Open your Callin.io app.
+- Click **Console** in the **top-right corner**.
+- In Console, open the White Label area from the left sidebar.
+
+> **Tip:** If you can’t see the **Console** button, you likely don’t have the right role. Ask the account owner/admin to grant you access.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
+  <iframe
+    width="100%"
+    height="420"
+    src="https://www.youtube.com/embed/yyglm-CP2xw"
+    title="YouTube video"
+    frameBorder="0"
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowFullScreen
+  />
+</div>
+
+## The White Label sections you’ll see in Console
+
+When you open White Label in Console, you’ll notice there are multiple sections in the left sidebar. This page is a “map” so you know what each area is for before you start changing anything.
+
+### White Label Configuration
+
+This is the main hub where you define the core of your branded experience.
+
+Inside it, you’ll typically see:
+
+- **Configuration**: the practical settings (name, domain, language, region, policy links, and similar basics).
+- **Appearance**: the branding layer (visual identity options). We’ll cover it in a dedicated guide—here we’re just setting expectations.
+
+### White Label Domains
+
+This section is focused on domains: what domains are connected, and the steps involved in making a custom domain work correctly.
+
+Think of it as the place you come back to when you’re managing, verifying, or reviewing your domain setup.
+
+### Integrations
+
+This is where you connect your White Label experience with other tools you use day-to-day (for example, services that support your workflows).
+
+You don’t need to set anything here to understand White Label—but it’s good to know it exists if you want a more complete branded operation later.
+
+### Users
+
+If multiple people manage the account, **Users** is where access is handled.
+
+It matters because White Label work is often done by admins or by someone responsible for branding and settings.
+
+### Subscriptions and subscription plans
+
+White Label isn’t only “look and feel.” It also touches customer-facing billing context.
+
+In these areas, you typically manage things like:
+
+- your active subscription
+- the plans you offer or reference (depending on how your account is configured)
+
+### Features and capabilities
+
+This is the “what’s enabled” area—where you can review what features are available for your account.
+
+It’s useful context, because some White Label options may depend on what’s enabled in your plan.
+
+### UTM Analytics
+
+If you do marketing or run campaigns, **UTM Analytics** is where tracking and attribution can live.
+
+Not required for White Label basics, but it can be part of delivering a polished, measurable customer experience.
+
+### Content management (Guides, FAQs, templates)
+
+You may also see content-related sections (like **Guides**, **FAQs**, and **Agent Templates**).
+
+This matters for White Label because the more your customer-facing experience is branded, the more helpful it is to also brand the learning experience—what customers read when they need help.
+
+> **Tip:** Don’t worry if you don’t plan to use every section. Most teams start with Configuration + Domain, then expand later.
+
+## What you can configure on this first page (high level)
+
+On the White Label Configuration screen (Configuration tab), you’re looking at the foundation. The goal here is to understand what each option _represents_, without doing the step-by-step yet.
+
+### App Name
+
+This is what users will recognize as the name of your platform inside the interface (and in some customer-facing places, like page titles and emails).
+
+Example: instead of “Callin.io,” you might set it to **“Northwind Voice Portal.”**
+
+### Custom Domain (and DNS configuration)
+
+This is where you connect a domain you control so customers log in through your brand.
+
+You’ll also see a **DNS Configuration** action—this is the piece that helps your domain correctly point to the platform. We’ll cover the exact steps later; for now, it’s enough to know this is part of “making the domain real.”
+
+### Currency
+
+This sets the default currency used for plan prices and billing-related context.
+
+If you sell to customers in a specific region, this helps everything feel consistent and expected.
+
+### App Language
+
+This sets the default language of the app experience for your users.
+
+It’s one of the quickest wins for customer comfort—especially if you support teams in multiple countries.
+
+### Server location
+
+This lets you choose where data is hosted, which can matter for compliance, latency, or customer requirements.
+
+### Privacy Policy
+
+This is a trust detail: it’s where you configure the policy link or related customer-facing legal information.
+
+It’s not “branding” in the visual sense, but it’s part of presenting a complete, credible product.
+
+## What’s next
+
+This page is only the introduction—its job is to give you a clear mental model of what White Label includes.
+
+In the next guides, we’ll go section by section and show exactly how to:
+
+- set your app name and domain properly
+- complete DNS steps
+- customize the appearance
+- review the other Console areas as you grow your setup
