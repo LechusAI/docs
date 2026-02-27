@@ -1,39 +1,64 @@
 ---
-title: "Before you start your White Label"
-description: "A friendly, high-level tour of what White Label means in Callin.io and what you can customize—so you know what to expect before doing any setup."
+title: "Before you start configuring your White Label"
+description: "Understand what White Label means in Callin, where to access it from the Console, and what you can manage as an agency before you begin."
 ---
 
-[Go straight to your White Label settings here](https://app.callin.io/cms/white-label-configuration)
+## What “White Label” means in Callin
+
+A **White Label** in Callin is designed for teams (especially **agencies**) who want to **resell Callin’s technology under their own brand**.
+
+Instead of sending your customers to “Callin,” you can present the experience as *your product*: your name, your domain, your look and feel, and your billing model—while Callin runs the underlying infrastructure.
+
+> **Tip:** Think of it as “Callin on the inside, your brand on the outside.”
+
+## Where you access White Label
+
+All White Label options are managed from the **Console**.
+
+1. In the main app, click **Console** in the top-right corner.
+2. Then open **White Label Configuration**.
+
+To go, click here: [Open White Label Configuration](https://app.callin.io/cms/white-label-configuration)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel1.png" alt="White Label Configuration screen showing the left sidebar sections and the main Configuration tab with settings like App Name, Custom Domain, Currency, App Language, Server location, and Privacy Policy" style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/whitelabel1.png"
+    alt="Console page titled “White Label Configuration” showing the Configuration and Appearance tabs, and settings like App Name, Custom Domain, DNS Configuration button, Currency, and App Language."
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture: this is the White Label area inside Console—notice the sections on the left and the main configuration options on the right.
+  Screenshot: the White Label Configuration page in the Console, where you set your app name, domain, and other customer-facing defaults.
 </p>
 
-## What White Label means in Callin.io
+> **Important:** Some options can vary depending on your plan and permissions.
 
-White Label is how you make Callin.io feel like **your own product** to your customers.
+## What you can do as an agency with White Label
 
-Instead of users seeing “Callin.io” everywhere, you can shape a customer-facing experience that matches your brand: the **name of the app**, the **domain they log into**, the **default language**, and other trust and billing-related details. The goal is simple: when your client signs in, it feels like they’re using _your platform_, not a third-party tool.
+White Label is built to help you operate like a product company—even if you’re an agency.
 
-A practical example: if you’re an agency running calling operations for multiple clients, White Label helps you present a clean, consistent experience—so onboarding, daily usage, and customer emails all look like they belong to your brand.
+With the Console, you can:
 
-> **Important:** Some options may vary depending on your plan or permissions, so what you see can differ slightly from another account.
+- **Offer a branded platform** to your customers (your name and presentation, not “Callin”).
+- **Use your own domain** so customers feel like they’re inside your ecosystem.
+- **Create subscription plans** you sell to customers (for example, “Starter,” “Pro,” “Enterprise”).
+- **Charge customers through Stripe** (when connected) so billing happens under your workflow.
+- **Manage customers and team members** from one place, without juggling multiple tools.
 
-## How to reach White Label settings (the part many people miss)
+### A realistic example
 
-Most customers don’t find White Label on the first try because it lives inside **Console**, not in the “day-to-day” app screens.
+Imagine you run an agency called **Northwind Voice Studio**. You want to sell an “AI receptionist” product to local clinics.
 
-To get there:
+- Your customer sees the platform branded as **Northwind Reception**.
+- They access it through a domain like **app.northwindreception.com**.
+- You sell them a **monthly plan** you created in the Console.
+- Payments run through **Stripe**, and you manage the customer’s access from **Users**.
 
-- Open your Callin.io app.
-- Click **Console** in the **top-right corner**.
-- In Console, open the White Label area from the left sidebar.
+## A quick tour of what’s configurable in the Console
 
-> **Tip:** If you can’t see the **Console** button, you likely don’t have the right role. Ask the account owner/admin to grant you access.
+Below is a high-level overview of the areas you’ll typically use when running White Label.
+
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
   <iframe
@@ -49,111 +74,73 @@ To get there:
   />
 </div>
 
-## The White Label sections you’ll see in Console
-
-When you open White Label in Console, you’ll notice there are multiple sections in the left sidebar. This page is a “map” so you know what each area is for before you start changing anything.
-
 ### White Label Configuration
 
-This is the main hub where you define the core of your branded experience.
+This is where you define the customer-facing basics of your branded app.
 
-Inside it, you’ll typically see:
-
-- **Configuration**: the practical settings (name, domain, language, region, policy links, and similar basics).
-- **Appearance**: the branding layer (visual identity options). We’ll cover it in a dedicated guide—here we’re just setting expectations.
-
-### White Label Domains
-
-This section is focused on domains: what domains are connected, and the steps involved in making a custom domain work correctly.
-
-Think of it as the place you come back to when you’re managing, verifying, or reviewing your domain setup.
+- **App Name**: the name shown in areas like navigation and page titles.
+- **Custom Domain**: the domain/subdomain your customers will use to access the app (DNS setup is handled via the **DNS Configuration** action).
+- **Currency**: used for prices and billing display.
+- **App Language**: the default language of the app for your customer experience.
+- **Appearance tab**: lets you adjust the visual presentation (available options may vary by account/plan).
 
 ### Integrations
 
-This is where you connect your White Label experience with other tools you use day-to-day (for example, services that support your workflows).
+Integrations let your White Label setup connect to essential third-party services.
 
-You don’t need to set anything here to understand White Label—but it’s good to know it exists if you want a more complete branded operation later.
+In the Console you may see integrations such as:
+
+- **Stripe** (payments)
+- **Twilio** (SMS and voice calling; sometimes marked as required)
+- **SendGrid** (email sending/automation)
+- **Intercom**, **Brevo Chat** (customer communication)
+- **Analytics & Tracking API Keys** (tracking and attribution)
+
+> **Tip:** If billing is part of your business model, connect Stripe early so you can test your full customer flow.
 
 ### Users
 
-If multiple people manage the account, **Users** is where access is handled.
+This is your customer and team management area.
 
-It matters because White Label work is often done by admins or by someone responsible for branding and settings.
+From here you can typically:
 
-### Subscriptions and subscription plans
+- Search and review users
+- Create new users
+- Manage access and status
 
-White Label isn’t only “look and feel.” It also touches customer-facing billing context.
+### Subscriptions
 
-In these areas, you typically manage things like:
+This area is where you **view and manage customer subscriptions**.  
+It helps you understand who is subscribed and what plan they’re on (depending on your setup and integrations).
 
-- your active subscription
-- the plans you offer or reference (depending on how your account is configured)
+### Subscription Plans
 
-### Features and capabilities
+This is where you create and manage the plans you sell.
 
-This is the “what’s enabled” area—where you can review what features are available for your account.
+Typical plan elements you’ll see include:
 
-It’s useful context, because some White Label options may depend on what’s enabled in your plan.
+- Plan name
+- Billing cadence (for example, monthly)
+- Price
+- Status (active/inactive)
 
 ### UTM Analytics
 
-If you do marketing or run campaigns, **UTM Analytics** is where tracking and attribution can live.
+UTM Analytics helps you understand **marketing attribution**—for example, which sources or campaigns drove signups.
 
-Not required for White Label basics, but it can be part of delivering a polished, measurable customer experience.
+You can typically:
 
-### Content management (Guides, FAQs, templates)
+- Filter by date range
+- Export results (for example as CSV)
+- Review breakdowns like source and campaign (when data exists)
 
-You may also see content-related sections (like **Guides**, **FAQs**, and **Agent Templates**).
+## Recommended setup order (so you don’t miss anything)
 
-This matters for White Label because the more your customer-facing experience is branded, the more helpful it is to also brand the learning experience—what customers read when they need help.
+When launching a White Label for the first time, this order keeps things smooth:
 
-> **Tip:** Don’t worry if you don’t plan to use every section. Most teams start with Configuration + Domain, then expand later.
-
-## What you can configure on this first page (high level)
-
-On the White Label Configuration screen (Configuration tab), you’re looking at the foundation. The goal here is to understand what each option _represents_, without doing the step-by-step yet.
-
-### App Name
-
-This is what users will recognize as the name of your platform inside the interface (and in some customer-facing places, like page titles and emails).
-
-Example: instead of “Callin.io,” you might set it to **“Northwind Voice Portal.”**
-
-### Custom Domain (and DNS configuration)
-
-This is where you connect a domain you control so customers log in through your brand.
-
-You’ll also see a **DNS Configuration** action—this is the piece that helps your domain correctly point to the platform. We’ll cover the exact steps later; for now, it’s enough to know this is part of “making the domain real.”
-
-### Currency
-
-This sets the default currency used for plan prices and billing-related context.
-
-If you sell to customers in a specific region, this helps everything feel consistent and expected.
-
-### App Language
-
-This sets the default language of the app experience for your users.
-
-It’s one of the quickest wins for customer comfort—especially if you support teams in multiple countries.
-
-### Server location
-
-This lets you choose where data is hosted, which can matter for compliance, latency, or customer requirements.
-
-### Privacy Policy
-
-This is a trust detail: it’s where you configure the policy link or related customer-facing legal information.
-
-It’s not “branding” in the visual sense, but it’s part of presenting a complete, credible product.
-
-## What’s next
-
-This page is only the introduction—its job is to give you a clear mental model of what White Label includes.
-
-In the next guides, we’ll go section by section and show exactly how to:
-
-- set your app name and domain properly
-- complete DNS steps
-- customize the appearance
-- review the other Console areas as you grow your setup
+1. Set your **App Name**, **Currency**, and **App Language** in **White Label Configuration**.
+2. Add your **Custom Domain** and complete the **DNS Configuration**.
+3. Connect critical **Integrations** (especially Stripe if you will bill customers).
+4. Create your **Subscription Plans**.
+5. Add/manage customers and teammates in **Users**.
+6. Monitor adoption and channels in **UTM Analytics**.
