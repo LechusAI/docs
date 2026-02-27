@@ -1,45 +1,220 @@
 ---
-title: "How to Connect Stripe"
-description: "Enable secure payments in your app with Stripe."
+title: "Integrations"
+description: "Connect third-party services (payments, voice/SMS, email, live chat, and tracking) so your White Label app can run like a real product."
 ---
 
-## Before You Begin
-Stripe is the payment gateway that allows your application to process charges securely and professionally. By connecting it, you can accept credit cards, debit cards, and even local payment methods depending on the country where you operate.  
+## What this page is for
 
-You do not need advanced technical knowledge: Stripe takes care of all the security and compliance requirements (such as PCI DSS), while your application integrates seamlessly so your customers can pay without complications.
+The **Integrations** page is where you connect your White Label app to the services that make day-to-day operations possible:
 
-## Step 1: Access the Integrations Section
-Inside the CMS, go to the left-hand menu and click **Integrations**. Here you will see four options: Stripe, Twilio, Sendgrid, and Intercom.  
-Select **Stripe**. This is the integration that enables and manages payments in your application.
+- **Payments & subscriptions** (so you can charge customers)
+- **Voice and SMS** (so calling and messaging features work)
+- **Email sending** (so customers receive important emails)
+- **Live chat** (so customers can contact your team in real time)
+- **Marketing tracking** (so you can measure acquisition and conversions)
 
-## Step 2: Start the Connection Process
-After clicking Stripe, you will be redirected to Stripe’s official connection page. There, you can either log in with your existing account or create a new one if you do not have one yet.  
+Open it here: [Open Integrations](https://app.callin.io/cms/api-keys)
 
-The screen will display a form titled “Get started with Stripe.” You need to enter your email address here.  
-If you already have a Stripe account, use the same email to link it.  
-If you do not, Stripe will guide you through creating a new account with your company details.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations1.png" alt="Integrations page showing cards for Stripe (Connected), Twilio (Required), SendGrid (Connected), Intercom, Brevo Chat, and Analytics & Tracking API Keys, plus a search bar." style={{ width:"100%", display:"block" }} />
+</div>
 
-## Step 3: Complete Your Business Information in Stripe
-Before finishing the connection, Stripe will ask you to confirm or complete some details:  
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Integrations overview. Each card opens a setup panel with the exact fields you must fill in.
+</p>
 
-- Business information: legal name, business address, country.  
-- Business representative: a person with management responsibility in the company.  
-- Bank account: where payouts from Stripe will be deposited.  
-- Tax information: depending on the country, Stripe may ask for VAT, TIN, or equivalent.  
+> **Important:** Card badges like **Connected** or **Required** reflect your current setup and can vary depending on your account and plan.
 
-Practical advice: prepare this information in advance. If the registration is interrupted because something is missing, you will need to restart the process.
+## Before you connect anything
 
-## Step 4: Authorize Access and Connect Your Application
-Once all the information is completed, Stripe will ask you to confirm that you authorize your application to process payments on your behalf.  
-Click **Authorize access**.  
+A few habits make integrations smoother (and safer):
 
-When the process is complete, you will automatically return to your application’s CMS and see that the Stripe integration is active.
+- **Use the right admin account** in each provider (Stripe, Twilio, etc.) so you can access keys and settings.
+- **Store keys securely** (treat them like passwords).
+- **Limit access** to people who need it. Don’t paste keys into shared docs or chats.
 
-## Common Mistakes and Solutions
-Wrong email → make sure you are using the email associated with your Stripe account.  
-Incomplete business details → if tax or banking information is missing, Stripe will not allow you to finish.  
-Invalid bank account → confirm it is located in the same country as the registered business and supports transfers.  
-Not redirected back to CMS → check that pop-ups or redirects are not blocked in your browser.
+> **Tip:** If an integration doesn’t work immediately, double-check for extra spaces at the beginning/end of a key before trying anything else.
 
-## Your App Ready to Collect Payments
-With Stripe integrated, your application is now able to accept secure payments and transfer them directly to your bank account. This allows you to monetize your services in a transparent and trustworthy way for your customers.
+## How connecting an integration works
+
+Most integrations follow the same pattern:
+
+1. Click an integration card (for example **Twilio** or **SendGrid**).
+2. A side panel opens with required fields (marked with `*`).
+3. Copy the values from the provider dashboard.
+4. Paste them into Callin and click **Save**.
+
+## Stripe
+
+**What it’s for:** Stripe is used for **payment processing**. This is the integration that typically enables you to run a real subscription business: accepting payments, charging customers, and managing subscriptions.
+
+**When you need it:** If you plan to create paid plans and charge customers (monthly, yearly, etc.), Stripe is one of the first integrations to set up.
+
+### What you’ll need (as shown in the panel)
+
+- **Secret Key**\*
+- **Webhook Secret**\*
+- **Webhook Secret Connect**\*
+- **Client ID**\*
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations2.png" alt="Stripe API Keys panel asking for Secret Key, Webhook Secret, Webhook Secret Connect, and Client ID, with a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Stripe setup requires four values and is saved with the Save button.
+</p>
+
+### How to connect Stripe
+
+1. Open the **Stripe** card.
+2. In your Stripe dashboard, copy the required values.
+3. Paste each value into the matching field in Callin.
+4. Click **Save**.
+
+> **Important:** If you rotate keys or change webhook settings in Stripe later, you must come back here and update the values.
+
+## Twilio
+
+**What it’s for:** Twilio powers **voice calls and SMS**. It’s the integration that makes calling and messaging features possible and also supports phone number management.
+
+**When you need it:** If your White Label includes inbound/outbound calls or SMS, Twilio will usually be essential—and may appear as **Required**.
+
+### What you’ll need (as shown in the panel)
+
+- **Account SID**\*
+- **Auth Token**\*
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations3.png" alt="Add Twilio API Keys panel with fields for Account SID and Auth Token and a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Twilio setup requires an Account SID and Auth Token.
+</p>
+
+### How to connect Twilio
+
+1. Open the **Twilio** card.
+2. From your Twilio dashboard, copy your **Account SID** and **Auth Token**.
+3. Paste them into the corresponding fields in Callin.
+4. Click **Save**.
+
+> **Tip:** If calling/SMS doesn’t work later, Twilio is the first integration to re-check.
+
+## SendGrid
+
+**What it’s for:** SendGrid is used to **send emails** from your White Label app—especially automated and notification emails customers rely on (for example: confirmations and system messages).
+
+**When you need it:** If your customers should receive emails from your branded experience, set up SendGrid early.
+
+### What you’ll need (as shown in the panel)
+
+- **API Key**\*
+- **Sender Email**\* (a verified sender email)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations4.png" alt="Add SendGrid API Keys panel with fields for API Key and Sender Email and a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: SendGrid setup requires an API Key and a Sender Email.
+</p>
+
+### How to connect SendGrid
+
+1. Open the **SendGrid** card.
+2. Copy your **API Key** from SendGrid.
+3. Enter a **Sender Email** that is verified in SendGrid.
+4. Click **Save**.
+
+> **Common mistake:** Using a sender email that isn’t verified in SendGrid. If emails don’t send, verify the sender first.
+
+## Intercom
+
+**What it’s for:** Intercom enables **live chat and customer support** inside your app. It’s a common option when you want customers to message your team without leaving the product.
+
+**When you need it:** If support and onboarding are part of what you sell, Intercom can make your White Label feel more “product-ready.”
+
+### What you’ll need (as shown in the panel)
+
+- **App ID**\* (from Intercom workspace settings)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations5.png" alt="Add Intercom API Keys panel with a field for App ID and a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Intercom setup requires an App ID.
+</p>
+
+### How to connect Intercom
+
+1. Open the **Intercom** card.
+2. Find your **App ID** in your Intercom workspace settings.
+3. Paste it into Callin and click **Save**.
+
+> **Tip:** Use the Intercom workspace that matches your support team. That way, customer messages go to the right place.
+
+## Brevo Chat
+
+**What it’s for:** Brevo Chat enables a **chat widget** for real-time customer conversations. The panel references Brevo (formerly Sendinblue), and the goal is to activate chat using a widget key.
+
+**When you need it:** If you prefer a lightweight chat widget experience (instead of Intercom), Brevo Chat is an option.
+
+### What you’ll need (as shown in the panel)
+
+- **Chat Widget Key**\* (also described as a Chat Widget Key/API Key)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations6.png" alt="Brevo Chat Integration panel with a required Chat Widget Key field and a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Brevo Chat setup requires a Chat Widget Key.
+</p>
+
+### How to connect Brevo Chat
+
+1. Open the **Brevo Chat** card.
+2. In your Brevo dashboard, copy your **Chat Widget Key** (or Chat Widget Key/API Key).
+3. Paste it into Callin and click **Save**.
+
+> **Important:** Keep the widget key private. Anyone with access could potentially use it in another environment.
+
+## Analytics & Tracking API Keys
+
+**What it’s for:** This integration connects your White Label to **marketing and analytics tracking**. Based on the setup instructions shown in the panel, it supports:
+
+- **Google Ads** tracking via a Pixel ID
+- **Google Analytics (GA4)** tracking via a Measurement ID
+
+**Why this matters for White Label:** If you run paid campaigns or want clean attribution, you want conversions and traffic tracked for your brand so you can measure performance and ROI.
+
+### What you’ll need (as shown in the panel)
+
+- **Google Ads Pixel ID** (example format: `AW-123456789`)
+- **Google Analytics Measurement ID (GA4)** (example format: `G-XXXXXXXXXX`)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/integrations7.png" alt="Analytics & Tracking API Keys panel with instructions and fields for Google Ads Pixel ID and Google Analytics Measurement ID (GA4), plus a Save button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: tracking setup where you paste your Google Ads and GA4 IDs and then save.
+</p>
+
+### How to connect tracking
+
+1. Open **Analytics & Tracking API Keys**.
+2. In Google Ads, copy your **Google Ads Pixel ID** and paste it into the matching field.
+3. In Google Analytics (GA4), copy your **Measurement ID** and paste it into the GA4 field.
+4. Click **Save**.
+
+### What happens after you save (as described in the panel)
+
+- Tracking scripts can be injected using the IDs you entered (for this brand).
+- If a field is left empty, that provider’s script should not load for this brand.
+- Access to view/change these IDs is limited to users with the right level of access (as noted in the panel).
+
+> **Tip:** Keep a simple checklist for every new brand you launch: connect tracking early so you don’t lose attribution data during your first campaigns.
