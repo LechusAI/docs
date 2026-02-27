@@ -1,45 +1,248 @@
 ---
-title: "Comment connecter Stripe"
-description: "Activez des paiements sécurisés dans votre application avec Stripe."
+title: "Intégrations"
+description: "Connectez des services externes (paiements, voix/SMS, email, chat en direct et suivi) pour que votre White Label fonctionne comme un produit complet."
 ---
 
-## Avant de commencer
-Stripe est la passerelle de paiement qui permet à votre application de traiter les paiements de manière sécurisée et professionnelle. En le connectant, vous pouvez accepter des cartes de crédit, des cartes de débit et même des moyens de paiement locaux selon le pays dans lequel vous opérez.
+## À quoi sert cette page
 
-Vous n’avez pas besoin de connaissances techniques avancées : Stripe gère toutes les exigences de sécurité et de conformité (comme la norme PCI DSS), tandis que votre application s’intègre de façon fluide pour que vos clients puissent payer sans complications.
+La page **Intégrations** est l’endroit où vous connectez votre White Label aux services qui rendent l’exploitation quotidienne possible :
 
-## Étape 1 : Accéder à la section Intégrations
-Dans le CMS, ouvrez le menu de gauche et cliquez sur **Integrations**. Vous verrez ici quatre options : Stripe, Twilio, Sendgrid et Intercom.  
-Sélectionnez **Stripe**. C’est l’intégration qui active et gère les paiements dans votre application.
+- **Paiements et abonnements** (pour facturer vos clients)
+- **Voix et SMS** (pour activer les appels et la messagerie)
+- **Envoi d’emails** (pour que vos clients reçoivent les emails importants)
+- **Chat en direct** (pour offrir du support en temps réel dans l’app)
+- **Suivi marketing** (pour mesurer l’acquisition et les conversions)
 
-## Étape 2 : Démarrer le processus de connexion
-Après avoir cliqué sur Stripe, vous serez redirigé vers la page officielle de connexion de Stripe. Là, vous pouvez soit vous connecter avec un compte existant, soit en créer un nouveau si vous n’en avez pas encore.
+Pour ouvrir cette page, cliquez ici : [Ouvrir les intégrations](https://app.callin.io/cms/api-keys)
 
-L’écran affichera un formulaire intitulé « Get started with Stripe ». Vous devez y saisir votre adresse e-mail.  
-- Si vous avez déjà un compte Stripe, utilisez le même e-mail pour le lier.  
-- Si vous n’en avez pas, Stripe vous guidera pour créer un nouveau compte avec les informations de votre entreprise.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations1.png"
+    alt="Page Integrations avec des cartes pour Stripe, Twilio, SendGrid, Intercom, Brevo Chat et Analytics & Tracking API Keys, et une barre de recherche en haut."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-## Étape 3 : Compléter les informations de votre entreprise dans Stripe
-Avant de finaliser la connexion, Stripe vous demandera de confirmer ou de compléter certains éléments :
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : vue d’ensemble des intégrations. Chaque carte ouvre un panneau avec les champs exacts à compléter.
+</p>
 
-- **Informations sur l’entreprise :** raison sociale, adresse de l’entreprise, pays.  
-- **Représentant de l’entreprise :** une personne ayant des responsabilités de gestion dans l’entreprise.  
-- **Compte bancaire :** le compte sur lequel Stripe versera les paiements.  
-- **Informations fiscales :** selon le pays, Stripe peut demander un numéro de TVA, un numéro fiscal (TIN) ou l’équivalent.
+> **Important :** Les badges d’état visibles sur les cartes (par exemple « connecté » ou « requis ») reflètent votre configuration actuelle et peuvent varier selon votre compte et votre offre.
 
-Conseil pratique : préparez ces informations à l’avance. Si l’inscription est interrompue parce qu’il manque quelque chose, vous devrez relancer le processus.
+## Avant de connecter quoi que ce soit
 
-## Étape 4 : Autoriser l’accès et connecter votre application
-Une fois toutes les informations renseignées, Stripe vous demandera de confirmer que vous autorisez votre application à traiter des paiements en votre nom.  
-Cliquez sur **Authorize access**.
+Quelques bonnes pratiques rendent la configuration plus simple (et plus sûre) :
 
-Quand le processus est terminé, vous reviendrez automatiquement dans le CMS de votre application et vous verrez que l’intégration Stripe est active.
+- Utilisez le **bon compte administrateur** chez chaque fournisseur (Stripe, Twilio, etc.) pour accéder aux clés et paramètres.
+- **Stockez les clés en sécurité** (traitez-les comme des mots de passe).
+- **Limitez l’accès** aux personnes qui en ont besoin. Évitez de coller des clés dans des documents partagés ou des chats.
 
-## Erreurs fréquentes et solutions
-- **Mauvais e-mail** → assurez-vous d’utiliser l’e-mail associé à votre compte Stripe.  
-- **Informations d’entreprise incomplètes** → s’il manque des informations fiscales ou bancaires, Stripe ne vous laissera pas finaliser.  
-- **Compte bancaire invalide** → vérifiez qu’il est dans le même pays que l’entreprise enregistrée et qu’il accepte les virements.  
-- **Pas de redirection vers le CMS** → vérifiez que les pop-ups ou redirections ne sont pas bloqués par votre navigateur.
+> **Conseil :** Si une intégration ne fonctionne pas du premier coup, vérifiez d’abord qu’il n’y a pas d’espace au début ou à la fin d’une clé.
 
-## Votre application est prête à encaisser des paiements
-Avec Stripe intégré, votre application peut désormais accepter des paiements sécurisés et les transférer directement sur votre compte bancaire. Vous pouvez ainsi monétiser vos services de manière transparente et fiable pour vos clients.
+## Comment se connecte une intégration
+
+La plupart des intégrations suivent le même schéma :
+
+1. Cliquez sur une carte (par exemple Twilio ou SendGrid).
+2. Un panneau latéral s’ouvre avec des champs obligatoires (marqués par `*`).
+3. Copiez les valeurs depuis le tableau de bord du fournisseur.
+4. Collez-les dans Callin et enregistrez.
+
+## Stripe
+
+**À quoi ça sert :** Stripe sert au **traitement des paiements**. C’est l’intégration la plus courante pour gérer une activité par abonnement : encaisser, facturer vos clients et gérer les abonnements.
+
+**Quand vous en avez besoin :** Si vous comptez créer des offres payantes et facturer vos clients (mensuel, annuel, etc.), configurez Stripe en tout premier.
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **Clé secrète***  
+- **Secret de webhook***  
+- **Secret de webhook (Connect)***  
+- **ID client***
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations2.png"
+    alt="Panneau de configuration Stripe demandant une clé secrète, des secrets de webhook et un ID client, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration Stripe avec quatre valeurs requises à saisir puis à enregistrer.
+</p>
+
+### Comment connecter Stripe
+
+1. Ouvrez la carte **Stripe**.
+2. Dans votre tableau de bord Stripe, copiez les valeurs demandées.
+3. Collez chaque valeur dans le champ correspondant dans Callin.
+4. Enregistrez.
+
+> **Important :** Si vous régénérez des clés ou modifiez des webhooks dans Stripe plus tard, vous devrez revenir ici et mettre à jour ces valeurs.
+
+## Twilio
+
+**À quoi ça sert :** Twilio active les **appels vocaux et les SMS**. C’est l’intégration qui rend possibles les fonctionnalités d’appels/messagerie et qui prend en charge la gestion des numéros.
+
+**Quand vous en avez besoin :** Si votre White Label inclut des appels entrants/sortants ou des SMS, Twilio est généralement indispensable et peut apparaître comme « requis ».
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **Identifiant du compte (SID)***  
+- **Jeton d’authentification***
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations33.png"
+    alt="Panneau d’ajout des clés Twilio demandant l’identifiant du compte (SID) et le jeton d’authentification, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration Twilio avec l’identifiant du compte et le jeton d’authentification à renseigner.
+</p>
+
+### Comment connecter Twilio
+
+1. Ouvrez la carte **Twilio**.
+2. Dans votre tableau de bord Twilio, récupérez l’identifiant du compte (SID) et le jeton d’authentification.
+3. Collez-les dans Callin.
+4. Enregistrez.
+
+> **Conseil :** Si les appels ou les SMS ne fonctionnent plus ensuite, Twilio est souvent la première intégration à vérifier.
+
+## SendGrid
+
+**À quoi ça sert :** SendGrid sert à **envoyer des emails** depuis votre White Label, notamment des emails automatiques et des notifications dont vos clients ont besoin (par exemple des messages système).
+
+**Quand vous en avez besoin :** Si votre expérience sous marque doit envoyer des emails aux clients, configurez SendGrid tôt.
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **Clé API***  
+- **Email expéditeur*** (un expéditeur vérifié)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations4.png"
+    alt="Panneau d’ajout SendGrid demandant une clé API et un email expéditeur, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration SendGrid avec une clé API et un email expéditeur à saisir.
+</p>
+
+### Comment connecter SendGrid
+
+1. Ouvrez la carte **SendGrid**.
+2. Copiez votre clé API depuis SendGrid.
+3. Renseignez un email expéditeur qui est vérifié dans SendGrid.
+4. Enregistrez.
+
+> **Erreur fréquente :** Utiliser un expéditeur non vérifié. Si les emails ne partent pas, vérifiez d’abord l’expéditeur dans SendGrid.
+
+## Intercom
+
+**À quoi ça sert :** Intercom active le **chat en direct et le support client** dans l’app. C’est un choix fréquent si vous voulez que les clients contactent votre équipe sans quitter le produit.
+
+**Quand vous en avez besoin :** Si le support et l’onboarding font partie de ce que vous vendez, Intercom aide votre White Label à paraître plus « prêt à l’emploi ».
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **ID d’application*** (depuis les paramètres de votre espace Intercom)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations5.png"
+    alt="Panneau de configuration Intercom demandant un ID d’application, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration Intercom avec l’ID d’application à renseigner.
+</p>
+
+### Comment connecter Intercom
+
+1. Ouvrez la carte **Intercom**.
+2. Dans Intercom, trouvez l’ID d’application dans les paramètres de votre espace.
+3. Collez-le dans Callin et enregistrez.
+
+> **Conseil :** Choisissez l’espace Intercom qui correspond à votre équipe support, pour que les messages arrivent au bon endroit.
+
+## Brevo Chat
+
+**À quoi ça sert :** Brevo Chat active un **widget de chat** pour des conversations en temps réel. Le panneau fait référence à Brevo (anciennement Sendinblue) et l’activation se fait via une clé de widget.
+
+**Quand vous en avez besoin :** Si vous préférez un widget de chat plus léger (plutôt qu’Intercom), Brevo Chat est une option.
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **Clé de widget de chat*** (également décrite comme clé de widget/clé API)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations6.png"
+    alt="Panneau Brevo Chat Integration demandant une clé de widget de chat, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration Brevo Chat avec la clé du widget à saisir.
+</p>
+
+### Comment connecter Brevo Chat
+
+1. Ouvrez la carte **Brevo Chat**.
+2. Dans Brevo, copiez la clé du widget de chat.
+3. Collez-la dans Callin et enregistrez.
+
+> **Important :** Gardez cette clé confidentielle. Toute personne qui y a accès pourrait tenter de la réutiliser dans un autre environnement.
+
+## Analytics & Tracking API Keys
+
+**À quoi ça sert :** Cette intégration connecte votre White Label au **suivi marketing et à l’analytique**. D’après les instructions affichées dans le panneau, elle prend en charge :
+
+- Le suivi **Google Ads** via un identifiant de pixel
+- Le suivi **Google Analytics (GA4)** via un identifiant de mesure
+
+**Pourquoi c’est important en White Label :** Si vous lancez des campagnes (ou si vous avez besoin d’attribution), vous voulez mesurer trafic et conversions pour optimiser votre budget et comprendre quels canaux fonctionnent.
+
+### Ce dont vous aurez besoin (comme indiqué dans le panneau)
+
+- **Identifiant de pixel Google Ads** (format exemple : `AW-123456789`)
+- **Identifiant de mesure Google Analytics (GA4)** (format exemple : `G-XXXXXXXXXX`)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/integrations7.png"
+    alt="Panneau Analytics & Tracking API Keys avec des instructions et des champs pour l’identifiant de pixel Google Ads et l’identifiant de mesure GA4, avec un bouton d’enregistrement."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : configuration du tracking où vous collez les identifiants Google Ads et GA4 puis enregistrez.
+</p>
+
+### Comment connecter le tracking
+
+1. Ouvrez **Analytics & Tracking API Keys**.
+2. Dans Google Ads, copiez l’identifiant de pixel et collez-le dans le champ correspondant.
+3. Dans Google Analytics (GA4), copiez l’identifiant de mesure et collez-le dans le champ GA4.
+4. Enregistrez.
+
+### Ce qui se passe après l’enregistrement (tel que décrit dans le panneau)
+
+- Des scripts de suivi peuvent être injectés à partir des identifiants que vous avez saisis (pour cette marque).
+- Si un champ est laissé vide, le script du fournisseur correspondant ne devrait pas se charger pour cette marque.
+- L’accès pour voir ou modifier ces identifiants est limité aux utilisateurs ayant le niveau d’accès requis (comme indiqué dans le panneau).
+
+> **Conseil :** Connectez le tracking dès le lancement d’une marque pour éviter de perdre des données d’attribution dès le jour 1.
