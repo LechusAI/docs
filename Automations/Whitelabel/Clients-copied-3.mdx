@@ -1,0 +1,146 @@
+---
+title: "Users"
+description: "Manage your customers: create users, review their activity and subscriptions, open their customer app, and handle billing-related actions from one place."
+---
+
+## What this page is for
+
+The **Users** page is where you manage the customers who use your White Label app (the people who buy subscriptions and log in to your product).
+
+From here, you can:
+
+- Create customer accounts
+- Search and review users in your workspace
+- Open a customer’s app directly (useful for support and verification)
+- Check key user details (last login, subscriptions, minutes, UTM attribution)
+- Access billing actions that are available for that user (depending on your setup)
+
+To open this page, click here: [Open Users](https://app.callin.io/cms/users)
+
+Screenshot: the Users list, where you search customers, create a new user, and manage actions per customer from the icons on the right.
+
+> **Tip:** Some labels and options can vary depending on your app language and plan.
+
+## How the Users list works
+
+At the top you have a **search bar** to quickly find a customer (by name or email).
+
+In the list, each row represents one customer and typically shows:
+
+- The user’s **name and email**
+- A status badge like **Active**
+- A **Joined At** date
+- A set of **action icons** on the right side of the row
+
+## Create a new customer user
+
+To create a customer account:
+
+1. Click **Create User** (top right).
+2. In the “Create New User” modal, fill in:
+   - **Email**\* (required)
+   - **Password**\* (required — the modal notes a minimum of 8 characters)
+   - **Full Name** (optional)
+   - **Company** (optional)
+3. Click **Create User** to finish.
+
+> **Common mistake:** Creating a user with a temporary password and forgetting to store it safely. Treat customer credentials carefully and share them through a secure channel.
+
+## Edit a customer’s details
+
+From the user row, click the **pencil icon** to open the edit dialog.
+
+In the “Edit User” modal you can update:
+
+- **Full Name**
+- **Company**
+
+Then click **Update User** to save changes.
+
+> **Tip:** Keeping the customer name/company tidy is useful when you’re managing many accounts (for example, when an agency has multiple clients under similar names).
+
+## Open the customer app from the green icon
+
+On the far right of each user row, you’ll see a **green icon** (the last icon in the row).\
+This opens the customer’s platform directly, so you can verify what they see or help them troubleshoot.
+
+A typical support flow looks like this:
+
+- Customer says: “I can’t find my subscription page”
+- You open their app from the green icon
+- You confirm whether the subscription area is visible and whether they’re logged into the correct account
+
+> **Important:** What you see after opening the customer app can depend on that user’s subscription status and your White Label configuration.
+
+## Review a customer’s profile tabs (Info, Subscriptions, 1-Min Billing, UTM)
+
+When you open a customer’s profile view, you’ll typically see tabs like:
+
+- **Info**
+- **Subscriptions**
+- **1-Min Billing**
+- **UTM**
+
+Below is what each tab is used for, based on what’s visible in the UI.
+
+### Info
+
+The **Info** tab includes “Last Login Details,” which helps you understand recent access:
+
+- **Device** (example shown: Desktop – macOS – Firefox)
+- **Location** (example shown: Madrid, Madrid, ES)
+- **IP Address**
+- **Time** (example shown: 3 days ago)
+
+This is useful when a customer claims they can’t access the app or says “someone logged in” — you can quickly sanity-check where and when the last login happened.
+
+The tab also shows a **Delete User Account** section with a **Delete** button.
+
+> **Important:** Deleting a user account is permanent. Only do this when you’re 100% sure the customer wants the account removed.
+
+### Subscriptions
+
+The **Subscriptions** tab helps you understand what the customer currently has.
+
+Based on the UI shown, you may see:
+
+- **Minutes Details** (including “Remaining Minutes”)
+- **Active Subscriptions** (for example, it may show “No active subscriptions” if nothing is running)
+
+There is also a **View Billing Details** section with a **View** button that opens the Stripe customer portal to manage billing (when available).
+
+> **Tip:** If “Active Subscriptions” is empty but the customer says they paid, the first thing to verify is whether they’re looking at the correct email/account.
+
+### 1-Min Billing
+
+The **1-Min Billing** tab explains and tracks outbound billing behavior using the “1-minute rule.”
+
+What the UI explains:
+
+- If **50% of the last 100 completed outbound calls** are under **50 seconds**, then outbound calls under **60 seconds** are billed as **1 minute**.
+
+You’ll see summary cards such as:
+
+- **Rule eligible** (Yes/No)
+- **Rule applies now** (Yes/No)
+- **Avg duration (completed 100)**
+- **Success rate (recent outbound)**
+
+There’s also:
+
+- A **Refresh** button
+- A toggle for **Minimum 1-minute billing** (an override that applies even if the user meets the rule)
+- A “Recent outbound calls (last 100)” table (columns like Created, Status, Duration, Under 50s)
+
+> **Tip:** This tab is especially useful when a customer questions billing for short outbound calls—you can point to how the rule is being applied for their account.
+
+### UTM
+
+The **UTM** tab shows “Marketing UTM Data” captured at signup and starting free trial.
+
+If there’s no attribution, the UI may show a message like “No UTM data available for this user.”
+
+This helps you answer questions like:
+
+- “Did this customer come from a campaign?”
+- “Which source drove this signup?” (when data exists)
