@@ -1,146 +1,100 @@
 ---
-title: "Users"
-description: "Manage your customers: create users, review their activity and subscriptions, open their customer app, and handle billing-related actions from one place."
+title: "Utenti"
+description: "Gestisci i tuoi clienti: crea account, controlla lo stato dell’abbonamento e accedi all’app del cliente da un unico posto."
 ---
 
-## What this page is for
+## A cosa serve questa pagina
 
-The **Users** page is where you manage the customers who use your White Label app (the people who buy subscriptions and log in to your product).
+La pagina **Utenti** è dove gestisci i *clienti del tuo White Label* (le persone che acquistano abbonamenti e usano la tua app brandizzata).
 
-From here, you can:
+Da qui puoi:
 
-- Create customer accounts
-- Search and review users in your workspace
-- Open a customer’s app directly (useful for support and verification)
-- Check key user details (last login, subscriptions, minutes, UTM attribution)
-- Access billing actions that are available for that user (depending on your setup)
+- Creare nuovi account cliente
+- Cercare e consultare clienti nel tuo workspace
+- Aggiornare i dati di base del cliente (come nome e azienda)
+- Consultare informazioni come abbonamento, minuti e attribuzione (nel pannello dettagli dell’utente)
+- Accedere direttamente all’app del cliente tramite l’**icona verde** all’estrema destra della riga (l’ultima icona)
 
-To open this page, click here: [Open Users](https://app.callin.io/cms/users)
+Per aprire questa pagina, clicca qui: [Apri Utenti](https://app.callin.io/cms/users)
 
-Screenshot: the Users list, where you search customers, create a new user, and manage actions per customer from the icons on the right.
+## Come funziona la lista Utenti
 
-> **Tip:** Some labels and options can vary depending on your app language and plan.
+Nella parte alta della pagina vedrai:
 
-## How the Users list works
+- Una **barra di ricerca** per trovare rapidamente un cliente (di solito per nome o email).
+- Un pulsante **Create User** per aggiungere un nuovo cliente.
 
-At the top you have a **search bar** to quickly find a customer (by name or email).
+Ogni riga della tabella rappresenta un cliente e mostra:
 
-In the list, each row represents one customer and typically shows:
+- Identità del cliente (nome/email)
+- Stato (ad esempio **Active**)
+- Data di registrazione (**Joined At** nell’interfaccia)
+- Diverse icone di azione sul lato destro (inclusa l’**icona verde** alla fine)
 
-- The user’s **name and email**
-- A status badge like **Active**
-- A **Joined At** date
-- A set of **action icons** on the right side of the row
+## Creare un account cliente
 
-## Create a new customer user
+Quando clicchi su **Create User**, si apre una finestra per creare un nuovo cliente.
 
-To create a customer account:
+Cosa compilerai (in base all’interfaccia):
 
-1. Click **Create User** (top right).
-2. In the “Create New User” modal, fill in:
-   - **Email**\* (required)
-   - **Password**\* (required — the modal notes a minimum of 8 characters)
-   - **Full Name** (optional)
-   - **Company** (optional)
-3. Click **Create User** to finish.
+- **Email** (obbligatorio)
+- **Password** (obbligatorio — la finestra indica una lunghezza minima)
+- **Full Name** (opzionale)
+- **Company** (opzionale)
 
-> **Common mistake:** Creating a user with a temporary password and forgetting to store it safely. Treat customer credentials carefully and share them through a secure channel.
+Esempio realistico:
 
-## Edit a customer’s details
+- Email → `sara@northwindclinic.com`
+- Password → una password sicura che condividi con il cliente tramite un canale sicuro
+- Full Name → `Sara Ruiz`
+- Company → `Northwind Clinic`
 
-From the user row, click the **pencil icon** to open the edit dialog.
+> **Consiglio:** Se gestisci molti account, compilare bene **Full Name** e **Company** rende la ricerca molto più semplice.
 
-In the “Edit User” modal you can update:
+## Modificare i dati di base del cliente
+
+Da una riga utente, puoi aprire una finestra di modifica per aggiornare campi di base come:
 
 - **Full Name**
 - **Company**
 
-Then click **Update User** to save changes.
+È utile quando:
 
-> **Tip:** Keeping the customer name/company tidy is useful when you’re managing many accounts (for example, when an agency has multiple clients under similar names).
+- Il cliente si è registrato con un nome incompleto
+- Vuoi che il nome dell’azienda segua il tuo criterio interno (ad esempio “Northwind Clinic (Madrid)”)
 
-## Open the customer app from the green icon
+## Accedere all’app del cliente con l’icona verde
 
-On the far right of each user row, you’ll see a **green icon** (the last icon in the row).\
-This opens the customer’s platform directly, so you can verify what they see or help them troubleshoot.
+L’ultima icona sulla destra di ogni riga è un’**icona verde**. È il modo più rapido per aprire direttamente la piattaforma del cliente.
 
-A typical support flow looks like this:
+Usala quando devi:
 
-- Customer says: “I can’t find my subscription page”
-- You open their app from the green icon
-- You confirm whether the subscription area is visible and whether they’re logged into the correct account
+- Confermare esattamente cosa vede il cliente
+- Verificare se una funzione è disponibile in base al suo abbonamento
+- Aiutare il cliente a trovare una sezione senza supposizioni
 
-> **Important:** What you see after opening the customer app can depend on that user’s subscription status and your White Label configuration.
+Esempio di supporto:
 
-## Review a customer’s profile tabs (Info, Subscriptions, 1-Min Billing, UTM)
+1. Il cliente dice: “Non trovo i miei abbonamenti.”
+2. Lo cerchi in **Utenti**.
+3. Clicchi sull’**icona verde** per aprire la sua app e guidarlo con certezza.
 
-When you open a customer’s profile view, you’ll typically see tabs like:
+> **Importante:** Ciò che vedrai aprendo l’app del cliente dipende dallo stato e dall’abbonamento attuale di quel cliente.
 
-- **Info**
-- **Subscriptions**
-- **1-Min Billing**
-- **UTM**
+## Cosa puoi consultare nel profilo di un cliente
 
-Below is what each tab is used for, based on what’s visible in the UI.
+Aprendo il pannello dettagli di un cliente, l’interfaccia mostra schede come:
 
-### Info
+- **Info** (dettagli dell’ultimo accesso e opzioni di sicurezza dell’account)
+- **Subscriptions** (minuti, abbonamenti attivi e azioni di fatturazione se disponibili)
+- **1-Min Billing** (regola di fatturazione in uscita e statistiche delle chiamate recenti)
+- **UTM** (attribuzione marketing catturata durante la registrazione)
 
-The **Info** tab includes “Last Login Details,” which helps you understand recent access:
+Questo ti aiuta a rispondere rapidamente a domande come:
 
-- **Device** (example shown: Desktop – macOS – Firefox)
-- **Location** (example shown: Madrid, Madrid, ES)
-- **IP Address**
-- **Time** (example shown: 3 days ago)
+- “Questo cliente ha effettuato l’accesso di recente?”
+- “Ha un abbonamento attivo?”
+- “Perché una chiamata breve è stata fatturata in questo modo?”
+- “Proviene da una campagna con parametri UTM?”
 
-This is useful when a customer claims they can’t access the app or says “someone logged in” — you can quickly sanity-check where and when the last login happened.
-
-The tab also shows a **Delete User Account** section with a **Delete** button.
-
-> **Important:** Deleting a user account is permanent. Only do this when you’re 100% sure the customer wants the account removed.
-
-### Subscriptions
-
-The **Subscriptions** tab helps you understand what the customer currently has.
-
-Based on the UI shown, you may see:
-
-- **Minutes Details** (including “Remaining Minutes”)
-- **Active Subscriptions** (for example, it may show “No active subscriptions” if nothing is running)
-
-There is also a **View Billing Details** section with a **View** button that opens the Stripe customer portal to manage billing (when available).
-
-> **Tip:** If “Active Subscriptions” is empty but the customer says they paid, the first thing to verify is whether they’re looking at the correct email/account.
-
-### 1-Min Billing
-
-The **1-Min Billing** tab explains and tracks outbound billing behavior using the “1-minute rule.”
-
-What the UI explains:
-
-- If **50% of the last 100 completed outbound calls** are under **50 seconds**, then outbound calls under **60 seconds** are billed as **1 minute**.
-
-You’ll see summary cards such as:
-
-- **Rule eligible** (Yes/No)
-- **Rule applies now** (Yes/No)
-- **Avg duration (completed 100)**
-- **Success rate (recent outbound)**
-
-There’s also:
-
-- A **Refresh** button
-- A toggle for **Minimum 1-minute billing** (an override that applies even if the user meets the rule)
-- A “Recent outbound calls (last 100)” table (columns like Created, Status, Duration, Under 50s)
-
-> **Tip:** This tab is especially useful when a customer questions billing for short outbound calls—you can point to how the rule is being applied for their account.
-
-### UTM
-
-The **UTM** tab shows “Marketing UTM Data” captured at signup and starting free trial.
-
-If there’s no attribution, the UI may show a message like “No UTM data available for this user.”
-
-This helps you answer questions like:
-
-- “Did this customer come from a campaign?”
-- “Which source drove this signup?” (when data exists)
+> **Consiglio:** Se un cliente dice “ho pagato ma non risulta attivo”, il primo controllo è spesso verificare che stia usando l’email/account corretto.
