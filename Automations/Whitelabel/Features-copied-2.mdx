@@ -1,0 +1,157 @@
+---
+title: "Fonctionnalités et capacités"
+description: "Définissez les éléments qui apparaîtront dans les forfaits d’abonnement afin que chaque forfait puisse activer, limiter ou configurer ce que reçoivent les sous-comptes."
+---
+
+## À quoi sert cette section
+
+**Fonctionnalités et capacités** est l’endroit où un compte en marque blanche définit ce qu’un forfait d’abonnement peut inclure.
+
+Une manière simple de le comprendre :
+
+- **Forfaits d’abonnement** = les niveaux que vous vendez (par exemple, Essentiel vs. Premium)
+- **Fonctionnalités et capacités** = ce que chaque niveau inclut (outils activés, limites numériques ou options sélectionnables)
+
+Lorsque vous créez ou modifiez un forfait, vous attribuerez ensuite des valeurs à ces éléments dans l’étape **Fonctionnalités** du forfait.
+
+[Cliquez ici pour ouvrir Fonctionnalités et capacités](https://app.callin.io/cms/features-capabilities)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/features1.png"
+    alt="Page Fonctionnalités et capacités avec une barre de recherche et un bouton pour créer une nouvelle fonctionnalité ou capacité."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : page Fonctionnalités et capacités, où vous pouvez rechercher des éléments existants ou en créer un nouveau.
+</p>
+
+> **Important :** Les libellés exacts et les options disponibles peuvent varier selon votre compte et votre formule.
+
+## Comment cela se relie aux forfaits d’abonnement
+
+Le flux habituel est :
+
+1) Vous créez les fonctionnalités/capacités ici  
+2) Vous créez (ou modifiez) un forfait d’abonnement  
+3) Dans l’étape **Fonctionnalités** du forfait, vous attribuez une valeur à chaque élément
+
+Cette valeur détermine ce que reçoit un sous-compte lorsqu’il utilise ce forfait.
+
+## Créer une fonctionnalité ou une capacité
+
+Cliquez sur le bouton de création, puis renseignez les champs suivants.
+
+### Nom
+
+C’est l’étiquette que vous verrez ensuite dans la configuration du forfait.
+
+Bons exemples :
+- **Minutes par mois**
+- **Enregistrement des appels**
+- **Choix de la voix**
+
+Mauvais exemples (trop vagues) :
+- **Minutes**
+- **Fonction 1**
+- **Accès**
+
+> **Astuce :** Utilisez des noms qui ressemblent à une règle claire. « Minutes par mois » est plus clair que « Minutes ».
+
+### Description
+
+Optionnelle, mais recommandée. Écrivez une phrase qui explique exactement ce que l’élément contrôle.
+
+Exemple :
+- « Minutes mensuelles incluses dans le forfait. L’usage supplémentaire est facturé séparément. »
+
+### Comment les forfaits accordent cette fonctionnalité
+
+Ce choix définit le type de valeur que vous configurerez ensuite dans chaque forfait.
+
+#### Activer / désactiver (interrupteur)
+
+À utiliser lorsque c’est simplement oui/non.
+
+Exemple :
+- Fonctionnalité : **Enregistrement des appels**
+  - Forfait Essentiel : **Désactivé**
+  - Forfait Pro : **Activé**
+
+Idéal pour :
+- Des options qui sont soit autorisées, soit non, sans valeur numérique.
+
+#### Limite d’usage (limite)
+
+À utiliser lorsque le forfait doit définir un nombre par période de facturation.
+
+Exemple :
+- Fonctionnalité : **Minutes par mois**
+  - Forfait Essentiel : **400**
+  - Forfait Pro : **1 000**
+
+Idéal pour :
+- Minutes, sièges, nombre d’agents, ou toute règle « X par mois » (selon ce que votre compte prend en charge).
+
+#### Accès avec options (capacité)
+
+À utiliser lorsque le forfait doit activer une option parmi plusieurs.
+
+Exemple :
+- Fonctionnalité : **Choix de la voix**
+  - Forfait Essentiel : **Voix standard**
+  - Forfait Pro : **Voix premium**
+
+Idéal pour :
+- Des packs ou niveaux sélectionnables (par exemple, « standard » vs. « premium »).
+
+> **Erreur fréquente :** Choisir un interrupteur pour un élément qui devrait être numérique (comme les minutes). S’il varie selon le forfait, c’est généralement une **limite**.
+
+### Catégorie
+
+Les catégories servent à regrouper les éléments et à garder la configuration du forfait claire.
+
+Exemples de catégories pratiques :
+- **Limites** (minutes, plafonds d’usage)
+- **Options** (fonctionnalités facultatives)
+- **Capacités** (packs ou options)
+
+> **Astuce :** Gardez des catégories cohérentes. Si vous créez « Limite » et « Limites », vous obtiendrez des regroupements en double.
+
+## Exemple concret (configuration réaliste)
+
+Imaginez deux niveaux :
+
+- **Essentiel** : 400 minutes par mois
+- **Pro** : 1 000 minutes par mois + enregistrement des appels
+
+Créez ces éléments dans **Fonctionnalités et capacités** :
+
+1) **Minutes par mois** → **Limite d’usage**  
+   Description : « Minutes mensuelles incluses dans le forfait. »
+
+2) **Enregistrement des appels** → **Activer / désactiver**  
+   Description : « Active l’enregistrement des appels gérés par l’assistant. »
+
+Puis, dans vos forfaits :
+
+- Forfait Essentiel :
+  - Minutes par mois = **400**
+  - Enregistrement des appels = **Désactivé**
+
+- Forfait Pro :
+  - Minutes par mois = **1 000**
+  - Enregistrement des appels = **Activé**
+
+Ainsi, les sous-comptes comprennent immédiatement ce qui change entre les niveaux.
+
+## Modifier une fonctionnalité ou une capacité existante
+
+Depuis la liste, ouvrez l’élément pour modifier :
+- **Nom** et **Description**
+- Le type (interrupteur / limite / options)
+- La **Catégorie**
+
+> **Important :** Modifier le type d’un élément après l’avoir utilisé dans des forfaits peut changer la manière dont sa valeur est enregistrée ou affichée. En cas de doute, créez un nouvel élément et mettez à jour les forfaits pour l’utiliser.
