@@ -1,0 +1,92 @@
+---
+title: "Analítica UTM"
+description: "Descubre de dónde vienen tus registros con datos UTM capturados durante el registro y al iniciar la prueba gratuita."
+---
+
+## Para qué sirve esta sección
+
+**Analítica UTM** te ayuda a entender qué enlaces y campañas de marketing están trayendo usuarios a tu entorno de marca blanca. Aquí se muestra la atribución UTM que se captura cuando un usuario **se registra** y cuando **inicia una prueba gratuita**.
+
+Sirve para responder preguntas como:
+- “¿Qué campaña está generando registros de verdad?”
+- “¿Los usuarios vienen de anuncios, partners o fuentes orgánicas?”
+- “¿Qué página de aterrizaje convierte mejor?”
+
+[Haz clic aquí para abrir Analítica UTM](https://app.callin.io/cms/utm)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/utm1.png"
+    alt="Panel de Analítica UTM con tarjetas de resumen, paneles de desglose por fuente y campaña, filtros (búsqueda y fechas) y una tabla de registros."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: panel de datos UTM con métricas de resumen, desglose por fuente/campaña, filtros y listado de usuarios.
+</p>
+
+> **Consejo:** Si ves 0 registros o “sin datos UTM”, normalmente significa que los usuarios se registraron sin parámetros UTM en el enlace, o que la campaña todavía no ha generado registros.
+
+> **Importante:** Los textos exactos y las opciones disponibles pueden variar según tu cuenta, tu plan y el idioma configurado.
+
+## Cómo leer el panel
+
+En la parte superior suelen aparecer métricas de resumen como:
+- **Total**: total de usuarios/registros en la vista actual.
+- **Con UTM**: cuántos registros tienen atribución UTM.
+- **Cobertura**: porcentaje de registros con UTM dentro del total.
+
+También es habitual ver acciones rápidas como:
+- **Actualizar**: recargar los datos más recientes.
+- **Exportar CSV**: descargar el listado para informes.
+
+## Cómo buscar y filtrar
+
+### Buscar usuarios
+Usa la barra de búsqueda para encontrar un usuario concreto (por ejemplo, por correo electrónico o nombre).
+
+### Filtrar por fechas
+Utiliza los selectores **Desde** y **Hasta** para centrarte en un periodo (por ejemplo, “últimos 7 días” o “este mes”).
+
+### Aplicar filtros
+Usa **Filtros** para acotar por criterios como fuente o campaña (las opciones pueden variar según tu cuenta).
+
+### Limpiar filtros
+Usa **Limpiar** para volver a la vista por defecto.
+
+## Qué significan los campos UTM (en sencillo)
+
+Los parámetros UTM son etiquetas que se añaden a un enlace para saber de dónde viene el tráfico.
+
+Campos habituales:
+- **Fuente**: la plataforma u origen (por ejemplo, `google`, `facebook`, `newsletter`).
+- **Campaña**: el nombre de la campaña (por ejemplo, `promo_verano`, `lanzamiento_2026`).
+- **URL de aterrizaje**: la página donde aterriza el usuario (por ejemplo, `/precios`, `/registro`, `/promo`).
+
+> **Error común:** Usar nombres inconsistentes (por ejemplo, `Facebook`, `facebook`, `fb`). Elige un estándar y mantenlo para que los reportes sean claros.
+
+## Ejemplos prácticos
+
+### Ejemplo 1: Medir un anuncio de pago
+Si lanzas un anuncio, puedes usar un enlace etiquetado con:
+- Fuente: `facebook`
+- Campaña: `oferta_starter`
+
+Luego, en **Analítica UTM**, confirmas rápidamente si esa campaña está generando registros.
+
+### Ejemplo 2: Comparar dos páginas de aterrizaje
+Crea dos enlaces con campañas distintas:
+- Campaña A: `test_precios`
+- Campaña B: `test_inicio`
+
+Tras una semana, filtra por fechas y compara resultados para ver qué página trae más registros (y con mejor cobertura UTM).
+
+## Cuando un cliente pregunta “¿de dónde salió este registro?”
+
+Checklist rápido:
+1) Busca al usuario en **Analítica UTM**.
+2) Revisa **Fuente** y **Campaña**.
+3) Si está vacío, confirma que se usó el enlace correcto con parámetros UTM.
+
+> **Consejo:** Define una regla interna para nombrar enlaces (por ejemplo: fuente en minúsculas y campañas con guiones bajos, sin espacios).
