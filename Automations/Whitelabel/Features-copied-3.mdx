@@ -1,0 +1,157 @@
+---
+title: "Funzionalità e capacità"
+description: "Definisci gli elementi che compariranno nei piani di abbonamento, così ogni piano può attivare, limitare o configurare ciò che ricevono i sotto-account."
+---
+
+## A cosa serve questa sezione
+
+**Funzionalità e capacità** è il punto in cui un account in white label definisce cosa può includere un piano di abbonamento.
+
+Un modo semplice per capirlo:
+
+- **Piani di abbonamento** = i livelli che vendi (ad esempio, Base vs. Premium)
+- **Funzionalità e capacità** = cosa include ogni livello (strumenti attivati, limiti numerici o opzioni selezionabili)
+
+Quando crei o modifichi un piano, assegnerai poi i valori di questi elementi nella fase **Funzionalità** del piano.
+
+[Fai clic qui per aprire Funzionalità e capacità](https://app.callin.io/cms/features-capabilities)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/features1.png"
+    alt="Pagina Funzionalità e capacità con una barra di ricerca e un pulsante per creare una nuova funzionalità o capacità."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: pagina Funzionalità e capacità, dove puoi cercare elementi esistenti o crearne uno nuovo.
+</p>
+
+> **Importante:** Le diciture esatte e le opzioni disponibili possono variare in base al tuo account e al tuo piano.
+
+## Come si collega ai piani di abbonamento
+
+Il flusso tipico è:
+
+1) Crei qui funzionalità/capacità  
+2) Crei (o modifichi) un piano di abbonamento  
+3) Nella fase **Funzionalità** del piano, assegni un valore a ciascun elemento
+
+Quel valore determina cosa riceve un sotto-account quando utilizza il piano.
+
+## Creare una funzionalità o una capacità
+
+Premi il pulsante di creazione e compila i campi seguenti.
+
+### Nome
+
+È l’etichetta che vedrai poi nella configurazione del piano.
+
+Buoni esempi:
+- **Minuti al mese**
+- **Registrazione delle chiamate**
+- **Selezione della voce**
+
+Esempi da evitare (troppo vaghi):
+- **Minuti**
+- **Funzione 1**
+- **Accesso**
+
+> **Consiglio:** Usa nomi che sembrano una regola chiara. “Minuti al mese” è più chiaro di “Minuti”.
+
+### Descrizione
+
+Facoltativa, ma consigliata. Scrivi una frase che spieghi esattamente cosa controlla l’elemento.
+
+Esempio:
+- “Minuti mensili inclusi nel piano. L’uso extra viene addebitato separatamente.”
+
+### In che modo i piani concedono questa funzionalità
+
+Questa scelta definisce il tipo di valore che configurerai in ogni piano.
+
+#### Attiva / disattiva (interruttore)
+
+Usalo quando è semplicemente sì/no.
+
+Esempio:
+- Funzionalità: **Registrazione delle chiamate**
+  - Piano Base: **Disattivata**
+  - Piano Pro: **Attivata**
+
+Ideale per:
+- Opzioni che si abilitano o disabilitano senza numeri.
+
+#### Limite di utilizzo (limite)
+
+Usalo quando il piano deve impostare un numero per periodo di fatturazione.
+
+Esempio:
+- Funzionalità: **Minuti al mese**
+  - Piano Base: **400**
+  - Piano Pro: **1.000**
+
+Ideale per:
+- Minuti, posti, numero di agenti o qualsiasi regola “X al mese” (in base a ciò che supporta il tuo account).
+
+#### Accesso con opzioni (capacità)
+
+Usalo quando il piano deve sbloccare una scelta tra più opzioni.
+
+Esempio:
+- Funzionalità: **Selezione della voce**
+  - Piano Base: **Voci standard**
+  - Piano Pro: **Voci premium**
+
+Ideale per:
+- Pacchetti o livelli selezionabili (ad esempio, “standard” vs. “premium”).
+
+> **Errore comune:** Scegliere un interruttore per qualcosa che dovrebbe essere numerico (come i minuti). Se varia tra piani, di solito è un **limite**.
+
+### Categoria
+
+Le categorie servono a raggruppare gli elementi e mantenere ordinata la configurazione del piano.
+
+Esempi di categorie utili:
+- **Limiti** (minuti, tetti di utilizzo)
+- **Extra** (opzioni aggiuntive)
+- **Capacità** (pacchetti o scelte)
+
+> **Consiglio:** Mantieni le categorie coerenti. Se crei “Limite” e “Limiti”, ti ritroverai con raggruppamenti duplicati.
+
+## Esempio pratico (configurazione realistica)
+
+Immagina due livelli:
+
+- **Base**: 400 minuti al mese
+- **Pro**: 1.000 minuti al mese + registrazione delle chiamate
+
+Crea questi elementi in **Funzionalità e capacità**:
+
+1) **Minuti al mese** → **Limite di utilizzo**  
+   Descrizione: “Minuti mensili inclusi nel piano.”
+
+2) **Registrazione delle chiamate** → **Attiva / disattiva**  
+   Descrizione: “Attiva la registrazione delle chiamate gestite dall’assistente.”
+
+Poi, nei tuoi piani:
+
+- Piano Base:
+  - Minuti al mese = **400**
+  - Registrazione delle chiamate = **Disattivata**
+
+- Piano Pro:
+  - Minuti al mese = **1.000**
+  - Registrazione delle chiamate = **Attivata**
+
+In questo modo, i sotto-account capiscono subito cosa cambia tra i livelli.
+
+## Modificare una funzionalità o una capacità esistente
+
+Dall’elenco, apri l’elemento per modificare:
+- **Nome** e **Descrizione**
+- Il tipo (interruttore / limite / opzioni)
+- La **Categoria**
+
+> **Importante:** Cambiare il tipo di un elemento dopo averlo usato nei piani può influire su come il valore viene salvato o mostrato. Se hai dubbi, crea un nuovo elemento e aggiorna i piani per utilizzarlo.
