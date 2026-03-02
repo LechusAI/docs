@@ -1,0 +1,92 @@
+---
+title: "UTM-Analyse"
+description: "Erkennen Sie, woher Registrierungen kommen, anhand von UTM-Daten, die bei der Registrierung und beim Start der kostenlosen Testphase erfasst werden."
+---
+
+## Wofür dieser Bereich gedacht ist
+
+**UTM-Analyse** hilft Ihnen zu verstehen, welche Marketing-Links und Kampagnen Nutzer in Ihre White-Label-Umgebung bringen. Hier sehen Sie die UTM-Zuordnung, die erfasst wird, wenn sich ein Nutzer **registriert** und wenn er **eine kostenlose Testphase startet**.
+
+Das ist hilfreich für Fragen wie:
+- „Welche Kampagne bringt tatsächlich Registrierungen?“
+- „Kommen Nutzer über Anzeigen, Partner oder organische Quellen?“
+- „Welche Landingpage konvertiert am besten?“
+
+[Klicken Sie hier, um die UTM-Analyse zu öffnen](https://app.callin.io/cms/utm)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/utm1.png"
+    alt="UTM-Analyse-Dashboard mit Übersichtskennzahlen, Aufschlüsselung nach Quelle und Kampagne, Filtern (Suche und Datum) sowie einer Tabelle der Registrierungen."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: UTM-Dashboard mit Kennzahlen, Aufteilung nach Quelle/Kampagne, Filtern und einer Nutzerliste.
+</p>
+
+> **Tipp:** Wenn Sie 0 Einträge oder „keine UTM-Daten“ sehen, wurden Registrierungen meist ohne UTM-Parameter im Link durchgeführt oder die Kampagne hat noch keine Registrierungen erzeugt.
+
+> **Wichtig:** Die genauen Bezeichnungen und verfügbaren Optionen können je nach Konto, Tarif und UI-Sprache variieren.
+
+## So lesen Sie das Dashboard
+
+Oben sehen Sie häufig Übersichtskennzahlen wie:
+- **Gesamt**: Gesamtzahl der Nutzer/Registrierungen in der aktuellen Ansicht.
+- **Mit UTM**: wie viele Registrierungen UTM-Zuordnung enthalten.
+- **Abdeckung**: Anteil der Registrierungen mit UTM im Verhältnis zum Gesamtwert.
+
+Zusätzlich sind oft Schnellaktionen vorhanden wie:
+- **Aktualisieren**: lädt die neuesten Daten neu.
+- **Als CSV exportieren**: lädt die Liste für Auswertungen herunter.
+
+## Suchen und filtern
+
+### Nutzer suchen
+Verwenden Sie die Suchleiste, um einen bestimmten Nutzer zu finden (zum Beispiel per E-Mail oder Name).
+
+### Zeitraum filtern
+Nutzen Sie die Datumsfelder **Von** und **Bis**, um einen Zeitraum auszuwählen (zum Beispiel „letzte 7 Tage“ oder „dieser Monat“).
+
+### Filter anwenden
+Verwenden Sie **Filter**, um nach Quelle oder Kampagne einzuschränken (Optionen können je nach Konto variieren).
+
+### Zurücksetzen
+Verwenden Sie **Zurücksetzen**, um zur Standardansicht zurückzukehren.
+
+## Bedeutung der UTM-Felder (einfach erklärt)
+
+UTM-Parameter sind Etiketten, die an einen Link angehängt werden, um die Herkunft des Traffics zu erkennen.
+
+Häufige Felder:
+- **Quelle**: die Herkunftsplattform (z. B. `google`, `facebook`, `newsletter`).
+- **Kampagne**: der Kampagnenname (z. B. `sommer_promo`, `launch_2026`).
+- **Landing-URL**: die Seite, auf der der Nutzer landet (z. B. `/preise`, `/registrierung`, `/promo`).
+
+> **Häufiger Fehler:** Uneinheitliche Namen (z. B. `Facebook`, `facebook`, `fb`). Legen Sie eine Konvention fest und bleiben Sie dabei, damit Berichte sauber sind.
+
+## Praxisbeispiele
+
+### Beispiel 1: Eine bezahlte Anzeige messen
+Für eine Anzeige können Sie einen Link mit folgenden Angaben verwenden:
+- Quelle: `facebook`
+- Kampagne: `starter_angebot`
+
+Danach prüfen Sie in der **UTM-Analyse**, ob die Kampagne Registrierungen erzeugt.
+
+### Beispiel 2: Zwei Landingpages vergleichen
+Erstellen Sie zwei Links mit unterschiedlichen Kampagnennamen:
+- Kampagne A: `test_preise`
+- Kampagne B: `test_startseite`
+
+Nach einer Woche filtern Sie nach Datum und vergleichen die Ergebnisse, um zu sehen, welche Seite mehr Registrierungen bringt (und mit besserer UTM-Abdeckung).
+
+## Wenn ein Kunde fragt „Woher kommt diese Registrierung?“
+
+Schnell-Checkliste:
+1) Suchen Sie den Nutzer in der **UTM-Analyse**.
+2) Prüfen Sie **Quelle** und **Kampagne**.
+3) Wenn es leer ist, stellen Sie sicher, dass der richtige Link mit UTM-Parametern verwendet wurde.
+
+> **Tipp:** Definieren Sie eine interne Benennungsregel (zum Beispiel: Quellen klein schreiben, Kampagnen mit Unterstrichen, keine Leerzeichen).
