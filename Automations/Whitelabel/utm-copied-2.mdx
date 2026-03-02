@@ -1,0 +1,92 @@
+---
+title: "Analyse UTM"
+description: "Identifiez l’origine de vos inscriptions grâce aux données UTM capturées lors de l’inscription et au démarrage de l’essai gratuit."
+---
+
+## À quoi sert cette section
+
+**Analyse UTM** vous aide à comprendre quels liens et campagnes marketing amènent des utilisateurs dans votre environnement en marque blanche. Elle affiche l’attribution UTM capturée quand un utilisateur **s’inscrit** et quand il **démarre un essai gratuit**.
+
+Utile pour répondre à des questions comme :
+- « Quelle campagne génère réellement des inscriptions ? »
+- « Les utilisateurs viennent-ils d’annonces, de partenaires ou de sources organiques ? »
+- « Quelle page d’atterrissage convertit le mieux ? »
+
+[Cliquez ici pour ouvrir Analyse UTM](https://app.callin.io/cms/utm)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/utm1.png"
+    alt="Tableau de bord d’analyse UTM avec des cartes de synthèse, des panneaux par source et campagne, des filtres (recherche et dates) et un tableau des inscriptions."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : tableau de bord des données UTM avec indicateurs, répartition par source/campagne, filtres et liste d’utilisateurs.
+</p>
+
+> **Astuce :** Si vous voyez 0 enregistrement ou « aucune donnée UTM », cela signifie généralement que les utilisateurs se sont inscrits sans paramètres UTM dans le lien, ou que la campagne n’a pas encore généré d’inscriptions.
+
+> **Important :** Les libellés exacts et les options disponibles peuvent varier selon votre compte, votre formule et la langue configurée.
+
+## Comment lire le tableau de bord
+
+En haut, vous verrez souvent des indicateurs de synthèse comme :
+- **Total** : nombre total d’utilisateurs/inscriptions dans la vue actuelle.
+- **Avec UTM** : combien d’inscriptions ont une attribution UTM.
+- **Couverture** : pourcentage d’inscriptions avec UTM sur le total.
+
+Vous pouvez aussi voir des actions rapides comme :
+- **Actualiser** : recharger les données les plus récentes.
+- **Exporter en CSV** : télécharger la liste pour vos rapports.
+
+## Rechercher et filtrer
+
+### Rechercher des utilisateurs
+Utilisez la barre de recherche pour retrouver un utilisateur (par exemple par e-mail ou par nom).
+
+### Filtrer par période
+Utilisez les sélecteurs **Du** et **Au** pour vous concentrer sur une période (par exemple « 7 derniers jours » ou « ce mois-ci »).
+
+### Appliquer des filtres
+Utilisez **Filtres** pour affiner par source ou campagne (les options peuvent varier selon votre compte).
+
+### Réinitialiser
+Utilisez **Effacer** pour revenir à la vue par défaut.
+
+## Signification des champs UTM (simplement)
+
+Les paramètres UTM sont des étiquettes ajoutées à un lien pour identifier l’origine du trafic.
+
+Champs courants :
+- **Source** : la plateforme d’origine (ex. `google`, `facebook`, `newsletter`).
+- **Campagne** : le nom de la campagne (ex. `promo_ete`, `lancement_2026`).
+- **URL d’atterrissage** : la page sur laquelle l’utilisateur arrive (ex. `/tarifs`, `/inscription`, `/promo`).
+
+> **Erreur fréquente :** Utiliser des noms incohérents (ex. `Facebook`, `facebook`, `fb`). Définissez une convention et tenez-vous-y pour des rapports propres.
+
+## Exemples pratiques
+
+### Exemple 1 : Mesurer une annonce payante
+Pour une annonce, vous pouvez utiliser un lien étiqueté :
+- Source : `facebook`
+- Campagne : `offre_starter`
+
+Ensuite, dans **Analyse UTM**, vous vérifiez rapidement si la campagne génère des inscriptions.
+
+### Exemple 2 : Comparer deux pages d’atterrissage
+Créez deux liens avec des campagnes différentes :
+- Campagne A : `test_tarifs`
+- Campagne B : `test_accueil`
+
+Après une semaine, filtrez par date et comparez les résultats pour voir quelle page apporte le plus d’inscriptions (et avec une meilleure couverture UTM).
+
+## Quand un client demande « d’où vient cette inscription ? »
+
+Checklist rapide :
+1) Recherchez l’utilisateur dans **Analyse UTM**.
+2) Vérifiez **Source** et **Campagne**.
+3) Si c’est vide, confirmez que le bon lien (avec paramètres UTM) a été utilisé.
+
+> **Astuce :** Définissez une règle de nommage interne (par exemple : sources en minuscules, campagnes avec des tirets bas, sans espaces).
