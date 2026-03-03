@@ -1,0 +1,120 @@
+---
+title: "Modèles d’agents"
+description: "Créez des modèles d’agents à l’avance pour que vos utilisateurs (sous-comptes) puissent créer des agents plus rapidement avec des paramètres cohérents."
+---
+
+## Présentation
+
+Les **modèles d’agents** vous permettent de préconfigurer un agent « prêt à l’emploi » que vos **sous-comptes** peuvent utiliser lors de la création de nouveaux agents. Au lieu de tout configurer depuis zéro à chaque fois, vous choisissez quels paramètres font partie du modèle, et vos utilisateurs ne complètent que ce qui est nécessaire.
+
+Utilisez cette section si vous voulez :
+- Un **comportement cohérent** des agents sur plusieurs sous-comptes.
+- Un onboarding plus rapide pour les nouveaux utilisateurs.
+- Un ensemble de configurations d’agents « approuvées » et prêtes à l’emploi.
+
+## Ouvrir Modèles d’agents
+
+Vous pouvez accéder à la page ici : [Modèles d’agents](https://app.callin.io/cms/agent-templates)
+
+## Créer un modèle
+
+1. Ouvrez **Modèles d’agents**.
+2. Cliquez sur **Créer un modèle**.
+3. Renseignez les informations du modèle :
+   - **Nom du modèle** : un nom clair que vos sous-comptes reconnaîtront.
+   - **Description** : une courte phrase expliquant l’objectif du modèle.
+
+> **Conseil :** Utilisez des noms qui décrivent le cas d’usage, pas l’équipe. Exemple : **« Support client entrant »** plutôt que **« Support – Équipe A »**.
+
+## Choisir ce que les sous-comptes peuvent configurer
+
+Lors de la création d’un modèle, vous verrez une liste de cases à cocher dans **Sélectionner les champs à inclure**.  
+**Coché = inclus dans le parcours du modèle pour les sous-comptes.**  
+Les champs non cochés ne feront pas partie de la configuration via le modèle.
+
+### Informations de base
+
+Vous pouvez inclure des champs comme :
+- **Nom de l’agent**
+- **Message d’accueil**
+- **Prompt système**
+- **Sens de l’appel**
+- **Durée maximale d’appel (minutes)**
+- **Variables dynamiques**
+- **Fuseau horaire**
+- **Modèle IA**
+- **Enregistrer les appels**
+- **Détection de messagerie vocale**
+- **L’utilisateur parle en premier**
+
+> **Important :** N’incluez que les champs que vous voulez réellement laisser aux sous-comptes. Moins il y a de champs, moins il y a d’erreurs.
+
+### Voix et langue
+
+Vous pouvez inclure des champs comme :
+- **Langue principale**
+- **Langues secondaires**
+- **Voix**
+- **Vitesse d’élocution**
+- **Température**
+
+> **Conseil :** Si vous couvrez plusieurs régions, incluez **Langue principale** et **Fuseau horaire** afin que les sous-comptes puissent s’adapter rapidement sans dénaturer l’objectif du modèle.
+
+### Action d’appel
+
+Vous pouvez inclure des champs comme :
+- **Planifier un rendez-vous**
+- **Fournisseur de planification**
+- **Transférer l’appel**
+- **Envoyer un e-mail**
+- **Désinscription (opt-out)**
+- **Extraction de données**
+- **Entités d’extraction de données**
+- **Webhook après appel**
+- **URL du webhook**
+- **Nombre de tentatives**
+- **Délai de nouvelle tentative (minutes)**
+
+> **Erreur courante :** Inclure **URL du webhook** pour les sous-comptes alors que vous souhaitez garder ce réglage sous contrôle de votre organisation. Si vous avez besoin d’un suivi centralisé, limitez l’accès aux champs liés aux webhooks.
+
+## Modèles pré-déployés
+
+Vous pouvez voir une option appelée **Pré-déployé**.
+
+Lorsqu’elle est activée, un agent peut être **créé automatiquement à partir de ce modèle** pour les nouveaux comptes utilisateur (le comportement peut varier selon votre compte/forfait).
+
+> **Important :** Activez ceci uniquement pour votre modèle « starter » par défaut. Sinon, les nouveaux utilisateurs peuvent se retrouver avec des agents qu’ils n’avaient pas l’intention de créer.
+
+## Statut du modèle
+
+Vous verrez aussi un **statut du modèle**.  
+Seuls les modèles **actifs** sont visibles pour les sous-comptes.
+
+Utilisez cela pour :
+- Masquer temporairement d’anciens modèles sans les supprimer.
+- Ne laisser visibles que vos modèles recommandés.
+
+## Exemple : une configuration de modèle réaliste
+
+Voici une approche réaliste pour structurer un modèle d’agent de support entrant :
+
+**Nom du modèle :** Support client entrant  
+**Description :** Gère les questions entrantes, collecte les informations essentielles et oriente les cas urgents.
+
+**Champs à inclure (recommandé) :**
+- Message d’accueil
+- Prompt système
+- Sens de l’appel
+- Fuseau horaire
+- Langue principale
+- Voix
+- Transférer l’appel (uniquement si votre workflow prévoit une escalade)
+
+> **Conseil :** Si vos sous-comptes ne doivent pas modifier le comportement de base, incluez le **Prompt système** mais évitez d’exposer trop d’options avancées en même temps.
+
+## Notes et limites
+
+- Ce que voient les sous-comptes peut dépendre de vos permissions de rôle et de votre forfait.
+- Certaines options et libellés peuvent légèrement varier selon les comptes.
+
+Si vous le souhaitez, vous pouvez créer plusieurs modèles par cas d’usage (par exemple **Qualification commerciale**, **Planification de rendez-vous**, **Triage support**) afin que les sous-comptes démarrent toujours avec l’option la plus pertinente.
