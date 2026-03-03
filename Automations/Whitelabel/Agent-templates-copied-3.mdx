@@ -1,0 +1,120 @@
+---
+title: "Modelli di agenti"
+description: "Prepara modelli di agenti in anticipo così i tuoi utenti (subaccount) possono creare agenti più velocemente con impostazioni coerenti."
+---
+
+## Panoramica
+
+I **modelli di agenti** ti permettono di preconfigurare un agente “pronto all’uso” che i tuoi **subaccount** possono applicare quando creano nuovi agenti. Invece di configurare tutto da zero ogni volta, decidi tu quali impostazioni includere nel modello, e i tuoi utenti compilano solo ciò che serve.
+
+Usa questa sezione quando vuoi:
+- **Comportamento coerente** degli agenti tra più subaccount.
+- Onboarding più rapido per i nuovi utenti.
+- Un set curato di configurazioni di agenti “approvate”.
+
+## Aprire Modelli di agenti
+
+Puoi accedere alla pagina qui: [Modelli di agenti](https://app.callin.io/cms/agent-templates)
+
+## Creare un modello
+
+1. Apri **Modelli di agenti**.
+2. Clicca su **Crea modello**.
+3. Compila i dettagli del modello:
+   - **Nome del modello**: un nome chiaro che i subaccount riconosceranno.
+   - **Descrizione**: una breve spiegazione di a cosa serve il modello.
+
+> **Suggerimento:** Usa nomi che descrivono il caso d’uso, non il team. Esempio: **“Supporto clienti in entrata”** invece di **“Supporto - Team A”**.
+
+## Scegliere cosa possono configurare i subaccount
+
+Durante la creazione di un modello vedrai un elenco di caselle in **Seleziona i campi da includere**.  
+**Se selezionato = incluso nel flusso del modello per i subaccount.**  
+I campi non selezionati non faranno parte della configurazione tramite modello.
+
+### Informazioni di base
+
+Puoi includere campi come:
+- **Nome agente**
+- **Messaggio di benvenuto**
+- **Prompt di sistema**
+- **Direzione della chiamata**
+- **Durata massima chiamata (minuti)**
+- **Variabili dinamiche**
+- **Fuso orario**
+- **Modello IA**
+- **Registrare le chiamate**
+- **Rilevamento segreteria telefonica**
+- **L’utente parla per primo**
+
+> **Importante:** Includi solo i campi che vuoi davvero far modificare ai subaccount. Meno campi di solito significa meno errori.
+
+### Voce e lingua
+
+Puoi includere campi come:
+- **Lingua principale**
+- **Lingue secondarie**
+- **Voce**
+- **Velocità del parlato**
+- **Temperatura**
+
+> **Suggerimento:** Se supporti più aree geografiche, includi **Lingua principale** e **Fuso orario** così i subaccount possono adattare rapidamente senza snaturare l’intento del modello.
+
+### Azione di chiamata
+
+Puoi includere campi come:
+- **Pianifica appuntamento**
+- **Provider di pianificazione**
+- **Trasferisci chiamata**
+- **Invia un’e-mail**
+- **Disiscrizione (opt-out)**
+- **Estrazione dati**
+- **Entità per estrazione dati**
+- **Webhook post-chiamata**
+- **URL webhook**
+- **Numero di tentativi**
+- **Ritardo tentativo (minuti)**
+
+> **Errore comune:** Includere **URL webhook** per i subaccount quando vuoi che resti controllato dalla tua organizzazione. Se ti serve un tracciamento centralizzato, limita i campi legati ai webhook.
+
+## Modelli pre-distribuiti
+
+Potresti vedere un’opzione chiamata **Pre-distribuito**.
+
+Quando è abilitata, un agente può essere **creato automaticamente usando questo modello** per i nuovi account utente registrati (il comportamento può variare in base a account/piano).
+
+> **Importante:** Attivalo solo per il tuo modello “starter” predefinito. Altrimenti, i nuovi utenti potrebbero ritrovarsi agenti che non intendevano creare.
+
+## Stato del modello
+
+Vedrai anche lo **stato del modello**.  
+Solo i modelli **attivi** sono visibili ai subaccount.
+
+Usalo quando vuoi:
+- Nascondere temporaneamente modelli più vecchi senza eliminarli.
+- Lasciare disponibili solo i modelli consigliati.
+
+## Esempio: una configurazione pratica di modello
+
+Ecco un modo realistico per strutturare un modello per un agente di supporto in entrata:
+
+**Nome del modello:** Supporto clienti in entrata  
+**Descrizione:** Gestisce le domande in entrata, raccoglie i dettagli di base e instrada i casi urgenti.
+
+**Campi da includere (consigliato):**
+- Messaggio di benvenuto
+- Prompt di sistema
+- Direzione della chiamata
+- Fuso orario
+- Lingua principale
+- Voce
+- Trasferisci chiamata (solo se il tuo flusso prevede escalation)
+
+> **Suggerimento:** Se i subaccount non dovrebbero modificare il comportamento di base, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate contemporaneamente.
+
+## Note e limitazioni
+
+- Ciò che vedono i subaccount può dipendere dai permessi di ruolo e dal piano.
+- Alcune opzioni e diciture possono variare leggermente tra gli account.
+
+Se vuoi, puoi creare più modelli per caso d’uso (ad esempio **Qualificazione vendite**, **Pianificazione appuntamenti**, **Triage supporto**) così i subaccount partono sempre dalla scelta più vicina.
