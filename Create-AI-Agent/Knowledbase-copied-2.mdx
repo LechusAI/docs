@@ -1,0 +1,150 @@
+---
+title: "Knowledge Base"
+description: "Create a shared library of Files and Web URLs that your AI agents can reference to answer questions more accurately."
+---
+
+## What the Knowledge Base is for
+
+The **Knowledge Base** is where you store information that your AI agents can use during conversations—so they don’t have to rely only on the main prompt.
+
+Typical use cases:
+
+- Answering questions about your business (services, pricing, policies, hours).
+- Guiding users through processes (refund steps, appointment prep, onboarding).
+- Keeping responses consistent across multiple agents.
+
+Access it here: [Knowledge Base](https://app.callin.io/knowledge-base)
+
+> **Tip:** Think of the Knowledge Base as “approved reference material” your agent can pull from when a caller asks detailed questions.
+
+## How it connects to AI agents
+
+You don’t add the content directly inside an agent. Instead, you:
+
+1. Build your Knowledge Base content here (Files or Web URLs).
+2. Then, when editing an agent, you **select the Knowledge Base group** you want that agent to use.
+
+> **Important:** If you update a Knowledge Base group and want the changes to affect an existing agent, you may need to go back to the agent editor and click an **Update** action in the Knowledge Base section (this can vary depending on your account/plan).
+
+## Files Knowledge Base
+
+The **Files** tab is for uploading documents your agent should learn from (for example: a PDF policy, a DOCX script, or a TXT FAQ). Files are organized into **groups**, so you can attach the right set of documents to the right agent.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledgebase1.png" alt="Knowledge Base page with the Files tab selected and an empty state showing no files found" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Knowledge Base in Files mode, where you upload documents and organize them into groups.
+</p>
+
+### Create a file group and upload documents
+
+1. Open the **Files** tab.
+2. Click **Create Knowledge base**.
+3. In the upload modal, enter a **Group Name** (required).
+4. Add your documents:
+   - Drag and drop files into the upload area, or
+   - Click **Select Files** to browse.
+5. Click **Upload Files** to finish.
+
+Supported formats and limits (as shown in the uploader):
+
+- PDF, DOC, DOCX, TXT
+- Max 5MB per file
+
+> **Common mistake:** Uploading multiple unrelated documents into one group. If you have different use cases (Sales vs. Support), create separate groups so you can attach the right knowledge to each agent.
+
+### Manage and update files in a group
+
+After a group exists, you can open it to manage what’s inside:
+
+- Add more documents (for example, using **Add New Files**).
+- See a list of **Current Files** already included.
+- Remove files you no longer want the agent to reference.
+
+> **Tip:** Use clear group names like **“Support Policies”**, **“Pricing & Plans”**, or **“Clinic Intake Script”** so it’s easy to select the correct group later.
+
+## Web URLs Knowledge Base
+
+The **Web** tab is for teaching your agent from web pages. You create a **URL group**, give it a title, and add one or more URLs. This is useful when your source of truth lives on your website (help center, docs, policy pages, landing pages).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/kanowledgebase2.png" alt="Knowledge Base page with the Web tab selected, showing an empty state and an Add Web URL button" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Knowledge Base in Web mode, where you add and manage groups of website URLs.
+</p>
+
+### Create a URL group
+
+1. Open the **Web** tab.
+2. Click **Add Web URL**.
+3. Fill in:
+   - **Title** (required): the name of the URL group (this title is used for all URLs in the group).
+   - **URL #1**: paste the first webpage link.
+4. (Optional) Click **Add Another URL** to include more pages.
+5. Click **Add URL** to save the group.
+
+> **Tip:** Keep URL groups focused. For example, make one group for **“Pricing & Billing”** URLs and a different group for **“Refund Policy”** URLs.
+
+### Edit or delete a URL group
+
+Once a URL group is created, you can manage it from the list:
+
+- **Edit** the group title and URLs.
+- **Delete** the group if you no longer need it.
+- Open the group to see what’s included.
+
+Inside the edit modal, you can:
+
+- Update the **Title**
+- Add or remove individual URLs
+- Click **Save** to apply changes
+
+> **Important:** If you change URLs and need an existing agent to use the updated content, you may need to re-open the agent editor and apply an **Update** in the Knowledge Base section (this can vary depending on your account/plan).
+
+## Select a Knowledge Base for an agent
+
+After you’ve created your groups (Files or Web URLs), you attach one to an agent during agent editing.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledgebase3.png" alt="Select Knowledge Base panel while editing an agent, with a source switch for Files or Web URLs and a list of groups" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Selecting a Knowledge Base group while editing an AI agent (choose Files or Web URLs, then select a group).
+</p>
+
+### Attach a group to an agent
+
+1. Go to **AI Agents** and open an agent to edit.
+2. Find the **Knowledge Base** section.
+3. Click **Add**.
+4. Choose the **Source**:
+   - **Files**, or
+   - **Web URLs**
+5. Select a **Group** (for example: “Support Policies” or “Company Website Docs”).
+6. Click **Select** to attach it to the agent.
+
+You may also see a **Refresh** option to reload the list of groups.
+
+> **Tip:** If you have multiple agents with different roles, give each agent a different Knowledge Base group so they stay focused and don’t answer outside their scope.
+
+## Practical example
+
+Let’s say you run a dental clinic and you have two agents:
+
+- **Front Desk Agent** (appointments, opening hours, directions)
+- **Billing Agent** (pricing, invoices, insurance questions)
+
+A good setup could be:
+
+- Files group: **“Clinic FAQs (TXT)”** for quick answers and scripts
+- Web URLs group: **“Pricing & Insurance Pages”** pointing to your public website pages
+
+Then:
+
+- The **Front Desk Agent** gets the FAQs group.
+- The **Billing Agent** gets the Pricing & Insurance URLs group.
