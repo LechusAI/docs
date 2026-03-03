@@ -1,0 +1,120 @@
+---
+title: "Plantillas de agentes"
+description: "Precrea plantillas de agentes para que tus usuarios (subcuentas) creen agentes más rápido y con configuraciones consistentes."
+---
+
+## Descripción general
+
+Las **Plantillas de agentes** te permiten precrear una configuración de agente “lista para usar” que tus **subcuentas** pueden aplicar al crear agentes nuevos. En lugar de configurar todo desde cero cada vez, tú decides qué ajustes se incluyen en la plantilla y tus usuarios completan solo lo necesario.
+
+Usa esta sección cuando quieras:
+- **Comportamiento consistente** del agente entre varias subcuentas.
+- Onboarding más rápido para usuarios nuevos.
+- Un conjunto curado de configuraciones “aprobadas” de agentes.
+
+## Abrir Plantillas de agentes
+
+Puedes acceder a la página aquí: [Plantillas de agentes](https://app.callin.io/cms/agent-templates)
+
+## Crear una plantilla
+
+1. Abre **Plantillas de agentes**.
+2. Haz clic en **Create Template**.
+3. Completa los detalles de la plantilla:
+   - **Template Name**: Un nombre claro que tus subcuentas reconozcan.
+   - **Description**: Una explicación breve de para qué sirve la plantilla.
+
+> **Consejo:** Usa nombres que describan el trabajo, no el equipo. Ejemplo: **“Soporte al cliente entrante”** en lugar de **“Soporte - Equipo A”**.
+
+## Elegir qué pueden configurar las subcuentas
+
+Al crear una plantilla, verás una lista de casillas bajo **Select Fields to Include**.  
+**Marcado = incluido en el flujo de plantilla para las subcuentas.**  
+Los campos no marcados no formarán parte de la configuración de la plantilla.
+
+### Información básica
+
+Puedes incluir campos como:
+- **Agent Name**
+- **Greeting Message**
+- **System Prompt**
+- **Call Direction**
+- **Max Call Duration (minutes)**
+- **Dynamic Variables**
+- **Timezone**
+- **AI Model**
+- **Record Calls**
+- **Voicemail Detection**
+- **User Speaks First**
+
+> **Importante:** Incluye solo los campos que realmente quieres que las subcuentas toquen. Menos campos suele significar menos errores.
+
+### Voz e idioma
+
+Puedes incluir campos como:
+- **Primary Language**
+- **Secondary Languages**
+- **Voice**
+- **Speech Speed**
+- **Temperature**
+
+> **Consejo:** Si atiendes varias regiones, incluye **Primary Language** y **Timezone** para que las subcuentas se adapten rápido sin romper la intención de la plantilla.
+
+### Acción de llamada
+
+Puedes incluir campos como:
+- **Schedule Appointment**
+- **Scheduling Provider**
+- **Transfer Call**
+- **Send an Email**
+- **Opt-Out Call**
+- **Data Extraction**
+- **Data Extraction Entities**
+- **Post Call Webhook**
+- **Webhook URL**
+- **Retry Count**
+- **Retry Delay (minutes)**
+
+> **Error común:** Incluir **Webhook URL** para subcuentas cuando quieres que eso quede controlado por tu organización. Si necesitas un seguimiento centralizado, mantén restringidos los campos relacionados con webhooks.
+
+## Plantillas predesplegadas
+
+Es posible que veas una opción llamada **Pre Deployed**.
+
+Cuando está activada, se puede **crear automáticamente un agente usando esta plantilla** para cuentas de usuario recién registradas (el comportamiento puede variar según tu cuenta/plan).
+
+> **Importante:** Actívalo solo para tu plantilla “starter” por defecto. De lo contrario, los usuarios nuevos pueden terminar con agentes que no pretendían crear.
+
+## Estado de la plantilla
+
+También verás **Template Status**.  
+Solo las plantillas **activas** son visibles para las subcuentas.
+
+Úsalo cuando quieras:
+- Ocultar temporalmente plantillas antiguas sin eliminarlas.
+- Mantener disponibles solo las plantillas recomendadas.
+
+## Ejemplo: configuración práctica de una plantilla
+
+Una forma realista de estructurar una plantilla para un agente de soporte entrante:
+
+**Template Name:** Inbound Customer Support  
+**Description:** Atiende preguntas entrantes, recopila información básica y deriva casos urgentes.
+
+**Campos a incluir (recomendado):**
+- Greeting Message
+- System Prompt
+- Call Direction
+- Timezone
+- Primary Language
+- Voice
+- Transfer Call (solo si tu flujo incluye escalamiento)
+
+> **Consejo:** Si tus subcuentas no deberían cambiar el comportamiento base, incluye el **System Prompt** pero evita exponer demasiados toggles avanzados al mismo tiempo.
+
+## Notas y limitaciones
+
+- Lo que ven las subcuentas puede depender de permisos de rol y del plan.
+- Algunas opciones y etiquetas pueden variar ligeramente entre cuentas.
+
+Si quieres, puedes crear varias plantillas por caso de uso (por ejemplo, **Calificador de ventas**, **Agendador de citas**, **Triage de soporte**) para que las subcuentas siempre empiecen desde la opción más cercana.
