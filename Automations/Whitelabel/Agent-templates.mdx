@@ -1,0 +1,120 @@
+---
+title: "Agent Templates"
+description: "Pre-build agent templates so your users (subaccounts) can create agents faster with consistent settings."
+---
+
+## Overview
+
+**Agent Templates** let you pre-create a “ready-to-use” agent setup that your **subaccounts** can apply when creating new agents. Instead of configuring everything from scratch each time, you decide which settings are included in the template, and your users fill in only what’s needed.
+
+Use this section when you want:
+- **Consistent agent behavior** across multiple subaccounts.
+- Faster onboarding for new users.
+- A curated set of “approved” agent configurations.
+
+## Open Agent Templates
+
+You can access the page here: [Agent Templates](https://app.callin.io/cms/agent-templates)
+
+## Create a template
+
+1. Open **Agent Templates**.
+2. Click **Create Template**.
+3. Fill out the template details:
+   - **Template Name**: A clear name your subaccounts will recognize.
+   - **Description**: A short explanation of what the template is for.
+
+> **Tip:** Use names that describe the job, not the team. Example: **“Inbound Customer Support”** instead of **“Support - Team A”**.
+
+## Choose what subaccounts can configure
+
+When building a template, you’ll see a list of checkboxes under **Select Fields to Include**.  
+**Checked = included in the template flow for subaccounts.**  
+Unchecked fields won’t be part of the template setup.
+
+### Basic information
+
+You can include fields such as:
+- **Agent Name**
+- **Greeting Message**
+- **System Prompt**
+- **Call Direction**
+- **Max Call Duration (minutes)**
+- **Dynamic Variables**
+- **Timezone**
+- **AI Model**
+- **Record Calls**
+- **Voicemail Detection**
+- **User Speaks First**
+
+> **Important:** Only include fields you actually want subaccounts to touch. Fewer fields usually means fewer mistakes.
+
+### Voice & language
+
+You can include fields such as:
+- **Primary Language**
+- **Secondary Languages**
+- **Voice**
+- **Speech Speed**
+- **Temperature**
+
+> **Tip:** If you support multiple regions, include **Primary Language** and **Timezone** so subaccounts can adapt quickly without breaking the template’s intent.
+
+### Call action
+
+You can include fields such as:
+- **Schedule Appointment**
+- **Scheduling Provider**
+- **Transfer Call**
+- **Send an Email**
+- **Opt-Out Call**
+- **Data Extraction**
+- **Data Extraction Entities**
+- **Post Call Webhook**
+- **Webhook URL**
+- **Retry Count**
+- **Retry Delay (minutes)**
+
+> **Common mistake:** Including **Webhook URL** for subaccounts when you want that to remain controlled by your organization. If you need centralized tracking, keep webhook-related fields restricted.
+
+## Pre-deployed templates
+
+You may see an option called **Pre Deployed**.
+
+When enabled, an agent can be **automatically created using this template** for newly registered user accounts (behavior can vary by account/plan).
+
+> **Important:** Turn this on only for your “default starter” template. Otherwise, new users may get agents they didn’t intend to create.
+
+## Template status
+
+You’ll also see **Template Status**.  
+Only **active** templates are visible to subaccounts.
+
+Use this when you want to:
+- Temporarily hide older templates without deleting them.
+- Keep only your recommended templates available.
+
+## Example: a practical template setup
+
+Here’s a realistic way to structure a template for an inbound support agent:
+
+**Template Name:** Inbound Customer Support  
+**Description:** Handles inbound questions, collects basic details, and routes urgent cases.
+
+**Fields to include (recommended):**
+- Greeting Message
+- System Prompt
+- Call Direction
+- Timezone
+- Primary Language
+- Voice
+- Transfer Call (only if your workflow includes escalation)
+
+> **Tip:** If your subaccounts shouldn’t change core behavior, include the **System Prompt** but avoid exposing too many advanced toggles at the same time.
+
+## Notes and limitations
+
+- What subaccounts see can depend on your role permissions and plan.
+- Some options and labels may vary slightly across accounts.
+
+If you want, you can create multiple templates by use case (e.g., **Sales Qualifier**, **Appointment Scheduler**, **Support Triage**) so subaccounts always start from the closest match.
