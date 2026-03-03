@@ -1,0 +1,153 @@
+---
+title: "Wissensdatenbank"
+description: "Erstellen Sie eine gemeinsame Bibliothek aus Dateien und Web-URLs, auf die Ihre KI-Agenten zugreifen können, um präziser zu antworten."
+---
+
+## Wofür die Wissensdatenbank gedacht ist
+
+Die **Wissensdatenbank** ist der Ort, an dem Sie Informationen speichern, die Ihre KI-Agenten während Gesprächen nutzen können – damit sie nicht nur vom Haupt-Prompt abhängen.
+
+Typische Anwendungsfälle:
+- Fragen zu Ihrem Unternehmen beantworten (Leistungen, Preise, Richtlinien, Öffnungszeiten).
+- Nutzer durch Prozesse führen (Erstattungsschritte, Terminvorbereitung, Onboarding).
+- Konsistente Antworten über mehrere Agenten hinweg sicherstellen.
+
+Zugriff hier: [Wissensdatenbank](https://app.callin.io/knowledge-base)
+
+> **Tipp:** Sehen Sie die Wissensdatenbank als „freigegebenes Referenzmaterial“, das der Agent heranziehen kann, wenn jemand detaillierte Fragen stellt.
+
+## Wie das mit KI-Agenten zusammenhängt
+
+Sie fügen Inhalte nicht direkt in einen Agenten ein. Stattdessen:
+1. Sie bauen Ihre Wissensdatenbank hier auf (Files oder Web URLs).
+2. Danach wählen Sie beim Bearbeiten eines Agenten die **Gruppe** aus, die dieser Agent verwenden soll.
+
+> **Wichtig:** Wenn Sie eine Wissensdatenbank-Gruppe aktualisieren und die Änderungen bei einem bestehenden Agenten sichtbar sein sollen, müssen Sie möglicherweise zum Agent-Editor zurückkehren und in der Wissensdatenbank-Sektion eine **Update**-Aktion ausführen (kann je nach Konto/Plan variieren).
+
+## Wissensdatenbank mit Files
+
+Der Tab **Files** ist zum Hochladen von Dokumenten gedacht, aus denen der Agent lernen soll (z. B. eine Richtlinie als PDF, ein Skript als DOCX oder eine FAQ als TXT). Dateien werden in **Gruppen** organisiert, damit Sie dem richtigen Agenten den richtigen Dokumentensatz zuweisen können.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/knowledgebase1.png"
+    alt="Knowledge-Base-Seite mit ausgewähltem Tab Files und einem leeren Zustand, der anzeigt, dass keine Dateien gefunden wurden"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Die Wissensdatenbank im Files-Modus, in dem Sie Dokumente hochladen und in Gruppen organisieren.
+</p>
+
+### Eine Dateigruppe erstellen und Dokumente hochladen
+
+1. Öffnen Sie den Tab **Files**.
+2. Klicken Sie auf **Create Knowledge base**.
+3. Geben Sie im Upload-Modal einen **Group Name** ein (erforderlich).
+4. Fügen Sie Ihre Dokumente hinzu:
+   - Dateien per Drag-and-Drop in den Upload-Bereich ziehen, oder
+   - **Select Files** klicken, um sie auszuwählen.
+5. Klicken Sie auf **Upload Files**, um abzuschließen.
+
+Unterstützte Formate und Limits (wie im Uploader angezeigt):
+- PDF, DOC, DOCX, TXT
+- Max. 5MB pro Datei
+
+> **Häufiger Fehler:** Mehrere themenfremde Dokumente in eine Gruppe zu packen. Wenn Sie unterschiedliche Anwendungsfälle haben (Sales vs. Support), erstellen Sie getrennte Gruppen, damit jeder Agent das passende Wissen bekommt.
+
+### Dateien in einer Gruppe verwalten und aktualisieren
+
+Sobald eine Gruppe existiert, können Sie sie öffnen und den Inhalt verwalten:
+- Weitere Dokumente hinzufügen (z. B. über **Add New Files**).
+- Die Liste der **Current Files** ansehen.
+- Dateien entfernen, die der Agent nicht mehr nutzen soll.
+
+> **Tipp:** Verwenden Sie klare Gruppennamen wie **„Support-Richtlinien“**, **„Preise & Pläne“** oder **„Klinik-Intake-Skript“**, damit Sie später schnell die richtige Gruppe auswählen.
+
+## Wissensdatenbank mit Web URLs
+
+Der Tab **Web** ist dafür da, den Agenten mit Webseiten zu versorgen. Sie erstellen eine **URL-Gruppe**, vergeben einen Titel und fügen eine oder mehrere URLs hinzu. Das ist hilfreich, wenn Ihre „Single Source of Truth“ auf Ihrer Website liegt (Help Center, Doku, Richtlinien, Landingpages).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/kanowledgebase2.png"
+    alt="Knowledge-Base-Seite mit ausgewähltem Tab Web, leerem Zustand und der Schaltfläche Add Web URL"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Die Wissensdatenbank im Web-Modus, in dem Sie Website-URLs als Gruppen hinzufügen und verwalten.
+</p>
+
+### Eine URL-Gruppe erstellen
+
+1. Öffnen Sie den Tab **Web**.
+2. Klicken Sie auf **Add Web URL**.
+3. Tragen Sie ein:
+   - **Title** (erforderlich): der Name der URL-Gruppe (dieser Titel gilt für alle URLs in der Gruppe).
+   - **URL #1**: fügen Sie den Link zur ersten Webseite ein.
+4. (Optional) Klicken Sie auf **Add Another URL**, um weitere Seiten hinzuzufügen.
+5. Klicken Sie auf **Add URL**, um die Gruppe zu speichern.
+
+> **Tipp:** Halten Sie URL-Gruppen fokussiert. Zum Beispiel eine Gruppe für **„Preise & Abrechnung“** und eine andere für **„Erstattungsrichtlinie“**.
+
+### Eine URL-Gruppe bearbeiten oder löschen
+
+Sobald eine URL-Gruppe erstellt wurde, können Sie sie in der Liste verwalten:
+- Den Gruppentitel und die URLs **bearbeiten**.
+- Die Gruppe **löschen**, wenn Sie sie nicht mehr benötigen.
+- Die Gruppe öffnen, um zu sehen, was enthalten ist.
+
+Im Bearbeitungs-Modal können Sie:
+- Den **Title** aktualisieren
+- Einzelne URLs hinzufügen oder entfernen
+- Auf **Save** klicken, um Änderungen zu übernehmen
+
+> **Wichtig:** Wenn Sie URLs ändern und ein bestehender Agent die aktualisierten Inhalte nutzen soll, müssen Sie möglicherweise den Agent-Editor erneut öffnen und in der Wissensdatenbank-Sektion ein **Update** anwenden (kann je nach Konto/Plan variieren).
+
+## Eine Wissensdatenbank für einen Agenten auswählen
+
+Nachdem Sie Ihre Gruppen (Files oder Web URLs) erstellt haben, ordnen Sie sie einem Agenten während der Bearbeitung zu.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/knowledgebase3.png"
+    alt="Select-Knowledge-Base-Panel beim Bearbeiten eines Agenten, mit Auswahl der Quelle Files oder Web URLs und einer Gruppenliste"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Auswahl einer Wissensdatenbank-Gruppe beim Bearbeiten eines KI-Agenten (Files oder Web URLs wählen und anschließend eine Gruppe auswählen).
+</p>
+
+### Eine Gruppe einem Agenten zuweisen
+
+1. Gehen Sie zu **AI Agents** und öffnen Sie einen Agenten zur Bearbeitung.
+2. Suchen Sie den Abschnitt **Knowledge Base**.
+3. Klicken Sie auf **Add**.
+4. Wählen Sie die **Source**:
+   - **Files**, oder
+   - **Web URLs**
+5. Wählen Sie eine **Group** (z. B. „Support-Richtlinien“ oder „Website-Dokumentation“).
+6. Klicken Sie auf **Select**, um die Gruppe dem Agenten zuzuweisen.
+
+Möglicherweise sehen Sie außerdem **Refresh**, um die Gruppenliste neu zu laden.
+
+> **Tipp:** Wenn Sie mehrere Agenten mit unterschiedlichen Rollen haben, weisen Sie jedem Agenten eine eigene Wissensdatenbank-Gruppe zu, damit sie fokussiert bleiben und nicht außerhalb ihres Aufgabenbereichs antworten.
+
+## Praxisbeispiel
+
+Angenommen, Sie betreiben eine Zahnarztpraxis mit zwei Agenten:
+- **Empfangs-Agent** (Termine, Öffnungszeiten, Wegbeschreibung)
+- **Abrechnungs-Agent** (Preise, Rechnungen, Versicherungsfragen)
+
+Eine sinnvolle Struktur wäre:
+- Dateigruppe: **„Praxis-FAQs (TXT)“** für schnelle Antworten und Skripte
+- Web-URL-Gruppe: **„Preis- & Versicherungsseiten“** mit Links auf öffentliche Seiten Ihrer Website
+
+Dann:
+- Der **Empfangs-Agent** nutzt die FAQ-Gruppe.
+- Der **Abrechnungs-Agent** nutzt die Preis- & Versicherungs-URLs.
