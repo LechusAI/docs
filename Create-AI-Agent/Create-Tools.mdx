@@ -1,5 +1,5 @@
 ---
-title: "Create tools"
+title: "Tools"
 description: "Create tools (webhooks) in Callin and use them from your agent’s Conversation Prompt field to send or query data in real time during a call."
 ---
 
@@ -111,6 +111,7 @@ This is the most important step. The agent will only run the tool if the **Conve
 ### Key rule (for non-technical users)
 
 If you don’t tell the agent **“when”** and **“under what conditions”** to use the tool, the agent may:
+
 - use it too early,
 - use it with incomplete data,
 - or never use it at all.
@@ -142,8 +143,9 @@ This example covers a very common case: the agent speaks with a user and, **befo
 
 ### What to write in the Conversation Prompt (invented text, easy to adapt)
 
-**Flow objective:**\
-1) Collect basic details → 2) Confirm them → 3) Query CRM → 4) If not found, create lead → 5) Continue the conversation.
+**Flow objective:**\\
+
+1. Collect basic details → 2) Confirm them → 3) Query CRM → 4) If not found, create lead → 5) Continue the conversation.
 
 **Clear instructions for the agent (example):**
 
@@ -174,7 +176,7 @@ This example covers a very common case: the agent speaks with a user and, **befo
 **Agent:** “Perfect. To help you, I just need a few quick details. What’s your first and last name?”\
 **User:** “Laura Martin.”\
 **Agent:** “Thanks, Laura. What’s your email?”\
-**User:** “laura.martin@example.com”\
+**User:** “[laura.martin@example.com](mailto:laura.martin@example.com)”\
 **Agent:** “Great. I understood: laura dot martin at example dot com. Is that correct?”\
 **User:** “Yes.”\
 **Agent:** “Perfect. What’s your phone number?”\
@@ -189,13 +191,12 @@ This example covers a very common case: the agent speaks with a user and, **befo
 
 - **If found:**\
   **Agent:** “Perfect, I can already see your record. Let’s continue with the information about plans.”
-
 - **If not found:**\
   **Agent:** “Perfect, I can’t find you yet. I’ll register you now and we’ll continue.”
 
 (The agent runs **Create_CRM_Lead**)
 
-  **Agent:** “Done, you are now registered. Now yes—let’s go over the information about plans.”
+**Agent:** “Done, you are now registered. Now yes—let’s go over the information about plans.”
 
 ### Flow safety rules (to avoid errors)
 
@@ -272,7 +273,7 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 ### Quick checklist (30 seconds)
 
 - The tool is created and saved in **Tools**.
-- The tool is assigned to the agent in **AI Agents > your agent > Tools**.
+- The tool is assigned to the agent in **AI Agents \> your agent \> Tools**.
 - The **Conversation Prompt** clearly specifies:
   - what data to ask for,
   - how to confirm it,
@@ -283,12 +284,12 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 
 ## Common errors and how to fix them
 
-| Problem                            | Likely cause                                                      | Solution                                                                                          |
-| ---------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| The tool does not run              | It is not assigned to the agent                                   | Go to **AI Agents \> your agent \> Tools** and add it                                             |
-| No information reaches the endpoint| Endpoint is inaccessible or URL is incorrect                       | Verify the URL is **HTTPS** and publicly accessible                                               |
-| Missing fields                     | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
-| It runs at the wrong time          | The Conversation Prompt doesn’t define clear conditions            | Specify rules like “only at the end”, “only after confirming email and phone”                     |
+| Problem                             | Likely cause                                                                  | Solution                                                                                          |
+| ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| The tool does not run               | It is not assigned to the agent                                               | Go to **AI Agents \> your agent \> Tools** and add it                                             |
+| No information reaches the endpoint | Endpoint is inaccessible or URL is incorrect                                  | Verify the URL is **HTTPS** and publicly accessible                                               |
+| Missing fields                      | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
+| It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                       | Specify rules like “only at the end”, “only after confirming email and phone”                     |
 
 ---
 

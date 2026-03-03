@@ -1,0 +1,120 @@
+---
+title: "Agentenvorlagen"
+description: "Erstellen Sie Agentenvorlagen im Voraus, damit Ihre Nutzer (Unterkonten) Agents schneller und mit konsistenten Einstellungen anlegen können."
+---
+
+## Überblick
+
+Mit **Agentenvorlagen** können Sie eine „einsatzbereite“ Agent-Konfiguration vorab erstellen, die Ihre **Unterkonten** beim Erstellen neuer Agents verwenden. Statt jedes Mal alles von Grund auf einzurichten, legen Sie fest, welche Einstellungen zur Vorlage gehören, und Ihre Nutzer füllen nur das aus, was nötig ist.
+
+Nutzen Sie diesen Bereich, wenn Sie:
+- **Konsistentes Agent-Verhalten** über mehrere Unterkonten hinweg sicherstellen möchten.
+- Neues Onboarding beschleunigen wollen.
+- Eine kuratierte Auswahl „freigegebener“ Agent-Konfigurationen bereitstellen möchten.
+
+## Agentenvorlagen öffnen
+
+Sie finden die Seite hier: [Agentenvorlagen](https://app.callin.io/cms/agent-templates)
+
+## Eine Vorlage erstellen
+
+1. Öffnen Sie **Agentenvorlagen**.
+2. Klicken Sie auf **Vorlage erstellen**.
+3. Tragen Sie die Vorlagen-Details ein:
+   - **Vorlagenname**: ein klarer Name, den Unterkonten wiedererkennen.
+   - **Beschreibung**: eine kurze Erklärung, wofür die Vorlage gedacht ist.
+
+> **Tipp:** Benennen Sie Vorlagen nach dem Zweck, nicht nach dem Team. Beispiel: **„Eingehender Kundensupport“** statt **„Support – Team A“**.
+
+## Festlegen, was Unterkonten konfigurieren dürfen
+
+Beim Erstellen einer Vorlage sehen Sie eine Liste von Checkboxen unter **Felder auswählen, die enthalten sein sollen**.  
+**Aktiviert = im Vorlagen-Flow für Unterkonten enthalten.**  
+Nicht aktivierte Felder sind nicht Teil der Einrichtung über die Vorlage.
+
+### Basisinformationen
+
+Sie können Felder aufnehmen wie:
+- **Agent-Name**
+- **Begrüßungsnachricht**
+- **System-Prompt**
+- **Anrufrichtung**
+- **Maximale Anrufdauer (Minuten)**
+- **Dynamische Variablen**
+- **Zeitzone**
+- **KI-Modell**
+- **Anrufe aufzeichnen**
+- **Mailbox-Erkennung**
+- **Nutzer spricht zuerst**
+
+> **Wichtig:** Nehmen Sie nur Felder auf, die Unterkonten wirklich bearbeiten sollen. Weniger Felder bedeuten in der Regel weniger Fehler.
+
+### Stimme & Sprache
+
+Sie können Felder aufnehmen wie:
+- **Primäre Sprache**
+- **Sekundäre Sprachen**
+- **Stimme**
+- **Sprechgeschwindigkeit**
+- **Temperatur**
+
+> **Tipp:** Wenn Sie mehrere Regionen unterstützen, nehmen Sie **Primäre Sprache** und **Zeitzone** auf, damit Unterkonten schnell anpassen können, ohne die Absicht der Vorlage zu verändern.
+
+### Anrufaktion
+
+Sie können Felder aufnehmen wie:
+- **Termin planen**
+- **Planungsanbieter**
+- **Anruf weiterleiten**
+- **E-Mail senden**
+- **Opt-out (Abmeldung)**
+- **Datenextraktion**
+- **Entitäten für Datenextraktion**
+- **Webhook nach dem Anruf**
+- **Webhook-URL**
+- **Anzahl der Wiederholungen**
+- **Wiederholungsverzögerung (Minuten)**
+
+> **Häufiger Fehler:** Die **Webhook-URL** für Unterkonten freizugeben, obwohl sie von Ihrer Organisation kontrolliert werden soll. Wenn Sie zentrales Tracking benötigen, beschränken Sie webhookbezogene Felder.
+
+## Vorab bereitgestellte Vorlagen
+
+Möglicherweise sehen Sie eine Option namens **Vorab bereitgestellt**.
+
+Wenn sie aktiviert ist, kann automatisch ein Agent **auf Basis dieser Vorlage** für neu registrierte Nutzerkonten erstellt werden (das Verhalten kann je nach Konto/Plan variieren).
+
+> **Wichtig:** Aktivieren Sie dies nur für Ihre Standard-„Starter“-Vorlage. Andernfalls erhalten neue Nutzer möglicherweise Agents, die sie nicht erstellen wollten.
+
+## Vorlagenstatus
+
+Sie sehen außerdem den **Vorlagenstatus**.  
+Nur **aktive** Vorlagen sind für Unterkonten sichtbar.
+
+Das ist hilfreich, wenn Sie:
+- Ältere Vorlagen vorübergehend ausblenden möchten, ohne sie zu löschen.
+- Nur empfohlene Vorlagen verfügbar machen möchten.
+
+## Beispiel: eine praxisnahe Vorlagenkonfiguration
+
+So könnte eine sinnvolle Vorlage für einen eingehenden Support-Agent aussehen:
+
+**Vorlagenname:** Eingehender Kundensupport  
+**Beschreibung:** Beantwortet eingehende Fragen, sammelt Basisdaten und leitet dringende Fälle weiter.
+
+**Empfohlene Felder (aufnehmen):**
+- Begrüßungsnachricht
+- System-Prompt
+- Anrufrichtung
+- Zeitzone
+- Primäre Sprache
+- Stimme
+- Anruf weiterleiten (nur wenn Ihr Workflow eine Eskalation vorsieht)
+
+> **Tipp:** Wenn Unterkonten das Kernverhalten nicht verändern sollen, nehmen Sie den **System-Prompt** auf, aber vermeiden Sie es, zu viele fortgeschrittene Schalter gleichzeitig freizugeben.
+
+## Hinweise und Einschränkungen
+
+- Was Unterkonten sehen, kann von Rollenberechtigungen und Ihrem Plan abhängen.
+- Einige Optionen und Bezeichnungen können je nach Konto leicht variieren.
+
+Wenn Sie möchten, können Sie mehrere Vorlagen nach Anwendungsfall erstellen (z. B. **Sales-Qualifizierung**, **Terminplanung**, **Support-Triage**), damit Unterkonten immer mit der passendsten Option starten.

@@ -1,5 +1,5 @@
 ---
-title: "Créer des outils"
+title: "Outils"
 description: "Créez des outils (webhooks) dans Callin et utilisez-les depuis le champ Conversation Prompt de votre agent pour envoyer ou consulter des données en temps réel pendant un appel."
 ---
 
@@ -111,6 +111,7 @@ C’est l’étape la plus importante. L’agent n’exécutera l’outil que si
 ### Règle clé (pour les utilisateurs non techniques)
 
 Si vous ne dites pas à l’agent **“quand”** et **“dans quelles conditions”** utiliser l’outil, l’agent peut :
+
 - l’utiliser trop tôt,
 - l’utiliser avec des données incomplètes,
 - ou ne jamais l’utiliser.
@@ -142,8 +143,9 @@ Cet exemple correspond à un cas très courant : l’agent parle avec un utilisa
 
 ### Qu’écrire dans le Conversation Prompt (texte inventé et facile à adapter)
 
-**Objectif du flux :**\
-1) Collecter les informations → 2) Les confirmer → 3) Consulter le CRM → 4) Si non trouvé, créer le lead → 5) Continuer la conversation.
+**Objectif du flux :**\\
+
+1. Collecter les informations → 2) Les confirmer → 3) Consulter le CRM → 4) Si non trouvé, créer le lead → 5) Continuer la conversation.
 
 **Instructions claires pour l’agent (exemple) :**
 
@@ -174,7 +176,7 @@ Cet exemple correspond à un cas très courant : l’agent parle avec un utilisa
 **Agent :** “Parfait. Pour vous aider, j’ai juste besoin de quelques informations rapides. Quel est votre prénom et votre nom ?”\
 **Utilisateur :** “Laura Martin.”\
 **Agent :** “Merci, Laura. Quel est votre email ?”\
-**Utilisateur :** “laura.martin@exemple.com”\
+**Utilisateur :** “[laura.martin@exemple.com](mailto:laura.martin@exemple.com)”\
 **Agent :** “Parfait. J’ai compris : laura point martin arobase exemple point com. Est-ce correct ?”\
 **Utilisateur :** “Oui.”\
 **Agent :** “Très bien. Quel est votre numéro de téléphone ?”\
@@ -189,13 +191,12 @@ Cet exemple correspond à un cas très courant : l’agent parle avec un utilisa
 
 - **Si trouvé :**\
   **Agent :** “Parfait, je vois déjà votre fiche. On continue avec les informations sur les offres.”
-
 - **Si non trouvé :**\
   **Agent :** “Parfait, je ne vous trouve pas encore. Je vous enregistre maintenant et on continue.”
 
 (L’agent exécute **Creer_Lead_CRM**)
 
-  **Agent :** “C’est bon, vous êtes enregistré. Maintenant, passons aux informations sur les offres.”
+**Agent :** “C’est bon, vous êtes enregistré. Maintenant, passons aux informations sur les offres.”
 
 ### Règles de sécurité du flux (pour éviter les erreurs)
 
@@ -272,7 +273,7 @@ Une bonne pratique consiste à tester le webhook avec une URL d’inspection tem
 ### Checklist rapide (30 secondes)
 
 - L’outil est créé et enregistré dans **Tools**.
-- L’outil est assigné à l’agent dans **AI Agents > votre agent > Tools**.
+- L’outil est assigné à l’agent dans **AI Agents \> votre agent \> Tools**.
 - Le **Conversation Prompt** précise clairement :
   - quelles informations demander,
   - comment les confirmer,
@@ -283,12 +284,12 @@ Une bonne pratique consiste à tester le webhook avec une URL d’inspection tem
 
 ## Erreurs courantes et solutions
 
-| Problème                           | Cause probable                                                    | Solution                                                                                          |
-| ---------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
-| L’outil ne s’exécute pas           | Il n’est pas assigné à l’agent                                    | Allez dans **AI Agents \> votre agent \> Tools** et ajoutez-le                                    |
-| Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                      | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                       |
-| Champs manquants                   | “Identifier / Required” mal définis ou l’agent ne les collecte pas | Vérifiez **Body parameters** et ajustez le **Conversation Prompt** pour exiger et confirmer les données |
-| Exécution au mauvais moment        | Le Conversation Prompt ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
+| Problème                                 | Cause probable                                                     | Solution                                                                                                     |
+| ---------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| L’outil ne s’exécute pas                 | Il n’est pas assigné à l’agent                                     | Allez dans **AI Agents \> votre agent \> Tools** et ajoutez-le                                               |
+| Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                            | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                                  |
+| Champs manquants                         | “Identifier / Required” mal définis ou l’agent ne les collecte pas | Vérifiez **Body parameters** et ajustez le **Conversation Prompt** pour exiger et confirmer les données      |
+| Exécution au mauvais moment              | Le Conversation Prompt ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
 
 ---
 

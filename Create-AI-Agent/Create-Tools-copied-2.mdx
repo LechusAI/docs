@@ -1,5 +1,5 @@
 ---
-title: "Crear herramientas"
+title: "Herramientas"
 description: "Crea herramientas (webhooks) en Callin y úsalas desde el campo Conversation Prompt de tu agente para enviar o consultar datos en tiempo real durante una llamada."
 ---
 
@@ -111,6 +111,7 @@ Este es el paso más importante. El agente solo ejecutará la herramienta si el 
 ### Regla clave (para usuarios no técnicos)
 
 Si tú no le dices al agente **“cuándo”** y **“bajo qué condiciones”** usar la herramienta, el agente puede:
+
 - usarla demasiado pronto,
 - usarla con datos incompletos,
 - o no usarla nunca.
@@ -142,8 +143,9 @@ Este ejemplo está pensado para un caso muy común: el agente habla con un usuar
 
 ### Qué escribir en el Conversation Prompt (texto inventado y fácil de adaptar)
 
-**Objetivo del flujo:**\
-1) Recoger datos básicos → 2) Confirmarlos → 3) Consultar CRM → 4) Si no existe, crear lead → 5) Continuar con la conversación.
+**Objetivo del flujo:**\\
+
+1. Recoger datos básicos → 2) Confirmarlos → 3) Consultar CRM → 4) Si no existe, crear lead → 5) Continuar con la conversación.
 
 **Instrucciones claras para el agente (ejemplo):**
 
@@ -174,7 +176,7 @@ Este ejemplo está pensado para un caso muy común: el agente habla con un usuar
 **Agente:** “Perfecto. Para ayudarte, necesito unos datos rápidos. ¿Cuál es tu nombre y apellido?”\
 **Usuario:** “Laura Martín.”\
 **Agente:** “Gracias, Laura. ¿Cuál es tu email?”\
-**Usuario:** “laura.martin@ejemplo.com”\
+**Usuario:** “[laura.martin@ejemplo.com](mailto:laura.martin@ejemplo.com)”\
 **Agente:** “Perfecto. He entendido: laura punto martin arroba ejemplo punto com. ¿Es correcto?”\
 **Usuario:** “Sí.”\
 **Agente:** “Genial. ¿Cuál es tu teléfono?”\
@@ -189,13 +191,12 @@ Este ejemplo está pensado para un caso muy común: el agente habla con un usuar
 
 - **Si existe:**\
   **Agente:** “Perfecto, ya veo tu ficha registrada. Vamos a continuar con la información sobre planes.”
-
 - **Si no existe:**\
   **Agente:** “Perfecto, no te encuentro todavía. Te registro ahora y seguimos.”
 
 (El agente ejecuta **Crear_Lead_CRM**)
 
-  **Agente:** “Listo, ya estás registrada. Ahora sí, vamos con la información sobre planes.”
+**Agente:** “Listo, ya estás registrada. Ahora sí, vamos con la información sobre planes.”
 
 ### Reglas de seguridad del flujo (para evitar errores)
 
@@ -272,7 +273,7 @@ Una buena práctica es probar el webhook con una URL de inspección temporal (pa
 ### Checklist rápida (30 segundos)
 
 - La herramienta está creada y guardada en **Tools**.
-- La herramienta está asignada al agente en **AI Agents > tu agente > Tools**.
+- La herramienta está asignada al agente en **AI Agents \> tu agente \> Tools**.
 - El **Conversation Prompt** indica claramente:
   - qué datos pedir,
   - cómo confirmarlos,
