@@ -1,150 +1,153 @@
 ---
-title: "Knowledge Base"
-description: "Create a shared library of Files and Web URLs that your AI agents can reference to answer questions more accurately."
+title: "Base de connaissances"
+description: "Créez une bibliothèque partagée de fichiers et d’URL Web que vos agents IA peuvent consulter pour répondre plus précisément."
 ---
 
-## What the Knowledge Base is for
+## À quoi sert la base de connaissances
 
-The **Knowledge Base** is where you store information that your AI agents can use during conversations—so they don’t have to rely only on the main prompt.
+La **base de connaissances** est l’endroit où vous stockez des informations que vos agents IA peuvent utiliser pendant les conversations, afin de ne pas dépendre uniquement du prompt principal.
 
-Typical use cases:
+Cas d’usage typiques :
+- Répondre aux questions sur votre activité (services, tarifs, politiques, horaires).
+- Guider les utilisateurs dans des processus (étapes de remboursement, préparation de rendez-vous, onboarding).
+- Assurer des réponses cohérentes sur plusieurs agents.
 
-- Answering questions about your business (services, pricing, policies, hours).
-- Guiding users through processes (refund steps, appointment prep, onboarding).
-- Keeping responses consistent across multiple agents.
+Accédez-y ici : [Base de connaissances](https://app.callin.io/knowledge-base)
 
-Access it here: [Knowledge Base](https://app.callin.io/knowledge-base)
+> **Conseil :** Considérez la base de connaissances comme une « documentation de référence validée » que l’agent peut consulter quand quelqu’un pose des questions détaillées.
 
-> **Tip:** Think of the Knowledge Base as “approved reference material” your agent can pull from when a caller asks detailed questions.
+## Comment cela se relie aux agents IA
 
-## How it connects to AI agents
+Vous n’ajoutez pas le contenu directement dans un agent. À la place :
+1. Vous construisez le contenu de la base de connaissances ici (Files ou Web URLs).
+2. Ensuite, lors de l’édition d’un agent, vous **sélectionnez le groupe** de base de connaissances que vous voulez lui associer.
 
-You don’t add the content directly inside an agent. Instead, you:
+> **Important :** Si vous mettez à jour un groupe de base de connaissances et souhaitez que les changements se reflètent sur un agent existant, il peut être nécessaire de retourner dans l’éditeur de l’agent et de cliquer sur une action **Update** dans la section base de connaissances (cela peut varier selon votre compte/forfait).
 
-1. Build your Knowledge Base content here (Files or Web URLs).
-2. Then, when editing an agent, you **select the Knowledge Base group** you want that agent to use.
+## Base de connaissances avec Files
 
-> **Important:** If you update a Knowledge Base group and want the changes to affect an existing agent, you may need to go back to the agent editor and click an **Update** action in the Knowledge Base section (this can vary depending on your account/plan).
-
-## Files Knowledge Base
-
-The **Files** tab is for uploading documents your agent should learn from (for example: a PDF policy, a DOCX script, or a TXT FAQ). Files are organized into **groups**, so you can attach the right set of documents to the right agent.
+L’onglet **Files** sert à importer des documents dont l’agent doit apprendre (par exemple : une politique en PDF, un script en DOCX ou une FAQ en TXT). Les fichiers sont organisés en **groupes**, afin d’associer le bon ensemble de documents au bon agent.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase1.png" alt="Knowledge Base page with the Files tab selected and an empty state showing no files found" style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/knowledgebase1.png"
+    alt="Page Knowledge Base avec l’onglet Files sélectionné et un état vide indiquant qu’aucun fichier n’a été trouvé"
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Knowledge Base in Files mode, where you upload documents and organize them into groups.
+  Capture : La base de connaissances en mode Files, où vous importez des documents et les organisez en groupes.
 </p>
 
-### Create a file group and upload documents
+### Créer un groupe de fichiers et importer des documents
 
-1. Open the **Files** tab.
-2. Click **Create Knowledge base**.
-3. In the upload modal, enter a **Group Name** (required).
-4. Add your documents:
-   - Drag and drop files into the upload area, or
-   - Click **Select Files** to browse.
-5. Click **Upload Files** to finish.
+1. Ouvrez l’onglet **Files**.
+2. Cliquez sur **Create Knowledge base**.
+3. Dans la fenêtre d’import, renseignez un **Group Name** (obligatoire).
+4. Ajoutez vos documents :
+   - Glissez-déposez les fichiers dans la zone d’import, ou
+   - Cliquez sur **Select Files** pour les parcourir.
+5. Cliquez sur **Upload Files** pour terminer.
 
-Supported formats and limits (as shown in the uploader):
-
+Formats et limites pris en charge (tels qu’affichés dans l’importeur) :
 - PDF, DOC, DOCX, TXT
-- Max 5MB per file
+- 5 Mo max par fichier
 
-> **Common mistake:** Uploading multiple unrelated documents into one group. If you have different use cases (Sales vs. Support), create separate groups so you can attach the right knowledge to each agent.
+> **Erreur fréquente :** Mettre plusieurs documents sans lien dans un seul groupe. Si vous avez des usages différents (Ventes vs Support), créez des groupes séparés afin d’associer la bonne connaissance à chaque agent.
 
-### Manage and update files in a group
+### Gérer et mettre à jour les fichiers d’un groupe
 
-After a group exists, you can open it to manage what’s inside:
+Une fois un groupe créé, vous pouvez l’ouvrir pour gérer son contenu :
+- Ajouter d’autres documents (par exemple via **Add New Files**).
+- Voir la liste des **Current Files** déjà inclus.
+- Supprimer les fichiers que vous ne voulez plus que l’agent consulte.
 
-- Add more documents (for example, using **Add New Files**).
-- See a list of **Current Files** already included.
-- Remove files you no longer want the agent to reference.
+> **Conseil :** Utilisez des noms de groupe explicites comme **« Politiques Support »**, **« Tarifs & Offres »** ou **« Script d’accueil clinique »** pour retrouver facilement le bon groupe ensuite.
 
-> **Tip:** Use clear group names like **“Support Policies”**, **“Pricing & Plans”**, or **“Clinic Intake Script”** so it’s easy to select the correct group later.
+## Base de connaissances avec Web URLs
 
-## Web URLs Knowledge Base
-
-The **Web** tab is for teaching your agent from web pages. You create a **URL group**, give it a title, and add one or more URLs. This is useful when your source of truth lives on your website (help center, docs, policy pages, landing pages).
+L’onglet **Web** sert à entraîner l’agent à partir de pages web. Vous créez un **groupe d’URL**, lui donnez un titre, puis ajoutez une ou plusieurs URL. C’est pratique lorsque votre source de vérité se trouve sur votre site (centre d’aide, documentation, politiques, pages publiques).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/kanowledgebase2.png" alt="Knowledge Base page with the Web tab selected, showing an empty state and an Add Web URL button" style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/kanowledgebase2.png"
+    alt="Page Knowledge Base avec l’onglet Web sélectionné, affichant un état vide et le bouton Add Web URL"
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Knowledge Base in Web mode, where you add and manage groups of website URLs.
+  Capture : La base de connaissances en mode Web, où vous ajoutez et gérez des groupes d’URL de site.
 </p>
 
-### Create a URL group
+### Créer un groupe d’URL
 
-1. Open the **Web** tab.
-2. Click **Add Web URL**.
-3. Fill in:
-   - **Title** (required): the name of the URL group (this title is used for all URLs in the group).
-   - **URL #1**: paste the first webpage link.
-4. (Optional) Click **Add Another URL** to include more pages.
-5. Click **Add URL** to save the group.
+1. Ouvrez l’onglet **Web**.
+2. Cliquez sur **Add Web URL**.
+3. Renseignez :
+   - **Title** (obligatoire) : le nom du groupe d’URL (ce titre est utilisé pour toutes les URL du groupe).
+   - **URL #1** : collez le lien de la première page.
+4. (Optionnel) Cliquez sur **Add Another URL** pour ajouter d’autres pages.
+5. Cliquez sur **Add URL** pour enregistrer le groupe.
 
-> **Tip:** Keep URL groups focused. For example, make one group for **“Pricing & Billing”** URLs and a different group for **“Refund Policy”** URLs.
+> **Conseil :** Gardez des groupes d’URL ciblés. Par exemple, un groupe pour **« Tarifs & Facturation »** et un autre pour **« Politique de remboursement »**.
 
-### Edit or delete a URL group
+### Modifier ou supprimer un groupe d’URL
 
-Once a URL group is created, you can manage it from the list:
+Une fois un groupe d’URL créé, vous pouvez le gérer depuis la liste :
+- **Modifier** le titre du groupe et les URL.
+- **Supprimer** le groupe si vous n’en avez plus besoin.
+- Ouvrir le groupe pour voir son contenu.
 
-- **Edit** the group title and URLs.
-- **Delete** the group if you no longer need it.
-- Open the group to see what’s included.
+Dans la fenêtre d’édition, vous pouvez :
+- Mettre à jour le **Title**
+- Ajouter ou retirer des URL individuellement
+- Cliquer sur **Save** pour appliquer les changements
 
-Inside the edit modal, you can:
+> **Important :** Si vous modifiez les URL et souhaitez qu’un agent existant utilise le contenu mis à jour, il peut être nécessaire de rouvrir l’éditeur de l’agent et d’appliquer un **Update** dans la section base de connaissances (cela peut varier selon votre compte/forfait).
 
-- Update the **Title**
-- Add or remove individual URLs
-- Click **Save** to apply changes
+## Sélectionner une base de connaissances pour un agent
 
-> **Important:** If you change URLs and need an existing agent to use the updated content, you may need to re-open the agent editor and apply an **Update** in the Knowledge Base section (this can vary depending on your account/plan).
-
-## Select a Knowledge Base for an agent
-
-After you’ve created your groups (Files or Web URLs), you attach one to an agent during agent editing.
+Après avoir créé vos groupes (Files ou Web URLs), vous les associez à un agent lors de l’édition de celui-ci.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase3.png" alt="Select Knowledge Base panel while editing an agent, with a source switch for Files or Web URLs and a list of groups" style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/knowledgebase3.png"
+    alt="Panneau Select Knowledge Base lors de l’édition d’un agent, avec un choix de source Files ou Web URLs et une liste de groupes"
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Selecting a Knowledge Base group while editing an AI agent (choose Files or Web URLs, then select a group).
+  Capture : Sélection d’un groupe de base de connaissances lors de l’édition d’un agent IA (choisissez Files ou Web URLs, puis un groupe).
 </p>
 
-### Attach a group to an agent
+### Associer un groupe à un agent
 
-1. Go to **AI Agents** and open an agent to edit.
-2. Find the **Knowledge Base** section.
-3. Click **Add**.
-4. Choose the **Source**:
-   - **Files**, or
+1. Allez dans **AI Agents** et ouvrez un agent en édition.
+2. Trouvez la section **Knowledge Base**.
+3. Cliquez sur **Add**.
+4. Choisissez la **Source** :
+   - **Files**, ou
    - **Web URLs**
-5. Select a **Group** (for example: “Support Policies” or “Company Website Docs”).
-6. Click **Select** to attach it to the agent.
+5. Sélectionnez un **Group** (par exemple : « Politiques Support » ou « Docs du site »).
+6. Cliquez sur **Select** pour l’associer à l’agent.
 
-You may also see a **Refresh** option to reload the list of groups.
+Vous pouvez aussi voir une option **Refresh** pour recharger la liste des groupes.
 
-> **Tip:** If you have multiple agents with different roles, give each agent a different Knowledge Base group so they stay focused and don’t answer outside their scope.
+> **Conseil :** Si vous avez plusieurs agents avec des rôles différents, attribuez à chacun un groupe de base de connaissances différent afin qu’ils restent focalisés et ne répondent pas en dehors de leur périmètre.
 
-## Practical example
+## Exemple concret
 
-Let’s say you run a dental clinic and you have two agents:
+Imaginons que vous gériez un cabinet dentaire avec deux agents :
+- **Agent d’accueil** (rendez-vous, horaires, itinéraire)
+- **Agent de facturation** (tarifs, factures, questions d’assurance)
 
-- **Front Desk Agent** (appointments, opening hours, directions)
-- **Billing Agent** (pricing, invoices, insurance questions)
+Une bonne configuration pourrait être :
+- Groupe de fichiers : **« FAQ du cabinet (TXT) »** pour les réponses rapides et les scripts
+- Groupe d’URL web : **« Pages Tarifs & Assurance »** pointant vers les pages publiques de votre site
 
-A good setup could be:
-
-- Files group: **“Clinic FAQs (TXT)”** for quick answers and scripts
-- Web URLs group: **“Pricing & Insurance Pages”** pointing to your public website pages
-
-Then:
-
-- The **Front Desk Agent** gets the FAQs group.
-- The **Billing Agent** gets the Pricing & Insurance URLs group.
+Ensuite :
+- L’**agent d’accueil** utilise le groupe de FAQ.
+- L’**agent de facturation** utilise le groupe d’URL Tarifs & Assurance.
