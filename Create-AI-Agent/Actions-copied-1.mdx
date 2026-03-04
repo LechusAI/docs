@@ -1,208 +1,189 @@
 ---
-title: "Actions"
-description: "Connect Callin to external platforms (calendar, CRM, automation, and webhooks) so your AI Agents can trigger real-world workflows."
+title: "Acciones"
+description: "Conecta Callin con plataformas externas (calendario, CRM, automatización y webhooks) para que tus agentes de IA activen flujos de trabajo reales."
 ---
 
-## Actions
+## Acciones
 
-Actions is the place where you connect Callin to other platforms so your AI Agents can **schedule**, **sync customer data**, **trigger automations**, and **send updates**—without doing everything manually.
+Acciones es el lugar donde conectas Callin con otras plataformas para que tus agentes de IA puedan **agendar**, **sincronizar datos de clientes**, **activar automatizaciones** y **enviar actualizaciones**—sin tener que hacerlo todo manualmente.
 
-[Open Actions in the Console](https://app.callin.io/actions)
+[Abrir Acciones en la consola](https://app.callin.io/actions)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/Screens/actions1.png" alt="The Actions page in Callin, showing integration cards like Google Calendar, Cal.com, GoHighLevel, Zoho, n8n, Zapier, Make.com, Slack (Coming Soon), and Custom Integration." style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/actions1.png"
+    alt="La página de Acciones en Callin, con tarjetas de integración como Google Calendar, Cal.com, GoHighLevel, Zoho, n8n, Zapier, Make.com, Slack (próximamente) y una integración personalizada."
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Actions hub where you can connect external platforms to Callin. Each card shows whether it’s connected and what button to use (Connect, View, Manage, etc.).
+  Captura: El centro de Acciones donde puedes conectar plataformas externas con Callin. Cada tarjeta indica si está conectada y te permite iniciar la conexión o gestionar la integración.
 </p>
 
-> **Tip:** If you’re not sure where to start, begin with **Calendar** (for booking) or **Automation** (for workflows like follow-ups and CRM updates).
+> **Consejo:** Si no sabes por dónde empezar, comienza por un **calendario** (para reservas) o por una plataforma de **automatización** (para seguimientos y tareas repetitivas).
 
-## Where to find it
+## Dónde encontrarlo
 
-1. Open your Callin Console.
-2. In the left menu, go to **Integrations → Actions**.
+1. Abre tu consola de Callin.
+2. En el menú izquierdo, entra en la sección de integraciones y abre **Acciones**.
 
-## How connecting works
+## Cómo funciona la conexión
 
-Each integration card shows a status and an action button:
+Cada tarjeta de integración muestra un estado y un botón de acción:
 
-- **Not Connected** → You’ll usually see **Connect**.
-- **Connected** → You may see **View** and **Disconnect** (example: Google Calendar).
-- **Coming Soon** → The integration is listed but not available to connect yet (example: Slack).
-- Some platforms may use a different button label (example: **Manage** for Custom Integration, or **Go to n8n**).
+- **No conectado** → normalmente verás un botón para iniciar la conexión.
+- **Conectado** → puede aparecer una opción para ver detalles y otra para desconectar.
+- **Próximamente** → la integración aparece listada, pero aún no está disponible para conectarla (por ejemplo, Slack).
+- Algunas plataformas pueden usar botones con textos distintos según la integración (por ejemplo, un botón para ir a la plataforma o para administrar la configuración).
 
-General flow:
+Flujo general:
 
-1. Click the integration card’s button (**Connect / Manage / View**).
-2. Follow the platform’s authorization or setup steps.
-3. Return to Callin and confirm the card status updates.
+1. En la tarjeta de la integración, pulsa el botón para **conectar** o **administrar**.
+2. Sigue los pasos de autorización o configuración que se muestren.
+3. Vuelve a Callin y confirma que el estado de la tarjeta se actualiza.
 
-> **Important:** The exact authorization screens can vary depending on your account, plan, or how your organization manages permissions.
+> **Importante:** Las pantallas exactas de autorización pueden variar según tu cuenta, tu plan o cómo tu organización gestiona permisos.
 
-> **Common mistake:** Connecting the wrong account (for example, the wrong Google account) and later wondering why events or data appear in the wrong place.
+> **Error común:** Conectar la cuenta equivocada (por ejemplo, otro correo) y luego no ver los eventos o datos donde esperabas.
 
-## Available integrations
+## Integraciones disponibles
 
-Below is what each available platform is typically used for and how you connect it from the Actions page.
+A continuación se explica para qué se usa normalmente cada plataforma disponible y cómo conectarla desde la página de Acciones.
 
 ### Google Calendar
 
-**What it’s for**\
-Use Google Calendar to keep appointments organized in a calendar your team already uses.
+**Para qué sirve**  
+Usa Google Calendar para mantener las citas organizadas en un calendario que tu equipo ya utiliza.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+- Si no está conectado, inicia la conexión desde la tarjeta de Google Calendar y completa la autorización.
+- Si ya está conectado, verás opciones para revisar la conexión y para desconectarla.
 
-- If it’s not connected, click **Connect** on the Google Calendar card and complete the Google authorization steps.
-- If it’s already connected (like in the screenshot), you’ll see:
-  - **View** to review the connection details
-  - **Disconnect** to remove the connection
-
-**Example uses with AI Agents**
-
-- A scheduling agent can coordinate times and keep confirmed appointments reflected in your calendar (for example: “Demo with Alex Rivera — Tue 3:30 PM”).
-- An agent can help reduce no-shows by using calendar details as the “source of truth” for upcoming meetings (for example, confirming: “You’re booked for Wednesday at 10:00 AM”).
+**Ejemplos de uso con agentes de IA**  
+- Un agente de agenda puede coordinar horarios y mantener las citas confirmadas reflejadas en tu calendario (por ejemplo: “Demo con Alex Rivera — martes 3:30 p. m.”).
+- Un agente puede ayudar a reducir ausencias usando el calendario como “fuente de verdad” de las próximas reuniones (por ejemplo, confirmando: “Estás reservado para el miércoles a las 10:00 a. m.”).
 
 ### Cal.com (Beta)
 
-**What it’s for**\
-Cal.com is an appointment scheduling platform. Connecting it can help align Callin with your scheduling setup.
+**Para qué sirve**  
+Cal.com es una plataforma de programación de citas. Conectarla puede ayudar a alinear Callin con tu configuración de agenda.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+1. Busca Cal.com y pulsa el botón para conectar.
+2. Sigue los pasos que aparezcan durante la configuración (puede variar porque está marcado como beta).
+3. Vuelve a Acciones y confirma que ya no aparece como no conectado.
 
-1. Find **Cal.com** and click **Connect**.
-2. Follow the steps shown during setup (may vary because it’s marked **Beta**).
-3. Return to Actions and confirm it no longer shows **Not Connected**.
+**Ejemplos de uso con agentes de IA**  
+- Un agente de reservas puede guiar al cliente hacia el tipo de cita correcto (por ejemplo: “llamada introductoria de 15 minutos” frente a “onboarding de 30 minutos”).
+- Si tu equipo utiliza enlaces de agenda de Cal.com, un agente puede ayudar a dirigir a cada persona a la opción adecuada según su intención (ventas, soporte, onboarding).
 
-**Example uses with AI Agents**
-
-- A booking agent can guide a customer to the right appointment type (for example: “15-minute intro call” vs. “30-minute onboarding”).
-- If your team uses Cal.com scheduling links, an agent can help route customers to the right option based on intent (sales, support, onboarding).
-
-> **Important:** Because this integration is labeled **Beta**, the setup flow and available options may change.
+> **Importante:** Al estar en beta, el flujo de configuración y las opciones disponibles pueden cambiar.
 
 ### GoHighLevel
 
-**What it’s for**\
-GoHighLevel is a CRM platform. Connecting it helps you keep customer and lead information aligned between Callin and your CRM workflows.
+**Para qué sirve**  
+GoHighLevel es una plataforma de CRM. Conectarla ayuda a mantener alineada la información de clientes y leads entre Callin y tus flujos del CRM.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+1. En la tarjeta de GoHighLevel, inicia la conexión.
+2. Completa los pasos de inicio de sesión y autorización.
+3. Confirma que el estado de la integración se actualiza.
 
-1. On the **GoHighLevel** card, click **Connect**.
-2. Complete the sign-in/authorization steps.
-3. Confirm the integration status updates.
-
-**Example uses with AI Agents**
-
-- After a call, an agent can help ensure lead details are ready to be used in your CRM follow-ups (for example: name, interest, and next-step notes).
-- A sales agent can use what it learned during a call to support better handoffs (for example: “Interested in the Pro plan, wants pricing by email”).
+**Ejemplos de uso con agentes de IA**  
+- Después de una llamada, un agente puede ayudar a dejar listos los detalles del lead para tus seguimientos (por ejemplo: nombre, interés y notas del siguiente paso).
+- Un agente de ventas puede usar lo aprendido durante la conversación para mejorar el traspaso al equipo (por ejemplo: “Interesado en el plan Pro, quiere precios por correo”).
 
 ### Zoho
 
-**What it’s for**\
-Zoho is another CRM option. Use it if your team manages leads, contacts, or customer records in Zoho.
+**Para qué sirve**  
+Zoho es otra opción de CRM. Úsalo si tu equipo gestiona leads, contactos o registros de clientes en Zoho.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+1. En la tarjeta de Zoho, inicia la conexión.
+2. Sigue los pasos de autorización.
+3. Confirma que el estado cambia a conectado.
 
-1. On the **Zoho** card, click **Connect**.
-2. Follow the authorization steps.
-3. Confirm the status changes from **Not Connected**.
-
-**Example uses with AI Agents**
-
-- A support agent can help capture the outcome of a customer call so your team can follow up in the CRM.
-- An agent can support consistent data entry by prompting for missing details during a conversation (for example: company size, preferred contact method).
+**Ejemplos de uso con agentes de IA**  
+- Un agente de soporte puede ayudar a registrar el resultado de una llamada para que tu equipo haga seguimiento en el CRM.
+- Un agente puede apoyar la consistencia de datos pidiendo información faltante durante la conversación (por ejemplo: tamaño de empresa o método de contacto preferido).
 
 ### n8n
 
-**What it’s for**\
-n8n is a workflow automation platform. It’s useful when you want to build custom automations that connect multiple tools together.
+**Para qué sirve**  
+n8n es una plataforma de automatización. Es útil cuando quieres construir automatizaciones personalizadas que conecten varias herramientas.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+- Desde la tarjeta de n8n, abre n8n y sigue las instrucciones para crear tu flujo y vincularlo con Callin (los pasos pueden variar según cómo esté alojado tu n8n).
 
-- On the **n8n** card, click **Go to n8n**.
-- Follow the setup instructions shown there to create your workflow and connect it back to Callin (steps can vary based on how your n8n is hosted).
-
-**Example uses with AI Agents**
-
-- After an agent finishes a call, you can trigger an automation that notifies a team channel and creates a task for follow-up.
-- You can route call outcomes into different paths (for example: “booked demo” → notify sales, “needs support” → create a support ticket).
+**Ejemplos de uso con agentes de IA**  
+- Al terminar una llamada, activar un flujo que avise al equipo y cree una tarea de seguimiento.
+- Enrutar los resultados de una conversación por caminos distintos (por ejemplo: “demo reservada” → avisar a ventas; “necesita soporte” → crear un ticket).
 
 ### Zapier
 
-**What it’s for**\
-Zapier helps you connect Callin to thousands of apps and automate simple workflows without custom development.
+**Para qué sirve**  
+Zapier te ayuda a conectar Callin con miles de apps y automatizar flujos sencillos sin desarrollo a medida.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+1. En la tarjeta de Zapier, inicia la conexión.
+2. Completa los pasos de autorización.
+3. Crea automatizaciones del tipo “si ocurre esto, entonces haz aquello” según tu necesidad.
 
-1. On the **Zapier** card, click **Connect**.
-2. Complete the connection steps.
-3. Build “if this, then that” workflows in Zapier based on your needs.
-
-**Example uses with AI Agents**
-
-- When an agent collects a new lead, trigger a follow-up email sequence in your email tool.
-- When a call is completed, automatically send a summary to a spreadsheet or a project tracker for visibility.
+**Ejemplos de uso con agentes de IA**  
+- Cuando un agente capta un nuevo lead, activar una secuencia de seguimiento por correo en tu herramienta de email.
+- Cuando se completa una llamada, enviar un resumen a una hoja de cálculo o a un gestor de tareas para tener visibilidad.
 
 ### Make.com
 
-**What it’s for**\
-Make (formerly Integromat) is another automation platform for building multi-step scenarios across tools.
+**Para qué sirve**  
+Make (antes Integromat) es otra plataforma para construir escenarios de varios pasos entre herramientas.
 
-**How to connect in Callin**
+**Cómo conectarlo en Callin**  
+1. En la tarjeta de Make.com, inicia la conexión.
+2. Sigue los pasos que aparezcan durante la configuración.
+3. Construye escenarios en Make para reflejar tu flujo.
 
-1. On the **Make.com** card, click **Connect**.
-2. Follow the connection steps shown during setup.
-3. Build scenarios in Make to match your workflow.
+**Ejemplos de uso con agentes de IA**  
+- Si un agente califica un lead como “alta intención”, activar un flujo de varios pasos (por ejemplo: avisar a un vendedor, crear una oportunidad y programar una tarea).
+- Enviar actualizaciones estructuradas a herramientas internas que tu equipo ya usa.
 
-**Example uses with AI Agents**
+### Slack (Próximamente)
 
-- If an agent qualifies a lead as “high intent,” trigger a multi-step workflow (for example: alert a salesperson, create a deal, schedule a task).
-- Send structured updates to internal tools your team already uses.
+**Para qué sirve**  
+Slack se usa comúnmente para notificaciones del equipo y comunicación interna.
 
-### Slack (Coming Soon)
+**Disponibilidad**  
+En la captura, Slack aparece como “próximamente”, lo que significa que se ve en Acciones pero aún no está disponible para conectarlo.
 
-**What it’s for**\
-Slack is commonly used for team notifications and internal communication.
+**Ejemplos de uso con agentes de IA (cuando esté disponible)**  
+- Notificar a un canal cuando un agente reserva una reunión (por ejemplo: “Nueva demo reservada: jueves 2:00 p. m.”).
+- Avisar a soporte cuando un cliente solicita ayuda durante una llamada.
 
-**Availability**\
-In the screenshot, Slack shows **Coming Soon**, which means it’s visible in Actions but not available to connect yet.
+### Integración personalizada
 
-**Example uses with AI Agents (once available)**
+**Para qué sirve**  
+La integración personalizada está pensada para equipos que quieren conectar Callin con sus propios sistemas o servicios externos mediante webhooks.
 
-- Notify a channel when an agent books a meeting (for example: “New demo booked: Thu 2:00 PM”).
-- Alert support when a customer requests help during a call.
+**Cómo conectarlo en Callin**  
+- Abre la tarjeta de integración personalizada y entra en la pantalla de administración.
+- Configura allí los ajustes de webhook disponibles (los campos y opciones pueden variar según tu cuenta o plan).
 
-### Custom Integration
+**Ejemplos de uso con agentes de IA**  
+- Enviar el resultado de una llamada a tu panel interno (por ejemplo: “Lead calificado”, “Requiere seguimiento”, “No interesado”).
+- Activar un flujo en tu backend cada vez que un agente complete un tipo específico de interacción.
 
-**What it’s for**\
-Custom Integration is for teams that want to connect Callin to their own systems or external services via webhooks.
+> **Consejo:** La integración personalizada es una buena opción si ya tienes una herramienta interna y quieres que Callin envíe eventos hacia ella.
 
-**How to connect in Callin**
+## Solución de problemas
 
-- Click **Manage** on the **Custom Integration** card.
-- Configure the webhook settings shown there (the available fields and options may vary by account or plan).
+### La integración sigue apareciendo como no conectada
+- Recarga la página y revisa de nuevo.
+- Prueba a desconectar y volver a conectar (si existe la opción).
+- Confirma que iniciaste sesión con la cuenta correcta en la plataforma.
 
-**Example uses with AI Agents**
+### Conectaste la cuenta equivocada
+- Desconecta la integración (si está disponible) y vuelve a conectarla eligiendo la cuenta correcta durante la autorización.
 
-- Send a call outcome to your internal dashboard (for example: “Qualified lead,” “Needs follow-up,” “Not interested”).
-- Trigger a custom workflow in your own backend whenever an agent completes a specific type of interaction.
-
-> **Tip:** Custom Integration is a good choice when you already have an internal tool and want Callin to “push” events into it.
-
-## Troubleshooting
-
-### The integration stays on “Not Connected”
-
-- Refresh the page and check again.
-- Try disconnecting and reconnecting (if the option exists).
-- Confirm you signed in with the correct account on the provider side.
-
-### You connected the wrong account
-
-- Use **Disconnect** (if available), then reconnect and select the correct account during authorization.
-
-### Buttons or options look different
-
-Some labels and setup steps can vary based on your plan, your organization settings, or provider changes.
+### Los botones u opciones se ven distintos
+Algunas etiquetas y pasos pueden variar según tu plan, la configuración de tu organización o cambios del proveedor.
