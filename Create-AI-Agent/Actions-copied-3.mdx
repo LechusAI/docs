@@ -1,0 +1,189 @@
+---
+title: "Azioni"
+description: "Collega Callin a piattaforme esterne (calendario, CRM, automazione e webhook) così i tuoi agenti IA possono attivare flussi di lavoro reali."
+---
+
+## Azioni
+
+Azioni è la sezione in cui colleghi Callin ad altre piattaforme, così i tuoi agenti IA possono **programmare appuntamenti**, **sincronizzare dati cliente**, **attivare automazioni** e **inviare aggiornamenti**—senza fare tutto a mano.
+
+[Apri Azioni nella console](https://app.callin.io/actions)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/actions1.png"
+    alt="La pagina Azioni in Callin, con schede di integrazione come Google Calendar, Cal.com, GoHighLevel, Zoho, n8n, Zapier, Make.com, Slack (in arrivo) e un’integrazione personalizzata."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: L’hub Azioni dove puoi collegare piattaforme esterne a Callin. Ogni scheda indica se è connessa e ti permette di avviare la connessione o gestire l’integrazione.
+</p>
+
+> **Consiglio:** Se non sai da dove iniziare, parti da un **calendario** (per le prenotazioni) o da una piattaforma di **automazione** (per follow-up e attività ripetitive).
+
+## Dove trovarlo
+
+1. Apri la console di Callin.
+2. Nel menu a sinistra, entra nella sezione delle integrazioni e apri **Azioni**.
+
+## Come funziona la connessione
+
+Ogni scheda di integrazione mostra uno stato e un pulsante di azione:
+
+- **Non connesso** → di solito vedrai un pulsante per avviare la connessione.
+- **Connesso** → possono comparire opzioni per vedere i dettagli e per disconnettere.
+- **In arrivo** → l’integrazione è visibile, ma non ancora collegabile (ad esempio, Slack).
+- Alcune piattaforme possono mostrare pulsanti con testi diversi a seconda dell’integrazione (ad esempio, un pulsante per aprire la piattaforma o per gestire la configurazione).
+
+Flusso generale:
+
+1. Nella scheda dell’integrazione, premi il pulsante per **connettere** o **gestire**.
+2. Segui i passaggi di autorizzazione o configurazione visualizzati.
+3. Torna in Callin e verifica che lo stato della scheda sia aggiornato.
+
+> **Importante:** Le schermate di autorizzazione possono variare in base al tuo account, al tuo piano o alle regole di permesso della tua organizzazione.
+
+> **Errore comune:** Collegare l’account sbagliato (ad esempio un’altra email) e poi non trovare eventi o dati nel posto giusto.
+
+## Integrazioni disponibili
+
+Di seguito trovi a cosa serve normalmente ciascuna piattaforma disponibile e come collegarla dalla pagina Azioni.
+
+### Google Calendar
+
+**A cosa serve**  
+Google Calendar ti aiuta a tenere gli appuntamenti organizzati in un calendario già usato dal team.
+
+**Come collegarlo in Callin**  
+- Se non è connesso, avvia la connessione dalla scheda di Google Calendar e completa l’autorizzazione.
+- Se è già connesso, di solito trovi opzioni per visualizzare i dettagli e per disconnettere.
+
+**Esempi d’uso con agenti IA**  
+- Un agente di prenotazione può coordinare gli orari e assicurarsi che gli appuntamenti confermati siano riportati nel calendario (es.: “Demo con Alex Rivera — martedì 15:30”).
+- Un agente può ridurre le mancate presentazioni usando il calendario come “fonte di verità” dei prossimi incontri (es.: “Sei prenotato per mercoledì alle 10:00”).
+
+### Cal.com (Beta)
+
+**A cosa serve**  
+Cal.com è una piattaforma di prenotazione appuntamenti. Collegarla può aiutare ad allineare Callin con la tua configurazione di scheduling.
+
+**Come collegarlo in Callin**  
+1. Trova Cal.com e usa il pulsante per collegare.
+2. Segui i passaggi mostrati durante la configurazione (possono cambiare perché è in beta).
+3. Torna su Azioni e verifica che non risulti più non connesso.
+
+**Esempi d’uso con agenti IA**  
+- Un agente può guidare il cliente verso il tipo di appuntamento giusto (es.: “chiamata introduttiva 15 minuti” vs “onboarding 30 minuti”).
+- Se il team usa link di prenotazione Cal.com, un agente può indirizzare le persone all’opzione corretta in base all’esigenza (vendite, supporto, onboarding).
+
+> **Importante:** Essendo in beta, il flusso di configurazione e le opzioni disponibili possono cambiare.
+
+### GoHighLevel
+
+**A cosa serve**  
+GoHighLevel è una piattaforma CRM. Collegarla aiuta a mantenere allineate le informazioni di clienti e lead con i tuoi flussi CRM.
+
+**Come collegarlo in Callin**  
+1. Dalla scheda GoHighLevel, avvia la connessione.
+2. Completa accesso e autorizzazione.
+3. Verifica che lo stato passi a connesso.
+
+**Esempi d’uso con agenti IA**  
+- Dopo una chiamata, un agente può aiutare a preparare i dettagli del lead per i follow-up (es.: nome, interesse e note sul prossimo passo).
+- Un agente commerciale può usare ciò che ha raccolto nella conversazione per migliorare il passaggio al team (es.: “Interessato al piano Pro, vuole i prezzi via email”).
+
+### Zoho
+
+**A cosa serve**  
+Zoho è un’altra opzione CRM. Usalo se il team gestisce lead, contatti o record clienti in Zoho.
+
+**Come collegarlo in Callin**  
+1. Dalla scheda Zoho, avvia la connessione.
+2. Segui i passaggi di autorizzazione.
+3. Verifica che lo stato indichi la connessione completata.
+
+**Esempi d’uso con agenti IA**  
+- Un agente di supporto può aiutare a registrare l’esito di una chiamata per consentire al team di fare follow-up nel CRM.
+- Un agente può migliorare la qualità dei dati chiedendo informazioni mancanti durante la conversazione (es.: dimensione dell’azienda, canale di contatto preferito).
+
+### n8n
+
+**A cosa serve**  
+n8n è una piattaforma di automazione. È utile se vuoi creare automazioni personalizzate che collegano più strumenti.
+
+**Come collegarlo in Callin**  
+- Dalla scheda n8n, apri n8n e segui le istruzioni per creare il workflow e collegarlo a Callin (i passaggi possono variare in base a come è ospitato n8n).
+
+**Esempi d’uso con agenti IA**  
+- A fine chiamata, avviare un flusso che avvisa il team e crea un’attività di follow-up.
+- Instradare gli esiti delle conversazioni su percorsi diversi (es.: “demo prenotata” → avvisare le vendite; “serve supporto” → creare un ticket).
+
+### Zapier
+
+**A cosa serve**  
+Zapier ti permette di collegare Callin a migliaia di app e automatizzare flussi semplici senza sviluppo su misura.
+
+**Come collegarlo in Callin**  
+1. Dalla scheda Zapier, avvia la connessione.
+2. Completa l’autorizzazione.
+3. Crea automazioni “se succede questo, allora fai quello” in base alle tue esigenze.
+
+**Esempi d’uso con agenti IA**  
+- Quando un agente raccoglie un nuovo lead, attivare una sequenza di follow-up via email nel tuo strumento di posta.
+- Quando una chiamata termina, inviare automaticamente un riepilogo a un foglio di calcolo o a un task manager per visibilità.
+
+### Make.com
+
+**A cosa serve**  
+Make (prima Integromat) è un’altra piattaforma per costruire scenari multi-step tra strumenti.
+
+**Come collegarlo in Callin**  
+1. Dalla scheda Make.com, avvia la connessione.
+2. Segui i passaggi mostrati durante la configurazione.
+3. Costruisci scenari in Make che rispecchiano il tuo processo.
+
+**Esempi d’uso con agenti IA**  
+- Se un agente qualifica un lead come “alta intenzione”, attivare uno scenario multi-step (es.: avvisare un commerciale, creare un’opportunità, pianificare un’attività).
+- Inviare aggiornamenti strutturati verso strumenti interni già usati dal team.
+
+### Slack (In arrivo)
+
+**A cosa serve**  
+Slack è spesso usato per notifiche al team e comunicazione interna.
+
+**Disponibilità**  
+Nella schermata, Slack risulta “in arrivo”, cioè è visibile in Azioni ma non ancora collegabile.
+
+**Esempi d’uso con agenti IA (quando disponibile)**  
+- Notificare un canale quando un agente prenota un appuntamento (es.: “Nuova demo prenotata: giovedì 14:00”).
+- Avvisare il supporto quando un cliente chiede aiuto durante una chiamata.
+
+### Integrazione personalizzata
+
+**A cosa serve**  
+L’integrazione personalizzata è pensata per i team che vogliono collegare Callin ai propri sistemi o a servizi esterni tramite webhooks.
+
+**Come collegarla in Callin**  
+- Apri la scheda dell’integrazione personalizzata e accedi alla schermata di gestione.
+- Configura lì le impostazioni webhook disponibili (campi e opzioni possono variare in base al tuo account o piano).
+
+**Esempi d’uso con agenti IA**  
+- Inviare l’esito di una chiamata al tuo cruscotto interno (es.: “Lead qualificato”, “Serve follow-up”, “Non interessato”).
+- Attivare un flusso nel tuo backend ogni volta che un agente completa un tipo specifico di interazione.
+
+> **Consiglio:** L’integrazione personalizzata è ideale se hai già uno strumento interno e vuoi che Callin invii eventi verso di esso.
+
+## Risoluzione dei problemi
+
+### L’integrazione resta indicata come non connessa
+- Aggiorna la pagina e controlla di nuovo.
+- Prova a disconnettere e riconnettere (se l’opzione esiste).
+- Verifica di aver effettuato l’accesso con l’account corretto sulla piattaforma.
+
+### Hai collegato l’account sbagliato
+- Disconnetti l’integrazione (se disponibile) e riconnettila scegliendo l’account corretto durante l’autorizzazione.
+
+### Pulsanti o opzioni appaiono diversi
+Alcune etichette e passaggi possono variare in base al tuo piano, alle impostazioni dell’organizzazione o a cambiamenti del fornitore.
