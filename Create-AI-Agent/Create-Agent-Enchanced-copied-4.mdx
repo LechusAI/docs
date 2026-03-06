@@ -1,217 +1,513 @@
 ---
 title: "Agenti IA"
-description: "Guida completa per configurare un agente avanzato con LLM, calendario e trasferimenti."
+description: "Crea, organizza e configura agenti IA per chiamate telefoniche e conversazioni sul tuo sito web."
 ---
 
-## Video 
+[Apri la pagina Agenti IA in Callin](https://app.callin.io/agents)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/jnsyavqL8CI" title="YouTube video" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agents1.png"
+    alt="La pagina principale degli agenti IA con filtri, barra di ricerca e pulsante per creare un nuovo agente."
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
-## Prima di iniziare
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la vista principale degli agenti IA, dove puoi rivedere gli agenti esistenti, filtrarli per direzione, cercarli per nome e crearne uno nuovo.
+</p>
 
-Un agente può gestire flussi complessi: intenti sfumati, istruzioni lunghe, raccolta dati accurata e chiamate in entrata, in uscita o in entrambe le direzioni.
+## Panoramica generale
 
-Se ti servono solo saluti, FAQ semplici o una raccolta dati di base a basso costo, un agente Basic è sufficiente.
+La pagina **Agenti IA** è il punto di partenza per creare e gestire gli agenti del tuo account. Da qui puoi vedere tutti i tuoi agenti in un unico posto, aprirne uno qualsiasi per modificarlo e individuare rapidamente quali configurazioni sono ancora incomplete.
 
-Azioni esterne (da configurare separatamente e poi collegare):
+In questa vista normalmente puoi:
 
-- **Prenotazioni:** Google Calendar
-- **Trasferimenti:** Call Transfer
+- creare un nuovo agente
+- filtrare gli agenti in base al tipo di chiamata
+- cercare un agente per nome
+- controllare se un agente ha già un numero assegnato
+- entrare direttamente nella configurazione per completare le impostazioni
 
----
+Questa pagina è particolarmente utile quando gestisci più flussi diversi. Per esempio, una clinica può avere un agente per ricordare gli appuntamenti, un altro per rispondere alle chiamate in arrivo e un altro per recuperare opportunità perse. Separarli per funzione rende test, controlli e modifiche future molto più semplici.
 
-## Passo 1. Crea l’agente
+Per creare un nuovo agente, fai clic sul pulsante di creazione, scegli se vuoi iniziare da zero o usare un modello, inserisci un nome chiaro e conferma la creazione.
 
-Vai su **AI Agents → Create Agent → Start from Scratch**, inserisci un nome chiaro (ad esempio: “Support EN – Sales”), seleziona la **Version** appropriata e fai clic su **Create Agent**.
+> **Consiglio:** Usa nomi che descrivano il ruolo reale dell’agente, come **Agente promemoria appuntamenti** o **Agente qualificazione pazienti**, invece di nomi generici come “Test”.
 
-**Consiglio:** dai un nome agli agenti in base a **funzione + lingua** per evitare confusione in seguito.
+## Sezione 1: Configurazione dell’agente
 
----
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agents2.png"
+    alt="La sezione di configurazione dell’agente con direzione delle chiamate, durata massima, messaggio di benvenuto, istruzioni di conversazione, variabili, base di conoscenza, strumenti e impostazioni di chiamata."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
 
-## Passo 2. Scegli la direzione delle chiamate: In entrata, In uscita o Entrambe
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la prima sezione di configurazione, dove definisci il comportamento principale dell’agente, il modo in cui la chiamata inizia e le risorse che può usare.
+</p>
 
-In **Agent → Call Direction**, scegli l’opzione che rispecchia la tua operatività:
+Questa prima sezione è la base di tutta la configurazione. Qui definisci a cosa serve l’agente, come deve parlare, quale obiettivo deve raggiungere e quali elementi aggiuntivi può usare durante la chiamata.
 
-- **In entrata:** l’agente riceve chiamate. Utile per supporto, reception e linee di servizio.\
-  **Suggerimento:** abilita **Transfer Call** per escalare quando serve.
-- **In uscita:** l’agente avvia le chiamate. Utile per promemoria, conferme, sondaggi e recupero crediti.\
-  **Suggerimento:** mantieni gli script brevi e imposta gli orari consentiti.
-- **Entrambe le direzioni:** un unico agente per chiamate in entrata e in uscita.\
-  Usalo quando tono e logica sono condivisi; richiede più test per evitare obiettivi “misti”.
+### Direzione delle chiamate
 
-Imposta anche:
+La direzione delle chiamate definisce se l’agente:
 
-- **Durata massima della chiamata (minuti):** soglia di chiusura automatica (ad esempio, 10).
-- **Messaggio di saluto:** la prima cosa che il chiamante sente.
+- chiama gli utenti
+- risponde alle chiamate in entrata
+- fa entrambe le cose
 
-**Esempio di saluto (EN):**\
-Ciao, qui è agent_name. Come posso aiutarti oggi? Questa chiamata potrebbe essere registrata per finalità di qualità.
+Devi scegliere questa opzione in base al caso reale. Per esempio, un agente che ricorda pagamenti o appuntamenti viene usato di solito per le chiamate in uscita, mentre un agente che risponde a domande o gestisce prenotazioni viene usato di solito per le chiamate in entrata.
 
----
+### Durata massima della chiamata
 
-## Passo 3. Voce, lingua e Temperature
+La durata massima della chiamata controlla per quanto tempo una conversazione può andare avanti prima di chiudersi automaticamente.
 
-In **Voice & Language**:
+Questo ti aiuta a:
 
-- **Lingua / Lingua secondaria:** imposta una lingua principale e aggiungi una secondaria solo se necessario.
-- **Voce:** scegli un tono/accento coerente con il tuo brand.
-- **Velocità:** inizia con Normal, poi regola dopo i test.
-- **Temperature:** controlla la creatività.
+- mantenere le chiamate efficienti
+- evitare conversazioni troppo lunghe
+- controllare meglio il consumo
 
-Guida rapida alla Temperature:
+Come riferimento, una chiamata breve di promemoria può richiedere tra **3 e 5 minuti**, mentre una chiamata di prenotazione o qualificazione può richiedere tra **5 e 10 minuti**.
 
-- **0,2–0,5:** più deterministica (ideale per prenotazioni/conformità).
-- **0,6–0,8:** più conversazionale (FAQ, vendite).
+### Messaggio di benvenuto
 
-Usa **Test Call** per ascoltare e regolare.
+Il messaggio di benvenuto è la prima cosa che la persona sente all’inizio della chiamata. Deve essere breve, chiaro e collegato al ruolo reale dell’agente.
 
----
+Una struttura semplice che di solito funziona bene è:
 
-## Passo 4. LLM: cos’è e come sceglierlo
+- saluto
+- presentazione
+- motivo della chiamata
+- invito a continuare
 
-**Cos’è:** l’LLM (Large Language Model) è il “cervello” che comprende e genera le risposte. Puoi scegliere provider/modello per bilanciare accuratezza, latenza e costo.
+Esempio:
 
-**Come scegliere (regola rapida):**
+**Ciao, ti chiamo dalla clinica Northwind per aiutarti a confermare il tuo prossimo appuntamento. È un buon momento per continuare?**
 
-- Flussi brevi/semplici (triage, FAQ): modello veloce e a basso costo.
-- Flussi multi-step ed estrazione dati: modello bilanciato.
-- Task lunghi, multilingua e ad alta precisione: modello avanzato.
+Se usi variabili dinamiche, puoi riutilizzare la stessa struttura in più agenti senza doverla riscrivere ogni volta.
 
-Indicatori per regolare:
+### Istruzioni di conversazione
 
-- Risposte vaghe o incoerenti: passa a un livello superiore.
-- Risposte solide ma troppo lente/costose: scendi di livello.
+Le istruzioni di conversazione sono una delle parti più importanti della configurazione. Mentre il messaggio di benvenuto apre la chiamata, queste istruzioni definiscono come l’agente deve comportarsi durante tutto il resto dell’interazione.
 
-Per prenotazioni e moduli, abbina un LLM stabile a una **Temperature bassa**.
+Un modo semplice per capirlo è questo:
 
-**Importante:** imposta la **Timezone** dell’agente in modo che corrisponda ai clienti o al calendario, per evitare prenotazioni con orari errati.
+- il **messaggio di benvenuto** avvia la conversazione
+- le **istruzioni di conversazione** guidano tutto ciò che accade dopo
 
----
+L’esempio mostrato di default in Callin è utile perché presenta una struttura consigliata. Non è necessario copiarlo parola per parola, ma è importante capire perché è organizzato in questo modo.
 
-## Passo 5. Conversation Prompt (script operativo)
+#### Struttura abituale
 
-Definisci obiettivi, tono e regole dell’agente.
+L’esempio di base è solitamente diviso in blocchi come questi:
 
-**Obiettivo:**
+- personalità
+- contesto
+- tono
+- obiettivo
+- limiti
+- strumenti
 
-- Saluto caloroso e identificazione del motivo in 1–2 domande.
-- Risolvere o instradare: prenotare, trasferire o inviare un riepilogo.
-- Confermare i dettagli critici: nome, telefono, data/ora.
+Ogni blocco svolge una funzione precisa.
 
-**Stile:**
+#### Personalità
 
-- Linguaggio semplice, empatico, senza gergo.
-- Riepilogare i prossimi passi prima di chiudere.
+Qui spieghi chi è l’agente e come deve presentarsi.
 
-**Regole:**
+Per esempio:
 
-- Nessun dato sensibile.
-- Trasferire su richiesta o quando l’agente è bloccato.
+- un assistente alla reception
+- un assistente alle prenotazioni
+- un assistente di follow-up
+- un assistente di qualificazione
 
-**Strumenti:**
+Questo aiuta l’agente a mantenere un’identità coerente per tutta la chiamata.
 
-- Usare Google Calendar e il trasferimento solo quando appropriato e dopo conferma.
+#### Contesto
 
----
+Qui spieghi in quale contesto avvengono le conversazioni.
 
-## Passo 6. Azioni di chiamata
+Per esempio:
 
-### 6.1 Prenotare su Google Calendar
+- chiamate telefoniche brevi in cui la chiarezza è fondamentale
+- chiamate per prenotare appuntamenti
+- chiamate di follow-up
+- chiamate per rispondere a domande semplici
 
-Prima, configura l’integrazione in Google Calendar e abilita **Appointments** sul calendario scelto.
+Questo blocco aiuta l’agente a capire il tipo di interazione che sta gestendo e a non rispondere come un assistente generico.
 
-In **Call Action**, abilita **Schedule Appointment on Google Calendar** e seleziona quel calendario (usa l’icona a forma di ingranaggio se presente).
+#### Tono
 
-Nel prompt, spiega come confermare ora e fuso orario.
+Qui definisci il modo in cui l’agente deve parlare.
 
-**Frase di prenotazione (IT):**\
-Posso proporti martedì alle 10:30 oppure mercoledì alle 12:00 (ora locale). Quale preferisci?
+L’esempio predefinito mostra chiaramente che, nelle chiamate vocali, di solito è meglio che l’agente:
 
-### 6.2 Trasferire la chiamata
+- parli in modo educato e conciso
+- usi brevi conferme
+- mantenga un tono caldo ma professionale
+- faccia pause naturali
+- pronunci con chiarezza dati strutturati, come gli indirizzi email
 
-Crea una configurazione in **Call Transfer** (destinazione, orari, coda).
+Questo è importante perché una chiamata telefonica richiede risposte più chiare e dirette rispetto a una conversazione scritta.
 
-In **Call Action**, abilita **Transfer Call** e seleziona quella configurazione.
+#### Obiettivo
 
-Aggiungi una frase di passaggio nel prompt.
+Qui spieghi cosa deve ottenere l’agente.
 
-**Frase di passaggio (IT):**\
-Ti metto in contatto con lo specialista giusto. Resta in linea, per favore.
+Per esempio:
 
-### 6.3 Estrazione dati
+- confermare un appuntamento
+- rispondere alle domande frequenti
+- raccogliere dati di base
+- qualificare un potenziale cliente
+- portare la conversazione al passaggio successivo corretto
 
-In **Call Action → Data Extraction**, definisci le entità da catturare:
+Senza un obiettivo chiaro, l’agente può sembrare preparato ma non svolgere davvero il suo compito.
 
-- **firstName:** nome del contatto (stringa o nullo).
-- **appointmentDate:** data/ora (stringa ISO o nullo).
-- **issueType:** motivo principale (valori: fatturazione, supporto, vendite).
+#### Limiti
 
-Cita queste entità nel prompt con uno o due esempi per migliorare la raccolta.
+Qui indichi cosa l’agente non deve fare.
 
-### 6.4 Webhook post-chiamata
+L’esempio di base mostra regole molto utili, come:
 
-Abilitalo per inviare i dettagli della chiamata al tuo sistema.
+- non condividere informazioni sensibili
+- non inventare risposte
+- riconoscere i propri limiti quando non può aiutare
+- restare calmo se l’utente si innervosisce
+- rimanere concentrato sul bisogno reale dell’utente
 
-**Esempio di contenuto (testo semplice):**\
-Agente: Support EN – Sales. Direzione: entrambe. Entità: firstName Alex; appointmentDate 2025-10-30T10:30:00-03:00; issueType vendite. Inoltre: link della registrazione e link della trascrizione.
+Questa parte è fondamentale se l’agente parlerà direttamente con clienti o pazienti.
 
----
+#### Strumenti nelle istruzioni
 
-## Passo 7. Impostazioni chiamata
+L’esempio include anche un blocco che indica se l’agente deve lavorare solo tramite conversazione o se può usare strumenti già configurati.
 
-In **Call Settings**:
+Se l’agente deve risolvere tutto parlando, è meglio dirlo chiaramente. Se deve usare uno strumento, quello strumento deve esistere prima di essere collegato all’agente.
 
-- **Registrazione chiamate:** salva audio e trascrizioni (consigliato per QA/conformità).
-- **Rilevamento segreteria:** chiudi su segreteria per risparmiare minuti.
-- **Rumore di fondo:** lieve ambiente per un suono più naturale.
-- **Ritardo del saluto (ms):** breve pausa prima del saluto (ad esempio, 1200).
+### Come scrivere bene le istruzioni di conversazione
 
----
+Buone istruzioni devono spiegare il lavoro dell’agente in modo chiaro e pratico.
 
-## Passo 8. Test e salvataggio
+Invece di scrivere qualcosa di troppo generico come:
 
-Esegui **Test Call** in ogni scheda (Agent, Voice & Language, Call Action). Verifica saluto, lingua, velocità, prenotazioni, trasferimenti ed entità.
+**Sii utile ed educato.**
 
-Fai clic su **Save** ed esegui una chiamata reale di verifica. Controlla **Call History** per audio, trascrizione e valori estratti.
+È meglio scrivere qualcosa di più preciso, per esempio:
 
----
+**L’agente è un assistente telefonico per una clinica dentistica. Deve aiutare a confermare gli appuntamenti, rispondere a domande semplici sugli orari, mantenere un tono educato e conciso e guidare la persona al passaggio successivo quando la richiesta è fuori dal suo ambito.**
 
-## Configurazione avanzata (opzionale)
+Questo funziona meglio perché definisce:
 
-- **Instradamento per parole chiave:** nel prompt definisci i termini che attivano la prenotazione (prenotare, riprogrammare) o il trasferimento (parlare con un operatore, supervisore).
-- **Doppia conferma:** chiedi di ripetere data/ora prima di prenotare.
-- **Multilingua:** usa la Lingua secondaria solo se servi davvero due lingue; altrimenti disattivala.
-- **Temperature per obiettivo:** bassa per prenotazioni/trasferimenti; media per FAQ/vendite.
+- chi è l’agente
+- quale tipo di chiamata gestisce
+- come deve parlare
+- quale risultato deve cercare
+- cosa deve evitare
 
----
+### Ottimizzare le istruzioni
 
-## Errori comuni e soluzioni
+Accanto all’area delle istruzioni, Callin include un’opzione per **ottimizzare le istruzioni**. Quando la apri, compare una finestra in cui puoi scrivere quale tipo di miglioramento vuoi applicare al testo attuale.
 
-**“Questo calendario non ha un’azione di appuntamento.”**\
-Il calendario non ha Appointments. Vai su Google Calendar, abilitalo oppure scegli un altro calendario con l’azione attiva.
+Questo è utile quando hai già una base, ma vuoi migliorarla senza dover riscrivere tutto da capo.
 
-**Banner: “Seleziona un Google Calendar…”**\
-In Call Action, apri l’ingranaggio su Schedule Appointment e seleziona il calendario corretto.
+Per esempio, puoi chiedere al sistema di:
 
-**Banner: “Seleziona una configurazione di trasferimento…”**\
-Crea e salva un profilo in Call Transfer, poi selezionalo nell’agente.
+- renderlo più corto e chiaro
+- usare un tono più vicino
+- aggiungere la gestione delle obiezioni
+- farlo suonare più professionale
+- semplificare istruzioni troppo lunghe
 
-**Prenotazioni all’ora sbagliata**\
-Allinea la Timezone dell’agente con il calendario e conferma l’ora locale del chiamante.
+Un esempio pratico potrebbe essere chiedere qualcosa come:
 
-**Mix di lingue**\
-Mantieni il prompt in una sola lingua; configura Language/Secondary Language correttamente e scegli una voce coerente.
+**Rendilo più conciso, mantieni un tono caldo e professionale e aggiungi una gestione più chiara delle obiezioni frequenti.**
 
-**Entità mancanti**\
-Definisci tipi chiari, cita le entità nel prompt, abbassa la Temperature oppure usa un LLM più potente.
+Dopo l’ottimizzazione, rivedi sempre il risultato prima di salvare per verificare che sia ancora allineato con il ruolo reale dell’agente.
 
-**Webhook abilitato senza URL (“Webhook Url is required…”)**\
-Aggiungi un endpoint valido prima di abilitare Post-Call Webhook oppure disattivalo durante i test.
+> **Importante:** Ottimizzare le istruzioni aiuta a migliorare la scrittura, ma non sostituisce il controllo umano. Prima di salvare, verifica che il testo finale corrisponda davvero al comportamento che desideri.
 
----
+### Variabili dinamiche
 
-## Chiusura
+Le variabili dinamiche ti permettono di riutilizzare dati come il nome dell’agente o dell’azienda in diversi punti della configurazione.
 
-Il tuo agente ora può comprendere contesti complessi, prenotare con precisione, escalare le chiamate e inviare dati puliti ai tuoi sistemi. Parti con un LLM bilanciato, testa con chiamate reali e affina: questa base ti permetterà di scalare senza attriti.
+Questo è utile quando vuoi mantenere la stessa struttura in più agenti e cambiare solo alcuni valori.
+
+### Fuso orario e modello
+
+Più in basso puoi configurare il fuso orario e il modello che verrà usato dall’agente.
+
+Il fuso orario è importante quando l’agente:
+
+- menziona orari
+- programma appuntamenti
+- fa riferimento a ore locali
+
+Il modello influisce sul modo in cui vengono generate le risposte. In base al tuo account o al tuo piano, alcune opzioni possono variare.
+
+### Base di conoscenza
+
+La base di conoscenza fornisce all’agente informazioni di supporto per rispondere con maggiore precisione.
+
+Se non l’hai ancora configurata, devi farlo prima qui: [Base di conoscenza](https://app.callin.io/knowledge-base)
+
+Questo è il posto giusto per aggiungere contenuti come:
+
+- domande frequenti
+- politiche
+- prezzi
+- dettagli dei servizi
+- informazioni utili per rispondere ai dubbi più comuni
+
+Per esempio, una clinica può includere orari di apertura, regole di cancellazione, assicurazioni accettate e istruzioni prima di un appuntamento.
+
+Una regola pratica è questa:
+
+- usa le **istruzioni di conversazione** per comportamento e regole
+- usa la **base di conoscenza** per fatti e informazioni di riferimento
+
+### Strumenti
+
+Gli strumenti permettono all’agente di usare funzioni aggiuntive durante una chiamata.
+
+Se non hai ancora configurato lo strumento, devi farlo prima qui: [Strumenti](https://app.callin.io/tools)
+
+Questo è importante perché l’agente non può usare correttamente uno strumento che non esiste ancora o che non è stato preparato prima.
+
+Un flusso consigliato è questo:
+
+1. configurare lo strumento in [Strumenti](https://app.callin.io/tools)
+2. tornare all’agente
+3. collegare lo strumento
+4. testare la conversazione completa
+
+Per esempio, se vuoi che l’agente consulti informazioni esterne o esegua un’azione specifica, devi prima preparare quello strumento.
+
+### Impostazioni di chiamata
+
+In questa stessa sezione puoi trovare anche impostazioni aggiuntive, come:
+
+- registrazione delle chiamate
+- rilevamento della segreteria telefonica
+- opzione per permettere all’utente di parlare per primo
+
+Queste impostazioni definiscono meglio l’esperienza reale quando l’agente è attivo.
+
+> **Errore comune:** Scrivere istruzioni troppo generiche e pensare che l’agente capirà automaticamente quando usare uno strumento. L’obiettivo deve essere chiaro nelle istruzioni e lo strumento deve essere configurato prima.
+
+## Sezione 2: Voce e lingua
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agents3.png"
+    alt="La sezione voce e lingua con lingua principale, lingua secondaria, voce selezionata, velocità e livello di variazione."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la seconda sezione di configurazione, dove scegli come suona l’agente e come comprende gli utenti.
+</p>
+
+La sezione voce e lingua controlla il modo in cui l’agente parla e gestisce la conversazione.
+
+### Lingua principale e lingua secondaria
+
+Inizia scegliendo la lingua principale. Deve corrispondere alla lingua che la maggior parte delle persone userà per parlare con l’agente.
+
+Puoi anche aggiungere una lingua secondaria se l’agente deve gestire più di una lingua.
+
+Per esempio:
+
+- una clinica locale può avere bisogno di una sola lingua principale
+- un’azienda che si rivolge a pubblici diversi può combinare due lingue
+
+### Voce
+
+La voce definisce il modo in cui l’agente suonerà durante la chiamata.
+
+Nel selettore di voce normalmente puoi:
+
+- filtrare per lingua
+- filtrare per genere
+- scegliere tra diversi tipi di voce
+- ascoltare anteprime
+- importare una voce da ElevenLabs
+
+Se usi una voce importata, conviene darle un nome chiaro per ritrovarla facilmente in seguito.
+
+Quando scegli la voce, pensa al tipo di esperienza che vuoi trasmettere. Un agente legale può funzionare meglio con una voce calma e sicura, mentre un agente per l’ospitalità può risultare più efficace con una voce più vicina e dinamica.
+
+### Velocità
+
+La velocità controlla quanto rapidamente o lentamente parla l’agente.
+
+- valori più bassi rendono la voce più lenta
+- valori più alti rendono la voce più veloce
+
+Di solito è consigliabile un punto di equilibrio che suoni naturale e facile da seguire.
+
+### Livello di variazione
+
+Il livello di variazione regola quanto le risposte saranno prevedibili o creative.
+
+- valori bassi rendono l’agente più stabile e controllato
+- valori alti rendono le risposte più varie
+
+Nelle chiamate aziendali strutturate, di solito funziona meglio un’impostazione bassa o intermedia.
+
+> **Consiglio:** Non limitarti a provare la voce da sola. Fai una chiamata completa e verifica come suona nel flusso reale.
+
+## Sezione 3: Azioni di chiamata
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agents4.png"
+    alt="La sezione delle azioni di chiamata con prenotazione di appuntamenti, trasferimento di chiamata, esclusione, estrazione dei dati, invio dopo la chiamata, tentativi di richiamo e rotazione dei numeri."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la terza sezione di configurazione, dove attivi le azioni che l’agente può eseguire durante o dopo la chiamata.
+</p>
+
+Questa sezione permette all’agente di fare più che parlare. Qui definisci azioni concrete che possono avvenire durante la chiamata o subito dopo.
+
+### Prenotazione di appuntamenti
+
+Attiva questa opzione se l’agente deve prenotare appuntamenti durante la chiamata.
+
+Se non hai ancora configurato questa parte, devi farlo prima qui: [Google Calendar](https://app.callin.io/actions/google-calendar)
+
+Questo è importante perché l’agente deve avere accesso a una configurazione di calendario già pronta prima di poter proporre orari e confermare correttamente una prenotazione.
+
+Un esempio semplice: una clinica può usare l’agente per proporre disponibilità e confermare l’appuntamento durante la stessa chiamata.
+
+### Trasferimento di chiamata
+
+Attiva questa opzione se l’agente deve passare la chiamata a una persona reale, a un reparto o a un altro numero.
+
+Se non hai ancora configurato questa parte, devi farlo prima qui: [Trasferimento di chiamata](https://app.callin.io/call-transfer)
+
+Questo deve essere preparato in anticipo affinché l’agente sappia dove trasferire e in quali condizioni.
+
+Un esempio pratico: l’agente risponde a domande semplici, ma trasferisce questioni di fatturazione o casi urgenti a un team umano.
+
+### Esclusione dalle chiamate
+
+L’esclusione permette a una persona di indicare che non desidera più ricevere questo tipo di chiamate.
+
+Questo è utile nelle campagne in uscita e nei flussi ripetitivi in cui devi rispettare la preferenza del contatto.
+
+### Estrazione dei dati
+
+L’estrazione dei dati serve a catturare informazioni specifiche dalla conversazione.
+
+Per esempio, puoi chiedere all’agente di estrarre:
+
+- nome
+- data dell’appuntamento
+- livello di interesse
+- fascia oraria migliore per richiamare
+
+Questo aiuta il tuo team a non dover rileggere tutta la trascrizione per trovare i dati importanti.
+
+### Invio dopo la chiamata
+
+Questa opzione serve a inviare le informazioni della chiamata a un altro sistema una volta terminata la conversazione.
+
+È utile quando vuoi inviare i risultati a un sistema esterno, a un pannello interno o a un flusso di automazione.
+
+### Tentativi di richiamo
+
+I tentativi di richiamo definiscono cosa deve succedere se la chiamata non va a buon fine o se viene rilevata una segreteria telefonica.
+
+Qui puoi impostare quanti tentativi fare e quanto tempo aspettare prima di richiamare.
+
+### Rotazione dei numeri
+
+La rotazione dei numeri permette di distribuire le chiamate tra più numeri per gestire meglio il traffico e migliorare la consegnabilità.
+
+Questo può essere particolarmente utile nelle operazioni a volume elevato.
+
+> **Importante:** Se non hai ancora configurato il calendario o il trasferimento, fallo prima nelle rispettive pagine e poi torna all’agente per attivare correttamente queste funzioni.
+
+## Sezione 4: Widget del sito web
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agents5.png"
+    alt="La sezione del widget del sito web con il codice di integrazione, le modalità di visualizzazione, l’aspetto, le etichette e le opzioni di salvataggio."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la quarta sezione di configurazione, dove generi il widget per il tuo sito web e ne personalizzi l’aspetto e i testi.
+</p>
+
+Questa sezione si usa quando vuoi che i visitatori parlino con l’agente direttamente dal tuo sito web.
+
+### Codice di integrazione
+
+Nella parte superiore puoi copiare il codice di integrazione e inserirlo nel tuo sito. È questo codice che carica il widget per i visitatori.
+
+Questo rende più semplice per il team tecnico o per chi gestisce il sito aggiungerlo senza dover ricostruire nulla manualmente.
+
+### Layout e comportamento
+
+Qui puoi decidere come apparirà il widget.
+
+Di solito potrai scegliere tra:
+
+- mostrarlo integrato all’interno della pagina
+- mostrarlo come un avvio flottante
+
+La scelta migliore dipende dall’uso reale. Se vuoi che l’agente sia protagonista in una pagina specifica, spesso conviene integrarlo direttamente. Se vuoi che sia disponibile in tutto il sito senza occupare uno spazio fisso, di solito è più adatto un avvio flottante.
+
+### Modalità di conversazione
+
+In questa parte definisci se l’interazione avverrà tramite voce, testo o entrambe le opzioni, in base a ciò che hai disponibile nel tuo account.
+
+### Aspetto
+
+Più in basso puoi personalizzare dettagli visivi come:
+
+- dimensione
+- colori
+- trascrizione in tempo reale
+- pulsante per togliere l’audio
+- stile generale
+
+Questo è utile per fare in modo che il widget si adatti meglio al tuo marchio.
+
+### Etichette e testi
+
+Puoi anche personalizzare i testi visibili all’interno del widget, come:
+
+- testo principale
+- testo per avviare una chiamata
+- testo per avviare una chat
+- testo di connessione
+- testo di ascolto
+- testo di chiusura
+- testi della chat
+- messaggi vuoti
+- testi di aiuto
+
+Questo ti permette di adattare l’esperienza al tono reale della tua attività.
+
+### Salvare e provare
+
+Prima di pubblicare il widget, conviene seguire questo ordine:
+
+1. salvare le modifiche
+2. controllare se ci sono errori
+3. fare una prova reale
+4. confermare che testo, voce e azioni funzionino come previsto
+
+> **Consiglio:** Prova il widget come se fossi un vero visitatore. Controlla sia il flusso normale sia i casi meno perfetti, come interruzioni, richieste ambigue o domande fuori dall’ambito dell’agente.
