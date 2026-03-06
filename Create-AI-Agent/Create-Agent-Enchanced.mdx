@@ -1,225 +1,529 @@
 ---
 title: "AI Agents"
-description: "Complete guide to configure an advanced agent with LLM, calendar and transfers."
+description: "Create, organize, and configure AI Agents for phone calls and website conversations."
 ---
 
-## Video Guide
+[Open the AI Agents page in Callin](https://app.callin.io/agents)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <iframe width="100%" height="420" src="https://www.youtube-nocookie.com/embed/jnsyavqL8CI" title="YouTube video" frameBorder="0" loading="lazy" referrerPolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/agents1.png" alt="The AI Agents list page with filters, search, and the Create Agent button." style={{ width:"100%", display:"block" }} />
 </div>
 
-## Before You Begin
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the AI Agents page where you can review existing agents, filter them by direction, search by name, and create a new one.
+</p>
 
-**An agent** can handle complex flows: nuanced intent, long instructions, accurate data capture, and **inbound**, **outbound**, or **both** call directions.
+## AI Agents overview
 
-If you only need greetings, **simple FAQs**, or **basic data capture** at low cost, a **Basic** agent is enough.
+The **AI Agents** page is the main workspace for creating and managing agents in Callin. From here, you can see all your agents in one place, identify which ones are inbound or outbound, open any agent to edit it, and create new ones for different business flows.
 
-**External actions (set up separately, then link):**
+This page is especially useful when you want to:
 
-- **Scheduling:** Google Calendar
-- **Transfers:** Call Transfer
+- create a new agent for calls or website conversations
+- separate agents by purpose
+- quickly find an existing setup
+- detect unfinished configurations before going live
 
----
+In the list view, you can usually see the agent name, call direction, language tag, creation date, and action icons. You may also see warnings such as **No phone number assigned**, which help you catch incomplete setups before using the agent in production.
 
-## Step 1. Create the agent
+To create a new agent, click **Create Agent**, choose **Start from Scratch** or **Browse our Templates**, enter the agent name, and then click **Create Agent**.
 
-Go to **AI Agents** → **Create Agent** → **Start from Scratch**, enter a clear name (for example: **“Support EN – Sales”**), select the appropriate **Version**, and click **Create Agent**.
+A simple example:
 
-Recommendation: name agents by **function + language** to avoid confusion later.
+A dental clinic may create separate agents such as **Appointment Reminder Agent**, **New Patient Intake Agent**, and **Missed Call Follow-up Agent**. This is much easier to manage than keeping generic names like “Test” or “Agent 2.”
 
----
+> **Tip:** Name the agent based on its real purpose. Clear names make testing, reporting, and future edits much easier.
 
-## Step 2. Choose call direction: Inbound, Outbound, or Both
+## Section 1: Agent
 
-In **Agent** → **Call Direction**, pick what mirrors your operation:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/agents2.png" alt="The Agent configuration tab showing call direction, maximum call duration, greeting message, conversation prompt, variables, knowledge base, tools, and call settings." style={{ width:"100%", display:"block" }} />
+</div>
 
-**Inbound:** the agent receives calls. Use for support desks, reception, service lines.\
-Tip: enable **Transfer Call** to escalate when needed.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Agent tab where you define the core behavior of the AI Agent, including how calls begin, how the agent behaves, and what resources it can use.
+</p>
 
-**Outbound:** the agent initiates calls. Use for reminders, confirmations, surveys, collections.\
-Tip: keep scripts short and set **allowed hours**.
+The **Agent** section is the foundation of the full setup. This is where you define what the agent is for, how it starts the conversation, what instructions guide it, and what supporting resources it can use during calls.
 
-**Both Directions:** one agent for inbound and outbound.\
-Use when tone and logic are shared; it requires more testing to avoid mixed goals.
+### Call Direction
 
-**Also set:**
+The first setting is **Call Direction**. You can choose:
 
-- **Maximum Call Duration (minutes):** auto-hang threshold (for example, 10).
-- **Greeting Message:** the first thing the caller hears.
+- **Outbound** if the agent will call users
+- **Inbound** if the agent will answer incoming calls
+- **Both Directions** if the same agent should handle both use cases
 
-**Greeting example (EN):**\
-Hi, this is {agent_name}. How can I help you today? This call may be recorded for quality purposes.
+Choose this based on the real workflow. For example, a payment reminder agent is usually **Outbound**, while a receptionist or booking line is usually **Inbound**.
 
----
+### Maximum Call Duration
 
-## Step 3. Voice, language, and Temperature
+The **Maximum Call Duration** setting controls how long a call can last before it ends automatically.
 
-In **Voice & Language**:
+This helps you:
 
-- **Language / Secondary Language:** set a primary language and add a secondary only if needed.
-- **Voice:** choose a tone/accent that fits your brand.
-- **Speed:** start at **Normal**, then tune after testing.
-- **Temperature:** controls creativity.
+- keep calls efficient
+- avoid unusually long conversations
+- control usage and cost
 
-**Quick Temperature guidance:**
+For example, a short reminder call may only need **3 to 5 minutes**, while a booking or intake call may need **5 to 10 minutes**.
 
-- **0.2–0.5:** more deterministic (best for booking/compliance).
-- **0.6–0.8:** more conversational (FAQs, sales).
+### Greeting Message
 
-Use **Test Call** to listen and adjust.
+The **Greeting Message** is the first thing the caller hears. It should be short, clear, and relevant to the job of the agent.
 
----
+A reliable structure is:
 
-## Step 4. LLM: what it is and how to choose
+- greeting
+- who the agent is
+- why the call is happening
+- invitation to continue
 
-**What it is:** the LLM (Large Language Model) is the “brain” that understands and generates responses. You can choose a provider/model to balance **accuracy**, **latency**, and **cost**.
+Example:
 
-**How to choose (quick rule):**
+**Hi, this is Northwind Dental. I’m calling to help you confirm your upcoming appointment. Is now a good time to continue?**
 
-- **Short/simple flows** (triage, FAQs): fast/low-cost model.
-- **Multi-step flows** and **data extraction**: balanced model.
-- **Long**, **multilingual**, **high-precision** tasks: advanced model.
+If variables are available, you can reuse the same structure across multiple agents without rewriting the full greeting each time.
 
-**Signals to adjust:**
+### Conversation Prompt
 
-- Vague or inconsistent answers: move up a tier.
-- Solid answers but too slow/expensive: move down a tier.
+The **Conversation Prompt** is one of the most important parts of the setup. It defines how the agent should behave during the conversation after the greeting has already started the call.
 
-For booking and forms, pair a stable LLM with **low Temperature**.
+A simple way to think about it is:
 
-Important: set the agent **Timezone** to match your customers or the calendar to prevent wrong-hour bookings.
+- the **Greeting Message** opens the conversation
+- the **Conversation Prompt** controls how the rest of the conversation should go
 
----
+The default example shown in Callin is useful because it gives you a clear structure. It is not there to be copied word for word every time. Instead, it shows the type of instructions that help the agent stay consistent, clear, and safe during calls.
 
-## Step 5. Conversation Prompt (operating script)
+That example prompt is structured into areas such as:
 
-Define the agent’s **goals**, **tone**, and **rules**.
+- **Personality**
+- **Environment**
+- **Tone**
+- **Goal**
+- **Guardrails**
+- **Tools**
 
-**Goal:**
+This structure is helpful because it turns a vague instruction like “be helpful” into something more practical and reliable.
 
-1. Warm greeting and identify the reason in 1–2 questions.
-2. Resolve or route: schedule, transfer, or send a summary.
-3. Confirm critical details: name, phone, date/time.
+#### Personality
 
-**Style:**
+This explains who the agent is.
 
-- Plain, empathetic, no jargon.
-- Summarize next steps before closing.
+For example:
 
-**Rules:**
+- a front desk assistant
+- a scheduling assistant
+- a lead qualification assistant
+- a reminder agent
 
-- No sensitive data.
-- Transfer on request or when blocked.
+This helps the agent sound consistent and avoid shifting personality from one call to another.
 
-**Tools:**
+#### Environment
 
-- Use Google Calendar and Transfer **only** when appropriate and **after confirmation**.
+This explains the type of call the agent is handling.
 
----
+For example:
 
-## Step 6. Call Actions
+- short phone calls where clarity matters
+- appointment booking conversations
+- follow-up calls after a missed call
+- outbound reminder calls
 
-### 6.1 Schedule on Google Calendar
+This helps the agent understand the real context instead of answering like a generic chatbot.
 
-First, set up the integration in **Google Calendar** and enable **Appointments** for the chosen calendar.
+#### Tone
 
-In **Call Action**, enable **Schedule Appointment on Google Calendar** and select that calendar (use the gear icon if shown).
+This explains how the agent should sound.
 
-In the prompt, explain how to confirm **time** and **timezone**.
+The default example in Callin shows useful voice-call guidance such as:
 
-**Booking line (EN):**\
-I can offer Tuesday 10:30 or Wednesday 12:00 (your local time). Which works?
+- speak politely and concisely
+- use brief affirmations like “I understand” and “Okay”
+- include natural pauses
+- adapt tone to the user’s engagement
+- spell out structured information clearly, such as email addresses
 
----
+This matters because phone conversations need a different style than chat. A voice agent should sound natural, brief, and easy to follow.
 
-### 6.2 Transfer call
+#### Goal
 
-Create a configuration in **Call Transfer** (destination, hours, queue).
+This explains what success looks like for the call.
 
-In **Call Action**, enable **Transfer Call** and select that configuration.
+Examples:
 
-Add a handoff line to the prompt.
+- confirm an appointment
+- answer common questions
+- qualify a lead
+- collect contact details
+- guide the caller to the correct next step
 
-**Handoff line (EN):**\
-I’ll connect you with the right specialist now. Please stay on the line.
+Without a clear goal, the agent may sound polite but still fail to move the conversation forward.
 
----
+#### Guardrails
 
-### 6.3 Data Extraction
+This explains what the agent must not do.
 
-In **Call Action** → **Data Extraction**, define the entities to capture:
+The example in Callin includes good default rules such as:
 
-- **firstName:** contact’s first name (string or null).
-- **appointmentDate:** date/time (ISO string or null).
-- **issueType:** main reason (values: billing, support, sales).
+- never share sensitive information
+- do not guess or invent answers
+- acknowledge limits when needed
+- de-escalate calmly
+- stay focused on the user’s needs
 
-Reference them in the prompt with one or two examples to improve capture.
+This section is especially important if the agent will speak directly with customers.
 
----
+#### Tools in the prompt
 
-### 6.4 Post-call webhook
+The example also includes a **Tools** section. This is useful because the prompt can clarify whether the agent should rely only on conversation or whether it may use configured tools as part of the flow.
 
-Enable it to push call details to your system.
+If your agent is supposed to work through conversation only, say that clearly. If it should use a configured tool, the tool must already exist before you attach it to the agent.
 
-Example content (plain text):\
-Agent: Support EN – Sales. Direction: both. Entities: firstName Alex; appointmentDate 2025-10-30T10:30:00-03:00; issueType sales. Also: recording link and transcript link.
+If you have not configured the tool yet, set it up first in [Tools](https://app.callin.io/tools).
 
----
+### How to write the Conversation Prompt well
 
-## Step 7. Call Settings
+A strong prompt should describe the agent in plain business language.
 
-In **Call Settings**:
+Instead of writing only:
 
-- **Record Calls:** store audio and transcripts (recommended for QA/compliance).
-- **Voicemail Detection:** hang up on voicemail to save minutes.
-- **Background Ambience:** subtle background noise for a natural feel.
-- **Greeting Message Delay (ms):** a short pause before the greeting (for example, 1200).
+**Be helpful and polite.**
 
----
+A better version would be:
 
-## Step 8. Test and save
+**The agent is a phone assistant for a dental clinic. It should help callers confirm appointments, answer basic scheduling questions, stay polite and concise, and direct the caller to the next step when a request is outside its scope.**
 
-Run **Test Call** in each tab (Agent, Voice & Language, Call Action). Validate greeting, language, speed, booking, transfers, and entities.
+This works better because it defines the role, the tone, the goal, and the limits.
 
-Click **Save** and place a real verification call. Check **Call History** for audio, transcript, and extracted values.
+A good prompt usually answers these questions:
 
----
+- Who is the agent?
+- What kind of call is this?
+- How should the agent sound?
+- What is the main outcome of the call?
+- What should the agent avoid doing?
+- Should the agent use tools, or conversation only?
 
-## Advanced setup (optional)
+### Optimize prompt
 
-- **Keyword routing:** in the prompt, define terms that trigger booking (book, reschedule) or transfer (talk to human, supervisor).
-- **Double confirmations:** ask callers to repeat date/time before booking.
-- **Multilingual:** use Secondary Language only if you truly serve two languages; otherwise disable it.
-- **Temperature by goal:** low for booking/transfer; medium for FAQs/sales.
+Next to the prompt area, Callin also includes an **Optimize** button. This opens the **Optimize prompt** window, where you can describe how you want the current prompt to be improved.
 
----
+This is useful when the prompt already exists, but you want to refine it without rewriting everything manually.
 
-## Common errors and fixes
+For example, you can ask the optimizer to:
 
-**“This calendar does not have an appointment action.”**\
-The calendar lacks Appointments. Go to Google Calendar, enable it, or pick another calendar with the action active.
+- make the prompt shorter and clearer
+- make the tone friendlier
+- add objection handling
+- make the agent sound more professional
+- simplify the instructions for short calls
 
-**Banner: “Select a Google Calendar…”**\
-In Call Action, open the gear on Schedule Appointment and select the correct calendar.
+A practical example:
 
-**Banner: “Select a Transfer Configuration…”**\
-Create and save a profile in Call Transfer, then select it in the agent.
+If your current prompt feels too long, you can enter something like:
 
-**Wrong-hour bookings**\
-Align the agent Timezone with the calendar and confirm the caller’s local time.
+**Make it more concise, keep a warm professional tone, and add clearer handling for common objections.**
 
-**Language mixing**\
-Keep the prompt in one language; set Language/Secondary Language properly and pick a matching voice.
+This can save time, especially when you already have a decent prompt and only need to improve the structure or tone.
 
-**Entities missing**\
-Define clear types (string/boolean/ISO), mention entities in the prompt, lower Temperature, or try a more capable LLM.
+> **Important:** Optimize prompt helps improve the writing, but you should still review the final result before saving. Always confirm that the instructions still match the real job of the agent.
 
-**Webhook enabled without URL (“Webhook Url is required…”)**\
-Add a valid endpoint before enabling Post-Call Webhook or disable it while testing.
+### Dynamic Variables
 
----
+The **Dynamic Variables** area lets you define reusable values, such as the agent name.
 
-## Close
+This is useful when you want one structure across several agents. For example, you can reuse the same greeting pattern while changing only the agent or business name.
 
-Your agent can now understand complex contexts, book accurately, escalate calls, and feed clean data to your systems. Start with a balanced LLM, test with real calls, and tune—this foundation will let you scale without friction.
+### Timezone and LLM
+
+Further down, you can configure the **Timezone** and the **LLM** used by the agent.
+
+- **Timezone** matters for time-based logic, appointment handling, and business-hour references
+- **LLM** determines the response model used by the agent
+
+If the agent books appointments or references local hours, make sure the timezone matches the real business location.
+
+### Knowledge Base
+
+The **Knowledge Base** area gives the agent supporting information it can use to answer questions more accurately.
+
+If you have not configured this yet, set it up first in [Knowledge Base](https://app.callin.io/knowledge-base).
+
+This is the right place for content such as:
+
+- FAQs
+- policies
+- pricing summaries
+- service details
+- product explanations
+
+For example, a clinic agent may need office hours, cancellation rules, accepted insurance, and appointment preparation instructions.
+
+A practical rule is:
+
+- use the **Conversation Prompt** for behavior and rules
+- use the **Knowledge Base** for facts and reference information
+
+### Tools
+
+The **Tools** area lets the agent use additional capabilities during a call.
+
+If you have not configured the tool yet, set it up first in [Tools](https://app.callin.io/tools).
+
+This is important because an agent cannot reliably use a tool that has not already been created and configured.
+
+A practical flow is:
+
+1. configure the tool in [Tools](https://app.callin.io/tools)
+2. return to the AI Agent
+3. attach the tool to the agent
+4. test the full conversation
+
+For example, if you want the agent to trigger an external action or retrieve specific data, that tool must exist first before it can be used here.
+
+### Call Settings
+
+Further down in the Agent section, you can also find **Call Settings**, such as call recording, voicemail detection, and whether the user speaks first.
+
+These settings help define the real experience once the agent is live.
+
+A practical example:
+
+- enable **Record Calls** if your team needs quality review or compliance review
+- enable **Voicemail Detection** for outbound campaigns
+- use **User Speaks First** only if the flow depends on the caller starting the conversation
+
+> **Common mistake:** Writing a very general prompt, adding a tool, and assuming the agent will know when to use it automatically. The prompt should still explain the goal clearly, and the tool must be configured first in [Tools](https://app.callin.io/tools).
+
+## Section 2: Voice & Language
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/agents3.png" alt="The Voice & Language tab showing language, secondary language, selected voice, speed, and temperature settings." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Voice & Language tab where you choose the language, voice, speed, and response style of the agent.
+</p>
+
+The **Voice & Language** section controls how the agent sounds and how it understands users.
+
+### Language and Secondary Language
+
+Start by choosing the main **Language**. This should match the language the caller is most likely to use.
+
+You can also add a **Secondary Language** if the agent needs to support a second language.
+
+For example:
+
+- a local clinic may only need **English**
+- a business serving both English and Spanish callers may use **English** as the main language and add Spanish as a secondary language
+
+### Voice
+
+The **Voice** setting determines the actual voice the agent uses.
+
+In the voice selector, you can usually:
+
+- filter by language
+- filter by gender
+- choose between voice types
+- preview voices
+- import an ElevenLabs voice
+
+The voice picker shown in the interface also includes an option to import a shared **ElevenLabs** voice link and give that imported voice a name.
+
+When choosing a voice, think about:
+
+- the caller’s language
+- the tone of the business
+- whether the voice should sound calm, formal, warm, or energetic
+
+For example, a legal intake agent may sound better with a calm and confident voice, while a hospitality agent may work better with a warmer and more upbeat voice.
+
+### Speed
+
+The **Speed** slider controls how fast the generated voice sounds.
+
+- lower values slow the speech down
+- higher values speed it up
+
+A moderate pace is usually best. If the voice is too fast, important information becomes harder to follow. If it is too slow, the conversation may feel unnatural.
+
+### Temperature
+
+The **Temperature** slider controls how focused or creative the responses are.
+
+- lower values make responses more predictable
+- higher values make them more varied and creative
+
+For structured business calls, low or medium values are usually safer because they keep the agent consistent.
+
+> **Tip:** Always test the full call flow after choosing the voice. A voice can sound good in preview but still feel wrong once it is used in a real conversation.
+
+## Section 3: Call Action
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/agents4.png" alt="The Call Action tab showing schedule appointment, transfer call, opt-out call, data extraction, post-call webhook, call retry, and number rotation." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Call Action tab where you enable actions the agent can perform during or after the call.
+</p>
+
+The **Call Action** section is where the agent moves beyond conversation and starts doing real actions. This section is especially important for booking, routing, lead capture, and outbound workflows.
+
+### Schedule Appointment
+
+Enable **Schedule Appointment** when the agent should book appointments during the call.
+
+If you have not configured this yet, set it up first in [Google Calendar](https://app.callin.io/actions/google-calendar).
+
+This matters because the agent needs an existing calendar configuration before it can schedule anything reliably. The calendar setup can include booking templates, reminder settings, and available calendars.
+
+A practical example:
+
+A clinic agent can offer available time slots, confirm the user’s preferred time, and complete the booking during the same call.
+
+> **Important:** If Google Calendar was not configured before enabling appointment scheduling here, the setup will remain incomplete. Configure it first in [Google Calendar](https://app.callin.io/actions/google-calendar), then return to the agent.
+
+### Transfer Call
+
+Enable **Transfer Call** when the AI Agent should hand the conversation off to a real person, team, department, or phone number.
+
+If you have not configured this yet, set it up first in [Call Transfer](https://app.callin.io/call-transfer).
+
+This must be configured in advance because the agent needs transfer rules and a transfer destination before this feature can work properly.
+
+A practical example:
+
+A support agent can answer basic questions, but transfer billing issues to the finance team or urgent cases to a live operator.
+
+> **Important:** If call transfer was not configured before enabling this option, the agent will not know where to send the call. Configure the rules first in [Call Transfer](https://app.callin.io/call-transfer).
+
+### Opt-Out Call
+
+The **Opt-Out Call** option is useful for outbound campaigns. It allows the person receiving the call to opt out of the current call and prevent future calls.
+
+This is helpful for recurring outreach and cleaner contact management.
+
+### Data Extraction
+
+The **Data Extraction** area lets you define the specific information the agent should extract from the conversation.
+
+Examples shown in the interface include values such as:
+
+- first name
+- appointment date
+- whether the person is interested
+
+This is useful when you want structured outputs after the call instead of relying only on the transcript.
+
+For example, a lead qualification agent can capture the contact’s name, preferred callback time, and interest level so your team can review results faster.
+
+### Post-Call Webhook
+
+Enable **Post-Call Webhook** when you want call data sent to another system after the call ends.
+
+This is useful for sending results into a CRM, dashboard, or automation flow.
+
+### Call Retry
+
+The **Call Retry** settings define what happens if the system detects answering machine behavior.
+
+You can set:
+
+- **Retry Count**
+- **Retry Delay**
+
+For example, an outbound reminder campaign may retry once after 30 minutes instead of stopping after the first unanswered attempt.
+
+### Number Rotation
+
+The **Number Rotation** feature lets the system rotate between multiple phone numbers to distribute calls more evenly and improve deliverability.
+
+This is useful for higher-volume outbound operations. Once enabled, you can choose which numbers take part in the rotation.
+
+## Section 4: Website widget
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/agents5.png" alt="The Website widget tab showing the embed snippet, widget mode, theme, conversation mode, appearance settings, labels, and save area." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Website widget tab where you generate the embed snippet and customize how the agent appears on your website.
+</p>
+
+The **Website widget** section is used when you want visitors to speak with the same AI Agent directly from your website.
+
+### Embed snippet
+
+At the top of this tab, you can copy the **embed snippet** and paste it into your website.
+
+This is the code that loads the widget for your visitors. The interface also includes a **Copy** button, which makes it easier for your team to place the widget without rebuilding anything manually.
+
+### Widget mode and theme
+
+You can choose how the widget appears:
+
+- **Inline embed** places the widget directly inside the page layout
+- **Floating launcher** shows a smaller launcher that opens the widget when clicked
+
+You can also choose the widget theme, such as matching your app theme, using light mode, or using dark mode.
+
+A practical example:
+
+- use **Inline embed** on a contact page or support page
+- use **Floating launcher** if you want the widget available across the site without taking up permanent space
+
+### Conversation mode
+
+This section controls whether visitors interact through voice, text, or both, depending on the options available in your workspace.
+
+Choose the mode based on the experience you want. A voice-first experience may work well for service businesses, while text can be useful for quieter or more asynchronous interactions.
+
+### Appearance
+
+Further down, you can customize visual settings such as:
+
+- widget variant
+- dial size
+- realtime transcript
+- mute button
+- primary and secondary colors
+
+These settings matter because the widget should feel like part of your brand.
+
+### Dial labels and text labels
+
+You can also customize visible text such as:
+
+- idle label
+- connecting label
+- listening label
+- interrupt label
+- main label
+- start call
+- start chat
+- end call
+- chat title
+- chat subtitle
+- empty state
+- input placeholders
+- send label
+
+This is useful when you want the widget to sound more natural for your audience. For example, a healthcare business may prefer **Need help booking?** while a software company may prefer **Talk to our assistant**.
+
+### Save and test
+
+At the bottom of the editor, you can see actions such as **Clear**, **View Errors**, and **Save**. You may also see an unsaved changes warning while editing.
+
+Before publishing the widget, it is a good idea to:
+
+1. save your changes
+2. use **Test Call** or **Test AI agent**
+3. confirm that the labels, voice, and actions work correctly
+4. only then publish the snippet on your website
+
+> **Tip:** Test the widget like a real visitor would. Check both the normal flow and edge cases, such as interruptions, vague questions, or handoff situations.
