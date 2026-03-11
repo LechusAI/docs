@@ -46,15 +46,49 @@ A dental clinic may create separate agents such as **Appointment Reminder Agent*
 
 The **Agent** section is the foundation of the full setup. This is where you define what the agent is for, how it starts the conversation, what instructions guide it, and what supporting resources it can use during calls.
 
-### Call Direction
+## Call Direction
 
-The first setting is **Call Direction**. You can choose:
+The first setting is **Call Direction**. This defines whether the agent is used to **place calls, answer calls, or do both with the same configuration**.
 
-- **Outbound** if the agent will call users
-- **Inbound** if the agent will answer incoming calls
-- **Both Directions** if the same agent should handle both use cases
+You can choose:
 
-Choose this based on the real workflow. For example, a payment reminder agent is usually **Outbound**, while a receptionist or booking line is usually **Inbound**.
+- **Outbound** if the agent will call users.
+- **Inbound** if the agent will answer incoming calls.
+- **Both Directions** if the same agent should handle both use cases.
+
+Choose this based on the real workflow, not just on what sounds more flexible. A payment reminder agent is usually **Outbound**, while a receptionist, support line, or booking line is usually **Inbound**.
+
+With **Outbound**, the agent starts the conversation. This usually means the first message is more direct and goal-oriented, because the agent already knows why it is calling. For example, an outbound agent may call to confirm an appointment, follow up on a quote, remind a customer about an unpaid invoice, or qualify a new lead after a form submission.
+
+A simple outbound example would be a clinic assistant calling a patient to confirm tomorrow’s appointment. In that case, the opening can go straight to the point because the call has a clear purpose from the start.
+
+With **Inbound**, the user starts the conversation. This means the agent should be ready to understand different intents, guide the caller, and ask clarifying questions before moving forward. Inbound agents are common for front desk workflows, booking lines, basic support, opening hours questions, and first-contact screening.
+
+A simple inbound example would be a dental clinic line where callers may want to book, reschedule, ask about opening hours, or check whether a treatment is available. In that scenario, the agent needs to sound open and helpful because it does not know the caller’s reason in advance.
+
+With **Both Directions**, the same agent handles outgoing and incoming calls. This is useful when the workflow is very similar in both cases and the same tone, goal, and logic work well either way.
+
+> **Important:** A **Both Directions** agent uses the **same Greeting** and the **same Script** for both inbound and outbound calls.
+
+This is a common point of confusion. Some users think they need to add one greeting and one script for inbound, and another greeting and another script for outbound inside the same agent. That is **not** how this setup works.
+
+When you choose **Both Directions**, you are creating **one agent** with **one shared behavior**. That means the greeting and the script should be written in a more neutral way so they make sense whether the call was started by the agent or by the user.
+
+For example, a neutral greeting could work for both cases if it introduces the business clearly and then adapts naturally to the conversation. The script should also avoid assumptions that only fit one direction. If the script says something too specific like “I’m calling to remind you about your invoice,” it may feel wrong on an inbound call where the customer called first for a different reason.
+
+A better both-directions approach is to make the agent flexible. For example, a real estate assistant could greet the caller, identify the company, and then continue based on whether the conversation is about following up on a property inquiry or answering a new incoming question about availability.
+
+Another example is a small salon that wants one agent to answer incoming questions and also call clients back about scheduling. That can work with **Both Directions** if the same overall tone and flow make sense in both cases.
+
+> **Tip:** If the agent needs to behave differently depending on the call direction, it is usually better to create **two separate agents**: one for **Inbound** and one for **Outbound**.
+
+This is the best option when each direction needs a different opening, different tone, different goals, or different qualification logic. For example, a sales follow-up agent making outbound calls may need a persuasive, structured script, while an inbound receptionist agent may need a calmer and more open-ended flow.
+
+Another good example is a debt collection workflow. The outbound version may need a very specific compliance-safe reminder flow, while the inbound version may need to verify identity first and then answer payment questions. Even if both belong to the same business process, they usually work better as separate agents.
+
+> **Common mistake:** Choosing **Both Directions** just to cover more cases, even when the inbound and outbound experiences should feel different.
+
+As a rule, use **Both Directions** only when one shared greeting and one shared script can genuinely handle both call types well. If not, create one agent per direction so each experience feels natural and intentional.
 
 ### Maximum Call Duration
 
