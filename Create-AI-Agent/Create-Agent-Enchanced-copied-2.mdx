@@ -51,15 +51,49 @@ Pour créer un nouvel agent, cliquez sur le bouton de création, choisissez si v
 
 Cette première section constitue la base de toute la configuration. C’est ici que vous définissez le rôle de l’agent, sa manière de parler, son objectif et les éléments supplémentaires qu’il peut utiliser pendant l’appel.
 
-### Direction des appels
+## Direction de l’appel
 
-La direction des appels définit si l’agent :
+Le premier réglage est **Direction de l’appel**. Cela définit si l’agent est utilisé pour **passer des appels, répondre aux appels ou faire les deux avec la même configuration**.
 
-- appelle les utilisateurs
-- répond aux appels entrants
-- fait les deux
+Vous pouvez choisir :
 
-Vous devez choisir cette option en fonction du cas réel. Par exemple, un agent chargé de rappeler un paiement ou un rendez-vous est généralement utilisé pour les appels sortants, tandis qu’un agent qui répond aux questions ou gère les réservations est généralement utilisé pour les appels entrants.
+- **Sortant** si l’agent va appeler les utilisateurs.
+- **Entrant** si l’agent va répondre aux appels entrants.
+- **Dans les deux sens** si le même agent doit gérer les deux cas d’usage.
+
+Choisissez cette option en fonction du flux de travail réel, et pas seulement en fonction de ce qui semble plus flexible. Un agent de rappel de paiement est généralement **sortant**, tandis qu’un standard, une ligne d’assistance ou une ligne de réservation est généralement **entrant**.
+
+Avec **Sortant**, l’agent commence la conversation. Cela signifie généralement que le premier message est plus direct et orienté vers un objectif, parce que l’agent sait déjà pourquoi il appelle. Par exemple, un agent sortant peut appeler pour confirmer un rendez-vous, faire le suivi d’un devis, rappeler à un client une facture impayée ou qualifier un nouveau prospect après l’envoi d’un formulaire.
+
+Un exemple simple d’usage sortant serait un assistant de clinique appelant un patient pour confirmer le rendez-vous du lendemain. Dans ce cas, l’ouverture peut aller directement à l’essentiel, car l’appel a un objectif clair dès le départ.
+
+Avec **Entrant**, c’est l’utilisateur qui commence la conversation. Cela signifie que l’agent doit être prêt à comprendre différentes intentions, à guider la personne qui appelle et à poser des questions de clarification avant d’avancer. Les agents entrants sont courants pour les flux d’accueil, les lignes de réservation, l’assistance de base, les questions sur les horaires d’ouverture et le filtrage du premier contact.
+
+Un exemple simple d’usage entrant serait la ligne d’une clinique dentaire, où les appelants peuvent vouloir réserver, reprogrammer, poser une question sur les horaires d’ouverture ou vérifier si un traitement est disponible. Dans ce scénario, l’agent doit sembler ouvert et utile, car il ne connaît pas à l’avance la raison de l’appel.
+
+Avec **Dans les deux sens**, le même agent gère les appels sortants et entrants. Cela est utile lorsque le flux de travail est très similaire dans les deux cas et que le même ton, le même objectif et la même logique fonctionnent bien dans les deux situations.
+
+> **Important :** Un agent **Dans les deux sens** utilise le **même message d’accueil** et le **même scénario** pour les appels entrants comme pour les appels sortants.
+
+C’est un point de confusion très fréquent. Certains utilisateurs pensent qu’ils doivent ajouter un message d’accueil et un scénario pour les appels entrants, puis un autre message d’accueil et un autre scénario pour les appels sortants dans le même agent. Ce n’est **pas** ainsi que cette configuration fonctionne.
+
+Lorsque vous choisissez **Dans les deux sens**, vous créez **un seul agent** avec **un comportement partagé**. Cela signifie que le message d’accueil et le scénario doivent être rédigés de manière plus neutre afin d’avoir du sens aussi bien si l’appel a été lancé par l’agent que s’il a été lancé par l’utilisateur.
+
+Par exemple, un message d’accueil neutre peut fonctionner dans les deux cas s’il présente clairement l’entreprise puis s’adapte naturellement à la conversation. Le scénario doit également éviter les suppositions qui ne conviennent qu’à une seule direction. Si le scénario dit quelque chose de trop précis comme « Je vous appelle pour vous rappeler votre facture impayée », cela peut sembler inadapté dans un appel entrant où le client a appelé d’abord pour une autre raison.
+
+Une meilleure façon de travailler dans les deux sens est de rendre l’agent flexible. Par exemple, un assistant immobilier peut saluer l’appelant, identifier l’entreprise, puis continuer selon que la conversation porte sur le suivi d’une demande précédente concernant un bien ou sur une nouvelle question entrante au sujet de la disponibilité.
+
+Un autre exemple est celui d’un petit salon qui souhaite utiliser un seul agent pour répondre aux questions entrantes et rappeler les clients au sujet de la planification. Cela peut fonctionner avec **Dans les deux sens** si le même ton général et le même déroulé conviennent aux deux situations.
+
+> **Conseil :** Si l’agent doit se comporter différemment selon la direction de l’appel, il est généralement préférable de créer **deux agents distincts** : un pour **Entrant** et un pour **Sortant**.
+
+C’est la meilleure option lorsque chaque direction a besoin d’une ouverture différente, d’un ton différent, d’objectifs différents ou d’une logique de qualification différente. Par exemple, un agent commercial qui effectue des appels sortants de suivi peut avoir besoin d’un scénario plus persuasif et structuré, tandis qu’un agent d’accueil pour les appels entrants peut avoir besoin d’un déroulé plus calme et plus ouvert.
+
+Un autre bon exemple est un processus de recouvrement de dettes. La version sortante peut nécessiter un rappel très précis et conforme, tandis que la version entrante peut devoir vérifier l’identité en premier puis répondre aux questions liées au paiement. Même si les deux font partie du même processus métier, ils fonctionnent généralement mieux comme agents séparés.
+
+> **Erreur fréquente :** Choisir **Dans les deux sens** simplement pour couvrir plus de cas, même lorsque l’expérience entrante et l’expérience sortante devraient être différentes.
+
+En règle générale, utilisez **Dans les deux sens** seulement lorsqu’un seul message d’accueil partagé et un seul scénario partagé peuvent réellement bien gérer les deux types d’appel. Sinon, créez un agent par direction afin que chaque expérience paraisse naturelle et intentionnelle.
 
 ### Durée maximale de l’appel
 

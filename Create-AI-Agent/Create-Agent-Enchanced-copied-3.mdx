@@ -53,47 +53,47 @@ Esta primera sección es la base de toda la configuración. Aquí defines para q
 
 ## Dirección de la llamada
 
-La primera configuración es **Dirección de la llamada**. Esto define si el agente se usa para **hacer llamadas, responder llamadas o hacer ambas cosas con la misma configuración**.
+La primera configuración es **Dirección de la llamada**. Esto define si el agente se utiliza para **realizar llamadas, responder llamadas o hacer ambas cosas con la misma configuración**.
 
 Puedes elegir:
 
-- **Outbound** si el agente va a llamar a los usuarios.
-- **Inbound** si el agente va a responder llamadas entrantes.
-- **Both Directions** si el mismo agente debe cubrir ambos casos de uso.
+- **Saliente** si el agente va a llamar a los usuarios.
+- **Entrante** si el agente va a responder llamadas entrantes.
+- **Ambas direcciones** si el mismo agente debe gestionar ambos casos de uso.
 
-Debes elegir esto según el flujo real de trabajo, no solo según lo que suene más flexible. Un agente de recordatorio de pagos suele ser **Outbound**, mientras que una recepción, una línea de soporte o una línea de reservas suele ser **Inbound**.
+Elige esto en función del flujo de trabajo real, no solo de lo que parezca más flexible. Un agente de recordatorio de pagos suele ser **saliente**, mientras que una recepción, una línea de soporte o una línea de reservas suele ser **entrante**.
 
-Con **Outbound**, el agente inicia la conversación. Esto normalmente significa que el primer mensaje es más directo y orientado al objetivo, porque el agente ya sabe por qué está llamando. Por ejemplo, un agente outbound puede llamar para confirmar una cita, hacer seguimiento de un presupuesto, recordar a un cliente una factura pendiente o calificar un nuevo lead después de que haya enviado un formulario.
+Con **Saliente**, el agente inicia la conversación. Esto normalmente significa que el primer mensaje es más directo y orientado al objetivo, porque el agente ya sabe por qué está llamando. Por ejemplo, un agente saliente puede llamar para confirmar una cita, hacer seguimiento de un presupuesto, recordar a un cliente una factura pendiente o calificar un nuevo contacto después de que haya enviado un formulario.
 
-Un ejemplo sencillo de outbound sería un asistente de una clínica llamando a un paciente para confirmar su cita de mañana. En ese caso, la apertura puede ir directamente al punto porque la llamada tiene un propósito claro desde el inicio.
+Un ejemplo sencillo de uso saliente sería un asistente de clínica llamando a un paciente para confirmar la cita de mañana. En ese caso, la apertura puede ir directamente al punto porque la llamada tiene un propósito claro desde el inicio.
 
-Con **Inbound**, el usuario inicia la conversación. Esto significa que el agente debe estar preparado para entender distintas intenciones, guiar al llamante y hacer preguntas de aclaración antes de avanzar. Los agentes inbound son habituales en flujos de recepción, líneas de reservas, soporte básico, preguntas sobre horarios y filtrado de primer contacto.
+Con **Entrante**, el usuario inicia la conversación. Esto significa que el agente debe estar preparado para entender distintas intenciones, guiar a la persona que llama y hacer preguntas de aclaración antes de avanzar. Los agentes entrantes son habituales en flujos de recepción, líneas de reservas, soporte básico, preguntas sobre horarios y filtrado de primer contacto.
 
-Un ejemplo sencillo de inbound sería la línea de una clínica dental donde las personas pueden querer reservar, reprogramar, preguntar por los horarios o consultar si un tratamiento está disponible. En ese escenario, el agente debe sonar abierto y útil porque no conoce de antemano el motivo de la llamada.
+Un ejemplo sencillo de uso entrante sería la línea de una clínica dental, donde las personas que llaman pueden querer reservar, reprogramar, preguntar por los horarios o comprobar si un tratamiento está disponible. En ese escenario, el agente debe sonar abierto y útil porque no conoce de antemano el motivo de la llamada.
 
-Con **Both Directions**, el mismo agente gestiona llamadas salientes y entrantes. Esto es útil cuando el flujo es muy parecido en ambos casos y el mismo tono, objetivo y lógica funcionan bien de cualquiera de las dos maneras.
+Con **Ambas direcciones**, el mismo agente gestiona llamadas salientes y entrantes. Esto es útil cuando el flujo de trabajo es muy parecido en ambos casos y el mismo tono, objetivo y lógica funcionan bien de las dos maneras.
 
-> **Importante:** Un agente de **Both Directions** usa el **mismo Greeting** y el **mismo Script** tanto para llamadas inbound como para llamadas outbound.
+> **Importante:** Un agente de **Ambas direcciones** utiliza el **mismo saludo** y el **mismo guion** tanto para llamadas entrantes como para llamadas salientes.
 
-Este es un punto de confusión muy común. Algunos usuarios creen que deben añadir un greeting y un script para inbound, y otro greeting y otro script para outbound dentro del mismo agente. **No** es así como funciona esta configuración.
+Este es un punto de confusión muy común. Algunas personas creen que deben añadir un saludo y un guion para llamadas entrantes, y otro saludo y otro guion para llamadas salientes dentro del mismo agente. **No** es así como funciona esta configuración.
 
-Cuando eliges **Both Directions**, estás creando **un solo agente** con **un comportamiento compartido**. Eso significa que el greeting y el script deben escribirse de una forma más neutra para que tengan sentido tanto si la llamada la inició el agente como si la inició el usuario.
+Cuando eliges **Ambas direcciones**, estás creando **un solo agente** con **un comportamiento compartido**. Eso significa que el saludo y el guion deben escribirse de una forma más neutra para que tengan sentido tanto si la llamada la inició el agente como si la inició el usuario.
 
-Por ejemplo, un greeting neutro puede funcionar para ambos casos si presenta claramente al negocio y luego se adapta de forma natural a la conversación. El script también debe evitar suposiciones que solo encajen con un sentido de llamada. Si el script dice algo demasiado específico como “I’m calling to remind you about your invoice”, puede sonar incorrecto en una llamada inbound en la que el cliente llamó primero por un motivo diferente.
+Por ejemplo, un saludo neutro puede funcionar para ambos casos si presenta claramente al negocio y luego se adapta de forma natural a la conversación. El guion también debe evitar suposiciones que solo encajen con una dirección. Si el guion dice algo demasiado específico como “Le llamo para recordarle su factura pendiente”, puede sonar incorrecto en una llamada entrante en la que el cliente llamó primero por un motivo distinto.
 
-Una mejor forma de trabajar con both directions es hacer que el agente sea flexible. Por ejemplo, un asistente de una inmobiliaria podría saludar, identificar la empresa y luego continuar según si la conversación trata sobre un seguimiento de una consulta previa sobre una propiedad o sobre una nueva pregunta entrante acerca de disponibilidad.
+Una mejor forma de trabajar con ambas direcciones es hacer que el agente sea flexible. Por ejemplo, un asistente de una inmobiliaria podría saludar, identificar a la empresa y luego continuar según si la conversación trata sobre el seguimiento de una consulta previa sobre una propiedad o sobre una nueva pregunta entrante acerca de disponibilidad.
 
-Otro ejemplo es un pequeño salón que quiere un solo agente para responder preguntas entrantes y también devolver llamadas a clientes sobre la agenda. Eso puede funcionar con **Both Directions** si el mismo tono general y el mismo flujo tienen sentido en ambos casos.
+Otro ejemplo es un pequeño salón que quiere un solo agente para responder preguntas entrantes y también devolver llamadas a clientes sobre la agenda. Eso puede funcionar con **Ambas direcciones** si el mismo tono general y el mismo flujo tienen sentido en ambos casos.
 
-> **Consejo:** Si el agente necesita comportarse de forma diferente según el sentido de la llamada, normalmente es mejor crear **dos agentes independientes**: uno para **Inbound** y otro para **Outbound**.
+> **Consejo:** Si el agente necesita comportarse de forma diferente según la dirección de la llamada, normalmente es mejor crear **dos agentes independientes**: uno para **Entrante** y otro para **Saliente**.
 
-Esta es la mejor opción cuando cada sentido necesita una apertura distinta, un tono distinto, objetivos distintos o una lógica de calificación diferente. Por ejemplo, un agente comercial que hace llamadas outbound de seguimiento puede necesitar un script más persuasivo y estructurado, mientras que un agente inbound de recepción puede necesitar un flujo más calmado y abierto.
+Esta es la mejor opción cuando cada dirección necesita una apertura distinta, un tono distinto, objetivos distintos o una lógica de calificación diferente. Por ejemplo, un agente comercial que realiza llamadas salientes de seguimiento puede necesitar un guion más persuasivo y estructurado, mientras que un agente de recepción para llamadas entrantes puede necesitar un flujo más calmado y abierto.
 
-Otro buen ejemplo es un flujo de cobro de deudas. La versión outbound puede necesitar un recordatorio muy específico y seguro a nivel de cumplimiento, mientras que la versión inbound puede necesitar verificar primero la identidad y después responder preguntas sobre el pago. Aunque ambos pertenezcan al mismo proceso de negocio, normalmente funcionan mejor como agentes separados.
+Otro buen ejemplo es un flujo de cobro de deudas. La versión saliente puede necesitar un recordatorio muy específico y seguro en términos de cumplimiento, mientras que la versión entrante puede necesitar verificar primero la identidad y después responder preguntas sobre el pago. Aunque ambas pertenezcan al mismo proceso de negocio, normalmente funcionan mejor como agentes separados.
 
-> **Error común:** Elegir **Both Directions** solo para cubrir más casos, incluso cuando la experiencia inbound y la outbound deberían sentirse diferentes.
+> **Error común:** Elegir **Ambas direcciones** solo para cubrir más casos, incluso cuando la experiencia entrante y la saliente deberían sentirse diferentes.
 
-Como regla general, usa **Both Directions** solo cuando un único greeting compartido y un único script compartido puedan manejar realmente bien ambos tipos de llamada. Si no es así, crea un agente por sentido para que cada experiencia se sienta natural e intencional.
+Como regla general, usa **Ambas direcciones** solo cuando un único saludo compartido y un único guion compartido puedan gestionar realmente bien ambos tipos de llamada. Si no es así, crea un agente por dirección para que cada experiencia se sienta natural e intencional.
 
 ### Duración máxima de la llamada
 

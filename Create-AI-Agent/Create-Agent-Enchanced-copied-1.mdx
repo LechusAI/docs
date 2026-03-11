@@ -51,15 +51,49 @@ Um einen neuen Agenten zu erstellen, klicke auf die Schaltfläche zum Erstellen,
 
 Dieser erste Bereich ist die Grundlage der gesamten Einrichtung. Hier legst du fest, wofür der Agent da ist, wie er sprechen soll, welches Ziel er verfolgt und welche zusätzlichen Elemente er während eines Anrufs verwenden kann.
 
-### Anrufrichtung
+## Anrufrichtung
 
-Die Anrufrichtung legt fest, ob der Agent:
+Die erste Einstellung ist **Anrufrichtung**. Sie legt fest, ob der Agent **Anrufe tätigt, Anrufe entgegennimmt oder beides mit derselben Konfiguration erledigt**.
 
-- Benutzer anruft
-- eingehende Anrufe beantwortet
-- beides macht
+Sie können wählen:
 
-Du solltest diese Einstellung nach dem tatsächlichen Einsatzfall wählen. Ein Agent, der an Zahlungen oder Termine erinnert, wird meist für ausgehende Anrufe verwendet, während ein Agent, der Fragen beantwortet oder Buchungen verwaltet, meist für eingehende Anrufe eingesetzt wird.
+- **Ausgehend**, wenn der Agent Nutzer anrufen soll.
+- **Eingehend**, wenn der Agent eingehende Anrufe annehmen soll.
+- **Beide Richtungen**, wenn derselbe Agent beide Anwendungsfälle abdecken soll.
+
+Wählen Sie dies nach dem tatsächlichen Arbeitsablauf und nicht nur danach, was flexibler klingt. Ein Agent für Zahlungserinnerungen ist in der Regel **ausgehend**, während ein Empfang, eine Support-Hotline oder eine Buchungsleitung in der Regel **eingehend** ist.
+
+Bei **Ausgehend** beginnt der Agent das Gespräch. Das bedeutet in der Regel, dass die erste Nachricht direkter und zielorientierter ist, weil der Agent bereits weiß, warum er anruft. Zum Beispiel kann ein ausgehender Agent anrufen, um einen Termin zu bestätigen, ein Angebot nachzuverfolgen, einen Kunden an eine unbezahlte Rechnung zu erinnern oder einen neuen Kontakt nach dem Absenden eines Formulars zu qualifizieren.
+
+Ein einfaches Beispiel für einen ausgehenden Einsatz wäre eine Klinikassistenz, die einen Patienten anruft, um den Termin für morgen zu bestätigen. In diesem Fall kann die Eröffnung direkt auf den Punkt kommen, weil der Anruf von Anfang an einen klaren Zweck hat.
+
+Bei **Eingehend** beginnt der Nutzer das Gespräch. Das bedeutet, dass der Agent darauf vorbereitet sein sollte, verschiedene Anliegen zu verstehen, die anrufende Person zu führen und klärende Fragen zu stellen, bevor es weitergeht. Eingehende Agenten sind typisch für Empfangsabläufe, Buchungsleitungen, grundlegenden Support, Fragen zu Öffnungszeiten und die erste Vorqualifizierung.
+
+Ein einfaches Beispiel für einen eingehenden Einsatz wäre die Leitung einer Zahnklinik, bei der Anrufende einen Termin buchen, verschieben, nach Öffnungszeiten fragen oder prüfen möchten, ob eine Behandlung verfügbar ist. In diesem Szenario muss der Agent offen und hilfreich klingen, weil er den Grund des Anrufs im Voraus nicht kennt.
+
+Bei **Beide Richtungen** bearbeitet derselbe Agent ausgehende und eingehende Anrufe. Das ist sinnvoll, wenn der Arbeitsablauf in beiden Fällen sehr ähnlich ist und derselbe Ton, dasselbe Ziel und dieselbe Logik in beiden Richtungen gut funktionieren.
+
+> **Wichtig:** Ein Agent für **Beide Richtungen** verwendet dieselbe **Begrüßung** und denselben **Gesprächsleitfaden** sowohl für eingehende als auch für ausgehende Anrufe.
+
+Das ist ein häufiger Punkt der Verwirrung. Manche Nutzer denken, dass sie innerhalb desselben Agenten eine Begrüßung und einen Gesprächsleitfaden für eingehende Anrufe und eine weitere Begrüßung sowie einen weiteren Gesprächsleitfaden für ausgehende Anrufe hinzufügen müssen. Genau so funktioniert diese Einrichtung **nicht**.
+
+Wenn Sie **Beide Richtungen** wählen, erstellen Sie **einen einzigen Agenten** mit **einem gemeinsamen Verhalten**. Das bedeutet, dass die Begrüßung und der Gesprächsleitfaden neutraler formuliert werden sollten, damit sie sowohl dann passen, wenn der Anruf vom Agenten begonnen wurde, als auch dann, wenn er vom Nutzer begonnen wurde.
+
+Zum Beispiel kann eine neutrale Begrüßung in beiden Fällen funktionieren, wenn sie das Unternehmen klar vorstellt und sich dann natürlich an das Gespräch anpasst. Auch der Gesprächsleitfaden sollte Annahmen vermeiden, die nur zu einer Richtung passen. Wenn der Gesprächsleitfaden etwas zu Spezifisches sagt wie „Ich rufe an, um Sie an Ihre offene Rechnung zu erinnern“, kann das in einem eingehenden Anruf unpassend wirken, wenn der Kunde aus einem anderen Grund zuerst angerufen hat.
+
+Ein besserer Ansatz für beide Richtungen ist es, den Agenten flexibel zu gestalten. Zum Beispiel könnte ein Immobilienassistent die anrufende Person begrüßen, das Unternehmen nennen und dann je nachdem fortfahren, ob es um die Nachverfolgung einer früheren Immobilienanfrage oder um eine neue eingehende Frage zur Verfügbarkeit geht.
+
+Ein weiteres Beispiel ist ein kleiner Salon, der einen einzigen Agenten nutzen möchte, um eingehende Fragen zu beantworten und Kunden wegen Terminplanung zurückzurufen. Das kann mit **Beide Richtungen** gut funktionieren, wenn derselbe allgemeine Ton und derselbe Ablauf in beiden Fällen sinnvoll sind.
+
+> **Tipp:** Wenn sich der Agent je nach Anrufrichtung unterschiedlich verhalten soll, ist es in der Regel besser, **zwei getrennte Agenten** zu erstellen: einen für **Eingehend** und einen für **Ausgehend**.
+
+Das ist die beste Lösung, wenn jede Richtung eine andere Eröffnung, einen anderen Ton, andere Ziele oder eine andere Qualifizierungslogik braucht. Zum Beispiel kann ein Vertriebsagent für ausgehende Nachfassanrufe einen überzeugenderen und stärker strukturierten Gesprächsleitfaden benötigen, während ein Empfangsagent für eingehende Anrufe einen ruhigeren und offeneren Ablauf braucht.
+
+Ein weiteres gutes Beispiel ist ein Prozess zur Forderungseinziehung. Die ausgehende Version kann einen sehr spezifischen und regelkonformen Erinnerungsablauf benötigen, während die eingehende Version möglicherweise zuerst die Identität prüfen und danach Fragen zur Zahlung beantworten muss. Auch wenn beide zum selben Geschäftsprozess gehören, funktionieren sie in der Regel besser als getrennte Agenten.
+
+> **Häufiger Fehler:** **Beide Richtungen** nur deshalb zu wählen, um mehr Fälle abzudecken, obwohl sich das eingehende und das ausgehende Erlebnis unterschiedlich anfühlen sollten.
+
+Als allgemeine Regel sollten Sie **Beide Richtungen** nur dann verwenden, wenn eine gemeinsame Begrüßung und ein gemeinsamer Gesprächsleitfaden tatsächlich beide Anrufarten gut abdecken können. Wenn das nicht der Fall ist, erstellen Sie pro Richtung einen eigenen Agenten, damit sich jede Erfahrung natürlich und bewusst gestaltet anfühlt.
 
 ### Maximale Anrufdauer
 

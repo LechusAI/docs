@@ -51,15 +51,49 @@ Per creare un nuovo agente, fai clic sul pulsante di creazione, scegli se vuoi i
 
 Questa prima sezione è la base di tutta la configurazione. Qui definisci a cosa serve l’agente, come deve parlare, quale obiettivo deve raggiungere e quali elementi aggiuntivi può usare durante la chiamata.
 
-### Direzione delle chiamate
+## Direzione della chiamata
 
-La direzione delle chiamate definisce se l’agente:
+La prima impostazione è **Direzione della chiamata**. Questa definisce se l’agente viene utilizzato per **effettuare chiamate, rispondere alle chiamate oppure fare entrambe le cose con la stessa configurazione**.
 
-- chiama gli utenti
-- risponde alle chiamate in entrata
-- fa entrambe le cose
+Puoi scegliere:
 
-Devi scegliere questa opzione in base al caso reale. Per esempio, un agente che ricorda pagamenti o appuntamenti viene usato di solito per le chiamate in uscita, mentre un agente che risponde a domande o gestisce prenotazioni viene usato di solito per le chiamate in entrata.
+- **In uscita** se l’agente chiamerà gli utenti.
+- **In entrata** se l’agente risponderà alle chiamate in arrivo.
+- **In entrambe le direzioni** se lo stesso agente deve gestire entrambi i casi d’uso.
+
+Scegli questa opzione in base al flusso di lavoro reale, non solo in base a ciò che sembra più flessibile. Un agente per i promemoria di pagamento è di solito **in uscita**, mentre una reception, una linea di assistenza o una linea di prenotazione è di solito **in entrata**.
+
+Con **In uscita**, l’agente avvia la conversazione. Questo di solito significa che il primo messaggio è più diretto e orientato all’obiettivo, perché l’agente sa già perché sta chiamando. Per esempio, un agente in uscita può chiamare per confermare un appuntamento, fare un seguito su un preventivo, ricordare a un cliente una fattura non pagata oppure qualificare un nuovo contatto dopo l’invio di un modulo.
+
+Un semplice esempio di uso in uscita sarebbe un assistente di una clinica che chiama un paziente per confermare l’appuntamento del giorno successivo. In quel caso, l’apertura può andare subito al punto perché la chiamata ha uno scopo chiaro fin dall’inizio.
+
+Con **In entrata**, è l’utente ad avviare la conversazione. Questo significa che l’agente deve essere pronto a comprendere intenzioni diverse, guidare chi chiama e fare domande di chiarimento prima di procedere. Gli agenti in entrata sono comuni nei flussi di reception, nelle linee di prenotazione, nell’assistenza di base, nelle domande sugli orari di apertura e nello smistamento del primo contatto.
+
+Un semplice esempio di uso in entrata sarebbe la linea di una clinica dentistica, dove chi chiama può voler prenotare, riprogrammare, chiedere gli orari di apertura oppure verificare se un trattamento è disponibile. In questo scenario, l’agente deve risultare aperto e disponibile, perché non conosce in anticipo il motivo della chiamata.
+
+Con **In entrambe le direzioni**, lo stesso agente gestisce chiamate in uscita e in entrata. Questo è utile quando il flusso di lavoro è molto simile in entrambi i casi e lo stesso tono, lo stesso obiettivo e la stessa logica funzionano bene in tutte e due le situazioni.
+
+> **Importante:** Un agente **In entrambe le direzioni** utilizza lo **stesso saluto** e lo **stesso copione** sia per le chiamate in entrata sia per quelle in uscita.
+
+Questo è un punto di confusione molto comune. Alcuni utenti pensano di dover aggiungere un saluto e un copione per le chiamate in entrata, e un altro saluto e un altro copione per le chiamate in uscita all’interno dello stesso agente. **Non** è così che funziona questa configurazione.
+
+Quando scegli **In entrambe le direzioni**, stai creando **un solo agente** con **un comportamento condiviso**. Questo significa che il saluto e il copione devono essere scritti in modo più neutro, così da avere senso sia quando la chiamata viene avviata dall’agente sia quando viene avviata dall’utente.
+
+Per esempio, un saluto neutro può funzionare in entrambi i casi se presenta chiaramente l’azienda e poi si adatta in modo naturale alla conversazione. Anche il copione dovrebbe evitare supposizioni che funzionano solo in una direzione. Se il copione dice qualcosa di troppo specifico come “La chiamo per ricordarle la sua fattura non pagata”, può risultare fuori luogo in una chiamata in entrata in cui il cliente ha chiamato per un motivo diverso.
+
+Un modo migliore di lavorare in entrambe le direzioni è rendere l’agente flessibile. Per esempio, un assistente immobiliare potrebbe salutare chi chiama, identificare l’azienda e poi continuare in base al fatto che la conversazione riguardi il seguito di una richiesta precedente su un immobile oppure una nuova domanda in entrata sulla disponibilità.
+
+Un altro esempio è un piccolo salone che vuole un solo agente per rispondere alle domande in entrata e anche richiamare i clienti riguardo alla pianificazione. Questo può funzionare con **In entrambe le direzioni** se lo stesso tono generale e lo stesso flusso hanno senso in entrambi i casi.
+
+> **Suggerimento:** Se l’agente deve comportarsi in modo diverso a seconda della direzione della chiamata, di solito è meglio creare **due agenti separati**: uno per **In entrata** e uno per **In uscita**.
+
+Questa è l’opzione migliore quando ogni direzione richiede un’apertura diversa, un tono diverso, obiettivi diversi o una logica di qualificazione differente. Per esempio, un agente commerciale che effettua chiamate di follow-up in uscita può aver bisogno di un copione più persuasivo e strutturato, mentre un agente di reception per le chiamate in entrata può aver bisogno di un flusso più calmo e più aperto.
+
+Un altro buon esempio è un processo di recupero crediti. La versione in uscita può richiedere un promemoria molto specifico e sicuro dal punto di vista della conformità, mentre la versione in entrata può dover verificare prima l’identità e poi rispondere alle domande sul pagamento. Anche se entrambe fanno parte dello stesso processo aziendale, di solito funzionano meglio come agenti separati.
+
+> **Errore comune:** Scegliere **In entrambe le direzioni** solo per coprire più casi, anche quando l’esperienza in entrata e quella in uscita dovrebbero risultare diverse.
+
+Come regola generale, usa **In entrambe le direzioni** solo quando un unico saluto condiviso e un unico copione condiviso possono davvero gestire bene entrambi i tipi di chiamata. In caso contrario, crea un agente per ogni direzione, così ogni esperienza risulterà naturale e intenzionale.
 
 ### Durata massima della chiamata
 
