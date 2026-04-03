@@ -1,588 +1,954 @@
 ---
 title: "KI-Agenten"
-description: "Erstelle, organisiere und konfiguriere KI-Agenten für Telefonanrufe und Gespräche auf deiner Website."
+description: "Erstellen, organisieren und konfigurieren Sie KI-Agenten für Telefongespräche und Website-Konversationen."
 ---
 
-[Öffne die Seite KI-Agenten in Callin](https://app.callin.io/agents)
+[Öffnen Sie die Seite KI-Agenten in Callin](https://app.callin.io/agents)
+
+Die Seite **KI-Agenten** ist der zentrale Arbeitsbereich, um Agenten in Callin für Telefongespräche und Website-Konversationen zu erstellen, zu organisieren und zu konfigurieren. Von hier aus können Sie neue Agenten erstellen, bestehende Agenten bearbeiten, Wissensquellen verbinden, Tools zuweisen, Aktionen automatisieren, ein Website-Widget veröffentlichen und erweitertes Verhalten fein abstimmen.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents1.png"
-    alt="Die Hauptseite der KI-Agenten mit Filtern, Suchfeld und der Schaltfläche zum Erstellen eines neuen Agenten."
+    src="/images/agentesia1.png"
+    alt="Der KI-Agenten-Editor mit dem Hauptarbeitsbereich, den Navigations-Tabs des Agenten und dem primären Konfigurationsbereich."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Aufnahme: die Hauptansicht der KI-Agenten, in der du bestehende Agenten prüfen, nach Richtung filtern, nach Namen suchen und einen neuen Agenten erstellen kannst.
+  Screenshot: der Arbeitsbereich für KI-Agenten, in dem Sie das Hauptverhalten des Assistenten konfigurieren und alle Agentenbereiche von einer einzigen Seite aus aufrufen.
 </p>
 
-## Allgemeine Übersicht
+## Überblick über KI-Agenten
 
-Die Seite **KI-Agenten** ist der Ausgangspunkt, um die Agenten deines Kontos zu erstellen und zu verwalten. Von hier aus kannst du alle Agenten an einem Ort sehen, jeden einzelnen zur Bearbeitung öffnen und schnell erkennen, welche Konfigurationen noch unvollständig sind.
+Die Seite **KI-Agenten** ist der Hauptarbeitsbereich zum Erstellen und Verwalten von Agenten in Callin. Von hier aus können Sie alle Ihre Agenten an einem Ort sehen, erkennen, welche eingehend oder ausgehend sind, jede Konfiguration zur Bearbeitung öffnen und neue Agenten für unterschiedliche Geschäftsabläufe erstellen.
 
-In dieser Ansicht kannst du normalerweise:
+Diese Seite ist besonders nützlich, wenn Sie einen neuen Agenten für Anrufe oder Website-Konversationen erstellen, Agenten nach Zweck trennen, eine vorhandene Konfiguration schnell finden und unvollständige Setups erkennen möchten, bevor Sie live gehen.
 
-- einen neuen Agenten erstellen
-- Agenten nach Anrufart filtern
-- einen Agenten nach Namen suchen
-- prüfen, ob einem Agenten bereits eine Nummer zugewiesen wurde
-- direkt in die Konfiguration wechseln, um die Einrichtung abzuschließen
+In der Listenansicht können Sie normalerweise den Agentennamen, die Anrufrichtung, das Sprachlabel, das Erstellungsdatum und die Aktionssymbole prüfen. Möglicherweise sehen Sie auch Warnungen, wie etwa eine fehlende Telefonnummer, was Ihnen hilft, unvollständige Konfigurationen zu erkennen, bevor Sie den Agenten produktiv einsetzen.
 
-Das ist besonders hilfreich, wenn du mehrere unterschiedliche Abläufe verwaltest. Eine Klinik kann zum Beispiel einen Agenten für Terminerinnerungen, einen weiteren für eingehende Anrufe und einen dritten zur Rückgewinnung verpasster Chancen haben. Wenn du sie nach Funktion trennst, werden Tests, Prüfungen und spätere Änderungen deutlich einfacher.
+Um einen neuen Agenten zu erstellen, öffnen Sie die Seite KI-Agenten, klicken Sie auf **Agent erstellen**, wählen Sie aus, ob Sie von Grund auf beginnen oder eine Vorlage verwenden möchten, geben Sie den Agentennamen ein und bestätigen Sie dann die Erstellung.
 
-Um einen neuen Agenten zu erstellen, klicke auf die Schaltfläche zum Erstellen, wähle aus, ob du bei null beginnen oder eine Vorlage verwenden möchtest, gib einen klaren Namen ein und bestätige die Erstellung.
+Diese Seite enthält:
 
-> **Tipp:** Verwende Namen, die die tatsächliche Aufgabe des Agenten beschreiben, zum Beispiel **Agent für Terminerinnerungen** oder **Agent für Patientenqualifizierung**, statt allgemeiner Namen wie „Test“.
+- **Agent**
+- **Arbeitsablauf**
+- **Wissensdatenbank**
+- **Tools**
+- **Anrufaktion**
+- **Website-Widget**
+- **Erweitert**
 
-## Abschnitt 1: Agentenkonfiguration
+> **Tipp:** Ein sauberes KI-Agenten-Setup ist einfacher zu testen, leichter zu pflegen und deutlich sicherer in die Produktion zu bringen.
+
+## Abschnitt 1: Agent
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents2.png"
-    alt="Der Bereich zur Agentenkonfiguration mit Anrufrichtung, maximaler Anrufdauer, Begrüßungsnachricht, Gesprächsanweisungen, Variablen, Wissensdatenbank, Werkzeugen und Anrufeinstellungen."
+    src="/images/agentesia2.png"
+    alt="Der Tab Agent mit dem Editor für den Gesprächs-Prompt, Stimmeinstellungen, Spracheinstellungen und Modellkonfiguration."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Aufnahme: der erste Konfigurationsbereich, in dem du das Hauptverhalten des Agenten festlegst, den Beginn des Gesprächs definierst und auswählst, welche Ressourcen er verwenden kann.
+  Screenshot: der Tab Agent, in dem Sie festlegen, wie sich der Assistent während eines Anrufs verhalten, sprechen, antworten und arbeiten soll.
 </p>
 
-Dieser erste Bereich ist die Grundlage der gesamten Einrichtung. Hier legst du fest, wofür der Agent da ist, wie er sprechen soll, welches Ziel er verfolgt und welche zusätzlichen Elemente er während eines Anrufs verwenden kann.
+Der Tab **Agent** definiert die Hauptkonfiguration Ihres Assistenten. Hier legen Sie fest, wie er sich während eines Anrufs verhalten soll, wie er das Gespräch eröffnen soll, welche Stimme er verwendet, welche Sprachen er verarbeiten kann, welches KI-Modell Antworten generiert und ob er für eingehende, ausgehende oder beide Arten von Anrufen arbeitet.
 
-## Anrufrichtung
+Eine starke Konfiguration in diesem Tab sorgt für klarere, natürlichere und konsistentere Interaktionen. Ein generisches Setup führt normalerweise zu schwächeren Gesprächseröffnungen, ungenaueren Antworten und einem weniger kontrollierten Kundenerlebnis.
 
-Die erste Einstellung ist **Anrufrichtung**. Sie legt fest, ob der Agent **Anrufe tätigt, Anrufe entgegennimmt oder beides mit derselben Konfiguration erledigt**.
+### Gesprächs-Prompt
 
-Sie können wählen:
+Der **Gesprächs-Prompt** ist der zentrale Anweisungssatz für den Agenten. Hier definieren Sie die Gesprächslogik, die Identität, den Arbeitskontext, den Tonfall und die operativen Grenzen.
 
-- **Ausgehend**, wenn der Agent Nutzer anrufen soll.
-- **Eingehend**, wenn der Agent eingehende Anrufe annehmen soll.
-- **Beide Richtungen**, wenn derselbe Agent beide Anwendungsfälle abdecken soll.
+Dieser Block bestimmt, wie der Agent den Anruf interpretiert und wie er antworten soll. Er ist die interne Grundlage, die das Verhalten des Modells während des Gesprächs steuert.
 
-Wählen Sie dies nach dem tatsächlichen Arbeitsablauf und nicht nur danach, was flexibler klingt. Ein Agent für Zahlungserinnerungen ist in der Regel **ausgehend**, während ein Empfang, eine Support-Hotline oder eine Buchungsleitung in der Regel **eingehend** ist.
+Die empfohlene Struktur ist die, die bereits im Prompt selbst organisiert ist. Die grundlegenden Abschnitte sind **Persönlichkeit**, **Umgebung** und **Tonfall**. Von dort aus sollte der Prompt mit operativen Regeln und klaren Einschränkungen fortgesetzt werden.
 
-Bei **Ausgehend** beginnt der Agent das Gespräch. Das bedeutet in der Regel, dass die erste Nachricht direkter und zielorientierter ist, weil der Agent bereits weiß, warum er anruft. Zum Beispiel kann ein ausgehender Agent anrufen, um einen Termin zu bestätigen, ein Angebot nachzuverfolgen, einen Kunden an eine unbezahlte Rechnung zu erinnern oder einen neuen Kontakt nach dem Absenden eines Formulars zu qualifizieren.
+- Definieren Sie, wer der Agent ist und welche Rolle er spielt.
+- Beschreiben Sie die Umgebung, in der er arbeitet.
+- Legen Sie den Tonfall fest, den der Agent beibehalten soll.
+- Erklären Sie, was der Agent in jeder Antwort priorisieren soll.
+- Legen Sie fest, was der Agent vermeiden muss.
+- Klären Sie, wie der Agent die Wissensdatenbank verwenden soll.
+- Definieren Sie, wie das Gespräch voranschreiten soll.
 
-Ein einfaches Beispiel für einen ausgehenden Einsatz wäre eine Klinikassistenz, die einen Patienten anruft, um den Termin für morgen zu bestätigen. In diesem Fall kann die Eröffnung direkt auf den Punkt kommen, weil der Anruf von Anfang an einen klaren Zweck hat.
+### So schreiben Sie einen guten Prompt
 
-Bei **Eingehend** beginnt der Nutzer das Gespräch. Das bedeutet, dass der Agent darauf vorbereitet sein sollte, verschiedene Anliegen zu verstehen, die anrufende Person zu führen und klärende Fragen zu stellen, bevor es weitergeht. Eingehende Agenten sind typisch für Empfangsabläufe, Buchungsleitungen, grundlegenden Support, Fragen zu Öffnungszeiten und die erste Vorqualifizierung.
+Ein guter Prompt gibt dem Agenten eine klare Rolle, einen klaren Kontext und eine klare Entscheidungslogik. Er sollte operativ klingen, nicht dekorativ.
 
-Ein einfaches Beispiel für einen eingehenden Einsatz wäre die Leitung einer Zahnklinik, bei der Anrufende einen Termin buchen, verschieben, nach Öffnungszeiten fragen oder prüfen möchten, ob eine Behandlung verfügbar ist. In diesem Szenario muss der Agent offen und hilfreich klingen, weil er den Grund des Anrufs im Voraus nicht kennt.
+Für Support-Agenten ist es praktisch, den Assistenten als First-Level-Support-Agent zu definieren, zu erklären, dass er Plattformnutzern hilft, und ihn anzuweisen, sich auf die Wissensdatenbank zu stützen, während er ruhig, präzise und Schritt für Schritt antwortet.
 
-Bei **Beide Richtungen** bearbeitet derselbe Agent ausgehende und eingehende Anrufe. Das ist sinnvoll, wenn der Arbeitsablauf in beiden Fällen sehr ähnlich ist und derselbe Ton, dasselbe Ziel und dieselbe Logik in beiden Richtungen gut funktionieren.
+- Stellen Sie immer nur eine Klärungsfrage auf einmal.
+- Führen Sie den Nutzer immer zum nächsten hilfreichen Schritt.
+- Verwenden Sie die Wissensdatenbank für Referenzantworten.
+- Erfassen Sie nur die Informationen, die für den aktuellen Schritt notwendig sind.
+- Halten Sie Antworten kurz, es sei denn, der Nutzer bittet um mehr Details.
 
-> **Wichtig:** Ein Agent für **Beide Richtungen** verwendet dieselbe **Begrüßung** und denselben **Gesprächsleitfaden** sowohl für eingehende als auch für ausgehende Anrufe.
+### Was der Agent vermeiden sollte
 
-Das ist ein häufiger Punkt der Verwirrung. Manche Nutzer denken, dass sie innerhalb desselben Agenten eine Begrüßung und einen Gesprächsleitfaden für eingehende Anrufe und eine weitere Begrüßung sowie einen weiteren Gesprächsleitfaden für ausgehende Anrufe hinzufügen müssen. Genau so funktioniert diese Einrichtung **nicht**.
+Der Prompt sollte auch Verhaltensweisen einschränken, die das Erlebnis verschlechtern.
 
-Wenn Sie **Beide Richtungen** wählen, erstellen Sie **einen einzigen Agenten** mit **einem gemeinsamen Verhalten**. Das bedeutet, dass die Begrüßung und der Gesprächsleitfaden neutraler formuliert werden sollten, damit sie sowohl dann passen, wenn der Anruf vom Agenten begonnen wurde, als auch dann, wenn er vom Nutzer begonnen wurde.
+- Lange Monologe.
+- Mehrere Fragen in einer einzigen Runde.
+- Unnötige Wiederholungen.
+- Antworten erfinden, wenn Informationen unklar sind.
+- Einen Problemlösungsweg erzwingen, wenn der Fall eskaliert werden sollte.
 
-Zum Beispiel kann eine neutrale Begrüßung in beiden Fällen funktionieren, wenn sie das Unternehmen klar vorstellt und sich dann natürlich an das Gespräch anpasst. Auch der Gesprächsleitfaden sollte Annahmen vermeiden, die nur zu einer Richtung passen. Wenn der Gesprächsleitfaden etwas zu Spezifisches sagt wie „Ich rufe an, um Sie an Ihre offene Rechnung zu erinnern“, kann das in einem eingehenden Anruf unpassend wirken, wenn der Kunde aus einem anderen Grund zuerst angerufen hat.
+### Dynamische Variablen im Prompt
 
-Ein besserer Ansatz für beide Richtungen ist es, den Agenten flexibel zu gestalten. Zum Beispiel könnte ein Immobilienassistent die anrufende Person begrüßen, das Unternehmen nennen und dann je nachdem fortfahren, ob es um die Nachverfolgung einer früheren Immobilienanfrage oder um eine neue eingehende Frage zur Verfügbarkeit geht.
+Der **Gesprächs-Prompt** unterstützt dynamische Variablen im Text. Mit diesen Variablen können Sie dieselbe Logik mit unterschiedlichen Werten wiederverwenden, ohne den gesamten Prompt neu schreiben zu müssen.
 
-Ein weiteres Beispiel ist ein kleiner Salon, der einen einzigen Agenten nutzen möchte, um eingehende Fragen zu beantworten und Kunden wegen Terminplanung zurückzurufen. Das kann mit **Beide Richtungen** gut funktionieren, wenn derselbe allgemeine Ton und derselbe Ablauf in beiden Fällen sinnvoll sind.
+Das Menü **Variablen hinzufügen** enthält Systemvariablen, benutzerdefinierte Variablen und die Option, eine neue Variable zu erstellen. Wenn Sie eine neue Variable erstellen, wird sie direkt in den Prompt eingefügt und steht anschließend unter **Dynamische Variablen** zur Verfügung, wo Sie ihr einen Wert zuweisen.
 
-> **Tipp:** Wenn sich der Agent je nach Anrufrichtung unterschiedlich verhalten soll, ist es in der Regel besser, **zwei getrennte Agenten** zu erstellen: einen für **Eingehend** und einen für **Ausgehend**.
+Das ist nützlich für Werte wie den Namen des Agenten, den Firmennamen, die Stadt, den Servicenamen, den Namen eines Mitarbeiters oder den Namen eines Standorts.
 
-Das ist die beste Lösung, wenn jede Richtung eine andere Eröffnung, einen anderen Ton, andere Ziele oder eine andere Qualifizierungslogik braucht. Zum Beispiel kann ein Vertriebsagent für ausgehende Nachfassanrufe einen überzeugenderen und stärker strukturierten Gesprächsleitfaden benötigen, während ein Empfangsagent für eingehende Anrufe einen ruhigeren und offeneren Ablauf braucht.
+### Zeitzone und Standardpersönlichkeit
 
-Ein weiteres gutes Beispiel ist ein Prozess zur Forderungseinziehung. Die ausgehende Version kann einen sehr spezifischen und regelkonformen Erinnerungsablauf benötigen, während die eingehende Version möglicherweise zuerst die Identität prüfen und danach Fragen zur Zahlung beantworten muss. Auch wenn beide zum selben Geschäftsprozess gehören, funktionieren sie in der Regel besser als getrennte Agenten.
+Der **Gesprächs-Prompt** enthält einen Zeitzonenwähler. Diese Einstellung definiert den zeitlichen Kontext, den der Agent verwendet, wenn er Uhrzeiten, Daten, Verfügbarkeiten oder Bezüge wie heute, morgen oder heute Nachmittag interpretieren muss.
 
-> **Häufiger Fehler:** **Beide Richtungen** nur deshalb zu wählen, um mehr Fälle abzudecken, obwohl sich das eingehende und das ausgehende Erlebnis unterschiedlich anfühlen sollten.
+Wählen Sie immer die tatsächliche Zeitzone des Unternehmens oder Dienstes, den der Agent repräsentiert.
 
-Als allgemeine Regel sollten Sie **Beide Richtungen** nur dann verwenden, wenn eine gemeinsame Begrüßung und ein gemeinsamer Gesprächsleitfaden tatsächlich beide Anrufarten gut abdecken können. Wenn das nicht der Fall ist, erstellen Sie pro Richtung einen eigenen Agenten, damit sich jede Erfahrung natürlich und bewusst gestaltet anfühlt.
-
-### Maximale Anrufdauer
-
-Die maximale Anrufdauer steuert, wie lange ein Gespräch dauern darf, bevor es automatisch beendet wird.
-
-Das hilft dir dabei:
-
-- Anrufe effizient zu halten
-- zu lange Gespräche zu vermeiden
-- den Verbrauch besser zu kontrollieren
-
-Als Orientierung gilt: Ein kurzer Erinnerungsanruf kann zwischen **3 und 5 Minuten** dauern, während ein Buchungs- oder Qualifizierungsanruf zwischen **5 und 10 Minuten** benötigen kann.
+Derselbe Bereich enthält auch die Einstellung **Standardpersönlichkeit**. Diese Einstellung gehört zum grundlegenden Persönlichkeitsverhalten und sollte zusammen mit dem Prompt geprüft werden, damit das endgültige Erlebnis dem gewünschten Verhalten entspricht.
 
 ### Begrüßungsnachricht
 
-Die Begrüßungsnachricht ist das Erste, was die Person zu Beginn des Anrufs hört. Sie sollte kurz, klar und direkt mit der tatsächlichen Aufgabe des Agenten verbunden sein.
+Die **Begrüßungsnachricht** definiert die ersten Worte, die der Agent spricht, wenn das Gespräch beginnt. Sie stellt den Assistenten vor und macht sofort deutlich, welche Art von Hilfe verfügbar ist.
 
-Eine einfache Struktur, die oft gut funktioniert, ist:
+Eine starke Begrüßung identifiziert den Assistenten, erklärt den Zweck der Interaktion und lädt den Nutzer ein, weiterzumachen.
 
-- Begrüßung
-- Vorstellung
-- Grund des Anrufs
-- Einladung zum Fortfahren
+- **Support-Beispiel:** Hallo, ich bin der Support-Assistent. Sagen Sie mir, was Sie brauchen, und ich helfe Ihnen Schritt für Schritt.
+- **Termin-Beispiel:** Hallo, ich bin der Termin-Assistent. Ich kann Ihnen helfen, einen Termin zu buchen, zu ändern oder zu stornieren.
+- **Empfangs-Beispiel:** Hallo, danke für Ihren Anruf. Ich bin der virtuelle Assistent und helfe Ihnen bei Ihrem Anliegen.
 
-Beispiel:
+### Unterbrechungen zulassen
 
-**Hallo, ich rufe aus der Northwind-Klinik an, um dir bei der Bestätigung deines nächsten Termins zu helfen. Passt es dir gerade, weiterzumachen?**
+**Unterbrechungen zulassen** ermöglicht es dem Nutzer, den Agenten zu unterbrechen, während er spricht. Wenn diese Option aktiviert ist, fühlt sich die Interaktion flüssiger und natürlicher an.
 
-Wenn du dynamische Variablen verwendest, kannst du dieselbe Struktur bei mehreren Agenten wiederverwenden, ohne alles jedes Mal neu schreiben zu müssen.
-
-### Gesprächsanweisungen
-
-Die Gesprächsanweisungen gehören zu den wichtigsten Teilen der Konfiguration. Während die Begrüßungsnachricht den Anruf eröffnet, legen diese Anweisungen fest, wie sich der Agent im weiteren Verlauf des Gesprächs verhalten soll.
-
-Eine einfache Art, das zu verstehen, ist folgende:
-
-- die **Begrüßungsnachricht** startet das Gespräch
-- die **Gesprächsanweisungen** steuern alles, was danach passiert
-
-Das Standardbeispiel in Callin ist hilfreich, weil es eine empfohlene Struktur zeigt. Du musst es nicht Wort für Wort übernehmen, aber es ist wichtig zu verstehen, warum es so aufgebaut ist.
-
-#### Übliche Struktur
-
-Das Grundbeispiel ist normalerweise in folgende Blöcke unterteilt:
-
-- Persönlichkeit
-- Kontext
-- Ton
-- Ziel
-- Grenzen
-- Werkzeuge
-
-Jeder Block erfüllt eine bestimmte Aufgabe.
-
-#### Persönlichkeit
-
-Hier erklärst du, wer der Agent ist und wie er sich darstellen soll.
-
-Zum Beispiel:
-
-- ein Empfangsassistent
-- ein Buchungsassistent
-- ein Nachfassassistent
-- ein Qualifizierungsassistent
-
-Das hilft dem Agenten, während des gesamten Anrufs eine einheitliche Identität zu behalten.
-
-#### Kontext
-
-Hier erklärst du, in welchem Zusammenhang die Gespräche stattfinden.
-
-Zum Beispiel:
-
-- kurze Telefonanrufe, bei denen Klarheit wichtig ist
-- Anrufe zur Terminvereinbarung
-- Nachfassanrufe
-- Anrufe zur Beantwortung einfacher Fragen
-
-Dieser Block hilft dem Agenten zu verstehen, welche Art von Gespräch er führt, damit er nicht wie ein allgemeiner Assistent antwortet.
-
-#### Ton
-
-Hier definierst du, wie der Agent sprechen soll.
-
-Das Standardbeispiel zeigt deutlich, dass es bei Sprachanrufen meist sinnvoll ist, wenn der Agent:
-
-- höflich und knapp spricht
-- kurze Bestätigungen verwendet
-- einen warmen, aber professionellen Ton beibehält
-- natürliche Pausen macht
-- strukturierte Daten wie E-Mail-Adressen klar ausspricht
-
-Das ist wichtig, weil ein Telefonanruf klarere und direktere Antworten erfordert als ein schriftlicher Austausch.
-
-#### Ziel
-
-Hier erklärst du, was der Agent erreichen soll.
-
-Zum Beispiel:
-
-- einen Termin bestätigen
-- häufige Fragen beantworten
-- grundlegende Daten erfassen
-- einen potenziellen Kunden qualifizieren
-- das Gespräch zum richtigen nächsten Schritt führen
-
-Ohne ein klares Ziel kann der Agent zwar gut klingen, seine Aufgabe aber trotzdem nicht erfüllen.
-
-#### Grenzen
-
-Hier gibst du an, was der Agent nicht tun darf.
-
-Das Grundbeispiel zeigt sehr nützliche Regeln, wie:
-
-- keine sensiblen Informationen weitergeben
-- keine Antworten erfinden
-- eigene Grenzen erkennen, wenn er nicht helfen kann
-- ruhig bleiben, wenn der Benutzer frustriert ist
-- sich auf das tatsächliche Anliegen des Benutzers konzentrieren
-
-Dieser Teil ist entscheidend, wenn der Agent direkt mit Kunden oder Patienten spricht.
-
-#### Werkzeuge in den Anweisungen
-
-Das Beispiel enthält auch einen Block, der angibt, ob der Agent ausschließlich über das Gespräch arbeiten soll oder ob er bereits konfigurierte Werkzeuge verwenden darf.
-
-Wenn der Agent alles nur durch das Gespräch lösen soll, ist es sinnvoll, das ausdrücklich zu sagen. Wenn er ein Werkzeug verwenden soll, muss dieses Werkzeug bereits existieren, bevor es mit dem Agenten verbunden wird.
-
-### So schreibst du gute Gesprächsanweisungen
-
-Gute Anweisungen sollten die Aufgabe des Agenten klar und praktisch beschreiben.
-
-Statt etwas zu Allgemeines zu schreiben wie:
-
-**Sei hilfreich und höflich.**
-
-Ist es besser, etwas Präziseres zu formulieren, zum Beispiel:
-
-**Der Agent ist ein Telefonassistent für eine Zahnklinik. Er soll dabei helfen, Termine zu bestätigen, einfache Fragen zu Öffnungszeiten zu beantworten, höflich und knapp zu sprechen und die Person zum nächsten Schritt zu führen, wenn die Anfrage außerhalb seines Zuständigkeitsbereichs liegt.**
-
-Das funktioniert besser, weil es festlegt:
-
-- wer der Agent ist
-- welche Art von Anruf er bearbeitet
-- wie er sprechen soll
-- welches Ergebnis er anstreben soll
-- was er vermeiden muss
-
-### Anweisungen optimieren
-
-Neben dem Bereich für die Anweisungen bietet Callin eine Option zum **Optimieren der Anweisungen**. Wenn du sie öffnest, erscheint ein Fenster, in das du eingeben kannst, welche Art von Verbesserung auf den aktuellen Text angewendet werden soll.
-
-Das ist hilfreich, wenn bereits eine gute Grundlage vorhanden ist, du sie aber verbessern möchtest, ohne alles neu schreiben zu müssen.
-
-Zum Beispiel kannst du das System darum bitten:
-
-- den Text kürzer und klarer zu machen
-- einen zugänglicheren Ton zu verwenden
-- den Umgang mit Einwänden hinzuzufügen
-- professioneller zu klingen
-- zu lange Anweisungen zu vereinfachen
-
-Ein praktisches Beispiel wäre eine Bitte wie:
-
-**Mach den Text knapper, behalte einen warmen und professionellen Ton bei und füge einen klareren Umgang mit häufigen Einwänden hinzu.**
-
-Nach der Optimierung solltest du das Ergebnis immer prüfen, bevor du speicherst, damit es weiterhin zur tatsächlichen Aufgabe des Agenten passt.
-
-> **Wichtig:** Das Optimieren der Anweisungen verbessert die Formulierung, ersetzt aber keine menschliche Prüfung. Bevor du speicherst, vergewissere dich, dass der endgültige Text wirklich dem gewünschten Verhalten entspricht.
+Das ist meist eine starke Standardeinstellung für Support, Empfang und allgemeinen Kundenservice. Wenn Ihre Eröffnungsnachricht eine kritische Anweisung enthält, die vollständig gehört werden muss, prüfen Sie diese Einstellung sorgfältig, bevor Sie live gehen.
 
 ### Dynamische Variablen
 
-Mit dynamischen Variablen kannst du Angaben wie den Namen des Agenten oder des Unternehmens an mehreren Stellen der Konfiguration wiederverwenden.
+**Dynamische Variablen** sammelt die Variablen, die eingefügt wurden, sowie den jeweils zugewiesenen Wert. Hier verwalten Sie die praktische Seite jeder Variable: Name und Wert.
 
-Das ist hilfreich, wenn du bei mehreren Agenten dieselbe Struktur beibehalten und nur einzelne Werte ändern möchtest.
-
-### Zeitzone und Modell
-
-Weiter unten kannst du die Zeitzone und das Modell konfigurieren, das der Agent verwenden soll.
-
-Die Zeitzone ist wichtig, wenn der Agent:
-
-- Uhrzeiten erwähnt
-- Termine plant
-- sich auf lokale Zeiten bezieht
-
-Das Modell beeinflusst, wie Antworten erzeugt werden. Je nach Konto oder Tarif können manche Optionen unterschiedlich sein.
-
-### Wissensdatenbank
-
-Die Wissensdatenbank liefert dem Agenten unterstützende Informationen, damit er präziser antworten kann.
-
-Wenn du sie noch nicht eingerichtet hast, solltest du das zuerst hier tun: [Wissensdatenbank](https://app.callin.io/knowledge-base)
-
-Das ist der richtige Ort für Inhalte wie:
-
-- häufige Fragen
-- Richtlinien
-- Preise
-- Servicedetails
-- hilfreiche Informationen zur Beantwortung typischer Fragen
-
-Eine Klinik kann dort zum Beispiel Öffnungszeiten, Stornierungsregeln, akzeptierte Versicherungen und Hinweise vor einem Termin hinterlegen.
-
-Eine praktische Regel lautet:
-
-- nutze die **Gesprächsanweisungen** für Verhalten und Regeln
-- nutze die **Wissensdatenbank** für Fakten und Referenzinformationen
-
-### Werkzeuge
-
-Werkzeuge ermöglichen es dem Agenten, während eines Anrufs zusätzliche Funktionen zu verwenden.
-
-Wenn du das Werkzeug noch nicht eingerichtet hast, solltest du das zuerst hier tun: [Werkzeuge](https://app.callin.io/tools)
-
-Das ist wichtig, weil der Agent ein Werkzeug nicht korrekt verwenden kann, wenn es noch nicht existiert oder vorher nicht vorbereitet wurde.
-
-Ein sinnvoller Ablauf ist:
-
-1. das Werkzeug in [Werkzeuge](https://app.callin.io/tools) konfigurieren
-2. zum Agenten zurückkehren
-3. das Werkzeug verbinden
-4. das vollständige Gespräch testen
-
-Wenn du zum Beispiel möchtest, dass der Agent externe Informationen abruft oder eine bestimmte Aktion ausführt, musst du dieses Werkzeug zuerst vorbereiten.
-
-### Anrufeinstellungen
-
-In diesem Bereich findest du außerdem zusätzliche Einstellungen, zum Beispiel:
-
-- Anrufaufzeichnung
-- Erkennung der Mailbox
-- die Option, dass der Benutzer zuerst spricht
-
-Diese Einstellungen legen genauer fest, wie das tatsächliche Erlebnis aussieht, sobald der Agent aktiv ist.
-
-> **Häufiger Fehler:** Zu allgemeine Anweisungen schreiben und davon ausgehen, dass der Agent automatisch erkennt, wann er ein Werkzeug verwenden soll. Das Ziel muss in den Anweisungen klar sein, und das Werkzeug muss vorher eingerichtet werden.
-
-## Abschnitt 2: Stimme und Sprache
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/agents3.png"
-    alt="Der Bereich Stimme und Sprache mit Hauptsprache, Zweitsprache, ausgewählter Stimme, Geschwindigkeit und Variationsgrad."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Aufnahme: der zweite Konfigurationsbereich, in dem du festlegst, wie der Agent klingt und wie er Benutzer versteht.
-</p>
-
-Der Bereich Stimme und Sprache steuert, wie der Agent spricht und wie er das Gespräch verarbeitet.
-
-### Hauptsprache und Zweitsprache
-
-Wähle zuerst die Hauptsprache aus. Sie sollte der Sprache entsprechen, die die meisten Personen verwenden werden, wenn sie mit dem Agenten sprechen.
-
-Du kannst außerdem eine Zweitsprache hinzufügen, wenn der Agent mehr als eine Sprache unterstützen soll.
-
-Zum Beispiel:
-
-- eine lokale Klinik benötigt möglicherweise nur eine Hauptsprache
-- ein Unternehmen mit unterschiedlichen Zielgruppen kann zwei Sprachen kombinieren
+Dieser Bereich ist besonders nützlich, wenn Sie mit mehreren Kunden, Marken, Standorten oder Services arbeiten und dieselbe Agentenstruktur beibehalten möchten, während Sie nur die variierenden Daten ändern.
 
 ### Stimme
 
-Die Stimme legt fest, wie der Agent im Gespräch klingt.
+**Stimme** definiert die Stimme, die der Agent während des Anrufs verwendet. Die Stimme verändert nicht die Logik des Assistenten, aber sie prägt stark, wie der Anruf in Bezug auf Klarheit, Vertrauen, Natürlichkeit und Gesamttönung wahrgenommen wird.
 
-Im Stimmenauswahlfeld kannst du normalerweise:
+Dieser Bereich umfasst eine primäre Stimme, die Option, zusätzliche Stimmen hinzuzufügen, stimmenspezifische Steuerungen sowie gemeinsame Ausgabe- und Latenzeinstellungen.
 
-- nach Sprache filtern
-- nach Geschlecht filtern
-- zwischen verschiedenen Stimmtypen wählen
-- Vorschauen anhören
-- eine Stimme aus ElevenLabs importieren
+- **Ausdrucksmodus** steuert, ob die Stimme ausdrucksvoller klingen soll.
+- **Geschwindigkeit** steuert, wie schnell die Stimme spricht.
+- **Stabilität** steuert das Gleichgewicht zwischen Ausdruck und Konsistenz.
+- **Ähnlichkeit** hilft der Stimme, eine konsistentere Stimmidentität zu bewahren.
 
-### Eine ElevenLabs-Stimme importieren
+### Stimme auswählen und zusätzliche Stimmen
 
-Sie können auch eine benutzerdefinierte Stimme aus **ElevenLabs** zu diesem Agenten hinzufügen, ohne den Stimmenauswahlbereich zu verlassen. Das ist nützlich, wenn Sie bereits eine Stimme in VoiceLab erstellt haben und genau diese Stimme in Callin verwenden möchten.
+Die Stimmauswahl wird über **Stimme auswählen** verwaltet. Dieses Panel enthält **Entdecken**, **Geklont** und **Hinzufügen**.
+
+**Entdecken** enthält den verfügbaren Stimmenkatalog mit Suche, Sprachfilter, Geschlechtsfilter und einer kurzen Beschreibung für jede Stimme.
+
+**Geklont** enthält die geklonten oder importierten Stimmen, die in Ihrer Umgebung verfügbar sind.
+
+**Hinzufügen** ermöglicht es Ihnen, eine Stimme aus ElevenLabs über einen freigegebenen Link zu importieren und ihr einen Namen zuzuweisen, bevor sie dem Agenten hinzugefügt wird.
+
+**Zusätzliche Stimme hinzufügen** ist nützlich, wenn ein Agent sekundäre Stimmen für mehr Sprachen oder unterschiedliche Kundensegmente benötigt.
+
+### Gemeinsame Stimmeinstellungen
+
+**Gemeinsame Stimmeinstellungen** umfassen zwei globale Konfigurationen: **TTS-Ausgabeformat** und **Streaming-Latenz optimieren**.
+
+Das **TTS-Ausgabeformat** definiert das Ausgabeformat des generierten Audios. **PCM 16000 Hz** erscheint als empfohlene Option.
+
+**Streaming-Latenz optimieren** steuert das Gleichgewicht zwischen Antwortgeschwindigkeit und Audioqualität. Eine stärker optimierte Latenz lässt den Agenten früher sprechen, kann aber die Audioqualität beeinflussen.
+
+### Sprache
+
+**Sprache** definiert die primäre Sprache des Agenten und die zusätzlichen Sprachen, die er während des Gesprächs verarbeiten kann.
+
+Die Standardsprache ist die Sprache, die zu Beginn der Interaktion verwendet wird. Zusätzliche Sprachen ermöglichen es demselben Agenten, mehrsprachige Gespräche zu unterstützen.
+
+Aktivieren Sie nur die Sprachen, die Sie tatsächlich benötigen. Eine sauberere Konfiguration führt normalerweise zu stabilerem Verhalten.
+
+### KI-Intelligenz
+
+**KI-Intelligenz** definiert das Sprachmodell, das der Agent verwendet, um den Nutzer zu verstehen und Antworten zu generieren. Diese Einstellung beeinflusst direkt die Qualität des Verständnisses, die Antwortgeschwindigkeit und die allgemeine Konsistenz.
+
+Das Sprachmodell ist das Gesprächsgehirn des Assistenten. Es versteht die Nutzerabsicht, hält den Anrufkontext aufrecht, folgt den im Prompt definierten Regeln, verwendet die Wissensdatenbank und erzeugt in jeder Runde die passende Antwort.
+
+Die in diesem Setup angezeigten Modelle umfassen **Neuron 1.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, **Gemini 2.5 Flash** und **Claude Haiku 4.5**.
+
+Für terminorientierte Agenten und Planungsabläufe ist **Gemini 2.5** die praktische Empfehlung.
+
+### Temperatur
+
+Die **Temperatur** steuert, wie viel Variation der Agent in seine Antworten einbringt. Eine niedrigere Temperatur erzeugt stabilere, fokussiertere und vorhersehbarere Antworten. Eine höhere Temperatur bringt mehr Variation und weniger Kontrolle.
+
+Für Support-, Service-, Termin- und operative Agenten ist eine kontrollierte Temperatur normalerweise die richtige Wahl.
+
+### Anrufrichtung
+
+Die **Anrufrichtung** definiert, wie der Agent am Anruffluss teilnimmt. Die verfügbaren Modi sind **Ausgehend**, **Eingehend** und **Beides**.
+
+**Ausgehend** wird für ausgehende Anrufe wie Kampagnen, Erinnerungen, Bestätigungen und Nachfassaktionen verwendet. **Eingehend** wird für eingehende Anrufe wie Support, Empfang, Termine, Kundenservice oder allgemeine Informationen verwendet. **Beides** ermöglicht demselben Agenten, in beiden Szenarien zu arbeiten.
+
+### Speichern und Validierung
+
+**Speichern** speichert die aktuelle Agentenkonfiguration. **Leeren** entfernt oder setzt die aktuellen nicht gespeicherten Änderungen zurück.
+
+Jede größere Änderung sollte durch reale Tests validiert werden, bevor die Konfiguration als abgeschlossen gilt. Dazu gehört die Prüfung der Eröffnungsnachricht, das Anhören der Stimme, die Validierung der aktiven Sprachen, die Bestätigung des ausgewählten Modells, die Bestätigung der Anrufrichtung und die Überprüfung der Werte dynamischer Variablen.
+
+> **Wichtig:** Ein gutes Agenten-Setup sollte in einem echten Anruf klar klingen und nicht nur im Editor korrekt aussehen.
+
+## Abschnitt 2: Arbeitsablauf
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/voices11.png"
-    alt="Fenster der Stimmenauswahl mit Sprachauswahl, Importfeldern für ElevenLabs, Geschlechtsfiltern, Typfiltern, der Liste verfügbarer Stimmen und den Aktionsschaltflächen im unteren Bereich"
+    src="/images/agentesia3.png"
+    alt="Die Arbeitsablauf-Fläche mit verbundenen Knoten, Bedingungen und Routenkonfiguration für den Gesprächsfluss."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: In diesem Fenster können Sie verfügbare Stimmen filtern und eine benutzerdefinierte Stimme aus ElevenLabs über einen freigegebenen VoiceLab-Link importieren.
+  Screenshot: die Arbeitsablauf-Fläche, auf der Sie die Entscheidungslogik, Verzweigungen und Routing-Struktur des Gesprächs aufbauen.
 </p>
 
-In diesem Fenster sehen Sie:
+Der **Arbeitsablauf** definiert die Entscheidungsstruktur des Agenten. Während der Tab **Agent** die Gesamtidentität des Assistenten festlegt, bestimmt der **Arbeitsablauf**, welchen Weg das Gespräch je nach Nutzerabsicht und der von Ihnen entworfenen Logik nehmen soll.
 
-- Eine **Sprachauswahl** im oberen Bereich. Im Beispiel ist **Englisch** als Sprache ausgewählt.
-- Einen Bereich zum **Importieren Ihrer ElevenLabs-Stimme** mit zwei Feldern:
-  - Ein Feld zum Einfügen des freigegebenen VoiceLab-Links.
-  - Ein Feld, um der importierten Stimme einen Namen in Ihrem Arbeitsbereich zu geben.
-- Eine Schaltfläche, um die Stimme **hinzuzufügen**, nachdem beide Felder ausgefüllt wurden.
-- Einen **Geschlechtsfilter** mit Optionen wie **beliebig**, **männlich**, **weiblich** und **neutral**.
-- Einen **Typfilter** mit Optionen wie **allgemein** und **geklont**.
-- Eine Liste verfügbarer Stimmen unter den Filtern, in der jede Karte den Namen der Stimme, eine kurze Beschreibung und eine Wiedergabeschaltfläche für eine Vorschau zeigt.
-- Schaltflächen im unteren Bereich, um **alle Filter zurückzusetzen** und die **Filter auf die sichtbaren Ergebnisse anzuwenden**.
+In diesem Bereich erstellen Sie die visuellen Gesprächsrouten, Bedingungen, Weiterleitungen, Tool-Stufen und Endpunkte, die organisieren, wie sich der Anruf von einem Schritt zum nächsten bewegt.
 
-### So importieren Sie die Stimme
+### Was Sie im Arbeitsablauf tun können
 
-1. Kopieren Sie in ElevenLabs den **freigegebenen VoiceLab-Link** der Stimme, die Sie verwenden möchten.
-2. Öffnen Sie in Callin die **Stimmenauswahl**.
-3. Fügen Sie den Link in das Feld für den freigegebenen Link ein.
-4. Geben Sie im Feld zum Benennen der importierten Stimme einen internen Namen ein.
-5. Klicken Sie auf die Schaltfläche, um die Stimme hinzuzufügen.
-6. Nachdem die Stimme hinzugefügt wurde, wählen Sie sie für den Agenten aus und speichern Ihre Änderungen.
+Der **Arbeitsablauf** ermöglicht es Ihnen, einen visuellen Pfad für das Gespräch zu erstellen. Von einem einzigen Einstiegspunkt aus können Sie Verzweigungen anlegen, den Anruf an einen spezialisierten Unteragenten senden, ihn an einen anderen Agenten oder an eine Telefonnummer weiterleiten, Tools verwenden und das Gespräch beenden, wenn die Route nicht fortgesetzt werden soll.
 
-> **Tipp:** Verwenden Sie einen klaren internen Namen wie **Support-Stimme - Sofia** oder **Sales-Stimme - Warmes Englisch**, damit Ihr Team die Stimme schnell erkennt.
+- Den Ablauf bei **Start** beginnen.
+- Mehrere Routen innerhalb desselben Gesprächs erstellen.
+- Spezialisierte Unteragenten verwenden.
+- Den Anruf an einen anderen Agenten weiterleiten.
+- Den Anruf an eine Telefonnummer weiterleiten.
+- Bereits vorhandene Tools ausführen.
+- Das Gespräch mit einem **Ende**-Knoten schließen.
+- Jede Route mit einer **LLM-Bedingung** steuern.
 
-> **Wichtig:** Die sichtbaren Filter und die verfügbaren Stimmen können je nach Konto, Sprache oder Tarif variieren.
+### Wie die Fläche organisiert ist
 
-> **Häufiger Fehler:** Wenn Sie statt des **freigegebenen VoiceLab-Links** einen normalen ElevenLabs-Link einfügen, kann die Stimme möglicherweise nicht korrekt importiert werden.
+Der Hauptbereich des **Arbeitsablaufs** ist eine visuelle Fläche, auf der Sie Knoten platzieren und jeden Knoten mit seinem nächsten Schritt verbinden. Der Ablauf beginnt bei **Start** und erweitert sich dann zu einer oder mehreren Routen.
 
-Bei der Auswahl der Stimme solltest du an die Art des Erlebnisses denken, das du vermitteln möchtest. Ein rechtlicher Agent funktioniert möglicherweise besser mit einer ruhigen und sicheren Stimme, während ein Agent für das Gastgewerbe mit einer zugänglicheren und dynamischeren Stimme besser wirken kann.
+In der oberen linken Ecke der Fläche helfen Zoom-Steuerungen dabei, sich durch den Arbeitsablauf zu bewegen, wenn die Logik komplexer wird.
 
-### Geschwindigkeit
+### Start
 
-Die Geschwindigkeit steuert, wie schnell oder langsam der Agent spricht.
+**Start** ist der Einstiegspunkt des Arbeitsablaufs. Jedes Gespräch beginnt hier. Dieser Knoten antwortet nicht selbstständig und führt keine direkten Aktionen aus. Seine Aufgabe ist es, die Route zu starten und das Gespräch an den richtigen nächsten Knoten zu senden.
 
-- niedrigere Werte machen die Stimme langsamer
-- höhere Werte machen die Stimme schneller
+Der Tab **Übersicht** erklärt die Rolle von **Start** im Ablauf. Der Tab **Verbindungen** listet jede ausgehende Route auf, die von **Start** erstellt wurde, zusammen mit jedem Label und Zielknoten.
 
-Meist empfiehlt sich ein mittlerer Wert, der natürlich und gut verständlich klingt.
+### Übergänge und Bedingungen
 
-### Variationsgrad
+Übergänge sind die Verbindungen, die einen Knoten mit einem anderen verknüpfen. In diesem Setup ist der verfügbare Übergangstyp die **LLM-Bedingung**.
 
-Der Variationsgrad steuert, wie vorhersehbar oder kreativ die Antworten sind.
+Jeder Übergang enthält ein sichtbares Label und einen Text für die **LLM-Bedingung**, der definiert, wann diese Route angewendet werden soll.
 
-- niedrigere Werte machen den Agenten stabiler und kontrollierter
-- höhere Werte machen die Antworten vielfältiger
+- Verwenden Sie diese Route, wenn der Nutzer technische Hilfe mit der Plattform benötigt.
+- Verwenden Sie diese Route, wenn der Nutzer mit einer Person sprechen möchte.
+- Verwenden Sie diese Route, wenn das Problem vollständig gelöst ist und das Gespräch enden soll.
 
-Bei strukturierten Geschäftsanrufen funktioniert meist eine niedrige oder mittlere Einstellung am besten.
+### Vorwärts und Rückwärts
 
-> **Tipp:** Teste nicht nur die Stimme allein. Führe einen vollständigen Anruf durch und prüfe, wie sie sich im echten Ablauf anhört.
+Die operative Konfiguration erfolgt in **Vorwärts**. **Rückwärts** bietet in dieser Version keine zusätzliche Konfiguration.
 
-## Abschnitt 3: Anrufaktionen
+### Vervollständigen Sie Ihr Arbeitsablauf-Setup
+
+Der **Arbeitsablauf** enthält ein Validierungsfeld mit dem Namen **Vervollständigen Sie Ihr Arbeitsablauf-Setup**. Dieses Feld zeigt Ihnen genau an, was noch fehlt, bevor der Ablauf korrekt gespeichert werden kann.
+
+Das ist besonders bei komplexen Arbeitsabläufen nützlich, weil es genau auf den Knoten oder die Verbindung hinweist, die noch Aufmerksamkeit benötigt.
+
+- Ein Knoten für **Agentenweiterleitung** hat keinen Zielagenten.
+- Ein **Tool**-Knoten hat kein ausgewähltes Tool.
+- Einem Übergang fehlt sein Bedingungstext.
+- Ein Knoten oder eine Verzweigung ist noch unvollständig.
+
+### Unteragent
+
+Der **Unteragent** ermöglicht es Ihnen, innerhalb desselben Arbeitsablaufs eine spezialisierte Gesprächsphase zu erstellen. Verwenden Sie ihn, wenn ein Teil des Ablaufs ein eigenes Verhalten, ein engeres Ziel oder eine andere Konfiguration als der Hauptagent benötigt.
+
+- Verwenden Sie ihn, wenn eine Phase des Ablaufs ein eigenes Ziel braucht.
+- Verwenden Sie ihn, wenn ein Teil des Gesprächs eine andere Stimme oder ein anderes Modell erfordert.
+- Verwenden Sie ihn, wenn Sie Kontrolle über Wissen oder Tools auf Knotenebene brauchen.
+
+### Unteragent - Allgemeine Einstellungen
+
+Im Tab **Allgemein** können Sie für diesen Knoten den **System-Prompt**, **Prompt überschreiben**, die **Stimme**, das **LLM**, den **Reaktionsgrad** und die **Buchstabiergeduld** konfigurieren.
+
+Ein Unteragent ist nützlich für spezialisierte Support-Phasen, Informationssammlungsstufen vor einer Weiterleitung oder Routen, die einen anderen Sprechstil benötigen.
+
+### Unteragent - Wissensdatenbank und Tools
+
+Der Tab **Wissensdatenbank** enthält **Wissensdatenbank übernehmen**. Wenn diese Option aktiviert ist, übernimmt der Knoten die Wissensdatenbank des Agenten.
+
+Der Tab **Tools** enthält **Benutzerdefinierte Tools übernehmen** und **Tool hinzufügen**. Wenn die Übernahme aktiviert ist, verwendet der Knoten die benutzerdefinierten Tools des Agenten.
+
+Tools werden nicht im **Arbeitsablauf** erstellt. Sie werden im Bereich **Tools** erstellt und konfiguriert. Im **Arbeitsablauf** werden sie nur ausgewählt oder übernommen.
+
+### Tool-Knoten
+
+Der **Tool**-Knoten wird verwendet, um das Gespräch an eine Phase zu senden, in der der Agent bereits vorhandene Tools verwenden kann. Im Seitenpanel erscheint dies als **Tool-Zuweisung**.
+
+Dieser Knoten erstellt keine neuen Tools. Seine Aufgabe ist es, den Arbeitsablauf mit Tools zu verbinden, die bereits an anderer Stelle konfiguriert wurden.
+
+### Agentenweiterleitung
+
+Die **Agentenweiterleitung** sendet das Gespräch an einen anderen Agenten in Ihrem Konto. Das ist die richtige Option, wenn die Interaktion an einen anderen Assistenten übergeben werden muss, der auf eine andere Aufgabe, eine andere Sprache oder einen anderen Arbeitsablauf spezialisiert ist.
+
+Sie können den Zielagenten auswählen, eine Verzögerung in Millisekunden festlegen, eine Weiterleitungsnachricht schreiben und entscheiden, ob diese erste Nachricht abgespielt werden soll.
+
+- Ich werde Sie an den richtigen Agenten für dieses Anliegen weiterleiten.
+- Ich verbinde Sie jetzt mit dem Assistenten, der auf diese Art von Frage spezialisiert ist.
+
+### Weiterleitung an Telefonnummer
+
+Die **Weiterleitung an Telefonnummer** sendet den Anruf an eine Telefonnummer. Verwenden Sie diesen Knoten, wenn das Gespräch den Agenten verlassen und über eine bestimmte Telefonleitung fortgesetzt werden soll.
+
+Die verfügbaren Zieltypen sind **Telefonnummer** und **Dynamische Telefonvariable**.
+
+**Telefonnummer** ist die richtige Wahl für ein festes Ziel, etwa Empfang, eine dedizierte Vertriebsleitung oder eine feste Support-Leitung.
+
+**Dynamische Telefonvariable** ist die richtige Wahl, wenn das Ziel vom Kontext des Ablaufs abhängt.
+
+### Ende
+
+**Ende** ist der Knoten, der das Gespräch schließt. Wenn der Ablauf diesen Punkt erreicht, endet die Interaktion.
+
+- Verwenden Sie **Ende**, wenn das Problem vollständig gelöst ist.
+- Verwenden Sie **Ende**, wenn eine Verzweigung ohne Fortsetzung geschlossen werden soll.
+- Verwenden Sie **Ende**, wenn eine Phase abgeschlossen ist und die Route nicht weitergehen soll.
+
+### Duplizieren und Löschen
+
+Jeder Knoten enthält Steuerelemente zum Duplizieren oder Löschen.
+
+**Duplizieren** kopiert einen vorhandenen Knoten, damit Sie ähnliche Verzweigungen schneller erstellen können. **Löschen** entfernt den Knoten aus dem Ablauf. Bevor Sie einen Knoten löschen, prüfen Sie seine verbundenen Übergänge, damit keine aktive Route unterbrochen wird.
+
+### Globale Einstellungen
+
+Die **Globalen Einstellungen** enthalten Optionen, die den gesamten Arbeitsablauf betreffen.
+
+**Unendliche Schleifen verhindern** fügt eine Sicherheitsebene hinzu, die dabei hilft, Routen zu vermeiden, die das Gespräch ohne Fortschritt in einer wiederholenden Schleife festhalten könnten.
+
+Um einen Arbeitsablauf zu deaktivieren, trennen Sie den **Start**-Knoten. Ohne verbundenen **Start** hat der Ablauf keinen operativen Einstiegspunkt mehr.
+
+### Speichern und Testen
+
+**Speichern** speichert den aktuellen Arbeitsablauf. **Leeren** entfernt oder setzt den aktuellen Bearbeitungszustand zurück. Die Warnung zu nicht gespeicherten Änderungen zeigt an, dass noch Bearbeitungen vorhanden sind, die nicht gespeichert wurden.
+
+Testen Sie immer jede Route einzeln, bevor Sie veröffentlichen.
+
+> **Häufiger Fehler:** Ein Arbeitsablauf kann auf der Fläche vollständig aussehen und in der Praxis trotzdem scheitern, wenn ein Knoten, ein Tool oder eine Bedingung nie mit einem echten Gespräch getestet wurde.
+
+## Abschnitt 3: Wissensdatenbank
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents4.png"
-    alt="Der Bereich für Anrufaktionen mit Terminbuchung, Anrufweiterleitung, Abmeldung, Datenextraktion, Versand nach dem Anruf, Wiederholungsversuchen und Nummernrotation."
+    src="/images/agentesia4.png"
+    alt="Der Tab Wissensdatenbank mit der verbundenen Quelle, den verfügbaren Aktionen und dem Panel zur Auswahl einer Wissensdatenbank."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Aufnahme: der dritte Konfigurationsbereich, in dem du Aktionen aktivierst, die der Agent während oder nach dem Anruf ausführen kann.
+  Screenshot: der Tab Wissensdatenbank, in dem Sie eine vorhandene Quelle mit Referenzinhalten mit dem Agenten verbinden.
 </p>
 
-Dieser Bereich ermöglicht es dem Agenten, mehr zu tun als nur zu sprechen. Hier legst du konkrete Aktionen fest, die während oder direkt nach dem Anruf stattfinden können.
+Die **Wissensdatenbank** verbindet Ihren Agenten mit einer Wissensquelle, die bereits in Callin vorbereitet wurde. Dadurch erhält der Agent Zugriff auf breitere, strukturierte und wiederverwendbare Referenzinhalte, sodass er mit detaillierteren Informationen antworten kann als jenen, die direkt im Haupt-Prompt stehen sollten.
 
-### Terminbuchung
+Verwenden Sie diesen Bereich, wenn die Informationen zu lang, zu detailliert, zu strukturiert oder zu dynamisch sind, um direkt im Prompt gepflegt zu werden.
 
-Aktiviere diese Option, wenn der Agent während des Anrufs Termine buchen soll.
+### Schnellzugriff
 
-Wenn du das noch nicht eingerichtet hast, solltest du es zuerst hier tun: [Google Kalender](https://app.callin.io/actions/google-calendar)
+- [Öffnen Sie den Verwalter der Wissensdatenbank](https://app.callin.io/knowledge-base)
 
-Das ist wichtig, weil der Agent Zugriff auf eine bereits vorbereitete Kalenderkonfiguration haben muss, bevor er Zeitfenster anbieten und Buchungen korrekt bestätigen kann.
+### Wann die Wissensdatenbank verwendet werden sollte
 
-Ein einfaches Beispiel: Eine Klinik kann den Agenten nutzen, um verfügbare Zeiten anzubieten und den Termin im selben Anruf zu bestätigen.
+Die **Wissensdatenbank** ist die richtige Wahl, wenn Inhalte umfangreich sind, sich häufig ändern, bereits als Dokumentation existieren oder getrennt vom Haupt-Prompt bleiben sollen, um die Pflege zu erleichtern.
 
-### Anrufweiterleitung
+- Handbücher.
+- Häufig gestellte Fragen.
+- Richtlinien.
+- Produktleitfäden.
+- Support-Artikel.
+- Internes Referenzmaterial.
 
-Aktiviere diese Option, wenn der Agent den Anruf an eine echte Person, eine Abteilung oder eine andere Nummer weiterleiten soll.
+### Was dieser Tab macht
 
-Wenn du das noch nicht eingerichtet hast, solltest du es zuerst hier tun: [Anrufweiterleitung](https://app.callin.io/call-transfer)
+Dieser Tab wird verwendet, um eine bestehende Wissensdatenbank mit einem bestimmten Agenten zu verknüpfen. Er erstellt keine neuen Inhalte von Grund auf.
 
-Das muss im Voraus vorbereitet werden, damit der Agent weiß, wohin und unter welchen Bedingungen weitergeleitet werden soll.
+Der Prompt definiert, wie sich der Agent verhalten soll, während die **Wissensdatenbank** definiert, welche zusätzlichen Referenzinhalte der Agent bei Antworten verwenden kann.
 
-Ein praktisches Beispiel: Der Agent beantwortet einfache Fragen, leitet Abrechnungsfragen oder dringende Fälle jedoch an ein menschliches Team weiter.
+### Unterstützte Inhaltsquellen
 
-### Abmeldung von Anrufen
+Die **Wissensdatenbank** kann mit zwei Quellen arbeiten: **Dateien** und **Web-URLs**.
 
-Mit der Abmeldung kann eine Person angeben, dass sie diese Art von Anrufen nicht weiter erhalten möchte.
+Verwenden Sie **Dateien**, wenn die Wissensdatenbank aus hochgeladenen Dokumenten aufgebaut ist. Verwenden Sie **Web-URLs**, wenn die Wissensdatenbank aus veröffentlichten Seiten oder Dokumentationen besteht, die per URL erreichbar sind.
 
-Das ist hilfreich bei ausgehenden Kampagnen und wiederkehrenden Abläufen, in denen du die Präferenz des Kontakts respektieren musst.
+### Was Sie sehen, wenn eine Datenbank verknüpft ist
 
-### Datenextraktion
+Wenn bereits eine Wissensdatenbank mit dem Agenten verbunden ist, zeigt der Tab den Namen der ausgewählten Gruppe, die Anzahl der verknüpften Dokumente und die verfügbaren Aktionen zur Verwaltung dieser Verbindung an.
 
-Die Datenextraktion dient dazu, bestimmte Informationen aus dem Gespräch zu erfassen.
+- Name der ausgewählten Gruppe.
+- Anzahl der verknüpften Dokumente.
+- **Leeren**.
+- **Aktualisieren**.
+- **Ändern**.
 
-Zum Beispiel kannst du den Agenten anweisen, Folgendes zu extrahieren:
+### Hauptaktionen
 
-- Name
-- Termindatum
-- Interessensgrad
-- bester Zeitpunkt für einen Rückruf
+**Ändern** öffnet das Panel **Wissensdatenbank auswählen** und ermöglicht es Ihnen, eine andere Wissensdatenbank für den Agenten auszuwählen.
 
-Das hilft deinem Team, nicht das gesamte Transkript lesen zu müssen, um die wichtigen Informationen zu finden.
+**Leeren** entfernt die derzeit mit dem Agenten verbundene Wissensdatenbank.
 
-### Versand nach dem Anruf
+**Aktualisieren** aktualisiert die aktuelle Verbindung, damit der Agent mit der neuesten verknüpften Auswahl arbeitet.
 
-Diese Option sendet die Informationen aus dem Anruf an ein anderes System, sobald das Gespräch beendet ist.
+### Panel Wissensdatenbank auswählen
 
-Das ist nützlich, wenn du Ergebnisse an ein externes System, an ein internes Übersichtsfenster oder an einen Automatisierungsablauf weitergeben möchtest.
+Wenn Sie auf **Ändern** klicken, öffnet sich das Panel **Wissensdatenbank auswählen**. Dieses Panel dient dazu, verfügbare Quellen zu prüfen, eine Gruppe auszuwählen, ihre Dokumente oder URLs einzusehen und die endgültige Auswahl zu bestätigen.
 
-### Wiederholungsversuche
+- **Quelle** wechselt zwischen **Dateien** und **Web-URLs**.
+- **Gruppen** listet die verfügbaren Wissensdatenbanken innerhalb der ausgewählten Quelle auf.
+- **Aktualisieren** erneuert die Liste der Gruppen.
+- **Dokumente / URLs** zeigt die Ressourcen an, die in der ausgewählten Gruppe enthalten sind.
+- **Verknüpft** bedeutet, dass die Ressource zur ausgewählten Datenbank gehört und nach Bestätigung der Verbindung für den Agenten verfügbar ist.
+- **Auswählen** bestätigt die gewählte Wissensdatenbank.
+- **Schließen** verlässt das Panel, ohne eine neue Auswahl anzuwenden.
 
-Die Wiederholungsversuche legen fest, was passieren soll, wenn ein Anruf nicht erfolgreich abgeschlossen wird oder eine Mailbox erkannt wird.
+### Wie der Auswahlablauf funktioniert
 
-Hier kannst du einstellen, wie viele Versuche unternommen werden und wie lange vor dem nächsten Versuch gewartet werden soll.
+Der empfohlene Ablauf ist immer derselbe: Erstellen und organisieren Sie zuerst die Wissensdatenbank im allgemeinen Verwalter und kehren Sie dann zum Agenten zurück, um diese vorbereitete Quelle in diesem Tab zu verbinden.
 
-### Nummernrotation
+Dadurch bleiben Erstellung und Auswahl getrennt. Der allgemeine Verwalter erstellt die Wissensdatenbank. Der Agenten-Tab verbindet sie mit dem Gespräch.
 
-Mit der Nummernrotation können Anrufe auf mehrere Nummern verteilt werden, um den Verkehr besser zu steuern und die Zustellbarkeit zu verbessern.
+### Bewährte Vorgehensweisen
 
-Das kann besonders bei Vorgängen mit hohem Volumen nützlich sein.
+Verknüpfen Sie nur nützliche und relevante Inhalte. Organisieren Sie Gruppen nach Zweck. Verwenden Sie klare Gruppennamen. Prüfen Sie die ausgewählte Gruppe vor dem Speichern. Aktualisieren Sie die Verbindung nach wichtigen Änderungen.
 
-> **Wichtig:** Wenn du Kalender oder Weiterleitung noch nicht eingerichtet hast, tue das zuerst auf den jeweiligen Seiten und kehre dann zum Agenten zurück, um diese Funktionen korrekt zu aktivieren.
+Halten Sie das Verhalten des Agenten im Prompt und die Referenzinhalte in der **Wissensdatenbank**.
 
-## Abschnitt 4: Website-Widget
+### Was dieser Tab nicht macht
+
+Der Tab **Wissensdatenbank** des Agenten dient nicht dazu, den Haupt-Prompt zu schreiben, Tools zu konfigurieren, Arbeitsabläufe zu bauen oder eine Wissensquelle von Grund auf zu erstellen. Seine Aufgabe ist klar: eine vorhandene Wissensdatenbank auszuwählen und mit dem Agenten zu verknüpfen.
+
+> **Tipp:** Platzieren Sie Verhaltensregeln im Prompt und wiederverwendbare Referenzinhalte in der Wissensdatenbank. Diese Trennung macht Aktualisierungen deutlich einfacher.
+
+## Abschnitt 4: Tools
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents5.png"
-    alt="Der Bereich des Website-Widgets mit Einbindungscode, Darstellungsarten, Erscheinungsbild, Beschriftungen und Speicheroptionen."
+    src="/images/agentesia5.png"
+    alt="Der Tab Tools mit den an den Agenten angehängten benutzerdefinierten Tools und den System-Tools mit Aktivierungs- und Konfigurationsoptionen."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Aufnahme: der vierte Konfigurationsbereich, in dem du das Widget für deine Website erzeugst und sein Erscheinungsbild sowie seine Texte anpasst.
+  Screenshot: der Tab Tools, in dem Sie benutzerdefinierte Tools anhängen und die integrierten Tools aktivieren, die der Agent während eines Anrufs verwenden kann.
 </p>
 
-Dieser Bereich wird verwendet, wenn Besucher direkt auf deiner Website mit dem Agenten sprechen sollen.
+Der Tab **Tools** definiert, welche Tools Ihr Agent während eines Anrufs verwenden kann.
 
-### Einbindungscode
+Dieser Bereich wird für zwei verschiedene Dinge verwendet: das Hinzufügen benutzerdefinierter Tools zum Agenten und das Aktivieren oder Konfigurieren der bereits in Callin enthaltenen System-Tools.
 
-Im oberen Bereich kannst du den Einbindungscode kopieren und auf deiner Website einfügen. Dieser Code lädt das Widget für deine Besucher.
+Tools erweitern, was der Agent während eines Gesprächs tun kann. Während der Prompt festlegt, wie der Agent sprechen soll, und der **Arbeitsablauf** definiert, wie der Anruf voranschreiten soll, ermöglichen Tools dem Agenten, bestimmte Verhaltensweisen im richtigen Moment auszuführen.
 
-So kann das technische Team oder die für die Website zuständige Person das Widget hinzufügen, ohne etwas manuell neu aufbauen zu müssen.
+### Schnellzugriff
 
-### Darstellung und Verhalten
+- [Öffnen Sie den globalen Bereich Tools](https://app.callin.io/tools)
 
-Hier kannst du festlegen, wie das Widget angezeigt wird.
+### Zwei Arten von Tools
 
-Normalerweise kannst du wählen zwischen:
+Dieser Bereich vereint zwei unterschiedliche Gruppen von Tools: **Benutzerdefinierte Tools** und **System-Tools**.
 
-- eingebettet innerhalb der Seite
-- als schwebender Starter
+### Benutzerdefinierte Tools
 
-Die beste Wahl hängt vom tatsächlichen Einsatz ab. Wenn der Agent auf einer bestimmten Seite im Mittelpunkt stehen soll, ist eine direkte Einbettung oft sinnvoller. Wenn er auf der gesamten Website verfügbar sein soll, ohne festen Platz zu belegen, ist ein schwebender Starter meist die bessere Lösung.
+**Benutzerdefinierte Tools** sind Tools, die Ihr Team für bestimmte Anwendungsfälle erstellt. Sie werden nicht im Agenten-Tab erstellt.
+
+Zuerst erstellen Sie sie im plattformweiten Bereich **Tools**. Dann kehren Sie zum Agenten zurück und fügen sie in diesem Tab hinzu.
+
+- Ein externes System abfragen.
+- Eine Automatisierung ausführen.
+- Daten über einen Webhook senden oder empfangen.
+- Geschäftsspezifische Logik auslösen.
+- Den Agenten mit einem anderen Dienst verbinden.
+
+### Hauptbereich für benutzerdefinierte Tools
+
+Der Hauptbereich des Tabs **Tools** zeigt die benutzerdefinierten Tools an, die bereits mit dem Agenten verknüpft sind.
+
+Wenn dem Agenten noch keine benutzerdefinierten Tools zugeordnet sind, zeigt der Bereich den entsprechenden Leerzustand.
+
+### Tool hinzufügen
+
+**Tool hinzufügen** wird verwendet, um ein benutzerdefiniertes Tool an den Agenten anzuhängen.
+
+Wenn Ihr Konto bereits Tools enthält, können Sie sie über diese Schaltfläche suchen und auswählen. Wenn noch keine Tools vorhanden sind, bietet die Auswahl direkt die Möglichkeit, ein **Webhook-Tool** zu erstellen.
+
+### System-Tools
+
+**System-Tools** sind integrierte Callin-Tools, die bereits innerhalb des Agenten verfügbar sind.
+
+Sie wurden dafür entwickelt, häufige Gesprächssituationen zu bewältigen, ohne dass Sie neue Tools von Grund auf erstellen müssen. Diese Tools können einzeln aktiviert oder deaktiviert werden, und einige davon enthalten erweiterte Konfigurationsmöglichkeiten.
+
+### Intelligentes Auflegen
+
+**Intelligentes Auflegen** ermöglicht es dem Agenten, einen Anruf korrekt zu beenden, wenn erkannt wird, dass das Gespräch bereits abgeschlossen ist.
+
+Dieses Tool ist für natürliche Gesprächsenden gedacht und hilft zu vermeiden, dass ein Anruf unnötig offen bleibt, nachdem der Nutzer klar fertig ist.
+
+- Der Nutzer verabschiedet sich.
+- Der Nutzer sagt, dass das alles war.
+- Der Nutzer bestätigt, dass das Problem gelöst ist.
+- Das Gespräch hat seinen klaren Abschluss erreicht.
+
+### Sprachwechsel
+
+**Sprachwechsel** ermöglicht es dem Agenten, Sprachwechsel während des Gesprächs zu handhaben.
+
+Dieses Tool ist besonders wichtig, wenn der Agent in mehreren Sprachen arbeitet und der Nutzer am Anfang oder mitten im Anruf die Sprache wechseln kann.
+
+### Intelligentes Zuhören
+
+**Intelligentes Zuhören** ist ein System-Tool, das verbessert, wie der Agent das Gespräch in Echtzeit anhört und verwaltet.
+
+Dieses Tool wird über den Aktivierungsschalter gesteuert.
+
+### An Agenten weiterleiten
+
+**An Agenten weiterleiten** ermöglicht es dem Agenten, das Gespräch an einen anderen Agenten zu übergeben.
+
+Das ist nützlich, wenn ein Anruf an einen anderen spezialisierten Assistenten in Ihrem Konto übergehen muss.
+
+- Von einem allgemeinen Agenten zu einem Support-Agenten.
+- Von einem ersten Agenten zu einem Vertriebs-Agenten.
+- Von einem Mehrzweck-Agenten zu einem Spezialisten.
+
+### An Nummer weiterleiten
+
+**An Nummer weiterleiten** ermöglicht es dem Agenten, den Anruf an eine menschliche Telefonnummer weiterzuleiten.
+
+Dies ist eines der wichtigsten Tools, wenn ein Gespräch aus dem Agenten heraus eskaliert und an eine Person oder eine bestimmte Leitung übergeben werden muss.
+
+- Empfang.
+- Menschlicher Support.
+- Vertrieb.
+- Eine Telefonzentrale.
+- Ein bestimmtes Büro oder ein bestimmter Ansprechpartner.
+
+### Regeln für menschliche Weiterleitung
+
+**Regeln für menschliche Weiterleitung** ist der Bereich, in dem Sie die konkreten Regeln für die Weiterleitung des Anrufs an menschliche Mitarbeitende definieren.
+
+Jede Regel enthält **Zieltyp**, **Telefonnummer** oder eine dynamische Telefonvariable und **Bedingung**.
+
+Der **Zieltyp** kann eine feste Telefonnummer oder eine Telefonnummer sein, die über eine dynamische Variable bereitgestellt wird.
+
+Die **Bedingung** definiert, wann diese spezifische Weiterleitungsregel angewendet werden soll.
+
+### Mailbox-Intelligenz
+
+**Mailbox-Intelligenz** erkennt, wenn der Anruf eine Mailbox erreicht hat, und reagiert entsprechend.
+
+Dieses Tool ist besonders wichtig bei ausgehenden Agenten, weil Sie damit festlegen können, was passieren soll, wenn keine Person antwortet und eine Mailbox-Begrüßung erkannt wird.
+
+- Lassen Sie die Mailbox-Nachricht leer, wenn der Anruf sofort beendet werden soll, sobald eine Mailbox erkannt wird.
+- Schreiben Sie eine Mailbox-Nachricht, wenn das System vor dem Beenden des Anrufs eine Nachricht abspielen soll.
+
+### Beschreibung und Unterbrechung deaktivieren
+
+Mehrere System-Tools enthalten ein Feld **Beschreibung** und eine Steuerung **Unterbrechung deaktivieren**.
+
+Die **Beschreibung** erklärt dem Modell, wie und wann das Tool verwendet werden soll. **Unterbrechung deaktivieren** steuert, ob die Ausführung des Tools unterbrochen werden kann, während es läuft.
+
+### So wählen Sie die richtigen Tools aus
+
+Aktivieren Sie nicht standardmäßig jedes Tool. Die richtige Auswahl hängt davon ab, wie Ihr Assistent arbeiten soll.
+
+Ein eingehender Support-Agent kann **Intelligentes Auflegen**, **Sprachwechsel** und **Intelligentes Zuhören** verwenden. Ein Agent, der an Menschen eskaliert, kann **An Nummer weiterleiten** zusammen mit klar definierten Weiterleitungsregeln verwenden. Ein ausgehender Agent kann **Mailbox-Intelligenz**, **Intelligentes Auflegen** und **Sprachwechsel** verwenden.
+
+### Bewährte Vorgehensweisen
+
+Aktivieren Sie nur die Tools, die der Agent tatsächlich benötigt. Passen Sie System-Tools an, wenn Ihr Betrieb es erfordert. Verwenden Sie klare Beschreibungen. Definieren Sie spezifische Bedingungen in Weiterleitungsregeln.
+
+Verwenden Sie feste Nummern, wenn das Ziel immer gleich ist, und dynamische Variablen, wenn das Ziel vom Kontext abhängt. Erstellen Sie benutzerdefinierte Tools im globalen Bereich **Tools**, bevor Sie sie dem Agenten hinzufügen. Prüfen Sie nach dem Speichern immer das reale Verhalten.
+
+> **Häufiger Fehler:** Zu viele gleichzeitig aktivierte Tools machen das Verhalten in der Regel schwerer vorhersehbar, schwerer testbar und schwerer wartbar.
+
+## Abschnitt 5: Anrufaktion
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia6.png"
+    alt="Der Tab Anrufaktion mit Automatisierungen wie Terminplanung, Nachfass-E-Mail, Datensynchronisierung, Extraktion und Wiederholungsversuchen."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Anrufaktion, in dem Sie automatisieren, was während und nach jedem Anruf passieren soll.
+</p>
+
+**Anrufaktion** automatisiert, was während und nach jedem Anruf passiert, damit Ihr Agent Gespräche in Nachverfolgung, Organisation und praktische nächste Schritte umwandeln kann.
+
+Verwenden Sie **Anrufaktion**, wenn Ihr Agent mit dem Anruf etwas Nützliches tun soll und nicht nur das Gespräch führen soll.
+
+Die beste Konfiguration ist nicht die mit den meisten aktivierten Aktionen. Es ist die, die nur die Aktionen aktiviert, die Ihrem Arbeitsablauf echten Mehrwert bringen.
+
+### Schnellzugriff
+
+- [Google Calendar einrichten](https://app.callin.io/actions/google-calendar)
+- [Cal.com einrichten](https://app.callin.io/actions/cal)
+
+### Was Anrufaktion macht
+
+**Anrufaktion** bündelt die Automatisierungen, die Ihr Agent während des Anrufs oder direkt nach dessen Ende ausführen kann.
+
+Dieser Bereich verwandelt ein Gespräch in praktische Ergebnisse: einen Termin buchen, eine Nachfass-E-Mail senden, Probleme protokollieren, Daten mit anderen Apps synchronisieren, strukturierte Informationen extrahieren und automatische Wahlwiederholungen festlegen.
+
+- Termine direkt in einem Kalender buchen.
+- Nach Gesprächsende automatisch eine Zusammenfassungs-E-Mail senden.
+- Dem Anrufer eine klare Möglichkeit geben, zukünftigen Kontakt abzulehnen.
+- Während des Gesprächs erkannte Probleme oder Beschwerden protokollieren.
+- Erfasste Daten über einen Post-Call-Webhook an andere Systeme senden.
+- Strukturierte Informationen aus dem Gespräch extrahieren.
+- Extrahierte Daten im Kontaktprofil speichern.
+- Automatische Wiederholungsversuche konfigurieren, wenn ein Anruf nicht abgeschlossen wird.
+
+### Terminplanung
+
+**Terminplanung** ermöglicht es dem Agenten, Termine direkt während des Gesprächs zu buchen.
+
+Das ist besonders nützlich für Vertrieb, Support, Onboarding, Buchungen und jeden Ablauf, bei dem das Sichern eines Termins während des Anrufs Reibung reduziert und Schwung erhält.
+
+### Terminanbieter
+
+Bevor Sie **Terminplanung** aktivieren, verbinden Sie den Terminanbieter, den Sie verwenden möchten. Sie können mit **Google Calendar** oder **Cal.com** arbeiten.
+
+Sobald das Konto verbunden ist, können Sie den Kalender oder die Buchungskonfiguration auswählen, die der Agent verwenden soll.
+
+**Google Calendar** ist die richtige Wahl, wenn Sie direkt in verbundenen Google-Kalendern planen möchten. **Cal.com** ist die richtige Wahl, wenn Ihre Buchungsabläufe bereits auf Cal.com laufen.
+
+Die Zeitzone des Agenten sollte mit der Zeitzone des Kalenders übereinstimmen, um Fehler bei Terminvorschlägen oder Verfügbarkeitsbestätigungen zu vermeiden.
+
+### Zusammenfassungs-E-Mail nach dem Anruf
+
+**Zusammenfassungs-E-Mail nach dem Anruf** sendet automatisch eine E-Mail, wenn der Anruf endet.
+
+Diese Aktion hält Verantwortliche, Teams oder gemeinsame Postfächer informiert, ohne dass manuelle Nachverfolgung erforderlich ist.
+
+- Definieren Sie die Empfänger, die die E-Mail erhalten sollen.
+- Schreiben Sie eine klare Betreffzeile.
+- Schreiben Sie den Basistext der Nachricht.
+- Wählen Sie die Sprache der E-Mail.
+- Entscheiden Sie, ob Anrufdaten enthalten sein sollen.
+- Entscheiden Sie, ob extrahierte Felder enthalten sein sollen.
+
+### Intelligentes Opt-out
+
+**Intelligentes Opt-out** gibt Anrufern eine klare und respektvolle Möglichkeit, zukünftigen Kontakt abzulehnen.
+
+Diese Aktion ist besonders nützlich in Lead-Generierungs-, Outreach- oder Follow-up-Abläufen, in denen Abmeldeanfragen korrekt behandelt werden müssen.
+
+### Problem- und Beschwerdeverfolgung
+
+**Problem- und Beschwerdeverfolgung** ermöglicht es dem Agenten, während des Anrufs erkannte Probleme oder Beschwerden zu identifizieren und zu protokollieren.
+
+Aktivieren Sie diese Funktion, wenn ein Gespräch einen Fall erzeugen soll, den Ihr Team anschließend prüfen, verwalten oder eskalieren kann.
+
+### Datensynchronisierung (Post-Call-Webhook)
+
+**Datensynchronisierung** sendet erfasste Anrufdaten automatisch an ein anderes System, sobald das Gespräch endet.
+
+Das ist die richtige Option, wenn Sie mit CRM-Systemen, Automatisierungen, operativen Integrationen oder internen Systemen arbeiten, die die Daten ohne manuelles Eingreifen benötigen.
+
+Geben Sie die Webhook-URL ein, die die Daten empfangen soll, und prüfen Sie im Voraus, welches System diese Informationen erhält und wie sie dort verarbeitet werden.
+
+### Informationserfassung (Datenextraktion)
+
+**Informationserfassung** verwandelt das Gespräch in strukturierte Daten.
+
+Sie können definieren, welche Informationen das System während des Anrufs automatisch erkennen soll, etwa Namen, Daten, Präferenzen, Städte, Produkte von Interesse oder Kontaktgründe.
+
+### Entität hinzufügen
+
+**Entität hinzufügen** ermöglicht es Ihnen, eine neue Entität zu erstellen, um eine bestimmte Information zu erfassen.
+
+Jede Entität definiert, was extrahiert werden soll und wie es gespeichert wird.
+
+- **Datentyp** definiert die Art des Werts, den Sie erfassen möchten.
+- **Bezeichner** ist der interne Name, der zum Speichern dieser Entität verwendet wird.
+- **Beschreibung** erklärt genau, was das System extrahieren soll.
+- **Enum-Werte** ermöglichen es Ihnen, das Ergebnis auf eine geschlossene Liste gültiger Werte zu beschränken, wenn Sie eine konsistentere Ausgabe benötigen.
+
+### Kontaktdaten erfassen und speichern
+
+**Kontaktdaten erfassen und speichern** speichert extrahierte Informationen direkt im Kontaktprofil.
+
+Aktivieren Sie diese Funktion, wenn Sie erfasste Daten in zukünftigen Anrufen wiederverwenden oder reichhaltigere Kontaktdatensätze pflegen möchten.
+
+### Persistenz und Verbindung (Anrufwiederholung)
+
+**Anrufwiederholung** ermöglicht es Ihnen, automatische Wiederholungsversuche zu konfigurieren, wenn ein Anruf nicht abgeschlossen wurde.
+
+Das ist besonders nützlich für ausgehende Agenten, bei denen ein Anruf unbeantwortet bleiben oder auf einer Mailbox landen kann.
+
+- **Wiederholungsversuche** definiert, wie oft das System den Anruf erneut versuchen soll, bevor es stoppt.
+- **Wartezeit zwischen Versuchen** definiert, wie viele Minuten das System vor dem nächsten Versuch warten soll.
+
+### Bewährte Vorgehensweisen
+
+Aktivieren Sie nur die Aktionen, die dem tatsächlichen Anruffluss echten Mehrwert bringen. Verbinden Sie **Google Calendar** oder **Cal.com**, bevor Sie **Terminplanung** verwenden. Verwenden Sie klare Betreffzeilen und Nachrichten in Zusammenfassungs-E-Mails. Definieren Sie jede Extraktionsentität sorgfältig. Speichern Sie Kontaktdaten nur dann, wenn sie später nützlich sind. Prüfen Sie den Webhook, bevor Sie **Datensynchronisierung** aktivieren. Legen Sie die Wiederholungsfrequenz passend zu Ihrem Betrieb fest. Stimmen Sie die Zeitzone des Agenten immer mit der Zeitzone des Kalenders ab.
+
+> **Wichtig:** Automatisierungen sollten manuelle Arbeit reduzieren und nicht später zusätzlichen Bereinigungsaufwand erzeugen. Behalten Sie nur die Aktionen bei, die Ihr Team tatsächlich nutzen wird.
+
+## Abschnitt 6: Website-Widget
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia7.png"
+    alt="Der Tab Website-Widget mit dem Einbettungssnippet, Layout-Optionen, Gesprächsmodus, Darstellungseinstellungen und Textlabels."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Website-Widget, in dem Sie das öffentliche Widget vorbereiten, den Einbettungscode kopieren und das Besuchererlebnis anpassen.
+</p>
+
+Das **Website-Widget** ermöglicht es Ihnen, Ihren Agenten direkt über ein eingebettetes Widget auf einer Webseite zu veröffentlichen.
+
+Dieser Bereich hilft Ihnen, Ihren Agenten außerhalb von Callin verfügbar zu machen und ihn über Ihre Website, Landingpage, Support-Seite, Ihr Kundenportal oder jede andere Seite zugänglich zu machen, auf der Sie Sprache, Chat oder beides anbieten möchten.
+
+Das **Website-Widget** kombiniert zwei Arten von Setup: die technische Integration des Widgets auf Ihrer Website und die visuelle sowie textliche Anpassung des Erlebnisses.
+
+### Was Sie im Website-Widget tun können
+
+In diesem Bereich können Sie das Integrations-Snippet des Widgets kopieren, wählen, ob das Widget eingebettet oder als schwebender Starter erscheint, das Widget-Thema auswählen, festlegen, ob die Interaktion per Sprache, Chat oder beidem erfolgt, die visuelle Größe des Dials anpassen, Echtzeit-Transkription aktivieren oder deaktivieren, die Stummschaltfläche ein- oder ausblenden, Farben anpassen und den sichtbaren Text des Widgets bearbeiten.
+
+### Einbettungssnippet
+
+Das **Einbettungssnippet** ist der Block, mit dem Sie das Widget in Ihre Website integrieren.
+
+Hier erhalten Sie den Ausschnitt, der in das HTML der Seite kopiert und eingefügt werden muss, auf der der Agent erscheinen soll. Die Schaltfläche **Kopieren** kopiert das Snippet, damit Sie es direkt in Ihre Website einfügen können.
+
+### Wo das Snippet platziert werden soll
+
+Fügen Sie das Snippet in den Teil des HTMLs ein, an dem das Widget erscheinen soll.
+
+Wenn der gewählte Modus **Inline-Einbettung** ist, platzieren Sie es genau dort, wo das Widget gerendert werden soll. Wenn der gewählte Modus **Schwebender Starter** ist, platzieren Sie es nahe dem Ende des Seiteninhalts, damit es als schwebender Einstiegspunkt funktioniert.
+
+### Layout und Verhalten
+
+**Layout und Verhalten** steuert, wie das Widget eingebettet wird und wie Besucher damit interagieren.
+
+### Widget-Modus
+
+Der **Widget-Modus** definiert, wie das Widget auf Ihrer Website erscheint. Die verfügbaren Optionen sind **Inline-Einbettung** und **Schwebender Starter**.
+
+- **Inline-Einbettung** rendert das vollständige Widget direkt in der Seite, genau an der Stelle, an der Sie das Snippet platzieren.
+- **Schwebender Starter** zeigt einen schwebenden Einstiegspunkt, der das Widget öffnet, wenn der Besucher darauf klickt.
+
+### Thema des eingebetteten Widgets
+
+Das **Thema des eingebetteten Widgets** steuert das gesamte visuelle Thema des öffentlichen Widgets. Die verfügbaren Optionen sind **App-Thema übernehmen**, **Hell** und **Dunkel**.
+
+Wählen Sie das Thema passend zum tatsächlichen Design Ihrer Website. Lesbarkeit und Markenkonsistenz sollten immer an erster Stelle stehen.
 
 ### Gesprächsmodus
 
-In diesem Teil legst du fest, ob die Interaktion per Sprache, per Text oder mit beiden Möglichkeiten erfolgt, je nachdem, was in deinem Konto verfügbar ist.
+Der **Gesprächsmodus** definiert, wie Besucher mit dem Widget interagieren können. Die verfügbaren Optionen sind **Nur Sprache**, **Nur Chat** und **Sprache + Chat**.
 
-### Erscheinungsbild
+- **Nur Sprache** beschränkt die Interaktion auf Sprache.
+- **Nur Chat** beschränkt die Interaktion auf Text.
+- **Sprache + Chat** ermöglicht Nutzern die Interaktion sowohl per Sprache als auch per Chat.
 
-Weiter unten kannst du visuelle Details anpassen, zum Beispiel:
+### Darstellung
 
-- Größe
-- Farben
-- Transkription in Echtzeit
-- Stummschalttaste
-- allgemeiner Stil
+Die **Darstellung** steuert den visuellen Stil des Widget-Dials und des Starters.
 
-Das hilft dabei, das Widget besser an deine Marke anzupassen.
+### Widget-Variante und Dial-Größe
 
-### Beschriftungen und Texte
+Die **Widget-Variante** definiert die grundlegende visuelle Größe des Widgets. Die verfügbaren Optionen sind **Sehr klein**, **Kompakt** und **Voll**.
 
-Du kannst außerdem sichtbare Texte im Widget anpassen, zum Beispiel:
+Die **Dial-Größe** erlaubt es Ihnen, die minimale und maximale Größe des Dials in Pixeln festzulegen.
 
-- Haupttext
-- Text zum Starten eines Anrufs
-- Text zum Starten eines Chats
-- Verbindungstext
-- Hörtext
-- Abschlusstext
-- Chat-Texte
-- leere Meldungen
-- Hilfetexte
+### Echtzeit-Transkription und Stummschaltfläche
 
-So kannst du das Erlebnis an den tatsächlichen Ton deines Unternehmens anpassen.
+Die **Echtzeit-Transkription** steuert, ob das Widget während des laufenden Gesprächs eine Live-Transkription anzeigt.
 
-### Speichern und testen
+**Stummschaltfläche anzeigen** steuert, ob das Widget eine Schaltfläche zum Stummschalten und Aktivieren des Mikrofons während des Anrufs anzeigt.
 
-Bevor du das Widget veröffentlichst, empfiehlt sich diese Reihenfolge:
+### Orb-Farben
 
-1. Änderungen speichern
-2. prüfen, ob Fehler vorhanden sind
-3. einen echten Test durchführen
-4. bestätigen, dass Text, Stimme und Aktionen wie erwartet funktionieren
+**Primärfarbe des Orbs** und **Sekundärfarbe des Orbs** definieren die Hauptfarben des Widgets.
 
-> **Tipp:** Teste das Widget so, als wärst du ein echter Besucher. Prüfe sowohl den normalen Ablauf als auch weniger ideale Fälle wie Unterbrechungen, unklare Anfragen oder Fragen außerhalb des Zuständigkeitsbereichs des Agenten.
+Verwenden Sie Farben, die zu Ihrer Marke passen und genügend Kontrast bieten, damit Lesbarkeit und ein sauberes visuelles Erlebnis erhalten bleiben.
+
+### Dial-Beschriftungen
+
+**Dial-Beschriftungen** ermöglichen es Ihnen, den Text anzupassen, der je nach Interaktionsstatus in der Mitte des Dials angezeigt wird.
+
+- **Mitte inaktiv**
+- **Mitte verbindet**
+- **Mitte hört zu**
+- **Mitte Unterbrechung**
+
+### Textbeschriftungen
+
+**Textbeschriftungen** ermöglichen es Ihnen, verschiedene allgemeine Texte der Benutzeroberfläche anzupassen.
+
+- **Hauptbeschriftung**
+- **Anruf starten**
+- **Chat starten**
+- **Anruf beenden**
+- **Chat-Status**
+- **Platzhalter für eine neue Unterhaltung**
+
+### Chat-Oberflächenbeschriftungen
+
+**Chat-Oberflächenbeschriftungen** ermöglichen es Ihnen, die spezifischen Texte des Chat-Erlebnisses anzupassen.
+
+- **Beschriftung Sprach-Tab**
+- **Beschriftung Chat-Tab**
+- **Chat-Titel**
+- **Chat-Untertitel**
+- **Chat-Status inaktiv, verbindend und live**
+- **Beschriftung Chat starten**
+- **Beschriftung Chat beenden**
+- **Leerer Chat-Zustand**
+- **Chat-Platzhalter inaktiv und aktiv**
+- **Beschriftung Chat senden**
+
+### Wie Sie das Widget an Ihren Anwendungsfall anpassen
+
+Für eine kommerzielle Landingpage können **Inline-Einbettung**, ein klares oder an das App-Thema angepasstes Design, **Sprache + Chat**, eine **Voll**-Variante und kontaktorientierte Texte gut funktionieren.
+
+Für Website-Support funktionieren **Schwebender Starter**, **Nur Chat** oder **Sprache + Chat**, eine **Kompakt**-Variante und hilfeorientierte Texte oft sehr gut.
+
+Für ein sprachzentriertes Erlebnis können **Inline-Einbettung**, **Nur Sprache**, ein größeres Dial, eine sichtbare Stummschaltfläche und einfache direkte Labels sehr gut funktionieren.
+
+### Bewährte Vorgehensweisen
+
+Wählen Sie den Widget-Modus entsprechend dem verfügbaren Platz auf Ihrer Website. Passen Sie das Thema an das tatsächliche Webdesign an. Verwenden Sie einen Gesprächsmodus, der zum erwarteten Nutzerverhalten passt. Prüfen Sie die Dial-Größe auf Desktop und Mobilgeräten. Aktivieren Sie die Echtzeit-Transkription, wenn Sie eine stärkere Unterstützung für Barrierefreiheit wünschen. Passen Sie Farben an, ohne die Lesbarkeit zu beeinträchtigen. Verwenden Sie klare, kurze und markenkonsistente Beschriftungen. Testen Sie das Widget immer auf einer echten Seite, bevor Sie veröffentlichen.
+
+> **Tipp:** Testen Sie das Widget vor der Veröffentlichung auf der echten Seite, auf der es eingebunden wird. Größe, Farben und Beschriftungen wirken außerhalb des Editors oft anders.
+
+## Abschnitt 7: Erweitert
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia8.png"
+    alt="Der Tab Erweitert mit Sprachverständnis, Verhalten bei Stille, Datenschutzoptionen und leistungsspezifischen Telefoneinstellungen."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Erweitert, in dem Sie Zuhören, Umgang mit Stille, Datenschutz und Telefonieleistung fein abstimmen.
+</p>
+
+Der Tab **Erweitert** bündelt die Feineinstellungen des Agenten. Hier konfigurieren Sie, wie der Agent zuhört, wie er Gespräche interpretiert, wie er mit Stille umgeht, wie er Anrufdaten behandelt und wie er die Leistung in ausgehenden Telefonszenarien optimiert.
+
+Dieser Bereich wird besonders wichtig, wenn Sie das Verhalten des Agenten präziser abstimmen möchten.
+
+**Erweitert** ist in vier Hauptblöcke unterteilt: **Stimme und Verständnis**, **Gesprächsfluss**, **Datenschutz und Daten** und **Telefonie-Extras**.
+
+### Stimme und Verständnis
+
+**Stimme und Verständnis** ermöglicht es Ihnen, anzupassen, wie der Agent Audio erfasst und wie bestimmte Begriffe während eines Gesprächs priorisiert werden.
+
+Dieser Block ist besonders nützlich, wenn der Agent mit bestimmten Wörtern, Namen, Marken, Fachbegriffen, Zahlen oder Vokabular arbeitet, die genauer erkannt werden sollen.
+
+### Qualität der Spracherfassung
+
+Die **Qualität der Spracherfassung** definiert das Audioformat, das der Agent zur Verarbeitung von Sprache verwendet.
+
+Die verfügbaren Optionen umfassen **PCM 8000 Hz**, **PCM 16000 Hz**, **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** und **ulaw 8000 Hz**.
+
+**PCM 16000 Hz** erscheint als empfohlene Option. **ulaw 8000 Hz** ist für Telefonszenarien ausgelegt.
+
+**PCM 16000 Hz** ist für die meisten Setups der beste Ausgangspunkt.
+
+### Priorisierte Schlüsselwörter
+
+**Priorisierte Schlüsselwörter** ermöglichen es Ihnen, Begriffe hinzuzufügen, die das System bevorzugt behandeln soll, um die Erkennungsgenauigkeit zu verbessern.
+
+Dieses Feld hilft dem Agenten, wichtige Wörter zuverlässiger zu erkennen, zum Beispiel Marken, Firmennamen, Produktnamen, branchenspezifische Begriffe, Akronyme, Codes, ungewöhnliche Nachnamen oder internes Vokabular.
+
+### Gesprächsfluss
+
+Der **Gesprächsfluss** steuert den Gesprächsrhythmus des Agenten.
+
+Dieser Block wird verwendet, um anzupassen, wie schnell der Agent in das Gespräch einsteigt, wie lange er vor einer Antwort wartet, wie er sich verhält, wenn jemand langsam buchstabiert, und wann er einen Anruf nach Stille beenden soll.
+
+### Reaktionsgrad
+
+Der **Reaktionsgrad** steuert, wie schnell der Agent in das Gespräch einsteigt, nachdem der Anrufer aufgehört hat zu sprechen. Die verfügbaren Optionen sind **Geduldig**, **Normal** und **Eifrig**.
+
+**Geduldig** lässt den Agenten länger warten, bevor er antwortet. **Normal** bietet ein Gleichgewicht zwischen Geschwindigkeit und Natürlichkeit. **Eifrig** lässt den Agenten schneller antworten.
+
+### Buchstabiergeduld
+
+Die **Buchstabiergeduld** macht den Agenten geduldiger, wenn ein Anrufer Namen, E-Mail-Adressen oder Identifikationsnummern langsam buchstabiert. Die verfügbaren Optionen sind **Auto** und **Aus**.
+
+**Auto** ist die empfohlene Option, wenn der Agent Informationen sammeln muss, die oft buchstabiert oder langsam gesprochen werden.
+
+### Gesprächszug nach Stille übernehmen
+
+**Gesprächszug nach Stille übernehmen** definiert, wie viele Sekunden der Agent warten soll, nachdem der Anrufer aufgehört hat zu sprechen, bevor er seinen Einsatz übernimmt.
+
+### Gespräch nach Stille beenden
+
+**Gespräch nach Stille beenden** definiert die Dauer der Stille, nach der der Anruf automatisch beendet wird, wenn der Anrufer nicht mehr antwortet.
+
+### Maximale Gesprächsdauer
+
+Die **Maximale Gesprächsdauer** definiert die maximal zulässige Länge eines einzelnen Anrufs.
+
+### Datenschutz und Daten
+
+**Datenschutz und Daten** steuert, wie Anrufdaten verarbeitet werden, und hilft Ihnen, operative Qualität, interne Überprüfung, Datenschutz und Compliance auszubalancieren.
+
+### Anrufe aufzeichnen
+
+**Anrufe aufzeichnen** erlaubt es dem System, Gesprächstranskripte und Audio sicher zu speichern.
+
+Aktivieren Sie diese Option nur, wenn sie mit Ihren internen Richtlinien für Datenschutz, Speicherung und Compliance übereinstimmt.
+
+### Telefonie-Extras
+
+**Telefonie-Extras** bündeln telefonspezifische Einstellungen, insbesondere solche, die auf die Verbesserung der Leistung bei ausgehenden Anrufen ausgerichtet sind.
+
+### Nummernrotation
+
+Die **Nummernrotation** rotiert automatisch zwischen den verfügbaren Telefonnummern.
+
+Das hilft, das Risiko zu verringern, dass eine Nummer als Spam markiert wird, verteilt das Anrufvolumen auf mehrere Nummern, verbessert die Zustellbarkeit und macht ausgehende Abläufe widerstandsfähiger.
+
+### Telefonnummern auswählen und Anrufe pro Nummer
+
+**Telefonnummern auswählen** ermöglicht es Ihnen, festzulegen, welche Nummern an der Rotation teilnehmen. Wenn die **Nummernrotation** aktiviert ist, muss mindestens eine Nummer ausgewählt sein.
+
+**Anrufe pro Nummer** definiert, wie viele Anrufe das System von einer Nummer aus tätigt, bevor es zur nächsten Nummer in der Rotation wechselt.
+
+### Bundesstaatenbasierte Einschränkung
+
+Die **Bundesstaatenbasierte Einschränkung** begrenzt Anrufe so, dass der Agent mit einer lokalen Nummer aus demselben Bundesstaat wie der Kontakt wählt.
+
+Diese Funktion ist für US-Ortsnummern ausgelegt und erfordert kompatible lokale Nummern im Konto.
+
+### Bewährte Vorgehensweisen
+
+Verwenden Sie **PCM 16000 Hz** als Ausgangspunkt. Fügen Sie **Priorisierte Schlüsselwörter** nur für wirklich wichtige Begriffe hinzu. Belassen Sie den **Reaktionsgrad** auf **Normal**, es sei denn, der Anwendungsfall erfordert eindeutig einen anderen Rhythmus. Aktivieren Sie **Buchstabiergeduld**, wenn der Agent sensible oder buchstabierte Daten sammelt. Prüfen Sie die Stille-Einstellungen sorgfältig. Verwenden Sie **Anrufe aufzeichnen** nur, wenn es zu Ihren internen Richtlinien passt. Aktivieren Sie die **Nummernrotation** nur, wenn Sie tatsächlich mehrere nützliche Nummern zur Verfügung haben. Bestätigen Sie, dass die **Bundesstaatenbasierte Einschränkung** in Ihrem Konto wirklich unterstützt wird, bevor Sie sie aktivieren.
+
+> **Wichtig:** Erweiterte Einstellungen sind am nützlichsten, wenn Sie sie aus einem klaren Grund ändern und das Ergebnis mit echten Anrufen testen.
