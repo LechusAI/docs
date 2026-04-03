@@ -1,0 +1,59 @@
+---
+title: Introduction
+description: Build, manage, and monitor AI voice agents using the Callin public API
+---
+
+The Callin API lets you programmatically integrate AI voice agents into your product. Use it to create and configure agents, manage their knowledge bases, trigger calls, and retrieve call logs and transcripts — all over a simple REST interface.
+
+**Base URL**
+
+```
+https://api.callin.io/api
+```
+
+All endpoints are rooted under `/public`, for example:
+
+```
+https://api.callin.io/api/public/v1/agents
+```
+
+## Authentication
+
+All endpoints (except the health check) require an API key. You can find yours in **Profile → API Key** on the Callin dashboard.
+
+Pass it in either of these ways:
+
+**Header**
+```http
+x-api-key: <your-api-key>
+```
+
+**Bearer token**
+```http
+Authorization: Bearer <your-api-key>
+```
+
+> **Regenerating your API key** — You can regenerate your key from the same Profile → API Key section. Note that regenerating immediately invalidates your previous key, so make sure to update it everywhere it's in use before regenerating.
+
+> The health check endpoint `GET /public/health` is unauthenticated and can be used to verify connectivity.
+
+## Response format
+
+All responses are JSON and follow a consistent envelope:
+
+| Field | Description |
+|---|---|
+| `success` | `true` or `false` |
+| `data` | The returned resource or result |
+| `error` | Error message if `success` is `false` |
+| `pagination` | Present on list endpoints |
+
+## Try it interactively
+
+Every endpoint page includes an API playground. Select a server, add your API key, and fire live requests directly from the docs — no separate tool needed.
+
+## What you can build
+
+- **AI voice agents** — create, update, and manage agents and their behavior
+- **Knowledge bases** — upload and manage the content your agents use during calls
+- **Call logs & transcripts** — retrieve records and transcripts for every call
