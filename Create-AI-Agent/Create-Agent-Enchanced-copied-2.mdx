@@ -1,588 +1,954 @@
 ---
-title: "Agents d’IA"
-description: "Créez, organisez et configurez des agents d’IA pour les appels téléphoniques et les conversations sur votre site web."
+title: "Agents IA"
+description: "Créez, organisez et configurez des agents IA pour les appels téléphoniques et les conversations sur site web."
 ---
 
-[Ouvrir la page Agents d’IA dans Callin](https://app.callin.io/agents)
+[Ouvrir la page Agents IA dans Callin](https://app.callin.io/agents)
+
+La page **Agents IA** est l’espace principal pour créer, organiser et configurer des agents dans Callin pour les appels téléphoniques et les conversations sur site web. Depuis cet espace, vous pouvez créer de nouveaux agents, modifier des agents existants, connecter des sources de connaissances, attribuer des outils, automatiser des actions, publier un widget web et affiner le comportement avancé.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents1.png"
-    alt="La page principale des agents d’IA avec des filtres, une barre de recherche et le bouton pour créer un nouvel agent."
+    src="/images/agentesia1.png"
+    alt="L’éditeur Agents IA affichant l’espace principal avec les onglets de navigation de l’agent et la zone principale de configuration."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : la vue principale des agents d’IA, où vous pouvez consulter les agents existants, les filtrer par direction, les rechercher par nom et en créer un nouveau.
+  Capture : l’espace de travail Agents IA, où vous configurez le comportement principal de l’assistant et naviguez entre toutes les sections de l’agent depuis une seule page.
 </p>
 
-## Vue d’ensemble
+## Vue d’ensemble des Agents IA
 
-La page **Agents d’IA** est le point de départ pour créer et gérer les agents de votre compte. Depuis cette page, vous pouvez voir tous vos agents au même endroit, ouvrir n’importe lequel pour le modifier et repérer rapidement les configurations encore incomplètes.
+La page **Agents IA** est l’espace principal pour créer et gérer des agents dans Callin. Depuis cet espace, vous pouvez voir tous vos agents au même endroit, identifier lesquels sont entrants ou sortants, ouvrir n’importe quelle configuration pour la modifier et créer de nouveaux agents pour différents flux métier.
 
-Dans cette vue, vous pouvez généralement :
+Cette page est particulièrement utile lorsque vous souhaitez créer un nouvel agent pour les appels ou les conversations sur le web, séparer les agents par objectif, retrouver rapidement une configuration existante et détecter des configurations incomplètes avant la mise en production.
 
-- créer un nouvel agent
-- filtrer les agents selon le type d’appel
-- rechercher un agent par nom
-- vérifier si un agent possède déjà un numéro attribué
-- accéder directement à la configuration pour terminer les réglages
+Dans la vue liste, vous pouvez généralement consulter le nom de l’agent, le sens d’appel, l’étiquette de langue, la date de création et les icônes d’action. Vous pouvez aussi voir des avertissements, comme un numéro de téléphone manquant, ce qui vous aide à repérer des configurations incomplètes avant d’utiliser l’agent en production.
 
-C’est particulièrement utile lorsque vous gérez plusieurs parcours différents. Par exemple, une clinique peut avoir un agent pour rappeler les rendez-vous, un autre pour répondre aux appels entrants et un autre pour relancer les opportunités perdues. Les séparer par fonction rend les tests, les vérifications et les modifications futures beaucoup plus simples.
+Pour créer un nouvel agent, ouvrez la page Agents IA, cliquez sur **Créer un agent**, choisissez si vous voulez partir de zéro ou utiliser un modèle, saisissez le nom de l’agent, puis confirmez la création.
 
-Pour créer un nouvel agent, cliquez sur le bouton de création, choisissez si vous souhaitez partir de zéro ou utiliser un modèle, saisissez un nom clair, puis confirmez la création.
+Cette page comprend :
 
-> **Conseil :** Utilisez des noms qui décrivent le rôle réel de l’agent, comme **Agent de rappel de rendez-vous** ou **Agent de qualification des patients**, plutôt que des noms génériques comme « Test ».
+- **Agent**
+- **Flux de travail**
+- **Base de connaissances**
+- **Outils**
+- **Action d’appel**
+- **Widget web**
+- **Avancé**
 
-## Section 1 : Configuration de l’agent
+> **Conseil :** Une configuration Agents IA bien structurée est plus facile à tester, plus facile à maintenir et beaucoup plus sûre à mettre en production.
+
+## Section 1 : Agent
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agents2.png"
-    alt="La section de configuration de l’agent avec la direction des appels, la durée maximale, le message d’accueil, les instructions de conversation, les variables, la base de connaissances, les outils et les paramètres d’appel."
+    src="/images/agentesia2.png"
+    alt="L’onglet Agent affichant l’éditeur du prompt de conversation, les paramètres de voix, les réglages de langue et la configuration du modèle."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : la première section de configuration, où vous définissez le comportement principal de l’agent, la façon dont l’appel commence et les ressources qu’il peut utiliser.
+  Capture : l’onglet Agent, où vous définissez comment l’assistant doit se comporter, parler, répondre et fonctionner pendant un appel.
 </p>
 
-Cette première section constitue la base de toute la configuration. C’est ici que vous définissez le rôle de l’agent, sa manière de parler, son objectif et les éléments supplémentaires qu’il peut utiliser pendant l’appel.
+L’onglet **Agent** définit la configuration principale de votre assistant. C’est ici que vous définissez comment il doit se comporter pendant un appel, comment il doit ouvrir la conversation, quelle voix il utilisera, quelles langues il peut gérer, quel modèle d’IA générera les réponses et s’il fonctionnera avec des appels entrants, sortants ou les deux.
 
-## Direction de l’appel
+Une configuration solide dans cet onglet crée des interactions plus claires, plus naturelles et plus cohérentes. Une configuration générique entraîne généralement des ouvertures plus faibles, des réponses moins précises et une expérience client moins maîtrisée.
 
-Le premier réglage est **Direction de l’appel**. Cela définit si l’agent est utilisé pour **passer des appels, répondre aux appels ou faire les deux avec la même configuration**.
+### Prompt de conversation
 
-Vous pouvez choisir :
+Le **Prompt de conversation** est l’ensemble principal d’instructions de l’agent. C’est ici que vous définissez la logique de conversation, l’identité, le contexte de travail, le ton et les limites opérationnelles.
 
-- **Sortant** si l’agent va appeler les utilisateurs.
-- **Entrant** si l’agent va répondre aux appels entrants.
-- **Dans les deux sens** si le même agent doit gérer les deux cas d’usage.
+Ce bloc détermine comment l’agent interprète l’appel et comment il doit répondre. C’est la base interne qui guide le comportement du modèle pendant la conversation.
 
-Choisissez cette option en fonction du flux de travail réel, et pas seulement en fonction de ce qui semble plus flexible. Un agent de rappel de paiement est généralement **sortant**, tandis qu’un standard, une ligne d’assistance ou une ligne de réservation est généralement **entrant**.
+La structure recommandée est celle qui est déjà organisée dans le prompt lui-même. Les sections de base sont **Personnalité**, **Environnement** et **Ton**. À partir de là, le prompt doit continuer avec des règles opérationnelles et des restrictions claires.
 
-Avec **Sortant**, l’agent commence la conversation. Cela signifie généralement que le premier message est plus direct et orienté vers un objectif, parce que l’agent sait déjà pourquoi il appelle. Par exemple, un agent sortant peut appeler pour confirmer un rendez-vous, faire le suivi d’un devis, rappeler à un client une facture impayée ou qualifier un nouveau prospect après l’envoi d’un formulaire.
+- Définissez qui est l’agent et quel rôle il joue.
+- Décrivez l’environnement dans lequel il opère.
+- Définissez le ton que l’agent doit maintenir.
+- Expliquez ce que l’agent doit prioriser dans chaque réponse.
+- Indiquez ce que l’agent doit éviter.
+- Précisez comment l’agent doit utiliser la base de connaissances.
+- Définissez comment la conversation doit progresser.
 
-Un exemple simple d’usage sortant serait un assistant de clinique appelant un patient pour confirmer le rendez-vous du lendemain. Dans ce cas, l’ouverture peut aller directement à l’essentiel, car l’appel a un objectif clair dès le départ.
+### Comment bien rédiger le prompt
 
-Avec **Entrant**, c’est l’utilisateur qui commence la conversation. Cela signifie que l’agent doit être prêt à comprendre différentes intentions, à guider la personne qui appelle et à poser des questions de clarification avant d’avancer. Les agents entrants sont courants pour les flux d’accueil, les lignes de réservation, l’assistance de base, les questions sur les horaires d’ouverture et le filtrage du premier contact.
+Un bon prompt donne à l’agent un rôle clair, un contexte clair et une logique de décision claire. Il doit être opérationnel, pas décoratif.
 
-Un exemple simple d’usage entrant serait la ligne d’une clinique dentaire, où les appelants peuvent vouloir réserver, reprogrammer, poser une question sur les horaires d’ouverture ou vérifier si un traitement est disponible. Dans ce scénario, l’agent doit sembler ouvert et utile, car il ne connaît pas à l’avance la raison de l’appel.
+Pour les agents de support, une structure pratique consiste à définir l’assistant comme un agent de support de premier niveau, à expliquer qu’il aide les utilisateurs de la plateforme et à lui indiquer de s’appuyer sur la base de connaissances tout en répondant de façon calme, concise et étape par étape.
 
-Avec **Dans les deux sens**, le même agent gère les appels sortants et entrants. Cela est utile lorsque le flux de travail est très similaire dans les deux cas et que le même ton, le même objectif et la même logique fonctionnent bien dans les deux situations.
+- Posez une seule question de clarification à la fois.
+- Orientez toujours l’utilisateur vers l’étape utile suivante.
+- Utilisez la base de connaissances pour les réponses de référence.
+- Extrayez uniquement les informations nécessaires à l’étape en cours.
+- Gardez les réponses brèves, sauf si l’utilisateur demande plus de détails.
 
-> **Important :** Un agent **Dans les deux sens** utilise le **même message d’accueil** et le **même scénario** pour les appels entrants comme pour les appels sortants.
+### Ce que l’agent doit éviter
 
-C’est un point de confusion très fréquent. Certains utilisateurs pensent qu’ils doivent ajouter un message d’accueil et un scénario pour les appels entrants, puis un autre message d’accueil et un autre scénario pour les appels sortants dans le même agent. Ce n’est **pas** ainsi que cette configuration fonctionne.
+Le prompt doit aussi limiter les comportements qui nuisent à l’expérience.
 
-Lorsque vous choisissez **Dans les deux sens**, vous créez **un seul agent** avec **un comportement partagé**. Cela signifie que le message d’accueil et le scénario doivent être rédigés de manière plus neutre afin d’avoir du sens aussi bien si l’appel a été lancé par l’agent que s’il a été lancé par l’utilisateur.
+- Les longs monologues.
+- Plusieurs questions dans un seul tour.
+- Les répétitions inutiles.
+- Inventer des réponses lorsque l’information n’est pas claire.
+- Forcer une démarche de dépannage lorsque le cas devrait être transmis.
 
-Par exemple, un message d’accueil neutre peut fonctionner dans les deux cas s’il présente clairement l’entreprise puis s’adapte naturellement à la conversation. Le scénario doit également éviter les suppositions qui ne conviennent qu’à une seule direction. Si le scénario dit quelque chose de trop précis comme « Je vous appelle pour vous rappeler votre facture impayée », cela peut sembler inadapté dans un appel entrant où le client a appelé d’abord pour une autre raison.
+### Variables dynamiques dans le prompt
 
-Une meilleure façon de travailler dans les deux sens est de rendre l’agent flexible. Par exemple, un assistant immobilier peut saluer l’appelant, identifier l’entreprise, puis continuer selon que la conversation porte sur le suivi d’une demande précédente concernant un bien ou sur une nouvelle question entrante au sujet de la disponibilité.
+Le **Prompt de conversation** prend en charge des variables dynamiques dans le texte. Ces variables vous permettent de réutiliser la même logique avec des valeurs différentes sans réécrire tout le prompt.
 
-Un autre exemple est celui d’un petit salon qui souhaite utiliser un seul agent pour répondre aux questions entrantes et rappeler les clients au sujet de la planification. Cela peut fonctionner avec **Dans les deux sens** si le même ton général et le même déroulé conviennent aux deux situations.
+Le menu **Ajouter des variables** comprend des variables système, des variables personnalisées et l’option pour créer une nouvelle variable. Lorsque vous créez une nouvelle variable, elle est insérée directement dans le prompt et devient disponible dans **Variables dynamiques**, où vous lui attribuez sa valeur.
 
-> **Conseil :** Si l’agent doit se comporter différemment selon la direction de l’appel, il est généralement préférable de créer **deux agents distincts** : un pour **Entrant** et un pour **Sortant**.
+Cela est utile pour des valeurs comme le nom de l’agent, le nom de l’entreprise, la ville, le nom du service, le nom du professionnel ou le nom du lieu.
 
-C’est la meilleure option lorsque chaque direction a besoin d’une ouverture différente, d’un ton différent, d’objectifs différents ou d’une logique de qualification différente. Par exemple, un agent commercial qui effectue des appels sortants de suivi peut avoir besoin d’un scénario plus persuasif et structuré, tandis qu’un agent d’accueil pour les appels entrants peut avoir besoin d’un déroulé plus calme et plus ouvert.
+### Fuseau horaire et personnalité par défaut
 
-Un autre bon exemple est un processus de recouvrement de dettes. La version sortante peut nécessiter un rappel très précis et conforme, tandis que la version entrante peut devoir vérifier l’identité en premier puis répondre aux questions liées au paiement. Même si les deux font partie du même processus métier, ils fonctionnent généralement mieux comme agents séparés.
+Le **Prompt de conversation** inclut un sélecteur de fuseau horaire. Ce réglage définit le contexte temporel que l’agent utilisera lorsqu’il devra interpréter des heures, des dates, des disponibilités ou des références comme aujourd’hui, demain ou cet après-midi.
 
-> **Erreur fréquente :** Choisir **Dans les deux sens** simplement pour couvrir plus de cas, même lorsque l’expérience entrante et l’expérience sortante devraient être différentes.
+Choisissez toujours le fuseau horaire réel de l’entreprise ou du service représenté par l’agent.
 
-En règle générale, utilisez **Dans les deux sens** seulement lorsqu’un seul message d’accueil partagé et un seul scénario partagé peuvent réellement bien gérer les deux types d’appel. Sinon, créez un agent par direction afin que chaque expérience paraisse naturelle et intentionnelle.
-
-### Durée maximale de l’appel
-
-La durée maximale de l’appel détermine combien de temps une conversation peut durer avant de se terminer automatiquement.
-
-Cela vous aide à :
-
-- garder des appels efficaces
-- éviter les conversations trop longues
-- mieux contrôler l’utilisation
-
-À titre indicatif, un appel de rappel court peut nécessiter entre **3 et 5 minutes**, tandis qu’un appel de réservation ou de qualification peut nécessiter entre **5 et 10 minutes**.
+La même zone inclut aussi le contrôle de **personnalité par défaut**. Ce réglage fait partie du comportement de base de la personnalité et doit être revu avec le prompt afin que l’expérience finale corresponde au comportement que vous souhaitez offrir.
 
 ### Message d’accueil
 
-Le message d’accueil est la première chose que la personne entend au début de l’appel. Il doit être court, clair et lié au rôle réel de l’agent.
+Le **Message d’accueil** définit les premiers mots prononcés par l’agent lorsque la conversation commence. Il présente l’assistant et indique immédiatement quel type d’aide est disponible.
 
-Une structure simple fonctionne souvent très bien :
+Un bon message d’accueil identifie l’assistant, explique l’objectif de l’interaction et invite l’utilisateur à poursuivre.
 
-- salutation
-- présentation
-- raison de l’appel
-- invitation à continuer
+- **Exemple support :** Bonjour, je suis l’assistant de support. Dites-moi ce dont vous avez besoin et je vous aiderai étape par étape.
+- **Exemple rendez-vous :** Bonjour, je suis l’assistant de rendez-vous. Je peux vous aider à réserver, modifier ou annuler un rendez-vous.
+- **Exemple réception :** Bonjour, merci d’avoir appelé. Je suis l’assistant virtuel et je vais vous aider pour votre demande.
 
-Exemple :
+### Autoriser les interruptions
 
-**Bonjour, je vous appelle de la clinique Northwind pour vous aider à confirmer votre prochain rendez-vous. Est-ce que c’est un bon moment pour continuer ?**
+**Autoriser les interruptions** permet à l’utilisateur d’interrompre l’agent pendant qu’il parle. Lorsqu’il est activé, l’interaction semble plus fluide et plus naturelle.
 
-Si vous utilisez des variables dynamiques, vous pouvez réutiliser la même structure dans plusieurs agents sans devoir tout réécrire à chaque fois.
-
-### Instructions de conversation
-
-Les instructions de conversation sont l’une des parties les plus importantes de la configuration. Alors que le message d’accueil ouvre l’appel, ces instructions définissent le comportement de l’agent pendant tout le reste de l’échange.
-
-Une manière simple de le comprendre est la suivante :
-
-- le **message d’accueil** démarre la conversation
-- les **instructions de conversation** guident tout ce qui se passe ensuite
-
-L’exemple affiché par défaut dans Callin est utile parce qu’il montre une structure recommandée. Il n’est pas nécessaire de le recopier tel quel, mais il est important de comprendre pourquoi il est organisé de cette façon.
-
-#### Structure habituelle
-
-L’exemple de base est généralement divisé en blocs comme :
-
-- personnalité
-- contexte
-- ton
-- objectif
-- limites
-- outils
-
-Chaque bloc a un rôle précis.
-
-#### Personnalité
-
-Ici, vous expliquez qui est l’agent et comment il doit se présenter.
-
-Par exemple :
-
-- un assistant d’accueil
-- un assistant de réservation
-- un assistant de suivi
-- un assistant de qualification
-
-Cela aide l’agent à garder une identité cohérente pendant tout l’appel.
-
-#### Contexte
-
-Ici, vous expliquez dans quel contexte les conversations ont lieu.
-
-Par exemple :
-
-- des appels téléphoniques courts où la clarté est essentielle
-- des appels pour prendre des rendez-vous
-- des appels de suivi
-- des appels pour répondre à des questions simples
-
-Ce bloc aide l’agent à comprendre le type d’échange qu’il gère et à ne pas répondre comme un assistant générique.
-
-#### Ton
-
-Ici, vous définissez la manière dont l’agent doit s’exprimer.
-
-L’exemple par défaut montre clairement que, pour les appels vocaux, il est généralement préférable que l’agent :
-
-- parle de manière polie et concise
-- utilise de brèves confirmations
-- garde un ton chaleureux mais professionnel
-- fasse des pauses naturelles
-- énonce clairement les données structurées, comme les adresses électroniques
-
-C’est important parce qu’un appel téléphonique demande des réponses plus claires et plus directes qu’un échange écrit.
-
-#### Objectif
-
-Ici, vous expliquez ce que l’agent doit accomplir.
-
-Par exemple :
-
-- confirmer un rendez-vous
-- répondre aux questions fréquentes
-- recueillir des informations de base
-- qualifier un prospect
-- conduire la conversation vers l’étape suivante appropriée
-
-Sans objectif clair, l’agent peut bien s’exprimer sans pour autant remplir sa mission.
-
-#### Limites
-
-Ici, vous indiquez ce que l’agent ne doit pas faire.
-
-L’exemple de base montre des règles très utiles, comme :
-
-- ne pas partager d’informations sensibles
-- ne pas inventer de réponses
-- reconnaître ses limites lorsqu’il ne peut pas aider
-- rester calme si l’utilisateur se montre frustré
-- rester concentré sur le besoin réel de l’utilisateur
-
-Cette partie est essentielle si l’agent parle directement à des clients ou à des patients.
-
-#### Outils dans les instructions
-
-L’exemple comprend aussi un bloc qui indique si l’agent doit fonctionner uniquement par la conversation ou s’il peut s’appuyer sur des outils déjà configurés.
-
-Si l’agent doit tout résoudre en parlant, il est préférable de le dire clairement. S’il doit utiliser un outil, cet outil doit exister avant d’être associé à l’agent.
-
-### Comment bien rédiger les instructions de conversation
-
-De bonnes instructions doivent expliquer le travail de l’agent de manière claire et concrète.
-
-Au lieu d’écrire quelque chose de trop général comme :
-
-**Soyez utile et poli.**
-
-Il vaut mieux écrire quelque chose de plus précis, par exemple :
-
-**L’agent est un assistant téléphonique pour une clinique dentaire. Il doit aider à confirmer les rendez-vous, répondre aux questions simples sur les horaires, garder un ton poli et concis, et orienter la personne vers l’étape suivante lorsque la demande dépasse son périmètre.**
-
-Cela fonctionne mieux parce que cela définit :
-
-- qui est l’agent
-- quel type d’appel il gère
-- comment il doit s’exprimer
-- quel résultat il doit chercher
-- ce qu’il doit éviter
-
-### Optimiser les instructions
-
-À côté de la zone des instructions, Callin propose une option pour **optimiser les instructions**. Lorsque vous l’ouvrez, une fenêtre apparaît pour vous permettre d’indiquer le type d’amélioration que vous souhaitez appliquer au texte actuel.
-
-C’est utile lorsque vous avez déjà une base, mais que vous voulez l’améliorer sans tout réécrire depuis le début.
-
-Par exemple, vous pouvez demander au système de :
-
-- rendre le texte plus court et plus clair
-- utiliser un ton plus proche
-- ajouter une gestion des objections
-- donner une impression plus professionnelle
-- simplifier des instructions trop longues
-
-Un exemple pratique serait de demander quelque chose comme :
-
-**Rendez le texte plus concis, conservez un ton chaleureux et professionnel, et ajoutez une gestion plus claire des objections fréquentes.**
-
-Après l’optimisation, relisez toujours le résultat avant d’enregistrer afin de vérifier qu’il reste bien aligné sur le rôle réel de l’agent.
-
-> **Important :** L’optimisation aide à améliorer la rédaction, mais elle ne remplace pas une vérification humaine. Avant d’enregistrer, assurez-vous que le texte final correspond réellement au comportement souhaité.
+Il s’agit généralement d’un très bon réglage par défaut pour le support, l’accueil et le service client général. Si votre message d’ouverture contient une instruction critique qui doit être entendue jusqu’au bout, validez soigneusement ce réglage avant la mise en production.
 
 ### Variables dynamiques
 
-Les variables dynamiques vous permettent de réutiliser des informations comme le nom de l’agent ou celui de l’entreprise dans plusieurs parties de la configuration.
+**Variables dynamiques** regroupe les variables qui ont été insérées ainsi que la valeur attribuée à chacune. C’est ici que vous gérez l’aspect pratique de chaque variable : nom et valeur.
 
-C’est utile lorsque vous souhaitez conserver la même structure pour plusieurs agents et ne modifier que certaines valeurs.
-
-### Fuseau horaire et modèle
-
-Plus bas, vous pouvez configurer le fuseau horaire et le modèle utilisé par l’agent.
-
-Le fuseau horaire est important lorsque l’agent :
-
-- mentionne des horaires
-- planifie des rendez-vous
-- fait référence à des heures locales
-
-Le modèle influence la manière dont les réponses sont générées. Selon votre compte ou votre offre, certaines options peuvent varier.
-
-### Base de connaissances
-
-La base de connaissances fournit à l’agent des informations d’appui pour répondre avec plus de précision.
-
-Si vous ne l’avez pas encore configurée, vous devez d’abord le faire ici : [Base de connaissances](https://app.callin.io/knowledge-base)
-
-C’est l’endroit approprié pour ajouter du contenu comme :
-
-- des questions fréquentes
-- des politiques
-- des tarifs
-- des détails de service
-- des informations utiles pour répondre aux questions courantes
-
-Par exemple, une clinique peut y inclure ses horaires d’ouverture, ses règles d’annulation, les assurances acceptées et les consignes avant un rendez-vous.
-
-Une règle pratique est la suivante :
-
-- utilisez les **instructions de conversation** pour le comportement et les règles
-- utilisez la **base de connaissances** pour les faits et les informations de référence
-
-### Outils
-
-Les outils permettent à l’agent d’utiliser des fonctions supplémentaires pendant un appel.
-
-Si vous n’avez pas encore configuré l’outil, vous devez d’abord le faire ici : [Outils](https://app.callin.io/tools)
-
-C’est important, car l’agent ne peut pas utiliser correctement un outil qui n’existe pas encore ou qui n’a pas été préparé auparavant.
-
-Un déroulement recommandé est le suivant :
-
-1. configurer l’outil dans [Outils](https://app.callin.io/tools)
-2. revenir à l’agent
-3. associer l’outil
-4. tester la conversation complète
-
-Par exemple, si vous souhaitez que l’agent consulte une information externe ou exécute une action précise, vous devez d’abord préparer cet outil.
-
-### Paramètres d’appel
-
-Dans cette même section, vous pouvez aussi trouver des paramètres supplémentaires, comme :
-
-- l’enregistrement des appels
-- la détection de la messagerie vocale
-- l’option permettant à l’utilisateur de parler en premier
-
-Ces paramètres définissent plus finement l’expérience réelle une fois l’agent activé.
-
-> **Erreur fréquente :** Rédiger des instructions trop générales et penser que l’agent saura automatiquement quand utiliser un outil. L’objectif doit être clair dans les instructions et l’outil doit être configuré au préalable.
-
-## Section 2 : Voix et langue
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/agents3.png"
-    alt="La section voix et langue avec la langue principale, la langue secondaire, la voix sélectionnée, la vitesse et le niveau de variation."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : la deuxième section de configuration, où vous choisissez la façon dont l’agent s’exprime et comprend les utilisateurs.
-</p>
-
-La section voix et langue contrôle la manière dont l’agent parle et traite la conversation.
-
-### Langue principale et langue secondaire
-
-Commencez par choisir la langue principale. Elle doit correspondre à la langue que la majorité des personnes utilisera pour parler avec l’agent.
-
-Vous pouvez également ajouter une langue secondaire si l’agent doit prendre en charge plus d’une langue.
-
-Par exemple :
-
-- une clinique locale peut n’avoir besoin que d’une langue principale
-- une entreprise qui s’adresse à plusieurs publics peut combiner deux langues
+Cette section est particulièrement utile lorsque vous travaillez avec plusieurs clients, marques, lieux ou services et que vous souhaitez conserver la même structure d’agent tout en ne changeant que les données variables.
 
 ### Voix
 
-La voix définit la manière dont l’agent sonnera pendant l’appel.
+**Voix** définit la voix que l’agent utilisera pendant l’appel. La voix ne change pas la logique de l’assistant, mais elle influence fortement la perception de l’appel en matière de clarté, de confiance, de naturel et de ton global.
 
-Dans le sélecteur de voix, vous pouvez généralement :
+Cette section comprend une voix principale, l’option d’ajouter des voix supplémentaires, des contrôles spécifiques à la voix et des réglages communs de sortie et de latence.
 
-- filtrer par langue
-- filtrer par genre
-- choisir entre différents types de voix
-- écouter des aperçus
-- importer une voix depuis ElevenLabs
+- **Mode expressif** contrôle si la voix doit être plus expressive.
+- **Vitesse** contrôle la rapidité à laquelle la voix parle.
+- **Stabilité** contrôle l’équilibre entre expressivité et cohérence.
+- **Similarité** aide la voix à conserver une identité vocale plus cohérente.
 
-### Importer une voix ElevenLabs
+### Sélectionner une voix et des voix supplémentaires
 
-Vous pouvez aussi ajouter une voix personnalisée depuis **ElevenLabs** à cet agent sans quitter le sélecteur de voix. C’est utile si vous avez déjà créé une voix dans VoiceLab et que vous souhaitez utiliser cette même voix dans Callin.
+La sélection de la voix se gère depuis **Sélectionner une voix**. Ce panneau comprend **Explorer**, **Clonées** et **Ajouter**.
+
+**Explorer** contient le catalogue des voix disponibles, avec recherche, filtre par langue, filtre par genre et une courte description pour chaque voix.
+
+**Clonées** contient les voix clonées ou importées disponibles dans votre environnement.
+
+**Ajouter** vous permet d’importer une voix depuis ElevenLabs à l’aide d’un lien partagé et de lui attribuer un nom avant de l’ajouter à l’agent.
+
+**Ajouter une voix supplémentaire** est utile lorsqu’un agent a besoin de voix secondaires pour davantage de langues ou pour différents segments de clientèle.
+
+### Réglages de voix communs
+
+**Réglages de voix communs** comprend deux configurations globales : **format de sortie TTS** et **optimiser la latence du streaming**.
+
+Le **format de sortie TTS** définit le format de sortie de l’audio généré. **PCM 16000 Hz** apparaît comme l’option recommandée.
+
+**Optimiser la latence du streaming** contrôle l’équilibre entre vitesse de réponse et qualité audio. Une latence plus optimisée fait commencer l’agent plus vite, mais peut affecter la qualité audio.
+
+### Langue
+
+**Langue** définit la langue principale de l’agent et les langues supplémentaires qu’il peut gérer pendant la conversation.
+
+La langue par défaut est celle utilisée lorsque l’interaction commence. Les langues supplémentaires permettent au même agent de gérer des conversations multilingues.
+
+Activez uniquement les langues dont vous avez réellement besoin. Une configuration plus simple produit généralement un comportement plus stable.
+
+### Intelligence IA
+
+**Intelligence IA** définit le modèle de langage que l’agent utilisera pour comprendre l’utilisateur et générer des réponses. Ce réglage affecte directement la qualité de compréhension, la vitesse de réponse et la cohérence globale.
+
+Le modèle de langage est le cerveau conversationnel de l’assistant. Il comprend l’intention de l’utilisateur, maintient le contexte de l’appel, suit les règles définies dans le prompt, utilise la base de connaissances et génère la réponse appropriée à chaque tour.
+
+Les modèles affichés dans cette configuration incluent **Neuron 1.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, **Gemini 2.5 Flash** et **Claude Haiku 4.5**.
+
+Pour les agents axés sur les rendez-vous et les flux de planification, **Gemini 2.5** est la recommandation pratique.
+
+### Température
+
+La **Température** contrôle le niveau de variation que l’agent introduit dans ses réponses. Une température plus basse produit des réponses plus stables, plus ciblées et plus prévisibles. Une température plus élevée introduit davantage de variation et moins de contrôle.
+
+Pour les agents de support, de service, de rendez-vous et d’opérations, une température maîtrisée est généralement le bon choix.
+
+### Sens d’appel
+
+Le **Sens d’appel** définit comment l’agent participe au flux d’appel. Les modes disponibles sont **Sortant**, **Entrant** et **Les deux**.
+
+**Sortant** est utilisé pour les appels sortants comme les campagnes, rappels, confirmations et suivis. **Entrant** est utilisé pour les appels entrants comme le support, l’accueil, les rendez-vous, le service client ou l’information générale. **Les deux** permet au même agent de fonctionner dans les deux scénarios.
+
+### Enregistrement et validation
+
+**Enregistrer** stocke la configuration actuelle de l’agent. **Effacer** supprime ou annule les modifications actuelles non enregistrées.
+
+Chaque changement important doit être validé par des tests réels avant que la configuration ne soit considérée comme terminée. Cela comprend la vérification du message d’ouverture, l’écoute de la voix, la validation des langues actives, la confirmation du modèle sélectionné, la confirmation du sens d’appel et la révision des valeurs des variables dynamiques.
+
+> **Important :** Une bonne configuration Agent doit être claire dans un appel réel, pas seulement correcte dans l’éditeur.
+
+## Section 2 : Flux de travail
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/voices11.png"
-    alt="Fenêtre du sélecteur de voix affichant le sélecteur de langue, les champs d’importation depuis ElevenLabs, les filtres de genre, les filtres de type, la liste des voix disponibles et les boutons d’action en bas"
+    src="/images/agentesia3.png"
+    alt="Le canevas de Flux de travail avec des nœuds connectés, des conditions et la configuration des routes pour le flux de conversation."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : cette fenêtre vous permet de filtrer les voix disponibles et d’importer une voix personnalisée ElevenLabs à l’aide d’un lien de partage VoiceLab.
+  Capture : le canevas de Flux de travail, où vous construisez la logique de décision, les branches et la structure de routage de la conversation.
 </p>
 
-Dans cette fenêtre, vous verrez :
+Le **Flux de travail** définit la structure de décision de l’agent. Alors que l’onglet **Agent** définit l’identité globale de l’assistant, le **Flux de travail** détermine quel chemin la conversation doit suivre selon l’intention de l’utilisateur et la logique que vous concevez.
 
-- Un sélecteur de **langue** en haut. Dans cet exemple, la langue sélectionnée est **l’anglais**.
-- Une section pour **importer votre voix ElevenLabs** avec deux champs :
-  - Un champ pour coller le lien de partage VoiceLab.
-  - Un champ pour donner un nom à la voix importée dans votre espace de travail.
-- Un bouton pour **ajouter la voix** après avoir rempli les deux champs.
-- Un filtre de **genre** avec des options comme **tous**, **homme**, **femme** et **neutre**.
-- Un filtre de **type** avec des options comme **général** et **cloné**.
-- Une liste de voix disponibles sous les filtres, où chaque carte affiche le nom de la voix, une courte description et un bouton de lecture pour écouter un aperçu.
-- Des boutons en bas pour **réinitialiser tous les filtres** et **appliquer les filtres** aux résultats visibles.
+Cette section est l’endroit où vous créez les routes visuelles de conversation, les conditions, les transferts, les étapes d’outils et les fins qui organisent la progression de l’appel d’une étape à l’autre.
 
-### Comment importer la voix
+### Ce que vous pouvez faire dans Flux de travail
 
-1. Dans ElevenLabs, copiez le **lien de partage VoiceLab** de la voix que vous souhaitez utiliser.
-2. Dans Callin, ouvrez le **sélecteur de voix**.
-3. Collez le lien dans le champ du lien de partage.
-4. Saisissez un nom interne dans le champ prévu pour nommer la voix importée.
-5. Cliquez sur le bouton pour ajouter la voix.
-6. Une fois la voix ajoutée, sélectionnez-la pour l’agent et enregistrez vos modifications.
+Le **Flux de travail** vous permet de construire un chemin visuel pour la conversation. À partir d’un seul point d’entrée, vous pouvez créer des branches, envoyer l’appel vers un sous-agent spécialisé, le transférer à un autre agent ou à un numéro de téléphone, utiliser des outils et terminer la conversation lorsque la route ne doit pas continuer.
 
-> **Conseil :** Utilisez un nom interne clair comme **Voix support - Sofia** ou **Voix commerciale - Anglais chaleureux** afin que votre équipe puisse l’identifier rapidement.
+- Démarrer le flux depuis **Début**.
+- Créer plusieurs routes dans la même conversation.
+- Utiliser des sous-agents spécialisés.
+- Transférer l’appel à un autre agent.
+- Transférer l’appel à un numéro de téléphone.
+- Exécuter des outils qui existent déjà.
+- Clore la conversation avec un nœud **Fin**.
+- Contrôler chaque route avec une **condition LLM**.
 
-> **Important :** Les filtres visibles et les voix disponibles peuvent varier selon votre compte, votre langue ou votre forfait.
+### Comment le canevas est organisé
 
-> **Erreur fréquente :** Coller un lien ElevenLabs classique au lieu du **lien de partage VoiceLab** peut empêcher l’importation correcte de la voix.
+La zone principale de **Flux de travail** est un canevas visuel où vous placez des nœuds et reliez chaque nœud à l’étape suivante. Le flux commence à **Début** puis s’étend en une ou plusieurs routes.
 
-Lorsque vous choisissez la voix, pensez au type d’expérience que vous souhaitez transmettre. Un agent juridique peut mieux fonctionner avec une voix calme et assurée, tandis qu’un agent pour l’hôtellerie peut être plus efficace avec une voix plus proche et dynamique.
+Dans le coin supérieur gauche du canevas, les contrôles de zoom vous aident à naviguer dans le flux lorsque la logique devient plus complexe.
 
-### Vitesse
+### Début
 
-La vitesse contrôle le débit de parole de l’agent.
+**Début** est le point d’entrée du flux de travail. Chaque conversation commence ici. Ce nœud ne répond pas par lui-même et n’effectue pas d’actions directes. Son rôle est de lancer la route et d’envoyer la conversation vers le bon nœud suivant.
 
-- des valeurs plus basses rendent la voix plus lente
-- des valeurs plus élevées rendent la voix plus rapide
+L’onglet **Vue d’ensemble** explique le rôle de **Début** dans le flux. L’onglet **Connexions** liste chaque route sortante créée depuis **Début**, ainsi que chaque étiquette et nœud de destination.
 
-Le plus recommandé est généralement un point d’équilibre qui reste naturel et facile à suivre.
+### Transitions et conditions
 
-### Niveau de variation
+Les transitions sont les connexions qui relient un nœud à un autre. Dans cette configuration, le type de transition disponible est **condition LLM**.
 
-Le niveau de variation ajuste le degré de prévisibilité ou de créativité des réponses.
+Chaque transition comprend une étiquette visible et un texte de **condition LLM** qui définit quand cette route doit s’appliquer.
 
-- des valeurs basses rendent l’agent plus stable et plus contrôlé
-- des valeurs élevées rendent les réponses plus variées
+- Utilisez cette route lorsque l’utilisateur a besoin d’aide technique sur la plateforme.
+- Utilisez cette route lorsque l’utilisateur demande à parler à une personne.
+- Utilisez cette route lorsque le problème est entièrement résolu et que la conversation doit se terminer.
 
-Dans des appels professionnels structurés, un réglage faible ou intermédiaire fonctionne généralement mieux.
+### Avant et Arrière
 
-> **Conseil :** Ne testez pas seulement la voix isolément. Faites un appel complet et vérifiez comment elle sonne dans le flux réel.
+La configuration opérationnelle se fait dans **Avant**. **Arrière** n’apporte pas de configuration supplémentaire dans cette version.
 
-## Section 3 : Actions d’appel
+### Complétez la configuration de votre flux de travail
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/agents4.png"
-    alt="La section des actions d’appel avec la prise de rendez-vous, le transfert d’appel, l’exclusion, l’extraction de données, l’envoi après l’appel, les relances et la rotation des numéros."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+Le **Flux de travail** comprend un panneau de validation appelé **Complétez la configuration de votre flux de travail**. Ce panneau vous indique exactement ce qui manque avant que le flux puisse être enregistré correctement.
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : la troisième section de configuration, où vous activez les actions que l’agent peut effectuer pendant ou après l’appel.
-</p>
+Cela est particulièrement utile dans les flux complexes, car il indique précisément le nœud ou la connexion qui demande encore de l’attention.
 
-Cette section permet à l’agent de faire autre chose que simplement parler. Vous y définissez des actions concrètes qui peuvent se produire pendant l’appel ou juste après.
+- Un nœud de **transfert d’agent** n’a pas d’agent cible.
+- Un nœud **Outil** n’a pas d’outil sélectionné.
+- Une transition n’a pas de texte de condition.
+- Un nœud ou une branche est encore incomplet.
 
-### Prise de rendez-vous
+### Sous-agent
 
-Activez cette option si l’agent doit réserver des rendez-vous pendant l’appel.
+Le **Sous-agent** vous permet de créer une étape de conversation spécialisée au sein du même flux de travail. Utilisez-le lorsqu’une partie du flux a besoin de son propre comportement, d’un objectif plus précis ou d’une configuration différente de celle de l’agent principal.
 
-Si vous ne l’avez pas encore configurée, vous devez d’abord le faire ici : [Google Calendar](https://app.callin.io/actions/google-calendar)
+- Utilisez-le lorsqu’une étape du flux a besoin de son propre objectif.
+- Utilisez-le lorsqu’une partie de la conversation nécessite une voix ou un modèle différent.
+- Utilisez-le lorsque vous avez besoin d’un contrôle au niveau du nœud sur les connaissances ou les outils.
 
-C’est important, car l’agent doit avoir accès à une configuration de calendrier déjà prête avant de pouvoir proposer des créneaux et confirmer correctement une réservation.
+### Sous-agent - Paramètres généraux
 
-Exemple simple : une clinique peut utiliser l’agent pour proposer des disponibilités et confirmer le rendez-vous pendant le même appel.
+Dans l’onglet **Général**, vous pouvez configurer le **prompt système**, **remplacer le prompt**, la **voix**, le **LLM**, le **niveau de réactivité** et la **patience d’épellation** pour ce nœud.
 
-### Transfert d’appel
+Un sous-agent est utile pour des phases de support spécialisées, des étapes de collecte d’informations avant un transfert ou des routes nécessitant un style de parole différent.
 
-Activez cette option si l’agent doit transférer l’appel à une personne réelle, à un service ou à un autre numéro.
+### Sous-agent - Base de connaissances et Outils
 
-Si vous ne l’avez pas encore configurée, vous devez d’abord le faire ici : [Transfert d’appel](https://app.callin.io/call-transfer)
+L’onglet **Base de connaissances** comprend **hériter de la base de connaissances**. Lorsqu’il est activé, le nœud hérite de la base de connaissances de l’agent.
 
-Cela doit être préparé à l’avance pour que l’agent sache où transférer et dans quel cas.
+L’onglet **Outils** comprend **hériter des outils personnalisés** et **Ajouter un outil**. Lorsque l’héritage est activé, le nœud utilise les outils personnalisés de l’agent.
 
-Exemple pratique : l’agent répond à des questions simples, mais transfère les questions de facturation ou les cas urgents à une équipe humaine.
+Les outils ne sont pas créés dans **Flux de travail**. Ils sont créés et configurés dans la section **Outils**. Dans **Flux de travail**, ils sont seulement sélectionnés ou hérités.
 
-### Exclusion des appels
+### Nœud Outil
 
-L’exclusion permet à une personne d’indiquer qu’elle ne souhaite plus recevoir ce type d’appel.
+Le nœud **Outil** est utilisé pour envoyer la conversation vers une étape où l’agent peut utiliser des outils déjà existants. Dans le panneau latéral, cela apparaît comme **envoi vers outil**.
 
-C’est utile dans les campagnes sortantes et dans les parcours répétitifs où vous devez respecter la préférence du contact.
+Ce nœud ne crée pas de nouveaux outils. Son rôle est de connecter le flux de travail avec des outils déjà configurés ailleurs.
 
-### Extraction de données
+### Transfert d’agent
 
-L’extraction de données sert à capturer des informations précises à partir de la conversation.
+Le **Transfert d’agent** envoie la conversation à un autre agent de votre compte. C’est la bonne option lorsque l’interaction doit être transmise à un autre assistant spécialisé dans une autre tâche, une autre langue ou un autre flux de travail.
 
-Par exemple, vous pouvez demander à l’agent d’extraire :
+Vous pouvez choisir l’agent cible, définir un délai en millisecondes, écrire un message de transfert et décider si ce premier message doit être joué.
 
-- le nom
-- la date du rendez-vous
-- le niveau d’intérêt
-- le meilleur créneau pour rappeler
+- Je vais vous transférer vers l’agent adapté à cette demande.
+- Je vais maintenant vous mettre en relation avec l’assistant spécialisé dans ce type de question.
 
-Cela évite à votre équipe de devoir relire toute la transcription pour retrouver les données importantes.
+### Transfert vers un numéro de téléphone
 
-### Envoi après l’appel
+Le **Transfert vers un numéro de téléphone** envoie l’appel vers un numéro de téléphone. Utilisez ce nœud lorsque la conversation doit quitter l’agent et continuer par une ligne spécifique.
 
-Cette option permet d’envoyer les informations de l’appel vers un autre système une fois la conversation terminée.
+Les types de destination disponibles sont **Numéro de téléphone** et **Variable dynamique de téléphone**.
 
-C’est utile si vous souhaitez transmettre les résultats à un système externe, à un tableau de bord interne ou à un flux d’automatisation.
+**Numéro de téléphone** est le bon choix pour une destination fixe, comme l’accueil, une ligne commerciale dédiée ou une ligne de support fixe.
 
-### Relance d’appel
+**Variable dynamique de téléphone** est le bon choix lorsque la destination dépend du contexte du flux.
 
-La relance d’appel définit ce qui doit se passer si l’appel n’aboutit pas correctement ou si une messagerie est détectée.
+### Fin
 
-Vous pouvez régler le nombre de tentatives et le délai avant le prochain essai.
+**Fin** est le nœud qui clôt la conversation. Lorsque le flux atteint ce point, l’interaction se termine.
 
-### Rotation des numéros
+- Utilisez **Fin** lorsque le problème est entièrement résolu.
+- Utilisez **Fin** lorsqu’une branche doit se fermer sans continuer.
+- Utilisez **Fin** lorsqu’une étape est terminée et que la route ne doit pas avancer davantage.
 
-La rotation des numéros permet de répartir les appels entre plusieurs numéros afin de mieux distribuer le trafic et d’améliorer la délivrabilité.
+### Dupliquer et supprimer
 
-Cela peut être particulièrement utile pour des opérations à volume élevé.
+Chaque nœud comprend des contrôles pour le dupliquer ou le supprimer.
 
-> **Important :** Si vous n’avez pas encore configuré le calendrier ou le transfert, faites-le d’abord dans leurs pages respectives, puis revenez à l’agent pour activer correctement ces fonctions.
+**Dupliquer** copie un nœud existant afin que vous puissiez construire des branches similaires plus rapidement. **Supprimer** retire le nœud du flux. Avant de supprimer un nœud, vérifiez ses transitions connectées afin de ne pas casser une route active.
 
-## Section 4 : Widget du site web
+### Paramètres globaux
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/agents5.png"
-    alt="La section du widget du site web avec le code d’intégration, les modes d’affichage, l’apparence, les libellés et les options d’enregistrement."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+Les **Paramètres globaux** contiennent des options qui affectent le flux de travail dans son ensemble.
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : la quatrième section de configuration, où vous générez le widget pour votre site web et personnalisez son apparence ainsi que ses textes.
-</p>
+**Éviter les boucles infinies** ajoute une couche de sécurité qui aide à éviter des routes susceptibles d’enfermer la conversation dans une boucle répétitive sans progression.
 
-Cette section est utilisée lorsque vous souhaitez permettre aux visiteurs de parler directement avec l’agent depuis votre site web.
-
-### Code d’intégration
-
-En haut de la section, vous pouvez copier le code d’intégration et le placer sur votre site. C’est ce code qui charge le widget pour vos visiteurs.
-
-Cela permet à l’équipe technique ou à la personne qui gère le site de l’ajouter sans avoir à reconstruire quoi que ce soit manuellement.
-
-### Présentation et comportement
-
-Ici, vous pouvez décider de la manière dont le widget apparaîtra.
-
-En général, vous pourrez choisir entre :
-
-- l’afficher intégré dans la page
-- l’afficher sous forme de lanceur flottant
-
-Le meilleur choix dépend de l’usage réel. Si vous souhaitez que l’agent soit mis en avant sur une page précise, il est souvent préférable de l’intégrer directement. Si vous voulez qu’il reste disponible sur tout le site sans occuper d’espace fixe, un lanceur flottant est souvent plus adapté.
-
-### Mode de conversation
-
-Dans cette partie, vous définissez si l’interaction se fera par la voix, par le texte ou par les deux, selon les options disponibles sur votre compte.
-
-### Apparence
-
-Plus bas, vous pouvez personnaliser des éléments visuels comme :
-
-- la taille
-- les couleurs
-- la transcription en temps réel
-- le bouton de coupure du son
-- le style général
-
-Cela est utile pour mieux intégrer le widget à votre image de marque.
-
-### Libellés et textes
-
-Vous pouvez également personnaliser les textes visibles dans le widget, comme :
-
-- le texte principal
-- le texte pour démarrer un appel
-- le texte pour démarrer une discussion
-- le texte de connexion
-- le texte d’écoute
-- le texte de fin
-- les textes de discussion
-- les messages vides
-- les textes d’aide
-
-Cela vous permet d’adapter l’expérience au ton réel de votre activité.
+Pour désactiver un flux de travail, déconnectez le nœud **Début**. Sans **Début** connecté, le flux n’a plus de point d’entrée opérationnel.
 
 ### Enregistrer et tester
 
-Avant de publier le widget, il est recommandé de suivre cet ordre :
+**Enregistrer** stocke le flux de travail actuel. **Effacer** supprime ou annule l’état actuel de modification. L’avertissement de modifications non enregistrées indique qu’il reste encore des modifications qui n’ont pas été enregistrées.
 
-1. enregistrer les modifications
-2. vérifier s’il y a des erreurs
-3. effectuer un test réel
-4. confirmer que le texte, la voix et les actions fonctionnent comme prévu
+Testez toujours chaque route séparément avant de publier.
 
-> **Conseil :** Testez le widget comme si vous étiez un véritable visiteur. Vérifiez le parcours normal, mais aussi les cas moins parfaits, comme les interruptions, les demandes ambiguës ou les requêtes hors du périmètre de l’agent.
+> **Erreur fréquente :** Un flux de travail peut sembler complet sur le canevas et pourtant échouer en pratique si un nœud, un outil ou une condition n’a jamais été testé avec une vraie conversation.
+
+## Section 3 : Base de connaissances
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia4.png"
+    alt="L’onglet Base de connaissances affichant la source liée, les actions disponibles et le panneau utilisé pour sélectionner une base de connaissances."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Base de connaissances, où vous connectez à l’agent une source existante de contenu de référence.
+</p>
+
+La **Base de connaissances** relie votre agent à une source de connaissances déjà préparée dans Callin. Cela donne à l’agent accès à un contenu de référence plus large, structuré et réutilisable afin qu’il puisse répondre avec des informations plus détaillées que celles qui devraient se trouver dans le prompt principal.
+
+Utilisez cette section lorsque l’information est trop longue, trop détaillée, trop structurée ou trop dynamique pour être maintenue directement dans le prompt.
+
+### Accès rapide
+
+- [Ouvrir le gestionnaire de Base de connaissances](https://app.callin.io/knowledge-base)
+
+### Quand utiliser Base de connaissances
+
+La **Base de connaissances** est le bon choix lorsque le contenu est étendu, change fréquemment, existe déjà sous forme de documentation ou doit rester séparé du prompt principal pour faciliter la maintenance.
+
+- Manuels.
+- Foires aux questions.
+- Politiques.
+- Guides produit.
+- Articles de support.
+- Documentation interne de référence.
+
+### Ce que fait cet onglet
+
+Cet onglet est utilisé pour relier une base de connaissances existante à un agent spécifique. Il ne crée pas de nouveau contenu à partir de zéro.
+
+Le prompt définit comment l’agent doit se comporter, tandis que la **Base de connaissances** définit quel contenu de référence supplémentaire l’agent peut utiliser pour répondre aux questions.
+
+### Sources de contenu prises en charge
+
+La **Base de connaissances** peut fonctionner avec deux sources : **Fichiers** et **URL web**.
+
+Utilisez **Fichiers** lorsque la base de connaissances est construite à partir de documents importés. Utilisez **URL web** lorsque la base de connaissances est construite à partir de pages publiées ou de documentation disponible par URL.
+
+### Ce que vous voyez lorsqu’une base est liée
+
+Lorsqu’une base de connaissances est déjà connectée à l’agent, l’onglet affiche le nom du groupe sélectionné, le nombre de documents liés et les actions disponibles pour gérer cette connexion.
+
+- Nom du groupe sélectionné.
+- Nombre de documents liés.
+- **Effacer**.
+- **Mettre à jour**.
+- **Changer**.
+
+### Actions principales
+
+**Changer** ouvre le panneau **Sélectionner une base de connaissances** et vous permet de choisir une autre base de connaissances pour l’agent.
+
+**Effacer** supprime la base de connaissances actuellement connectée à l’agent.
+
+**Mettre à jour** actualise la connexion actuelle afin que l’agent utilise la sélection liée la plus récente.
+
+### Panneau Sélectionner une base de connaissances
+
+Lorsque vous cliquez sur **Changer**, le panneau **Sélectionner une base de connaissances** s’ouvre. Ce panneau sert à consulter les sources disponibles, choisir un groupe, inspecter ses documents ou ses URL et confirmer la sélection finale.
+
+- **Source** permet de passer entre **Fichiers** et **URL web**.
+- **Groupes** liste les bases de connaissances disponibles dans la source sélectionnée.
+- **Actualiser** met à jour la liste des groupes.
+- **Documents / URL** affiche les ressources incluses dans le groupe sélectionné.
+- **Lié** signifie que la ressource appartient à la base sélectionnée et sera disponible pour l’agent une fois la connexion confirmée.
+- **Sélectionner** confirme la base de connaissances choisie.
+- **Fermer** quitte le panneau sans appliquer une nouvelle sélection.
+
+### Comment fonctionne le flux de sélection
+
+Le flux recommandé est toujours le même : commencez par créer et organiser la base de connaissances dans le gestionnaire général, puis revenez à l’agent et connectez cette source préparée depuis cet onglet.
+
+Cela permet de séparer la création et la sélection. Le gestionnaire général construit la base de connaissances. L’onglet de l’agent la relie à la conversation.
+
+### Bonnes pratiques
+
+Ne reliez que du contenu utile et pertinent. Organisez les groupes par objectif. Utilisez des noms de groupe clairs. Vérifiez le groupe sélectionné avant d’enregistrer. Actualisez la connexion après des changements importants.
+
+Conservez le comportement de l’agent dans le prompt et le contenu de référence dans la **Base de connaissances**.
+
+### Ce que cet onglet ne fait pas
+
+L’onglet **Base de connaissances** de l’agent n’est pas utilisé pour rédiger le prompt principal, configurer des outils, construire des flux de travail ou créer une source de connaissances à partir de zéro. Sa tâche est précise : sélectionner une base de connaissances existante et la relier à l’agent.
+
+> **Conseil :** Placez les règles de comportement dans le prompt et le contenu de référence réutilisable dans la Base de connaissances. Cette séparation rend les mises à jour beaucoup plus simples.
+
+## Section 4 : Outils
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia5.png"
+    alt="L’onglet Outils affichant les outils personnalisés attachés à l’agent et les outils système avec des options d’activation et de configuration."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Outils, où vous attachez des outils personnalisés et activez les outils intégrés que l’agent peut utiliser pendant un appel.
+</p>
+
+L’onglet **Outils** définit quels outils votre agent peut utiliser pendant un appel.
+
+Cette section est utilisée pour deux choses différentes : ajouter des outils personnalisés à l’agent et activer ou configurer les outils système déjà inclus dans Callin.
+
+Les outils étendent ce que l’agent peut faire pendant une conversation. Alors que le prompt définit comment l’agent doit parler et que le **Flux de travail** définit comment l’appel doit progresser, les outils permettent à l’agent d’exécuter des comportements précis au bon moment.
+
+### Accès rapide
+
+- [Ouvrir la section globale Outils](https://app.callin.io/tools)
+
+### Deux types d’outils
+
+Cette section réunit deux groupes distincts d’outils : **Outils personnalisés** et **Outils système**.
+
+### Outils personnalisés
+
+Les **Outils personnalisés** sont des outils créés par votre équipe pour des cas d’usage spécifiques. Ils ne sont pas créés dans l’onglet de l’agent.
+
+Vous les créez d’abord dans la section globale **Outils** de la plateforme. Ensuite, vous revenez à l’agent et vous les attachez depuis cet onglet.
+
+- Interroger un système externe.
+- Exécuter une automatisation.
+- Envoyer ou recevoir des données via un webhook.
+- Déclencher une logique propre au métier.
+- Connecter l’agent à un autre service.
+
+### Zone principale des outils personnalisés
+
+La zone principale de l’onglet **Outils** affiche les outils personnalisés déjà attachés à l’agent.
+
+Si l’agent n’a encore aucun outil personnalisé attaché, la section affiche l’état vide correspondant.
+
+### Ajouter un outil
+
+**Ajouter un outil** est utilisé pour attacher un outil personnalisé à l’agent.
+
+Lorsque votre compte contient déjà des outils, ce bouton vous permet de les rechercher et de les sélectionner. Lorsqu’aucun outil n’existe encore, le sélecteur propose une option directe pour créer un **Outil webhook**.
+
+### Outils système
+
+Les **Outils système** sont des outils intégrés de Callin déjà disponibles dans l’agent.
+
+Ils sont conçus pour gérer des situations d’appel courantes sans vous obliger à créer de nouveaux outils à partir de zéro. Ces outils peuvent être activés ou désactivés individuellement, et certains incluent une configuration avancée.
+
+### Raccrochage intelligent
+
+Le **Raccrochage intelligent** permet à l’agent de terminer correctement un appel lorsqu’il détecte que la conversation est déjà terminée.
+
+Cet outil est conçu pour des fins d’appel naturelles et aide à éviter de garder l’appel ouvert inutilement une fois que l’utilisateur a clairement terminé.
+
+- L’utilisateur dit au revoir.
+- L’utilisateur dit que c’est tout.
+- L’utilisateur confirme que le problème est résolu.
+- La conversation a clairement atteint sa fin.
+
+### Changement de langue
+
+Le **Changement de langue** permet à l’agent de gérer les changements de langue pendant la conversation.
+
+Cet outil est particulièrement important lorsque l’agent fonctionne en plusieurs langues et que l’utilisateur peut changer de langue au début ou au milieu de l’appel.
+
+### Écoute intelligente
+
+L’**Écoute intelligente** est un outil système conçu pour améliorer la manière dont l’agent écoute et gère la conversation en temps réel.
+
+Cet outil est contrôlé depuis l’interrupteur d’activation.
+
+### Transférer vers un agent
+
+**Transférer vers un agent** permet à l’agent de transmettre la conversation à un autre agent.
+
+Cela est utile lorsqu’un appel doit passer à un autre assistant spécialisé dans votre compte.
+
+- D’un agent général à un agent de support.
+- D’un agent initial à un agent commercial.
+- D’un agent polyvalent à un spécialiste.
+
+### Transférer vers un numéro
+
+**Transférer vers un numéro** permet à l’agent de transférer l’appel vers un numéro de téléphone humain.
+
+C’est l’un des outils les plus importants lorsque vous devez faire sortir une conversation de l’agent et la remettre à une personne ou à une ligne spécifique.
+
+- Accueil.
+- Support humain.
+- Ventes.
+- Un standard.
+- Un bureau ou un professionnel spécifique.
+
+### Règles de transfert humain
+
+Les **Règles de transfert humain** sont le bloc dans lequel vous définissez les règles précises de transfert des appels vers des opérateurs humains.
+
+Chaque règle comprend **Type de destination**, **Numéro de téléphone** ou une variable dynamique de téléphone, et **Condition**.
+
+Le **Type de destination** peut être un numéro de téléphone fixe ou un numéro fourni par une variable dynamique.
+
+La **Condition** définit quand cette règle de transfert précise doit s’appliquer.
+
+### Intelligence de messagerie vocale
+
+L’**Intelligence de messagerie vocale** détecte lorsque l’appel atteint la messagerie vocale et agit en conséquence.
+
+Cet outil est particulièrement important dans les agents sortants parce qu’il vous permet de décider ce qui doit se passer lorsqu’aucune personne ne répond et qu’un message de messagerie vocale est détecté.
+
+- Laissez le message de messagerie vocale vide si l’appel doit se terminer immédiatement lorsque la messagerie vocale est détectée.
+- Rédigez un message de messagerie vocale si vous voulez que le système diffuse un message avant de terminer l’appel.
+
+### Description et désactiver l’interruption
+
+Plusieurs outils système incluent un champ **Description** et un contrôle **désactiver l’interruption**.
+
+La **Description** explique au modèle comment et quand l’outil doit être utilisé. **Désactiver l’interruption** contrôle si l’exécution de l’outil peut être interrompue pendant son fonctionnement.
+
+### Comment choisir les bons outils
+
+N’activez pas tous les outils par défaut. Le bon choix dépend de la manière dont votre assistant est censé fonctionner.
+
+Un agent de support entrant peut utiliser **Raccrochage intelligent**, **Changement de langue** et **Écoute intelligente**. Un agent qui transmet vers des humains peut utiliser **Transférer vers un numéro** avec des règles de transfert clairement définies. Un agent sortant peut utiliser **Intelligence de messagerie vocale**, **Raccrochage intelligent** et **Changement de langue**.
+
+### Bonnes pratiques
+
+Activez uniquement les outils dont l’agent a réellement besoin. Personnalisez les outils système lorsque votre activité l’exige. Utilisez des descriptions claires. Définissez des conditions précises dans les règles de transfert.
+
+Utilisez des numéros fixes lorsque la destination est toujours la même et des variables dynamiques lorsque la destination dépend du contexte. Créez les outils personnalisés dans la section globale **Outils** avant de les ajouter à l’agent. Vérifiez toujours le comportement réel après l’enregistrement.
+
+> **Erreur fréquente :** Activer trop d’outils en même temps rend généralement le comportement plus difficile à prévoir, à tester et à maintenir.
+
+## Section 5 : Action d’appel
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia6.png"
+    alt="L’onglet Action d’appel affichant des automatisations comme la planification, l’e-mail de suivi, la synchronisation des données, l’extraction et les réglages de relance."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Action d’appel, où vous automatisez ce qui doit se passer pendant et après chaque appel.
+</p>
+
+L’**Action d’appel** automatise ce qui se passe pendant et après chaque appel afin que votre agent puisse transformer les conversations en suivi, en organisation et en étapes pratiques suivantes.
+
+Utilisez l’**Action d’appel** lorsque votre agent doit faire quelque chose d’utile avec l’appel, et pas seulement tenir la conversation.
+
+La meilleure configuration n’est pas celle où le plus d’actions sont activées. C’est celle qui active uniquement les actions qui apportent une vraie valeur à votre flux de travail.
+
+### Accès rapide
+
+- [Configurer Google Calendar](https://app.callin.io/actions/google-calendar)
+- [Configurer Cal.com](https://app.callin.io/actions/cal)
+
+### Ce que fait Action d’appel
+
+L’**Action d’appel** regroupe les automatisations que votre agent peut exécuter pendant l’appel ou immédiatement après sa fin.
+
+Cette section transforme une conversation en résultats concrets : réserver une réunion, envoyer un e-mail de suivi, enregistrer des incidents, synchroniser des données avec d’autres applications, extraire des informations structurées et définir des relances automatiques d’appel.
+
+- Réserver des réunions directement dans un calendrier.
+- Envoyer un e-mail récapitulatif automatique à la fin de l’appel.
+- Donner à l’appelant un moyen clair de refuser de futurs contacts.
+- Enregistrer des incidents ou des réclamations détectés pendant la conversation.
+- Envoyer les données capturées à d’autres systèmes via un webhook après appel.
+- Extraire des informations structurées de la conversation.
+- Stocker les données extraites dans le profil du contact.
+- Configurer des relances automatiques lorsqu’un appel n’est pas terminé.
+
+### Planification de rendez-vous
+
+La **Planification de rendez-vous** permet à l’agent de réserver des réunions directement pendant la conversation.
+
+Cela est particulièrement utile pour les ventes, le support, l’onboarding, les réservations et tout flux où obtenir un rendez-vous pendant l’appel réduit la friction et évite de perdre l’élan.
+
+### Fournisseur de planification
+
+Avant d’activer la **Planification de rendez-vous**, connectez le fournisseur de planification que vous souhaitez utiliser. Vous pouvez travailler avec **Google Calendar** ou **Cal.com**.
+
+Une fois le compte connecté, vous pouvez sélectionner le calendrier ou la configuration de réservation que l’agent utilisera.
+
+**Google Calendar** est le bon choix lorsque vous souhaitez planifier directement dans des calendriers Google connectés. **Cal.com** est le bon choix lorsque votre opération de réservation fonctionne déjà sur Cal.com.
+
+Le fuseau horaire de l’agent doit correspondre à celui du calendrier afin d’éviter des erreurs lors de la proposition d’horaires ou de la confirmation de disponibilité.
+
+### E-mail récapitulatif après appel
+
+L’**E-mail récapitulatif après appel** envoie automatiquement un e-mail lorsque l’appel se termine.
+
+Cette action permet d’informer les responsables, les équipes ou les boîtes partagées sans nécessiter de suivi manuel.
+
+- Définissez les destinataires qui doivent recevoir l’e-mail.
+- Rédigez un objet clair.
+- Rédigez le corps de base du message.
+- Choisissez la langue de l’e-mail.
+- Décidez s’il faut inclure les données de l’appel.
+- Décidez s’il faut inclure les champs extraits.
+
+### Désinscription intelligente
+
+La **Désinscription intelligente** offre aux appelants un moyen clair et respectueux de refuser de futurs contacts.
+
+Cette action est particulièrement utile dans les flux de génération de prospects, de prospection ou de suivi où les demandes de désinscription doivent être traitées correctement.
+
+### Suivi des incidents et réclamations
+
+Le **Suivi des incidents et réclamations** permet à l’agent d’identifier et d’enregistrer des incidents ou des réclamations détectés pendant l’appel.
+
+Activez-le lorsque vous souhaitez qu’une conversation crée un dossier que votre équipe pourra revoir, gérer ou escalader ensuite.
+
+### Synchronisation des données (webhook après appel)
+
+La **Synchronisation des données** envoie automatiquement les données capturées de l’appel à un autre système dès que la conversation se termine.
+
+C’est la bonne option lorsque vous travaillez avec des CRM, des automatisations, des intégrations opérationnelles ou des systèmes internes qui ont besoin des données sans intervention manuelle.
+
+Saisissez l’URL du webhook qui doit recevoir les données et validez à l’avance quel système recevra ces informations et comment il les traitera.
+
+### Capture d’informations (extraction de données)
+
+La **Capture d’informations** transforme la conversation en données structurées.
+
+Vous pouvez définir quelles informations le système doit identifier automatiquement pendant l’appel, comme des noms, des dates, des préférences, des villes, des produits d’intérêt ou des motifs de contact.
+
+### Ajouter une entité
+
+**Ajouter une entité** vous permet de créer une nouvelle entité pour capturer une information spécifique.
+
+Chaque entité définit ce qui doit être extrait et comment cela doit être stocké.
+
+- **Type de données** définit le type de valeur que vous souhaitez capturer.
+- **Identifiant** est le nom interne utilisé pour stocker cette entité.
+- **Description** explique exactement ce que le système doit extraire.
+- **Valeurs énumérées** vous permet de limiter le résultat à une liste fermée de valeurs valides lorsque vous avez besoin d’une sortie plus cohérente.
+
+### Capturer et stocker les données du contact
+
+**Capturer et stocker les données du contact** enregistre les informations extraites directement dans le profil du contact.
+
+Activez cette option lorsque vous souhaitez réutiliser les données capturées dans de futurs appels ou conserver des fiches contact plus riches.
+
+### Persistance et connexion (relance d’appel)
+
+La **Relance d’appel** vous permet de configurer des relances automatiques lorsqu’un appel n’est pas terminé.
+
+Cela est particulièrement utile pour les agents sortants, lorsqu’un appel peut rester sans réponse ou arriver sur une messagerie vocale.
+
+- **Tentatives de relance** définit combien de fois le système doit réessayer l’appel avant d’arrêter.
+- **Temps d’attente entre les tentatives** définit combien de minutes le système doit attendre avant de lancer la tentative suivante.
+
+### Bonnes pratiques
+
+Activez uniquement les actions qui apportent une vraie valeur au flux d’appel réel. Connectez **Google Calendar** ou **Cal.com** avant d’utiliser la **Planification de rendez-vous**. Utilisez des objets et des messages clairs dans les e-mails récapitulatifs. Définissez soigneusement chaque entité d’extraction. Stockez les données de contact seulement si elles seront utiles plus tard. Vérifiez le webhook avant d’activer la **Synchronisation des données**. Réglez la fréquence des relances de manière cohérente avec votre activité. Alignez toujours le fuseau horaire de l’agent avec celui du calendrier.
+
+> **Important :** Les automatisations doivent réduire le travail manuel, pas créer plus de nettoyage ensuite. Conservez seulement les actions que votre équipe utilisera vraiment.
+
+## Section 6 : Widget web
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia7.png"
+    alt="L’onglet Widget web affichant l’extrait d’intégration, les options de mise en page, le mode de conversation, les réglages d’apparence et les étiquettes de texte."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Widget web, où vous préparez le widget public, copiez l’extrait d’intégration et personnalisez l’expérience du visiteur.
+</p>
+
+Le **Widget web** vous permet de publier votre agent directement sur une page web via un widget intégré.
+
+Cette section vous aide à sortir votre agent de Callin et à le rendre accessible depuis votre site web, votre page d’atterrissage, votre page de support, votre portail client ou toute autre page où vous souhaitez proposer la voix, le chat ou les deux.
+
+Le **Widget web** combine deux types de configuration : l’intégration technique du widget sur votre site et la personnalisation visuelle et textuelle de l’expérience.
+
+### Ce que vous pouvez faire dans Widget web
+
+Depuis cette section, vous pouvez copier l’extrait d’intégration du widget, choisir si le widget apparaît intégré ou comme lanceur flottant, sélectionner le thème du widget, définir si l’interaction se fait par voix, par chat ou par les deux, ajuster la taille visuelle du cadran, activer ou désactiver la transcription en temps réel, afficher ou masquer le bouton de sourdine, personnaliser les couleurs et modifier le texte visible du widget.
+
+### Extrait d’intégration
+
+L’**Extrait d’intégration** est le bloc qui vous permet d’intégrer le widget dans votre site web.
+
+Vous y obtenez le fragment qui doit être copié et inséré dans le HTML de la page où vous souhaitez que l’agent apparaisse. Le bouton **Copier** copie le fragment afin que vous puissiez le coller directement dans votre site.
+
+### Où placer l’extrait
+
+Collez l’extrait dans la partie du HTML où vous souhaitez que le widget apparaisse.
+
+Lorsque le mode sélectionné est **Intégration en ligne**, placez-le exactement à l’endroit où vous voulez que le widget s’affiche. Lorsque le mode sélectionné est **Lanceur flottant**, placez-le près de la fin du corps de page afin qu’il se comporte comme un point d’entrée flottant.
+
+### Mise en page et comportement
+
+La **Mise en page et le comportement** contrôlent la manière dont le widget est intégré et la façon dont les visiteurs interagissent avec lui.
+
+### Mode du widget
+
+Le **Mode du widget** définit comment le widget apparaît sur votre site web. Les options disponibles sont **Intégration en ligne** et **Lanceur flottant**.
+
+- **Intégration en ligne** affiche le widget complet directement dans la page, exactement à l’endroit où vous placez l’extrait.
+- **Lanceur flottant** affiche un point d’entrée flottant qui ouvre le widget lorsque le visiteur clique dessus.
+
+### Thème du widget intégré
+
+Le **Thème du widget intégré** contrôle le thème visuel général du widget public. Les options disponibles sont **Faire correspondre le thème de l’application**, **Clair** et **Sombre**.
+
+Choisissez le thème en fonction du design réel de votre site. La lisibilité et la cohérence avec la marque doivent toujours passer en premier.
+
+### Mode de conversation
+
+Le **Mode de conversation** définit comment les visiteurs peuvent interagir avec le widget. Les options disponibles sont **Voix uniquement**, **Chat uniquement** et **Voix + Chat**.
+
+- **Voix uniquement** limite l’interaction à la voix.
+- **Chat uniquement** limite l’interaction au texte.
+- **Voix + Chat** permet aux utilisateurs d’interagir à la fois par voix et par chat.
+
+### Apparence
+
+L’**Apparence** contrôle le style visuel du cadran du widget et du lanceur.
+
+### Variante du widget et taille du cadran
+
+La **Variante du widget** définit la taille visuelle de base du widget. Les options disponibles sont **Minuscule**, **Compact** et **Complet**.
+
+La **Taille du cadran** vous permet de définir la taille minimale et maximale du cadran en pixels.
+
+### Transcription en temps réel et bouton de sourdine
+
+La **Transcription en temps réel** contrôle si le widget affiche la transcription en direct pendant la conversation.
+
+**Afficher le bouton de sourdine** contrôle si le widget affiche un bouton pour couper et réactiver le microphone pendant l’appel.
+
+### Couleurs de l’orbe
+
+La **Couleur principale de l’orbe** et la **Couleur secondaire de l’orbe** définissent les couleurs principales du widget.
+
+Utilisez des couleurs alignées avec votre marque et offrant suffisamment de contraste pour maintenir la lisibilité et une expérience visuelle propre.
+
+### Étiquettes du cadran
+
+Les **Étiquettes du cadran** vous permettent de personnaliser le texte affiché au centre du cadran selon l’état de l’interaction.
+
+- **Centre inactif**
+- **Centre connexion**
+- **Centre écoute**
+- **Centre interruption**
+
+### Étiquettes de texte
+
+Les **Étiquettes de texte** vous permettent de personnaliser plusieurs textes généraux de l’interface.
+
+- **Étiquette principale**
+- **Démarrer l’appel**
+- **Démarrer le chat**
+- **Terminer l’appel**
+- **Statut du chat**
+- **Texte indicatif du champ pour une nouvelle conversation**
+
+### Étiquettes de l’interface de chat
+
+Les **Étiquettes de l’interface de chat** vous permettent de personnaliser les textes spécifiques à l’expérience de chat.
+
+- **Étiquette de l’onglet voix**
+- **Étiquette de l’onglet chat**
+- **Titre du chat**
+- **Sous-titre du chat**
+- **Statut du chat inactif, connexion et en direct**
+- **Étiquette de démarrage du chat**
+- **Étiquette de fin du chat**
+- **État vide du chat**
+- **Texte indicatif du champ du chat inactif et actif**
+- **Étiquette d’envoi du chat**
+
+### Comment adapter le widget à votre cas d’usage
+
+Pour une page d’atterrissage commerciale, **Intégration en ligne**, un thème clair ou aligné avec l’application, **Voix + Chat**, une variante **Complète** et un texte orienté contact peuvent très bien fonctionner.
+
+Pour le support sur site web, **Lanceur flottant**, **Chat uniquement** ou **Voix + Chat**, une variante **Compacte** et un texte orienté aide fonctionnent souvent très bien.
+
+Pour une expérience axée sur la voix, **Intégration en ligne**, **Voix uniquement**, un cadran plus grand, un bouton de sourdine visible et des étiquettes simples et directes peuvent très bien fonctionner.
+
+### Bonnes pratiques
+
+Choisissez le mode du widget en fonction de l’espace disponible sur votre site. Adaptez le thème au design réel du site. Utilisez un mode de conversation qui corresponde au comportement attendu des utilisateurs. Vérifiez la taille du cadran sur ordinateur et mobile. Activez la transcription en temps réel si vous souhaitez un meilleur support de l’accessibilité. Personnalisez les couleurs sans nuire à la lisibilité. Utilisez des étiquettes claires, courtes et cohérentes avec votre marque. Testez toujours le widget sur une vraie page avant de le publier.
+
+> **Conseil :** Avant de publier, testez le widget sur la page réelle où il sera utilisé. La taille, les couleurs et les étiquettes donnent souvent une impression différente en dehors de l’éditeur.
+
+## Section 7 : Avancé
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia8.png"
+    alt="L’onglet Avancé affichant la compréhension vocale, le comportement face au silence, les options de confidentialité et les réglages de performance spécifiques à la téléphonie."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture : l’onglet Avancé, où vous affinez l’écoute, la gestion du silence, la confidentialité et la performance téléphonique.
+</p>
+
+L’onglet **Avancé** regroupe les réglages de précision de l’agent. C’est ici que vous configurez comment l’agent écoute, comment il interprète les conversations, comment il gère le silence, comment il traite les données d’appel et comment il optimise les performances dans les scénarios de téléphonie sortante.
+
+Cette section devient particulièrement importante lorsque vous souhaitez affiner le comportement de l’agent avec davantage de précision.
+
+**Avancé** est divisé en quatre blocs principaux : **Voix et compréhension**, **Flux de conversation**, **Confidentialité et données** et **Extras téléphoniques**.
+
+### Voix et compréhension
+
+**Voix et compréhension** vous permet d’ajuster la manière dont l’agent capture l’audio et dont il priorise certains termes pendant une conversation.
+
+Ce bloc est particulièrement utile lorsque l’agent travaille avec des mots spécifiques, des noms, des marques, des termes techniques, des chiffres ou un vocabulaire devant être reconnus avec plus de précision.
+
+### Qualité de capture vocale
+
+La **Qualité de capture vocale** définit le format audio que l’agent utilisera pour traiter la parole.
+
+Les options disponibles incluent **PCM 8000 Hz**, **PCM 16000 Hz**, **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** et **ulaw 8000 Hz**.
+
+**PCM 16000 Hz** apparaît comme l’option recommandée. **ulaw 8000 Hz** est conçu pour les scénarios de téléphonie.
+
+**PCM 16000 Hz** est le meilleur point de départ pour la plupart des configurations.
+
+### Mots-clés prioritaires
+
+Les **Mots-clés prioritaires** vous permettent d’ajouter des termes que le système doit prioriser afin d’améliorer la précision de reconnaissance.
+
+Ce champ aide l’agent à reconnaître plus fiablement des mots importants, tels que des marques, des noms d’entreprise, des noms de produits, des termes propres au secteur, des acronymes, des codes, des noms de famille peu courants ou du vocabulaire interne.
+
+### Flux de conversation
+
+Le **Flux de conversation** contrôle le rythme conversationnel de l’agent.
+
+Ce bloc est utilisé pour ajuster la rapidité avec laquelle l’agent rejoint la conversation, combien de temps il attend avant de répondre, comment il se comporte lorsqu’une personne épelle lentement et quand il doit terminer un appel après un silence.
+
+### Niveau de réactivité
+
+Le **Niveau de réactivité** contrôle la rapidité avec laquelle l’agent rejoint la conversation après que l’appelant a cessé de parler. Les options disponibles sont **Patient**, **Normal** et **Réactif**.
+
+**Patient** fait attendre l’agent plus longtemps avant de répondre. **Normal** offre un équilibre entre vitesse et naturel. **Réactif** fait répondre l’agent plus rapidement.
+
+### Patience d’épellation
+
+La **Patience d’épellation** rend l’agent plus patient lorsqu’un appelant épelle lentement des noms, des adresses e-mail ou des numéros d’identification. Les options disponibles sont **Auto** et **Désactivé**.
+
+**Auto** est l’option recommandée lorsque l’agent doit recueillir des informations souvent épelées ou dites lentement.
+
+### Prendre la parole après le silence
+
+**Prendre la parole après le silence** définit combien de secondes l’agent doit attendre après que l’appelant cesse de parler avant de prendre son tour.
+
+### Terminer la conversation après le silence
+
+**Terminer la conversation après le silence** définit la durée de silence au-delà de laquelle l’appel se termine automatiquement si l’appelant cesse de répondre.
+
+### Durée maximale de la conversation
+
+La **Durée maximale de la conversation** définit la durée maximale autorisée pour un appel unique.
+
+### Confidentialité et données
+
+**Confidentialité et données** contrôle la manière dont les données d’appel sont gérées et vous aide à équilibrer qualité opérationnelle, révision interne, confidentialité et conformité.
+
+### Enregistrer les appels
+
+**Enregistrer les appels** permet au système de stocker de manière sécurisée les transcriptions et l’audio des appels.
+
+Activez cette option uniquement si elle est conforme à vos politiques internes de confidentialité, de stockage et de conformité.
+
+### Extras téléphoniques
+
+Les **Extras téléphoniques** regroupent les réglages spécifiques à la téléphonie, en particulier ceux qui visent à améliorer les performances des appels sortants.
+
+### Rotation des numéros
+
+La **Rotation des numéros** fait automatiquement tourner les numéros de téléphone disponibles.
+
+Cela aide à réduire le risque qu’un numéro soit signalé comme spam, répartit le volume d’appels entre plusieurs numéros, améliore la délivrabilité et rend les opérations sortantes plus résilientes.
+
+### Sélectionner les numéros de téléphone et appels par numéro
+
+**Sélectionner les numéros de téléphone** vous permet de choisir quels numéros participeront à la rotation. Lorsque la **Rotation des numéros** est activée, au moins un numéro doit être sélectionné.
+
+**Appels par numéro** définit combien d’appels le système passe depuis un numéro avant de passer au suivant dans la rotation.
+
+### Restriction par État
+
+La **Restriction par État** limite les appels afin que l’agent compose avec un numéro local du même État que le contact.
+
+Cette fonctionnalité est conçue pour les numéros locaux américains et nécessite une numérotation locale compatible dans le compte.
+
+### Bonnes pratiques
+
+Utilisez **PCM 16000 Hz** comme point de départ. Ajoutez des **Mots-clés prioritaires** uniquement pour des termes vraiment importants. Gardez le **Niveau de réactivité** sur **Normal**, sauf si le cas d’usage exige clairement un autre rythme. Activez la **Patience d’épellation** lorsque l’agent collecte des données sensibles ou épelées. Vérifiez attentivement les réglages de silence. Utilisez **Enregistrer les appels** uniquement si cela correspond à vos politiques internes. Activez la **Rotation des numéros** seulement lorsque vous avez réellement plusieurs numéros utiles disponibles. Confirmez que la **Restriction par État** est réellement prise en charge dans votre compte avant de l’activer.
+
+> **Important :** Les réglages avancés sont les plus utiles lorsque vous les modifiez pour une raison claire et que vous testez le résultat avec de vrais appels.
