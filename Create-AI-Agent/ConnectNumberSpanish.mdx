@@ -1,0 +1,230 @@
+---
+title: "Cómo conectar tu número a Callin"
+description: "Conoce las tres formas de conectar tu número de empresa existente a un agente de Callin: desvío de llamadas, portabilidad o BYOC."
+---
+
+## Conecta tu número existente a un agente
+
+Si tu empresa ya tiene un número de teléfono y quieres que un agente de IA responda las llamadas en esa línea, no necesitas reconstruir toda tu configuración telefónica para empezar. En Callin, puedes hacerlo de tres formas diferentes según el nivel de integración que necesites y la infraestructura telefónica que ya tengas.
+
+Puedes conectar tu número existente mediante:
+
+- **Desvío de llamadas**, si quieres mantener tu línea actual y redirigir las llamadas al número del agente.
+- **Portabilidad**, si quieres mantener el mismo número y solicitar su migración mediante el flujo compatible con Callin.
+- **BYOC (troncal SIP)**, si ya trabajas con un operador SIP, una centralita o un sistema telefónico y quieres conectar esa infraestructura a la plataforma.
+
+La mejor opción depende de si buscas rapidez, continuidad con tu número actual o una configuración técnica más avanzada.
+
+## Dónde se gestiona cada opción
+
+Todo lo relacionado con comprar números, iniciar una solicitud de portabilidad y gestionar números se maneja desde la sección [**Números**](https://app.callin.io/numbers).
+
+La conexión de tu propio operador, troncales SIP o proveedores externos se gestiona desde la sección [**BYOC**](https://app.callin.io/byoc).
+
+Si tu objetivo es usar un número existente con un agente, normalmente empezarás en [**Números**](https://app.callin.io/numbers) y pasarás a [**BYOC**](https://app.callin.io/byoc) si necesitas una integración telefónica más avanzada.
+
+## Opción 1: Mantén tu número actual y usa desvío de llamadas
+
+Esta es la forma más rápida y sencilla de empezar.
+
+Con esta opción, tu número principal permanece con tu proveedor telefónico actual. No se transfiere ni se migra. En su lugar, conectas un número en Callin, lo asignas a tu agente y luego activas el desvío de llamadas desde tu número habitual de empresa hacia ese número del agente.
+
+Cuando alguien llama a tu línea principal, la llamada se redirige al número conectado al agente y el agente la responde.
+
+### Cómo funciona
+
+Primero, necesitas un número activo en [**Números**](https://app.callin.io/numbers). Ese será el número que usará el agente. Después asignas ese número al agente correcto. Una vez hecho esto, activas el desvío desde tu número original al número del agente.
+
+A partir de ese momento, tus clientes pueden seguir llamando al mismo número que ya conocen, mientras el agente gestiona la llamada.
+
+### Lo que debes saber
+
+El desvío de llamadas no se activa dentro de Callin.
+
+Callin recibe la llamada en el número asignado al agente, pero la activación del desvío depende del cliente y de su operador telefónico. Esto significa que el usuario debe configurarlo desde su teléfono, a través de su centralita o con su proveedor de telecomunicaciones, según cómo esté gestionada su línea actual.
+
+### Cuándo tiene sentido esta opción
+
+Esta opción es ideal si quieres avanzar rápido, mantener sin cambios tu número público de empresa y evitar un proceso más técnico o una migración del número.
+
+También es una solución muy práctica si quieres empezar a usar el agente en producción sin cambiar todavía tu estructura telefónica principal.
+
+### Ejemplo práctico
+
+Una clínica ha usado el mismo número fijo durante años. Ese número aparece en su web, en Google y en todas sus comunicaciones comerciales. En lugar de cambiarlo, la clínica compra un número en Callin desde [**Números**](https://app.callin.io/numbers), lo asigna a su agente y activa el desvío desde la línea principal a través de su operador telefónico. Los pacientes siguen llamando al mismo número, pero es el agente quien responde.
+
+### Ventajas
+
+- Es la opción más rápida de activar.
+- Te permite conservar el número que tus clientes ya conocen.
+- No requiere mover tu número a una configuración distinta.
+- Es fácil de entender y fácil de implementar.
+
+### Consideraciones importantes
+
+El desvío depende de tu operador. Algunos proveedores lo permiten desde un portal de cliente o directamente desde el teléfono, mientras que otros requieren una solicitud específica. Según tu plan, también puede haber cargos asociados a las llamadas desviadas.
+
+> **Importante:** El desvío de llamadas se configura con tu operador telefónico o con tu sistema telefónico interno, no dentro de Callin.
+
+## Opción 2: Porta tu número
+
+La portabilidad te permite mantener tu número actual y solicitar que siga funcionando a través del flujo compatible con Callin, en lugar de depender de un desvío permanente.
+
+Esta opción encaja muy bien cuando quieres conservar el mismo número de cara al cliente pero prefieres una integración más directa.
+
+### Dónde empieza
+
+Una solicitud de portabilidad se inicia desde [**Números**](https://app.callin.io/numbers).
+
+Dentro del flujo de solicitud, puedes elegir entre pedir un número nuevo o iniciar una solicitud de portabilidad. Para continuar por esta opción, seleccionas portabilidad, eliges el país, seleccionas el tipo de número disponible e introduces el número que quieres portar.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/porting1.png"
+    alt="Pantalla del flujo de portabilidad donde se elige el país, el tipo de solicitud y el número que se quiere portar"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: pantalla de la solicitud de portabilidad, donde el usuario introduce su número y comprueba si puede continuar.
+</p>
+
+### Cómo funciona
+
+Una vez introducido el número, la plataforma realiza una comprobación de portabilidad para verificar si ese número puede continuar en el proceso.
+
+Esta validación confirma si existe cobertura o disponibilidad para esa solicitud. No todos los números se pueden portar en todos los países, y no todos los tipos de número siguen las mismas reglas.
+
+### Qué ocurre si el número no es compatible
+
+Si el número no puede continuar, la plataforma indicará claramente que no hay cobertura disponible para ese número de teléfono.
+
+Eso no significa necesariamente que el número no sea válido. Significa que, en ese caso, el número no puede continuar por el flujo de portabilidad disponible.
+
+### Qué ocurre si el número es compatible
+
+Si el número es apto, la solicitud puede continuar. Los siguientes pasos pueden variar según el país, el tipo de número y las condiciones que apliquen en ese caso.
+
+### Cuándo tiene sentido esta opción
+
+La portabilidad es una buena elección cuando quieres seguir usando tu número actual pero no quieres depender del desvío externo como solución a largo plazo.
+
+También es el camino natural cuando tu número principal ya forma parte de tu marca y quieres integrarlo de forma más directa en tu modelo operativo.
+
+### Ejemplo práctico
+
+Un despacho profesional ha usado el mismo número de empresa durante años. Sus clientes lo conocen y cambiarlo generaría fricción. En ese caso, la portabilidad permite que el despacho conserve ese número como punto principal de contacto mientras avanza hacia una configuración más integrada.
+
+### Ventajas
+
+- Te permite conservar el número que tu empresa ya utiliza.
+- Evita depender del desvío externo como solución permanente.
+- Ofrece una continuidad más natural tanto para clientes como para equipos internos.
+
+### Consideraciones importantes
+
+La portabilidad depende de la elegibilidad. La disponibilidad puede variar según el país, el tipo de número y la cobertura asociada al número. Por eso el proceso siempre empieza con una comprobación desde [**Números**](https://app.callin.io/numbers).
+
+> **Consejo:** Si tu número no supera la comprobación de disponibilidad, el desvío de llamadas puede seguir siendo la forma más rápida de empezar a usar el agente.
+
+## Opción 3: Conecta tu infraestructura con BYOC (troncal SIP)
+
+BYOC te permite conectar tu propio proveedor de telefonía a Callin para que el agente funcione sobre tu infraestructura existente.
+
+Es la opción más avanzada y está pensada para empresas que ya usan voz sobre IP, una centralita, un sistema telefónico o su propio proveedor SIP.
+
+### Dónde se configura
+
+Toda la configuración de operadores personalizados se gestiona desde la sección [**BYOC**](https://app.callin.io/byoc).
+
+Desde esta sección, puedes conectar Telnyx o configurar una troncal SIP genérica con otro proveedor.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/byoc1.png"
+    alt="Pantalla de la sección BYOC donde se conectan operadores y se configuran troncales SIP"
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: sección BYOC, donde los usuarios conectan su operador existente, importan números o configuran una troncal SIP.
+</p>
+
+### Cuándo tiene sentido
+
+BYOC es la mejor opción cuando tu empresa ya tiene una configuración telefónica empresarial y no quiere duplicar sistemas ni reconstruir su arquitectura de voz.
+
+También se recomienda si necesitas más control sobre cómo entran y salen las llamadas de la plataforma, o si tu equipo técnico ya trabaja con troncales SIP y sus propias credenciales.
+
+### BYOC con Telnyx
+
+Si ya usas Telnyx, puedes conectarlo desde [**BYOC**](https://app.callin.io/byoc) usando una clave de API.
+
+Después de conectar la cuenta, la plataforma recupera tus números activos, los añade a tu espacio de trabajo y prepara la conexión necesaria para las llamadas entrantes y salientes.
+
+### Cuándo elegir esta opción
+
+Este es el mejor camino si ya tienes números activos en Telnyx y quieres integrarlos con Callin de una manera más guiada y rápida.
+
+### Ejemplo práctico
+
+Una empresa ya usa Telnyx para su telefonía comercial. En lugar de comprar números nuevos, conecta Telnyx desde [**BYOC**](https://app.callin.io/byoc), importa sus números y sigue trabajando con el inventario de números que ya tiene en producción.
+
+### BYOC con otro proveedor SIP
+
+Si tu proveedor no es Telnyx, puedes usar la configuración genérica disponible en [**BYOC**](https://app.callin.io/byoc).
+
+Esta opción te permite conectar una troncal SIP de otro proveedor y definir cómo se gestionarán las llamadas entrantes y salientes.
+
+### Qué se define en esta configuración
+
+Primero defines los datos básicos de la troncal y el número que quieres usar. Después configuras la parte de entrada, que determina dónde deben entregarse las llamadas entrantes. Por último, configuras la parte de salida, que define qué servidor y credenciales se usarán para las llamadas salientes.
+
+### En términos simples
+
+La parte de entrada determina dónde recibe llamadas tu sistema.  
+La parte de salida determina cómo salen las llamadas de la plataforma.
+
+Esta separación es habitual en entornos de telefonía empresarial y te da más control operativo.
+
+### Cuándo usar esta opción
+
+Este es el mejor camino cuando tu empresa ya trabaja con un proveedor SIP distinto, cuando tienes tu propia centralita o cuando necesitas mantener una arquitectura telefónica corporativa ya existente.
+
+### Ejemplo práctico
+
+Una empresa internacional trabaja con un proveedor SIP que ya gestiona sus números, sus rutas y sus reglas internas. En lugar de reconstruir todo su entorno telefónico, conecta esa troncal desde [**BYOC**](https://app.callin.io/byoc) y permite que el agente funcione dentro de esa configuración existente.
+
+> **Importante:** BYOC se recomienda para empresas que ya tienen un equipo de telefonía, un proveedor SIP o una configuración de centralita existente.
+
+## Asigna el número al agente
+
+Tener el número en tu espacio de trabajo no es el último paso. Para que el agente lo use, el número debe estar asignado al agente correcto.
+
+Esta asignación forma parte de la activación real de la línea. Si el número existe en tu cuenta pero no ha sido asignado, todavía no está listo para funcionar como la línea telefónica activa del agente.
+
+### Dónde se gestiona
+
+El número en sí se gestiona desde [**Números**](https://app.callin.io/numbers), pero la asignación también forma parte de la configuración operativa del agente.
+
+### Por qué importa
+
+Un número puede estar correctamente comprado, conectado o importado y aun así no comportarse como esperas si no está vinculado al agente correcto.
+
+### Ejemplo práctico
+
+Si tu empresa tiene un agente para soporte y otro para ventas, debes asegurarte de que cada número esté asignado al correcto. Así evitas una situación en la que una línea pensada para ventas sea respondida por el flujo de soporte, o al revés.
+
+> **Error común:** Importar o comprar un número no es suficiente por sí solo. El número todavía debe asignarse al agente correcto.
+
+## Qué opción deberías elegir
+
+Si quieres una recomendación simple:
+
+- Si quieres empezar rápido sin cambiar tu número principal, usa desvío de llamadas.
+- Si quieres mantener ese número dentro de un modelo operativo más integrado, usa portabilidad cuando esté disponible.
+- Si tu empresa ya tiene su propia infraestructura telefónica, usa BYOC.
+
+La mejor opción es la que encaja con tu operativa actual, tu proveedor y el nivel de control que quieres mantener.
