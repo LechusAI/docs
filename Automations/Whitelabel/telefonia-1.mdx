@@ -1,0 +1,154 @@
+---
+title: "Telefonia"
+description: "Come funziona la sezione Telefonia all'interno della White Label Console: acquisto di numeri gestiti, organizzazione dell'inventario, assegnazione dei numeri ai sottoconti dei tuoi clienti e regole di fatturazione delle chiamate."
+---
+
+La sezione **Telefonia** è il posto in cui tu, come amministratore White Label, ottieni i numeri di telefono per gli agenti che girano sulla tua piattaforma. Li acquisti una volta nel tuo inventario, e da lì assegni ogni numero al sottoconto del cliente che ne ha bisogno.
+
+Tutto quello che vedi qui è organizzato in tre schede:
+
+- **Inventario** — i numeri che già possiedi.
+- **Marketplace** — il catalogo da cui acquisti nuovi numeri.
+- **Fatturazione** — le regole che si applicano alla fatturazione delle chiamate.
+
+In tutte e tre le schede vedrai quattro card di riepilogo nella parte superiore. Ti danno una lettura rapida di cosa serve questa sezione:
+
+- **Copertura globale dei numeri** — puoi sfogliare numeri di telefono di molti paesi da un unico posto. Utile quando i tuoi clienti operano in regioni diverse.
+- **Acquisto all'interno della piattaforma** — i numeri si acquistano direttamente attraverso l'infrastruttura Telnyx gestita da Callin. Non ti serve un account Telnyx tuo.
+- **Assegnazione ai sottoconti** — una volta che un numero è nel tuo inventario, puoi collegarlo al sottoconto di qualsiasi cliente del tuo ambiente.
+- **Arrotondamento del primo minuto** — la fatturazione delle chiamate applica un minimo di un minuto. La scheda **Fatturazione** lo spiega in dettaglio.
+
+> **Suggerimento:** Apri le schede in ordine la prima volta. **Marketplace** per capire cosa c'è disponibile, **Inventario** per vedere dove atterreranno i numeri che acquisti e **Fatturazione** per sapere esattamente come ti viene addebitato il servizio.
+
+## Inventario
+
+La scheda **Inventario** è il tuo magazzino personale di numeri di telefono. Ogni numero che hai già acquistato vive qui, pronto per essere assegnato al sottoconto di un cliente.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/telefonia1.png" alt="La scheda Inventario della sezione Telefonia, con i contatori Inventario totale e Numeri assegnati, la barra dei filtri e lo stato vuoto quando non è ancora stato acquistato nessun numero." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la scheda Inventario. I contatori in alto ti dicono quanti numeri possiedi e quanti sono già assegnati.
+</p>
+
+La prima volta che apri Telefonia, il tuo inventario sarà vuoto. È normale — vedrai il messaggio **Nessun numero trovato** finché non fai il tuo primo acquisto.
+
+### Contatori
+
+In cima alla scheda ci sono due contatori che ti danno lo stato dell'inventario a colpo d'occhio:
+
+- **Inventario totale** — il numero totale di telefoni che possiedi.
+- **Numeri assegnati** — quanti di quelli sono già collegati al sottoconto di un cliente.
+
+La differenza tra i due ti dice quanti numeri sono ancora liberi e pronti da assegnare.
+
+### Filtri e azioni
+
+La barra dei filtri ti aiuta a trovare un numero specifico quando l'inventario cresce:
+
+- **Cerca per numero o etichetta** — cerca per cifre o per l'etichetta che hai dato al numero.
+- **Tutti i paesi** — limita l'elenco a un solo paese.
+- **Tutti i tipi** — limita l'elenco a un solo tipo di numero (i tipi sono spiegati nella scheda successiva).
+- **Aggiorna** — ricarica l'elenco. Utile subito dopo un acquisto, se il nuovo numero non è ancora comparso.
+- **Acquista numero** — una scorciatoia che ti porta direttamente alla scheda **Marketplace**.
+
+> **Suggerimento:** Metti un'etichetta chiara a ogni numero appena lo acquisti — per esempio, il nome dell'azienda del cliente. Quando l'inventario cresce, le etichette sono quello che ti fa risparmiare tempo.
+
+### Assegnare un numero a un sottoconto
+
+Una volta che il numero è nel tuo inventario, puoi assegnarlo a qualsiasi sottoconto del tuo ambiente. Il numero resta nel tuo inventario; l'assegnazione è ciò che autorizza il cliente a usarlo all'interno dei suoi agenti.
+
+Ogni volta che assegni un numero, il contatore **Numeri assegnati** sale di uno, così hai sempre sott'occhio quanto inventario è in uso.
+
+## Marketplace
+
+La scheda **Marketplace** è il catalogo dei numeri disponibili all'acquisto. È dove vai quando un cliente ha bisogno di un numero nuovo che non hai ancora nel tuo inventario.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/telefonia2.png" alt="La scheda Marketplace con diversi numeri di telefono disponibili sotto forma di card. Ognuna mostra bandiera del paese, città, tipo di numero, capacità, costo mensile e di attivazione, e un pulsante Acquista." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la scheda Marketplace. Ogni card rappresenta un numero disponibile e mostra tutto quello che ti serve sapere prima di acquistarlo.
+</p>
+
+### Cosa mostra ogni card
+
+Ogni numero compare come una card indipendente con tutte le informazioni per decidere:
+
+- **Il numero stesso**, in formato internazionale.
+- **Bandiera del paese** e la città o regione (per esempio, `TX, BELLVILLE`).
+- **Operatore** — il provider che fornisce il numero (per esempio, Telnyx).
+- **Tipo di numero** — Locale, Mobile o Numero verde. Spiegati qui sotto.
+- **Capacità** — `VOICE` e/o `SMS`, a seconda di ciò che il numero supporta.
+- **Costo mensile** — il canone ricorrente addebitato ogni mese mentre il numero è attivo.
+- **Costo di attivazione** — un addebito una tantum per attivare il numero.
+- **Acquista** — il pulsante per comprarlo.
+
+### Tipi di numero
+
+Quando acquisti un numero, non stai scegliendo solo le cifre — stai scegliendo come lo percepisce chi chiama e cosa può fare. Puoi filtrare il catalogo per tipo:
+
+- **Locale** — un numero legato a una città o regione specifica (per esempio, numeri statunitensi associati a uno stato). Chi chiama vede un prefisso familiare, e questo aiuta i tassi di risposta nelle attività locali.
+- **Mobile** — un numero che vive sulle reti mobili. In alcuni paesi i numeri mobili e quelli fissi vengono trattati in modo diverso, soprattutto per gli SMS.
+- **Numero verde (toll-free)** — un numero in cui chi chiama non paga nulla; il costo ricade sul titolare della linea. Tipico delle linee nazionali di assistenza clienti.
+
+> **Suggerimento:** Scegli il tipo di numero in base a ciò che riconoscerà il cliente finale del tuo cliente. Un numero locale per un'attività di quartiere; un numero verde per una linea di supporto a copertura nazionale.
+
+### Ricerca e filtri
+
+Il Marketplace ha la stessa barra di filtri dell'Inventario:
+
+- **Cerca per numero o etichetta** — cerca cifre specifiche.
+- **Tutti i paesi** — sfoglia per paese.
+- **Tutti i tipi** — limita a un solo tipo.
+- **Aggiorna** — ricarica il catalogo.
+
+> **Errore comune:** Acquistare un numero senza controllare le sue capacità. Un numero solo `VOICE` non può inviare SMS, e un numero solo `SMS` non può ricevere chiamate. Leggi sempre le etichette delle capacità sulla card prima di cliccare **Acquista**.
+
+### Cosa succede dopo l'acquisto
+
+Una volta che clicchi **Acquista** su una card e confermi:
+
+- Il numero viene attivato sul tuo account.
+- Compare immediatamente nella tua scheda **Inventario**.
+- Il costo mensile inizia a contare dalla data di attivazione.
+- Puoi assegnare il numero al sottoconto di qualsiasi cliente quando vuoi.
+
+## Fatturazione
+
+La scheda **Fatturazione** spiega le regole che si applicano a ogni chiamata effettuata attraverso la piattaforma. Qui non c'è niente da configurare — la pagina è informativa, ma vale la pena leggerla una volta per evitare sorprese in fattura.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/telefonia3.png" alt="La scheda Fatturazione della sezione Telefonia, con la regola Arrotondamento del primo minuto e il riepilogo Provisioning gestito." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la scheda Fatturazione. I due blocchi riassumono come vengono fatturati i minuti e come viene gestito il provisioning dei numeri dietro le quinte.
+</p>
+
+### Arrotondamento del primo minuto
+
+Ogni volta che una chiamata usa l'operatore di Callin e i numeri che hai acquistato attraverso la piattaforma, **il primo minuto viene fatturato come un minuto intero**, anche se la chiamata dura solo pochi secondi. Dopo quel primo minuto, la fatturazione prosegue normalmente in base alla durata reale.
+
+In pratica:
+
+- Si applica alla fatturazione lato piattaforma tra te (l'amministratore White Label) e Callin.
+- Si applica alla fatturazione di rivendita che imposti per i tuoi clienti finali.
+- La regola viene applicata in automatico al calcolo della durata della chiamata — non devi configurare niente.
+
+> **Importante:** Tieni conto di questa regola quando imposti i prezzi per i tuoi clienti. Se fatturi al minuto, anche la tua unità minima addebitabile deve essere di almeno un minuto. Altrimenti le chiamate brevi ti costeranno più di quanto incassi.
+
+### Provisioning gestito
+
+Questo blocco conferma che tu, come amministratore White Label, **non devi configurare Telnyx da solo**. Tutto viene gestito dal backend di Callin:
+
+- I numeri vengono provisionati attraverso l'infrastruttura gestita di Callin.
+- Gli acquisti avvengono direttamente all'interno della piattaforma.
+- I numeri acquistati possono essere assegnati manualmente a qualsiasi sottoconto esistente in qualsiasi momento.
+- Le regole di gestione delle chiamate e di fatturazione restano coerenti in tutto il tuo ambiente.
+
+In sintesi: tu ti concentri sul vendere numeri e capacità ai tuoi clienti; la complessità lato operatore resta invisibile.
+
+> **Suggerimento:** Se un cliente ti chiede della qualità delle chiamate, della copertura o di come è strutturato il sistema, puoi rispondere con tranquillità che la piattaforma gira su infrastruttura Telnyx gestita — non c'è niente che debbano integrare dalla loro parte.
