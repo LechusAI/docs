@@ -1,0 +1,153 @@
+---
+title: "Mail Agents"
+description: "Set up an AI agent that reads, sorts and replies to the email arriving in your inbox, step by step."
+---
+
+A **Mail Agent** is an assistant that watches an email inbox for you. It reads each new message, works out what it's about, and prepares a reply following the instructions you give it. You decide how far it goes: it can leave a draft waiting for you to review, or send the reply on its own.
+
+This guide walks you through creating your first agent from scratch. It takes about ten minutes and you don't need any technical background.
+
+> **Note:** AI Email Manager is marked as **Beta**. That means it's still growing, so some screens may look slightly different in your account.
+
+## What you need before you start
+
+- An account with access to **AI Email Manager**.
+- The email account you want the agent to work with. It can be Gmail, Outlook, or almost any other provider.
+- A rough idea of what you want the agent to do. One sentence is enough for now, for example: "answer questions about opening hours and pass anything about invoices to a person".
+
+You don't need the inbox ready right this second. You can build the agent first and connect the inbox later.
+
+## Step 1 — Create the agent
+
+In the left sidebar, open **Mail Agents**. This is the list of every agent you've built. Click **Create Agent** in the top right.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents1.png" alt="Mail Agents list showing one agent named Customer Support with the warning No email assigned, a search box, and the Create Agent button" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  The Mail Agents list. Each agent shows its name, its creation date, and a warning in orange while it has no inbox connected yet.
+</p>
+
+Give the agent a name that tells you at a glance what it handles, such as "Customer Support". You'll find the name in a text field at the top of the screen and you can change it whenever you want.
+
+Under the name in the list you'll see **No email assigned** in orange. That's normal: it simply means no inbox is connected yet. You'll fix that in step 4.
+
+Once the agent is created, four tabs appear: **Agent**, **Categories**, **Mailbox** and **Advanced**. The rest of this guide follows them in order.
+
+## Step 2 — Tell the agent how to behave
+
+Open the **Agent** tab. This is where you shape the agent's personality and judgement.
+
+### Conversation Prompt
+
+The **Conversation Prompt** is a box where you write, in plain language, how the agent should handle email. There's no special syntax: you write it the way you'd brief a new colleague on their first day.
+
+A short example:
+
+> Respond professionally and forward billing questions to a human.
+
+The more precise you are, the more predictable the results. A more useful version for a dental clinic might be: "You answer on behalf of Demo Dental Clinic. Be friendly and brief. Answer questions about opening hours, address and prices. If someone asks to change an appointment, tell them a member of staff will get back to them today, and don't promise a specific time."
+
+The counter in the bottom right of the box shows how much space you've used out of 4000 characters. That's plenty for a very detailed brief.
+
+> **Tip:** Write down what the agent must **not** do, not just what it should do. Sentences like "never confirm appointments" or "never discuss prices over email" prevent most surprises.
+
+### AI Intelligence (LLM)
+
+On the right side of the same tab you'll see **AI Intelligence (LLM)**. An **LLM** (large language model) is the engine that reads and writes text: it's the part that actually understands the email and drafts the answer.
+
+Click the model card to open a side panel with the choices available:
+
+| Model | What it's good for |
+| --- | --- |
+| GPT 5.4 Mini | The default option, balancing quality, speed and cost |
+| Claude Sonnet | Polished replies with a natural email tone |
+| GPT 5.4 Nano | The fastest and cheapest option |
+| GPT 4.1 Mini | A stable, balanced option for high volumes |
+
+In that same panel you'll find **Temperature**, a slider that controls how creative or predictable the agent's replies are. Lower values keep it focused and consistent; higher values make it more creative and less predictable.
+
+> **For beginners:** You don't have to touch any of this. The default model and temperature work well for most inboxes. Come back to them later, once you've seen a few real replies.
+
+## Step 3 — Organise your mail with categories
+
+Open the **Categories** tab. Categories are optional labels that help the agent understand what kind of message it's dealing with: invoices, complaints, appointment requests, and so on.
+
+They're worth setting up because they let you treat each kind of email differently. You may want the agent to reply on its own to a simple question about opening hours, but only prepare a draft when the message is about money.
+
+Click **Add category**. A window opens with these fields:
+
+| Field | What it does | Example |
+| --- | --- | --- |
+| Category name | The short label you'll see on each email | Billing |
+| Description | Tells the agent when to use this category | Invoices, payments, refunds |
+| Badge color | The colour of the label, so you can spot it at a glance | Pink |
+
+Below those there are two switches:
+
+- **Generate draft reply for this category** — the agent prepares a reply and leaves it ready for you to review before it goes out.
+- **Auto-reply for this category** — the agent sends the reply itself, with no review.
+
+> **Common mistake:** Writing a description that's too vague, like "important stuff". The agent uses that text to decide which emails belong here, so describe the actual content: "messages asking for an invoice, a refund, or a change of payment method".
+
+> **Important:** Start with **Generate draft reply** switched on and **Auto-reply** switched off. Read the drafts for a few days. Once you're confident the agent gets the tone and the facts right, turn on automatic replies for the categories where mistakes would be harmless.
+
+## Step 4 — Connect the inbox
+
+Open the **Mailbox** tab. This is where you link the actual email account the agent will look after. Until you do, the agent is configured but idle.
+
+You have three options:
+
+- **Gmail** — connect with your Google account.
+- **Outlook** — connect with Microsoft 365.
+- **Other email (IMAP & SMTP)** — connect any other provider. **IMAP** is the standard that lets the agent read the mail in your inbox, and **SMTP** is the one that lets it send replies. Your provider publishes both settings in its help pages, and you'll usually need your email address, your password and a couple of server addresses.
+
+Under the options the screen reminds you that your credentials are encrypted and stored securely.
+
+> **Note:** You can skip this step and connect the inbox later. Everything you configured in the previous steps stays saved. Just remember the agent won't process anything at all until an inbox is linked.
+
+## Step 5 — Fine-tune the behaviour (optional)
+
+Open the **Advanced** tab. Everything here is optional. If this is your first agent, you can safely skip to step 6 and come back another day.
+
+### Automation rules
+
+**Reply only to a specific sender.** When you switch this on and type an address in **Sender email address**, the agent only processes and replies to messages from that address. Every other sender is ignored. It's the safest way to test an agent in a live inbox: point it at your own address and watch what it does, without touching real customers.
+
+**Copy automatic replies.** Sends a copy of every automatic reply to an extra address, which you type into **Copy recipient email**. Under **Delivery type** you choose how the copy travels:
+
+- **CC (visible)** — the person who receives the reply can see that address in the copy line.
+- **BCC (hidden)** — the copy is sent silently and the recipient sees nothing.
+
+This is handy when a manager wants to keep an eye on what the agent is sending.
+
+> **Warning:** If the copy is going to an internal colleague, choose **BCC (hidden)**. With **CC (visible)** your customer sees your co-worker's email address in every message.
+
+### Agent priority
+
+When several agents share the same inbox, the first agent that matches an email is the one that handles it. This section lets you reorder them with arrows, so the most specific agent gets its turn before the general one.
+
+You'll only be able to change the order once an inbox is connected. Until then, the screen tells you to connect one on the **Mailbox** tab.
+
+## Step 6 — Save your changes
+
+When you have unsaved changes, a bar appears at the bottom of the screen with two buttons: **Discard**, which undoes everything you just changed, and **Save**, which stores it.
+
+> **Important:** Don't leave the screen while that bar is visible. If you navigate away without clicking **Save**, your changes are lost.
+
+## How to check it worked
+
+Three quick signs that everything is in place:
+
+1. In the **Mail Agents** list, your agent no longer shows **No email assigned** underneath its name.
+2. Send a test email to the connected inbox from a different address of your own, using wording that matches one of your categories.
+3. Wait a few minutes and check the inbox. Depending on how you set up that category, you should find either a draft ready to review or a reply already sent.
+
+If nothing happens, check first that the inbox really is connected, and then whether **Reply only to a specific sender** is switched on and pointing at a different address from the one you tested with.
+
+## What to do next
+
+- Write a couple more categories now that you've seen the agent in action. Real emails always suggest labels you hadn't thought of.
+- Explore the **Email** section in the sidebar to see the messages your agent has processed.
+- Take a look at **Tools** to extend what your agent can do.
