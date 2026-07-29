@@ -1,17 +1,22 @@
 ---
-title: "Mail Agents"
-description: "Set up an AI agent that reads, sorts and replies to the email arriving in your inbox, step by step."
+title: "AI Email Manager"
+description: "Agents, Email and Tools. Discover the AI Email Manager section of Callin.io and set up an agent that reads, sorts and replies to your email, step by step."
 ---
 
-A **Mail Agent** is an assistant that watches an email inbox for you. It reads each new message, works out what it's about, and prepares a reply following the instructions you give it. You decide how far it goes: it can leave a draft waiting for you to review, or send the reply on its own.
+**AI Email Manager** is the section of Callin.io where your AI stops making calls and starts handling email. It works around three areas, which you'll find in the left sidebar:
 
-This guide walks you through creating your first agent from scratch. It takes about ten minutes and you don't need any technical background.
+- **Mail Agents** — where you create and configure the agents that manage your mail.
+- **Email** — where you read and reply to the messages your agents have processed.
+- **Tools** — where you connect third-party services that give your agents extra powers.
+
+A **Mail Agent** is an assistant that watches an inbox for you. It reads each new message, works out what it's about, and prepares a reply following the instructions you give it. You decide how far it goes: it can leave a draft waiting for you to review, or send the reply on its own.
+
+This guide walks through the three areas in order. Setting up your first agent takes about ten minutes and you don't need any technical background.
 
 > **Note:** AI Email Manager is marked as **Beta**. That means it's still growing, so some screens may look slightly different in your account.
 
 ## What you need before you start
 
-- An account with access to **AI Email Manager**.
 - The email account you want the agent to work with. It can be Gmail, Outlook, or almost any other provider.
 - A rough idea of what you want the agent to do. One sentence is enough for now, for example: "answer questions about opening hours and pass anything about invoices to a person".
 
@@ -33,7 +38,7 @@ Give the agent a name that tells you at a glance what it handles, such as "Custo
 
 Under the name in the list you'll see **No email assigned** in orange. That's normal: it simply means no inbox is connected yet. You'll fix that in step 4.
 
-Once the agent is created, four tabs appear: **Agent**, **Categories**, **Mailbox** and **Advanced**. The rest of this guide follows them in order.
+Once the agent is created, four tabs appear: **Agent**, **Categories**, **Mailbox** and **Advanced**. The next steps follow them in order.
 
 ## Step 2 — Tell the agent how to behave
 
@@ -136,18 +141,52 @@ When you have unsaved changes, a bar appears at the bottom of the screen with tw
 
 > **Important:** Don't leave the screen while that bar is visible. If you navigate away without clicking **Save**, your changes are lost.
 
+## The Email section: read and reply in one place
+
+Open **Email** in the left sidebar. This is where the messages processed by your agents show up, so you can read them and manage the replies without leaving Callin.io.
+
+If you haven't connected an inbox yet, the screen explains exactly what's missing and how to fix it in three steps: open **Mail Agents** and select an agent, connect Google, Microsoft or IMAP in the **Mailbox** tab, and come back here to read and reply to messages. The two buttons on that screen, **Go to Mail Agents** and **Create mail agent**, take you straight there.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents2.png" alt="Email section showing the message Connect a mailbox to use Email, three setup steps, and the buttons Go to Mail Agents and Create mail agent" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  The Email section before any inbox is connected. The screen itself guides you through the three steps left to complete.
+</p>
+
+Once an inbox is connected, incoming messages appear here a few minutes after they arrive, along with the drafts and replies your agent has prepared.
+
+## The Tools section: give your agents superpowers
+
+Open **Tools** in the left sidebar. Here you connect third-party services that extend what your agents can do with each email.
+
+A good example is the **Amazon Seller API** integration. With it connected, when a customer email contains an Amazon order number, the agent can look up the order details automatically and use them in its reply, instead of asking the customer for information the system already has.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Tools section showing the Amazon Seller API integration with Connected status, account details, and the Test connection and Disconnect buttons" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  The Tools section with the Amazon Seller API integration connected. The card shows the account details and the connection status.
+</p>
+
+When an integration is active, its card shows a green **Connected** badge along with the connection details, such as the seller account name, the region and the date it was connected. From the same card you can use **Test connection** to check everything still works, or **Disconnect** to unlink it.
+
+> **Note:** The integrations available and how they connect can vary depending on your account. If a card says the connection is server-managed, it was set up automatically and you don't need to do anything.
+
 ## How to check it worked
 
 Three quick signs that everything is in place:
 
 1. In the **Mail Agents** list, your agent no longer shows **No email assigned** underneath its name.
 2. Send a test email to the connected inbox from a different address of your own, using wording that matches one of your categories.
-3. Wait a few minutes and check the inbox. Depending on how you set up that category, you should find either a draft ready to review or a reply already sent.
+3. Wait a few minutes and open the **Email** section. Depending on how you set up that category, you should find either a draft ready to review or a reply already sent.
 
 If nothing happens, check first that the inbox really is connected, and then whether **Reply only to a specific sender** is switched on and pointing at a different address from the one you tested with.
 
 ## What to do next
 
 - Write a couple more categories now that you've seen the agent in action. Real emails always suggest labels you hadn't thought of.
-- Explore the **Email** section in the sidebar to see the messages your agent has processed.
-- Take a look at **Tools** to extend what your agent can do.
+- Visit the **Email** section every day during the first week to review your agent's drafts and polish the Conversation Prompt with what you learn.
+- Take a look at **Tools** from time to time: new integrations can appear as the product grows.
