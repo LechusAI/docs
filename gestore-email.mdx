@@ -2,3 +2,242 @@
 title: "Gestore Email con IA"
 description: "Agenti, email e strumenti: scopri la sezione Gestore Email con IA di Callin.io e configura passo dopo passo un agente che legge, classifica e risponde alla tua posta."
 ---
+
+Il **Gestore Email con IA** è la sezione di Callin.io in cui la tua IA smette di fare telefonate e inizia a occuparsi della posta. Si organizza in tre aree, che trovi nella barra laterale sinistra:
+
+- **Agenti email**: dove crei e configuri gli agenti che gestiscono la tua posta.
+- **Email**: dove leggi e rispondi ai messaggi elaborati dai tuoi agenti.
+- **Strumenti**: dove colleghi servizi esterni che danno poteri extra ai tuoi agenti.
+
+Un **agente email** è un assistente che sorveglia una casella di posta per te. Legge ogni nuovo messaggio, capisce di cosa parla e prepara una risposta seguendo le istruzioni che gli dai. Sei tu a decidere fin dove arriva: può lasciarti una bozza da rivedere, oppure inviare la risposta da solo. Ogni agente si collega a una casella alla volta, ma più agenti possono condividere la stessa casella e dividersi il lavoro.
+
+Questa guida percorre le tre aree in ordine. Configurare il tuo primo agente ti richiederà una decina di minuti e non servono conoscenze tecniche.
+
+> **Nota:** Il Gestore Email con IA è contrassegnato come **Beta**. Significa che sta ancora crescendo, quindi qualche schermata potrebbe apparire un po' diversa nel tuo account.
+
+## Cosa ti serve prima di iniziare
+
+- L'account di posta con cui vuoi far lavorare l'agente. Può essere Gmail, Outlook o quasi qualsiasi altro provider.
+- Se quell'account ha la verifica in due passaggi e non usi Gmail né Outlook, una **password per le app**: una password speciale che il tuo provider genera per collegare applicazioni esterne, così non condividi mai quella vera.
+- Un'idea approssimativa di cosa vuoi che faccia l'agente. Per ora basta una frase, ad esempio: "che risponda alle domande sugli orari e passi a una persona tutto ciò che riguarda le fatture".
+
+Non serve avere la casella pronta in questo momento. Puoi creare prima l'agente e collegare la casella più tardi.
+
+## Passo 1 — Crea l'agente
+
+Nella barra laterale sinistra, apri **Agenti email**. Qui trovi l'elenco di tutti gli agenti che hai creato. Fai clic su **Crea agente**, in alto a destra.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents1.png" alt="Elenco degli agenti email con un agente di assistenza clienti e l'avviso Nessuna email assegnata, la barra di ricerca e il pulsante Crea agente" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  L'elenco degli agenti email. Ogni agente mostra il nome, la data di creazione e un avviso in arancione finché non ha nessuna casella collegata.
+</p>
+
+Si apre una breve procedura guidata che ti accompagna attraverso le stesse impostazioni descritte nei prossimi passi di questa guida: nome, istruzioni, categorie, regole di automazione e casella. Non preoccuparti di fare tutto perfetto al primo colpo: tutti i passaggi tranne il nome si possono saltare, e in seguito puoi modificare qualsiasi cosa dalle schede di configurazione dell'agente.
+
+Dagli un nome che ti dica a colpo d'occhio di cosa si occupa, ad esempio "Assistenza clienti" o "Casella vendite". Hai fino a 50 caratteri, e questo nome compare ovunque compaia l'agente, quindi meglio chiaro che ingegnoso. Puoi cambiarlo quando vuoi dal campo di testo nella parte superiore della schermata dell'agente.
+
+Sotto il nome, nell'elenco, vedrai **Nessuna email assegnata** in arancione. È normale: significa solo che non c'è ancora nessuna casella collegata. Lo risolverai al passo 4.
+
+Ogni riga dell'elenco ha inoltre un menu **⋮** con tre azioni: **Copia ID** copia l'identificativo unico dell'agente, **Modifica** apre la sua configurazione ed **Elimina** cancella l'agente in modo permanente dopo una conferma. Eliminare un agente cancella solo la sua configurazione e il suo collegamento: il tuo account di posta e i messaggi che contiene non vengono toccati.
+
+Una volta creato l'agente, la sua configurazione si organizza in quattro schede: **Agente**, **Categorie**, **Casella di posta** e **Avanzate**. I prossimi passi le percorrono in questo ordine.
+
+## Passo 2 — Spiega all'agente come comportarsi
+
+Apri la scheda **Agente**. Qui definisci la personalità e il criterio dell'agente.
+
+### Prompt di conversazione
+
+Il **prompt di conversazione** è un riquadro in cui scrivi, in linguaggio normale, come l'agente deve gestire la posta. Non c'è nessuna sintassi speciale: lo scrivi come spiegheresti il lavoro a un collega nuovo il suo primo giorno.
+
+Un esempio breve:
+
+> Rispondi in modo professionale e inoltra le domande sulla fatturazione a una persona.
+
+Più sei preciso, più il risultato sarà prevedibile. Una versione più utile per uno studio dentistico sarebbe: "Rispondi a nome dello Studio Dentistico Demo. Sii cordiale e breve. Rispondi alle domande su orari, indirizzo e prezzi. Se qualcuno chiede di spostare un appuntamento, digli che oggi stesso gli scriverà una persona del team e non promettere un orario preciso".
+
+Il contatore nell'angolo in basso a destra del riquadro ti indica quanto spazio hai usato dei 4000 caratteri disponibili. È più che sufficiente per istruzioni molto dettagliate. Qualsiasi modifica salvata qui si applica subito alla nuova posta in arrivo.
+
+> **Suggerimento:** Scrivi anche ciò che l'agente **non** deve fare, non solo ciò che deve fare. Frasi come "non confermare mai appuntamenti", "non promettere mai rimborsi" o "non parlare mai di prezzi via email" ti evitano quasi tutte le sorprese.
+
+### Intelligenza IA (LLM)
+
+Sulla destra della stessa scheda vedrai **Intelligenza IA (LLM)**. Un **LLM** (modello linguistico di grandi dimensioni) è il motore che legge e scrive testo: è la parte che davvero capisce l'email e redige la risposta.
+
+Fai clic sulla scheda del modello per aprire un pannello laterale con le opzioni disponibili. Accanto a ogni modello vedrai un'etichetta che indica il suo livello di ragionamento, cioè quanto il modello "pensa" prima di scrivere. Più ragionamento porta più sfumature, ma anche più tempo e più costo per risposta.
+
+| Modello | Livello di ragionamento | Per cosa va bene |
+| --- | --- | --- |
+| GPT 5.4 Mini | Basso | L'opzione predefinita, equilibrata tra qualità, velocità e costo |
+| Claude Sonnet | Medio | Risposte in cui il tono conta di più, con una voce curata e naturale |
+| GPT 5.4 Nano | Basso | Grandi volumi di posta semplice, dove contano di più velocità e costo |
+| GPT 4.1 Mini | Basso | Un'opzione stabile ed equilibrata per un traffico alto e costante |
+
+Nello stesso pannello trovi la **temperatura**, un cursore da 0 a 1 che parte da 0,7. Regola quanto le risposte dell'agente sono creative o prevedibili. I valori bassi mantengono una scrittura costante e ripetibile, utile quando le risposte devono seguire un modello. I valori alti rendono la scrittura più varia e naturale, in cambio di più differenze tra messaggi simili.
+
+> **Se è la prima volta:** Non devi toccare niente di tutto questo. Il modello e la temperatura predefiniti funzionano bene per la maggior parte delle caselle. Torna più avanti: se le risposte suonano robotiche, prova Claude Sonnet o alza un po' la temperatura; se variano troppo, abbassala.
+
+## Passo 3 — Organizza la tua posta con le categorie
+
+Apri la scheda **Categorie**. Le categorie sono etichette facoltative che aiutano l'agente a capire con che tipo di messaggio ha a che fare: fatture, reclami, richieste di appuntamento, ecc. Ogni categoria esistente compare come una scheda con la sua etichetta, la sua descrizione e un'icona a matita per modificarla o a cestino per eliminarla.
+
+Vale la pena configurarle perché ti permettono di trattare ogni tipo di posta in modo diverso. Magari vuoi che l'agente risponda da solo a una domanda semplice sugli orari, ma che si limiti a preparare una bozza quando il messaggio parla di soldi.
+
+Fai clic su **Aggiungi categoria**. Si apre una finestra con questi campi:
+
+| Campo | Cosa fa | Esempio |
+| --- | --- | --- |
+| Nome della categoria | L'etichetta breve che vedrai su ogni email | Fatturazione |
+| Descrizione | Indica all'agente quando usare questa categoria | Fatture, pagamenti, rimborsi |
+| Colore dell'etichetta | Il colore dell'etichetta, per riconoscerla a colpo d'occhio | Rosa |
+
+Puoi scegliere uno dei colori predefiniti o crearne uno tuo con il campione **\+**.
+
+Sotto ci sono due interruttori:
+
+- **Genera bozza di risposta per questa categoria**: attivo per impostazione predefinita. L'agente prepara la risposta e te la lascia pronta da rivedere prima che parta.
+- **Risposta automatica per questa categoria**: disattivo per impostazione predefinita. L'agente invia la risposta da solo, senza revisione.
+
+Se li disattivi entrambi, l'agente continua a etichettare il messaggio con la categoria ma non scrive nessuna risposta. È utile per la posta che vuoi sempre far gestire a una persona da zero, come reclami o questioni legali.
+
+> **Errore comune:** Scrivere una descrizione troppo vaga, tipo "cose importanti". L'agente usa quel testo per decidere quali email finiscono qui, quindi descrivi il contenuto reale: "messaggi che chiedono una fattura, un rimborso o un cambio di metodo di pagamento". Se vedi che le email finiscono nella categoria sbagliata, affinare la descrizione è di solito la soluzione più rapida.
+
+> **Importante:** Inizia con **Genera bozza di risposta** attivo e **Risposta automatica** disattivo. Leggi le bozze per qualche giorno. Quando avrai verificato che l'agente azzecca il tono e i dati, attiva la risposta automatica nelle categorie in cui un errore non avrebbe conseguenze.
+
+## Passo 4 — Collega la casella
+
+Apri la scheda **Casella di posta**. Qui colleghi l'account di posta reale di cui si occuperà l'agente. Finché non lo fai, l'agente è configurato ma fermo.
+
+Hai tre opzioni:
+
+- **Gmail**: collega il tuo account Google. Approvi il collegamento nella consueta schermata di autorizzazione di Google, senza configurare nulla a mano.
+- **Outlook**: collega Microsoft 365, nello stesso modo di Gmail.
+- **Altra email (IMAP e SMTP)**: collega qualsiasi altro provider. **IMAP** è lo standard che permette all'agente di leggere la posta della tua casella, e **SMTP** è quello che gli permette di inviare le risposte. Il tuo provider pubblica entrambi i dati nelle sue pagine di assistenza.
+
+Se scegli l'opzione manuale, il modulo ti chiede:
+
+| Campo | Cosa inserire |
+| --- | --- |
+| Indirizzo email | La casella da cui l'agente leggerà e da cui invierà |
+| Password | La tua password o, meglio, una password per le app se il tuo account ha la verifica in due passaggi |
+| Server IMAP | Il server di lettura, qualcosa come imap.tuoprovider.com |
+| Porta IMAP | Di solito 993, che il modulo suggerisce per impostazione predefinita |
+| Giorni di posta da importare | Quanto indietro guarda l'agente al primo collegamento, da 1 a 45 giorni |
+| Server SMTP | Il server di invio, qualcosa come smtp.tuoprovider.com |
+| Porta SMTP | Di solito 587, che il modulo suggerisce per impostazione predefinita |
+
+Sotto le opzioni, la schermata ti ricorda che le tue credenziali vengono salvate cifrate e in modo sicuro.
+
+> **Nota:** Puoi saltare questo passo e collegare la casella più tardi. Tutto ciò che hai configurato nei passi precedenti resta salvato. Ricorda però che l'agente non elaborerà assolutamente nulla finché non ci sarà una casella collegata.
+
+## Passo 5 — Regola il comportamento (facoltativo)
+
+Apri la scheda **Avanzate**. Tutto ciò che c'è qui è facoltativo, ed entrambe le regole partono disattivate. Se questo è il tuo primo agente, puoi saltare tranquillamente al passo 6 e tornare un altro giorno.
+
+### Regole di automazione
+
+**Rispondi solo a un mittente specifico.** Quando lo attivi e scrivi un indirizzo in **Indirizzo email del mittente**, l'agente elabora e risponde solo ai messaggi che arrivano da quell'indirizzo. Tutti gli altri mittenti vengono ignorati del tutto, e le categorie diventano facoltative. È perfetto per automazioni ristrette e con un unico scopo — rispondere sempre a un sistema automatico o a un contatto specifico — ed è anche il modo più sicuro per provare un agente in una casella reale: puntalo sul tuo indirizzo e osserva cosa fa, senza toccare nessun cliente.
+
+**Copia le risposte automatiche.** Invia una copia di ogni risposta automatica a un indirizzo aggiuntivo, che scrivi in **Email del destinatario in copia**. In **Tipo di invio** scegli come viaggia quella copia:
+
+- **CC (visibile)**: la persona che riceve la risposta vede quell'indirizzo nella riga di copia.
+- **CCN (nascosta)**: la copia viene inviata in silenzio e il destinatario non vede nulla.
+
+È utile quando un responsabile vuole seguire da vicino ciò che l'agente invia.
+
+> **Suggerimento:** Se attivi la risposta automatica in qualche categoria, attiva anche la copia, almeno finché non avrai preso fiducia in ciò che scrive l'agente.
+
+> **Attenzione:** Se la copia va a un collega interno, scegli **CCN (nascosta)**. Con **CC (visibile)**, il tuo cliente vede l'email del tuo collega in ogni messaggio.
+
+### Priorità degli agenti
+
+Quando più agenti condividono la stessa casella, il primo agente che corrisponde a un'email è quello che se ne occupa: il messaggio non passa agli altri. Questa sezione ti permette di riordinare gli agenti con le frecce su e giù.
+
+Ordinali dal più specifico al più generale: un agente limitato a un solo mittente dovrebbe stare sopra un agente generico di assistenza, così l'agente pigliatutto non si prende tutti i messaggi.
+
+Potrai cambiare l'ordine solo quando ci sarà una casella collegata. Fino ad allora, la schermata ti indica di collegarne una nella scheda **Casella di posta**.
+
+## Passo 6 — Salva le modifiche
+
+Quando hai modifiche non salvate compare una barra nella parte inferiore dello schermo con due pulsanti: **Annulla**, che cancella tutto ciò che hai appena cambiato, e **Salva**, che lo memorizza.
+
+> **Importante:** Non uscire dalla schermata mentre quella barra è visibile. Se te ne vai senza fare clic su **Salva**, perdi le modifiche.
+
+## La sezione Email: leggi e rispondi in un unico posto
+
+Apri **Email** nella barra laterale sinistra. Questa è la casella unificata: qui compaiono i messaggi elaborati dai tuoi agenti, da tutte le caselle collegate, con la categoria ricevuta da ciascuno. È anche il posto dove rivedi, modifichi e invii le bozze preparate dai tuoi agenti.
+
+Se non hai ancora collegato nessuna casella, la schermata ti spiega esattamente cosa manca e come risolverlo in tre passi: apri **Agenti email** e seleziona un agente, collega la casella nella scheda **Casella di posta** con Google, con Microsoft o tramite IMAP, e torna qui per leggere e rispondere ai messaggi. I due pulsanti di quella schermata, **Vai ad Agenti email** e **Crea agente email**, ti portano direttamente lì.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents2.png" alt="Sezione Email con il messaggio che chiede di collegare una casella, i tre passi di configurazione e i pulsanti Vai ad Agenti email e Crea agente email" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La sezione Email prima di collegare qualsiasi casella. La schermata stessa ti guida attraverso i tre passi che mancano.
+</p>
+
+Quando ci sarà una casella collegata, i messaggi in arrivo compariranno qui pochi minuti dopo l'arrivo, insieme alle bozze e alle risposte preparate dal tuo agente.
+
+## La sezione Strumenti: dai superpoteri ai tuoi agenti
+
+Apri **Strumenti** nella barra laterale sinistra. Qui colleghi servizi esterni che ampliano ciò che i tuoi agenti possono fare con ogni email, dando loro accesso a dati in tempo reale che non si trovano nella conversazione stessa.
+
+### Amazon Seller API
+
+Con questa integrazione collegata, quando l'email di un cliente contiene un numero d'ordine Amazon, l'agente consulta automaticamente i dettagli dell'ordine e può usarli nella sua risposta, invece di chiedere al cliente informazioni che il sistema ha già.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Sezione Strumenti con l'integrazione Amazon Seller API in stato collegato, i dati dell'account e i pulsanti Prova connessione e Disconnetti" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La sezione Strumenti con l'integrazione Amazon Seller API collegata. La scheda mostra i dati dell'account e lo stato della connessione.
+</p>
+
+Quando l'integrazione è attiva, la sua scheda mostra un badge verde **Collegato** insieme ai dettagli della connessione: il nome dell'account venditore, l'identificativo del partner di vendita, la regione, il mercato e la data del collegamento. Dalla stessa scheda puoi scrivere un numero d'ordine reale in **ID ordine di prova** e premere **Prova connessione** per verificare che tutto funzioni senza aspettare l'email di un cliente, oppure usare **Disconnetti** per scollegarla.
+
+In alcuni account questa integrazione si configura automaticamente con una configurazione gestita dal server. Se la tua scheda dice già **Collegato** e menziona la configurazione del server, non devi fare nulla.
+
+### Aggiungere link di tracciamento alle risposte
+
+I dati dell'ordine sono a disposizione dell'agente, ma non compariranno in una risposta se non gli dici di usarli. Per farlo, menzionali nel prompt di conversazione usando le variabili: segnaposto tra doppie parentesi graffe che vengono sostituiti dal valore reale di ogni ordine. Ad esempio, aggiungi questo al prompt:
+
+> Quando il cliente chiede della spedizione o della consegna, includi questo link di tracciamento: {{amazon_tracking_url}}
+
+Queste sono le variabili disponibili:
+
+| Variabile | Con cosa viene sostituita |
+| --- | --- |
+| Il numero d'ordine Amazon |  |
+|  | Lo stato dell'ordine |
+| Il mercato o paese di vendita |
+| Il paese di destinazione |
+| Il paese di spedizione |
+| Il numero di tracciamento |
+| Il link di tracciamento |
+| Il corriere |
+| Il servizio di spedizione |
+
+> **Nota:** Perché il link di tracciamento si compili, l'integrazione deve essere collegata, la conversazione email deve contenere un numero d'ordine Amazon riconoscibile e l'ordine deve essere già stato spedito: i dati di tracciamento esistono solo quando Amazon li genera.
+
+Ci si aspetta che arrivino altri strumenti in questa sezione man mano che il Gestore Email con IA uscirà dalla fase Beta.
+
+## Come verificare che funziona
+
+Tre segnali rapidi che tutto è al suo posto:
+
+1. Nell'elenco **Agenti email**, il tuo agente non mostra più **Nessuna email assegnata** sotto il nome.
+2. Invia un'email di prova alla casella collegata da un altro tuo indirizzo, con un testo che corrisponda a una delle tue categorie.
+3. Aspetta qualche minuto e apri la sezione **Email**. A seconda di come hai configurato quella categoria, dovresti trovare una bozza pronta da rivedere o una risposta già inviata.
+
+Se non succede nulla, verifica tre cose in ordine: che la casella sia davvero collegata, che non sia attivo **Rispondi solo a un mittente specifico** puntato su un indirizzo diverso da quello usato nella prova, e che la tua email di prova corrisponda davvero alla descrizione di una categoria: la risposta automatica parte solo quando il messaggio viene classificato in una categoria con la risposta automatica attiva.
+
+## Cosa fare dopo
+
+- Crea un paio di categorie in più ora che hai visto l'agente in azione. Le email reali suggeriscono sempre etichette a cui non avevi pensato.
+- Visita la sezione **Email** ogni giorno durante la prima settimana per rivedere le bozze del tuo agente e affinare il prompt di conversazione con ciò che impari.
+- Dai un'occhiata a **Strumenti** ogni tanto: possono comparire nuove integrazioni man mano che il prodotto cresce.
