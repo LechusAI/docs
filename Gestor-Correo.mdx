@@ -1,0 +1,243 @@
+---
+title: "Gestor de Correo con IA"
+description: "Agentes, correo y herramientas: descubre la sección Gestor de Correo con IA de Callin.io y configura paso a paso un agente que lee, clasifica y responde tu correo."
+---
+
+El **Gestor de Correo con IA** es la sección de Callin.io donde tu IA deja de hacer llamadas y pasa a ocuparse del correo. Se organiza en tres áreas, que encontrarás en la barra lateral izquierda:
+
+- **Agentes de correo**: donde creas y configuras los agentes que gestionan tu correo.
+- **Correo**: donde lees y respondes los mensajes que han procesado tus agentes.
+- **Herramientas**: donde conectas servicios externos que dan poderes extra a tus agentes.
+
+Un **agente de correo** es un asistente que vigila una bandeja de entrada por ti. Lee cada mensaje nuevo, entiende de qué va y prepara una respuesta siguiendo las instrucciones que tú le das. Tú decides hasta dónde llega: puede dejarte un borrador para que lo revises, o enviar la respuesta por su cuenta. Cada agente se conecta a una bandeja a la vez, pero varios agentes pueden compartir la misma bandeja y repartirse el trabajo.
+
+Esta guía recorre las tres áreas en orden. Configurar tu primer agente te llevará unos diez minutos y no necesitas conocimientos técnicos.
+
+> **Nota:** El Gestor de Correo con IA está marcado como **Beta**. Eso significa que sigue creciendo, así que alguna pantalla puede verse un poco distinta en tu cuenta.
+
+## Qué necesitas antes de empezar
+
+- La cuenta de correo con la que quieres que trabaje el agente. Puede ser Gmail, Outlook o casi cualquier otro proveedor.
+- Si esa cuenta tiene verificación en dos pasos y no usas Gmail ni Outlook, una **contraseña de aplicación**: una contraseña especial que genera tu proveedor para conectar aplicaciones externas, de forma que nunca compartes la de verdad.
+- Una idea aproximada de lo que quieres que haga el agente. Con una frase basta de momento, por ejemplo: "que responda preguntas sobre el horario y pase a una persona todo lo que tenga que ver con facturas".
+
+No hace falta que tengas la bandeja lista ahora mismo. Puedes crear el agente primero y conectar la bandeja más tarde.
+
+## Paso 1 — Crea el agente
+
+En la barra lateral izquierda, abre **Agentes de correo**. Ahí tienes la lista de todos los agentes que has creado. Haz clic en **Crear agente**, arriba a la derecha.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents1.png" alt="Lista de agentes de correo con un agente de atención al cliente y el aviso Sin correo asignado, el buscador y el botón Crear agente" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La lista de agentes de correo. Cada agente muestra su nombre, su fecha de creación y un aviso en naranja mientras no tenga ninguna bandeja conectada.
+</p>
+
+Se abre un asistente de configuración corto que te acompaña por los mismos ajustes que ves en los siguientes pasos de esta guía: nombre, instrucciones, categorías, reglas de automatización y bandeja. No te preocupes por dejarlo todo perfecto a la primera: todos los pasos salvo el nombre se pueden saltar, y luego puedes cambiar cualquier cosa desde las pestañas de configuración del agente.
+
+Ponle un nombre que te diga de un vistazo de qué se encarga, por ejemplo "Atención al cliente" o "Bandeja de ventas". Tienes hasta 50 caracteres, y este nombre aparece en todos los sitios donde aparece el agente, así que mejor claro que ingenioso. Puedes cambiarlo cuando quieras desde el campo de texto en la parte superior de la pantalla del agente.
+
+Debajo del nombre, en la lista, verás **Sin correo asignado** en naranja. Es normal: solo significa que todavía no hay ninguna bandeja conectada. Lo resolverás en el paso 4.
+
+Cada fila de la lista tiene además un menú **⋮** con tres acciones: **Copiar ID** copia el identificador único del agente, **Editar** abre su configuración y **Eliminar** borra el agente de forma permanente tras una confirmación. Eliminar un agente solo borra su configuración y su conexión: tu cuenta de correo y los mensajes que contiene no se tocan.
+
+Una vez existe el agente, su configuración se organiza en cuatro pestañas: **Agente**, **Categorías**, **Buzón** y **Avanzado**. Los siguientes pasos las recorren en ese orden.
+
+## Paso 2 — Dile al agente cómo comportarse
+
+Abre la pestaña **Agente**. Aquí defines la personalidad y el criterio del agente.
+
+### Prompt de conversación
+
+El **prompt de conversación** es un cuadro donde escribes, en lenguaje normal, cómo debe gestionar el correo el agente. No hay ninguna sintaxis especial: lo escribes igual que le explicarías el trabajo a un compañero nuevo en su primer día.
+
+Un ejemplo corto:
+
+> Responde de forma profesional y pasa las preguntas de facturación a una persona.
+
+Cuanto más concreto seas, más predecible será el resultado. Una versión más útil para una clínica dental sería: "Respondes en nombre de Clínica Dental Demo. Sé cercano y breve. Responde preguntas sobre horario, dirección y precios. Si alguien pide cambiar una cita, dile que hoy mismo le escribirá una persona del equipo y no prometas una hora concreta".
+
+El contador de la esquina inferior derecha del cuadro te indica cuánto espacio has usado de los 4000 caracteres disponibles. Es de sobra para unas instrucciones muy detalladas. Cualquier cambio que guardes aquí se aplica de inmediato al correo nuevo que entre.
+
+> **Consejo:** Escribe también lo que el agente **no** debe hacer, no solo lo que sí. Frases como "nunca confirmes citas", "nunca prometas devoluciones" o "nunca hables de precios por correo" te evitan casi todas las sorpresas.
+
+### Inteligencia IA (LLM)
+
+A la derecha de esa misma pestaña verás **Inteligencia IA (LLM)**. Un **LLM** (modelo grande de lenguaje) es el motor que lee y escribe texto: es la parte que realmente entiende el correo y redacta la respuesta.
+
+Haz clic en la tarjeta del modelo para abrir un panel lateral con las opciones disponibles. Junto a cada modelo verás una etiqueta que indica su nivel de razonamiento, es decir, cuánto "piensa" el modelo antes de escribir. Más razonamiento aporta más matices, pero también más tiempo y más coste por respuesta.
+
+| Modelo | Nivel de razonamiento | Para qué va bien |
+| --- | --- | --- |
+| GPT 5.4 Mini | Bajo | La opción por defecto, equilibrada en calidad, velocidad y coste |
+| Claude Sonnet | Medio | Respuestas donde el tono importa más, con una voz cuidada y natural |
+| GPT 5.4 Nano | Bajo | Grandes volúmenes de correo sencillo, donde pesan más la velocidad y el coste |
+| GPT 4.1 Mini | Bajo | Una opción estable y equilibrada para un tráfico alto y constante |
+
+En ese mismo panel encontrarás la **temperatura**, un control deslizante de 0 a 1 que empieza en 0,7. Regula cómo de creativas o predecibles son las respuestas del agente. Los valores bajos mantienen una redacción constante y repetible, útil cuando las respuestas deben seguir una plantilla. Los valores altos hacen la redacción más variada y natural, a cambio de más diferencias entre mensajes parecidos.
+
+> **Si es tu primera vez:** No tienes que tocar nada de esto. El modelo y la temperatura por defecto funcionan bien para la mayoría de bandejas. Vuelve más adelante: si las respuestas suenan robóticas, prueba Claude Sonnet o sube un poco la temperatura; si varían demasiado, bájala.
+
+## Paso 3 — Organiza tu correo con categorías
+
+Abre la pestaña **Categorías**. Las categorías son etiquetas opcionales que ayudan al agente a entender con qué tipo de mensaje está tratando: facturas, quejas, peticiones de cita, etc. Cada categoría existente aparece como una tarjeta con su etiqueta, su descripción y un icono de lápiz para editarla o de papelera para eliminarla.
+
+Merece la pena configurarlas porque te permiten tratar cada tipo de correo de forma distinta. Quizá quieras que el agente responda solo a una pregunta sencilla sobre el horario, pero que se limite a preparar un borrador cuando el mensaje hable de dinero.
+
+Haz clic en **Añadir categoría**. Se abre una ventana con estos campos:
+
+| Campo | Qué hace | Ejemplo |
+| --- | --- | --- |
+| Nombre de la categoría | La etiqueta corta que verás en cada correo | Facturación |
+| Descripción | Le indica al agente cuándo usar esta categoría | Facturas, pagos, devoluciones |
+| Color de la etiqueta | El color de la etiqueta, para reconocerla de un vistazo | Rosa |
+
+Puedes elegir uno de los colores predefinidos o crear el tuyo con la muestra **\+**.
+
+Debajo hay dos interruptores:
+
+- **Generar borrador de respuesta para esta categoría**: activado por defecto. El agente prepara la respuesta y te la deja lista para que la revises antes de que salga.
+- **Respuesta automática para esta categoría**: desactivado por defecto. El agente envía la respuesta él mismo, sin revisión.
+
+Si desactivas los dos, el agente sigue etiquetando el mensaje con la categoría pero no escribe ninguna respuesta. Es útil para el correo que siempre quieres que gestione una persona desde cero, como quejas o asuntos legales.
+
+> **Error común:** Escribir una descripción demasiado vaga, del estilo "cosas importantes". El agente usa ese texto para decidir qué correos entran aquí, así que describe el contenido real: "mensajes que piden una factura, una devolución o un cambio de método de pago". Si ves que los correos caen en la categoría equivocada, afinar la descripción suele ser el arreglo más rápido.
+
+> **Importante:** Empieza con **Generar borrador de respuesta** activado y **Respuesta automática** desactivado. Lee los borradores durante unos días. Cuando compruebes que el agente acierta con el tono y con los datos, activa la respuesta automática en las categorías donde un error no tendría consecuencias.
+
+## Paso 4 — Conecta la bandeja
+
+Abre la pestaña **Buzón**. Aquí enlazas la cuenta de correo real de la que se va a ocupar el agente. Hasta que lo hagas, el agente está configurado pero parado.
+
+Tienes tres opciones:
+
+- **Gmail**: conecta con tu cuenta de Google. Apruebas la conexión en la pantalla de permisos habitual de Google, sin configurar nada a mano.
+- **Outlook**: conecta con Microsoft 365, de la misma forma que Gmail.
+- **Otro correo (IMAP y SMTP)**: conecta cualquier otro proveedor. **IMAP** es el estándar que permite al agente leer el correo de tu bandeja, y **SMTP** es el que le permite enviar las respuestas. Tu proveedor publica ambos datos en sus páginas de ayuda.
+
+Si eliges la opción manual, el formulario te pide:
+
+| Campo | Qué poner |
+| --- | --- |
+| Dirección de correo | La bandeja de la que el agente leerá y desde la que enviará |
+| Contraseña | Tu contraseña o, mejor, una contraseña de aplicación si tu cuenta tiene verificación en dos pasos |
+| Servidor IMAP | El servidor de lectura, algo como imap.tuproveedor.com |
+| Puerto IMAP | Normalmente 993, que el formulario sugiere por defecto |
+| Días de correo a importar | Hasta dónde mira atrás el agente al conectar por primera vez, de 1 a 45 días |
+| Servidor SMTP | El servidor de envío, algo como smtp.tuproveedor.com |
+| Puerto SMTP | Normalmente 587, que el formulario sugiere por defecto |
+
+Bajo las opciones, la pantalla te recuerda que tus credenciales se guardan cifradas y de forma segura.
+
+> **Nota:** Puedes saltarte este paso y conectar la bandeja más tarde. Todo lo que configuraste en los pasos anteriores se mantiene guardado. Eso sí, recuerda que el agente no procesará absolutamente nada hasta que haya una bandeja enlazada.
+
+## Paso 5 — Ajusta el comportamiento (opcional)
+
+Abre la pestaña **Avanzado**. Todo lo que hay aquí es opcional, y las dos reglas empiezan desactivadas. Si este es tu primer agente, puedes saltar al paso 6 sin problema y volver otro día.
+
+### Reglas de automatización
+
+**Responder solo a un remitente concreto.** Cuando lo activas y escribes una dirección en **Dirección de correo del remitente**, el agente solo procesa y responde los mensajes que llegan de esa dirección. El resto de remitentes se ignoran por completo, y las categorías pasan a ser opcionales. Es perfecto para automatizaciones estrechas y de un solo propósito — responder siempre a un sistema automático o a un contacto concreto — y también es la forma más segura de probar un agente en una bandeja real: apúntalo a tu propia dirección y observa qué hace, sin tocar a ningún cliente.
+
+**Copiar respuestas automáticas.** Envía una copia de cada respuesta automática a una dirección adicional, que escribes en **Correo del destinatario en copia**. En **Tipo de envío** eliges cómo viaja esa copia:
+
+- **CC (visible)**: la persona que recibe la respuesta ve esa dirección en la línea de copia.
+- **CCO (oculto)**: la copia se envía en silencio y el destinatario no ve nada.
+
+Resulta útil cuando un responsable quiere seguir de cerca lo que envía el agente.
+
+> **Consejo:** Si activas la respuesta automática en alguna categoría, activa también la copia, al menos mientras vas cogiendo confianza en lo que escribe el agente.
+
+> **Advertencia:** Si la copia va a un compañero interno, elige **CCO (oculto)**. Con **CC (visible)**, tu cliente ve el correo de tu compañero en cada mensaje.
+
+### Prioridad de agentes
+
+Cuando varios agentes comparten la misma bandeja, el primer agente que encaja con un correo es el que se ocupa de él: el mensaje no pasa por los demás. Esta sección te permite reordenar los agentes con flechas arriba y abajo.
+
+Ordénalos del más específico al más general: un agente limitado a un solo remitente debería ir por encima de un agente general de soporte, para que el agente comodín no se quede con todos los mensajes.
+
+Solo podrás cambiar el orden cuando haya una bandeja conectada. Hasta entonces, la pantalla te indica que conectes una en la pestaña **Buzón**.
+
+## Paso 6 — Guarda los cambios
+
+Cuando tienes cambios sin guardar aparece una barra en la parte inferior de la pantalla con dos botones: **Descartar**, que deshace todo lo que acabas de cambiar, y **Guardar**, que lo almacena.
+
+> **Importante:** No salgas de la pantalla mientras esa barra esté visible. Si te vas sin hacer clic en **Guardar**, pierdes los cambios.
+
+## La sección Correo: lee y responde en un solo lugar
+
+Abre **Correo** en la barra lateral izquierda. Esta es la bandeja unificada: aquí aparecen los mensajes procesados por tus agentes, de todas las bandejas conectadas, con la categoría que ha recibido cada uno. Es también donde revisas, editas y envías los borradores que han preparado tus agentes.
+
+Si todavía no has conectado ninguna bandeja, la pantalla te explica exactamente qué falta y cómo resolverlo en tres pasos: abre **Agentes de correo** y selecciona un agente, conecta la bandeja en la pestaña **Buzón** con Google, con Microsoft o mediante IMAP, y vuelve aquí para leer y responder los mensajes. Los dos botones de esa pantalla, **Ir a Agentes de correo** y **Crear agente de correo**, te llevan directamente allí.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents2.png" alt="Sección Correo con el mensaje que pide conectar una bandeja, los tres pasos de configuración y los botones Ir a Agentes de correo y Crear agente de correo" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La sección Correo antes de conectar ninguna bandeja. La propia pantalla te guía por los tres pasos que faltan.
+</p>
+
+Cuando haya una bandeja conectada, los mensajes entrantes aparecerán aquí a los pocos minutos de llegar, junto con los borradores y respuestas que haya preparado tu agente.
+
+## La sección Herramientas: dale superpoderes a tus agentes
+
+Abre **Herramientas** en la barra lateral izquierda. Aquí conectas servicios externos que amplían lo que tus agentes pueden hacer con cada correo, dándoles acceso a datos en vivo que no están en la propia conversación.
+
+### Amazon Seller API
+
+Con esta integración conectada, cuando el correo de un cliente contiene un número de pedido de Amazon, el agente consulta los detalles del pedido automáticamente y puede usarlos en su respuesta, en lugar de pedirle al cliente información que el sistema ya tiene.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Sección Herramientas con la integración Amazon Seller API en estado conectado, los datos de la cuenta y los botones Probar conexión y Desconectar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La sección Herramientas con la integración Amazon Seller API conectada. La tarjeta muestra los datos de la cuenta y el estado de la conexión.
+</p>
+
+Cuando la integración está activa, su tarjeta muestra una insignia verde de **Conectado** junto con los detalles de la conexión: el nombre de la cuenta de vendedor, el identificador de socio de venta, la región, el mercado y la fecha en que se conectó. Desde la misma tarjeta puedes escribir un número de pedido real en **ID de pedido de prueba** y pulsar **Probar conexión** para comprobar que todo funciona sin esperar al correo de un cliente, o usar **Desconectar** para desvincularla.
+
+En algunas cuentas esta integración se configura automáticamente con una configuración gestionada por el servidor. Si tu tarjeta ya dice **Conectado** y menciona la configuración del servidor, no tienes que hacer nada.
+
+### Añadir enlaces de seguimiento a las respuestas
+
+Los datos del pedido están disponibles para el agente, pero no aparecerán en una respuesta si no le dices que los use. Para eso, menciónalos en el prompt de conversación usando variables: marcadores entre llaves dobles que se sustituyen por el valor real de cada pedido. Por ejemplo, añade esto al prompt:
+
+> Cuando el cliente pregunte por el envío o la entrega, incluye este enlace de seguimiento: {{amazon_tracking_url}}
+
+Estas son las variables disponibles:
+
+| Variable | Por qué se sustituye |
+| --- | --- |
+| El número de pedido de Amazon |  |
+|  | El estado del pedido |
+| El mercado o país de venta |  |
+| El país de destino |  |
+| El país de envío |  |
+| El número de seguimiento |  |
+| El enlace de seguimiento |  |
+| El transportista |  |
+| El servicio de envío |  |
+
+> **Nota:** Para que el enlace de seguimiento se rellene, la integración debe estar conectada, el hilo de correo debe contener un número de pedido de Amazon reconocible y el pedido debe estar ya enviado: los datos de seguimiento solo existen cuando Amazon los genera.
+
+Se espera que lleguen más herramientas a esta sección a medida que el Gestor de Correo con IA salga de la fase Beta.
+
+## Cómo comprobar que funciona
+
+Tres señales rápidas de que todo está en su sitio:
+
+1. En la lista de **Agentes de correo**, tu agente ya no muestra **Sin correo asignado** debajo del nombre.
+2. Envía un correo de prueba a la bandeja conectada desde otra dirección tuya, con un texto que encaje con alguna de tus categorías.
+3. Espera unos minutos y abre la sección **Correo**. Según cómo hayas configurado esa categoría, deberías encontrar un borrador listo para revisar o una respuesta ya enviada.
+
+Si no pasa nada, comprueba tres cosas por orden: que la bandeja está realmente conectada, que no tienes activado **Responder solo a un remitente concreto** apuntando a una dirección distinta de la que usaste en la prueba, y que tu correo de prueba encaja de verdad con la descripción de alguna categoría: la respuesta automática solo sale cuando el mensaje se clasifica en una categoría con la respuesta automática activada.
+
+## Qué hacer después
+
+- Crea un par de categorías más ahora que has visto el agente en acción. Los correos reales siempre sugieren etiquetas en las que no habías pensado.
+- Visita la sección **Correo** cada día durante la primera semana para revisar los borradores de tu agente y pulir el prompt de conversación con lo que aprendas.
+- Echa un vistazo a **Herramientas** de vez en cuando: pueden aparecer integraciones nuevas a medida que el producto crece.
