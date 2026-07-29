@@ -1,0 +1,243 @@
+---
+title: "E-Mail-Manager mit KI"
+description: "Agenten, E-Mail und Werkzeuge: Entdecke den Bereich E-Mail-Manager mit KI von Callin.io und richte Schritt für Schritt einen Agenten ein, der deine E-Mails liest, sortiert und beantwortet."
+---
+
+Der **E-Mail-Manager mit KI** ist der Bereich von Callin.io, in dem deine KI aufhört zu telefonieren und anfängt, sich um deine E-Mails zu kümmern. Er gliedert sich in drei Bereiche, die du in der linken Seitenleiste findest:
+
+- **E-Mail-Agenten**: Hier erstellst und konfigurierst du die Agenten, die deine E-Mails verwalten.
+- **E-Mail**: Hier liest und beantwortest du die Nachrichten, die deine Agenten verarbeitet haben.
+- **Werkzeuge**: Hier verbindest du externe Dienste, die deinen Agenten zusätzliche Fähigkeiten geben.
+
+Ein **E-Mail-Agent** ist ein Assistent, der ein Postfach für dich im Auge behält. Er liest jede neue Nachricht, versteht, worum es geht, und bereitet eine Antwort nach den Anweisungen vor, die du ihm gibst. Du entscheidest, wie weit er geht: Er kann dir einen Entwurf zur Prüfung hinterlassen oder die Antwort selbstständig versenden. Jeder Agent ist mit jeweils einem Postfach verbunden, aber mehrere Agenten können sich dasselbe Postfach teilen und die Arbeit untereinander aufteilen.
+
+Dieser Leitfaden geht die drei Bereiche der Reihe nach durch. Deinen ersten Agenten einzurichten dauert etwa zehn Minuten, und du brauchst keinerlei technisches Vorwissen.
+
+> **Hinweis:** Der E-Mail-Manager mit KI ist als **Beta** gekennzeichnet. Das bedeutet, dass er noch wächst, sodass manche Bildschirme in deinem Konto etwas anders aussehen können.
+
+## Was du vor dem Start brauchst
+
+- Das E-Mail-Konto, mit dem der Agent arbeiten soll. Das kann Gmail, Outlook oder fast jeder andere Anbieter sein.
+- Falls dieses Konto die Zwei-Faktor-Authentifizierung nutzt und du weder Gmail noch Outlook verwendest, ein **App-Passwort**: ein spezielles Passwort, das dein Anbieter zum Verbinden externer Anwendungen erzeugt, damit du dein echtes Passwort nie weitergibst.
+- Eine ungefähre Vorstellung davon, was der Agent tun soll. Ein Satz reicht fürs Erste, zum Beispiel: „Er soll Fragen zu den Öffnungszeiten beantworten und alles rund um Rechnungen an einen Menschen weitergeben."
+
+Das Postfach muss jetzt noch nicht bereit sein. Du kannst zuerst den Agenten erstellen und das Postfach später verbinden.
+
+## Schritt 1 — Erstelle den Agenten
+
+Öffne in der linken Seitenleiste **E-Mail-Agenten**. Dort findest du die Liste aller Agenten, die du erstellt hast. Klicke oben rechts auf **Agent erstellen**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents1.png" alt="Liste der E-Mail-Agenten mit einem Kundenservice-Agenten und dem Hinweis Keine E-Mail zugewiesen, dem Suchfeld und der Schaltfläche Agent erstellen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Die Liste der E-Mail-Agenten. Jeder Agent zeigt seinen Namen, sein Erstellungsdatum und einen orangefarbenen Hinweis, solange kein Postfach verbunden ist.
+</p>
+
+Es öffnet sich ein kurzer Einrichtungsassistent, der dich durch dieselben Einstellungen führt, die in den nächsten Schritten dieses Leitfadens beschrieben werden: Name, Anweisungen, Kategorien, Automatisierungsregeln und Postfach. Mach dir keine Sorgen, alles beim ersten Mal perfekt zu machen: Alle Schritte außer dem Namen lassen sich überspringen, und später kannst du alles über die Konfigurationsreiter des Agenten ändern.
+
+Gib ihm einen Namen, der dir auf einen Blick sagt, worum er sich kümmert, zum Beispiel „Kundenservice" oder „Vertriebspostfach". Du hast bis zu 50 Zeichen, und dieser Name erscheint überall dort, wo der Agent erscheint — also lieber klar als originell. Du kannst ihn jederzeit über das Textfeld oben auf dem Bildschirm des Agenten ändern.
+
+Unter dem Namen siehst du in der Liste **Keine E-Mail zugewiesen** in Orange. Das ist normal: Es bedeutet nur, dass noch kein Postfach verbunden ist. Das löst du in Schritt 4.
+
+Jede Zeile der Liste hat außerdem ein **⋮**-Menü mit drei Aktionen: **ID kopieren** kopiert die eindeutige Kennung des Agenten, **Bearbeiten** öffnet seine Konfiguration und **Löschen** entfernt den Agenten nach einer Bestätigung dauerhaft. Beim Löschen eines Agenten werden nur seine Konfiguration und seine Verbindung entfernt: Dein E-Mail-Konto und die darin enthaltenen Nachrichten bleiben unberührt.
+
+Sobald der Agent existiert, gliedert sich seine Konfiguration in vier Reiter: **Agent**, **Kategorien**, **Postfach** und **Erweitert**. Die nächsten Schritte gehen sie in dieser Reihenfolge durch.
+
+## Schritt 2 — Erkläre dem Agenten, wie er sich verhalten soll
+
+Öffne den Reiter **Agent**. Hier legst du die Persönlichkeit und das Urteilsvermögen des Agenten fest.
+
+### Konversations-Prompt
+
+Der **Konversations-Prompt** ist ein Feld, in dem du in normaler Sprache aufschreibst, wie der Agent mit E-Mails umgehen soll. Es gibt keine besondere Syntax: Du schreibst es so, wie du einem neuen Kollegen an seinem ersten Tag die Arbeit erklären würdest.
+
+Ein kurzes Beispiel:
+
+> Antworte professionell und leite Fragen zur Abrechnung an einen Menschen weiter.
+
+Je präziser du bist, desto vorhersehbarer wird das Ergebnis. Eine nützlichere Version für eine Zahnarztpraxis wäre: „Du antwortest im Namen der Demo-Zahnarztpraxis. Sei freundlich und knapp. Beantworte Fragen zu Öffnungszeiten, Adresse und Preisen. Wenn jemand einen Termin verschieben möchte, sag ihm, dass sich noch heute jemand aus dem Team meldet, und versprich keine konkrete Uhrzeit."
+
+Der Zähler in der unteren rechten Ecke des Feldes zeigt dir, wie viel Platz du von den 4000 verfügbaren Zeichen verbraucht hast. Das ist mehr als genug für sehr detaillierte Anweisungen. Jede Änderung, die du hier speicherst, gilt sofort für neu eingehende E-Mails.
+
+> **Tipp:** Schreib auch auf, was der Agent **nicht** tun darf, nicht nur, was er tun soll. Sätze wie „bestätige niemals Termine", „versprich niemals Rückerstattungen" oder „sprich niemals per E-Mail über Preise" ersparen dir fast alle Überraschungen.
+
+### KI-Intelligenz (LLM)
+
+Auf der rechten Seite desselben Reiters siehst du **KI-Intelligenz (LLM)**. Ein **LLM** (großes Sprachmodell) ist der Motor, der Text liest und schreibt: Es ist der Teil, der die E-Mail wirklich versteht und die Antwort verfasst.
+
+Klicke auf die Modellkarte, um ein Seitenpanel mit den verfügbaren Optionen zu öffnen. Neben jedem Modell siehst du eine Kennzeichnung, die sein Denkniveau angibt, also wie viel das Modell „nachdenkt", bevor es schreibt. Mehr Nachdenken bringt mehr Feingefühl, aber auch mehr Zeit und höhere Kosten pro Antwort.
+
+| Modell | Denkniveau | Wofür es sich eignet |
+| --- | --- | --- |
+| GPT 5.4 Mini | Niedrig | Die Standardoption, ausgewogen bei Qualität, Geschwindigkeit und Kosten |
+| Claude Sonnet | Mittel | Antworten, bei denen der Ton am wichtigsten ist, mit einer gepflegten, natürlichen Stimme |
+| GPT 5.4 Nano | Niedrig | Große Mengen einfacher E-Mails, bei denen Geschwindigkeit und Kosten mehr zählen |
+| GPT 4.1 Mini | Niedrig | Eine stabile, ausgewogene Option für hohen, gleichmäßigen Verkehr |
+
+Im selben Panel findest du die **Temperatur**, einen Schieberegler von 0 bis 1, der bei 0,7 startet. Sie regelt, wie kreativ oder vorhersehbar die Antworten des Agenten sind. Niedrige Werte sorgen für eine gleichbleibende, wiederholbare Formulierung — nützlich, wenn Antworten einer Vorlage folgen sollen. Hohe Werte machen die Formulierung abwechslungsreicher und natürlicher, im Tausch gegen mehr Unterschiede zwischen ähnlichen Nachrichten.
+
+> **Wenn du neu bist:** Du musst hier nichts anfassen. Das Standardmodell und die Standardtemperatur funktionieren für die meisten Postfächer gut. Komm später wieder: Wenn die Antworten roboterhaft klingen, probiere Claude Sonnet oder erhöhe die Temperatur ein wenig; wenn sie zu stark variieren, senke sie.
+
+## Schritt 3 — Organisiere deine E-Mails mit Kategorien
+
+Öffne den Reiter **Kategorien**. Kategorien sind optionale Etiketten, die dem Agenten helfen zu verstehen, mit welcher Art von Nachricht er es zu tun hat: Rechnungen, Beschwerden, Terminanfragen usw. Jede vorhandene Kategorie erscheint als Karte mit ihrem Etikett, ihrer Beschreibung und einem Stift-Symbol zum Bearbeiten oder einem Papierkorb-Symbol zum Löschen.
+
+Es lohnt sich, sie einzurichten, weil du damit jede Art von E-Mail unterschiedlich behandeln kannst. Vielleicht soll der Agent eine einfache Frage zu den Öffnungszeiten selbstständig beantworten, aber nur einen Entwurf vorbereiten, wenn es in der Nachricht um Geld geht.
+
+Klicke auf **Kategorie hinzufügen**. Es öffnet sich ein Fenster mit diesen Feldern:
+
+| Feld | Was es tut | Beispiel |
+| --- | --- | --- |
+| Name der Kategorie | Das kurze Etikett, das du auf jeder E-Mail siehst | Abrechnung |
+| Beschreibung | Sagt dem Agenten, wann er diese Kategorie verwenden soll | Rechnungen, Zahlungen, Rückerstattungen |
+| Farbe des Etiketts | Die Farbe des Etiketts, um es auf einen Blick zu erkennen | Rosa |
+
+Du kannst eine der vordefinierten Farben wählen oder mit dem **\+**-Feld eine eigene erstellen.
+
+Darunter gibt es zwei Schalter:
+
+- **Antwortentwurf für diese Kategorie erstellen**: standardmäßig aktiviert. Der Agent bereitet die Antwort vor und legt sie dir zur Prüfung bereit, bevor sie rausgeht.
+- **Automatische Antwort für diese Kategorie**: standardmäßig deaktiviert. Der Agent versendet die Antwort selbst, ohne Prüfung.
+
+Wenn du beide deaktivierst, versieht der Agent die Nachricht weiterhin mit der Kategorie, schreibt aber keine Antwort. Das ist nützlich für E-Mails, die immer ein Mensch von Grund auf bearbeiten soll, wie Beschwerden oder rechtliche Angelegenheiten.
+
+> **Häufiger Fehler:** Eine zu vage Beschreibung schreiben, etwa „wichtige Sachen". Der Agent nutzt diesen Text, um zu entscheiden, welche E-Mails hier landen — beschreibe also den tatsächlichen Inhalt: „Nachrichten, die eine Rechnung, eine Rückerstattung oder eine Änderung der Zahlungsmethode anfragen". Wenn E-Mails in der falschen Kategorie landen, ist das Schärfen der Beschreibung meist die schnellste Lösung.
+
+> **Wichtig:** Beginne mit aktiviertem **Antwortentwurf erstellen** und deaktivierter **Automatischer Antwort**. Lies die Entwürfe ein paar Tage lang. Sobald du geprüft hast, dass der Agent Ton und Fakten trifft, aktiviere die automatische Antwort in den Kategorien, in denen ein Fehler keine Folgen hätte.
+
+## Schritt 4 — Verbinde das Postfach
+
+Öffne den Reiter **Postfach**. Hier verknüpfst du das echte E-Mail-Konto, um das sich der Agent kümmern wird. Bis dahin ist der Agent zwar konfiguriert, aber untätig.
+
+Du hast drei Möglichkeiten:
+
+- **Gmail**: Verbinde dein Google-Konto. Du bestätigst die Verbindung auf dem gewohnten Berechtigungsbildschirm von Google, ohne etwas von Hand zu konfigurieren.
+- **Outlook**: Verbinde Microsoft 365, auf dieselbe Weise wie Gmail.
+- **Andere E-Mail (IMAP und SMTP)**: Verbinde jeden anderen Anbieter. **IMAP** ist der Standard, mit dem der Agent die E-Mails deines Postfachs lesen kann, und **SMTP** ist derjenige, mit dem er die Antworten versenden kann. Dein Anbieter veröffentlicht beide Angaben auf seinen Hilfeseiten.
+
+Wenn du die manuelle Option wählst, fragt das Formular Folgendes ab:
+
+| Feld | Was einzutragen ist |
+| --- | --- |
+| E-Mail-Adresse | Das Postfach, aus dem der Agent liest und von dem er sendet |
+| Passwort | Dein Passwort oder, besser, ein App-Passwort, falls dein Konto die Zwei-Faktor-Authentifizierung nutzt |
+| IMAP-Server | Der Leseserver, etwa imap.deinanbieter.com |
+| IMAP-Port | Normalerweise 993, den das Formular standardmäßig vorschlägt |
+| Zu importierende E-Mail-Tage | Wie weit der Agent bei der ersten Verbindung zurückblickt, von 1 bis 45 Tagen |
+| SMTP-Server | Der Versandserver, etwa smtp.deinanbieter.com |
+| SMTP-Port | Normalerweise 587, den das Formular standardmäßig vorschlägt |
+
+Unter den Optionen erinnert dich der Bildschirm daran, dass deine Zugangsdaten verschlüsselt und sicher gespeichert werden.
+
+> **Hinweis:** Du kannst diesen Schritt überspringen und das Postfach später verbinden. Alles, was du in den vorherigen Schritten konfiguriert hast, bleibt gespeichert. Denk aber daran, dass der Agent absolut nichts verarbeitet, solange kein Postfach verknüpft ist.
+
+## Schritt 5 — Feinjustiere das Verhalten (optional)
+
+Öffne den Reiter **Erweitert**. Alles hier ist optional, und beide Regeln starten deaktiviert. Wenn dies dein erster Agent ist, kannst du problemlos zu Schritt 6 springen und an einem anderen Tag zurückkommen.
+
+### Automatisierungsregeln
+
+**Nur einem bestimmten Absender antworten.** Wenn du das aktivierst und eine Adresse in **E-Mail-Adresse des Absenders** einträgst, verarbeitet und beantwortet der Agent nur Nachrichten, die von dieser Adresse kommen. Alle anderen Absender werden vollständig ignoriert, und die Kategorien werden optional. Das ist perfekt für eng gefasste Automatisierungen mit einem einzigen Zweck — immer einem automatischen System oder einem bestimmten Kontakt antworten — und es ist auch der sicherste Weg, einen Agenten in einem echten Postfach zu testen: Richte ihn auf deine eigene Adresse und beobachte, was er tut, ohne einen einzigen Kunden zu berühren.
+
+**Automatische Antworten kopieren.** Sendet eine Kopie jeder automatischen Antwort an eine zusätzliche Adresse, die du in **E-Mail des Kopie-Empfängers** einträgst. Unter **Versandart** wählst du, wie diese Kopie unterwegs ist:
+
+- **CC (sichtbar)**: Die Person, die die Antwort erhält, sieht diese Adresse in der Kopiezeile.
+- **BCC (verborgen)**: Die Kopie wird still versendet, und der Empfänger sieht nichts.
+
+Das ist praktisch, wenn eine verantwortliche Person im Blick behalten möchte, was der Agent versendet.
+
+> **Tipp:** Wenn du in einer Kategorie die automatische Antwort aktivierst, aktiviere auch die Kopie — zumindest solange du noch Vertrauen in das aufbaust, was der Agent schreibt.
+
+> **Warnung:** Wenn die Kopie an einen internen Kollegen geht, wähle **BCC (verborgen)**. Mit **CC (sichtbar)** sieht dein Kunde die E-Mail-Adresse deines Kollegen in jeder Nachricht.
+
+### Agenten-Priorität
+
+Wenn sich mehrere Agenten dasselbe Postfach teilen, kümmert sich der erste Agent, der zu einer E-Mail passt, um sie: Die Nachricht geht nicht an die anderen weiter. In diesem Abschnitt kannst du die Agenten mit Auf- und Ab-Pfeilen neu ordnen.
+
+Ordne sie vom spezifischsten zum allgemeinsten: Ein auf einen einzigen Absender beschränkter Agent sollte über einem allgemeinen Support-Agenten stehen, damit der Allzweck-Agent nicht alle Nachrichten an sich reißt.
+
+Die Reihenfolge kannst du erst ändern, wenn ein Postfach verbunden ist. Bis dahin weist dich der Bildschirm darauf hin, eines im Reiter **Postfach** zu verbinden.
+
+## Schritt 6 — Speichere deine Änderungen
+
+Wenn du ungespeicherte Änderungen hast, erscheint am unteren Bildschirmrand eine Leiste mit zwei Schaltflächen: **Verwerfen**, das alles rückgängig macht, was du gerade geändert hast, und **Speichern**, das es sichert.
+
+> **Wichtig:** Verlasse den Bildschirm nicht, solange diese Leiste sichtbar ist. Wenn du gehst, ohne auf **Speichern** zu klicken, verlierst du deine Änderungen.
+
+## Der Bereich E-Mail: Lesen und Antworten an einem Ort
+
+Öffne **E-Mail** in der linken Seitenleiste. Das ist das vereinheitlichte Postfach: Hier erscheinen die von deinen Agenten verarbeiteten Nachrichten aus allen verbundenen Postfächern, mit der Kategorie, die jede erhalten hat. Hier prüfst, bearbeitest und versendest du auch die Entwürfe, die deine Agenten vorbereitet haben.
+
+Wenn du noch kein Postfach verbunden hast, erklärt dir der Bildschirm genau, was fehlt und wie du es in drei Schritten löst: Öffne **E-Mail-Agenten** und wähle einen Agenten aus, verbinde das Postfach im Reiter **Postfach** mit Google, mit Microsoft oder über IMAP, und komm hierher zurück, um die Nachrichten zu lesen und zu beantworten. Die beiden Schaltflächen auf diesem Bildschirm, **Zu E-Mail-Agenten gehen** und **E-Mail-Agent erstellen**, bringen dich direkt dorthin.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents2.png" alt="Bereich E-Mail mit der Aufforderung ein Postfach zu verbinden, den drei Einrichtungsschritten und den Schaltflächen Zu E-Mail-Agenten gehen und E-Mail-Agent erstellen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Der Bereich E-Mail, bevor irgendein Postfach verbunden ist. Der Bildschirm selbst führt dich durch die drei fehlenden Schritte.
+</p>
+
+Sobald ein Postfach verbunden ist, erscheinen eingehende Nachrichten hier wenige Minuten nach ihrem Eintreffen, zusammen mit den Entwürfen und Antworten, die dein Agent vorbereitet hat.
+
+## Der Bereich Werkzeuge: Gib deinen Agenten Superkräfte
+
+Öffne **Werkzeuge** in der linken Seitenleiste. Hier verbindest du externe Dienste, die erweitern, was deine Agenten mit jeder E-Mail tun können, indem sie ihnen Zugriff auf Live-Daten geben, die nicht in der Konversation selbst stehen.
+
+### Amazon Seller API
+
+Mit dieser verbundenen Integration schlägt der Agent, wenn die E-Mail eines Kunden eine Amazon-Bestellnummer enthält, die Bestelldetails automatisch nach und kann sie in seiner Antwort verwenden, anstatt den Kunden nach Informationen zu fragen, die das System bereits hat.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Bereich Werkzeuge mit der Amazon Seller API Integration im verbundenen Zustand, den Kontodaten und den Schaltflächen Verbindung testen und Trennen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Der Bereich Werkzeuge mit verbundener Amazon Seller API Integration. Die Karte zeigt die Kontodaten und den Verbindungsstatus.
+</p>
+
+Wenn die Integration aktiv ist, zeigt ihre Karte ein grünes **Verbunden**-Abzeichen zusammen mit den Verbindungsdetails: dem Namen des Verkäuferkontos, der Kennung des Verkaufspartners, der Region, dem Marktplatz und dem Datum der Verbindung. Von derselben Karte aus kannst du eine echte Bestellnummer in **Test-Bestell-ID** eintragen und auf **Verbindung testen** drücken, um zu prüfen, dass alles funktioniert, ohne auf die E-Mail eines Kunden zu warten, oder **Trennen** verwenden, um die Verknüpfung aufzuheben.
+
+In manchen Konten wird diese Integration automatisch mit einer vom Server verwalteten Konfiguration eingerichtet. Wenn deine Karte bereits **Verbunden** anzeigt und die Serverkonfiguration erwähnt, musst du nichts tun.
+
+### Sendungsverfolgungs-Links zu Antworten hinzufügen
+
+Die Bestelldaten stehen dem Agenten zur Verfügung, aber sie erscheinen nicht in einer Antwort, wenn du ihm nicht sagst, dass er sie nutzen soll. Erwähne sie dafür im Konversations-Prompt mithilfe von Variablen: Platzhalter in doppelten geschweiften Klammern, die durch den echten Wert jeder Bestellung ersetzt werden. Füge dem Prompt zum Beispiel Folgendes hinzu:
+
+> Wenn der Kunde nach dem Versand oder der Lieferung fragt, füge diesen Sendungsverfolgungs-Link ein: {{amazon_tracking_url}}
+
+Das sind die verfügbaren Variablen:
+
+| Variable | Wodurch sie ersetzt wird |
+| --- | --- |
+| Die Amazon-Bestellnummer |  |
+| Der Bestellstatus |  |
+| Der Marktplatz oder das Verkaufsland |  |
+| Das Zielland |  |
+| Das Versandland |  |
+| Die Sendungsnummer |  |
+| Der Sendungsverfolgungs-Link |  |
+| Der Zusteller |  |
+| Der Versanddienst |  |
+
+> **Hinweis:** Damit sich der Sendungsverfolgungs-Link füllt, muss die Integration verbunden sein, die E-Mail-Konversation muss eine erkennbare Amazon-Bestellnummer enthalten, und die Bestellung muss bereits versendet worden sein: Die Sendungsverfolgungsdaten existieren erst, wenn Amazon sie erzeugt.
+
+Es ist zu erwarten, dass in diesem Bereich weitere Werkzeuge hinzukommen, während der E-Mail-Manager mit KI die Beta-Phase verlässt.
+
+## So prüfst du, ob es funktioniert
+
+Drei schnelle Zeichen, dass alles an seinem Platz ist:
+
+1. In der Liste **E-Mail-Agenten** zeigt dein Agent unter seinem Namen nicht mehr **Keine E-Mail zugewiesen** an.
+2. Sende eine Test-E-Mail von einer anderen deiner Adressen an das verbundene Postfach, mit einem Text, der zu einer deiner Kategorien passt.
+3. Warte ein paar Minuten und öffne den Bereich **E-Mail**. Je nachdem, wie du diese Kategorie konfiguriert hast, solltest du einen prüfbereiten Entwurf oder eine bereits versendete Antwort finden.
+
+Wenn nichts passiert, prüfe drei Dinge der Reihe nach: dass das Postfach wirklich verbunden ist, dass **Nur einem bestimmten Absender antworten** nicht aktiviert ist und auf eine andere Adresse zeigt als die, die du im Test verwendet hast, und dass deine Test-E-Mail wirklich zur Beschreibung einer Kategorie passt: Die automatische Antwort geht nur raus, wenn die Nachricht in eine Kategorie mit aktivierter automatischer Antwort eingeordnet wird.
+
+## Was du als Nächstes tun kannst
+
+- Erstelle ein paar weitere Kategorien, jetzt wo du den Agenten in Aktion gesehen hast. Echte E-Mails bringen dich immer auf Etiketten, an die du nicht gedacht hattest.
+- Besuche den Bereich **E-Mail** in der ersten Woche jeden Tag, um die Entwürfe deines Agenten zu prüfen und den Konversations-Prompt mit dem zu verfeinern, was du lernst.
+- Wirf ab und zu einen Blick auf die **Werkzeuge**: Neue Integrationen können hinzukommen, während das Produkt wächst.
