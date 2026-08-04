@@ -1,0 +1,119 @@
+---
+title: "Fatturazione e commissioni della piattaforma"
+description: "Quanto ti addebita Callin al minuto, come stabilisci il tuo prezzo di vendita e come viene suddiviso ogni pagamento dei tuoi utenti finali."
+---
+
+Tu acquisti minuti da Callin a una tariffa fissa e li rivendi ai tuoi utenti finali al prezzo che decidi. La differenza tra i due è il tuo margine.
+
+Questa pagina spiega quanto ti addebita Callin, come fissare il prezzo dei tuoi piani perché il margine funzioni e cosa succede al denaro quando uno dei tuoi utenti paga.
+
+## Il modello in una frase
+
+Callin ti addebita **0,16 \$ al minuto** per i minuti inclusi nei piani che vendi. Sei tu a decidere quanto far pagare ai tuoi utenti finali per quegli stessi minuti. Quando il tuo utente paga, la commissione della piattaforma viene detratta automaticamente e il resto è tuo.
+
+Non c'è nessuna fattura mensile di Callin da riconciliare né nulla da approvare. La suddivisione avviene all'interno del pagamento stesso.
+
+## Il tuo costo: 0,16 \$ al minuto
+
+Questo è il numero su cui si costruisce tutto il resto. È la tariffa predefinita della piattaforma e si applica sia al tuo account principale white label sia a ogni sottoaccount che crei.
+
+Il costo di un piano si calcola in modo diretto:
+
+**Minuti inclusi nel piano × 0,16 \$ = quanto ti costa il piano**
+
+| Dimensione del piano | Il tuo costo |
+| --- | --- |
+| 500 minuti | 80 \$ |
+| 1.000 minuti | 160 \$ |
+| 1.500 minuti | 240 \$ |
+
+Alcuni account hanno una tariffa più bassa grazie a un accordo personalizzato, negoziato caso per caso. Se non sai quale si applica al tuo, il tuo account manager può confermartelo. Salvo accordi diversi, considera 0,16 \$.
+
+## Il tuo prezzo: lo decidi tu
+
+Quando crei un piano, sei tu a fissare il prezzo che pagheranno i tuoi utenti finali. **Questo prezzo deve essere superiore a 0,16 \$ al minuto, altrimenti non hai margine.**
+
+È tutto qui il modello di business. Callin ti vende i minuti al costo; tu li vendi al prezzo di mercato.
+
+Immagina di decidere di far pagare \*\*0,32 $$al minuto**, il doppio del tuo costo. Un piano di 1.000 minuti viene quindi a 320$$, e i conti tornano così:
+
+|  | Importo |
+| --- | --- |
+| Prezzo che applichi (1.000 × 0,32 \$) | 320 \$ |
+| Commissione della piattaforma (1.000 × 0,16 \$) | −160 \$ |
+| **Il tuo margine lordo** | **160 \$** |
+
+Se applichi 0,30 $$, il tuo margine è di 140 $$. Se applichi 0,25 $$, è di 90 $$. Se applichi 0,16 \$, stai lavorando gratis.
+
+> **Importante:** Fissa il prezzo di ogni piano sopra 0,16 \$ al minuto. La piattaforma non ti impedisce di applicare un prezzo pari o inferiore al tuo costo, quindi questo controllo spetta a te.
+
+## Perché il consumo non cambia quello che paghi
+
+Questo è il punto che genera più confusione, quindi eccolo detto chiaramente: **la commissione della piattaforma si calcola sui minuti inclusi nel piano, non sui minuti che il tuo utente consuma davvero.**
+
+Pensa a cosa hai venduto. Il tuo utente finale paga 320 \$ per un piano di 1.000 minuti sia che faccia una chiamata sia che ne faccia mille. Sta pagando per la capacità — il diritto di usare quei minuti — non per il consumo. La commissione della piattaforma funziona allo stesso modo, perché si applica su quella stessa capacità.
+
+Quindi la commissione è identica in ogni scenario:
+
+| Minuti consumati nel ciclo | Commissione della piattaforma | Il tuo margine |
+| --- | --- | --- |
+| 180 minuti | 160 \$ | 160 \$ |
+| 995 minuti | 160 \$ | 160 \$ |
+| 0 minuti | 160 \$ | 160 \$ |
+
+Un mese fiacco non riduce la commissione, ma non riduce nemmeno il tuo margine. Hai già incassato dal tuo utente il prezzo pieno. La tua posizione è la stessa in un mese tranquillo e in uno intenso, che è esattamente lo scopo di un piano a prezzo fisso.
+
+La conclusione pratica quando fissi i prezzi: il tuo margine è deciso nel momento in cui pubblichi il piano, non da quanto i tuoi clienti finiscono per chiamare.
+
+## Come viene suddiviso ogni pagamento
+
+I pagamenti passano da **Stripe Connect**, il sistema di pagamento integrato nella tua piattaforma white label. È ciò che permette al tuo utente finale di pagare direttamente te mentre la commissione della piattaforma viene indirizzata a Callin nella stessa transazione.
+
+Nel momento in cui la carta del tuo utente viene addebitata, l'importo si divide in tre parti:
+
+| Parte | Che cos'è | Chi la riceve |
+| --- | --- | --- |
+| **Importo del pagamento** | Il prezzo pieno pagato dal tuo utente finale | — |
+| **Commissione della piattaforma** | Quanto addebita Callin per i minuti del piano | Callin |
+| **Commissione di elaborazione** | Quanto addebita Stripe per gestire il pagamento con carta | Stripe |
+| **Importo netto** | Ciò che resta dopo entrambe le commissioni | Tu |
+
+La commissione di elaborazione è l'addebito di Stripe: di norma una piccola percentuale della transazione più un importo fisso per pagamento. Varia in base al metodo di pagamento, al tipo di carta e al paese da cui paga il tuo utente. Callin non la stabilisce e non fa parte del tuo accordo con noi: è il costo standard per accettare pagamenti con carta ed è l'unica voce che si muove leggermente da un pagamento all'altro.
+
+## Un esempio completo
+
+Vendi un piano di \*\*1.000 minuti a 0,32 $$al minuto** a Clinica Dentale Demo. Il piano viene a 320$$ al mese.
+
+| Voce | Importo |
+| --- | --- |
+| Importo pagato dal tuo utente | 320,00 \$ |
+| Commissione della piattaforma (1.000 × 0,16 \$) | −160,00 \$ |
+| Commissione di elaborazione | −9,58 \$ |
+| **Importo netto per te** | **150,42 \$** |
+
+Ogni mese in cui quell'abbonamento si rinnova, ricevi circa 150 $$. La commissione della piattaforma di 160 $$ è fissa e prevedibile. La commissione di elaborazione si muove un po' a seconda di come paga il tuo cliente, quindi considerala una stima e non un numero esatto.
+
+Se Clinica Dentale Demo ha consumato 120 minuti quel mese, la tabella non cambia. Se ne ha consumati 990, nemmeno.
+
+## Piani a consumo
+
+Accanto ai piani fissi, la piattaforma offre l'opzione **Pay as you go (white-label)** a **0,16 \$ al minuto**, senza minuti inclusi. Viene fatturata ogni giorno, in base ai minuti effettivamente consumati.
+
+I due modelli funzionano su principi opposti:
+
+|  | Piano mensile fisso | Pagamento a consumo |
+| --- | --- | --- |
+| **Minuti inclusi** | Una quantità definita, concordata in anticipo | Nessuno |
+| **Cosa viene addebitato** | I minuti del piano | I minuti effettivamente usati |
+| **Frequenza di fatturazione** | Una volta per ciclo mensile | Giornaliera |
+| **È prevedibile?** | Sì, lo stesso importo ogni ciclo | No, segue il consumo |
+
+Poiché il pagamento a consumo viene addebitato al costo, non ti lascia margine. Serve per accedere alla piattaforma e per fare prove, non per rivendere. Per vendere con margine, crea un piano fisso e fissane il prezzo sopra 0,16 \$ al minuto.
+
+## Quando un pagamento fallisce
+
+Se la carta del tuo utente finale non può essere addebitata, non avviene nessuna suddivisione, perché non è stato incassato niente. Non ti viene addebitata nessuna commissione della piattaforma per un pagamento che non si è mai verificato.
+
+L'abbonamento passa allo stato **Scaduto** e i minuti disponibili dell'utente scendono a zero, così i suoi agenti smettono di rispondere alle chiamate finché la situazione non si risolve. Quando il pagamento va a buon fine, l'abbonamento torna attivo, i minuti vengono ripristinati e la suddivisione funziona normalmente su quel pagamento.
+
+Puoi vedere lo stato di tutti gli abbonamenti in **Abbonamenti**, nel tuo pannello white label, dove ogni riga mostra l'utente, il suo piano, il prezzo, i minuti rimanenti e lo stato attuale. Vale la pena controllarlo con una certa frequenza: un abbonamento scaduto è un cliente con il servizio interrotto, e di solito la via più rapida è parlargli direttamente perché aggiorni la sua carta.
