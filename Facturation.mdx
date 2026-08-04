@@ -1,0 +1,119 @@
+---
+title: "Facturation et commissions de la plateforme"
+description: "Ce que Callin te facture à la minute, comment tu fixes ton prix de vente par-dessus et comment chaque paiement de tes utilisateurs finaux est réparti."
+---
+
+Tu achètes des minutes à Callin à un tarif fixe et tu les revends à tes utilisateurs finaux au prix que tu décides. La différence entre les deux, c'est ta marge.
+
+Cette page explique ce que Callin te facture, comment fixer le prix de tes forfaits pour que la marge fonctionne, et ce qui arrive à l'argent quand l'un de tes utilisateurs paie.
+
+## Le modèle en une phrase
+
+Callin te facture **0,16 \$ la minute** pour les minutes incluses dans les forfaits que tu vends. C'est toi qui décides du prix que paieront tes utilisateurs finaux pour ces mêmes minutes. Quand ton utilisateur paie, la commission de la plateforme est déduite automatiquement et le reste est à toi.
+
+Il n'y a aucune facture mensuelle de Callin à rapprocher et rien à approuver. La répartition se fait à l'intérieur du paiement lui-même.
+
+## Ton coût : 0,16 \$ la minute
+
+C'est le chiffre sur lequel tout le reste se construit. C'est le tarif par défaut de la plateforme, et il s'applique aussi bien à ton compte principal white label qu'à chaque sous-compte que tu crées.
+
+Le coût d'un forfait se calcule simplement :
+
+**Minutes incluses dans le forfait × 0,16 \$ = ce que te coûte le forfait**
+
+| Taille du forfait | Ton coût |
+| --- | --- |
+| 500 minutes | 80 \$ |
+| 1 000 minutes | 160 \$ |
+| 1 500 minutes | 240 \$ |
+
+Certains comptes bénéficient d'un tarif plus bas grâce à un accord personnalisé, négocié au cas par cas. Si tu ne sais pas lequel s'applique au tien, ton gestionnaire de compte peut te le confirmer. Sauf accord contraire, pars sur 0,16 \$.
+
+## Ton prix : c'est toi qui décides
+
+Quand tu crées un forfait, c'est toi qui fixes le prix que paieront tes utilisateurs finaux. **Ce prix doit être supérieur à 0,16 \$ la minute, sinon tu n'as aucune marge.**
+
+C'est tout le modèle économique. Callin te vend les minutes au coût ; toi, tu les revends au prix du marché.
+
+Imagine que tu décides de facturer \*\*0,32 $$la minute**, le double de ton coût. Un forfait de 1 000 minutes revient alors à 320$$, et les calculs donnent ceci :
+
+|  | Montant |
+| --- | --- |
+| Prix que tu factures (1 000 × 0,32 \$) | 320 \$ |
+| Commission de la plateforme (1 000 × 0,16 \$) | −160 \$ |
+| **Ta marge brute** | **160 \$** |
+
+À 0,30 $$, ta marge est de 140 $$. À 0,25 $$, elle est de 90 $$. À 0,16 \$, tu travailles gratuitement.
+
+> **Important :** Fixe le prix de chaque forfait au-dessus de 0,16 \$ la minute. Rien dans la plateforme ne t'empêche de vendre à ton coût ou en dessous, donc cette vérification t'appartient.
+
+## Pourquoi la consommation ne change pas ce que tu paies
+
+C'est le point qui crée le plus de confusion, alors disons-le clairement : **la commission de la plateforme se calcule sur les minutes incluses dans le forfait, pas sur les minutes que ton utilisateur consomme réellement.**
+
+Pense à ce que tu as vendu. Ton utilisateur final paie 320 \$ pour un forfait de 1 000 minutes, qu'il passe un appel ou mille. Il paie pour de la capacité — le droit d'utiliser ces minutes — pas pour de la consommation. La commission de la plateforme fonctionne de la même façon, parce qu'elle s'applique sur cette même capacité.
+
+La commission est donc identique dans tous les cas :
+
+| Minutes consommées dans le cycle | Commission de la plateforme | Ta marge |
+| --- | --- | --- |
+| 180 minutes | 160 \$ | 160 \$ |
+| 995 minutes | 160 \$ | 160 \$ |
+| 0 minute | 160 \$ | 160 \$ |
+
+Un mois creux ne réduit pas la commission, mais il ne réduit pas ta marge non plus. Tu as déjà encaissé le prix complet auprès de ton utilisateur. Ta position est la même un mois calme qu'un mois chargé, et c'est exactement l'intérêt d'un forfait à prix fixe.
+
+Ce qu'il faut en retenir quand tu fixes tes prix : ta marge est décidée au moment où tu publies le forfait, pas par le volume d'appels de tes clients.
+
+## Comment chaque paiement est réparti
+
+Les paiements passent par **Stripe Connect**, le système de paiement intégré à ta plateforme white label. C'est ce qui permet à ton utilisateur final de te payer directement pendant que la commission de la plateforme est dirigée vers Callin dans la même transaction.
+
+Au moment où la carte de ton utilisateur est débitée, le montant se divise en trois parties :
+
+| Partie | Ce que c'est | Qui la reçoit |
+| --- | --- | --- |
+| **Montant du paiement** | Le prix complet payé par ton utilisateur final | — |
+| **Commission de la plateforme** | Ce que facture Callin pour les minutes du forfait | Callin |
+| **Frais de traitement** | Ce que facture Stripe pour gérer le paiement par carte | Stripe |
+| **Montant net** | Ce qui reste après les deux commissions | Toi |
+
+Les frais de traitement sont le prélèvement propre à Stripe : en général un petit pourcentage de la transaction plus un montant fixe par paiement. Ils varient selon le moyen de paiement, le type de carte et le pays depuis lequel ton utilisateur paie. Callin ne les fixe pas et ils ne font pas partie de ton accord avec nous : c'est le coût standard pour accepter les paiements par carte, et c'est la seule ligne qui bouge légèrement d'un paiement à l'autre.
+
+## Un exemple complet
+
+Tu vends un forfait de \*\*1 000 minutes à 0,32 $$la minute** à Clinique Dentaire Demo. Le forfait est à 320$$ par mois.
+
+| Ligne | Montant |
+| --- | --- |
+| Montant payé par ton utilisateur | 320,00 \$ |
+| Commission de la plateforme (1 000 × 0,16 \$) | −160,00 \$ |
+| Frais de traitement | −9,58 \$ |
+| **Montant net pour toi** | **150,42 \$** |
+
+Chaque mois où cet abonnement se renouvelle, tu reçois environ 150 $$. La commission de plateforme de 160 $$ est fixe et prévisible. Les frais de traitement bougent un peu selon la façon dont ton client paie, alors prends ce chiffre comme une estimation et non comme un montant exact.
+
+Si Clinique Dentaire Demo a consommé 120 minutes ce mois-là, le tableau ne change pas. Si elle en a consommé 990, non plus.
+
+## Forfaits à la consommation
+
+À côté des forfaits fixes, la plateforme propose l'option **Pay as you go (white-label)** à **0,16 \$ la minute**, sans minutes incluses. Elle est facturée chaque jour, selon les minutes réellement consommées.
+
+Les deux modèles reposent sur des principes opposés :
+
+|  | Forfait mensuel fixe | Paiement à la consommation |
+| --- | --- | --- |
+| **Minutes incluses** | Un nombre défini, convenu à l'avance | Aucune |
+| **Ce qui est facturé** | Les minutes du forfait | Les minutes réellement utilisées |
+| **Fréquence de facturation** | Une fois par cycle mensuel | Quotidienne |
+| **Prévisible ?** | Oui, le même montant chaque cycle | Non, elle suit la consommation |
+
+Comme le paiement à la consommation est facturé au coût, il ne te laisse aucune marge. Il sert à accéder à la plateforme et à faire des essais, pas à revendre. Pour vendre avec une marge, crée un forfait fixe et fixe son prix au-dessus de 0,16 \$ la minute.
+
+## Quand un paiement échoue
+
+Si la carte de ton utilisateur final ne peut pas être débitée, aucune répartition n'a lieu, parce que rien n'a été encaissé. Aucune commission de plateforme ne t'est facturée pour un paiement qui n'a jamais eu lieu.
+
+L'abonnement passe à l'état **Expiré** et les minutes disponibles de l'utilisateur tombent à zéro, si bien que ses agents cessent de prendre les appels jusqu'à ce que la situation soit réglée. Une fois le paiement passé, l'abonnement redevient actif, les minutes sont rétablies et la répartition se fait normalement sur ce paiement.
+
+Tu peux voir l'état de tous les abonnements dans **Abonnements**, sur ton panneau white label, où chaque ligne affiche l'utilisateur, son forfait, le prix, les minutes restantes et l'état actuel. Cela vaut la peine de le consulter régulièrement : un abonnement expiré, c'est un client dont le service est interrompu, et le plus rapide est en général de lui parler directement pour qu'il mette sa carte à jour.
