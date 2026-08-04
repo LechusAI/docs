@@ -1,0 +1,119 @@
+---
+title: "Billing and Platform Fees"
+description: "How Callin charges you per minute, how you set your own selling price on top, and how each payment from your end users is split."
+---
+
+You buy minutes from Callin at a fixed rate and resell them to your end users at whatever price you choose. The difference between the two is your margin.
+
+This page explains what Callin charges you, how to price your plans so the margin works, and what happens to the money when one of your users pays.
+
+## The model in one sentence
+
+Callin charges you **\$0.16 per minute** for the minutes included in the plans you sell. You decide what to charge your end users for those same minutes. When your user pays, the platform fee is deducted automatically and the rest is yours.
+
+There's no monthly bill from Callin to reconcile and no invoice to approve. The split happens inside the payment itself.
+
+## Your cost: \$0.16 per minute
+
+This is the number to build everything else on. It's the default rate across the platform, and it applies to your main white label account and to every sub-account you create.
+
+The cost of a plan is straightforward to work out:
+
+**Minutes included in the plan × \$0.16 = what the plan costs you**
+
+| Plan size | Your cost |
+| --- | --- |
+| 500 minutes | \$80 |
+| 1,000 minutes | \$160 |
+| 1,500 minutes | \$240 |
+
+Some accounts have a lower rate through a custom agreement, negotiated case by case. If you're not sure which rate applies to yours, your account manager can confirm it. Unless you've agreed otherwise, assume \$0.16.
+
+## Your price: you decide
+
+When you create a plan, you set the price your end users will pay. **This price has to be higher than \$0.16 per minute, or you have no margin.**
+
+That's the whole business model. Callin sells you minutes at cost; you sell them at retail.
+
+Say you decide to charge \*\*$$0.32 per minute** — double your cost. A plan of 1,000 minutes is then priced at $$320, and the maths works out like this:
+
+|  | Amount |
+| --- | --- |
+| Price you charge (1,000 × \$0.32) | \$320 |
+| Platform fee (1,000 × \$0.16) | −\$160 |
+| **Your gross margin** | **\$160** |
+
+Charge $$0.30 and your margin is $$140. Charge $$0.25 and it's $$90. Charge \$0.16 and you're working for free.
+
+> **Important:** Set the price of every plan above \$0.16 per minute. There's nothing in the platform stopping you from pricing at or below your cost, so the check is yours to make.
+
+## Why usage doesn't change what you pay
+
+This is the point that causes the most confusion, so here it is plainly: **the platform fee is based on the minutes the plan includes, not the minutes your user actually spends.**
+
+Think about what you sold. Your end user pays \$320 for a plan of 1,000 minutes whether they make one call or a thousand. They're paying for capacity — the right to use those minutes — not for consumption. The platform fee works the same way, because it's charged against that same capacity.
+
+So the fee is identical in every scenario:
+
+| Minutes used in the cycle | Platform fee | Your margin |
+| --- | --- | --- |
+| 180 minutes | \$160 | \$160 |
+| 995 minutes | \$160 | \$160 |
+| 0 minutes | \$160 | \$160 |
+
+A quiet month doesn't reduce the fee, but it doesn't reduce your margin either. You already collected the full price from your user. Your position is the same in a quiet month as in a busy one, which is exactly what a fixed-price plan is designed to do.
+
+The practical takeaway when you're setting prices: your margin is decided the moment you publish the plan, not by how much your customers end up calling.
+
+## How each payment is split
+
+Payments run through **Stripe Connect**, the payment system built into your white label platform. It's what makes it possible for your end user to pay you directly while the platform fee is routed to Callin in the same transaction.
+
+The moment your user's card is charged, the amount is divided into three parts:
+
+| Part | What it is | Who receives it |
+| --- | --- | --- |
+| **Amount** | The full price your end user paid | — |
+| **Platform fee** | Callin's charge for the minutes in the plan | Callin |
+| **Processing fee** | Stripe's charge for handling the card payment | Stripe |
+| **Net amount** | What remains after both fees | You |
+
+The processing fee is Stripe's own charge, typically a small percentage of the transaction plus a fixed amount per payment. It varies with the payment method, the card type and the country your user is paying from. Callin doesn't set it and it isn't part of your agreement with us — it's the standard cost of accepting card payments, and it's the one line that moves slightly from one payment to another.
+
+## A complete example
+
+You sell a plan of \*\*1,000 minutes at $$0.32 per minute** to Demo Dental Clinic. The plan is priced at $$320 per month.
+
+| Line | Amount |
+| --- | --- |
+| Amount your user paid | \$320.00 |
+| Platform fee (1,000 × \$0.16) | −\$160.00 |
+| Processing fee | −\$9.58 |
+| **Net amount for you** | **\$150.42** |
+
+Every month that subscription renews, you receive around $$150. The $$160 platform fee is fixed and predictable. The processing fee moves a little depending on how your customer pays, so treat that figure as an estimate rather than an exact number.
+
+If Demo Dental Clinic used 120 minutes that month, the table is unchanged. If they used 990, it's also unchanged.
+
+## Pay as you go plans
+
+Alongside fixed plans, the platform offers a **Pay as you go (white-label)** option at **\$0.16 per minute** with no minutes included. It's billed daily, based on minutes actually consumed.
+
+The two models work on opposite principles:
+
+|  | Fixed monthly plan | Pay as you go |
+| --- | --- | --- |
+| **Minutes included** | A set number, agreed in advance | None |
+| **What's charged** | The minutes in the plan | The minutes actually used |
+| **Billing frequency** | Once per monthly cycle | Daily |
+| **Predictable?** | Yes, same amount every cycle | No, follows usage |
+
+Because Pay as you go is charged at cost, it carries no margin for you. It's there for accessing the platform and for testing, not for reselling. To sell with a margin, create a fixed plan and price it above \$0.16 per minute.
+
+## When a payment fails
+
+If your end user's card can't be charged, no split takes place, because no money was collected. You aren't charged a platform fee on a payment that never happened.
+
+The subscription moves to a **Past due** state and the user's available minutes drop to zero, so their agents stop taking calls until the situation is resolved. Once the payment goes through, the subscription returns to active, the minutes are restored, and the split runs normally on that payment.
+
+You can see the state of every subscription in **Subscriptions** on your white label panel, where each row shows the user, their plan, the price, the minutes remaining and the current status. It's worth checking periodically: a subscription sitting in past due is a customer whose service is interrupted, and usually the fastest fix is a direct conversation about updating their card.
