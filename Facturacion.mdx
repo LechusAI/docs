@@ -1,0 +1,119 @@
+---
+title: "Facturación y comisiones de la plataforma"
+description: "Qué te cobra Callin por minuto, cómo fijas tú tu precio de venta por encima y cómo se reparte cada pago de tus usuarios finales."
+---
+
+Tú compras minutos a Callin a una tarifa fija y se los revendes a tus usuarios finales al precio que tú decidas. La diferencia entre ambos es tu margen.
+
+Esta página explica qué te cobra Callin, cómo fijar el precio de tus planes para que el margen funcione y qué ocurre con el dinero cuando uno de tus usuarios paga.
+
+## El modelo en una frase
+
+Callin te cobra **0,16 \$ por minuto** por los minutos incluidos en los planes que vendes. Tú decides cuánto cobrar a tus usuarios finales por esos mismos minutos. Cuando tu usuario paga, la comisión de la plataforma se descuenta automáticamente y el resto es para ti.
+
+No hay una factura mensual de Callin que cuadrar ni nada que aprobar. El reparto ocurre dentro del propio pago.
+
+## Tu coste: 0,16 \$ por minuto
+
+Este es el número sobre el que se construye todo lo demás. Es la tarifa por defecto de la plataforma, y se aplica tanto a tu cuenta principal de white label como a todas las subcuentas que crees.
+
+El coste de un plan se calcula de forma directa:
+
+**Minutos incluidos en el plan × 0,16 \$ = lo que te cuesta el plan**
+
+| Tamaño del plan | Tu coste |
+| --- | --- |
+| 500 minutos | 80 \$ |
+| 1.000 minutos | 160 \$ |
+| 1.500 minutos | 240 \$ |
+
+Algunas cuentas tienen una tarifa menor gracias a un acuerdo personalizado, negociado caso por caso. Si no sabes cuál se aplica a la tuya, tu gestor de cuenta puede confirmártelo. Salvo que hayas acordado otra cosa, da por hecho que son 0,16 \$.
+
+## Tu precio: lo decides tú
+
+Cuando creas un plan, tú fijas el precio que pagarán tus usuarios finales. **Ese precio tiene que ser superior a 0,16 \$ por minuto, o no tendrás margen.**
+
+Ese es todo el modelo de negocio. Callin te vende los minutos a coste; tú los vendes a precio de mercado.
+
+Imagina que decides cobrar \*\*0,32 $$por minuto**, el doble de tu coste. Un plan de 1.000 minutos queda entonces en 320$$, y las cuentas salen así:
+
+|  | Importe |
+| --- | --- |
+| Precio que cobras (1.000 × 0,32 \$) | 320 \$ |
+| Comisión de la plataforma (1.000 × 0,16 \$) | −160 \$ |
+| **Tu margen bruto** | **160 \$** |
+
+Si cobras 0,30 $$, tu margen es de 140 $$. Si cobras 0,25 $$, es de 90 $$. Si cobras 0,16 \$, estás trabajando gratis.
+
+> **Importante:** Fija el precio de cada plan por encima de 0,16 \$ por minuto. La plataforma no te impide poner un precio igual o inferior a tu coste, así que esa comprobación te toca a ti.
+
+## Por qué el consumo no cambia lo que pagas
+
+Este es el punto que más confusión genera, así que va directo: **la comisión de la plataforma se calcula sobre los minutos que incluye el plan, no sobre los minutos que gasta tu usuario.**
+
+Piensa en lo que has vendido. Tu usuario final paga 320 \$ por un plan de 1.000 minutos haga una llamada o mil. Está pagando por capacidad —el derecho a usar esos minutos—, no por consumo. La comisión de la plataforma funciona igual, porque se aplica sobre esa misma capacidad.
+
+Así que la comisión es idéntica en todos los escenarios:
+
+| Minutos consumidos en el ciclo | Comisión de la plataforma | Tu margen |
+| --- | --- | --- |
+| 180 minutos | 160 \$ | 160 \$ |
+| 995 minutos | 160 \$ | 160 \$ |
+| 0 minutos | 160 \$ | 160 \$ |
+
+Un mes flojo no reduce la comisión, pero tampoco reduce tu margen. Ya cobraste a tu usuario el precio completo. Tu posición es la misma en un mes tranquilo que en uno movido, que es justo lo que se busca con un plan de precio fijo.
+
+La conclusión práctica cuando fijas precios: tu margen queda decidido en el momento en que publicas el plan, no por cuánto acaben llamando tus clientes.
+
+## Cómo se reparte cada pago
+
+Los pagos se gestionan con **Stripe Connect**, el sistema de pagos integrado en tu plataforma white label. Es lo que permite que tu usuario final te pague directamente a ti mientras la comisión de la plataforma se dirige a Callin en la misma transacción.
+
+En el momento en que se cobra la tarjeta de tu usuario, el importe se divide en tres partes:
+
+| Parte | Qué es | Quién la recibe |
+| --- | --- | --- |
+| **Importe del pago** | El precio completo que pagó tu usuario final | — |
+| **Comisión de la plataforma** | Lo que cobra Callin por los minutos del plan | Callin |
+| **Comisión de procesamiento** | Lo que cobra Stripe por gestionar el pago con tarjeta | Stripe |
+| **Importe neto** | Lo que queda después de ambas comisiones | Tú |
+
+La comisión de procesamiento es el cargo propio de Stripe: normalmente un pequeño porcentaje de la transacción más un importe fijo por pago. Varía según el método de pago, el tipo de tarjeta y el país desde el que paga tu usuario. Callin no la fija ni forma parte de tu acuerdo con nosotros: es el coste estándar de aceptar pagos con tarjeta, y es la única línea que se mueve ligeramente de un pago a otro.
+
+## Un ejemplo completo
+
+Vendes un plan de \*\*1.000 minutos a 0,32 $$por minuto** a Clínica Dental Demo. El plan queda en 320$$ al mes.
+
+| Línea | Importe |
+| --- | --- |
+| Importe pagado por tu usuario | 320,00 \$ |
+| Comisión de la plataforma (1.000 × 0,16 \$) | −160,00 \$ |
+| Comisión de procesamiento | −9,58 \$ |
+| **Importe neto para ti** | **150,42 \$** |
+
+Cada mes que esa suscripción se renueve, recibirás alrededor de 150 $$. La comisión de plataforma de 160 $$ es fija y predecible. La comisión de procesamiento se mueve un poco según cómo pague tu cliente, así que toma esa cifra como una estimación y no como un número exacto.
+
+Si Clínica Dental Demo consumió 120 minutos ese mes, la tabla no cambia. Si consumió 990, tampoco.
+
+## Planes de pago por consumo
+
+Junto a los planes fijos, la plataforma ofrece la opción **Pay as you go (white-label)** a **0,16 \$ por minuto**, sin minutos incluidos. Se factura diariamente, según los minutos realmente consumidos.
+
+Los dos modelos funcionan con principios opuestos:
+
+|  | Plan mensual fijo | Pago por consumo |
+| --- | --- | --- |
+| **Minutos incluidos** | Una cantidad cerrada, acordada de antemano | Ninguno |
+| **Qué se cobra** | Los minutos del plan | Los minutos realmente usados |
+| **Frecuencia de facturación** | Una vez por ciclo mensual | Diaria |
+| **¿Es predecible?** | Sí, el mismo importe cada ciclo | No, sigue al consumo |
+
+Como el pago por consumo se cobra a coste, no te deja margen. Está pensado para acceder a la plataforma y para hacer pruebas, no para revender. Para vender con margen, crea un plan fijo y ponle un precio por encima de 0,16 \$ por minuto.
+
+## Cuando un pago falla
+
+Si no se consigue cobrar la tarjeta de tu usuario final, no hay reparto, porque no se ha recaudado nada. No se te aplica ninguna comisión de plataforma por un pago que no ha llegado a producirse.
+
+La suscripción pasa al estado **Vencido** y los minutos disponibles del usuario bajan a cero, de modo que sus agentes dejan de atender llamadas hasta que se resuelva la situación. Cuando el pago se complete, la suscripción vuelve a estar activa, los minutos se restauran y el reparto funciona con normalidad en ese pago.
+
+Puedes ver el estado de todas las suscripciones en **Suscripciones**, dentro de tu panel white label, donde cada fila muestra el usuario, su plan, el precio, los minutos restantes y el estado actual. Merece la pena revisarlo con cierta frecuencia: una suscripción vencida es un cliente con el servicio interrumpido, y normalmente la vía más rápida es hablar directamente con él para que actualice su tarjeta.
