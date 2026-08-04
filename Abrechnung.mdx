@@ -1,0 +1,119 @@
+---
+title: "Abrechnung und Plattformgebühren"
+description: "Was Callin dir pro Minute berechnet, wie du deinen eigenen Verkaufspreis darüber festlegst und wie jede Zahlung deiner Endnutzer aufgeteilt wird."
+---
+
+Du kaufst Minuten bei Callin zu einem festen Tarif und verkaufst sie deinen Endnutzern zu dem Preis weiter, den du bestimmst. Die Differenz zwischen beiden ist deine Marge.
+
+Diese Seite erklärt, was Callin dir berechnet, wie du deine Tarife kalkulierst, damit die Marge stimmt, und was mit dem Geld passiert, wenn einer deiner Nutzer bezahlt.
+
+## Das Modell in einem Satz
+
+Callin berechnet dir **0,16 \$ pro Minute** für die Minuten, die in den Tarifen enthalten sind, die du verkaufst. Du entscheidest, was deine Endnutzer für genau diese Minuten zahlen. Wenn dein Nutzer bezahlt, wird die Plattformgebühr automatisch abgezogen und der Rest gehört dir.
+
+Es gibt keine monatliche Rechnung von Callin, die du abgleichen müsstest, und nichts zu genehmigen. Die Aufteilung passiert innerhalb der Zahlung selbst.
+
+## Deine Kosten: 0,16 \$ pro Minute
+
+Das ist die Zahl, auf der alles andere aufbaut. Es ist der Standardtarif der Plattform, und er gilt sowohl für dein White-Label-Hauptkonto als auch für jedes Unterkonto, das du anlegst.
+
+Die Kosten eines Tarifs lassen sich direkt ausrechnen:
+
+**Im Tarif enthaltene Minuten × 0,16 \$ = was dich der Tarif kostet**
+
+| Tarifgröße | Deine Kosten |
+| --- | --- |
+| 500 Minuten | 80 \$ |
+| 1.000 Minuten | 160 \$ |
+| 1.500 Minuten | 240 \$ |
+
+Manche Konten haben durch eine individuelle Vereinbarung einen niedrigeren Tarif, der von Fall zu Fall verhandelt wird. Wenn du nicht sicher bist, welcher für dein Konto gilt, kann dein Account Manager das bestätigen. Sofern nichts anderes vereinbart ist, geh von 0,16 \$ aus.
+
+## Dein Preis: du entscheidest
+
+Wenn du einen Tarif anlegst, legst du den Preis fest, den deine Endnutzer zahlen. **Dieser Preis muss über 0,16 \$ pro Minute liegen, sonst hast du keine Marge.**
+
+Das ist das ganze Geschäftsmodell. Callin verkauft dir die Minuten zum Einkaufspreis, du verkaufst sie zum Endkundenpreis.
+
+Angenommen, du entscheidest dich für \*\*0,32 $$pro Minute**, also das Doppelte deiner Kosten. Ein Tarif mit 1.000 Minuten kostet dann 320$$, und die Rechnung sieht so aus:
+
+|  | Betrag |
+| --- | --- |
+| Preis, den du verlangst (1.000 × 0,32 \$) | 320 \$ |
+| Plattformgebühr (1.000 × 0,16 \$) | −160 \$ |
+| **Deine Bruttomarge** | **160 \$** |
+
+Bei 0,30 $$liegt deine Marge bei 140$$. Bei 0,25 $$sind es 90$$. Bei 0,16 \$ arbeitest du umsonst.
+
+> **Wichtig:** Setze den Preis jedes Tarifs über 0,16 \$ pro Minute. Die Plattform hindert dich nicht daran, zum Einkaufspreis oder darunter zu verkaufen — diese Prüfung liegt bei dir.
+
+## Warum der Verbrauch nichts an deinen Kosten ändert
+
+Das ist der Punkt, der die meiste Verwirrung stiftet, deshalb ganz klar: **die Plattformgebühr wird auf die im Tarif enthaltenen Minuten berechnet, nicht auf die Minuten, die dein Nutzer tatsächlich verbraucht.**
+
+Denk daran, was du verkauft hast. Dein Endnutzer zahlt 320 \$ für einen Tarif mit 1.000 Minuten, egal ob er einen Anruf tätigt oder tausend. Er zahlt für Kapazität — das Recht, diese Minuten zu nutzen — nicht für Verbrauch. Die Plattformgebühr funktioniert genauso, weil sie auf dieselbe Kapazität erhoben wird.
+
+Die Gebühr ist also in jedem Szenario identisch:
+
+| Verbrauchte Minuten im Zyklus | Plattformgebühr | Deine Marge |
+| --- | --- | --- |
+| 180 Minuten | 160 \$ | 160 \$ |
+| 995 Minuten | 160 \$ | 160 \$ |
+| 0 Minuten | 160 \$ | 160 \$ |
+
+Ein schwacher Monat senkt die Gebühr nicht, aber er senkt auch deine Marge nicht. Du hast den vollen Preis bereits von deinem Nutzer kassiert. Deine Position ist in einem ruhigen Monat dieselbe wie in einem starken — und genau dafür ist ein Festpreistarif gedacht.
+
+Die praktische Erkenntnis für deine Preisgestaltung: deine Marge steht in dem Moment fest, in dem du den Tarif veröffentlichst, nicht danach, wie viel deine Kunden am Ende telefonieren.
+
+## Wie jede Zahlung aufgeteilt wird
+
+Zahlungen laufen über **Stripe Connect**, das in deine White-Label-Plattform integrierte Zahlungssystem. Es sorgt dafür, dass dein Endnutzer direkt an dich zahlt, während die Plattformgebühr in derselben Transaktion an Callin geht.
+
+In dem Moment, in dem die Karte deines Nutzers belastet wird, teilt sich der Betrag in drei Teile:
+
+| Teil | Was es ist | Wer ihn erhält |
+| --- | --- | --- |
+| **Zahlungsbetrag** | Der volle Preis, den dein Endnutzer gezahlt hat | — |
+| **Plattformgebühr** | Was Callin für die Minuten des Tarifs berechnet | Callin |
+| **Bearbeitungsgebühr** | Was Stripe für die Abwicklung der Kartenzahlung berechnet | Stripe |
+| **Nettobetrag** | Was nach beiden Gebühren übrig bleibt | Du |
+
+Die Bearbeitungsgebühr ist Stripes eigene Gebühr: üblicherweise ein kleiner Prozentsatz der Transaktion plus ein fester Betrag pro Zahlung. Sie hängt von der Zahlungsmethode, dem Kartentyp und dem Land ab, aus dem dein Nutzer zahlt. Callin legt sie nicht fest und sie ist nicht Teil deiner Vereinbarung mit uns — sie ist der übliche Preis dafür, Kartenzahlungen zu akzeptieren, und die einzige Position, die von Zahlung zu Zahlung leicht schwankt.
+
+## Ein vollständiges Beispiel
+
+Du verkaufst der Demo Zahnklinik einen Tarif mit \*\*1.000 Minuten zu 0,32 $$pro Minute**. Der Tarif kostet 320$$ im Monat.
+
+| Position | Betrag |
+| --- | --- |
+| Von deinem Nutzer gezahlter Betrag | 320,00 \$ |
+| Plattformgebühr (1.000 × 0,16 \$) | −160,00 \$ |
+| Bearbeitungsgebühr | −9,58 \$ |
+| **Nettobetrag für dich** | **150,42 \$** |
+
+Jeden Monat, in dem sich dieses Abonnement verlängert, bekommst du rund 150 $$. Die Plattformgebühr von 160 $$ ist fest und planbar. Die Bearbeitungsgebühr schwankt je nachdem, wie dein Kunde bezahlt, betrachte diese Zahl also als Schätzung und nicht als exakten Betrag.
+
+Wenn die Demo Zahnklinik in diesem Monat 120 Minuten verbraucht hat, ändert sich an der Tabelle nichts. Bei 990 Minuten ebenso wenig.
+
+## Tarife nach Verbrauch
+
+Neben den Festtarifen bietet die Plattform die Option **Pay as you go (white-label)** zu **0,16 \$ pro Minute** ohne enthaltene Minuten. Sie wird täglich abgerechnet, auf Basis der tatsächlich verbrauchten Minuten.
+
+Die beiden Modelle folgen entgegengesetzten Prinzipien:
+
+|  | Fester Monatstarif | Abrechnung nach Verbrauch |
+| --- | --- | --- |
+| **Enthaltene Minuten** | Eine feste Anzahl, vorab vereinbart | Keine |
+| **Was berechnet wird** | Die Minuten des Tarifs | Die tatsächlich genutzten Minuten |
+| **Abrechnungsrhythmus** | Einmal pro Monatszyklus | Täglich |
+| **Planbar?** | Ja, jeder Zyklus derselbe Betrag | Nein, folgt dem Verbrauch |
+
+Da die Abrechnung nach Verbrauch zum Einkaufspreis erfolgt, bleibt dir dabei keine Marge. Sie ist für den Zugang zur Plattform und zum Testen gedacht, nicht zum Weiterverkauf. Wenn du mit Marge verkaufen willst, lege einen Festtarif an und setze seinen Preis über 0,16 \$ pro Minute.
+
+## Wenn eine Zahlung fehlschlägt
+
+Wenn die Karte deines Endnutzers nicht belastet werden kann, findet keine Aufteilung statt, weil nichts eingenommen wurde. Für eine Zahlung, die nie stattgefunden hat, wird dir auch keine Plattformgebühr berechnet.
+
+Das Abonnement wechselt in den Status **Abgelaufen** und die verfügbaren Minuten des Nutzers fallen auf null, sodass seine Agenten keine Anrufe mehr annehmen, bis die Sache geklärt ist. Sobald die Zahlung durchgeht, wird das Abonnement wieder aktiv, die Minuten werden wiederhergestellt und die Aufteilung läuft bei dieser Zahlung ganz normal ab.
+
+Den Status aller Abonnements siehst du unter **Abonnements** in deinem White-Label-Panel, wo jede Zeile den Nutzer, seinen Tarif, den Preis, die verbleibenden Minuten und den aktuellen Status anzeigt. Es lohnt sich, dort regelmäßig hineinzuschauen: ein abgelaufenes Abonnement bedeutet einen Kunden mit unterbrochenem Service, und am schnellsten geht es meist, ihn direkt anzusprechen, damit er seine Karte aktualisiert.
