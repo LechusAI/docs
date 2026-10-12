@@ -31,6 +31,14 @@
         {
             "name": "Knowledge Base",
             "description": "Manage documents and groups that agents use during calls."
+        },
+        {
+            "name": "Campaigns",
+            "description": "..."
+        },
+        { 
+            "name": "Contacts",
+            "description": "..."
         }
     ],
     "paths": {
@@ -1021,7 +1029,377 @@
            },
                 "description": "Uploads a file (PDF, DOCX, TXT, etc.) and creates a new knowledge base document from its contents."
             }
+        },
+        "/public/v1/campaigns": {
+      "get": {
+        "tags": ["Campaigns"],
+        "summary": "List campaigns",
+        "description": "Returns campaigns for the API key account. Contacts are omitted; use the campaign detail route for the contact list.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "search", "in": "query", "schema": { "type": "string" }, "description": "Case-insensitive match on the campaign name." },
+          { "name": "status", "in": "query", "schema": { "type": "string", "enum": ["draft", "waiting", "running", "paused", "stopped", "completed", "failed", "delayed"] } },
+          { "name": "agentId", "in": "query", "schema": { "type": "string", "format": "uuid" } },
+          { "name": "cursor", "in": "query", "schema": { "type": "string" }, "description": "createdAt of the last campaign from the previous page." },
+          { "name": "pageSize", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 30 } },
+          { "name": "includeDeleted", "in": "query", "schema": { "type": "string", "enum": ["true", "false"] } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Campaign list",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignListResponse" } } }
+          }
         }
+      },
+      "post": {
+        "tags": ["Campaigns"],
+        "summary": "Create a campaign",
+        "description": "Saves a campaign for a callin or elevenlabs agent that already has a phone number. Set launch to dial immediately, or scheduled with a future window. Omit both to save a draft. Extra contact fields are passed to the agent as dynamic variables. Follow-up calls run for ElevenLabs agents when a call fails as busy or no-answer.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/CreateCampaignRequest" } } }
+        },
+        "responses": {
+          "201": {
+            "description": "Campaign created",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          },
+          "422": {
+            "description": "Validation failed",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/campaigns/{campaignId}": {
+      "get": {
+        "tags": ["Campaigns"],
+        "summary": "Get a campaign",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Campaign details, including contacts",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          },
+          "404": {
+            "description": "Campaign not found",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Campaigns"],
+        "summary": "Update a campaign",
+        "description": "Rejected while the campaign is running. Changing contacts, the agent, or the schedule replaces a waiting job.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/UpdateCampaignRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Campaign updated",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Campaigns"],
+        "summary": "Delete a campaign",
+        "description": "Soft-deletes the campaign and removes a waiting job. A running campaign must be stopped first.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Campaign deleted",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          },
+          "409": {
+            "description": "Campaign is running",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/campaigns/{campaignId}/launch": {
+      "post": {
+        "tags": ["Campaigns"],
+        "summary": "Launch a campaign now",
+        "description": "Dials contacts from startIndex, or from the saved resume index when a scheduled job is replaced. Requires an active subscription with minutes remaining.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/LaunchCampaignRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Campaign launched",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/campaigns/{campaignId}/schedule": {
+      "post": {
+        "tags": ["Campaigns"],
+        "summary": "Schedule a campaign",
+        "description": "Queues dialing at startTime in the given IANA timezone, and pauses until the next day's startTime after endTime. A paused or stopped campaign resumes from its saved contact index.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "requestBody": {
+          "required": false,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ScheduleCampaignRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Campaign scheduled",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/campaigns/{campaignId}/stop": {
+      "post": {
+        "tags": ["Campaigns"],
+        "summary": "Stop a campaign",
+        "description": "Removes a waiting or paused job immediately. A running job stops before the next contact.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Campaign stopped, or stopping if a call loop is in progress",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/campaigns/{campaignId}/calls": {
+      "get": {
+        "tags": ["Campaigns"],
+        "summary": "List calls for a campaign",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "campaignId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } },
+          { "name": "status", "in": "query", "schema": { "type": "string" } },
+          { "name": "cursor", "in": "query", "schema": { "type": "string" } },
+          { "name": "pageSize", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 30 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Campaign calls",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignCallListResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/contacts": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "List contacts",
+        "description": "Returns contacts saved on the API key account. Use contactId values with POST /public/v1/campaigns.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "search", "in": "query", "schema": { "type": "string" }, "description": "Matches phone number, name, or email." },
+          { "name": "cursor", "in": "query", "schema": { "type": "string" }, "description": "createdAt of the last contact from the previous page." },
+          { "name": "pageSize", "in": "query", "schema": { "type": "integer", "minimum": 1, "maximum": 100, "default": 30 } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact list",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactListResponse" } } }
+          }
+        }
+      },
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Create a contact",
+        "description": "Stores one contact. Phone numbers are saved without spaces or punctuation. A duplicate phone number returns 409. Extra fields are kept and can be used as campaign dynamic variables.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ContactWrite" } } }
+        },
+        "responses": {
+          "201": {
+            "description": "Contact created",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactResponse" } } }
+          },
+          "409": {
+            "description": "Phone number already exists",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/contacts/import": {
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Import contacts",
+        "description": "Creates up to 2000 contacts. Numbers already on the account are skipped. Duplicate numbers in the same request keep the last row. The created contactId values can be passed to a campaign as contactIds.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ImportContactsRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Import result",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactImportResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/contacts/delete": {
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Delete contacts",
+        "description": "Deletes the given contacts owned by the API key account. Unknown ids are ignored.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/DeleteContactsRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Delete result",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactDeleteResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/contacts/{contactId}": {
+      "get": {
+        "tags": ["Contacts"],
+        "summary": "Get a contact",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "contactId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactResponse" } } }
+          },
+          "404": {
+            "description": "Contact not found",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      },
+      "patch": {
+        "tags": ["Contacts"],
+        "summary": "Update a contact",
+        "description": "Merges the sent fields into the contact. Omitted fields are left as they are.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "contactId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ContactWrite" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "Contact updated",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactResponse" } } }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["Contacts"],
+        "summary": "Delete a contact",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "parameters": [
+          { "name": "contactId", "in": "path", "required": true, "schema": { "type": "string", "format": "uuid" } }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact deleted",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactDeleteOneResponse" } } }
+          }
+        }
+      }
+    }
     },
     "components": {
         "securitySchemes": {
@@ -1766,6 +2144,273 @@
                     }
                 }
             },
+          "CampaignContact": {
+        "type": "object",
+        "required": ["phoneNumber"],
+        "properties": {
+          "contactId": { "type": "string", "nullable": true },
+          "phoneNumber": { "type": "string" },
+          "name": { "type": "string" },
+          "email": { "type": "string" }
+        },
+        "additionalProperties": true
+      },
+      "Campaign": {
+        "type": "object",
+        "properties": {
+          "campaignId": { "type": "string" },
+          "name": { "type": "string" },
+          "agentId": { "type": "string" },
+          "active": { "type": "boolean" },
+          "scheduled": { "type": "boolean" },
+          "startTime": { "type": "string", "nullable": true },
+          "endTime": { "type": "string", "nullable": true },
+          "timezone": { "type": "string", "nullable": true },
+          "status": { "type": "string" },
+          "startIndex": { "type": "integer" },
+          "contactCount": { "type": "integer" },
+          "contacts": { "type": "array", "items": { "$ref": "#/components/schemas/CampaignContact" } },
+          "followUp": {
+            "type": "object",
+            "properties": {
+              "enabled": { "type": "boolean" },
+              "attempts": { "type": "integer" },
+              "intervalsMinutes": { "type": "array", "items": { "type": "integer" } }
+            }
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "createdAt": { "type": "string", "nullable": true },
+              "updatedAt": { "type": "string", "nullable": true },
+              "deletedAt": { "type": "string", "nullable": true }
+            }
+          }
+        }
+      },
+      "CreateCampaignRequest": {
+        "type": "object",
+        "required": ["name", "agentId"],
+        "properties": {
+          "name": { "type": "string" },
+          "agentId": { "type": "string", "format": "uuid" },
+          "contacts": { "type": "array", "items": { "$ref": "#/components/schemas/CampaignContact" } },
+          "contactIds": { "type": "array", "items": { "type": "string", "format": "uuid" } },
+          "active": { "type": "boolean", "default": true },
+          "scheduled": { "type": "boolean", "default": false },
+          "launch": { "type": "boolean", "default": false },
+          "startTime": { "type": "string" },
+          "endTime": { "type": "string" },
+          "timezone": { "type": "string", "example": "America/New_York" },
+          "followUpCall": { "type": "boolean", "default": false },
+          "followUpAttempts": { "type": "integer", "minimum": 1, "maximum": 10 },
+          "followUpIntervals": { "type": "array", "items": { "type": "integer" }, "description": "Delay in minutes before each follow-up. One value per attempt." }
+        }
+      },
+      "UpdateCampaignRequest": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "agentId": { "type": "string", "format": "uuid" },
+          "contacts": { "type": "array", "items": { "$ref": "#/components/schemas/CampaignContact" } },
+          "contactIds": { "type": "array", "items": { "type": "string", "format": "uuid" } },
+          "active": { "type": "boolean" },
+          "scheduled": { "type": "boolean" },
+          "startTime": { "type": "string", "nullable": true },
+          "endTime": { "type": "string", "nullable": true },
+          "timezone": { "type": "string", "nullable": true },
+          "followUpCall": { "type": "boolean" },
+          "followUpAttempts": { "type": "integer" },
+          "followUpIntervals": { "type": "array", "items": { "type": "integer" } }
+        }
+      },
+      "ScheduleCampaignRequest": {
+        "type": "object",
+        "properties": {
+          "startTime": { "type": "string" },
+          "endTime": { "type": "string" },
+          "timezone": { "type": "string" }
+        }
+      },
+      "LaunchCampaignRequest": {
+        "type": "object",
+        "properties": {
+          "startIndex": { "type": "integer", "minimum": 0 }
+        }
+      },
+      "SuccessCampaignResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": { "$ref": "#/components/schemas/Campaign" },
+          "warning": { "type": "string" },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessCampaignListResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Campaign" } },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "pageSize": { "type": "integer" },
+              "hasMore": { "type": "boolean" },
+              "nextCursor": { "type": "string", "nullable": true }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "CampaignCall": {
+        "type": "object",
+        "properties": {
+          "callId": { "type": "string" },
+          "campaignId": { "type": "string", "nullable": true },
+          "contactNumber": { "type": "string", "nullable": true },
+          "contactName": { "type": "string", "nullable": true },
+          "status": { "type": "string", "nullable": true },
+          "direction": { "type": "string", "nullable": true },
+          "durationSeconds": { "type": "integer", "nullable": true },
+          "followUpCount": { "type": "integer" },
+          "startedAt": { "type": "string", "nullable": true },
+          "endedAt": { "type": "string", "nullable": true },
+          "errorMessage": { "type": "string", "nullable": true },
+          "contact": { "type": "object", "nullable": true, "additionalProperties": true }
+        }
+      },
+      "SuccessCampaignCallListResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/CampaignCall" } },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "pageSize": { "type": "integer" },
+              "hasMore": { "type": "boolean" },
+              "nextCursor": { "type": "string", "nullable": true }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "contactId": { "type": "string" },
+          "phoneNumber": { "type": "string" },
+          "name": { "type": "string" },
+          "email": { "type": "string" },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "createdAt": { "type": "string", "nullable": true }
+            }
+          }
+        },
+        "additionalProperties": true
+      },
+      "ContactWrite": {
+        "type": "object",
+        "properties": {
+          "phoneNumber": { "type": "string" },
+          "name": { "type": "string" },
+          "email": { "type": "string" }
+        },
+        "additionalProperties": true
+      },
+      "ImportContactsRequest": {
+        "type": "object",
+        "required": ["contacts"],
+        "properties": {
+          "contacts": { "type": "array", "items": { "$ref": "#/components/schemas/ContactWrite" } }
+        }
+      },
+      "DeleteContactsRequest": {
+        "type": "object",
+        "required": ["contactIds"],
+        "properties": {
+          "contactIds": { "type": "array", "items": { "type": "string", "format": "uuid" } }
+        }
+      },
+      "SuccessContactResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": { "$ref": "#/components/schemas/Contact" },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessContactListResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+          "pagination": {
+            "type": "object",
+            "properties": {
+              "pageSize": { "type": "integer" },
+              "hasMore": { "type": "boolean" },
+              "nextCursor": { "type": "string", "nullable": true }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessContactImportResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": {
+            "type": "object",
+            "properties": {
+              "created": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+              "skipped": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "phoneNumber": { "type": "string" },
+                    "reason": { "type": "string" }
+                  }
+                }
+              },
+              "createdCount": { "type": "integer" },
+              "skippedCount": { "type": "integer" }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessContactDeleteResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": {
+            "type": "object",
+            "properties": {
+              "deletedCount": { "type": "integer" }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessContactDeleteOneResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": {
+            "type": "object",
+            "properties": {
+              "contactId": { "type": "string" },
+              "deleted": { "type": "boolean" }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
             "AgentTransfer": {
                 "type": "object",
                 "required": [
