@@ -1058,7 +1058,7 @@
       "post": {
         "tags": ["Campaigns"],
         "summary": "Create a campaign",
-        "description": "Saves a campaign for a callin or elevenlabs agent that already has a phone number. Set launch to dial immediately, or scheduled with a future window. Omit both to save a draft. Extra contact fields are passed to the agent as dynamic variables. Follow-up calls run for ElevenLabs agents when a call fails as busy or no-answer.",
+        "description": "Saves a campaign for an agent that already has a phone number. Every phone number must be E.164, like +14155552671. Set launch to dial immediately, or scheduled with a future window. Omit both to save a draft. Extra contact fields are passed to the agent as dynamic variables. Follow-up calls run when a call ends as busy or no-answer.",
         "security": [
           { "ApiKeyHeader": [] },
           { "BearerAuth": [] },
@@ -1075,6 +1075,36 @@
           },
           "422": {
             "description": "Validation failed",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      }
+    },
+      "/public/v1/campaigns/csv": {
+      "post": {
+        "tags": ["Campaigns"],
+        "summary": "Create a campaign from a CSV",
+        "description": "Creates or starts a campaign only when every CSV row is valid. A file with an invalid phone, invalid email, or a duplicate number is rejected and nothing is saved or dialed. Phone numbers must be E.164, like +14155552671. Spaces and punctuation are removed, and a leading 00 is converted to +. Send multipart field file plus name and agentId. Set launch to true to dial immediately, or scheduled with startTime, endTime, and timezone. Optional phoneColumn, nameColumn, and emailColumn override the headers.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/CreateCampaignCsvUpload" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Campaign created from a valid CSV",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessCampaignResponse" } } }
+          },
+          "400": {
+            "description": "CSV is not valid. The campaign was not created. error.details contains the row report.",
             "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
           }
         }
@@ -1287,6 +1317,58 @@
           "409": {
             "description": "Phone number already exists",
             "content": { "application/json": { "schema": { "$ref": "#/components/schemas/ErrorResponse" } } }
+          }
+        }
+      }
+    },
+      "/public/v1/contacts/csv/verify": {
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Verify a contact CSV",
+        "description": "Parses one UTF-8 .csv file and checks every row without saving. Phone numbers must be E.164, like +14155552671. Send multipart form field file. Optional phoneColumn, nameColumn, and emailColumn override the header mapping when the file does not use phoneNumber, name, or email. A phone column is required. Each row is valid, invalid, duplicate, or already on the account. The maximum is 2000 data rows and 10MB.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/ContactCsvUpload" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Row-by-row verification. Nothing is saved.",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactCsvVerifyResponse" } } }
+          }
+        }
+      }
+    },
+    "/public/v1/contacts/csv": {
+      "post": {
+        "tags": ["Contacts"],
+        "summary": "Upload a contact CSV",
+        "description": "Verifies the CSV, then creates the valid rows that are not already on the account. Invalid and duplicate rows are reported and not saved. The same file field and column overrides as verification are accepted.",
+        "security": [
+          { "ApiKeyHeader": [] },
+          { "BearerAuth": [] },
+          { "ApiKeyQuery": [] }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": { "$ref": "#/components/schemas/ContactCsvUpload" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification plus the contacts that were created",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/SuccessContactCsvImportResponse" } } }
           }
         }
       }
@@ -2207,6 +2289,26 @@
           "followUpIntervals": { "type": "array", "items": { "type": "integer" }, "description": "Delay in minutes before each follow-up. One value per attempt." }
         }
       },
+          "CreateCampaignCsvUpload": {
+        "type": "object",
+        "required": ["file", "name", "agentId"],
+        "properties": {
+          "file": { "type": "string", "format": "binary", "description": "UTF-8 .csv. Every phone number must be E.164." },
+          "name": { "type": "string" },
+          "agentId": { "type": "string", "format": "uuid" },
+          "launch": { "type": "boolean", "default": false },
+          "scheduled": { "type": "boolean", "default": false },
+          "startTime": { "type": "string" },
+          "endTime": { "type": "string" },
+          "timezone": { "type": "string" },
+          "phoneColumn": { "type": "string" },
+          "nameColumn": { "type": "string" },
+          "emailColumn": { "type": "string" },
+          "followUpCall": { "type": "boolean" },
+          "followUpAttempts": { "type": "integer" },
+          "followUpIntervals": { "type": "string", "description": "Comma-separated delays in minutes, one per follow-up attempt." }
+        }
+      },
       "UpdateCampaignRequest": {
         "type": "object",
         "properties": {
@@ -2321,6 +2423,25 @@
         },
         "additionalProperties": true
       },
+          "ContactCsvUpload": {
+        "type": "object",
+        "required": ["file"],
+        "properties": {
+          "file": { "type": "string", "format": "binary", "description": "UTF-8 .csv file, up to 10MB and 2000 data rows." },
+          "phoneColumn": { "type": "string", "description": "Header to use as the phone number when it is not named phone or phoneNumber." },
+          "nameColumn": { "type": "string" },
+          "emailColumn": { "type": "string" }
+        }
+      },
+      "ContactCsvRow": {
+        "type": "object",
+        "properties": {
+          "row": { "type": "integer", "description": "Spreadsheet row number. The header is row 1." },
+          "status": { "type": "string", "enum": ["valid", "invalid", "duplicate", "existing"] },
+          "contact": { "$ref": "#/components/schemas/ContactWrite" },
+          "reasons": { "type": "array", "items": { "type": "string" } }
+        }
+      },
       "ImportContactsRequest": {
         "type": "object",
         "required": ["contacts"],
@@ -2358,6 +2479,59 @@
           },
           "requestId": { "type": "string", "nullable": true }
         }
+      },
+          "SuccessContactCsvVerifyResponse": {
+        "type": "object",
+        "properties": {
+          "success": { "type": "boolean", "example": true },
+          "data": {
+            "type": "object",
+            "properties": {
+              "fileName": { "type": "string" },
+              "delimiter": { "type": "string", "enum": ["comma", "semicolon", "tab"] },
+              "headers": { "type": "array", "items": { "type": "string" } },
+              "mapping": {
+                "type": "object",
+                "properties": {
+                  "phoneNumber": { "type": "string" },
+                  "name": { "type": "string", "nullable": true },
+                  "email": { "type": "string", "nullable": true }
+                }
+              },
+              "summary": {
+                "type": "object",
+                "properties": {
+                  "rowCount": { "type": "integer" },
+                  "validCount": { "type": "integer" },
+                  "invalidCount": { "type": "integer" },
+                  "duplicateCount": { "type": "integer" },
+                  "existingCount": { "type": "integer" }
+                }
+              },
+              "rows": { "type": "array", "items": { "$ref": "#/components/schemas/ContactCsvRow" } }
+            }
+          },
+          "requestId": { "type": "string", "nullable": true }
+        }
+      },
+      "SuccessContactCsvImportResponse": {
+        "allOf": [
+          { "$ref": "#/components/schemas/SuccessContactCsvVerifyResponse" },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "created": { "type": "array", "items": { "$ref": "#/components/schemas/Contact" } },
+                  "skipped": { "type": "array", "items": { "type": "object" } },
+                  "createdCount": { "type": "integer" },
+                  "skippedCount": { "type": "integer" }
+                }
+              }
+            }
+          }
+        ]
       },
       "SuccessContactImportResponse": {
         "type": "object",
