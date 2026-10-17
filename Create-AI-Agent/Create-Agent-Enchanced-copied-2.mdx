@@ -144,9 +144,9 @@ L'**Invite de conversation** (le prompt) est l'ensemble principal d'instructions
 
 Un nouvel agent démarre avec un modèle organisé en trois sections à adapter :
 
-- **Personality** (personnalité) — qui est l'agent et quel rôle il joue.
-- **Environment** (environnement) — le contexte dans lequel il travaille (appel de support, prise de rendez-vous, accueil, etc.).
-- **Tone** (ton) — comment il doit sonner (calme, chaleureux, professionnel, bref).
+- **Personnalité** — qui est l'agent et quel rôle il joue.
+- **Environnement** — le contexte dans lequel il travaille (appel de support, prise de rendez-vous, accueil, etc.).
+- **Ton** — comment il doit sonner (calme, chaleureux, professionnel, bref).
 
 Après ces trois sections, ajoute des règles opérationnelles qui guident les décisions de l'agent pendant l'appel. Quelques-unes qui fonctionnent bien dans la plupart des cas :
 
@@ -183,7 +183,7 @@ Active-le si ton prompt est court et que tu veux ajouter ces bonnes pratiques. S
 
 ### Message d'accueil
 
-Le **Message d'accueil** est la toute première chose que dit l'agent au début de l'appel. Un bon message d'accueil indique à l'appelant à qui il parle et quel type d'aide il peut obtenir, en une phrase courte. Tu peux aussi y utiliser des variables, par exemple `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
+Le **Message d'accueil** est la toute première chose que dit l'agent au début de l'appel. Un bon message d'accueil indique à l'appelant à qui il parle et quel type d'aide il peut obtenir, en une phrase courte. Tu peux aussi y utiliser des variables, par exemple `Bonjour, ici {{agent_name}}. Merci de votre appel, comment puis-je vous aider ?`
 
 Quelques exemples :
 
@@ -208,7 +208,7 @@ Clique sur la voix sélectionnée (marquée **Principale**) pour ouvrir le panne
   - **Cloné** — les voix que tu as clonées dans ton compte.
   - **Ajouter** — importe une voix depuis ElevenLabs en collant son lien de partage VoiceLab et en lui donnant un nom.
 - **Mode expressif** — activé par défaut. Permet à l'agent d'exprimer sa voix avec des tags audio, comme une émotion, une vitesse ou un accent.
-- **Tags audio suggérés** — jusqu'à 20 tags que la voix peut utiliser pour les nuances émotionnelles, comme *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent* ou *Laughing*. Clique sur un tag pour l'ajouter et indique quand l'agent doit l'utiliser, ou clique sur **Ajouter** pour créer le tien. Ce sont des suggestions : l'agent peut aussi utiliser des tags qui ne sont pas dans la liste.
+- **Tags audio suggérés** — jusqu'à 20 tags que la voix peut utiliser pour les nuances émotionnelles, comme *enthousiaste*, *inquiet*, *patient*, *chuchotement*, *accent américain* ou *rire*. Clique sur un tag pour l'ajouter et indique quand l'agent doit l'utiliser, ou clique sur **Ajouter** pour créer le tien. Ce sont des suggestions : l'agent peut aussi utiliser des tags qui ne sont pas dans la liste.
 
 ### Ajouter une voix supplémentaire
 
@@ -225,7 +225,7 @@ Clique sur **Ajouter la voix** pour l'enregistrer.
 
 L'icône d'engrenage à côté de **Voix** ouvre les **Paramètres vocaux communs**, deux réglages audio partagés par toutes les voix de l'agent :
 
-- **Format de sortie TTS** — le format de l'audio généré : **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** ou **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz offre un bon équilibre entre qualité audio et vitesse de traitement.
+- **Format de sortie TTS** — le format de l'audio généré : **PCM 8000 Hz**, **PCM 16000 Hz** (*recommandé*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** ou **ulaw 8000 Hz** (*téléphonie*). PCM 16000 Hz offre un bon équilibre entre qualité audio et vitesse de traitement.
 - **Optimiser la latence du flux** — une échelle de **0** à **4** (par défaut **3**). Les valeurs élevées font parler l'agent plus vite, au prix d'une qualité audio un peu moindre.
 
 ### Langue
@@ -276,7 +276,7 @@ Tu le construis sur un canevas visuel en plaçant des nœuds et en les reliant. 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="L'onglet Workflow avec un nœud Start relié à un Subagent et à un nœud Transfer vers un numéro de téléphone, un nœud End, le panneau Finalisez la configuration du workflow et les réglages du Subagent à droite."
+    alt="L'onglet Workflow avec un nœud Début relié à un Sous-agent et à un nœud de transfert vers un numéro de téléphone, un nœud Fin, le panneau Finalisez la configuration du workflow et les réglages du Sous-agent à droite."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -290,31 +290,31 @@ Tu le construis sur un canevas visuel en plaçant des nœuds et en les reliant. 
 À partir d'un seul point de départ, tu peux :
 
 - Créer plusieurs chemins dans la même conversation.
-- Envoyer l'appel vers un **Subagent** pour une étape spécialisée.
+- Envoyer l'appel vers un **Sous-agent** pour une étape spécialisée.
 - Transférer l'appel vers un autre agent.
 - Transférer l'appel vers un numéro de téléphone.
 - Utiliser un outil qui existe déjà.
-- Terminer la conversation avec un nœud **End**.
+- Terminer la conversation avec un nœud **Fin**.
 - Contrôler quel chemin s'applique grâce aux **conditions LLM**.
 
 ### Ajouter des nœuds
 
-Pour ajouter un nœud, fais glisser une connexion depuis un nœud existant (par exemple depuis le bas de **Start**) et dépose-la sur une zone vide du canevas. Tu peux aussi cliquer sur le bouton **+** sous un nœud sélectionné. Un menu s'ouvre avec les types de nœuds : **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool** et **End**.
+Pour ajouter un nœud, fais glisser une connexion depuis un nœud existant (par exemple depuis le bas de **Début**) et dépose-la sur une zone vide du canevas. Tu peux aussi cliquer sur le bouton **+** sous un nœud sélectionné. Un menu s'ouvre avec les types de nœuds : **Sous-agent**, **Transfert vers un agent**, **Transfert vers un numéro de téléphone**, **Outil** et **Fin**.
 
 Le nouveau nœud apparaît relié au précédent et ses réglages s'ouvrent dans le panneau de droite.
 
 ### Début
 
-**Start** est le point d'entrée. Toute conversation commence ici. Le nœud ne parle pas et n'agit pas : il lance simplement le chemin et envoie l'appel au nœud suivant.
+**Début** est le point d'entrée. Toute conversation commence ici. Le nœud ne parle pas et n'agit pas : il lance simplement le chemin et envoie l'appel au nœud suivant.
 
-Le panneau latéral de **Start** comporte deux onglets :
+Le panneau latéral de **Début** comporte deux onglets :
 
 - **Vue d'ensemble** — explique son rôle.
-- **Arêtes** — liste tous les chemins sortants de **Start**, avec leur libellé et leur destination.
+- **Arêtes** — liste tous les chemins sortants de **Début**, avec leur libellé et leur destination.
 
 ### Transitions et conditions LLM
 
-Une transition est la ligne qui relie un nœud au suivant. Clique sur son libellé (au début, *Configure condition*) pour ouvrir ses réglages. L'onglet **Aller** définit la transition :
+Une transition est la ligne qui relie un nœud au suivant. Clique sur son libellé pour ouvrir ses réglages. L'onglet **Aller** définit la transition :
 
 - **Type de transition** — **Condition LLM** (le modèle décide quand prendre ce chemin), **Aucune** ou **Expression** (pas encore modifiable dans ce panneau).
 - **Libellé** — le nom affiché sur le canevas.
@@ -332,14 +332,14 @@ Le panneau **Finalisez la configuration du workflow** liste exactement ce qui ma
 
 Éléments fréquemment signalés :
 
-- Un nœud **Agent transfer** sans agent cible.
-- Un nœud **Phone number transfer** sans type de destination.
-- Un nœud **Tool** sans outil sélectionné.
+- Un nœud **Transfert vers un agent** sans agent cible.
+- Un nœud **Transfert vers un numéro de téléphone** sans type de destination.
+- Un nœud **Outil** sans outil sélectionné.
 - Une transition sans texte de condition LLM.
 
 ### Sous-agent
 
-Un **Subagent** est une étape spécialisée dans le même workflow. Utilise-le quand une partie de la conversation a besoin de son propre objectif, de sa propre voix, de son propre modèle ou comportement, différents de ceux de l'agent principal. Donne-lui un nom en haut du panneau, puis configure ses onglets :
+Un **Sous-agent** est une étape spécialisée dans le même workflow. Utilise-le quand une partie de la conversation a besoin de son propre objectif, de sa propre voix, de son propre modèle ou comportement, différents de ceux de l'agent principal. Donne-lui un nom en haut du panneau, puis configure ses onglets :
 
 - **Général** — **Objectif de conversation** (des instructions qui complètent le prompt principal pour cette étape), **Remplacer le prompt** (pour remplacer le prompt principal au lieu de le compléter), **Voix**, **LLM**, **Réactivité** et **Patience à l'orthographe**.
 - **Base de connaissances** — **Hériter de la base de connaissances** est activé par défaut. Désactive-le pour en utiliser une autre.
@@ -350,11 +350,11 @@ Les outils ne se créent pas ici. Ils se créent dans la section globale **Outil
 
 ### Nœud d'outil
 
-Le nœud **Tool** (affiché comme **Routage d'outil** dans le panneau latéral) envoie la conversation vers une étape où l'agent utilise un outil existant. Utilise **Ajouter un outil** dans son onglet **Outils** pour en choisir au moins un. Ce nœud ne crée pas d'outils : il pointe seulement vers des outils qui existent déjà.
+Le nœud **Outil** (affiché comme **Routage d'outil** dans le panneau latéral) envoie la conversation vers une étape où l'agent utilise un outil existant. Utilise **Ajouter un outil** dans son onglet **Outils** pour en choisir au moins un. Ce nœud ne crée pas d'outils : il pointe seulement vers des outils qui existent déjà.
 
 ### Transfert vers un agent
 
-**Agent transfer** passe la conversation à un autre agent de ton compte. Utilise-le quand l'appel doit être confié à un assistant spécialisé dans une autre tâche, une autre langue ou un autre workflow.
+**Transfert vers un agent** passe la conversation à un autre agent de ton compte. Utilise-le quand l'appel doit être confié à un assistant spécialisé dans une autre tâche, une autre langue ou un autre workflow.
 
 Tu peux configurer :
 
@@ -370,7 +370,7 @@ Exemples de messages de transfert :
 
 ### Transfert vers un numéro de téléphone
 
-**Phone number transfer** envoie l'appel vers un numéro de téléphone. Utilise-le quand la conversation doit quitter l'agent et continuer sur une ligne précise.
+**Transfert vers un numéro de téléphone** envoie l'appel vers un numéro de téléphone. Utilise-le quand la conversation doit quitter l'agent et continuer sur une ligne précise.
 
 Le **Type de destination** peut être :
 
@@ -379,7 +379,7 @@ Le **Type de destination** peut être :
 
 ### Fin
 
-Le nœud **End** clôt la conversation : l'appel se termine quand ce nœud est atteint. Utilise-le quand :
+Le nœud **Fin** clôt la conversation : l'appel se termine quand ce nœud est atteint. Utilise-le quand :
 
 - La demande est entièrement résolue.
 - Une branche doit se fermer proprement.
@@ -393,7 +393,7 @@ Quand tu sélectionnes un nœud, deux icônes apparaissent à côté pour le dup
 
 Quand aucun nœud n'est sélectionné, le panneau de droite affiche les **Paramètres globaux**. **Empêcher les boucles infinies** évite que le workflow passe sans arrêt d'un nœud à l'autre en boucle quand toutes les conditions sont vraies.
 
-Pour désactiver un workflow sans le supprimer, déconnecte le nœud **Start**. Sans point de départ connecté, le flux n'a pas de point d'entrée et ne s'exécute pas.
+Pour désactiver un workflow sans le supprimer, déconnecte le nœud **Début**. Sans point de départ connecté, le flux n'a pas de point d'entrée et ne s'exécute pas.
 
 > **Erreur fréquente :** Un workflow qui paraît complet sur le canevas peut quand même échouer en pratique. Teste chaque chemin avec une vraie conversation avant de le publier.
 
@@ -884,13 +884,13 @@ Règle la façon dont l'agent capte l'audio et les termes qu'il privilégie.
 
 #### Qualité de capture vocale
 
-Définit le format audio utilisé pour traiter la parole. Les options sont **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** et **ulaw 8000 Hz**.
+Définit le format audio utilisé pour traiter la parole. Les options sont **PCM 8000 Hz**, **PCM 16000 Hz** (*recommandé*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** et **ulaw 8000 Hz**.
 
 Dans la plupart des cas, laisse **PCM 16000 Hz**. C'est le meilleur équilibre entre qualité audio et vitesse de traitement. **ulaw 8000 Hz** est conçu spécialement pour la téléphonie.
 
 #### Mots-clés prioritaires
 
-Te permet de lister, séparés par des virgules, les termes que l'agent doit privilégier lors de la reconnaissance vocale. Utile pour les noms de marque, de produits, les termes techniques, les sigles, les codes ou les noms de famille peu courants que le modèle pourrait mal comprendre — par exemple *SolarMax, AcmeCorp, 401k, deductible*.
+Te permet de lister, séparés par des virgules, les termes que l'agent doit privilégier lors de la reconnaissance vocale. Utile pour les noms de marque, de produits, les termes techniques, les sigles, les codes ou les noms de famille peu courants que le modèle pourrait mal comprendre — par exemple *SolarMax, AcmeCorp, IBAN, franchise*.
 
 ### Flux de conversation
 
@@ -941,7 +941,7 @@ Donne à l'appelant un retour sonore immédiat quand le modèle met plus de temp
 
 - **Durée du délai d'attente** — combien de secondes attendre la réponse du modèle avant de diffuser un message (par défaut **3**).
 - **Utiliser un message généré par LLM** — génère avec le modèle une phrase de remplissage adaptée au contexte.
-- **Message** — la phrase de secours utilisée si aucune phrase n'est générée à temps (par défaut *« Hhmmmm...yeah. »*).
+- **Message** — la phrase de secours utilisée si aucune phrase n'est générée à temps (par défaut *« Hmm... voyons. »*).
 - **Messages de remplissage supplémentaires** — utilise **Ajouter un message** pour ajouter des phrases pour le 2ᵉ, le 3ᵉ et les délais suivants dans la même réponse, pour que l'agent ne se répète pas.
 
 ### Confidentialité et données
