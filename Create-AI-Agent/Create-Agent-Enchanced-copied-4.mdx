@@ -144,9 +144,9 @@ Il **Prompt conversazionale** è l'insieme principale di istruzioni che il tuo a
 
 Un nuovo agente parte con un modello organizzato in tre sezioni da adattare:
 
-- **Personality** (personalità) — chi è l'agente e che ruolo ha.
-- **Environment** (contesto) — il contesto in cui lavora (chiamata di supporto, prenotazione di appuntamenti, reception e così via).
-- **Tone** (tono) — come deve suonare (calmo, cordiale, professionale, breve).
+- **Personalità** — chi è l'agente e che ruolo ha.
+- **Contesto** — il contesto in cui lavora (chiamata di supporto, prenotazione di appuntamenti, reception e così via).
+- **Tono** — come deve suonare (calmo, cordiale, professionale, breve).
 
 Dopo queste tre, aggiungi regole operative che guidino le decisioni dell'agente durante la chiamata. Alcune che funzionano bene nella maggior parte dei casi:
 
@@ -165,25 +165,25 @@ Il pulsante **Aggiungi variabili**, sotto l'editor del prompt (e sotto il saluto
 - **Variabili di sistema** — valori che Callin.io compila automaticamente: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone` e `system__call_id`.
 - **Variabili personalizzate** — le tue variabili, come `agent_name`. Fai clic su **Nuova variabile** per crearne una.
 
-Le variabili compaiono come chip sotto l'editor e nel pannello **Variabili Dinamiche**, in fondo alla scheda, dove ne imposti il valore. Per esempio, `{{agent_name}}` prende di default il nome dell'agente.
+Le variabili compaiono come chip sotto l'editor e nel pannello **Variabili Dinamiche**, in fondo alla scheda, dove ne imposti il valore. Per esempio, `{{agent_name}}` prende per impostazione predefinita il nome dell'agente.
 
 È l'approccio giusto quando vuoi riutilizzare lo stesso agente per brand, sedi o servizi diversi senza riscrivere il prompt ogni volta.
 
 ### Fuso orario
 
-Accanto ad **Aggiungi variabili** c'è il selettore del fuso orario (per esempio **Rome (GMT+1)**), con una ricerca per trovare qualsiasi città. È il riferimento orario che l'agente usa quando parla di *oggi*, *domani*, *questo pomeriggio* o di qualsiasi orario durante la chiamata.
+Accanto ad **Aggiungi variabili** c'è il selettore del fuso orario (per esempio **Roma (GMT+1)**), con una ricerca per trovare qualsiasi città. È il riferimento orario che l'agente usa quando parla di *oggi*, *domani*, *questo pomeriggio* o di qualsiasi orario durante la chiamata.
 
 Imposta sempre il fuso orario reale dell'attività che l'agente rappresenta. Un fuso orario sbagliato porta a orari di appuntamento sbagliati.
 
 ### Personalità predefinita
 
-L'icona a ingranaggio accanto al fuso orario apre l'interruttore **Personalità predefinita**. È disattivato di default. Se lo attivi, Callin.io aggiunge al prompt alcune linee guida generali, per esempio: non ripetere chi sei se non te lo chiedono, dare risposte utili e informative, fare domande di chiarimento quando serve ed essere cortese, professionale, chiaro e conciso.
+L'icona a ingranaggio accanto al fuso orario apre l'interruttore **Personalità predefinita**. È disattivato per impostazione predefinita. Se lo attivi, Callin.io aggiunge al prompt alcune linee guida generali, per esempio: non ripetere chi sei se non te lo chiedono, dare risposte utili e informative, fare domande di chiarimento quando serve ed essere cortese, professionale, chiaro e conciso.
 
 Attivalo se il tuo prompt è breve e vuoi aggiungere queste buone pratiche. Se il tuo prompt le copre già, lascialo disattivato.
 
 ### Messaggio di benvenuto
 
-Il **Messaggio di benvenuto** è la prima cosa che l'agente dice quando inizia la chiamata. Un buon saluto dice a chi chiama con chi sta parlando e che tipo di aiuto può ricevere, in una frase breve. Puoi usare anche le variabili, per esempio `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
+Il **Messaggio di benvenuto** è la prima cosa che l'agente dice quando inizia la chiamata. Un buon saluto dice a chi chiama con chi sta parlando e che tipo di aiuto può ricevere, in una frase breve. Puoi usare anche le variabili, per esempio `Ciao, sono {{agent_name}}. Grazie per aver chiamato, come posso aiutarti?`
 
 Alcuni esempi:
 
@@ -193,7 +193,7 @@ Alcuni esempi:
 
 ### Consenti interruzioni
 
-**Consenti interruzioni**, accanto al saluto, permette a chi chiama di interrompere l'agente mentre pronuncia il primo messaggio. È attivato di default, cosa che risulta naturale nella maggior parte dei flussi di supporto, reception e assistenza clienti.
+**Consenti interruzioni**, accanto al saluto, permette a chi chiama di interrompere l'agente mentre pronuncia il primo messaggio. È attivato per impostazione predefinita, cosa che risulta naturale nella maggior parte dei flussi di supporto, reception e assistenza clienti.
 
 > **Errore comune:** Lasciare attive le interruzioni quando il saluto contiene informazioni che chi chiama deve sentire per intero, come un avviso legale o l'avviso di registrazione. In questo caso, disattivale.
 
@@ -207,8 +207,8 @@ Fai clic sulla voce selezionata (indicata come **Principale**) per aprire il pan
   - **Esplora** — il catalogo delle voci disponibili, con ricerca e filtri per lingua e genere.
   - **Clonato** — le voci che hai clonato nel tuo account.
   - **Aggiungi** — importa una voce da ElevenLabs incollando il suo link di condivisione di VoiceLab e dandole un nome.
-- **Modalità espressiva** — attiva di default. Permette all'agente di esprimersi con tag audio, come un'emozione, una velocità o un accento.
-- **Tag audio suggeriti** — fino a 20 tag che la voce può usare per le sfumature emotive, come *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent* o *Laughing*. Fai clic su un tag per aggiungerlo e indica quando l'agente deve usarlo, oppure fai clic su **Aggiungi** per crearne uno tuo. Sono suggerimenti: l'agente può usare anche tag non presenti nell'elenco.
+- **Modalità espressiva** — attiva per impostazione predefinita. Permette all'agente di esprimersi con tag audio, come un'emozione, una velocità o un accento.
+- **Tag audio suggeriti** — fino a 20 tag che la voce può usare per le sfumature emotive, come *entusiasta*, *preoccupato*, *paziente*, *sussurrando*, *accento americano* o *ridendo*. Fai clic su un tag per aggiungerlo e indica quando l'agente deve usarlo, oppure fai clic su **Aggiungi** per crearne uno tuo. Sono suggerimenti: l'agente può usare anche tag non presenti nell'elenco.
 
 ### Aggiungi voce aggiuntiva
 
@@ -216,7 +216,7 @@ Fai clic su **Aggiungi voce aggiuntiva** per aggiungere voci secondarie, utili q
 
 - **Voce** — la voce da usare.
 - **Etichetta** — un identificatore unico che il modello usa per riferirsi a questa voce.
-- **Lingua** — la lingua di questa voce (di default, *Come agente*).
+- **Lingua** — la lingua di questa voce (per impostazione predefinita, *Come agente*).
 - **Descrizione** — quando l'agente deve usare questa voce, per esempio "Per qualsiasi parola in spagnolo" o "Ogni volta che parla Joe".
 
 Fai clic su **Aggiungi voce** per salvarla.
@@ -225,8 +225,8 @@ Fai clic su **Aggiungi voce** per salvarla.
 
 L'icona a ingranaggio accanto a **Voce** apre le **Impostazioni voce comuni**, due controlli audio condivisi da tutte le voci dell'agente:
 
-- **Formato di output TTS** — il formato dell'audio generato: **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** o **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz è un buon equilibrio tra qualità audio e velocità di elaborazione.
-- **Ottimizza latenza streaming** — una scala da **0** a **4** (default **3**). I valori più alti fanno iniziare a parlare l'agente prima, con una qualità audio leggermente inferiore.
+- **Formato di output TTS** — il formato dell'audio generato: **PCM 8000 Hz**, **PCM 16000 Hz** (*consigliato*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** o **ulaw 8000 Hz** (*telefonia*). PCM 16000 Hz è un buon equilibrio tra qualità audio e velocità di elaborazione.
+- **Ottimizza latenza streaming** — una scala da **0** a **4** (predefinito: **3**). I valori più alti fanno iniziare a parlare l'agente prima, con una qualità audio leggermente inferiore.
 
 ### Lingua
 
@@ -254,8 +254,8 @@ Per gli agenti dedicati agli appuntamenti e ai flussi di prenotazione, **Gemini 
 
 Il pannello **LLM** include anche due impostazioni:
 
-- **Budget di ragionamento** — controlla quanti token di ragionamento interno può usare il modello prima di rispondere. È disattivato di default. Più ragionamento può migliorare le risposte complesse ma aggiunge latenza, quindi provalo in chiamate reali.
-- **Temperatura** — controlla quanto sono creative o deterministiche le risposte (default **0.5**). I valori bassi rendono l'agente più concentrato e prevedibile; quelli alti più creativo e meno prevedibile.
+- **Budget di ragionamento** — controlla quanti token di ragionamento interno può usare il modello prima di rispondere. È disattivato per impostazione predefinita. Più ragionamento può migliorare le risposte complesse ma aggiunge latenza, quindi provalo in chiamate reali.
+- **Temperatura** — controlla quanto sono creative o deterministiche le risposte (predefinito: **0.5**). I valori bassi rendono l'agente più concentrato e prevedibile; quelli alti più creativo e meno prevedibile.
 
 Per gli agenti di supporto, appuntamenti e operativi, tieni la temperatura bassa. Riserva le temperature alte ai casi creativi o esplorativi.
 
@@ -276,7 +276,7 @@ Lo costruisci su una tela visiva posizionando nodi e collegandoli. Usa i pulsant
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="La scheda Flusso di lavoro con un nodo Start collegato a un Subagent e a un nodo Transfer verso un numero di telefono, un nodo End, il pannello Completa la configurazione del workflow e le impostazioni del Subagent a destra."
+    alt="La scheda Flusso di lavoro con un nodo Inizio collegato a un Subagente e a un nodo di trasferimento verso un numero di telefono, un nodo Fine, il pannello Completa la configurazione del workflow e le impostazioni del Subagente a destra."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -290,31 +290,31 @@ Lo costruisci su una tela visiva posizionando nodi e collegandoli. Usa i pulsant
 Da un unico punto di partenza puoi:
 
 - Creare più percorsi all'interno della stessa conversazione.
-- Inviare la chiamata a un **Subagent** per una fase specializzata.
+- Inviare la chiamata a un **Subagente** per una fase specializzata.
 - Trasferire la chiamata a un altro agente.
 - Trasferire la chiamata a un numero di telefono.
 - Usare uno strumento già esistente.
-- Chiudere la conversazione con un nodo **End**.
+- Chiudere la conversazione con un nodo **Fine**.
 - Controllare quale percorso si applica tramite **condizioni LLM**.
 
 ### Aggiungere nodi
 
-Per aggiungere un nodo, trascina un collegamento da un nodo esistente (per esempio dalla parte inferiore di **Start**) e rilascialo in una zona vuota della tela. Puoi anche fare clic sul pulsante **+** sotto un nodo selezionato. Si apre un menu con i tipi di nodo: **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool** ed **End**.
+Per aggiungere un nodo, trascina un collegamento da un nodo esistente (per esempio dalla parte inferiore di **Inizio**) e rilascialo in una zona vuota della tela. Puoi anche fare clic sul pulsante **+** sotto un nodo selezionato. Si apre un menu con i tipi di nodo: **Subagente**, **Trasferimento ad agente**, **Trasferimento a numero di telefono**, **Strumento** ed **Fine**.
 
 Il nuovo nodo compare collegato al precedente e le sue impostazioni si aprono nel pannello a destra.
 
 ### Inizio
 
-**Start** è il punto di ingresso. Ogni conversazione inizia qui. Il nodo non parla e non agisce: avvia solo il percorso e passa la chiamata al nodo successivo.
+**Inizio** è il punto di ingresso. Ogni conversazione inizia qui. Il nodo non parla e non agisce: avvia solo il percorso e passa la chiamata al nodo successivo.
 
-Il pannello laterale di **Start** ha due schede:
+Il pannello laterale di **Inizio** ha due schede:
 
 - **Panoramica** — spiega il suo ruolo.
-- **Collegamenti** — elenca tutti i percorsi in uscita da **Start**, con etichetta e destinazione.
+- **Collegamenti** — elenca tutti i percorsi in uscita da **Inizio**, con etichetta e destinazione.
 
 ### Transizioni e condizioni LLM
 
-Una transizione è la linea che collega un nodo al successivo. Fai clic sulla sua etichetta (all'inizio *Configure condition*) per aprirne le impostazioni. La scheda **Avanti** definisce la transizione:
+Una transizione è la linea che collega un nodo al successivo. Fai clic sulla sua etichetta per aprirne le impostazioni. La scheda **Avanti** definisce la transizione:
 
 - **Tipo di transizione** — **Condizione LLM** (il modello decide quando prendere questo percorso), **Nessuna** o **Espressione** (non ancora modificabile in questo pannello).
 - **Etichetta** — il nome mostrato sulla tela.
@@ -332,29 +332,29 @@ Il pannello **Completa la configurazione del workflow** elenca esattamente cosa 
 
 Voci comuni che segnala:
 
-- Un nodo **Agent transfer** senza agente di destinazione.
-- Un nodo **Phone number transfer** senza tipo di destinazione.
-- Un nodo **Tool** senza strumento selezionato.
+- Un nodo **Trasferimento ad agente** senza agente di destinazione.
+- Un nodo **Trasferimento a numero di telefono** senza tipo di destinazione.
+- Un nodo **Strumento** senza strumento selezionato.
 - Una transizione senza testo della condizione LLM.
 
 ### Sottoagente
 
-Un **Subagent** è una fase specializzata all'interno dello stesso flusso. Usalo quando una parte della conversazione ha bisogno di obiettivo, voce, modello o comportamento propri, diversi dall'agente principale. Dagli un nome in cima al pannello e configura le sue schede:
+Un **Subagente** è una fase specializzata all'interno dello stesso flusso. Usalo quando una parte della conversazione ha bisogno di obiettivo, voce, modello o comportamento propri, diversi dall'agente principale. Dagli un nome in cima al pannello e configura le sue schede:
 
 - **Generale** — **Obiettivo conversazione** (istruzioni che estendono il prompt principale per questa fase), **Sovrascrivi prompt** (per sostituire il prompt principale invece di estenderlo), **Voce**, **LLM**, **Prontezza** e **Pazienza nello spelling**.
-- **Base di conoscenza** — **Eredita knowledge base** è attivo di default. Disattivalo per usarne un'altra.
-- **Strumenti** — **Eredita strumenti personalizzati** è attivo di default. Usa **Aggiungi strumento** per aggiungere strumenti specifici.
+- **Base di conoscenza** — **Eredita knowledge base** è attivo per impostazione predefinita. Disattivalo per usarne un'altra.
+- **Strumenti** — **Eredita strumenti personalizzati** è attivo per impostazione predefinita. Usa **Aggiungi strumento** per aggiungere strumenti specifici.
 - **Collegamenti** — i percorsi in uscita da questo nodo.
 
 Gli strumenti non si creano qui. Si creano nella sezione globale **Strumenti** e dal flusso vengono solo selezionati o ereditati.
 
 ### Nodo strumento
 
-Il nodo **Tool** (che compare come **Instradamento strumento** nel pannello laterale) porta la conversazione a una fase in cui l'agente usa uno strumento esistente. Usa **Aggiungi strumento** nella sua scheda **Strumenti** per sceglierne almeno uno. Questo nodo non crea strumenti: punta solo a strumenti che esistono già.
+Il nodo **Strumento** (che compare come **Instradamento strumento** nel pannello laterale) porta la conversazione a una fase in cui l'agente usa uno strumento esistente. Usa **Aggiungi strumento** nella sua scheda **Strumenti** per sceglierne almeno uno. Questo nodo non crea strumenti: punta solo a strumenti che esistono già.
 
 ### Trasferimento ad agente
 
-**Agent transfer** passa la conversazione a un altro agente del tuo account. Usalo quando la chiamata deve passare a un assistente specializzato in un'altra attività, lingua o flusso.
+**Trasferimento ad agente** passa la conversazione a un altro agente del tuo account. Usalo quando la chiamata deve passare a un assistente specializzato in un'altra attività, lingua o flusso.
 
 Puoi configurare:
 
@@ -370,7 +370,7 @@ Esempi di messaggi di trasferimento:
 
 ### Trasferimento a numero di telefono
 
-**Phone number transfer** invia la chiamata a un numero di telefono. Usalo quando la conversazione deve uscire dall'agente e proseguire su una linea specifica.
+**Trasferimento a numero di telefono** invia la chiamata a un numero di telefono. Usalo quando la conversazione deve uscire dall'agente e proseguire su una linea specifica.
 
 Il **Tipo di destinazione** può essere:
 
@@ -379,7 +379,7 @@ Il **Tipo di destinazione** può essere:
 
 ### Fine
 
-Il nodo **End** chiude la conversazione: la chiamata termina quando si arriva a questo nodo. Usalo quando:
+Il nodo **Fine** chiude la conversazione: la chiamata termina quando si arriva a questo nodo. Usalo quando:
 
 - La richiesta è completamente risolta.
 - Un ramo deve chiudersi in modo pulito.
@@ -393,7 +393,7 @@ Quando selezioni un nodo, accanto compaiono due icone per duplicarlo o eliminarl
 
 Quando nessun nodo è selezionato, il pannello a destra mostra le **Impostazioni globali**. **Impedisci loop infiniti** evita che il flusso passi continuamente da un nodo all'altro in un ciclo quando tutte le condizioni sono vere.
 
-Per disattivare un flusso senza eliminarlo, scollega il nodo **Start**. Senza un inizio collegato, il flusso non ha un punto di ingresso e non viene eseguito.
+Per disattivare un flusso senza eliminarlo, scollega il nodo **Inizio**. Senza un inizio collegato, il flusso non ha un punto di ingresso e non viene eseguito.
 
 > **Errore comune:** Un flusso che sembra completo sulla tela può comunque fallire nella pratica. Prova ogni percorso con una conversazione reale prima di pubblicarlo.
 
@@ -511,7 +511,7 @@ La scheda **Analisi** mostra come sta andando questo agente, rispetto al periodo
 
 ### Periodo e raggruppamento
 
-- **Periodo** — **Ultime 24 ore**, **Ultimi 7 giorni** (default), **Ultimi 30 giorni**, **Ultimi 90 giorni** o **Intervallo personalizzato**.
+- **Periodo** — **Ultime 24 ore**, **Ultimi 7 giorni** (predefinito), **Ultimi 30 giorni**, **Ultimi 90 giorni** o **Intervallo personalizzato**.
 - **Raggruppa per** — **Ora**, **4 ore**, **Giorno**, **Settimana** o **Mese**.
 
 Se non ci sono chiamate nel periodo selezionato, la scheda suggerisce un periodo più ampio o una chiamata di prova e offre il pulsante **Vedi conversazioni**, che ti porta alla scheda **Conversazione**.
@@ -628,7 +628,7 @@ Nelle sue impostazioni, **Messaggio segreteria (opzionale)** decide cosa succede
 
 #### Descrizione e disabilita interruzioni
 
-Come visto sopra, il pannello di ogni strumento di sistema include **Descrizione** e **Disabilita interruzioni**. Scrivi una descrizione solo quando vuoi che lo strumento si comporti diversamente dal default, per esempio per dire a **Riaggancio smart** di non chiudere la chiamata finché una prenotazione non è confermata.
+Come visto sopra, il pannello di ogni strumento di sistema include **Descrizione** e **Disabilita interruzioni**. Scrivi una descrizione solo quando vuoi che lo strumento si comporti diversamente dal comportamento predefinito, per esempio per dire a **Riaggancio smart** di non chiudere la chiamata finché una prenotazione non è confermata.
 
 ### Come scegliere gli strumenti
 
@@ -732,8 +732,8 @@ Quando **Acquisire e Salvare i Dati di Contatto** è attivo, le informazioni est
 
 Puoi configurare:
 
-- **Tentativi di richiamo (numero)** — quante volte il sistema deve riprovare prima di fermarsi (default **0**, nessun nuovo tentativo).
-- **Tempo di attesa tra i tentativi (minuti)** — quanti minuti attendere tra un tentativo e l'altro (default **30**).
+- **Tentativi di richiamo (numero)** — quante volte il sistema deve riprovare prima di fermarsi (predefinito: **0**, nessun nuovo tentativo).
+- **Tempo di attesa tra i tentativi (minuti)** — quanti minuti attendere tra un tentativo e l'altro (predefinito: **30**).
 
 > **Suggerimento:** Attiva solo le azioni che il tuo team userà davvero. Ogni automazione che attivi è un piccolo impegno di manutenzione. Poche azioni ben scelte sono meglio di un lungo elenco usato a metà.
 
@@ -884,13 +884,13 @@ Regola come l'agente acquisisce l'audio e quali termini privilegia.
 
 #### Qualità di cattura vocale
 
-Imposta il formato audio usato per elaborare il parlato. Le opzioni sono **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** e **ulaw 8000 Hz**.
+Imposta il formato audio usato per elaborare il parlato. Le opzioni sono **PCM 8000 Hz**, **PCM 16000 Hz** (*consigliato*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** e **ulaw 8000 Hz**.
 
 Nella maggior parte dei casi, lascia **PCM 16000 Hz**. È il miglior equilibrio tra qualità audio e velocità di elaborazione. **ulaw 8000 Hz** è pensato specificamente per la telefonia.
 
 #### Parole chiave prioritarie
 
-Ti permette di elencare, separati da virgole, i termini che l'agente deve privilegiare nel riconoscimento vocale. È utile per nomi di brand, prodotti, termini tecnici, sigle, codici o cognomi insoliti che il modello potrebbe capire male, per esempio *SolarMax, AcmeCorp, 401k, deductible*.
+Ti permette di elencare, separati da virgole, i termini che l'agente deve privilegiare nel riconoscimento vocale. È utile per nomi di brand, prodotti, termini tecnici, sigle, codici o cognomi insoliti che il modello potrebbe capire male, per esempio *SolarMax, AcmeCorp, IBAN, franchigia*.
 
 ### Flusso di conversazione
 
@@ -901,7 +901,7 @@ Controlla il ritmo dell'agente: quanto velocemente interviene, quanta pazienza h
 Quanto velocemente interviene l'agente quando chi chiama smette di parlare:
 
 - **Paziente** — attende di più prima di rispondere.
-- **Normale** — equilibrato (default).
+- **Normale** — equilibrato (predefinito).
 - **Pronto** — risponde rapidamente.
 
 **Normale** va bene nella maggior parte dei casi.
@@ -915,7 +915,7 @@ Rende l'agente più paziente quando chi chiama fa lo spelling lentamente —nomi
 
 #### Prendere la parola dopo il silenzio
 
-Quanti secondi l'agente attende dopo che chi chiama ha smesso di parlare prima di prendere il suo turno (default **7**). Valori bassi danno più ritmo; valori alti lasciano a chi chiama più tempo per pensare.
+Quanti secondi l'agente attende dopo che chi chiama ha smesso di parlare prima di prendere il suo turno (predefinito: **7**). Valori bassi danno più ritmo; valori alti lasciano a chi chiama più tempo per pensare.
 
 #### Terminare la conversazione dopo il silenzio
 
@@ -923,7 +923,7 @@ Quanti secondi di silenzio devono passare prima che la chiamata termini automati
 
 #### Durata massima della conversazione
 
-La durata massima di una singola chiamata, in minuti (default **10**). È una rete di sicurezza per mantenere le chiamate concise ed evitare che durino all'infinito.
+La durata massima di una singola chiamata, in minuti (predefinito: **10**). È una rete di sicurezza per mantenere le chiamate concise ed evitare che durino all'infinito.
 
 > **Suggerimento:** Se non sai cosa impostare nei campi di silenzio e durata, lasciali al valore predefinito e regolali solo dopo aver provato chiamate reali.
 
@@ -931,24 +931,24 @@ La durata massima di una singola chiamata, in minuti (default **10**). È una re
 
 Riproduce un suono di sottofondo continuo durante la conversazione, mixato con la voce dell'agente. Attiva **Abilita suono di sottofondo** e imposta:
 
-- **Suono** — **Ufficio (silenzioso)** (default), **Ufficio (attivo)**, **Ristorante**, **Città**, **Digitazione** e varie opzioni **Ascensore**. Usa il pulsante play per ascoltarlo.
-- **Volume** — il volume del suono rispetto alla voce dell'agente (default **60%**).
+- **Suono** — **Ufficio (silenzioso)** (predefinito), **Ufficio (attivo)**, **Ristorante**, **Città**, **Digitazione** e varie opzioni **Ascensore**. Usa il pulsante play per ascoltarlo.
+- **Volume** — il volume del suono rispetto alla voce dell'agente (predefinito: **60%**).
 - **Loop con crossfade** — ammorbidisce il punto in cui il suono ricomincia, per evitare scatti udibili.
 
 ### Timeout soft
 
 Dà a chi chiama un riscontro audio immediato quando il modello impiega più del previsto a generare una risposta, così la linea non sembra mai muta. Attiva **Abilita timeout soft** e imposta:
 
-- **Durata del timeout** — quanti secondi attendere la risposta del modello prima di riprodurre un messaggio (default **3**).
+- **Durata del timeout** — quanti secondi attendere la risposta del modello prima di riprodurre un messaggio (predefinito: **3**).
 - **Usa messaggio generato da LLM** — genera con il modello una frase di riempimento adatta al contesto.
-- **Messaggio** — la frase di riserva usata se non viene generata nessuna frase in tempo (default *"Hhmmmm...yeah."*).
+- **Messaggio** — la frase di riserva usata se non viene generata nessuna frase in tempo (predefinito: *"Mmm... vediamo."*).
 - **Messaggi di riempimento aggiuntivi** — usa **Aggiungi messaggio** per aggiungere frasi per il 2°, 3° e successivi timeout nella stessa risposta, così l'agente non si ripete.
 
 ### Privacy e dati
 
 #### Registra chiamate
 
-Attivo di default. Salva in modo sicuro le trascrizioni e l'audio di ogni chiamata, così puoi controllare le prestazioni dell'agente, rispettare le norme e avere uno storico delle interazioni con i clienti. Disattivalo solo se non è compatibile con le tue policy interne di privacy, archiviazione e conformità.
+Attivo per impostazione predefinita. Salva in modo sicuro le trascrizioni e l'audio di ogni chiamata, così puoi controllare le prestazioni dell'agente, rispettare le norme e avere uno storico delle interazioni con i clienti. Disattivalo solo se non è compatibile con le tue policy interne di privacy, archiviazione e conformità.
 
 ### Extra di telefonia
 

@@ -144,9 +144,9 @@ Der **Konversations-Prompt** ist die zentrale Anweisung, der Ihr Agent während 
 
 Ein neuer Agent startet mit einer Vorlage, die in drei Abschnitte gegliedert ist, die Sie anpassen sollten:
 
-- **Personality** (Persönlichkeit) — wer der Agent ist und welche Rolle er spielt.
-- **Environment** (Umgebung) — der Kontext, in dem er arbeitet (Support-Anruf, Terminbuchung, Empfang usw.).
-- **Tone** (Ton) — wie er klingen soll (ruhig, freundlich, professionell, kurz).
+- **Persönlichkeit** — wer der Agent ist und welche Rolle er spielt.
+- **Umgebung** — der Kontext, in dem er arbeitet (Support-Anruf, Terminbuchung, Empfang usw.).
+- **Ton** — wie er klingen soll (ruhig, freundlich, professionell, kurz).
 
 Ergänzen Sie danach operative Regeln, die die Entscheidungen des Agenten während des Anrufs steuern. Einige, die in den meisten Fällen gut funktionieren:
 
@@ -171,7 +171,7 @@ Das ist der richtige Ansatz, wenn Sie denselben Agenten für verschiedene Marken
 
 ### Zeitzone
 
-Neben **Variablen hinzufügen** befindet sich die Zeitzonenauswahl (zum Beispiel **Rome (GMT+1)**) mit einer Suche, um jede Stadt zu finden. Das ist die Zeitreferenz, die der Agent verwendet, wenn er während des Anrufs von *heute*, *morgen*, *heute Nachmittag* oder einer bestimmten Uhrzeit spricht.
+Neben **Variablen hinzufügen** befindet sich die Zeitzonenauswahl (zum Beispiel **Rom (GMT+1)**) mit einer Suche, um jede Stadt zu finden. Das ist die Zeitreferenz, die der Agent verwendet, wenn er während des Anrufs von *heute*, *morgen*, *heute Nachmittag* oder einer bestimmten Uhrzeit spricht.
 
 Stellen Sie immer die tatsächliche Zeitzone des Unternehmens ein, das der Agent vertritt. Eine falsche Zeitzone führt zu falschen Terminzeiten.
 
@@ -183,7 +183,7 @@ Aktivieren Sie ihn, wenn Ihr Prompt kurz ist und Sie diese bewährten Vorgehensw
 
 ### Begrüßungsnachricht
 
-Die **Begrüßungsnachricht** ist das Erste, was der Agent zu Beginn des Anrufs sagt. Eine gute Begrüßung sagt dem Anrufer in einem kurzen Satz, mit wem er spricht und welche Art von Hilfe er bekommt. Auch hier können Sie Variablen verwenden, zum Beispiel `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
+Die **Begrüßungsnachricht** ist das Erste, was der Agent zu Beginn des Anrufs sagt. Eine gute Begrüßung sagt dem Anrufer in einem kurzen Satz, mit wem er spricht und welche Art von Hilfe er bekommt. Auch hier können Sie Variablen verwenden, zum Beispiel `Hallo, hier ist {{agent_name}}. Danke für Ihren Anruf, wie kann ich Ihnen helfen?`
 
 Einige Beispiele:
 
@@ -208,7 +208,7 @@ Klicken Sie auf die ausgewählte Stimme (markiert als **Primär**), um den Stimm
   - **Geklonte** — Stimmen, die Sie in Ihrem Konto geklont haben.
   - **Hinzufügen** — importieren Sie eine Stimme von ElevenLabs, indem Sie ihren VoiceLab-Freigabelink einfügen und ihr einen Namen geben.
 - **Ausdrucksmodus** — standardmäßig aktiviert. Damit kann der Agent Sprache mit Audio-Tags ausdrücken, etwa mit einer Emotion, einem Tempo oder einem Akzent.
-- **Vorgeschlagene Audio-Tags** — bis zu 20 Tags, die die Stimme für emotionale Nuancen verwenden kann, zum Beispiel *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent* oder *Laughing*. Klicken Sie auf einen Tag, um ihn hinzuzufügen, und beschreiben Sie, wann der Agent ihn verwenden soll, oder klicken Sie auf **Hinzufügen**, um einen eigenen zu erstellen. Die Tags sind Vorschläge: Der Agent kann auch Tags verwenden, die nicht aufgeführt sind.
+- **Vorgeschlagene Audio-Tags** — bis zu 20 Tags, die die Stimme für emotionale Nuancen verwenden kann, zum Beispiel *begeistert*, *besorgt*, *geduldig*, *flüsternd*, *US-Akzent* oder *lachend*. Klicken Sie auf einen Tag, um ihn hinzuzufügen, und beschreiben Sie, wann der Agent ihn verwenden soll, oder klicken Sie auf **Hinzufügen**, um einen eigenen zu erstellen. Die Tags sind Vorschläge: Der Agent kann auch Tags verwenden, die nicht aufgeführt sind.
 
 ### Stimme auswählen und zusätzliche Stimmen
 
@@ -225,7 +225,7 @@ Klicken Sie auf **Stimme hinzufügen**, um sie zu speichern.
 
 Das Zahnradsymbol neben **Stimme** öffnet die **Gemeinsamen Stimmeneinstellungen**, zwei Audio-Einstellungen, die für alle Stimmen des Agenten gelten:
 
-- **TTS-Ausgabeformat** — das Format des erzeugten Audios: **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** oder **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz ist ein guter Kompromiss zwischen Audioqualität und Verarbeitungsgeschwindigkeit.
+- **TTS-Ausgabeformat** — das Format des erzeugten Audios: **PCM 8000 Hz**, **PCM 16000 Hz** (*empfohlen*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** oder **ulaw 8000 Hz** (*Telefonie*). PCM 16000 Hz ist ein guter Kompromiss zwischen Audioqualität und Verarbeitungsgeschwindigkeit.
 - **Streaming-Latenz optimieren** — eine Skala von **0** bis **4** (Standard **3**). Höhere Werte lassen den Agenten schneller zu sprechen beginnen, bei etwas geringerer Audioqualität.
 
 ### Sprache
@@ -276,7 +276,7 @@ Sie bauen ihn auf einer visuellen Arbeitsfläche, indem Sie Knoten platzieren un
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="Der Tab Workflow mit einem Start-Knoten, der mit einem Subagent und einem Transfer-Knoten zu einer Telefonnummer verbunden ist, einem End-Knoten, dem Bereich Workflow-Einrichtung abschließen und den Subagent-Einstellungen rechts."
+    alt="Der Tab Workflow mit einem Start-Knoten, der mit einem Subagent und einem Knoten zur Weiterleitung an eine Telefonnummer verbunden ist, einem Ende-Knoten, dem Bereich Workflow-Einrichtung abschließen und den Subagent-Einstellungen rechts."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -294,12 +294,12 @@ Von einem einzigen Startpunkt aus können Sie:
 - Den Anruf an einen anderen Agenten weiterleiten.
 - Den Anruf an eine Telefonnummer weiterleiten.
 - Ein bereits vorhandenes Tool ausführen.
-- Das Gespräch mit einem **End**-Knoten beenden.
+- Das Gespräch mit einem **Ende**-Knoten beenden.
 - Mit **LLM-Bedingungen** steuern, welcher Pfad gilt.
 
 ### Knoten hinzufügen
 
-Um einen Knoten hinzuzufügen, ziehen Sie eine Verbindung von einem vorhandenen Knoten (zum Beispiel von der Unterseite von **Start**) und lassen sie auf einer freien Stelle der Arbeitsfläche los. Sie können auch auf die Schaltfläche **+** unter einem ausgewählten Knoten klicken. Es öffnet sich ein Menü mit den Knotentypen: **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool** und **End**.
+Um einen Knoten hinzuzufügen, ziehen Sie eine Verbindung von einem vorhandenen Knoten (zum Beispiel von der Unterseite von **Start**) und lassen sie auf einer freien Stelle der Arbeitsfläche los. Sie können auch auf die Schaltfläche **+** unter einem ausgewählten Knoten klicken. Es öffnet sich ein Menü mit den Knotentypen: **Subagent**, **Agentenweiterleitung**, **Weiterleitung an Telefonnummer**, **Tool** und **Ende**.
 
 Der neue Knoten erscheint mit dem vorherigen verbunden, und seine Einstellungen öffnen sich im Bereich rechts.
 
@@ -314,7 +314,7 @@ Der Seitenbereich von **Start** hat zwei Tabs:
 
 ### Übergänge und Bedingungen
 
-Ein Übergang ist die Linie, die einen Knoten mit dem nächsten verbindet. Klicken Sie auf seine Bezeichnung (anfangs *Configure condition*), um seine Einstellungen zu öffnen. Der Tab **Vorwärts** definiert den Übergang:
+Ein Übergang ist die Linie, die einen Knoten mit dem nächsten verbindet. Klicken Sie auf seine Bezeichnung, um seine Einstellungen zu öffnen. Der Tab **Vorwärts** definiert den Übergang:
 
 - **Übergangstyp** — **LLM-Bedingung** (das Modell entscheidet, wann dieser Pfad genommen wird), **Keine** oder **Ausdruck** (in diesem Bereich noch nicht bearbeitbar).
 - **Bezeichnung** — der Name, der auf der Arbeitsfläche angezeigt wird.
@@ -332,8 +332,8 @@ Der Bereich **Workflow-Einrichtung abschließen** listet genau auf, was fehlt, b
 
 Häufig gemeldete Einträge:
 
-- Ein **Agent transfer**-Knoten ohne Zielagent.
-- Ein **Phone number transfer**-Knoten ohne Zieltyp.
+- Ein **Agentenweiterleitung**-Knoten ohne Zielagent.
+- Ein **Weiterleitung an Telefonnummer**-Knoten ohne Zieltyp.
 - Ein **Tool**-Knoten ohne ausgewähltes Tool.
 - Ein Übergang ohne Text für die LLM-Bedingung.
 
@@ -354,7 +354,7 @@ Der Knoten **Tool** (im Seitenbereich als **Tool-Weiterleitung** angezeigt) füh
 
 ### Agentenweiterleitung
 
-**Agent transfer** übergibt das Gespräch an einen anderen Agenten in Ihrem Konto. Verwenden Sie ihn, wenn der Anruf an einen Assistenten übergehen soll, der auf eine andere Aufgabe, Sprache oder einen anderen Workflow spezialisiert ist.
+**Agentenweiterleitung** übergibt das Gespräch an einen anderen Agenten in Ihrem Konto. Verwenden Sie ihn, wenn der Anruf an einen Assistenten übergehen soll, der auf eine andere Aufgabe, Sprache oder einen anderen Workflow spezialisiert ist.
 
 Sie können konfigurieren:
 
@@ -370,7 +370,7 @@ Beispiele für Übergabenachrichten:
 
 ### Weiterleitung an Telefonnummer
 
-**Phone number transfer** leitet den Anruf an eine Telefonnummer weiter. Verwenden Sie ihn, wenn das Gespräch den Agenten verlassen und auf einer bestimmten Leitung weitergehen muss.
+**Weiterleitung an Telefonnummer** leitet den Anruf an eine Telefonnummer weiter. Verwenden Sie ihn, wenn das Gespräch den Agenten verlassen und auf einer bestimmten Leitung weitergehen muss.
 
 Der **Zieltyp** kann sein:
 
@@ -379,7 +379,7 @@ Der **Zieltyp** kann sein:
 
 ### Ende
 
-Der Knoten **End** schließt das Gespräch: Der Anruf endet, wenn dieser Knoten erreicht wird. Verwenden Sie ihn, wenn:
+Der Knoten **Ende** schließt das Gespräch: Der Anruf endet, wenn dieser Knoten erreicht wird. Verwenden Sie ihn, wenn:
 
 - Das Anliegen vollständig gelöst ist.
 - Ein Zweig sauber abgeschlossen werden soll.
@@ -884,13 +884,13 @@ Passt an, wie der Agent Audio erfasst und welche Begriffe er bevorzugt erkennt.
 
 #### Qualität der Spracherfassung
 
-Legt das Audioformat fest, mit dem Sprache verarbeitet wird. Zur Auswahl stehen **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** und **ulaw 8000 Hz**.
+Legt das Audioformat fest, mit dem Sprache verarbeitet wird. Zur Auswahl stehen **PCM 8000 Hz**, **PCM 16000 Hz** (*empfohlen*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** und **ulaw 8000 Hz**.
 
 Belassen Sie es in den meisten Fällen bei **PCM 16000 Hz**. Das ist der beste Kompromiss zwischen Audioqualität und Verarbeitungsgeschwindigkeit. **ulaw 8000 Hz** ist speziell für Telefonieszenarien gedacht.
 
 #### Prioritäts-Schlüsselwörter
 
-Hier listen Sie, durch Kommas getrennt, Begriffe auf, die der Agent bei der Spracherkennung bevorzugen soll. Nützlich für Marken- und Produktnamen, Fachbegriffe, Abkürzungen, Codes oder ungewöhnliche Nachnamen, die das Modell sonst falsch verstehen könnte — zum Beispiel *SolarMax, AcmeCorp, 401k, deductible*.
+Hier listen Sie, durch Kommas getrennt, Begriffe auf, die der Agent bei der Spracherkennung bevorzugen soll. Nützlich für Marken- und Produktnamen, Fachbegriffe, Abkürzungen, Codes oder ungewöhnliche Nachnamen, die das Modell sonst falsch verstehen könnte — zum Beispiel *SolarMax, AcmeCorp, IBAN, Selbstbeteiligung*.
 
 ### Gesprächsfluss
 
@@ -941,7 +941,7 @@ Gibt dem Anrufer sofort eine akustische Rückmeldung, wenn das Modell länger al
 
 - **Timeout-Dauer** — wie viele Sekunden auf die Antwort des Modells gewartet wird, bevor eine Nachricht abgespielt wird (Standard **3**).
 - **LLM-generierte Nachricht verwenden** — erzeugt mit dem Modell einen kontextbezogenen Füllsatz.
-- **Nachricht** — der Ersatzsatz, der verwendet wird, wenn nicht rechtzeitig ein Füllsatz erzeugt wird (Standard *„Hhmmmm...yeah.“*).
+- **Nachricht** — der Ersatzsatz, der verwendet wird, wenn nicht rechtzeitig ein Füllsatz erzeugt wird (Standard *„Hmm... mal sehen.“*).
 - **Zusätzliche Füllnachrichten** — fügen Sie mit **Nachricht hinzufügen** Sätze für das 2., 3. und jedes weitere Soft-Timeout in derselben Antwort hinzu, damit sich der Agent nicht wiederholt.
 
 ### Datenschutz & Daten

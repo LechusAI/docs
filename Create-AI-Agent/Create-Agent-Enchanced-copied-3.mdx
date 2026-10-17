@@ -144,9 +144,9 @@ El **Prompt de conversación** es el conjunto principal de instrucciones que sig
 
 Un agente nuevo empieza con una plantilla organizada en tres secciones que debes adaptar:
 
-- **Personality** (personalidad) — quién es el agente y qué papel desempeña.
-- **Environment** (entorno) — el contexto en el que trabaja (llamada de soporte, reserva de citas, recepción, etc.).
-- **Tone** (tono) — cómo debe sonar (tranquilo, cercano, profesional, breve).
+- **Personalidad** — quién es el agente y qué papel desempeña.
+- **Entorno** — el contexto en el que trabaja (llamada de soporte, reserva de citas, recepción, etc.).
+- **Tono** — cómo debe sonar (tranquilo, cercano, profesional, breve).
 
 Después de esas tres, añade reglas operativas que guíen las decisiones del agente durante la llamada. Algunas que funcionan bien en la mayoría de casos:
 
@@ -171,7 +171,7 @@ Es lo adecuado cuando quieres reutilizar el mismo agente para distintas marcas, 
 
 ### Zona horaria
 
-Junto a **Agregar variables** hay un selector de zona horaria (por ejemplo, **Rome (GMT+1)**), con un buscador para encontrar cualquier ciudad. Es la referencia horaria que usa el agente cuando habla de *hoy*, *mañana*, *esta tarde* o de cualquier hora concreta durante la llamada.
+Junto a **Agregar variables** hay un selector de zona horaria (por ejemplo, **Roma (GMT+1)**), con un buscador para encontrar cualquier ciudad. Es la referencia horaria que usa el agente cuando habla de *hoy*, *mañana*, *esta tarde* o de cualquier hora concreta durante la llamada.
 
 Configura siempre la zona horaria real del negocio al que representa el agente. Una zona horaria incorrecta provoca horas de cita incorrectas.
 
@@ -183,7 +183,7 @@ Actívalo si tu prompt es breve y quieres que se añadan estas buenas prácticas
 
 ### Mensaje de bienvenida
 
-El **Mensaje de bienvenida** es lo primero que dice el agente cuando empieza la llamada. Un buen saludo le dice al llamante con quién está hablando y qué tipo de ayuda puede recibir, en una frase corta. También puedes usar variables, por ejemplo `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
+El **Mensaje de bienvenida** es lo primero que dice el agente cuando empieza la llamada. Un buen saludo le dice al llamante con quién está hablando y qué tipo de ayuda puede recibir, en una frase corta. También puedes usar variables, por ejemplo `Hola, soy {{agent_name}}. Gracias por llamar, ¿en qué puedo ayudarte?`
 
 Algunos ejemplos:
 
@@ -208,7 +208,7 @@ Haz clic en la voz seleccionada (marcada como **Principal**) para abrir el panel
   - **Clonado** — las voces que has clonado en tu cuenta.
   - **Añadir** — importa una voz de ElevenLabs pegando su enlace compartido de VoiceLab y poniéndole un nombre.
 - **Modo expresivo** — activado por defecto. Permite que el agente exprese el habla con etiquetas de audio, como una emoción, una velocidad o un acento.
-- **Etiquetas de audio sugeridas** — hasta 20 etiquetas que la voz puede usar para dar matices emocionales, como *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent* o *Laughing*. Haz clic en una etiqueta para añadirla e indica cuándo debe usarla el agente, o haz clic en **Añadir** para crear la tuya. Son sugerencias: el agente también puede usar etiquetas que no estén en la lista.
+- **Etiquetas de audio sugeridas** — hasta 20 etiquetas que la voz puede usar para dar matices emocionales, como *entusiasmado*, *preocupado*, *paciente*, *susurrando*, *acento estadounidense* o *riendo*. Haz clic en una etiqueta para añadirla e indica cuándo debe usarla el agente, o haz clic en **Añadir** para crear la tuya. Son sugerencias: el agente también puede usar etiquetas que no estén en la lista.
 
 ### Añadir voz adicional
 
@@ -225,7 +225,7 @@ Haz clic en **Añadir voz** para guardarla.
 
 El icono de engranaje junto a **Voz** abre los **Ajustes comunes de voz**, dos controles de audio compartidos por todas las voces del agente:
 
-- **Formato de salida TTS** — el formato del audio generado: **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** o **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz es un buen equilibrio entre calidad de audio y velocidad de procesamiento.
+- **Formato de salida TTS** — el formato del audio generado: **PCM 8000 Hz**, **PCM 16000 Hz** (*recomendado*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** o **ulaw 8000 Hz** (*telefonía*). PCM 16000 Hz es un buen equilibrio entre calidad de audio y velocidad de procesamiento.
 - **Optimizar latencia de streaming** — una escala de **0** a **4** (por defecto **3**). Los valores altos hacen que el agente empiece a hablar antes, a costa de una calidad de audio algo menor.
 
 ### Idioma
@@ -276,7 +276,7 @@ Lo construyes en un lienzo visual colocando nodos y conectándolos. Usa los boto
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="La pestaña Flujo de trabajo con un nodo Start conectado a un Subagent y a un nodo Transfer de número de teléfono, un nodo End, el panel Completa la configuración del flujo y los ajustes del Subagent a la derecha."
+    alt="La pestaña Flujo de trabajo con un nodo Inicio conectado a un Subagente y a un nodo de transferencia a número de teléfono, un nodo Fin, el panel Completa la configuración del flujo y los ajustes del Subagente a la derecha."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -290,31 +290,31 @@ Lo construyes en un lienzo visual colocando nodos y conectándolos. Usa los boto
 Desde un único punto de partida puedes:
 
 - Crear varias rutas dentro de la misma conversación.
-- Enviar la llamada a un **Subagent** para una etapa especializada.
+- Enviar la llamada a un **Subagente** para una etapa especializada.
 - Transferir la llamada a otro agente.
 - Transferir la llamada a un número de teléfono.
 - Usar una herramienta que ya existe.
-- Terminar la conversación con un nodo **End**.
+- Terminar la conversación con un nodo **Fin**.
 - Controlar qué ruta se aplica mediante **condiciones LLM**.
 
 ### Añadir nodos
 
-Para añadir un nodo, arrastra una conexión desde un nodo existente (por ejemplo, desde la parte inferior de **Start**) y suéltala en una zona vacía del lienzo. También puedes hacer clic en el botón **+** debajo de un nodo seleccionado. Se abre un menú con los tipos de nodo: **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool** y **End**.
+Para añadir un nodo, arrastra una conexión desde un nodo existente (por ejemplo, desde la parte inferior de **Inicio**) y suéltala en una zona vacía del lienzo. También puedes hacer clic en el botón **+** debajo de un nodo seleccionado. Se abre un menú con los tipos de nodo: **Subagente**, **Transferencia a agente**, **Transferencia a número de teléfono**, **Herramienta** y **Fin**.
 
 El nodo nuevo aparece conectado al anterior y sus ajustes se abren en el panel de la derecha.
 
 ### Inicio
 
-**Start** es el punto de entrada. Toda conversación empieza aquí. El nodo no habla ni actúa: solo lanza la ruta y envía la llamada al siguiente nodo.
+**Inicio** es el punto de entrada. Toda conversación empieza aquí. El nodo no habla ni actúa: solo lanza la ruta y envía la llamada al siguiente nodo.
 
-El panel lateral de **Start** tiene dos pestañas:
+El panel lateral de **Inicio** tiene dos pestañas:
 
 - **Resumen** — explica su función.
-- **Aristas** — lista todas las rutas que salen de **Start**, con su etiqueta y su destino.
+- **Aristas** — lista todas las rutas que salen de **Inicio**, con su etiqueta y su destino.
 
 ### Transiciones y condiciones LLM
 
-Una transición es la línea que une un nodo con el siguiente. Haz clic en su etiqueta (al principio, *Configure condition*) para abrir sus ajustes. La pestaña **Adelante** define la transición:
+Una transición es la línea que une un nodo con el siguiente. Haz clic en su etiqueta para abrir sus ajustes. La pestaña **Adelante** define la transición:
 
 - **Tipo de transición** — **Condición LLM** (el modelo decide cuándo tomar esta ruta), **Ninguna** o **Expresión** (todavía no se puede editar en este panel).
 - **Etiqueta** — el nombre que se ve en el lienzo.
@@ -332,14 +332,14 @@ El panel **Completa la configuración del flujo** lista exactamente lo que falta
 
 Elementos habituales que señala:
 
-- Un nodo **Agent transfer** sin agente de destino.
-- Un nodo **Phone number transfer** sin tipo de destino.
-- Un nodo **Tool** sin herramienta seleccionada.
+- Un nodo **Transferencia a agente** sin agente de destino.
+- Un nodo **Transferencia a número de teléfono** sin tipo de destino.
+- Un nodo **Herramienta** sin herramienta seleccionada.
 - Una transición sin texto de condición LLM.
 
 ### Subagente
 
-Un **Subagent** es una etapa especializada dentro del mismo flujo. Úsalo cuando una parte de la conversación necesita su propio objetivo, voz, modelo o comportamiento, distinto del agente principal. Ponle un nombre en la parte superior del panel y configura sus pestañas:
+Un **Subagente** es una etapa especializada dentro del mismo flujo. Úsalo cuando una parte de la conversación necesita su propio objetivo, voz, modelo o comportamiento, distinto del agente principal. Ponle un nombre en la parte superior del panel y configura sus pestañas:
 
 - **General** — **Objetivo de conversación** (instrucciones que amplían el prompt principal para esta etapa), **Sobrescribir prompt** (para sustituir el prompt principal en lugar de ampliarlo), **Voz**, **LLM**, **Prontitud** y **Paciencia al deletrear**.
 - **Base de conocimiento** — **Heredar base de conocimiento** viene activado. Desactívalo para usar otra.
@@ -350,11 +350,11 @@ Las herramientas no se crean aquí. Se crean en la sección global **Herramienta
 
 ### Nodo de herramienta
 
-El nodo **Tool** (que aparece como **Enrutamiento de herramienta** en el panel lateral) lleva la conversación a una etapa en la que el agente usa una herramienta existente. Usa **Agregar herramienta** en su pestaña **Herramientas** para elegir al menos una. Este nodo no crea herramientas: solo apunta a herramientas que ya existen.
+El nodo **Herramienta** (que aparece como **Enrutamiento de herramienta** en el panel lateral) lleva la conversación a una etapa en la que el agente usa una herramienta existente. Usa **Agregar herramienta** en su pestaña **Herramientas** para elegir al menos una. Este nodo no crea herramientas: solo apunta a herramientas que ya existen.
 
 ### Transferencia a agente
 
-**Agent transfer** pasa la conversación a otro agente de tu cuenta. Úsalo cuando la llamada debe pasar a un asistente especializado en otra tarea, idioma o flujo.
+**Transferencia a agente** pasa la conversación a otro agente de tu cuenta. Úsalo cuando la llamada debe pasar a un asistente especializado en otra tarea, idioma o flujo.
 
 Puedes configurar:
 
@@ -370,7 +370,7 @@ Ejemplos de mensajes de transferencia:
 
 ### Transferencia a número de teléfono
 
-**Phone number transfer** envía la llamada a un número de teléfono. Úsalo cuando la conversación tiene que salir del agente y continuar en una línea concreta.
+**Transferencia a número de teléfono** envía la llamada a un número de teléfono. Úsalo cuando la conversación tiene que salir del agente y continuar en una línea concreta.
 
 El **Tipo de destino** puede ser:
 
@@ -379,7 +379,7 @@ El **Tipo de destino** puede ser:
 
 ### Fin
 
-El nodo **End** cierra la conversación: la llamada termina cuando se llega a este nodo. Úsalo cuando:
+El nodo **Fin** cierra la conversación: la llamada termina cuando se llega a este nodo. Úsalo cuando:
 
 - La consulta está totalmente resuelta.
 - Una rama debe cerrarse de forma limpia.
@@ -393,7 +393,7 @@ Al seleccionar un nodo aparecen junto a él dos iconos para duplicarlo o elimina
 
 Cuando no hay ningún nodo seleccionado, el panel de la derecha muestra los **Ajustes globales**. **Evitar bucles infinitos** impide que el flujo pase continuamente de un nodo a otro en bucle cuando todas las condiciones se cumplen.
 
-Para desactivar un flujo sin borrarlo, desconecta el nodo **Start**. Sin un inicio conectado, el flujo no tiene punto de entrada y no se ejecuta.
+Para desactivar un flujo sin borrarlo, desconecta el nodo **Inicio**. Sin un inicio conectado, el flujo no tiene punto de entrada y no se ejecuta.
 
 > **Error común:** Un flujo que parece completo en el lienzo puede fallar en la práctica. Prueba cada ruta con una conversación real antes de publicarlo.
 
@@ -884,13 +884,13 @@ Ajusta cómo capta el audio el agente y qué términos prioriza.
 
 #### Calidad de captura de voz
 
-Define el formato de audio que se usa para procesar el habla. Las opciones son **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** y **ulaw 8000 Hz**.
+Define el formato de audio que se usa para procesar el habla. Las opciones son **PCM 8000 Hz**, **PCM 16000 Hz** (*recomendado*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** y **ulaw 8000 Hz**.
 
 En la mayoría de casos, déjalo en **PCM 16000 Hz**. Es el mejor equilibrio entre calidad de audio y velocidad de procesamiento. **ulaw 8000 Hz** está pensado específicamente para telefonía.
 
 #### Palabras clave prioritarias
 
-Te permite listar, separados por comas, los términos que el agente debe priorizar al reconocer el habla. Es útil para nombres de marca, productos, términos técnicos, siglas, códigos o apellidos poco comunes que el modelo podría entender mal; por ejemplo *SolarMax, AcmeCorp, 401k, deductible*.
+Te permite listar, separados por comas, los términos que el agente debe priorizar al reconocer el habla. Es útil para nombres de marca, productos, términos técnicos, siglas, códigos o apellidos poco comunes que el modelo podría entender mal; por ejemplo *SolarMax, AcmeCorp, IBAN, franquicia*.
 
 ### Flujo de conversación
 
@@ -941,7 +941,7 @@ Da al llamante una respuesta sonora inmediata cuando el modelo tarda más de lo 
 
 - **Duración del tiempo de espera** — cuántos segundos esperar la respuesta del modelo antes de reproducir un mensaje (por defecto **3**).
 - **Usar mensaje generado por LLM** — genera con el modelo una frase de relleno adaptada al contexto.
-- **Mensaje** — la frase de respaldo que se usa si no se genera ninguna a tiempo (por defecto *"Hhmmmm...yeah."*).
+- **Mensaje** — la frase de respaldo que se usa si no se genera ninguna a tiempo (por defecto *"Mmm... a ver."*).
 - **Mensajes de relleno adicionales** — usa **Añadir mensaje** para añadir frases para el 2.º, 3.º y siguientes tiempos de espera dentro de la misma respuesta, para que el agente no se repita.
 
 ### Privacidad y datos
