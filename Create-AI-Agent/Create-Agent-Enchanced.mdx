@@ -1,38 +1,135 @@
 ---
 title: "AI Agents"
-description: "How the Create Agent page works in Callin.io and what each of its seven sections does."
+description: "How to create an agent in Callin.io and what each of the nine tabs of the agent editor does."
 ---
 
 [Open the AI Agents page in Callin.io](https://app.callin.io/agents)
 
-The **AI Agents** page is where you build and configure the agents that handle your phone calls and website conversations. Each agent has its own setup, divided into seven sections you can move through using the top tabs: **Agent**, **Workflow**, **Knowledge Base**, **Tools**, **Call Action**, **Website widget**, and **Advanced**.
+The **AI Agents** page is where you create and manage the agents that handle your phone calls and website conversations. From here you can create a new agent, find an existing one, test it, and open its editor.
 
-This page explains what each section does and what you can configure inside it.
+Each agent's editor is organized in nine tabs at the top: **Agent**, **Workflow**, **Knowledge Base**, **Conversation**, **Analytics**, **Tools**, **Call Action**, **Website widget**, and **Advanced**. This page explains how to create an agent and what you can do in each tab.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
-    alt="The Create Agent page in Callin.io showing the seven configuration tabs at the top: Agent, Workflow, Knowledge Base, Tools, Call Action, Website widget, and Advanced."
+    alt="The AI Agents page in Callin.io with the Create Agent button, the search bar, the Direction and Sort filters, and the list of agents."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Create Agent page. Each tab at the top opens a different part of the agent's configuration.
+  Screenshot: the AI Agents page. Each row is one agent, with quick actions on the right.
 </p>
 
-> **Tip:** Walk through the tabs in order the first time. Each one builds on the previous, and a clean setup is much easier to test and maintain later.
+### The agents list
+
+Every agent in your account appears as a row with its name, the phone number assigned to it (or *No phone number assigned*), its call direction, its language, and the date it was created.
+
+- **Search agents…** — find an agent by name.
+- **Direction** — show only **Inbound**, **Outbound**, or **Both** agents.
+- **Sort** — order the list by **Newest first**, **Oldest first**, **Name A–Z**, **Name Z–A**, or **Custom order**.
+
+On the right of each row you have three quick actions:
+
+- **Test Call** — place a test call with the agent.
+- **Test AI agent** — talk to the agent from your browser.
+- **More options** (⋮) — **Copy ID**, **Clone**, **Edit**, **Assign Number**, **View events calendar**, and **Delete**.
+
+> **Tip:** Use **Clone** to try changes on a copy before touching an agent that's already taking real calls.
+
+### Create a new agent
+
+Click **Create Agent** at the top right. Callin.io asks how you want to start.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-new-agent.png"
+    alt="The New Agent screen with three options: Start from Scratch, Browse our Templates, and Predefined Templates."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: choose how to start your new agent.
+</p>
+
+**Start from Scratch** builds an agent with a basic prompt and greeting that you then shape in the editor. Choose it when you already know what the agent should do. You only need to enter the **Agent Name** (up to 50 characters) and choose the **Agent stack**.
+
+**Browse our Templates** starts from a ready-made agent designed for a specific business and use case. It's the fastest way to get a working first version:
+
+1. **Industry** — pick the one that best describes your business: Retail & E-commerce, Healthcare & Medical, Finance & Banking, Real Estate, Education & Training, Hospitality & Travel, Automotive, Professional Services, Technology & Software, Government & Public, Food & Beverage, Manufacturing, Fitness & Wellness, Legal Services, Non-Profit, or Media & Entertainment.
+2. **Use case** — choose what the agent will help with. The options depend on the industry. For example, Healthcare & Medical offers Customer Support, Appointment Scheduling, Patient Intake, Insurance Verification, Prescription Reminders, and more.
+3. **Complete your agent** — enter the **Agent Name**, choose the **Agent stack**, and fill in:
+   - **Website** *(optional)* — your website address. Callin.io only reads publicly available information from it to personalize the agent.
+   - **Main Goal** — in up to 300 characters, what the agent should achieve on each call.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-complete-template.png"
+    alt="The Complete your agent screen for a template, with Agent Name, Agent stack, Website, and Main Goal."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: completing an agent created from a template.
+</p>
+
+> **Tip:** Write the **Main Goal** as one clear outcome, for example "Book, confirm, or reschedule patient appointments and answer questions about opening hours." The clearer the goal, the better the first version of the prompt.
+
+**Predefined Templates** *(Beta)* uses templates created by your own organization, so every new agent starts with your company's standard setup. Each card shows the template's name, a short description, and how many fields it pre-fills (for example *Agent Name*, *Prompt*, *Greeting Message*, *Direction*). Select one, review the **Agent Name**, choose the **Agent stack**, and click **Create Agent**. If your organization hasn't created any templates yet, this list is empty.
+
+### Choose the agent stack
+
+The **Agent stack** decides which voice and AI technology powers the agent:
+
+- **Premium Voice** — natural Callin.io voices, ready to deploy in minutes. This is the default and the right choice for most agents.
+- **Custom Stack** *(Alpha)* — bring your own LLM, TTS, and STT for full control over each part of the voice pipeline.
+- **Ultra-low latency** — near-instant responses for smooth, live conversations.
+
+Click **Create Agent** to finish. The agent opens directly in its editor, on the **Agent** tab.
+
+> **Important:** The sections below describe an agent created with the **Premium Voice** stack. Agents on other stacks may show different options.
+
+### Saving your changes
+
+When you change anything in the editor, a bar appears at the bottom with the message **You have unsaved changes**:
+
+- **Save** — stores all your changes.
+- **Clear** — discards every unsaved change and restores the last saved version.
+
+While there are unsaved changes, **Test Call** is disabled. If something needs fixing before saving (for example, an incomplete workflow), the bar tells you what's missing or shows a **View Errors** button.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-unsaved-changes.png"
+    alt="The agent editor with the You have unsaved changes bar and the Clear and Save buttons at the bottom."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the unsaved changes bar. Save to keep your changes, or Clear to discard them.
+</p>
+
+### Testing your agent
+
+Use the buttons at the top right of the editor to test without leaving the page:
+
+- **Test Call** — places a real call with the agent.
+- **Test AI agent** — lets you talk to the agent from your browser.
+- **Console** — opens the developer console.
+
+> **Tip:** Walk through the tabs in order the first time, and test after every important change. A good setup must sound right on a real call, not just look right in the editor.
 
 ## Section 1: Agent
 
-The **Agent** tab is where you define the core identity and behavior of your assistant: how it should talk, which voice and language it uses, which AI model powers it, and whether it answers incoming calls, makes outgoing ones, or both.
-
-A good setup here makes every later section work better. A weak one creates problems that no workflow or tool can fix.
+The **Agent** tab is where you define the core identity and behavior of your assistant: what it says, which voice and language it uses, which AI model powers it, and whether it answers incoming calls, makes outgoing ones, or both.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia2.png"
-    alt="The Agent tab showing the Conversation Prompt editor on the left and the Voice, Language, AI Intelligence, and Call Direction panels on the right."
+    alt="The Agent tab showing the Conversation Prompt editor on the left and the Voice, Language, AI Intelligence (LLM), and Call Direction panels on the right."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -43,9 +140,9 @@ A good setup here makes every later section work better. A weak one creates prob
 
 ### Conversation Prompt
 
-The **Conversation Prompt** is the main set of instructions your agent follows during a call. Think of it as the agent's playbook: who it is, the context it works in, the tone it should use, and the rules it must respect.
+The **Conversation Prompt** is the main set of instructions your agent follows during a call: the goals it must achieve and the guardrails it must respect to stay on-brand and compliant. Think of it as the agent's playbook.
 
-The prompt template already includes three base sections you should fill in:
+A new agent starts with a template organized in three sections you should adapt:
 
 - **Personality** — who the agent is and the role it plays.
 - **Environment** — the context it operates in (support call, appointment booking, reception, and so on).
@@ -63,25 +160,30 @@ After those three, add operational rules that guide the agent's decisions during
 
 ### Add Variables and Dynamic Variables
 
-The **Add Variables** button below the prompt editor lets you insert placeholders into your prompt — for example, the agent's name, the company, the city, or a service. You can use system variables, custom ones, or create a new variable on the spot.
+The **Add Variables** button below the prompt editor (and below the greeting) inserts placeholders that are replaced with real values during the call. The menu has two groups:
 
-When you create a new variable, it appears as a chip below the editor and is added to the **Dynamic Variables** panel further down, where you assign its actual value.
+- **System Variables** — values Callin.io fills in automatically: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone`, and `system__call_id`.
+- **Custom Variables** — your own variables, such as `agent_name`. Click **New Variable** to create one.
+
+Variables appear as chips below the editor and in the **Dynamic Variables** panel at the bottom of the tab, where you set their value. For example, `{{agent_name}}` is set to the agent's name by default.
 
 This is the right approach when you want to reuse the same agent for different brands, locations, or services without rewriting the prompt every time.
 
 ### Time zone
 
-Right next to the prompt editor there's a time zone selector (for example, **Madrid (GMT+1)**). This is the time reference the agent uses when it talks about *today*, *tomorrow*, *this afternoon*, or any specific time during the call.
+Next to **Add Variables** there's a time zone selector (for example, **Rome (GMT+1)**), with a search box to find any city. This is the time reference the agent uses when it talks about *today*, *tomorrow*, *this afternoon*, or any specific time during the call.
 
 Always set it to the real time zone of the business the agent represents. A wrong time zone leads to wrong appointment times.
 
 ### Default personality
 
-**Default personality** is a base behavior preset that complements your prompt. Review it together with the prompt so the final tone matches what you actually want callers to hear.
+The gear icon next to the time zone opens the **Default personality** toggle. It's off by default. When you turn it on, Callin.io adds a set of general guidelines to the prompt, for example: don't repeat who you are unless asked, give helpful and informative answers, ask clarifying questions when needed, and be polite, professional, clear, and concise.
+
+Turn it on if your prompt is short and you want these good practices added for you. If your prompt already covers them, leave it off.
 
 ### Greeting Message
 
-The **Greeting Message** is the very first thing the agent says when the call starts. A good greeting tells the caller who they're talking to and what kind of help is available, in one short sentence.
+The **Greeting Message** is the very first thing the agent says when the call starts. A good greeting tells the caller who they're talking to and what kind of help is available, in one short sentence. You can use variables here too, for example `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
 
 A few examples:
 
@@ -91,59 +193,69 @@ A few examples:
 
 ### Allow Interruptions
 
-When **Allow Interruptions** is on, callers can talk over the agent and the agent will stop and listen. This makes conversations feel natural and is a strong default for support, reception, and most customer service flows.
+**Allow Interruptions**, next to the greeting, lets callers interrupt the agent while it's delivering the first message. It's on by default, which feels natural for most support, reception, and customer service flows.
 
-> **Common mistake:** Turning interruptions off when your greeting includes critical information the caller must hear in full. If that's not your case, leave them on.
+> **Common mistake:** Leaving interruptions on when your greeting includes information the caller must hear in full, such as a legal notice or a recording disclaimer. In that case, turn it off.
 
 ### Voice
 
 **Voice** controls how your agent sounds. The voice doesn't change what the agent says, but it heavily affects how callers feel during the call — clarity, trust, and overall impression.
 
-The **Select Voice** panel has three tabs:
+Click the selected voice (marked **Primary**) to open the voice panel:
 
-- **Explore** — the catalog of available voices, filtered by language and gender, with a short description for each.
-- **Cloned** — voices you've cloned or imported into your account.
-- **Add** — import a voice from ElevenLabs by pasting a shared link.
+- **Voice** — click it to open **Select Voice**, which has three tabs:
+  - **Explore** — the catalog of available voices, with a search box and filters by language and gender.
+  - **Cloned** — voices you've cloned in your account.
+  - **Add** — import a voice from ElevenLabs by pasting its VoiceLab share link and giving it a name.
+- **Expressive Mode** — on by default. Lets the agent express speech with audio tags, like an emotion, a speed, or an accent.
+- **Suggested audio tags** — up to 20 tags the voice can use for emotional nuance, such as *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent*, or *Laughing*. Click a tag to add it and describe when the agent should use it, or click **Add** to create your own. The tags are suggestions: the agent can also use tags not listed.
 
-You can also click **Add additional voice** to attach secondary voices, useful when one agent needs to handle several languages or different customer segments.
+### Add additional voice
 
-Each voice has its own tuning controls:
+Click **Add additional voice** to attach secondary voices, useful when one agent needs to handle several languages or different customer segments. For each one you set:
 
-- **Expressive Mode** — how expressive the voice sounds.
-- **Speed** — how fast it speaks.
-- **Stability** — balance between expressiveness and consistency.
-- **Similarity** — how strongly it preserves its original vocal identity.
+- **Voice** — the voice to use.
+- **Label** — a unique identifier the model uses to refer to this voice.
+- **Language** — the language for this voice (by default, *Same as agent*).
+- **Description** — when the agent should use this voice, for example "For any Spanish words" or "Whenever Joe is speaking."
+
+Click **Add voice** to save it.
 
 ### Common voice settings
 
-Below the voice list there are two global audio controls:
+The gear icon next to **Voice** opens **Common voice settings**, two audio controls shared by all the agent's voices:
 
-- **TTS output format** — the format of the generated audio. **PCM 16000 Hz** is the recommended option for most setups because it's a good balance between audio quality and processing speed.
-- **Optimize streaming latency** — controls the trade-off between how fast the agent starts speaking and the audio quality. More optimization means a faster start but slightly lower quality.
+- **TTS output format** — the format of the generated audio: **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz**, or **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz is a good balance between audio quality and processing speed.
+- **Optimize streaming latency** — a scale from **0** to **4** (default **3**). Higher values make the agent start speaking faster, at a slight cost in audio quality.
 
 ### Language
 
-**Language** sets the default language of the agent and the additional languages it can switch to mid-conversation.
+**Language** sets the agent's default language (marked **Default**). Click it to choose another one from the searchable list.
 
-Only enable the languages you actually need. Adding extra languages "just in case" tends to make behavior less predictable.
+Click **Add Additional Languages** to pick the other languages the agent can switch to during the conversation. The panel has a search box and a **Select all languages** option.
+
+Only enable the languages you actually need. Adding extra languages "just in case" tends to make behavior less predictable. To switch languages automatically, the **Language Switching** system tool must also be on (see **Section 6: Tools**).
 
 ### AI Intelligence (LLM)
 
 **AI Intelligence (LLM)** is the language model that powers the agent. The **LLM** (Large Language Model) is what understands the caller, follows the rules in your prompt, uses the knowledge base, and generates each response.
 
+Click the selected model to open the **LLM** panel, and click it again to see the list. Each model shows a short description and its approximate latency, like *~179ms*. The models available are **Neuron 1.0**, **Neuron 2.0**, **Neuron 3.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, and **Gemini 2.5 Flash** (the default).
+
 The model directly affects three things:
 
 - How well the agent understands what the caller means.
-- How fast it answers (you'll see an approximate latency next to each model, like *~179ms*).
+- How fast it answers.
 - How consistent it stays across long conversations.
-
-The models available include **Neuron 1.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, **Gemini 2.5 Flash**, and **Claude Haiku 4.5**.
 
 For appointment-focused agents and scheduling flows, **Gemini 2.5** is a solid practical choice.
 
-### Temperature
+### Thinking Budget and Temperature
 
-**Temperature** controls how much variation the agent adds to its responses. Lower temperature means more stable and predictable answers. Higher temperature means more variation and less control.
+The **LLM** panel also includes two settings:
+
+- **Thinking Budget** — controls how many internal reasoning tokens the model can use before responding. Off by default. More reasoning can improve complex answers but adds latency, so test it on real calls.
+- **Temperature** — controls how creative or deterministic the responses are (default **0.5**). Lower values make the agent more focused and predictable; higher values make it more creative and less predictable.
 
 For support, appointments, and operational agents, keep temperature low. Save higher temperatures for creative or exploratory use cases.
 
@@ -151,34 +263,26 @@ For support, appointments, and operational agents, keep temperature low. Save hi
 
 **Call Direction** decides how the agent participates in the calling flow:
 
+- **Outbound** — the agent makes outgoing calls (campaigns, reminders, confirmations, follow-ups). This is the default for a new agent.
 - **Inbound** — the agent answers incoming calls (support, reception, customer service).
-- **Outbound** — the agent makes outgoing calls (campaigns, reminders, confirmations, follow-ups).
 - **Both** — the same agent works for incoming and outgoing calls.
-
-### Saving and validation
-
-**Save** stores the current configuration. **Clear** discards unsaved edits.
-
-After every important change, run a real test call and check the greeting, the voice, the active languages, the selected model, and the values of any dynamic variables.
-
-> **Important:** A good agent setup must sound right on a real call, not just look right in the editor.
 
 ## Section 2: Workflow
 
 The **Workflow** tab is where you decide how the conversation moves. While the **Agent** tab defines who the assistant is, **Workflow** defines the path the call follows: branches based on what the caller wants, transfers, tool calls, and clean endings.
 
-You build it on a visual canvas by placing nodes and connecting them.
+You build it on a visual canvas by placing nodes and connecting them. Use the buttons at the top left to zoom in, zoom out, and fit the whole flow on screen, and the buttons at the top right to go full screen or delete the workflow.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="The Workflow canvas with connected nodes representing the conversation routes, transitions, and end points."
+    alt="The Workflow tab with a Start node connected to a Subagent and a phone number Transfer node, an End node, the Complete your workflow setup panel, and the Subagent settings on the right."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Workflow canvas, where you draw the conversation routes from start to end.
+  Screenshot: a workflow with two routes from Start. The panel on the right shows what's still missing and the settings of the selected node.
 </p>
 
 ### What you can build here
@@ -193,6 +297,12 @@ From a single starting point, you can:
 - End the conversation with an **End** node.
 - Control which route applies using **LLM conditions**.
 
+### Adding nodes
+
+To add a node, drag a connection from an existing node (for example, from the bottom of **Start**) and drop it on an empty part of the canvas. You can also click the **+** button below a selected node. A menu opens with the node types: **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool**, and **End**.
+
+The new node appears connected to the previous one, and its settings open in the panel on the right.
+
 ### Start
 
 **Start** is the entry point. Every conversation begins here. The node doesn't speak or act — it just launches the route and sends the call to the next node.
@@ -204,7 +314,11 @@ The side panel for **Start** has two tabs:
 
 ### Transitions and LLM conditions
 
-A transition is the line that connects one node to the next. Each transition has a visible label and an **LLM condition** — a short text that tells the model when this route should apply.
+A transition is the line that connects one node to the next. Click its label (at first, *Configure condition*) to open its settings. The **Forward** tab defines the transition:
+
+- **Transition type** — **LLM Condition** (the model decides when to take this route), **None**, or **Expression** (not yet editable in this panel).
+- **Label** — the name shown on the canvas.
+- **LLM condition** — a short text that tells the model when this route should apply.
 
 Examples of conditions:
 
@@ -212,34 +326,31 @@ Examples of conditions:
 - "Use this route when the user asks to speak with a person."
 - "Use this route when the issue is fully resolved and the conversation should end."
 
-Operational settings for transitions live in the **Forward** tab.
-
 ### Complete your workflow setup
 
-The **Complete your workflow setup** panel tells you exactly what's missing before the workflow can be saved properly. It's especially useful in larger flows because it points to the specific node or edge that still needs attention.
+The **Complete your workflow setup** panel lists exactly what's missing before the workflow can be saved. Each item shows the node or edge to fix and what it needs. Until the list is empty, **Save** stays disabled.
 
 Common items it flags:
 
 - An **Agent transfer** node without a target agent.
+- A **Phone number transfer** node without a destination type.
 - A **Tool** node without a tool selected.
-- A transition with no condition text.
-- A node or branch that's still incomplete.
+- A transition with no LLM condition text.
 
 ### Subagent
 
-A **Subagent** is a specialized stage inside the same workflow. Use it when one part of the conversation needs its own goal, voice, model, or behavior, different from the main agent.
+A **Subagent** is a specialized stage inside the same workflow. Use it when one part of the conversation needs its own goal, voice, model, or behavior, different from the main agent. Give it a name at the top of the panel, then configure its tabs:
 
-Inside a Subagent node you can configure:
+- **General** — **Conversation Goal** (instructions that extend the main prompt for this stage), **Override prompt** (to replace the main prompt instead of extending it), **Voice**, **LLM**, **Eagerness**, and **Spelling patience**.
+- **Knowledge Base** — **Inherit knowledge base** is on by default. Turn it off to use a different one.
+- **Tools** — **Inherit custom tools** is on by default. Use **Add Tool** to attach specific tools.
+- **Edges** — the routes that leave this node.
 
-- **General** — system prompt, override prompt, voice, LLM, eagerness, spelling patience.
-- **Knowledge Base** — toggle **Inherit knowledge base** to use the agent's main knowledge base, or set a different one.
-- **Tools** — toggle **Inherit custom tools** or attach specific tools with **Add Tool**.
-
-Tools themselves are not created here. They're created in the **Tools** section and only selected or inherited from inside the workflow.
+Tools themselves are not created here. They're created in the global **Tools** section and only selected or inherited from inside the workflow.
 
 ### Tool node
 
-The **Tool** node (shown as **Tool dispatch** in the side panel) sends the conversation to a stage where the agent uses an existing tool. This node doesn't create new tools — it just points the workflow to a tool that already exists.
+The **Tool** node (shown as **Tool dispatch** in the side panel) sends the conversation to a stage where the agent uses an existing tool. Use **Add Tool** in its **Tools** tab to select at least one. This node doesn't create new tools — it just points the workflow to tools that already exist.
 
 ### Agent transfer
 
@@ -247,9 +358,10 @@ The **Tool** node (shown as **Tool dispatch** in the side panel) sends the conve
 
 You can configure:
 
-- The target agent.
-- A delay in milliseconds before the transfer.
-- A transfer message and whether to play it.
+- **Agent** — the target agent.
+- **Delay (ms)** — how long to wait before the transfer, in milliseconds.
+- **Transfer message** — an optional message the agent says during the transfer.
+- **Enable first message** — whether the target agent plays its greeting after the transfer.
 
 Examples of transfer messages:
 
@@ -260,14 +372,14 @@ Examples of transfer messages:
 
 **Phone number transfer** sends the call out to a phone number. Use it when the conversation has to leave the agent and continue on a specific phone line.
 
-The destination type can be:
+The **Destination type** can be:
 
 - **Phone number** — a fixed number, ideal for reception, a sales line, or a dedicated support line.
-- **Phone dynamic variable** — the destination is decided at runtime based on the conversation context.
+- **Phone (dynamic variable)** — the destination comes from a dynamic variable decided at runtime.
 
 ### End
 
-The **End** node closes the conversation. When the route reaches it, the call finishes. Use it when:
+The **End** node closes the conversation: the call ends when this node is reached. Use it when:
 
 - The issue is fully resolved.
 - A branch should close cleanly.
@@ -275,41 +387,35 @@ The **End** node closes the conversation. When the route reaches it, the call fi
 
 ### Duplicate and delete
 
-Each node has controls to duplicate or delete it. **Duplicate** is handy for building similar branches faster. Before deleting, check the transitions connected to that node so you don't break a live route.
+When you select a node, two icons appear next to it to duplicate or delete it. **Duplicate** is handy for building similar branches faster. Before deleting, check the transitions connected to that node so you don't break a live route.
 
 ### Global settings
 
-**Global settings** affects the workflow as a whole. **Prevent infinite loops** adds a safety layer that avoids routes which could trap the conversation in a repeating cycle without progress.
+When no node is selected, the right panel shows **Global settings**. **Prevent infinite loops** stops the workflow from continuously transitioning in a loop when all conditions are true.
 
 To disable a workflow without deleting it, disconnect the **Start** node. Without a connected start, the flow has no entry point and won't run.
-
-### Save and test
-
-**Save** stores the current workflow. **Clear** discards unsaved edits. The unsaved-changes warning shows up when you have edits that haven't been saved yet.
 
 > **Common mistake:** A workflow that looks complete on the canvas can still fail in practice. Test every route with a real conversation before publishing.
 
 ## Section 3: Knowledge Base
 
-The **Knowledge Base** tab connects your agent to a source of reference content you've already prepared inside Callin.io. This gives the agent access to detailed information without having to cram it all into the prompt.
-
-Use it when the content is too long, too detailed, or changes too often to live inside the prompt.
+The **Knowledge Base** tab gives your agent extra background information to answer questions. It's best for large or detailed content — like manuals, FAQs, or policies — that doesn't fit in the main prompt.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia4.png"
-    alt="The Knowledge Base tab showing the linked source, the document count, and the panel used to select a knowledge base."
+    alt="The Knowledge Base tab of an agent with the Add Document button and the list of documents the agent can use."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Knowledge Base tab, where you link an existing knowledge source to the agent.
+  Screenshot: the Knowledge Base tab. Add the documents this agent can use to answer questions.
 </p>
 
 ### What this tab is for
 
-This tab links an existing knowledge base to a specific agent. It does **not** create new content from scratch — that's done in the global Knowledge Base manager.
+This tab connects documents from your global Knowledge Base to a specific agent. It does **not** create content — that's done in the Knowledge Base manager.
 
 Quick access:
 
@@ -333,66 +439,99 @@ Typical sources: FAQs, product guides, support articles, policy documents, inter
 
 ### Supported content sources
 
-A knowledge base can be built from two types of sources:
+The Knowledge Base manager organizes content in two types of sources:
 
 - **Files** — uploaded documents.
-- **Web URLs** — published pages or online documentation.
-
-You'll choose between them inside the **Select Knowledge Base** panel.
+- **Web** — published pages or online documentation.
 
 ### What you see when a base is linked
 
-When the agent already has a knowledge base connected, the tab shows:
-
-- The selected group name.
-- The number of linked documents.
-- The available actions: **Clear**, **Update**, and **Change**.
+The tab lists every document the agent can use. If there are none yet, it shows *No documents added*.
 
 ### Main actions
 
-- **Change** — opens the **Select Knowledge Base** panel to pick a different base.
-- **Clear** — removes the currently linked knowledge base.
-- **Update** — refreshes the connection so the agent works with the latest version of the linked selection.
+Click **Add Document** to open the document picker:
+
+- Use the search box to find a document from your Knowledge Base and select it to make it available to this agent.
+- If the document doesn't exist yet, click **Add Document** at the bottom of the picker. It takes you to the Knowledge Base manager, where you can create it.
 
 ### Select Knowledge Base panel
 
-Clicking **Change** opens this panel. From here you can review what's available, pick a group, inspect its content, and confirm.
-
-What you'll find inside:
-
-- **Source** — switches between **Files** and **Web URLs**.
-- **Groups** — the list of knowledge bases inside the chosen source.
-- **Refresh** — reloads the list of groups.
-- **Documents / URLs** — the resources that belong to the selected group.
-- **Linked** — marker that shows a resource will be available to the agent once you confirm.
-- **Select** — confirms your choice.
-- **Close** — exits without changes.
+In the Knowledge Base manager you can switch between **Files** and **Web**, search your content, and use **Create Knowledge base** to organize documents into groups. Once a document is there, it appears in the agent's document picker.
 
 ### Recommended flow
 
 The cleanest way to work is to keep creation and selection separate:
 
-1. Create and organize the knowledge base in the global manager.
-2. Come back to this tab and link the prepared base to the agent.
+1. Create and organize your documents in the Knowledge Base manager.
+2. Come back to this tab and add the documents the agent needs.
 
 > **Tip:** Keep behavior rules in the prompt and reference content in the Knowledge Base. That separation makes updates much easier later.
 
-## Section 4: Tools
+## Section 4: Conversation
 
-The **Tools** tab decides what your agent can actually *do* during a call beyond having a conversation. While the prompt defines how it talks and the workflow defines how the call moves, tools let the agent take action at the right moment.
-
-This tab does two things: it lets you attach **custom tools** built by your team, and it lets you enable and configure the **system tools** that Callin.io includes out of the box.
+The **Conversation** tab lists every call handled by this agent, incoming and outgoing. It's where you review what happened on each call.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agentesia5.png"
-    alt="The Tools tab showing the custom tools area at the top and the list of system tools below, each with its own toggle and configuration."
+    src="/images/ai-agents-conversation.png"
+    alt="The Conversation tab with the transcript search bar and the filters: Phone Number, Call ID, Squad, Status, Direction, Appointment, Call Transfer, Voicemail, Date Range, Call Duration, Origin, Campaign ID, Sentiment, and Ticket ID."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Tools tab, with the custom tools section on top and the system tools below.
+  Screenshot: the Conversation tab. Search transcripts and filter the agent's calls.
+</p>
+
+### Search and filters
+
+- **Search transcripts…** — find calls by what was said during the conversation.
+- **Filters** — narrow the list by **Phone Number**, **Call ID**, **Squad**, **Status**, **Direction**, **Appointment**, **Call Transfer**, **Voicemail**, **Date Range**, **Call Duration**, **Origin**, **Campaign ID**, **Sentiment**, or **Ticket ID**.
+
+Until the agent makes or receives its first call, the tab shows *No incoming or outgoing calls yet*.
+
+> **Tip:** After changing the prompt or the workflow, place a few test calls and review them here. Reading the transcripts is the fastest way to spot where the agent goes off track.
+
+## Section 5: Analytics
+
+The **Analytics** tab shows how this agent is performing, compared with the previous period of the same length.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-analytics.png"
+    alt="The Analytics tab titled How this agent is doing, with the Time range and Group by selectors."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Analytics tab. Choose the time range and how to group the data.
+</p>
+
+### Time range and grouping
+
+- **Time range** — **Last 24 hours**, **Last 7 days** (default), **Last 30 days**, **Last 90 days**, or **Custom range**.
+- **Group by** — **Hour**, **4 hours**, **Day**, **Week**, or **Month**.
+
+If there are no calls in the selected period, the tab suggests a wider time range or a test call, and offers a **View conversations** button that takes you to the **Conversation** tab.
+
+## Section 6: Tools
+
+The **Tools** tab decides what your agent can actually *do* during a call beyond having a conversation. While the prompt defines how it talks and the workflow defines how the call moves, tools let the agent take action at the right moment.
+
+The tab has two sub-tabs: **Tools**, for your custom tools and the built-in **System Tools**, and **MCP**, for MCP servers.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia5.png"
+    alt="The Tools tab with the Add Tool button on the left and the System Tools list on the right: Smart Hang-up, Language Switching, Intelligent Listening, Transfer to agent, Transfer to number, and Voicemail Intelligence."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Tools tab. Attach custom tools on the left and turn system tools on or off on the right.
 </p>
 
 Quick access:
@@ -411,59 +550,85 @@ Typical things a custom tool can do:
 - Trigger business-specific logic.
 - Connect the agent to another service.
 
-If the agent doesn't have any custom tools attached yet, this area shows the empty state.
+The **Add Tool** button opens a picker where you can search your tools and select one. If your account has no tools yet, the picker offers **Add Webhook Tool** to create one.
 
-The **Add Tool** button attaches a custom tool to the agent. If your account already has tools, the picker lets you search and select one. If there are none, it offers a direct option to create a **Webhook Tool**.
+### MCP servers
+
+The **MCP** sub-tab lets you connect MCP (Model Context Protocol) servers to give your agent additional tools and integrations without building them one by one.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-mcp.png"
+    alt="The MCP sub-tab of the Tools tab with the Add MCP button."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the MCP sub-tab. Connect MCP servers to the agent.
+</p>
+
+Click **Add MCP** to search the MCP servers available in your account and connect one to the agent. If there are none yet, click **Manage MCPs** to set them up.
 
 ### System Tools
 
-**System Tools** are built-in tools that handle common call situations without you having to build anything. Each one can be turned on or off, and some have extra configuration.
+**System Tools** are built-in tools that handle common call situations without you having to build anything. Each one can be turned on or off. A new agent starts with three of them on — **Smart Hang-up**, **Language Switching**, and **Voicemail Intelligence** — and the counter at the top of the list shows how many are active.
+
+Active tools with extra settings show a gear icon. Every tool's settings panel includes:
+
+- **Description** *(optional)* — explains to the model how and when to use the tool. Leave it blank to use the default optimized prompt.
+- **Disable interruption** — prevents the caller from interrupting while the tool is running.
 
 #### Smart Hang-up
 
-Lets the agent end the call cleanly when it detects the conversation is over — for example, when the caller says goodbye, confirms the issue is resolved, or clearly wraps up. This avoids keeping the line open longer than needed.
+Lets the agent politely end the call once the conversation goal is met or the caller says goodbye. Its description already includes examples of explicit endings ("bye", "that's all", "no thanks") and implicit ones (minimal answers once the caller's needs are met, "I need to go"). This avoids keeping the line open longer than needed.
 
 #### Language Switching
 
-Helps the agent handle a language change during the call. Especially relevant when the agent works with multiple languages and the caller might switch at the start or in the middle of the conversation.
+Lets the agent recognize and switch to the caller's preferred language during the call. It only works with the languages you added under **Language** in the **Agent** tab.
 
 #### Intelligent Listening
 
-Improves how the agent listens to and manages the conversation in real time. Controlled with a single activation toggle.
+Keeps the agent quiet when the caller says things like "give me a second" or "hold on", preventing awkward interruptions while they check something.
 
 #### Transfer to agent
 
-Hands the conversation over to another agent in your account. Useful for moving a call from a general agent to a specialist — for example, from a generic assistant to a sales agent or a senior support agent.
+Hands the call off to a more specialized AI agent when the caller's request falls outside the current agent's expertise — for example, from a generic assistant to a sales agent.
+
+When you turn it on, its panel includes **Transfer Rules**. Click **Add Rule** to define each one:
+
+- **Agent** — the agent to transfer to.
+- **Condition** — when this transfer should happen.
+- **Delay before transfer (milliseconds)** — how long to wait before transferring.
+- **Transfer message** — the exact phrase spoken before transferring.
+- **Enable First Message** — whether the target agent plays its greeting after the transfer.
 
 #### Transfer to number
 
-Transfers the call to a human phone number. This is one of the most important tools when you need to escalate a call out of the agent and onto a real person — reception, a switchboard, sales, or a specific office.
+Connects the caller with a live team member when a human touch is needed or the caller asks for it — reception, a switchboard, sales, or a specific office.
 
 #### Human Transfer Rules
 
-Defines the specific rules for transferring to humans. Each rule includes:
+The **Transfer to number** panel includes **Human Transfer Rules**, where you define the conditions for transferring to human operators. Click **Add Rule** for each one:
 
-- **Destination Type** — a fixed phone number or a phone number provided through a dynamic variable.
-- **Phone Number** or the dynamic phone variable.
+- **Destination Type** — a fixed **Phone Number** or a number provided through a dynamic variable.
+- **Phone Number** — the number to transfer to.
 - **Condition** — when this rule should apply.
 
-Use a fixed number when the destination is always the same, and a dynamic variable when it depends on the conversation context.
+Use **Remove Rule** to delete one. Use a fixed number when the destination is always the same, and a dynamic variable when it depends on the conversation context.
 
 #### Voicemail Intelligence
 
-Detects when the call has reached a voicemail and acts accordingly. This is critical for outbound agents, where calls often end up at voicemail.
+Recognizes when a call reaches an automated inbox and acts accordingly. This is critical for outbound agents, where calls often end up at voicemail.
 
-You have two options:
+In its settings, **Voicemail Message** *(optional)* decides what happens:
 
-- Leave the voicemail message blank if the call should end immediately on detection.
-- Write a message if you want the system to play it before ending the call.
+- Leave it blank to end the call immediately when voicemail is detected.
+- Write a message (for example, "Hello, this is an automated call. Please call us back at your convenience. Thank you.") to play it before ending the call.
 
 #### Description and Disable interruption
 
-Several system tools include two extra fields:
-
-- **Description** — explains to the model how and when the tool should be used.
-- **Disable interruption** — controls whether the tool can be interrupted while it's running.
+As mentioned above, every system tool's panel includes **Description** and **Disable interruption**. Write a description only when you need the tool to behave differently from the default — for example, to tell **Smart Hang-up** not to end the call until a booking is confirmed.
 
 ### Choosing the right tools
 
@@ -475,22 +640,20 @@ Don't enable everything. Pick what fits your use case:
 
 > **Common mistake:** Enabling too many tools at once. It makes behavior harder to predict, harder to test, and harder to maintain.
 
-## Section 5: Call Action
+## Section 7: Call Action
 
-The **Call Action** tab is where the agent stops being just a voice and starts producing useful outcomes: bookings, follow-up emails, logged issues, structured data, and synced records.
-
-Use it to turn the conversation into actual next steps your team can act on.
+The **Call Action** tab is where the agent stops being just a voice and starts producing useful outcomes: bookings, follow-up emails, tickets, structured data, and synced records — during and after the call.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia6.png"
-    alt="The Call Action tab showing the appointment scheduling, post-call summary email, opt-out, issue tracking, data sync, information capture, and call retry blocks."
+    alt="The Call Action tab with toggles for Appointment Scheduling, Post-Call Summary Email, Smart Opt-Out, and Issue & Complaint Tracking, the Data Sync webhook field, and the Summary Language selector."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Call Action tab, where you automate what happens during and after each call.
+  Screenshot: the Call Action tab. Turn on the actions your team will actually use.
 </p>
 
 Quick access:
@@ -500,52 +663,64 @@ Quick access:
 
 ### Appointment Scheduling
 
-Lets the agent book meetings directly during the call. Especially useful for sales, onboarding, and any flow where booking on the spot saves you from chasing the customer afterwards.
+Lets the agent book meetings directly into your calendar during the call. Especially useful for sales, onboarding, and any flow where booking on the spot saves you from chasing the customer afterwards.
 
-Before turning it on, connect a scheduling provider:
+When you turn it on, the **Scheduling Configuration** panel asks for a **Scheduling Provider**:
 
 - **Google Calendar** — best when you want to book directly into a connected Google calendar.
 - **Cal.com** — best when your booking operation already runs on Cal.com.
+
+Then select the calendar and the booking template the agent should use. You can create several booking templates per calendar and assign templates from different calendars to different agents.
 
 > **Important:** The agent's time zone and the calendar's time zone must match. If they don't, the agent will offer or confirm wrong times.
 
 ### Post-Call Summary Email
 
-Automatically sends an email once the call ends, so owners or teams stay in the loop without manual follow-up.
+Automatically sends the call details to the email addresses you choose as soon as the conversation ends, so owners or teams stay in the loop without manual follow-up.
 
-You can configure:
+When you turn it on, the **Post Call Email Configuration** panel opens. Choose a template type:
 
-- The recipients.
-- The subject line.
-- The base message body.
-- The email language.
-- Whether to include call data.
-- Whether to include extracted fields (see *Information Capture* below).
+- **Default template** — fill in **Recipients** (type an address and press Enter or click **Add**), **Subject**, and **Message**.
+- **Custom template** — write the whole email in HTML in **Template body**. Use **Add Variables** to insert call data such as `userName`, `phoneNumber`, `direction`, `agent_name`, `duration`, `extractedDataHtml`, `keyMomentsHtml`, `transcriptHtml`, and `rawDataHtml`. **Format HTML** tidies the code and **Preview Email** shows the result.
+
+You can also set:
+
+- **Email Language** — the language of the email.
+- **Include Call Data** — adds the call data to the email.
+- **Include Extracted Fields** — adds the data captured with *Information Capture* (see below).
+
+Once configured, a gear icon next to the toggle reopens the panel.
 
 ### Smart Opt-Out
 
-Gives callers a clean and respectful way to say "don't contact me again." Important for outbound flows, where opt-out requests need to be captured and respected automatically.
+Gives callers a polite way to decline future contact. Important for outbound flows: it keeps your lead lists clean and your outreach compliant with communication standards.
 
 ### Issue and Complaint Tracking
 
-Detects issues or complaints during the call and logs them so your team can review, follow up, or escalate. Turn it on when you want each conversation to be able to create a case worth handling afterwards.
+Detects issues or complaints during the call and automatically creates a ticket, so your team can review, follow up, or escalate it from the **Tickets** section. Turn it on when you want each conversation to be able to create a case worth handling afterwards.
 
 ### Data Sync (Post-Call Webhook)
 
-Sends the captured call data to another system right after the call ends. The right choice when you work with a CRM, an automation platform, or any internal tool that needs the data without manual copy-paste.
+Sends the call details and captured data to another system the moment the call ends. The right choice when you work with a CRM, an automation platform, or any internal tool that needs the data without manual copy-paste.
 
 To set it up, enter the webhook URL that should receive the data, and confirm in advance which system will receive it and how it will process it.
+
+### Summary Language
+
+Sets the language of the conversation summaries. The default, **Auto (infer from conversation)**, writes each summary in the language the call was held in. Pick a fixed language from the searchable list if your team always needs summaries in the same one.
 
 ### Information Capture (Data Extraction)
 
 Turns the conversation into structured data — names, dates, preferences, cities, products of interest, contact reasons, and so on.
 
-Use **Add Entity** to define what should be captured. Each entity has:
+Click **Add Entity** to define each piece of data to capture. The **Configure Data Extraction** panel asks for:
 
-- **Data Type** — the type of value to capture.
+- **Data Type** — **String**, **Boolean**, **Number**, or **Integer**.
 - **Identifier** — the internal name used to store it.
-- **Description** — exactly what the system should extract.
-- **Enum Values** — an optional closed list of valid values, when you want consistent results.
+- **Description** — exactly what the system should extract. It's passed to the model, so describe in detail how to find it in the transcript.
+- **Enum Values** *(optional)* — a closed list of values the model can choose from. If you don't add any, the model can use any value.
+
+The counter above the button shows how many entities you've defined.
 
 ### Capture and Store Contact Data
 
@@ -553,16 +728,16 @@ When this is on, the extracted information gets saved into the contact's profile
 
 ### Call Retry
 
-Sets up automatic retries when a call doesn't connect. Mostly used in outbound agents, where calls often go unanswered or hit voicemail.
+**Persistence & Connection (Call Retry)** sets up automatic retries when a call isn't answered or hits voicemail. Mostly used in outbound agents.
 
 You can configure:
 
-- **Retry Attempts** — how many times the system should try again before giving up.
-- **Wait Time Between Tries** — how many minutes to wait between attempts.
+- **Retry Attempts (Retry Count)** — how many times the system should try again before stopping (default **0**, no retries).
+- **Wait Time Between Tries (Retry Delay)** — how many minutes to wait between attempts (default **30**).
 
 > **Tip:** Only enable the actions that your team will actually use. Each automation you turn on is a small commitment to maintain. Fewer, well-chosen actions beat a long list of half-used ones.
 
-## Section 6: Website widget
+## Section 8: Website widget
 
 The **Website widget** tab lets you publish your agent on a web page. Visitors can talk to it by voice, by chat, or both, directly from your site, landing page, support page, or client portal.
 
@@ -571,18 +746,18 @@ This tab combines two things: the technical embed snippet, and the visual and te
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia7.png"
-    alt="The Website widget tab showing the embed snippet, layout options, conversation mode, appearance settings, and label customization."
+    alt="The Website widget tab showing the Embed snippet with the Copy button and the Layout & behavior options: Widget mode, Embed widget theme, and Conversation mode."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Website widget tab, where you prepare the public widget and customize the visitor experience.
+  Screenshot: the Website widget tab. Copy the snippet and customize how the widget looks and behaves.
 </p>
 
 ### Embed snippet
 
-The **Embed snippet** is the code fragment you copy into your site's HTML to make the widget appear. The **Copy** button copies it so you can paste it directly.
+The **Embed snippet** is the code fragment you copy into your site's HTML to make the widget appear. It already includes your agent's ID. The **Copy** button copies it so you can paste it directly.
 
 Where to paste the snippet depends on the widget mode:
 
@@ -598,7 +773,7 @@ This block decides how the widget gets embedded and how visitors interact with i
 How the widget appears on your site:
 
 - **Inline embed** — renders the full widget directly inside the page, where you placed the snippet.
-- **Floating launcher** — shows a floating button that opens the widget when clicked.
+- **Floating launcher** — shows a small orb that opens the widget in a sheet when clicked.
 
 #### Embed widget theme
 
@@ -625,12 +800,12 @@ Controls the visual style of the dial and the launcher.
 #### Widget variant and dial size
 
 - **Widget variant** — base visual size of the widget: **Tiny**, **Compact**, or **Full**.
-- **Dial size** — the minimum and maximum size of the dial, in pixels.
+- **Dial size (px)** — the minimum and maximum diameter of the dial, in pixels.
 
 #### Realtime transcript and mute button
 
-- **Realtime transcript** — shows a live transcript of the conversation while the call is happening.
-- **Show mute button** — shows a button so visitors can mute and unmute their microphone during the call.
+- **Realtime transcript** — shows a live text transcript while the conversation is happening.
+- **Show mute button** — lets visitors mute and unmute their microphone during the call.
 
 #### Orb colors
 
@@ -642,21 +817,21 @@ Use brand colors but keep enough contrast for readability.
 
 Texts shown in the center of the dial depending on the conversation state:
 
-- **Center idle**
-- **Center connecting**
-- **Center listening**
-- **Center interrupt**
+- **Center (idle)**
+- **Center (connecting)**
+- **Center (listening)**
+- **Center (interrupt)**
 
 ### Text labels
 
-General interface texts you can customize:
+Override some important interface texts. Any you leave empty use the default:
 
 - **Main label**
 - **Start call**
 - **Start chat**
 - **End call**
 - **Chatting status**
-- **Input placeholder for a new conversation**
+- **Placeholder (new conversation)**
 
 ### Chat UI labels
 
@@ -666,12 +841,12 @@ Texts specific to the chat experience:
 - **Chat tab label**
 - **Chat title**
 - **Chat subtitle**
-- **Chat status idle, connecting, and live**
+- **Chat status (idle)**, **Chat status (connecting)**, and **Chat status (live)**
 - **Chat start label**
 - **Chat end label**
 - **Chat empty state**
-- **Chat input placeholder idle and active**
-- **Chat send label**
+- **Input placeholder (idle)** and **Input placeholder (active)**
+- **Send label**
 
 ### Adapting the widget to your use case
 
@@ -683,25 +858,25 @@ A few combinations that work well:
 
 > **Tip:** Always preview the widget on the real page before publishing. Sizes, colors, and labels often feel different outside the editor.
 
-## Section 7: Advanced
+## Section 9: Advanced
 
-The **Advanced** tab is where you fine-tune the agent: how it captures audio, how it handles silence, how it manages call data, and how it performs in outbound telephony scenarios.
+The **Advanced** tab is where you fine-tune the agent: how it captures audio, how it handles silence and waiting times, how it manages call data, and how it performs in outbound telephony scenarios.
 
 Most agents work fine without touching anything here. Open this tab when you want more precision, or when something specific isn't quite working.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="The Advanced tab divided into Voice and Understanding, Conversation Flow, Privacy and Data, and Telephony Extras."
+    alt="The Advanced tab showing the Voice & Understanding block with Speech Capture Quality and Priority Keywords, and the Conversation Flow block with Eagerness and Spelling patience."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Advanced tab, organized into four blocks for fine-tuning the agent.
+  Screenshot: the Advanced tab. Most agents work well with the default values.
 </p>
 
-The tab is split into four blocks: **Voice & Understanding**, **Conversation Flow**, **Privacy & Data**, and **Telephony Extras**.
+The tab is split into six blocks: **Voice & Understanding**, **Conversation Flow**, **Background sound**, **Soft timeout**, **Privacy & Data**, and **Telephony Extras**.
 
 ### Voice & Understanding
 
@@ -709,13 +884,13 @@ Adjusts how the agent captures audio and how it prioritizes specific terms.
 
 #### Speech Capture Quality
 
-Sets the audio format used to process speech. Options include **PCM 8000 Hz**, **PCM 16000 Hz**, **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz**, and **ulaw 8000 Hz**.
+Sets the audio format used to process speech. Options include **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz**, and **ulaw 8000 Hz**.
 
 For most setups, leave it on **PCM 16000 Hz**. It's the best balance between audio quality and processing speed. **ulaw 8000 Hz** is specifically designed for telephony scenarios.
 
 #### Priority Keywords
 
-Lets you list terms the agent should prioritize when recognizing speech. Useful for brand names, product names, technical terms, acronyms, codes, or unusual surnames the model might otherwise mishear.
+Lets you list, separated by commas, terms the agent should prioritize when recognizing speech. Useful for brand names, product names, technical terms, acronyms, codes, or unusual surnames the model might otherwise mishear — for example *SolarMax, AcmeCorp, 401k, deductible*.
 
 ### Conversation Flow
 
@@ -723,40 +898,57 @@ Controls the rhythm of the agent — how fast it joins in, how patient it is wit
 
 #### Eagerness
 
-How quickly the agent jumps in after the caller stops talking:
+How quickly the agent joins the conversation after the caller stops talking:
 
 - **Patient** — waits longer before responding.
-- **Normal** — balanced.
+- **Normal** — balanced (default).
 - **Eager** — responds quickly.
 
 **Normal** works for most cases.
 
 #### Spelling patience
 
-Makes the agent more patient when the caller is slowly spelling something — names, emails, ID numbers. Options:
+Makes the agent more patient when the caller is slowly spelling something — names, emails, ID numbers — so it doesn't cut them off mid-letter. Options:
 
-- **Auto** — recommended when the agent often collects spelled-out information.
+- **Auto** — the default, recommended when the agent often collects spelled-out information.
 - **Off** — keeps standard timing.
 
 #### Take turn after silence
 
-How many seconds of silence the agent waits before taking its turn. Lower values feel snappier; higher values give the caller more room to think.
+How many seconds the agent waits after the caller stops speaking before taking its turn (default **7**). Lower values feel snappier; higher values give the caller more room to think.
 
 #### End conversation after silence
 
-How long a silence has to last before the call ends automatically. Useful when the caller stops responding entirely.
+How many seconds of silence before the call ends automatically when the caller stops responding. It helps manage costs and keeps your call logs clean. The default, **-1**, means the call never ends because of silence.
 
 #### Max conversation duration
 
-The maximum length of a single call. A safety net to prevent calls from running indefinitely.
+The maximum length of a single call, in minutes (default **10**). A safety net to keep calls concise and prevent them from running indefinitely.
 
 > **Tip:** If you're not sure what to set in the silence and duration fields, leave them at their default and only adjust them after testing real calls.
+
+### Background sound
+
+Plays a continuous background sound during the conversation, mixed with the agent's voice. Turn on **Enable background sound** and set:
+
+- **Sound** — **Office (Quiet)** (default), **Office (Busy)**, **Restaurant**, **City**, **Typing**, and several **Elevator** options. Use the play button to preview it.
+- **Volume** — the volume of the sound relative to the agent's voice (default **60%**).
+- **Crossfade loop** — smooths the point where the sound loops, to avoid audible pops.
+
+### Soft timeout
+
+Gives the caller immediate audio feedback when the model takes longer than expected to generate a response, so the line never feels dead. Turn on **Enable soft timeout** and set:
+
+- **Timeout duration** — how many seconds to wait for the model's response before playing a message (default **3**).
+- **Use LLM Generated Message** — generates a contextual filler phrase with the model.
+- **Message** — the fallback phrase used if no filler is generated in time (default *"Hhmmmm...yeah."*).
+- **Additional filler messages** — use **Add message** to add phrases for the 2nd, 3rd, and later soft timeouts in the same response, so the agent doesn't repeat itself.
 
 ### Privacy & Data
 
 #### Record Calls
 
-When on, the system stores call audio and transcripts securely. Only enable this if it's compatible with your internal privacy, storage, and compliance policies.
+On by default. Securely stores the transcripts and audio of every call, so you can review the agent's performance, stay compliant, and keep a history of your customer interactions. Turn it off only if it's not compatible with your internal privacy, storage, and compliance policies.
 
 ### Telephony Extras
 
@@ -764,15 +956,17 @@ Telephony-specific settings, mostly aimed at improving outbound call performance
 
 #### Number Rotation
 
-Automatically rotates between your available phone numbers. Helps reduce the risk of a single number being flagged as spam, distributes call volume, and improves deliverability.
+Automatically cycles through your available phone numbers. Helps prevent a single number from being flagged as spam, distributes call volume, and improves deliverability. It requires phone numbers in your account: if there are none, a warning asks you to add them first.
 
 #### Select Phone Numbers and Calls Per Number
 
-- **Select Phone Numbers** — picks which numbers will rotate. At least one is required when **Number Rotation** is on.
+When **Number Rotation** is on and your account has numbers, you choose:
+
+- **Select Phone Numbers** — which numbers will rotate. At least one is required.
 - **Calls Per Number** — how many calls to make from one number before switching to the next.
 
 #### State-Based Restriction
 
-Limits calls so the agent dials with a local number from the same state as the contact. Designed for US local numbers — confirm your account has compatible local numbering before enabling it.
+Increases answer rates by making the agent dial each contact with a phone number from their own state. Currently it supports US local numbers only — confirm your account has compatible local numbering before enabling it.
 
 > **Important:** Only change Advanced settings when you have a clear reason and can test the result with real calls. Random tweaks here usually create new problems instead of solving the old one.

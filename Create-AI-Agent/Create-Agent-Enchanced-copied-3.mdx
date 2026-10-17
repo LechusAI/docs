@@ -1,398 +1,537 @@
 ---
 title: "Agentes de IA"
-description: "Cómo funciona la página de creación de agentes en Callin.io y qué hace cada una de sus siete secciones."
+description: "Cómo crear un agente en Callin.io y qué hace cada una de las nueve pestañas del editor de agentes."
 ---
 
 [Abrir la página de Agentes de IA en Callin.io](https://app.callin.io/agents)
 
-La página de **Agentes de IA** es donde construyes y configuras los agentes que atienden tus llamadas de teléfono y las conversaciones de tu sitio web. Cada agente tiene su propia configuración, dividida en siete secciones a las que accedes desde las pestañas de arriba: **Agente**, **Flujo de trabajo**, **Base de conocimiento**, **Herramientas**, **Acción de llamada**, **Widget para sitio web** y **Avanzado**.
+La página de **Agentes de IA** es donde creas y gestionas los agentes que atienden tus llamadas de teléfono y las conversaciones de tu sitio web. Desde aquí puedes crear un agente nuevo, encontrar uno existente, probarlo y abrir su editor.
 
-Esta página te explica qué hace cada sección y qué puedes configurar dentro de cada una.
+El editor de cada agente se organiza en nueve pestañas en la parte superior: **Agente**, **Flujo de trabajo**, **Base de conocimiento**, **Conversación**, **Análisis**, **Herramientas**, **Acción de llamada**, **Widget para sitio web** y **Avanzado**. Esta página te explica cómo crear un agente y qué puedes hacer en cada pestaña.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
-    alt="La página de creación de agente en Callin.io con las siete pestañas de configuración en la parte superior: Agente, Flujo de trabajo, Base de conocimiento, Herramientas, Acción de llamada, Widget para sitio web y Avanzado."
+    alt="La página de Agentes de IA en Callin.io con el botón Crear agente, la barra de búsqueda, los filtros Dirección y Ordenar, y la lista de agentes."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página de creación de agente. Cada pestaña de arriba abre una parte distinta de la configuración del agente.
+  Captura: la página de Agentes de IA. Cada fila es un agente, con acciones rápidas a la derecha.
 </p>
 
-> **Consejo:** La primera vez recorre las pestañas en orden. Cada una se apoya en la anterior, y una configuración limpia es mucho más fácil de probar y mantener después.
+### La lista de agentes
+
+Cada agente de tu cuenta aparece como una fila con su nombre, el número de teléfono asignado (o *Sin número telefónico asignado*), su dirección de llamada, su idioma y la fecha de creación.
+
+- **Buscar agentes…** — encuentra un agente por su nombre.
+- **Dirección** — muestra solo los agentes **Entrante**, **Saliente** o **Ambos**.
+- **Ordenar** — ordena la lista por **Más recientes primero**, **Más antiguos primero**, **Nombre A–Z**, **Nombre Z–A** u **Orden personalizado**.
+
+A la derecha de cada fila tienes tres acciones rápidas:
+
+- **Probar llamada** — hace una llamada de prueba con el agente.
+- **Probar agente de IA** — te permite hablar con el agente desde el navegador.
+- **Más opciones** (⋮) — **Copiar ID**, **Clonar**, **Editar**, **Asignar número**, **Ver calendario de eventos** y **Eliminar**.
+
+> **Consejo:** Usa **Clonar** para probar cambios en una copia antes de tocar un agente que ya está atendiendo llamadas reales.
+
+### Crear un agente nuevo
+
+Haz clic en **Crear agente**, arriba a la derecha. Callin.io te pregunta cómo quieres empezar.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-new-agent.png"
+    alt="La pantalla Nuevo agente con tres opciones: Comenzar desde cero, Explorar nuestras plantillas y Plantillas predefinidas."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: elige cómo empezar tu agente nuevo.
+</p>
+
+**Comenzar desde cero** crea un agente con un prompt y un saludo básicos que luego adaptas en el editor. Elígelo cuando ya sabes lo que debe hacer el agente. Solo tienes que escribir el **Nombre del agente** (hasta 50 caracteres) y elegir el **Stack del agente**.
+
+**Explorar nuestras plantillas** parte de un agente ya preparado para un tipo de negocio y un caso de uso concretos. Es la forma más rápida de tener una primera versión que funcione:
+
+1. **Sector** — elige el que mejor describe tu negocio: Retail y E-commerce, Salud y medicina, Finanzas y banca, Bienes raíces, Educación y formación, Hostelería y viajes, Automotriz, Servicios profesionales, Tecnología y software, Gobierno y sector público, Alimentos y bebidas, Manufactura, Fitness y bienestar, Servicios legales, Sin fines de lucro o Medios y entretenimiento.
+2. **Caso de uso** — elige en qué ayudará el agente. Las opciones dependen del sector. Por ejemplo, Salud y medicina ofrece Atención al cliente, Programación de citas, Admisión de pacientes, Verificación de seguros, Recordatorios de recetas y más.
+3. **Completa tu agente** — escribe el **Nombre del agente**, elige el **Stack del agente** y rellena:
+   - **Sitio web** *(opcional)* — la dirección de tu web. Callin.io solo lee la información pública para personalizar el agente.
+   - **Objetivo principal** — en hasta 300 caracteres, lo que el agente debe conseguir en cada llamada.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-complete-template.png"
+    alt="La pantalla Completa tu agente para una plantilla, con Nombre del agente, Stack del agente, Sitio web y Objetivo principal."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: completar un agente creado a partir de una plantilla.
+</p>
+
+> **Consejo:** Escribe el **Objetivo principal** como un único resultado claro, por ejemplo "Reservar, confirmar o cambiar citas de pacientes y responder preguntas sobre el horario". Cuanto más claro sea el objetivo, mejor será la primera versión del prompt.
+
+**Plantillas predefinidas** *(Beta)* usa plantillas creadas por tu propia organización, para que cada agente nuevo empiece con la configuración estándar de tu empresa. Cada tarjeta muestra el nombre de la plantilla, una breve descripción y cuántos campos rellena (por ejemplo *Nombre del agente*, *Prompt*, *Mensaje de bienvenida*, *Dirección*). Elige una, revisa el **Nombre del agente**, elige el **Stack del agente** y haz clic en **Crear agente**. Si tu organización todavía no ha creado plantillas, la lista aparece vacía.
+
+### Elegir el stack del agente
+
+El **Stack del agente** decide qué voz y qué tecnología de IA utiliza el agente:
+
+- **Voz premium** — voces naturales de Callin.io, listas para desplegar en minutos. Es la opción por defecto y la adecuada para la mayoría de agentes.
+- **Stack personalizado** *(Alpha)* — usa tu propio LLM, TTS y STT para tener control total sobre cada parte de la voz.
+- **Ultra baja latencia** — respuestas casi instantáneas para conversaciones fluidas en directo.
+
+Haz clic en **Crear agente** para terminar. El agente se abre directamente en su editor, en la pestaña **Agente**.
+
+> **Importante:** Las secciones siguientes describen un agente creado con el stack **Voz premium**. Los agentes con otros stacks pueden mostrar opciones diferentes.
+
+### Guardar los cambios
+
+Cuando cambias cualquier cosa en el editor, aparece abajo una barra con el mensaje **Tienes cambios sin guardar**:
+
+- **Guardar** — guarda todos los cambios.
+- **Borrar** — descarta todos los cambios sin guardar y recupera la última versión guardada.
+
+Mientras haya cambios sin guardar, **Probar llamada** está desactivado. Si hay algo que corregir antes de guardar (por ejemplo, un flujo incompleto), la barra te dice lo que falta o muestra el botón **Ver errores**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-unsaved-changes.png"
+    alt="El editor del agente con la barra de cambios sin guardar y los botones para descartar y guardar en la parte inferior."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la barra de cambios sin guardar. Guarda para conservar los cambios o descártalos.
+</p>
+
+### Probar tu agente
+
+Usa los botones de arriba a la derecha del editor para probar sin salir de la página:
+
+- **Probar llamada** — hace una llamada real con el agente.
+- **Probar agente de IA** — te permite hablar con el agente desde el navegador.
+- **Consola** — abre la consola de desarrollador.
+
+> **Consejo:** La primera vez, recorre las pestañas en orden y prueba después de cada cambio importante. Un buen agente tiene que sonar bien en una llamada real, no solo verse bien en el editor.
 
 ## Sección 1: Agente
 
-La pestaña **Agente** es donde defines la identidad y el comportamiento principales del asistente: cómo debe hablar, qué voz e idioma usa, qué modelo de IA lo impulsa y si responde llamadas entrantes, hace salientes o ambas.
-
-Una buena configuración aquí hace que todo lo demás funcione mejor. Una configuración floja crea problemas que ni el flujo ni las herramientas pueden arreglar después.
+La pestaña **Agente** es donde defines la identidad y el comportamiento principal de tu asistente: lo que dice, qué voz e idioma usa, qué modelo de IA lo impulsa y si atiende llamadas entrantes, hace llamadas salientes o ambas.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia2.png"
-    alt="La pestaña Agente con el editor del Prompt de conversación a la izquierda y los paneles de Voz, Idioma, Inteligencia de IA y Dirección de la llamada a la derecha."
+    alt="La pestaña Agente con el editor del Prompt de conversación a la izquierda y los paneles de Voz, Idioma, Inteligencia de IA (LLM) y Dirección de la llamada a la derecha."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Agente, donde configuras el prompt, la voz, el idioma, el modelo y la dirección de llamada.
+  Captura: la pestaña Agente, donde configuras el prompt, la voz, el idioma, el modelo y la dirección de la llamada.
 </p>
 
 ### Prompt de conversación
 
-El **Prompt de conversación** es el conjunto principal de instrucciones que sigue tu agente durante una llamada. Piénsalo como el manual del agente: quién es, en qué contexto trabaja, qué tono debe usar y qué reglas tiene que respetar.
+El **Prompt de conversación** es el conjunto principal de instrucciones que sigue tu agente durante la llamada: los objetivos que debe conseguir y los límites que debe respetar para mantenerse fiel a tu marca y cumplir la normativa. Piensa en él como el manual del agente.
 
-La plantilla del prompt ya incluye tres secciones base que debes rellenar:
+Un agente nuevo empieza con una plantilla organizada en tres secciones que debes adaptar:
 
-- **Personalidad** — quién es el agente y qué rol cumple.
-- **Entorno** — el contexto en el que trabaja (llamada de soporte, reserva de citas, recepción, etc.).
-- **Tono** — cómo debe sonar (calmado, cercano, profesional, breve).
+- **Personality** (personalidad) — quién es el agente y qué papel desempeña.
+- **Environment** (entorno) — el contexto en el que trabaja (llamada de soporte, reserva de citas, recepción, etc.).
+- **Tone** (tono) — cómo debe sonar (tranquilo, cercano, profesional, breve).
 
-Después de esas tres, añade reglas operativas que guíen las decisiones del agente durante la llamada. Algunas que funcionan bien en la mayoría de configuraciones:
+Después de esas tres, añade reglas operativas que guíen las decisiones del agente durante la llamada. Algunas que funcionan bien en la mayoría de casos:
 
-- Hacer una sola pregunta de aclaración por turno.
-- Llevar siempre al usuario al siguiente paso útil.
-- Apoyarse en la base de conocimiento para responder.
-- Mantener las respuestas cortas salvo que el usuario pida más detalle.
-- No inventar respuestas. Si la información no está clara, decirlo.
+- Haz una sola pregunta aclaratoria cada vez.
+- Lleva siempre al usuario hacia el siguiente paso útil.
+- Usa la base de conocimiento para las respuestas de referencia.
+- Responde de forma breve salvo que el usuario pida más detalle.
+- No inventes respuestas. Si la información no está clara, dilo.
 
-> **Consejo:** Escribe el prompt como si estuvieras dando instrucciones a un empleado nuevo en su primer día. Operativo y claro, no decorativo.
+> **Consejo:** Escribe el prompt como si estuvieras explicando el trabajo a un empleado nuevo en su primer día. Operativo y claro, no decorativo.
 
 ### Agregar variables y variables dinámicas
 
-El botón **Agregar variables**, debajo del editor del prompt, te permite insertar marcadores en el texto — por ejemplo, el nombre del agente, la empresa, la ciudad o un servicio. Puedes usar variables del sistema, variables personalizadas o crear una variable nueva al vuelo.
+El botón **Agregar variables**, debajo del editor del prompt (y debajo del saludo), inserta marcadores que se sustituyen por valores reales durante la llamada. El menú tiene dos grupos:
 
-Cuando creas una variable nueva, aparece como chip debajo del editor y se añade al panel de **Variables dinámicas**, más abajo, donde le asignas su valor real.
+- **Variables del sistema** — valores que Callin.io rellena automáticamente: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone` y `system__call_id`.
+- **Variables personalizadas** — tus propias variables, como `agent_name`. Haz clic en **Nueva variable** para crear una.
 
-Es lo correcto cuando quieres reutilizar el mismo agente para distintas marcas, ubicaciones o servicios sin reescribir el prompt cada vez.
+Las variables aparecen como chips debajo del editor y en el panel **Variables Dinámicas**, al final de la pestaña, donde defines su valor. Por ejemplo, `{{agent_name}}` toma por defecto el nombre del agente.
+
+Es lo adecuado cuando quieres reutilizar el mismo agente para distintas marcas, ubicaciones o servicios sin reescribir el prompt cada vez.
 
 ### Zona horaria
 
-Justo al lado del editor del prompt hay un selector de zona horaria (por ejemplo, **Madrid (GMT+1)**). Es la referencia horaria que usa el agente cuando habla de *hoy*, *mañana*, *esta tarde* o cualquier momento concreto durante la llamada.
+Junto a **Agregar variables** hay un selector de zona horaria (por ejemplo, **Rome (GMT+1)**), con un buscador para encontrar cualquier ciudad. Es la referencia horaria que usa el agente cuando habla de *hoy*, *mañana*, *esta tarde* o de cualquier hora concreta durante la llamada.
 
-Pon siempre la zona horaria real del negocio que representa el agente. Una zona horaria mal elegida lleva a confirmar citas a la hora equivocada.
+Configura siempre la zona horaria real del negocio al que representa el agente. Una zona horaria incorrecta provoca horas de cita incorrectas.
 
 ### Personalidad por defecto
 
-La **Personalidad por defecto** es un preajuste de comportamiento que complementa tu prompt. Revísala junto con el prompt para que el tono final coincida con lo que de verdad quieres que oigan tus llamantes.
+El icono de engranaje junto a la zona horaria abre el interruptor **Personalidad predeterminada**. Viene desactivado. Si lo activas, Callin.io añade al prompt unas pautas generales, por ejemplo: no repetir quién eres si no te lo preguntan, dar respuestas útiles e informativas, hacer preguntas aclaratorias cuando haga falta y ser educado, profesional, claro y conciso.
+
+Actívalo si tu prompt es breve y quieres que se añadan estas buenas prácticas. Si tu prompt ya las cubre, déjalo desactivado.
 
 ### Mensaje de bienvenida
 
-El **Mensaje de bienvenida** es lo primero que dice el agente al empezar la llamada. Una buena bienvenida le dice al llamante con quién está hablando y qué tipo de ayuda puede recibir, en una sola frase corta.
+El **Mensaje de bienvenida** es lo primero que dice el agente cuando empieza la llamada. Un buen saludo le dice al llamante con quién está hablando y qué tipo de ayuda puede recibir, en una frase corta. También puedes usar variables, por ejemplo `Hi, this is {{agent_name}}—thanks for calling, what can I do for you today?`
 
 Algunos ejemplos:
 
 - Soporte: "Hola, soy el asistente de soporte. Cuéntame qué pasa y te ayudo paso a paso."
-- Citas: "Hola, soy el asistente de reservas. Puedo ayudarte a agendar, cambiar o cancelar una cita."
-- Recepción: "Hola, gracias por llamar. Soy el asistente virtual y te ayudaré con tu petición."
+- Citas: "Hola, soy el asistente de reservas. Puedo ayudarte a reservar, cambiar o cancelar una cita."
+- Recepción: "Hola, gracias por llamar. Soy el asistente virtual y te ayudo con tu consulta."
 
 ### Permitir interrupciones
 
-Cuando **Permitir interrupciones** está activado, el llamante puede hablar por encima del agente y este se detiene a escuchar. Hace que la conversación se sienta natural y suele ser una buena opción por defecto para soporte, recepción y la mayoría de flujos de atención al cliente.
+**Permitir interrupciones**, junto al saludo, permite que el llamante interrumpa al agente mientras dice el primer mensaje. Viene activado, lo que resulta natural en la mayoría de flujos de soporte, recepción y atención al cliente.
 
-> **Error común:** Desactivar las interrupciones cuando tu mensaje de bienvenida incluye información crítica que el llamante tiene que oír entera. Si no es tu caso, déjalas activadas.
+> **Error común:** Dejar las interrupciones activadas cuando tu saludo incluye información que el llamante tiene que oír entera, como un aviso legal o el aviso de grabación. En ese caso, desactívalas.
 
 ### Voz
 
-**Voz** controla cómo suena tu agente. La voz no cambia *lo que* dice, pero sí afecta mucho a cómo se siente la llamada — claridad, confianza e impresión general.
+La **Voz** controla cómo suena tu agente. No cambia lo que dice, pero influye mucho en cómo se siente el llamante durante la llamada: claridad, confianza e impresión general.
 
-El panel de selección de voz tiene tres pestañas:
+Haz clic en la voz seleccionada (marcada como **Principal**) para abrir el panel de voz:
 
-- **Explorar** — el catálogo de voces disponibles, con filtros de idioma y género y una breve descripción de cada una.
-- **Clonadas** — voces que has clonado o importado en tu cuenta.
-- **Añadir** — importa una voz desde ElevenLabs pegando un enlace compartido.
+- **Voz** — haz clic para abrir **Seleccionar voz**, que tiene tres pestañas:
+  - **Explorar** — el catálogo de voces disponibles, con buscador y filtros por idioma y género.
+  - **Clonado** — las voces que has clonado en tu cuenta.
+  - **Añadir** — importa una voz de ElevenLabs pegando su enlace compartido de VoiceLab y poniéndole un nombre.
+- **Modo expresivo** — activado por defecto. Permite que el agente exprese el habla con etiquetas de audio, como una emoción, una velocidad o un acento.
+- **Etiquetas de audio sugeridas** — hasta 20 etiquetas que la voz puede usar para dar matices emocionales, como *Excited*, *Concerned*, *Patient*, *Whispering*, *US accent* o *Laughing*. Haz clic en una etiqueta para añadirla e indica cuándo debe usarla el agente, o haz clic en **Añadir** para crear la tuya. Son sugerencias: el agente también puede usar etiquetas que no estén en la lista.
 
-También puedes usar **Añadir voz adicional** para sumar voces secundarias, útil cuando un agente tiene que manejar varios idiomas o segmentos distintos de clientes.
+### Añadir voz adicional
 
-Cada voz tiene sus propios ajustes:
+Haz clic en **Añadir voz adicional** para incorporar voces secundarias, útiles cuando un mismo agente atiende varios idiomas o distintos segmentos de clientes. Para cada una defines:
 
-- **Modo expresivo** — qué tan expresiva suena.
-- **Velocidad** — qué tan rápido habla.
-- **Estabilidad** — equilibrio entre expresividad y consistencia.
-- **Similitud** — cuánto preserva su identidad vocal original.
+- **Voz** — la voz que se usará.
+- **Etiqueta** — un identificador único que usa el modelo para referirse a esta voz.
+- **Idioma** — el idioma de esta voz (por defecto, *Igual que el agente*).
+- **Descripción** — cuándo debe usar el agente esta voz, por ejemplo "Para cualquier palabra en español" o "Siempre que hable Joe".
+
+Haz clic en **Añadir voz** para guardarla.
 
 ### Ajustes comunes de voz
 
-Debajo de la lista de voces hay dos controles globales de audio:
+El icono de engranaje junto a **Voz** abre los **Ajustes comunes de voz**, dos controles de audio compartidos por todas las voces del agente:
 
-- **Formato de salida TTS** — formato del audio generado. **PCM 16000 Hz** es la opción recomendada para la mayoría de casos porque ofrece un buen equilibrio entre calidad de audio y velocidad de procesamiento.
-- **Optimizar latencia de streaming** — controla el equilibrio entre cuánto tarda el agente en empezar a hablar y la calidad del audio. Más optimización significa empezar antes pero con un poco menos de calidad.
+- **Formato de salida TTS** — el formato del audio generado: **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** o **ulaw 8000 Hz** (*Telephony*). PCM 16000 Hz es un buen equilibrio entre calidad de audio y velocidad de procesamiento.
+- **Optimizar latencia de streaming** — una escala de **0** a **4** (por defecto **3**). Los valores altos hacen que el agente empiece a hablar antes, a costa de una calidad de audio algo menor.
 
 ### Idioma
 
-**Idioma** define el idioma por defecto del agente y los idiomas adicionales a los que puede cambiar a mitad de conversación.
+**Idioma** define el idioma por defecto del agente (marcado como **Predeterminado**). Haz clic en él para elegir otro de la lista con buscador.
 
-Activa solo los idiomas que de verdad necesitas. Añadir idiomas "por si acaso" tiende a hacer el comportamiento menos predecible.
+Haz clic en **Añadir idiomas adicionales** para elegir los otros idiomas a los que el agente puede cambiar durante la conversación. El panel tiene un buscador y la opción **Seleccionar todos los idiomas**.
+
+Activa solo los idiomas que realmente necesitas. Añadir idiomas "por si acaso" suele hacer el comportamiento menos predecible. Para cambiar de idioma automáticamente, también tiene que estar activada la herramienta del sistema **Cambio de idioma** (consulta la **Sección 6: Herramientas**).
 
 ### Inteligencia de IA (LLM)
 
-La **Inteligencia de IA (LLM)** es el modelo de lenguaje que mueve al agente. Un **LLM** (Large Language Model, modelo de lenguaje grande) es lo que entiende al llamante, sigue las reglas del prompt, usa la base de conocimiento y genera cada respuesta.
+**Inteligencia de IA (LLM)** es el modelo de lenguaje que impulsa al agente. El **LLM** (Large Language Model) es lo que entiende al llamante, sigue las reglas de tu prompt, usa la base de conocimiento y genera cada respuesta.
 
-El modelo afecta directamente a tres cosas:
+Haz clic en el modelo seleccionado para abrir el panel **LLM**, y vuelve a hacer clic para ver la lista. Cada modelo muestra una breve descripción y su latencia aproximada, como *~179ms*. Los modelos disponibles son **Neuron 1.0**, **Neuron 2.0**, **Neuron 3.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite** y **Gemini 2.5 Flash** (el modelo por defecto).
 
-- Cómo de bien entiende el agente lo que el llamante quiere decir.
-- Cómo de rápido responde (verás una latencia aproximada al lado de cada modelo, por ejemplo *~179ms*).
-- Cómo de consistente se mantiene en conversaciones largas.
+El modelo influye directamente en tres cosas:
 
-Los modelos disponibles incluyen **Neuron 1.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, **Gemini 2.5 Flash** y **Claude Haiku 4.5**.
+- Lo bien que el agente entiende lo que quiere decir el llamante.
+- Lo rápido que responde.
+- Lo coherente que se mantiene en conversaciones largas.
 
-Para agentes de citas y reservas, **Gemini 2.5** es una opción práctica y sólida.
+Para agentes centrados en citas y flujos de reservas, **Gemini 2.5** es una opción práctica y sólida.
 
-### Temperatura
+### Presupuesto de razonamiento y temperatura
 
-La **Temperatura** controla cuánta variación añade el agente a sus respuestas. Una temperatura baja produce respuestas más estables y predecibles. Una temperatura alta introduce más variación y menos control.
+El panel **LLM** también incluye dos ajustes:
 
-Para agentes de soporte, citas y operativa general, mantén la temperatura baja. Reserva las temperaturas altas para casos creativos o exploratorios.
+- **Presupuesto de razonamiento** — controla cuántos tokens internos de razonamiento puede usar el modelo antes de responder. Viene desactivado. Más razonamiento puede mejorar las respuestas complejas, pero añade latencia, así que pruébalo en llamadas reales.
+- **Temperatura** — controla lo creativas o deterministas que son las respuestas (por defecto **0.5**). Los valores bajos hacen al agente más centrado y predecible; los altos, más creativo y menos predecible.
+
+Para agentes de soporte, citas y operaciones, mantén la temperatura baja. Reserva las temperaturas altas para casos creativos o exploratorios.
 
 ### Dirección de la llamada
 
-La **Dirección de la llamada** decide cómo participa el agente en el flujo de llamadas:
+**Dirección de la llamada** decide cómo participa el agente en el flujo de llamadas:
 
-- **Entrantes** — el agente atiende llamadas que recibe (soporte, recepción, atención al cliente).
-- **Salientes** — el agente realiza llamadas (campañas, recordatorios, confirmaciones, seguimientos).
-- **Ambas** — el mismo agente trabaja en entrantes y salientes.
-
-### Guardar y validar
-
-**Guardar** almacena la configuración actual. **Limpiar** descarta los cambios sin guardar.
-
-Después de cada cambio importante, haz una llamada real de prueba y revisa la bienvenida, la voz, los idiomas activos, el modelo elegido y los valores de las variables dinámicas.
-
-> **Importante:** Una buena configuración del agente tiene que sonar bien en una llamada real, no solo verse bien en el editor.
+- **Saliente** — el agente hace llamadas (campañas, recordatorios, confirmaciones, seguimientos). Es la opción por defecto de un agente nuevo.
+- **Entrante** — el agente atiende llamadas entrantes (soporte, recepción, atención al cliente).
+- **Ambos** — el mismo agente sirve para llamadas entrantes y salientes.
 
 ## Sección 2: Flujo de trabajo
 
-La pestaña **Flujo de trabajo** es donde decides cómo se mueve la conversación. Mientras que la pestaña **Agente** define quién es el asistente, **Flujo de trabajo** define el camino que sigue la llamada: ramas según lo que quiera el llamante, transferencias, llamadas a herramientas y cierres limpios.
+La pestaña **Flujo de trabajo** es donde decides cómo avanza la conversación. Mientras la pestaña **Agente** define quién es el asistente, el **Flujo de trabajo** define el camino que sigue la llamada: ramas según lo que quiere el llamante, transferencias, uso de herramientas y cierres limpios.
 
-Lo construyes en un lienzo visual colocando nodos y conectándolos.
+Lo construyes en un lienzo visual colocando nodos y conectándolos. Usa los botones de arriba a la izquierda para acercar, alejar y ajustar todo el flujo a la pantalla, y los de arriba a la derecha para ver a pantalla completa o eliminar el flujo.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia3.png"
-    alt="El lienzo del flujo de trabajo con nodos conectados que representan las rutas de la conversación, las transiciones y los puntos finales."
+    alt="La pestaña Flujo de trabajo con un nodo Start conectado a un Subagent y a un nodo Transfer de número de teléfono, un nodo End, el panel Completa la configuración del flujo y los ajustes del Subagent a la derecha."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el lienzo del flujo de trabajo, donde dibujas las rutas de la conversación de principio a fin.
+  Captura: un flujo con dos rutas desde el inicio. El panel de la derecha muestra lo que falta y los ajustes del nodo seleccionado.
 </p>
 
 ### Qué puedes construir aquí
 
-A partir de un único punto de entrada, puedes:
+Desde un único punto de partida puedes:
 
 - Crear varias rutas dentro de la misma conversación.
-- Enviar la llamada a un **Subagente** para una etapa especializada.
+- Enviar la llamada a un **Subagent** para una etapa especializada.
 - Transferir la llamada a otro agente.
 - Transferir la llamada a un número de teléfono.
-- Ejecutar una herramienta que ya exista.
-- Cerrar la conversación con un nodo **Fin**.
-- Controlar qué ruta se aplica con condiciones tipo **Condición LLM**.
+- Usar una herramienta que ya existe.
+- Terminar la conversación con un nodo **End**.
+- Controlar qué ruta se aplica mediante **condiciones LLM**.
+
+### Añadir nodos
+
+Para añadir un nodo, arrastra una conexión desde un nodo existente (por ejemplo, desde la parte inferior de **Start**) y suéltala en una zona vacía del lienzo. También puedes hacer clic en el botón **+** debajo de un nodo seleccionado. Se abre un menú con los tipos de nodo: **Subagent**, **Agent transfer**, **Phone number transfer**, **Tool** y **End**.
+
+El nodo nuevo aparece conectado al anterior y sus ajustes se abren en el panel de la derecha.
 
 ### Inicio
 
-**Inicio** es el punto de entrada. Toda conversación empieza aquí. Este nodo no habla ni actúa por sí mismo — solo lanza la ruta y envía la llamada al siguiente nodo.
+**Start** es el punto de entrada. Toda conversación empieza aquí. El nodo no habla ni actúa: solo lanza la ruta y envía la llamada al siguiente nodo.
 
-El panel lateral del nodo **Inicio** tiene dos pestañas:
+El panel lateral de **Start** tiene dos pestañas:
 
-- **Resumen** — explica su rol.
-- **Conexiones** — lista todas las rutas que salen del nodo, con su etiqueta y su destino.
+- **Resumen** — explica su función.
+- **Aristas** — lista todas las rutas que salen de **Start**, con su etiqueta y su destino.
 
 ### Transiciones y condiciones LLM
 
-Una transición es la línea que conecta un nodo con el siguiente. Cada transición tiene una etiqueta visible y una **Condición LLM** — un texto corto que le dice al modelo cuándo debe aplicarse esa ruta.
+Una transición es la línea que une un nodo con el siguiente. Haz clic en su etiqueta (al principio, *Configure condition*) para abrir sus ajustes. La pestaña **Adelante** define la transición:
+
+- **Tipo de transición** — **Condición LLM** (el modelo decide cuándo tomar esta ruta), **Ninguna** o **Expresión** (todavía no se puede editar en este panel).
+- **Etiqueta** — el nombre que se ve en el lienzo.
+- **Condición LLM** — un texto breve que le dice al modelo cuándo debe aplicarse esta ruta.
 
 Ejemplos de condiciones:
 
 - "Usa esta ruta cuando el usuario necesite ayuda técnica con la plataforma."
 - "Usa esta ruta cuando el usuario pida hablar con una persona."
-- "Usa esta ruta cuando el problema esté resuelto y la conversación deba terminar."
-
-Los ajustes operativos de las transiciones están en la pestaña **Adelante**.
+- "Usa esta ruta cuando la consulta esté resuelta y la conversación deba terminar."
 
 ### Completar la configuración del flujo
 
-El panel **Completar la configuración del flujo** te dice exactamente qué falta para guardar el flujo correctamente. Es muy útil en flujos grandes porque señala el nodo o la conexión exactos que aún necesitan atención.
+El panel **Completa la configuración del flujo** lista exactamente lo que falta para poder guardar el flujo. Cada elemento indica el nodo o la arista que hay que corregir y lo que necesita. Hasta que la lista esté vacía, **Guardar** sigue desactivado.
 
-Avisos típicos:
+Elementos habituales que señala:
 
-- Un nodo de **Transferencia a agente** sin agente de destino.
-- Un nodo de **Herramienta** sin herramienta seleccionada.
-- Una transición sin texto de condición.
-- Un nodo o rama todavía incompleto.
+- Un nodo **Agent transfer** sin agente de destino.
+- Un nodo **Phone number transfer** sin tipo de destino.
+- Un nodo **Tool** sin herramienta seleccionada.
+- Una transición sin texto de condición LLM.
 
 ### Subagente
 
-Un **Subagente** es una etapa especializada dentro del mismo flujo de trabajo. Úsalo cuando una parte de la conversación necesite su propio objetivo, voz, modelo o comportamiento, distintos del agente principal.
+Un **Subagent** es una etapa especializada dentro del mismo flujo. Úsalo cuando una parte de la conversación necesita su propio objetivo, voz, modelo o comportamiento, distinto del agente principal. Ponle un nombre en la parte superior del panel y configura sus pestañas:
 
-Dentro de un nodo de Subagente puedes configurar:
+- **General** — **Objetivo de conversación** (instrucciones que amplían el prompt principal para esta etapa), **Sobrescribir prompt** (para sustituir el prompt principal en lugar de ampliarlo), **Voz**, **LLM**, **Prontitud** y **Paciencia al deletrear**.
+- **Base de conocimiento** — **Heredar base de conocimiento** viene activado. Desactívalo para usar otra.
+- **Herramientas** — **Heredar herramientas personalizadas** viene activado. Usa **Agregar herramienta** para añadir herramientas concretas.
+- **Aristas** — las rutas que salen de este nodo.
 
-- **General** — prompt del sistema, prompt de sustitución, voz, LLM, predisposición y paciencia al deletreo.
-- **Base de conocimiento** — activa **Heredar base de conocimiento** para usar la del agente principal, o asigna una distinta.
-- **Herramientas** — activa **Heredar herramientas personalizadas** o añade herramientas concretas con **Añadir herramienta**.
-
-Las herramientas no se crean aquí. Se crean en la sección **Herramientas** y desde el flujo solo se seleccionan o se heredan.
+Las herramientas no se crean aquí. Se crean en la sección global **Herramientas** y desde el flujo solo se seleccionan o se heredan.
 
 ### Nodo de herramienta
 
-El nodo de **Herramienta** envía la conversación a una etapa donde el agente usa una herramienta ya existente. Este nodo no crea herramientas nuevas — solo conecta el flujo con una herramienta ya configurada.
+El nodo **Tool** (que aparece como **Enrutamiento de herramienta** en el panel lateral) lleva la conversación a una etapa en la que el agente usa una herramienta existente. Usa **Agregar herramienta** en su pestaña **Herramientas** para elegir al menos una. Este nodo no crea herramientas: solo apunta a herramientas que ya existen.
 
 ### Transferencia a agente
 
-La **Transferencia a agente** entrega la conversación a otro agente de tu cuenta. Úsala cuando la llamada deba pasar a un asistente especializado en otra tarea, otro idioma u otro flujo.
+**Agent transfer** pasa la conversación a otro agente de tu cuenta. Úsalo cuando la llamada debe pasar a un asistente especializado en otra tarea, idioma o flujo.
 
 Puedes configurar:
 
-- El agente de destino.
-- Un retraso en milisegundos antes de la transferencia.
-- Un mensaje de transferencia y si debe reproducirse.
+- **Agente** — el agente de destino.
+- **Retraso (ms)** — cuánto esperar antes de la transferencia, en milisegundos.
+- **Mensaje de transferencia** — un mensaje opcional que dice el agente durante la transferencia.
+- **Activar primer mensaje** — si el agente de destino dice su saludo después de la transferencia.
 
-Ejemplos de mensaje de transferencia:
+Ejemplos de mensajes de transferencia:
 
-- "Voy a pasarte con el agente adecuado para esta consulta."
-- "Te conecto con el asistente especializado en este tipo de pregunta."
+- "Te paso con el agente adecuado para esta consulta."
+- "Te conecto con el asistente especializado en este tipo de preguntas."
 
 ### Transferencia a número de teléfono
 
-La **Transferencia a número de teléfono** envía la llamada a un número telefónico. Úsala cuando la conversación tenga que salir del agente y continuar en una línea concreta.
+**Phone number transfer** envía la llamada a un número de teléfono. Úsalo cuando la conversación tiene que salir del agente y continuar en una línea concreta.
 
-El tipo de destino puede ser:
+El **Tipo de destino** puede ser:
 
-- **Número de teléfono** — un número fijo, ideal para recepción, una línea de ventas o una línea dedicada de soporte.
-- **Variable dinámica de teléfono** — el destino se decide en tiempo real según el contexto de la conversación.
+- **Número de teléfono** — un número fijo, ideal para recepción, una línea comercial o una línea de soporte dedicada.
+- **Teléfono (variable dinámica)** — el destino sale de una variable dinámica que se decide durante la llamada.
 
 ### Fin
 
-El nodo **Fin** cierra la conversación. Cuando la ruta llega a este nodo, la llamada termina. Úsalo cuando:
+El nodo **End** cierra la conversación: la llamada termina cuando se llega a este nodo. Úsalo cuando:
 
-- El asunto esté completamente resuelto.
-- Una rama deba cerrarse limpiamente.
-- Una etapa esté completa y no deba continuar.
+- La consulta está totalmente resuelta.
+- Una rama debe cerrarse de forma limpia.
+- Una etapa ha terminado y no debe continuar.
 
 ### Duplicar y eliminar
 
-Cada nodo tiene controles para duplicarlo o eliminarlo. **Duplicar** ayuda a montar ramas similares más rápido. Antes de eliminar, revisa las transiciones conectadas a ese nodo para no romper una ruta activa.
+Al seleccionar un nodo aparecen junto a él dos iconos para duplicarlo o eliminarlo. Duplicar viene bien para crear ramas parecidas más rápido. Antes de eliminar, revisa las transiciones conectadas a ese nodo para no romper una ruta activa.
 
 ### Ajustes globales
 
-Los **Ajustes globales** afectan al flujo de trabajo en su conjunto. **Evitar bucles infinitos** añade una capa de seguridad que impide que la conversación quede atrapada en un bucle sin avanzar.
+Cuando no hay ningún nodo seleccionado, el panel de la derecha muestra los **Ajustes globales**. **Evitar bucles infinitos** impide que el flujo pase continuamente de un nodo a otro en bucle cuando todas las condiciones se cumplen.
 
-Para desactivar un flujo sin eliminarlo, desconecta el nodo **Inicio**. Sin un Inicio conectado, el flujo no tiene punto de entrada y no se ejecuta.
+Para desactivar un flujo sin borrarlo, desconecta el nodo **Start**. Sin un inicio conectado, el flujo no tiene punto de entrada y no se ejecuta.
 
-### Guardar y probar
-
-**Guardar** almacena el flujo actual. **Limpiar** descarta los cambios sin guardar. El aviso de cambios sin guardar aparece cuando tienes ediciones que aún no se han guardado.
-
-> **Error común:** Un flujo puede verse completo en el lienzo y aun así fallar en la práctica. Prueba cada ruta con una conversación real antes de publicar.
+> **Error común:** Un flujo que parece completo en el lienzo puede fallar en la práctica. Prueba cada ruta con una conversación real antes de publicarlo.
 
 ## Sección 3: Base de conocimiento
 
-La pestaña **Base de conocimiento** conecta tu agente con una fuente de contenido de referencia que ya has preparado dentro de Callin.io. Así el agente tiene acceso a información detallada sin tener que meterla toda en el prompt.
-
-Úsala cuando el contenido sea demasiado largo, demasiado detallado o cambie con demasiada frecuencia para vivir dentro del prompt.
+La pestaña **Base de conocimiento** da a tu agente información adicional para responder preguntas. Es ideal para contenido extenso o detallado —como manuales, preguntas frecuentes o políticas— que no cabe en el prompt principal.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia4.png"
-    alt="La pestaña Base de conocimiento con la fuente vinculada, el número de documentos y el panel para seleccionar una base de conocimiento."
+    alt="La pestaña Base de conocimiento de un agente con el botón para añadir documentos y la lista de documentos que puede usar el agente."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Base de conocimiento, donde vinculas una fuente de conocimiento existente al agente.
+  Captura: la pestaña Base de conocimiento. Añade los documentos que este agente puede usar para responder.
 </p>
 
 ### Para qué sirve esta pestaña
 
-Esta pestaña vincula una base de conocimiento existente a un agente concreto. **No** crea contenido desde cero — eso se hace en el gestor global de bases de conocimiento.
+Esta pestaña conecta documentos de tu Base de conocimiento global con un agente concreto. **No** crea contenido: eso se hace en el gestor de la Base de conocimiento.
 
 Acceso rápido:
 
-- [Abrir el gestor de bases de conocimiento](https://app.callin.io/knowledge-base)
+- [Abrir el gestor de la Base de conocimiento](https://app.callin.io/knowledge-base)
 
-Una forma útil de pensarlo:
+Una forma útil de verlo:
 
 - El **prompt** define cómo debe comportarse el agente.
 - La **base de conocimiento** define el contenido de referencia que el agente puede consultar al responder.
 
 ### Cuándo usar una base de conocimiento
 
-Úsala cuando el contenido sea:
+Úsala cuando el contenido es:
 
 - Largo (manuales, políticas, documentación interna).
-- Cambiante con cierta frecuencia.
+- Actualizado con frecuencia.
 - Ya publicado como artículos o páginas.
-- Mejor mantenido aparte del prompt, para facilitar las actualizaciones.
+- Más fácil de mantener separado del prompt.
 
-Fuentes típicas: preguntas frecuentes, guías de producto, artículos de soporte, documentos de políticas, referencias internas.
+Fuentes habituales: preguntas frecuentes, guías de producto, artículos de soporte, políticas, referencias internas.
 
 ### Fuentes de contenido soportadas
 
-Una base de conocimiento se puede construir desde dos tipos de fuentes:
+El gestor de la Base de conocimiento organiza el contenido en dos tipos de fuentes:
 
 - **Archivos** — documentos subidos.
-- **URLs web** — páginas o documentación publicadas en línea.
-
-Eliges entre ellas dentro del panel de selección.
+- **Web** — páginas publicadas o documentación online.
 
 ### Lo que ves cuando hay una base vinculada
 
-Cuando el agente ya tiene una base de conocimiento conectada, la pestaña muestra:
-
-- El nombre del grupo seleccionado.
-- El número de documentos vinculados.
-- Las acciones disponibles: **Quitar**, **Actualizar** y **Cambiar**.
+La pestaña lista todos los documentos que puede usar el agente. Si todavía no hay ninguno, muestra *No hay documentos añadidos*.
 
 ### Acciones principales
 
-- **Cambiar** — abre el panel de selección para elegir otra base.
-- **Quitar** — desvincula la base actualmente conectada.
-- **Actualizar** — refresca la conexión para que el agente trabaje con la última versión de la selección vinculada.
+Haz clic en **Añadir documento** para abrir el selector de documentos:
+
+- Usa el buscador para encontrar un documento de tu Base de conocimiento y selecciónalo para que este agente pueda usarlo.
+- Si el documento todavía no existe, haz clic en **Añadir documento** al final del selector. Te lleva al gestor de la Base de conocimiento, donde puedes crearlo.
 
 ### Panel de selección de base de conocimiento
 
-Al pulsar **Cambiar** se abre este panel. Desde aquí puedes revisar lo disponible, escoger un grupo, inspeccionar su contenido y confirmar.
-
-Lo que encuentras dentro:
-
-- **Fuente** — alterna entre **Archivos** y **URLs web**.
-- **Grupos** — lista de bases de conocimiento dentro de la fuente elegida.
-- **Refrescar** — recarga la lista de grupos.
-- **Documentos / URLs** — recursos que pertenecen al grupo seleccionado.
-- **Vinculado** — marca que indica que un recurso estará disponible para el agente al confirmar.
-- **Seleccionar** — confirma la elección.
-- **Cerrar** — sale sin cambios.
+En el gestor de la Base de conocimiento puedes cambiar entre **Archivos** y **Web**, buscar tu contenido y usar **Crear base de conocimiento** para organizar los documentos en grupos. Una vez que un documento está ahí, aparece en el selector de documentos del agente.
 
 ### Flujo recomendado
 
-La forma más limpia de trabajar es separar la creación de la selección:
+La forma más ordenada de trabajar es separar la creación de la selección:
 
-1. Crea y organiza la base de conocimiento en el gestor global.
-2. Vuelve a esta pestaña y vincula la base preparada al agente.
+1. Crea y organiza tus documentos en el gestor de la Base de conocimiento.
+2. Vuelve a esta pestaña y añade los documentos que necesita el agente.
 
-> **Consejo:** Mantén las reglas de comportamiento en el prompt y el contenido de referencia en la Base de conocimiento. Esa separación hace que las actualizaciones sean mucho más fáciles después.
+> **Consejo:** Mantén las reglas de comportamiento en el prompt y el contenido de referencia en la Base de conocimiento. Esa separación hace mucho más fáciles las actualizaciones.
 
-## Sección 4: Herramientas
+## Sección 4: Conversación
 
-La pestaña **Herramientas** decide qué puede *hacer* tu agente durante una llamada, más allá de mantener una conversación. Mientras el prompt define cómo habla y el flujo define cómo se mueve la llamada, las herramientas le permiten ejecutar acciones en el momento adecuado.
-
-Esta pestaña hace dos cosas: te permite añadir **herramientas personalizadas** creadas por tu equipo, y activar y configurar las **herramientas del sistema** que Callin.io trae de fábrica.
+La pestaña **Conversación** lista todas las llamadas que ha atendido este agente, entrantes y salientes. Es donde revisas lo que pasó en cada llamada.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agentesia5.png"
-    alt="La pestaña Herramientas con la zona de herramientas personalizadas arriba y la lista de herramientas del sistema abajo, cada una con su propio interruptor y configuración."
+    src="/images/ai-agents-conversation.png"
+    alt="La pestaña Conversación con la barra de búsqueda de transcripciones y los filtros de las llamadas del agente."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Herramientas, con la sección de herramientas personalizadas arriba y las herramientas del sistema abajo.
+  Captura: la pestaña Conversación. Busca en las transcripciones y filtra las llamadas del agente.
+</p>
+
+### Búsqueda y filtros
+
+- **Buscar transcripciones...** — encuentra llamadas por lo que se dijo durante la conversación.
+- **Filtros** — reduce la lista por **Número de teléfono**, **ID de llamada**, **Squad**, **Estado**, **Dirección**, **Cita**, **Transferencia de llamada**, **Buzón de voz**, **Rango de fechas**, **Duración de la llamada**, **Origen**, **ID de campaña**, **Sentimiento** o **ID del ticket**.
+
+Hasta que el agente haga o reciba su primera llamada, la pestaña muestra *Aún no hay llamadas entrantes o salientes*.
+
+> **Consejo:** Después de cambiar el prompt o el flujo, haz unas cuantas llamadas de prueba y revísalas aquí. Leer las transcripciones es la forma más rápida de ver dónde se desvía el agente.
+
+## Sección 5: Análisis
+
+La pestaña **Análisis** muestra cómo está funcionando este agente, comparado con el periodo anterior de la misma duración.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/ai-agents-analytics.png"
+    alt="La pestaña Análisis con los selectores de periodo y de agrupación."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Análisis. Elige el periodo y cómo agrupar los datos.
+</p>
+
+### Periodo y agrupación
+
+- **Periodo** — **Últimas 24 horas**, **Últimos 7 días** (por defecto), **Últimos 30 días**, **Últimos 90 días** o **Rango personalizado**.
+- **Agrupar por** — **Hora**, **4 horas**, **Día**, **Semana** o **Mes**.
+
+Si no hay llamadas en el periodo seleccionado, la pestaña te sugiere un periodo más amplio o una llamada de prueba, y ofrece el botón **Ver conversaciones**, que te lleva a la pestaña **Conversación**.
+
+## Sección 6: Herramientas
+
+La pestaña **Herramientas** decide lo que tu agente puede *hacer* durante la llamada, más allá de conversar. Mientras el prompt define cómo habla y el flujo define cómo avanza la llamada, las herramientas permiten al agente actuar en el momento adecuado.
+
+La pestaña tiene dos subpestañas: **Herramientas**, para tus herramientas personalizadas y las **Herramientas del sistema**, y **MCP**, para servidores MCP.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia5.png"
+    alt="La pestaña Herramientas con el botón para agregar herramientas a la izquierda y la lista de herramientas del sistema a la derecha."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Herramientas. Añade herramientas personalizadas a la izquierda y activa o desactiva las del sistema a la derecha.
 </p>
 
 Acceso rápido:
@@ -401,96 +540,120 @@ Acceso rápido:
 
 ### Herramientas personalizadas
 
-Las **herramientas personalizadas** son herramientas que tu equipo crea para casos específicos. No se crean dentro del agente — primero las construyes en la sección global de **Herramientas**, y luego vuelves aquí para añadirlas.
+Las **herramientas personalizadas** son herramientas que crea tu equipo para casos concretos. No se crean dentro del agente: primero las creas en la sección global **Herramientas** y luego vuelves aquí para añadirlas.
 
 Cosas típicas que puede hacer una herramienta personalizada:
 
 - Consultar un sistema externo.
 - Ejecutar una automatización.
-- Enviar o recibir datos a través de un **webhook** (una URL a la que tu herramienta llama cuando ocurre algo).
-- Disparar lógica específica de tu negocio.
+- Enviar o recibir datos mediante un **webhook** (una URL a la que llama tu herramienta cuando ocurre algo).
+- Lanzar lógica propia de tu negocio.
 - Conectar el agente con otro servicio.
 
-Si el agente todavía no tiene herramientas personalizadas, esta zona muestra el estado vacío.
+El botón **Agregar herramienta** abre un selector donde puedes buscar tus herramientas y elegir una. Si tu cuenta todavía no tiene herramientas, el selector ofrece **Añadir herramienta webhook** para crear una.
 
-El botón **Añadir herramienta** asocia una herramienta personalizada al agente. Si tu cuenta ya tiene herramientas, el selector te deja buscar y elegir una. Si no hay ninguna, te ofrece la opción directa de crear una **Herramienta tipo webhook**.
+### Servidores MCP
 
-### Herramientas del sistema
-
-Las **herramientas del sistema** son herramientas integradas que cubren situaciones habituales de llamada sin que tengas que construir nada. Cada una se activa o desactiva por separado, y algunas tienen configuración adicional.
-
-#### Colgado inteligente
-
-Permite al agente cerrar la llamada limpiamente cuando detecta que la conversación ya terminó — por ejemplo, cuando el llamante se despide, confirma que el problema está resuelto o cierra claramente. Evita mantener la línea abierta más de lo necesario.
-
-#### Cambio de idioma
-
-Ayuda al agente a gestionar un cambio de idioma durante la llamada. Especialmente útil cuando el agente trabaja con varios idiomas y el llamante puede cambiar al principio o a mitad de la conversación.
-
-#### Escucha inteligente
-
-Mejora cómo escucha el agente y gestiona la conversación en tiempo real. Se controla con un único interruptor de activación.
-
-#### Transferencia a agente
-
-Entrega la conversación a otro agente de tu cuenta. Útil para mover una llamada de un agente generalista a uno especializado — por ejemplo, de un asistente general a uno de ventas o a un agente de soporte sénior.
-
-#### Transferencia a número
-
-Transfiere la llamada a un número de teléfono humano. Es una de las herramientas más importantes cuando necesitas escalar la llamada fuera del agente y entregarla a una persona — recepción, una centralita, ventas o una oficina concreta.
-
-#### Reglas de transferencia humana
-
-Definen las reglas concretas para transferir a humanos. Cada regla incluye:
-
-- **Tipo de destino** — un número fijo o un número proporcionado a través de una variable dinámica.
-- **Número de teléfono** o la variable dinámica de teléfono.
-- **Condición** — cuándo debe aplicarse esta regla.
-
-Usa un número fijo cuando el destino es siempre el mismo y una variable dinámica cuando depende del contexto de la conversación.
-
-#### Detección de buzón de voz
-
-Detecta cuándo la llamada ha caído en un buzón de voz y actúa en consecuencia. Es crítica para agentes salientes, donde muchas llamadas acaban en buzón.
-
-Tienes dos opciones:
-
-- Dejar el mensaje del buzón vacío si la llamada debe terminar al detectar el buzón.
-- Escribir un mensaje si quieres que el sistema lo reproduzca antes de colgar.
-
-#### Descripción y desactivar interrupción
-
-Varias herramientas del sistema incluyen dos campos extra:
-
-- **Descripción** — explica al modelo cómo y cuándo debe usarse la herramienta.
-- **Desactivar interrupción** — controla si la herramienta puede interrumpirse mientras se ejecuta.
-
-### Cómo elegir las herramientas
-
-No actives todo. Elige según el caso de uso:
-
-- Un agente entrante de soporte suele usar **Colgado inteligente**, **Cambio de idioma** y **Escucha inteligente**.
-- Un agente que escala a humanos usa **Transferencia a número** con reglas de transferencia bien definidas.
-- Un agente saliente suele usar **Detección de buzón de voz**, **Colgado inteligente** y **Cambio de idioma**.
-
-> **Error común:** Activar demasiadas herramientas a la vez. Hace que el comportamiento sea más difícil de predecir, de probar y de mantener.
-
-## Sección 5: Acción de llamada
-
-La pestaña **Acción de llamada** es donde el agente deja de ser solo una voz y empieza a producir resultados útiles: reservas, correos de seguimiento, incidencias registradas, datos estructurados y registros sincronizados.
-
-Úsala para convertir la conversación en próximos pasos concretos sobre los que tu equipo pueda actuar.
+La subpestaña **MCP** te permite conectar servidores MCP (Model Context Protocol) para dar a tu agente herramientas e integraciones adicionales sin tener que crearlas una a una.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/agentesia6.png"
-    alt="La pestaña Acción de llamada con los bloques de programación de citas, correo de resumen, baja de contacto, registro de incidencias, sincronización de datos, captura de información y reintentos."
+    src="/images/ai-agents-mcp.png"
+    alt="La subpestaña MCP de la pestaña Herramientas con el botón para agregar un MCP."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Acción de llamada, donde automatizas qué pasa durante y después de cada llamada.
+  Captura: la subpestaña MCP. Conecta servidores MCP al agente.
+</p>
+
+Haz clic en **Agregar MCP** para buscar los servidores MCP disponibles en tu cuenta y conectar uno al agente. Si todavía no hay ninguno, haz clic en **Gestionar MCP** para configurarlos.
+
+### Herramientas del sistema
+
+Las **Herramientas del sistema** son herramientas integradas que resuelven situaciones habituales de las llamadas sin que tengas que crear nada. Cada una se puede activar o desactivar. Un agente nuevo empieza con tres activadas —**Colgado inteligente**, **Cambio de idioma** y **Detección de buzón**— y el contador de la parte superior de la lista indica cuántas están activas.
+
+Las herramientas activas con ajustes adicionales muestran un icono de engranaje. El panel de ajustes de cada herramienta incluye:
+
+- **Descripción** *(opcional)* — le explica al modelo cómo y cuándo usar la herramienta. Déjala en blanco para usar el prompt optimizado por defecto.
+- **Desactivar interrupciones** — impide que el llamante interrumpa mientras la herramienta se está ejecutando.
+
+#### Colgado inteligente
+
+Permite al agente terminar la llamada con educación cuando se ha cumplido el objetivo de la conversación o el llamante se despide. Su descripción ya incluye ejemplos de despedidas explícitas ("adiós", "eso es todo", "no, gracias") e implícitas (respuestas mínimas cuando ya se ha resuelto lo que necesitaba, "tengo que irme"). Así se evita mantener la línea abierta más de lo necesario.
+
+#### Cambio de idioma
+
+Permite al agente reconocer el idioma preferido del llamante y cambiar a él durante la llamada. Solo funciona con los idiomas que has añadido en **Idioma**, en la pestaña **Agente**.
+
+#### Escucha inteligente
+
+Hace que el agente se quede en silencio cuando el llamante dice cosas como "dame un segundo" o "espera", para evitar interrupciones incómodas mientras consulta algo.
+
+#### Transferir a agente
+
+Pasa la llamada a un agente de IA más especializado cuando lo que pide el llamante queda fuera del ámbito del agente actual; por ejemplo, de un asistente general a un agente comercial.
+
+Al activarla, su panel incluye **Reglas de transferencia**. Haz clic en **Añadir regla** para definir cada una:
+
+- **Agente** — el agente al que se transfiere.
+- **Condición** — cuándo debe producirse esta transferencia.
+- **Retraso antes de transferir (ms)** — cuánto esperar antes de transferir.
+- **Mensaje de transferencia** — la frase exacta que se dice antes de transferir.
+- **Activar primer mensaje** — si el agente de destino dice su saludo después de la transferencia.
+
+#### Transferir a número
+
+Conecta al llamante con una persona del equipo cuando hace falta el trato humano o el llamante lo pide: recepción, centralita, ventas o una oficina concreta.
+
+#### Reglas de transferencia humana
+
+El panel de **Transferir a número** incluye **Reglas de transferencia humana**, donde defines las condiciones para transferir a operadores humanos. Haz clic en **Añadir regla** para cada una:
+
+- **Tipo de destino** — un **Número de teléfono** fijo o un número que llega a través de una variable dinámica.
+- **Número de teléfono** — el número al que se transfiere.
+- **Condición** — cuándo debe aplicarse esta regla.
+
+Usa **Quitar regla** para eliminar una. Usa un número fijo cuando el destino es siempre el mismo, y una variable dinámica cuando depende del contexto de la conversación.
+
+#### Detección de buzón
+
+Reconoce cuándo una llamada llega a un buzón de voz automático y actúa en consecuencia. Es clave en los agentes salientes, donde muchas llamadas acaban en el buzón.
+
+En sus ajustes, **Mensaje de buzón (opcional)** decide qué pasa:
+
+- Déjalo en blanco para colgar en cuanto se detecte el buzón.
+- Escribe un mensaje (por ejemplo, "Hola, esta es una llamada automática. Llámenos cuando le venga bien. Gracias.") para que se reproduzca antes de colgar.
+
+#### Descripción y desactivar interrupciones
+
+Como hemos visto, el panel de todas las herramientas del sistema incluye **Descripción** y **Desactivar interrupciones**. Escribe una descripción solo cuando necesites que la herramienta se comporte de forma distinta a la predeterminada; por ejemplo, para indicar a **Colgado inteligente** que no cuelgue hasta confirmar una reserva.
+
+### Cómo elegir las herramientas
+
+No actives todo. Elige lo que encaja con tu caso:
+
+- Un agente de soporte entrante suele usar **Colgado inteligente**, **Cambio de idioma** y **Escucha inteligente**.
+- Un agente que deriva a personas usa **Transferir a número** con reglas de transferencia claras.
+- Un agente saliente suele usar **Detección de buzón**, **Colgado inteligente** y **Cambio de idioma**.
+
+> **Error común:** Activar demasiadas herramientas a la vez. El comportamiento se vuelve más difícil de predecir, de probar y de mantener.
+
+## Sección 7: Acción de llamada
+
+La pestaña **Acción de llamada** es donde el agente deja de ser solo una voz y empieza a producir resultados útiles: reservas, correos de seguimiento, tickets, datos estructurados y registros sincronizados, durante y después de la llamada.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/agentesia6.png"
+    alt="La pestaña Acción de llamada con los interruptores de Programación de citas, Correo de resumen tras la llamada, Exclusión inteligente y Seguimiento de incidencias y quejas, el campo del webhook y el selector de Idioma del resumen."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Acción de llamada. Activa solo las acciones que tu equipo vaya a usar.
 </p>
 
 Acceso rápido:
@@ -500,279 +663,310 @@ Acceso rápido:
 
 ### Programación de citas
 
-Permite al agente reservar reuniones directamente durante la llamada. Especialmente útil en ventas, onboarding y cualquier flujo donde reservar en el momento te ahorra tener que perseguir al cliente después.
+Permite al agente reservar reuniones directamente en tu calendario durante la llamada. Es especialmente útil en ventas, onboarding y cualquier flujo en el que reservar en el momento te ahorra perseguir al cliente después.
 
-Antes de activarla, conecta un proveedor de calendario:
+Al activarla, el panel **Configuración de citas** te pide un **Proveedor de citas**:
 
-- **Google Calendar** — la mejor opción cuando quieres reservar directamente en un calendario de Google conectado.
-- **Cal.com** — la mejor opción cuando tu operativa de reservas ya funciona sobre Cal.com.
+- **Google Calendar** — lo mejor si quieres reservar directamente en un calendario de Google conectado.
+- **Cal.com** — lo mejor si tus reservas ya funcionan con Cal.com.
 
-> **Importante:** La zona horaria del agente y la del calendario deben coincidir. Si no coinciden, el agente ofrecerá o confirmará horarios incorrectos.
+Después, elige el calendario y la plantilla de reserva que debe usar el agente. Puedes crear varias plantillas de reserva por calendario y asignar plantillas de distintos calendarios a distintos agentes.
+
+> **Importante:** La zona horaria del agente y la del calendario deben coincidir. Si no, el agente ofrecerá o confirmará horas incorrectas.
 
 ### Correo resumen tras la llamada
 
-Envía automáticamente un correo cuando termina la llamada, para que responsables o equipos estén al tanto sin seguimiento manual.
+Envía automáticamente los detalles de la llamada a las direcciones de correo que elijas en cuanto termina la conversación, para que los responsables o los equipos estén al día sin seguimiento manual.
 
-Puedes configurar:
+Al activarlo, se abre el panel **Configuración de correo tras la llamada**. Elige un tipo de plantilla:
 
-- Los destinatarios.
-- El asunto.
-- El cuerpo base del mensaje.
-- El idioma del correo.
-- Si se incluyen los datos de la llamada.
-- Si se incluyen los campos extraídos (ver *Captura de información* más abajo).
+- **Plantilla predeterminada** — rellena **Destinatarios** (escribe una dirección y pulsa Enter o haz clic en **Añadir**), **Asunto** y **Mensaje**.
+- **Plantilla personalizada** — escribe el correo completo en HTML en **Cuerpo de la plantilla**. Usa **Agregar variables** para insertar datos de la llamada como `userName`, `phoneNumber`, `direction`, `agent_name`, `duration`, `extractedDataHtml`, `keyMomentsHtml`, `transcriptHtml` y `rawDataHtml`. **Formatear HTML** ordena el código y **Vista previa del correo** muestra el resultado.
+
+También puedes configurar:
+
+- **Idioma del correo** — el idioma del correo.
+- **Incluir datos de la llamada** — añade los datos de la llamada al correo.
+- **Incluir campos extraídos** — añade los datos capturados con la *Captura de información* (ver más abajo).
+
+Una vez configurado, el icono de engranaje junto al interruptor vuelve a abrir el panel.
 
 ### Baja inteligente de contacto
 
-Da a los llamantes una forma clara y respetuosa de decir "no me contactéis más". Importante en flujos salientes, donde las solicitudes de baja deben capturarse y respetarse de forma automática.
+**Exclusión inteligente** ofrece a los llamantes una forma educada de rechazar futuros contactos. Es importante en los flujos salientes: mantiene limpias tus listas de leads y hace que tu comunicación cumpla la normativa.
 
 ### Registro de incidencias y quejas
 
-Detecta incidencias o quejas durante la llamada y las registra para que tu equipo pueda revisarlas, hacer seguimiento o escalarlas. Actívalo cuando quieras que cada conversación pueda generar un caso que merezca tratarse después.
+**Seguimiento de incidencias y quejas** detecta problemas o quejas durante la llamada y crea automáticamente un ticket, para que tu equipo pueda revisarlo, hacer seguimiento o escalarlo desde la sección **Tickets**. Actívalo cuando quieras que cada conversación pueda generar un caso que gestionar después.
 
 ### Sincronización de datos (webhook posterior a la llamada)
 
-Envía los datos de la llamada capturados a otro sistema justo cuando termina la llamada. Es lo correcto cuando trabajas con un CRM, una plataforma de automatización o cualquier herramienta interna que necesite los datos sin copiar y pegar.
+Envía los detalles de la llamada y los datos capturados a otro sistema en cuanto termina la llamada. Es la opción adecuada si trabajas con un CRM, una plataforma de automatización o cualquier herramienta interna que necesite los datos sin copiar y pegar.
 
-Para configurarlo, indica la URL del webhook que recibirá los datos y confirma de antemano qué sistema los recibirá y cómo los procesará.
+Para configurarla, escribe la URL del webhook que debe recibir los datos y confirma antes qué sistema los recibirá y cómo los procesará.
+
+### Idioma del resumen
+
+Define el idioma de los resúmenes de la conversación. La opción por defecto, **Automático (inferir de la conversación)**, escribe cada resumen en el idioma en que se hizo la llamada. Elige un idioma fijo de la lista con buscador si tu equipo siempre necesita los resúmenes en el mismo idioma.
 
 ### Captura de información (extracción de datos)
 
-Convierte la conversación en datos estructurados — nombres, fechas, preferencias, ciudades, productos de interés, motivos de contacto, etc.
+Convierte la conversación en datos estructurados: nombres, fechas, preferencias, ciudades, productos de interés, motivos de contacto, etc.
 
-Usa **Añadir entidad** para definir qué se debe capturar. Cada entidad tiene:
+Haz clic en **Añadir entidad** para definir cada dato que quieres capturar. El panel **Configurar extracción de datos** te pide:
 
-- **Tipo de dato** — el tipo de valor que quieres capturar.
-- **Identificador** — el nombre interno con el que se almacena.
-- **Descripción** — exactamente qué debe extraer el sistema.
-- **Valores permitidos** — una lista cerrada opcional de valores válidos, cuando quieras resultados consistentes.
+- **Tipo de dato** — **Cadena**, **Booleano**, **Número** o **Entero**.
+- **Identificador** — el nombre interno con el que se guarda.
+- **Descripción** — exactamente qué debe extraer el sistema. Se pasa al modelo, así que describe con detalle cómo encontrarlo en la transcripción.
+- **Valores enum (opcional)** — una lista cerrada de valores entre los que puede elegir el modelo. Si no añades ninguno, el modelo puede usar cualquier valor.
+
+El contador encima del botón indica cuántas entidades has definido.
 
 ### Guardar datos en el contacto
 
-Cuando esto está activado, la información extraída se guarda en el perfil del contacto. Útil cuando quieres reutilizar esos datos en futuras llamadas o mantener fichas de contacto más completas.
+Cuando **Capturar y Guardar Datos de Contacto** está activado, la información extraída se guarda en el perfil del contacto. Es útil si quieres reutilizar estos datos en próximas llamadas o tener un registro más completo de cada contacto.
 
 ### Reintentos de llamada
 
-Configura reintentos automáticos cuando una llamada no conecta. Se usa sobre todo en agentes salientes, donde muchas llamadas no se contestan o caen en buzón.
+**Persistencia y conexión (reintento de llamada)** configura reintentos automáticos cuando una llamada no se contesta o salta el buzón. Se usa sobre todo en agentes salientes.
 
 Puedes configurar:
 
-- **Número de reintentos** — cuántas veces debe volver a intentarlo el sistema antes de rendirse.
-- **Tiempo de espera entre intentos** — cuántos minutos esperar entre uno y otro.
+- **Intentos de reintento (número de reintentos)** — cuántas veces debe volver a intentarlo el sistema antes de parar (por defecto **0**, sin reintentos).
+- **Tiempo de espera entre intentos (retardo de reintento)** — cuántos minutos esperar entre intentos (por defecto **30**).
 
-> **Consejo:** Activa solo las acciones que tu equipo realmente vaya a usar. Cada automatización que enciendes es un pequeño compromiso de mantenimiento. Pocas y bien elegidas funcionan mejor que una lista larga a medio usar.
+> **Consejo:** Activa solo las acciones que tu equipo vaya a usar de verdad. Cada automatización que activas es un pequeño compromiso de mantenimiento. Pocas acciones bien elegidas son mejores que una larga lista a medio usar.
 
-## Sección 6: Widget para sitio web
+## Sección 8: Widget para sitio web
 
-La pestaña **Widget para sitio web** te permite publicar tu agente en una página web. Las visitas pueden hablar con él por voz, por chat o por ambos, directamente desde tu sitio, una landing, una página de soporte o un portal de cliente.
+La pestaña **Widget para sitio web** te permite publicar tu agente en una página web. Los visitantes pueden hablar con él por voz, por chat o de las dos formas, directamente desde tu web, una landing, tu página de soporte o tu portal de clientes.
 
-Esta pestaña combina dos cosas: el fragmento técnico para integrar el widget y la personalización visual y textual de la experiencia.
+Esta pestaña combina dos cosas: el fragmento técnico de inserción y la personalización visual y de textos de la experiencia.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia7.png"
-    alt="La pestaña Widget para sitio web con el fragmento de integración, las opciones de diseño, el modo de conversación, los ajustes de apariencia y la personalización de textos."
+    alt="La pestaña Widget para sitio web con el fragmento de inserción, el botón Copiar y las opciones de Diseño y comportamiento: modo del widget, tema y modo de conversación."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Widget para sitio web, donde preparas el widget público y personalizas la experiencia del visitante.
+  Captura: la pestaña Widget para sitio web. Copia el fragmento y personaliza el aspecto y el comportamiento del widget.
 </p>
 
 ### Fragmento de integración
 
-El **Fragmento de integración** es el código que copias en el HTML de tu sitio para que aparezca el widget. El botón **Copiar** lo copia al portapapeles para pegarlo directamente.
+El **Fragmento de inserción** es el trozo de código que copias en el HTML de tu web para que aparezca el widget. Ya incluye el ID de tu agente. El botón **Copiar** lo copia para que puedas pegarlo directamente.
 
 Dónde pegarlo depende del modo del widget:
 
-- **Insertado en línea** — pégalo exactamente donde quieras que se renderice el widget en la página.
-- **Lanzador flotante** — pégalo cerca del final del cuerpo de la página para que se comporte como un punto de entrada flotante.
+- **Incrustación en línea** — pégalo justo donde quieres que se muestre el widget en la página.
+- **Lanzador flotante** — pégalo cerca del final del body de la página para que quede como un acceso flotante.
 
 ### Diseño y comportamiento
 
-Este bloque decide cómo se inserta el widget y cómo interactúan las visitas con él.
+Este bloque decide cómo se inserta el widget y cómo interactúan con él los visitantes.
 
 #### Modo del widget
 
-Cómo aparece el widget en tu sitio:
+Cómo aparece el widget en tu web:
 
-- **Insertado en línea** — renderiza el widget completo dentro de la página, en el lugar donde pegaste el fragmento.
-- **Lanzador flotante** — muestra un botón flotante que abre el widget al pulsarlo.
+- **Incrustación en línea** — muestra el widget completo dentro de la página, donde has colocado el fragmento.
+- **Lanzador flotante** — muestra una pequeña esfera que abre el widget en un panel al hacer clic.
 
-#### Tema del widget
+#### Tema del widget incrustado
 
 Controla el aspecto general:
 
-- **Igual que la app** — sigue el tema que use tu sitio.
+- **Coincidir con el tema de la app** — sigue el tema que use tu web.
 - **Claro** — modo claro.
 - **Oscuro** — modo oscuro.
 
-Elige la opción que encaje con el diseño de tu sitio. La legibilidad y la coherencia de marca van primero.
+Elige la opción que encaje con el diseño de tu web. Lo primero es la legibilidad y la coherencia con tu marca.
 
 #### Modo de conversación
 
-Cómo pueden interactuar las visitas:
+Cómo pueden interactuar los visitantes:
 
-- **Solo voz** — solo interacción por voz.
-- **Solo chat** — solo texto.
-- **Voz y chat** — ambas.
+- **Solo voz** — solo por voz.
+- **Solo chat** — solo por texto.
+- **Voz + Chat** — de las dos formas.
 
 ### Apariencia
 
-Controla el estilo visual del dial y el lanzador.
+Controla el estilo visual del dial y del lanzador.
 
 #### Variante del widget y tamaño del dial
 
-- **Variante del widget** — tamaño visual base: **Mini**, **Compacta** o **Completa**.
-- **Tamaño del dial** — los valores mínimo y máximo del dial, en píxeles.
+- **Variante del widget** — tamaño visual base del widget: **Muy pequeño**, **Compacto** o **Completo**.
+- **Tamaño del dial (px)** — el diámetro mínimo y máximo del dial, en píxeles.
 
 #### Transcripción en tiempo real y botón de silencio
 
-- **Transcripción en tiempo real** — muestra una transcripción en vivo de la conversación mientras la llamada está en curso.
-- **Mostrar botón de silencio** — muestra un botón para que la visita silencie y reactive su micrófono durante la llamada.
+- **Transcripción en tiempo real** — muestra la transcripción en directo mientras dura la conversación.
+- **Mostrar botón de silencio** — permite a los visitantes silenciar y activar su micrófono durante la llamada.
 
-#### Colores del orbe
+#### Colores de la esfera
 
-- **Color principal del orbe** y **Color secundario del orbe** — los colores principales del widget.
+- **Color primario de la esfera** y **Color secundario de la esfera** — los colores principales del widget.
 
-Usa los colores de tu marca, pero mantén suficiente contraste para que se lea bien.
+Usa los colores de tu marca, pero con suficiente contraste para que se lea bien.
 
 ### Etiquetas del dial
 
-Textos que se muestran en el centro del dial según el estado de la conversación:
+Textos que aparecen en el centro del dial según el estado de la conversación:
 
-- **Estado en reposo**
-- **Conectando**
-- **Escuchando**
-- **Interrumpir**
+- **Centro (inactivo)**
+- **Centro (conectando)**
+- **Centro (escuchando)**
+- **Centro (interrumpir)**
 
 ### Etiquetas de texto
 
-Textos generales de la interfaz que puedes personalizar:
+Sobrescribe algunos textos importantes de la interfaz. Los que dejes vacíos usan el valor predeterminado:
 
 - **Etiqueta principal**
 - **Iniciar llamada**
 - **Iniciar chat**
 - **Finalizar llamada**
-- **Estado de chat en curso**
-- **Marcador de posición de entrada para una nueva conversación**
+- **Estado de chat**
+- **Marcador (nueva conversación)**
 
 ### Etiquetas de la interfaz de chat
 
-Textos específicos de la experiencia de chat:
+Textos propios de la experiencia de chat:
 
-- **Etiqueta de la pestaña de voz**
-- **Etiqueta de la pestaña de chat**
+- **Etiqueta de pestaña de voz**
+- **Etiqueta de pestaña de chat**
 - **Título del chat**
 - **Subtítulo del chat**
-- **Estado del chat: en reposo, conectando y en vivo**
-- **Etiqueta de inicio del chat**
-- **Etiqueta de fin del chat**
+- **Estado del chat (inactivo)**, **Estado del chat (conectando)** y **Estado del chat (en vivo)**
+- **Etiqueta de iniciar chat**
+- **Etiqueta de finalizar chat**
 - **Estado vacío del chat**
-- **Marcador de posición de entrada del chat: en reposo y activo**
-- **Etiqueta de envío del chat**
+- **Marcador de entrada (inactivo)** y **Marcador de entrada (activo)**
+- **Etiqueta de enviar**
 
 ### Adaptar el widget a tu caso
 
 Algunas combinaciones que funcionan bien:
 
-- **Landing comercial** — Insertado en línea, tema claro o igual que la app, **Voz y chat**, variante **Completa**, textos orientados al contacto.
-- **Soporte web** — Lanzador flotante, **Solo chat** o **Voz y chat**, variante **Compacta**, textos orientados a la ayuda.
-- **Experiencia centrada en voz** — Insertado en línea, **Solo voz**, dial más grande, botón de silencio visible, etiquetas cortas y directas.
+- **Landing comercial** — Incrustación en línea, tema claro o coincidente, **Voz + Chat**, variante **Completo** y textos orientados al contacto.
+- **Soporte en la web** — Lanzador flotante, **Solo chat** o **Voz + Chat**, variante **Compacto** y textos orientados a la ayuda.
+- **Experiencia centrada en la voz** — Incrustación en línea, **Solo voz**, dial más grande, botón de silencio visible y etiquetas cortas y directas.
 
-> **Consejo:** Antes de publicar, prueba el widget en la página real donde vivirá. Tamaños, colores y textos suelen sentirse distintos fuera del editor.
+> **Consejo:** Antes de publicar, revisa siempre el widget en la página real. Los tamaños, colores y textos suelen verse distintos fuera del editor.
 
-## Sección 7: Avanzado
+## Sección 9: Avanzado
 
-La pestaña **Avanzado** es donde afinas el agente: cómo capta el audio, cómo gestiona el silencio, cómo maneja los datos de la llamada y cómo rinde en escenarios de telefonía saliente.
+La pestaña **Avanzado** es donde afinas el agente: cómo capta el audio, cómo gestiona los silencios y los tiempos de espera, cómo trata los datos de las llamadas y cómo funciona en escenarios de telefonía saliente.
 
-La mayoría de agentes funcionan bien sin tocar nada aquí. Abre esta pestaña cuando quieras más precisión o cuando algo concreto no acabe de funcionar.
+La mayoría de agentes funcionan bien sin tocar nada aquí. Abre esta pestaña cuando quieras más precisión o cuando algo concreto no termine de ir bien.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="La pestaña Avanzado dividida en Voz y comprensión, Flujo de conversación, Privacidad y datos, y Extras de telefonía."
+    alt="La pestaña Avanzado con el bloque Voz y comprensión (Calidad de captura de voz y Palabras clave prioritarias) y el bloque Flujo de conversación (Prontitud y Paciencia al deletrear)."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Avanzado, organizada en cuatro bloques para afinar el agente.
+  Captura: la pestaña Avanzado. La mayoría de agentes funcionan bien con los valores por defecto.
 </p>
 
-La pestaña se divide en cuatro bloques: **Voz y comprensión**, **Flujo de conversación**, **Privacidad y datos** y **Extras de telefonía**.
+La pestaña se divide en seis bloques: **Voz y comprensión**, **Flujo de conversación**, **Sonido de fondo**, **Tiempo de espera suave**, **Privacidad y datos** y **Extras de telefonía**.
 
 ### Voz y comprensión
 
-Ajusta cómo capta el agente el audio y cómo prioriza determinados términos.
+Ajusta cómo capta el audio el agente y qué términos prioriza.
 
 #### Calidad de captura de voz
 
-Define el formato de audio con el que se procesa el habla. Las opciones incluyen **PCM 8000 Hz**, **PCM 16000 Hz**, **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** y **ulaw 8000 Hz**.
+Define el formato de audio que se usa para procesar el habla. Las opciones son **PCM 8000 Hz**, **PCM 16000 Hz** (*Recommended*), **PCM 22050 Hz**, **PCM 24000 Hz**, **PCM 44100 Hz**, **PCM 48000 Hz** y **ulaw 8000 Hz**.
 
-Para la mayoría de configuraciones, déjalo en **PCM 16000 Hz**. Es el mejor equilibrio entre calidad de audio y velocidad de procesamiento. **ulaw 8000 Hz** está pensado específicamente para escenarios de telefonía.
+En la mayoría de casos, déjalo en **PCM 16000 Hz**. Es el mejor equilibrio entre calidad de audio y velocidad de procesamiento. **ulaw 8000 Hz** está pensado específicamente para telefonía.
 
 #### Palabras clave prioritarias
 
-Te permite listar términos que el agente debe priorizar al reconocer el habla. Útil para nombres de marca, productos, términos técnicos, acrónimos, códigos o apellidos poco comunes que el modelo podría malinterpretar.
+Te permite listar, separados por comas, los términos que el agente debe priorizar al reconocer el habla. Es útil para nombres de marca, productos, términos técnicos, siglas, códigos o apellidos poco comunes que el modelo podría entender mal; por ejemplo *SolarMax, AcmeCorp, 401k, deductible*.
 
 ### Flujo de conversación
 
-Controla el ritmo del agente: lo rápido que toma la palabra, lo paciente que es con quien habla despacio y cuándo debe colgar tras un silencio.
+Controla el ritmo del agente: lo rápido que interviene, lo paciente que es con quien habla despacio y cuándo debe colgar tras un silencio.
 
-#### Predisposición a hablar
+#### Prontitud
 
-Cómo de rápido toma la palabra el agente cuando el llamante deja de hablar:
+Lo rápido que interviene el agente cuando el llamante deja de hablar:
 
 - **Paciente** — espera más antes de responder.
-- **Normal** — equilibrado.
+- **Normal** — equilibrado (por defecto).
 - **Ávido** — responde rápido.
 
-**Normal** funciona bien en la mayoría de casos.
+**Normal** funciona en la mayoría de casos.
 
-#### Paciencia al deletreo
+#### Paciencia al deletrear
 
-Hace al agente más paciente cuando el llamante deletrea despacio — nombres, correos, números de identificación. Opciones:
+Hace que el agente sea más paciente cuando el llamante deletrea algo despacio —nombres, correos, números de identificación— para no cortarle a mitad de palabra. Opciones:
 
-- **Auto** — recomendado cuando el agente suele recoger información que se deletrea.
-- **Desactivado** — mantiene el ritmo estándar.
+- **Auto** — la opción por defecto, recomendada si el agente suele recoger datos deletreados.
+- **Desactivado** — mantiene los tiempos normales.
 
-#### Tomar el turno tras silencio
+#### Tomar la palabra tras el silencio
 
-Cuántos segundos de silencio espera el agente antes de tomar la palabra. Valores bajos hacen que el agente sea más reactivo; valores altos dan más margen al llamante para pensar.
+Cuántos segundos espera el agente después de que el llamante deje de hablar antes de tomar su turno (por defecto **7**). Los valores bajos dan más agilidad; los altos dejan más margen al llamante para pensar.
 
-#### Finalizar conversación tras silencio
+#### Terminar conversación tras silencio
 
-Cuánto tiene que durar un silencio para que la llamada termine automáticamente. Útil cuando el llamante deja de responder por completo.
+Cuántos segundos de silencio deben pasar para que la llamada termine automáticamente cuando el llamante deja de responder. Ayuda a controlar costes y mantiene ordenado el registro de llamadas. El valor por defecto, **-1**, significa que la llamada nunca termina por silencio.
 
-#### Duración máxima de la conversación
+#### Duración máxima de conversación
 
-Duración máxima de una llamada. Una red de seguridad que evita que las llamadas se alarguen indefinidamente.
+La duración máxima de una llamada, en minutos (por defecto **10**). Es una red de seguridad para que las llamadas sean concisas y no se alarguen indefinidamente.
 
-> **Consejo:** Si no tienes claro qué poner en los campos de silencio y duración, déjalos en su valor por defecto y solo ajústalos después de probar con llamadas reales.
+> **Consejo:** Si no sabes qué poner en los campos de silencio y duración, déjalos con su valor por defecto y ajústalos solo después de probar llamadas reales.
+
+### Sonido de fondo
+
+Reproduce un sonido de fondo continuo durante la conversación, mezclado con la voz del agente. Activa **Activar sonido de fondo** y configura:
+
+- **Sonido** — **Oficina (silenciosa)** (por defecto), **Oficina (activa)**, **Restaurante**, **Ciudad**, **Teclado** y varias opciones de **Ascensor**. Usa el botón de reproducir para escucharlo.
+- **Volumen** — el volumen del sonido respecto a la voz del agente (por defecto **60%**).
+- **Bucle con fundido** — suaviza el punto en el que el sonido se repite, para evitar chasquidos.
+
+### Tiempo de espera suave
+
+Da al llamante una respuesta sonora inmediata cuando el modelo tarda más de lo esperado en generar una respuesta, para que la línea nunca parezca muerta. Activa **Activar tiempo de espera suave** y configura:
+
+- **Duración del tiempo de espera** — cuántos segundos esperar la respuesta del modelo antes de reproducir un mensaje (por defecto **3**).
+- **Usar mensaje generado por LLM** — genera con el modelo una frase de relleno adaptada al contexto.
+- **Mensaje** — la frase de respaldo que se usa si no se genera ninguna a tiempo (por defecto *"Hhmmmm...yeah."*).
+- **Mensajes de relleno adicionales** — usa **Añadir mensaje** para añadir frases para el 2.º, 3.º y siguientes tiempos de espera dentro de la misma respuesta, para que el agente no se repita.
 
 ### Privacidad y datos
 
-#### Grabación de llamadas
+#### Grabar llamadas
 
-Cuando está activada, el sistema almacena de forma segura el audio y la transcripción de las llamadas. Actívala solo si encaja con tus políticas internas de privacidad, almacenamiento y cumplimiento.
+Activado por defecto. Guarda de forma segura las transcripciones y el audio de cada llamada, para que puedas revisar el rendimiento del agente, cumplir la normativa y tener un historial de tus interacciones con clientes. Desactívalo solo si no es compatible con tus políticas internas de privacidad, almacenamiento y cumplimiento.
 
 ### Extras de telefonía
 
-Ajustes específicos de telefonía, sobre todo orientados a mejorar el rendimiento de las llamadas salientes.
+Ajustes específicos de telefonía, pensados sobre todo para mejorar el rendimiento de las llamadas salientes.
 
 #### Rotación de números
 
-Rota automáticamente entre los números de teléfono disponibles. Ayuda a reducir el riesgo de que un número quede marcado como spam, distribuye el volumen y mejora la entregabilidad.
+**Rotación de Números** va alternando automáticamente entre tus números de teléfono disponibles. Ayuda a evitar que un número se marque como spam, reparte el volumen de llamadas y mejora la entrega. Necesita números de teléfono en tu cuenta: si no hay ninguno, un aviso te pide que los añadas primero.
 
-#### Selección de números y llamadas por número
+#### Seleccionar números y llamadas por número
 
-- **Seleccionar números de teléfono** — elige qué números entran en la rotación. Es obligatorio elegir al menos uno cuando la **Rotación de números** está activada.
-- **Llamadas por número** — cuántas llamadas se hacen desde un número antes de pasar al siguiente.
+Cuando **Rotación de Números** está activada y tu cuenta tiene números, eliges:
+
+- **Seleccionar números de teléfono** — qué números van a rotar. Hace falta al menos uno.
+- **Llamadas por número** — cuántas llamadas hacer desde un número antes de pasar al siguiente.
 
 #### Restricción por estado
 
-Limita las llamadas para que el agente marque usando un número local del mismo estado que el contacto. Está pensado para números locales de EE. UU. — confirma que tu cuenta tiene numeración local compatible antes de activarlo.
+**Restricción por Estado** aumenta la tasa de respuesta haciendo que el agente llame a cada contacto con un número de su mismo estado. Por ahora solo admite números locales de EE. UU.: confirma que tu cuenta tiene numeración local compatible antes de activarla.
 
-> **Importante:** Solo cambia los ajustes avanzados cuando tengas un motivo claro y puedas probar el resultado con llamadas reales. Tocar al azar aquí suele crear problemas nuevos en lugar de resolver el original.
+> **Importante:** Cambia los ajustes avanzados solo cuando tengas un motivo claro y puedas probar el resultado con llamadas reales. Los cambios al azar suelen crear problemas nuevos en lugar de resolver el anterior.
