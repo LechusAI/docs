@@ -24,23 +24,28 @@ Use these shortcuts to jump straight into the app:
 The **Numbers** page shows every number connected to your workspace (purchased, imported, personal, Telnyx, or BYOC). From here, you can add new numbers and confirm each number’s status.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers1.png" alt="Numbers page showing filters by provider and the + Add Number menu with purchase/import/personal options" style={{ width:"100%", display:"block" }} />
+  <img src="/images/numbers1.png" alt="Numbers page with the Numbers and Number Requests tabs, the filters by type, the list of numbers, and the + Add Number menu open with Purchase Number, Import from Twilio, Add Personal Number, and Add Telnyx Number." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Numbers page where you can filter by provider and click + Add Number to purchase or import numbers.
+  Screenshot: The Numbers page where you can filter by type and click + Add Number to purchase or import numbers.
 </p>
 
 ### What you can do in Numbers
 
-When you click **\+ Add Number**, you’ll typically see these options (wording may vary slightly by account/plan):
+The page has two tabs:
+
+- **Numbers**: every number in your workspace, with its **Type** and **Status** (for example, when it was added and when it renews).
+- **Number Requests**: your purchase requests for countries outside the US and Canada. See [Track your requests](#track-your-requests-number-requests) below.
+
+When you click **\+ Add Number**, you'll see these options:
 
 - **Purchase Number** (buy through Callin.io)
 - **Import from Twilio**
 - **Add Personal Number**
 - **Add Telnyx Number** (after Telnyx is connected)
 
-You’ll also usually see filters like **Purchased**, **Twilio**, **Personal**, **Telnyx**, and **BYOC (SIP Trunk)** to quickly find what you’re looking for.
+Use the filters **All**, **Purchased**, **Twilio**, **Personal**, **Telnyx**, and **BYOC (SIP Trunk)**, or the **Search numbers...** box, to quickly find what you're looking for.
 
 ---
 
@@ -50,17 +55,25 @@ Buying numbers through Callin.io is the simplest way to get started.
 
 #### US & Canada: instant purchase
 
-For **United States** and **Canada**, the purchase flow is typically instant:
+For **United States** and **Canada**, the purchase flow is instant:
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/numbers-purchase.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: + Add Number → Purchase Number → Search Numbers → select a number.
+</p>
 
 1. Go to [Open Numbers](https://app.callin.io/numbers).
 2. Click **\+ Add Number** → **Purchase Number**.
-3. Choose the **Country**.
+3. Choose the **Country**. You can search the list by name, ISO code, or dialing code.
 4. Choose a type:
-   - **Local**
-   - **Toll-Free** (if available)
+   - **Local**: standard local area code.
+   - **Toll-Free**: prefixes such as 800 or 888.
 5. (Optional) Use **Search by Area Code** (example: `415`).
 6. Click **Search Numbers**.
-7. Select a number from the list.
+7. Select a number from the list. Each one shows its state or province (for example, `NV`).
 8. Click **Purchase Selected Number**.
 
 > **Important:** After purchase, the number should appear in your list. If you see a warning like “this number is not assigned to any agent,” you still need to assign it to an agent before using it.
@@ -68,23 +81,35 @@ For **United States** and **Canada**, the purchase flow is typically instant:
 #### Other countries: request \+ documentation
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers13.png" alt="Purchase a New Number form showing country-specific documentation fields and save buttons for each required item" style={{ width:"100%", display:"block" }} />
+  <img src="/images/numbers13.png" alt="Purchase a New Number window for Spain with the Request Type options New number and Porting, the list of available numbers, the Document Requirements note, and the Start request button." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: after you start the request, the platform loads the country-specific fields and documents you must complete before payment and review.
+  Screenshot: for countries outside the US and Canada, you choose the request type and a number, then click Start request to load the country-specific documents.
 </p>
 
-For many **non-US/Canada** countries, purchasing is a **request-based** flow rather than an instant checkout.
+For **non-US/Canada** countries, purchasing is a **request-based** flow rather than an instant checkout:
 
-- You select the country and number type (for example **Local** or **Mobile**).
-- You may see **Request Type** options such as **New number** and **Porting**.
-- You choose one of the available numbers and click **Start request**.
-- The platform then loads the **country-specific** information and documentation requirements.
-- You must complete the required fields, upload documents, and save each item.
-- You submit the request, pay any required fees, and then the request is reviewed by an operator.
+1. Click **\+ Add Number** → **Purchase Number** and choose the **Country**.
+2. Choose the **Request Type**:
+   - **New number**: get a new number.
+   - **Porting**: keep your existing number (see below).
+3. Pick one of the available **Numbers**. Each one shows the carrier that provides it (for example, **telnyx**). Depending on the country, you may also choose the number type (for example **Local** or **Mobile**).
+4. Click **Start request**. The platform then loads the **country-specific** information and **Document Requirements**.
+5. Complete the required fields, upload documents, and save each item.
+6. Submit the request and pay any required fees. An operator then reviews the request.
 
-You can typically track these under a tab like **Number Requests**.
+You can follow every request in the **Number Requests** tab.
+
+##### Porting an existing number
+
+**Porting** lets you bring a number you already own with another provider, so your customers keep calling the same number.
+
+1. In **Purchase a New Number**, choose the **Country** and select **Porting** as the **Request Type**.
+2. Enter your number in **Porting Number** and click **Check Portability**.
+3. If the number can be ported, click **Start request** and complete the **Document Requirements**, as with a new number.
+
+> **Tip:** Porting usually takes longer than buying a new number, because your current provider must release it. Don't cancel your current line until the number shows up in your **Numbers** list.
 
 This part of the process is important because the requirements are not always the same. They can change depending on the **country**, the **number type**, and whether the request is being made by an **individual**, a **sole proprietorship**, or a **company**.
 
@@ -210,6 +235,32 @@ The review is manual in many cases, which is why approval is not always immediat
 
 > **Important:** Approval timing can vary by country, provider rules, and document quality. If you need the number for an upcoming launch or campaign, submit the request as early as possible and use recent, clearly readable documents.
 
+### Track your requests (Number Requests)
+
+The **Number Requests** tab lists your purchase and porting requests for countries outside the US and Canada.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/numbers-requests.png" alt="Number Requests tab with the Status, Flow, and Payment Status filters, the Refresh button, and one card per request showing the country, status, number type, flow, chosen number, date, and payment status." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: each card is one request. Use the filters to find requests that need your attention.
+</p>
+
+Each card shows the **country**, the request **status**, the **Number Type**, the **Flow**, the **Chosen Number**, the date, and the payment status.
+
+Use the filters to narrow the list:
+
+| Filter | Options |
+| --- | --- |
+| **Status** | **Draft**, **Pending**, **Approved**, **Needs Info**, **Rejected**, **Completed**, **Cancelled** |
+| **Flow** | **Ordering** (new number), **Porting** (existing number) |
+| **Payment Status** | **Due**, **Paid** |
+
+Click **Refresh** to see the latest status.
+
+> **Tip:** Check this tab regularly while a request is open. A request in **Needs Info** is waiting for you to fix or add something, and **Payment Due** means it won't move forward until you pay.
+
 ---
 
 ### Option B: Import numbers from Twilio
@@ -244,7 +295,7 @@ A **Personal Number** is useful when you want to place outbound calls from your 
 2. Click **\+ Add Number** → **Add Personal Number**.
 3. Select your country code and enter your phone number.
 4. Click **Verify Number**.
-5. You’ll receive a **verification call**.
+5. You’ll receive a **verification call** from Twilio.
 6. Enter the verification code when prompted.
 7. After verification, the number is added to your account.
 
@@ -258,16 +309,44 @@ If your Telnyx account is connected (via BYOC), you can import active Telnyx num
 
 1. Go to [Open Numbers](https://app.callin.io/numbers).
 2. Click **\+ Add Number** → **Add Telnyx Number**.
-3. Select the Telnyx numbers you want to add/import.
-4. Confirm, then assign them to agents as needed.
+3. Use **Search numbers...** to find them, and check the **Pick** box of each number you want. **Select visible** picks all the numbers in the list.
+4. Click **Import**, then assign them to agents as needed.
+
+> **Important:** If you haven't connected Telnyx yet, the window shows an error about the missing Telnyx API key and no numbers. Connect Telnyx first in [BYOC (SIP Trunk)](#byoc-sip-trunk).
+
+---
+
+### Manage your numbers
+
+In the **Numbers** list, click the **⋮** menu of a number to manage it:
+
+- **Edit Label**: give the number a recognizable name, for example the client or the campaign it's for.
+- **Cancel Subscription** (purchased numbers): stop renewing a number you bought through Callin.io.
+- **Remove** (personal numbers): delete a personal number from your account.
+
+> **Important:** Before you cancel or remove a number, assign another number to the agents that use it, so they can keep making and receiving calls.
 
 ---
 
 ### Assign numbers to agents (so they can be used)
 
-Buying or importing a number is only step one—your agent still needs to use it.
+Buying or importing a number is only step one: your agent still needs to use it. If the **Numbers** list shows **This number is not assigned to any agent**, assign it before going live:
 
-On the Numbers list, if you see a warning like “not assigned to any agent,” assign the number to the right AI agent before going live.
+1. Go to **AI Agents**.
+2. Click the **⋮** menu of the agent and select **Assign Number**.
+3. In the **Assign Number to** window, find the number (you can search by number, label, or carrier) and click **Assign**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/numbers-assign.png" alt="Assign Number window for an agent, listing the numbers with their status (assigned to another agent or not assigned), carrier, and an Assign button, plus the Purchase new numbers link." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Assign Number window shows which numbers are free and which are already in use by another agent.
+</p>
+
+The **Status** column tells you whether each number is **Not assigned** or already **Assigned to** another agent. If you don't have a suitable number, click **Purchase new numbers**.
+
+> **Common mistake:** Assigning a number that another agent is using. As the window warns, **assigning it here will detach it from the other agent**, and that agent stops using the number.
 
 > **Tip:** Keep one “test” number separate from production while you’re iterating on prompts and call flows.
 
@@ -286,7 +365,7 @@ Typical reasons to use BYOC:
 Go here to set it up: [Open BYOC](https://app.callin.io/byoc)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/byoc1.png" alt="BYOC page showing the Telnyx setup with an API key field, Start button, and checklist steps for fetching and provisioning numbers" style={{ width:"100%", display:"block" }} />
+  <img src="/images/byoc1.png" alt="BYOC page on the Telnyx tab, with the Telnyx API Key field, the Start button, and the setup steps: save the key, fetch numbers, store them, provision the SIP trunk, and create phone numbers." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
@@ -324,21 +403,29 @@ Once it completes, your Telnyx numbers should appear under **Numbers**.
 
 ### Option 2: Connect another SIP provider (Generic SIP Trunk)
 
-If your provider is not Telnyx, use the **Other SIP Provider** tab. You’ll typically configure three areas: **Basic**, **Inbound**, and **Outbound**.
+If your provider is not Telnyx, use the **Other SIP Provider** tab (**Generic SIP Trunk / PBX Extension (Any Provider)**). It works with a SIP trunk number (DID) and also with an **extension of your PBX** (your company's phone system). You'll configure three tabs: **Basic**, **Inbound**, and **Outbound**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/byoc-sip.png" alt="Other SIP Provider tab in BYOC, with the Basic, Inbound, and Outbound tabs, the Label and Phone Number / Extension fields, the Supports inbound and Supports outbound boxes, and the Save & Import and Reset buttons." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Generic SIP Trunk / PBX Extension form. Fill in Basic, Inbound, and Outbound, then click Save & Import.
+</p>
 
 #### Basic
 
 - **Label**: A friendly name (example: “HQ SIP Trunk”)
-- **Phone Number (E.164)**: Full international format (example: `+15551234567`)
-- You may also see toggles like **Supports inbound** and **Supports outbound**
+- **Phone Number / Extension (E.164 or extension)**: the full international number (example: `+15551234567`) or the PBX extension (example: `101`)
+- **Supports inbound** and **Supports outbound**: check the directions this number will handle
 
 #### Inbound
 
 Inbound calls go from the carrier to your system.
 
 - **Inbound SBC / FQDN**: Your SIP address (example: `sip.example.com:5061`)
-- **Transport**: Often **TLS** or **UDP**
-- **Media encryption**: Enable if your provider supports it
+- **Transport**: **TLS**, **TCP**, or **UDP**
+- **Media encryption**: **Allowed**, **Required**, or **Disabled**
 
 > **Tip:** Inbound often does **not** require credentials. Many carriers authenticate inbound calls by IP allowlists or trunk configuration.
 
@@ -347,11 +434,13 @@ Inbound calls go from the carrier to your system.
 Outbound calls go from Callin.io to your carrier.
 
 - **Outbound SBC / FQDN**: Your provider’s SIP server
-- **Transport** and **Media encryption**
+- **Transport** and **Media encryption** (same options as Inbound)
 - **Username** and **Password**: Your SIP credentials
-- **Allowed countries (outbound)**: Often **Worldwide** or a **Custom list**
+- **Allowed countries (outbound)**: **Worldwide** or a **Custom list**
 
-When finished, click **Save & Import**.
+When finished, click **Save & Import**. To start over, click **Reset**.
+
+After saving, Callin.io checks that the number can be used for calling. If your SIP settings need attention, you'll see guidance on this page. The number may still appear in your **Numbers** list while you fix the configuration.
 
 > **Common mistake:** Using the wrong SBC/FQDN or credentials. If outbound calls fail, re-check your SIP username/password and whether your provider requires a specific port or transport.
 

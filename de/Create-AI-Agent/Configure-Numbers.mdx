@@ -1,113 +1,130 @@
 ---
 title: "Nummern und BYOC"
-description: "Erfahren Sie, wie Sie Telefonnummern kaufen, importieren oder verifizieren und BYOC (SIP Trunk) verbinden, damit Ihre KI-Agenten Anrufe tätigen und entgegennehmen können."
+description: "Erfahren Sie, wie Sie Telefonnummern kaufen, importieren oder verifizieren und BYOC (SIP-Trunk) verbinden, damit Ihre KI-Agenten Anrufe tätigen und entgegennehmen können."
 ---
 
 ## Überblick
 
-Telefonnummern sind die Verbindung zwischen Ihren KI-Agenten und echten Telefonanrufen. In Callin.io verwalten Sie das an zwei Stellen:
+Telefonnummern sind die Brücke zwischen Ihren KI-Agenten und echten Anrufen. In Callin.io verwalten Sie sie an zwei Stellen:
 
-- **Nummern**: Kaufen Sie Nummern über Callin.io, importieren Sie sie von Anbietern oder verifizieren Sie eine persönliche Nummer.
-- **BYOC (SIP Trunk)**: Bringen Sie Ihren eigenen Carrier mit, indem Sie Telnyx oder einen beliebigen SIP-Anbieter verbinden.
+- **Nummern**: Kaufen Sie Nummern über Callin.io, importieren Sie sie von anderen Anbietern oder verifizieren Sie eine persönliche Nummer.
+- **BYOC (SIP-Trunk)**: Nutzen Sie Ihren eigenen Netzbetreiber, indem Sie Telnyx oder einen beliebigen SIP-Anbieter verbinden.
 
-Nutzen Sie diese Schnellzugriffe, um jede Sektion in der App zu öffnen:
+Mit diesen Verknüpfungen gelangen Sie direkt in die App:
 
 - Zu **Nummern**: [Nummern öffnen](https://app.callin.io/numbers)
-- Zu **BYOC (SIP Trunk)**: [BYOC öffnen](https://app.callin.io/byoc)
+- Zu **BYOC (SIP-Trunk)**: [BYOC öffnen](https://app.callin.io/byoc)
 
-> **Tipp:** Wenn Sie schnell starten möchten, kaufen Sie eine Nummer für **USA oder Kanada** (meist sofort). Für internationale Nummern müssen Sie in der Regel Angaben machen und Dokumente hochladen (die Anforderungen unterscheiden sich je nach Land).
+> **Tipp:** Wenn Sie schnell starten möchten, kaufen Sie eine Nummer aus den **USA oder Kanada** (sofort verfügbar). Wenn Sie eine internationale Nummer brauchen, halten Sie Unterlagen bereit (die Regeln sind je nach Land unterschiedlich).
 
 ---
 
 ## Nummern
 
-Die Seite **Nummern** zeigt alle Nummern, die mit Ihrem Workspace verbunden sind (gekauft, importiert, persönlich, Telnyx oder BYOC). Hier können Sie neue Nummern hinzufügen, den Status prüfen und wichtige Hinweise sehen (zum Beispiel, wenn eine Nummer noch keinem Agenten zugewiesen ist).
+Die Seite **Nummern** zeigt alle Nummern, die mit Ihrem Arbeitsbereich verbunden sind (gekauft, importiert, persönlich, Telnyx oder BYOC). Hier können Sie neue Nummern hinzufügen und den Status jeder Nummer prüfen.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers1.png"
-    alt="Nummern-Seite mit Anbieterfiltern und einem Hinzufügen-Menü zum Kaufen oder Importieren von Nummern"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers1.png" alt="Seite Nummern mit den Tabs Nummern und Nummernanfragen, den Filtern nach Typ, der Nummernliste und dem geöffneten Menü + Nummer hinzufügen mit Nummer kaufen, Von Twilio importieren, Persönliche Nummer hinzufügen und Telnyx-Nummer hinzufügen." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Nummern-Seite mit Anbieterfiltern und dem Menü zum Kaufen oder Importieren von Nummern.
+  Bildschirmfoto: die Seite Nummern, auf der Sie nach Typ filtern und auf + Nummer hinzufügen klicken können, um Nummern zu kaufen oder zu importieren.
 </p>
 
 ### Was Sie in Nummern erledigen können
 
-Wenn Sie auf die Hinzufügen-Aktion klicken (zum Beispiel **+ Nummer hinzufügen**), sehen Sie üblicherweise Optionen wie (Bezeichnungen können je nach Konto, Plan oder Interface-Sprache variieren):
+Die Seite hat zwei Tabs:
 
-- Nummer über Callin.io kaufen
-- Von Twilio importieren
-- Persönliche Nummer hinzufügen
-- Telnyx-Nummer hinzufügen (nachdem Telnyx verbunden wurde)
+- **Nummern**: alle Nummern Ihres Arbeitsbereichs mit **Typ** und **Status** (zum Beispiel, wann sie hinzugefügt wurden und wann sie sich verlängern).
+- **Nummernanfragen**: Ihre Kaufanfragen für Länder außerhalb der USA und Kanadas. Siehe den Abschnitt **Ihre Anfragen verfolgen** weiter unten.
 
-Oft gibt es außerdem Filter nach Typ/Herkunft (gekauft, Twilio, persönlich, Telnyx, BYOC).
+Wenn Sie auf **+ Nummer hinzufügen** klicken, sehen Sie diese Optionen:
+
+- **Nummer kaufen** (über Callin.io)
+- **Von Twilio importieren**
+- **Persönliche Nummer hinzufügen**
+- **Telnyx-Nummer hinzufügen** (nachdem Telnyx verbunden ist)
+
+Mit den Filtern **Alle**, **Gekauft**, **Twilio**, **Persönlich**, **Telnyx** und **BYOC (SIP-Trunk)** oder dem Suchfeld **Nummern suchen...** finden Sie schnell, was Sie suchen.
 
 ---
 
 ### Option A: Eine Nummer über Callin.io kaufen
 
-Nummern über Callin.io zu kaufen ist der direkteste Weg zum Start.
+Nummern über Callin.io zu kaufen ist der einfachste Einstieg.
 
 #### USA und Kanada: Sofortkauf
 
-Für die **USA** und **Kanada** ist der Kaufablauf häufig schnell und sofort:
+Für die **USA** und **Kanada** ist der Kauf sofort abgeschlossen:
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/numbers-purchase.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: + Nummer hinzufügen → Nummer kaufen → Nummern suchen → eine Nummer auswählen.
+</p>
 
 1. Gehen Sie zu [Nummern öffnen](https://app.callin.io/numbers).
-2. Klicken Sie auf die Hinzufügen-Aktion und wählen Sie die Kaufoption.
-3. Wählen Sie das **Land**.
-4. Wählen Sie den Typ:
-   - **Lokal**
-   - **Gebührenfrei** (falls verfügbar)
-5. (Optional) Suchen Sie nach **Vorwahl/Area Code** (Beispiel: `415`).
-6. Starten Sie die Suche.
-7. Wählen Sie eine Nummer aus der Liste.
-8. Bestätigen Sie den Kauf der ausgewählten Nummer.
+2. Klicken Sie auf **+ Nummer hinzufügen** → **Nummer kaufen**.
+3. Wählen Sie das **Land**. Sie können die Liste nach Name, ISO-Code oder Vorwahl durchsuchen.
+4. Wählen Sie einen Typ:
+   - **Lokal**: Standard-Ortsvorwahl.
+   - **Gebührenfrei**: Vorwahlen wie 800 oder 888.
+5. (Optional) Nutzen Sie **Nach Vorwahl suchen** (Beispiel: `415`).
+6. Klicken Sie auf **Nummern suchen**.
+7. Wählen Sie eine Nummer aus der Liste. Jede zeigt ihren Bundesstaat oder ihre Provinz (zum Beispiel `NV`).
+8. Klicken Sie auf **Ausgewählte Nummer kaufen**.
 
-> **Wichtig:** Wenn ein Hinweis erscheint, dass die Nummer keinem Agenten zugewiesen ist, ist sie noch nicht einsatzbereit: Weisen Sie sie zuerst einem Agenten zu.
+> **Wichtig:** Nach dem Kauf sollte die Nummer in Ihrer Liste erscheinen. Wenn Sie den Hinweis **Diese Nummer ist keinem Agenten zugewiesen** sehen, müssen Sie sie noch einem Agenten zuweisen, bevor Sie sie nutzen können.
 
 #### Andere Länder: Anfrage + Dokumentation
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers13.png"
-    alt="Formular Purchase a New Number mit länderspezifischen Dokumentationsfeldern und Speichern-Schaltflächen für jedes erforderliche Element"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers13.png" alt="Fenster Neue Nummer kaufen für Spanien mit den Anfragetypen Neue Nummer und Portierung, der Liste verfügbarer Nummern, dem Hinweis zu den Dokumentenanforderungen und der Schaltfläche Anfrage starten." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Nachdem Sie die Anfrage gestartet haben, lädt die Plattform die länderspezifischen Felder und Dokumente, die Sie vor Zahlung und Prüfung ausfüllen müssen.
+  Bildschirmfoto: Für Länder außerhalb der USA und Kanadas wählen Sie den Anfragetyp und eine Nummer und klicken dann auf Anfrage starten, um die länderspezifischen Dokumente zu laden.
 </p>
 
-Für viele Länder **außerhalb der USA/Kanadas** erfolgt der Kauf über einen **anfragebasierten** Ablauf statt über einen sofortigen Kauf.
+Für Länder **außerhalb der USA und Kanadas** läuft der Kauf über eine **Anfrage** statt über einen Sofortkauf:
 
-- Sie wählen das Land und den Nummerntyp aus, zum Beispiel **Lokal** oder **Mobil**.
-- Möglicherweise sehen Sie **Anfragetyp**-Optionen wie **Neue Nummer** und **Portierung**.
-- Sie wählen eine der verfügbaren Nummern aus und klicken auf **Anfrage starten**.
-- Die Plattform lädt dann die **länderspezifischen** Informations- und Dokumentationsanforderungen.
-- Sie müssen die erforderlichen Felder ausfüllen, Dokumente hochladen und jedes Element speichern.
-- Sie senden die Anfrage ab, bezahlen eventuell erforderliche Gebühren, und anschließend wird die Anfrage von einem Betreiber geprüft.
+1. Klicken Sie auf **+ Nummer hinzufügen** → **Nummer kaufen** und wählen Sie das **Land**.
+2. Wählen Sie den **Anfragetyp**:
+   - **Neue Nummer**: eine neue Nummer erhalten.
+   - **Portierung**: Ihre bestehende Nummer behalten (siehe unten).
+3. Wählen Sie eine der verfügbaren **Nummern**. Jede zeigt den Netzbetreiber, der sie bereitstellt (zum Beispiel **telnyx**). Je nach Land können Sie auch den Nummerntyp wählen (zum Beispiel **Lokal** oder **Mobil**).
+4. Klicken Sie auf **Anfrage starten**. Die Plattform lädt dann die länderspezifischen Informationen und **Dokumentenanforderungen**.
+5. Füllen Sie die Pflichtfelder aus, laden Sie die Dokumente hoch und speichern Sie jedes Element.
+6. Senden Sie die Anfrage ab und zahlen Sie eventuelle Gebühren. Anschließend prüft ein Mitarbeiter die Anfrage.
 
-Sie können diese Anfragen normalerweise unter einer Registerkarte wie **Nummernanfragen** verfolgen.
+Alle Ihre Anfragen verfolgen Sie im Tab **Nummernanfragen**.
+
+##### Eine bestehende Nummer portieren
+
+Mit der **Portierung** bringen Sie eine Nummer mit, die Sie bereits bei einem anderen Anbieter haben, sodass Ihre Kunden weiterhin dieselbe Nummer anrufen.
+
+1. Wählen Sie in **Neue Nummer kaufen** das **Land** und als **Anfragetyp** die Option **Portierung**.
+2. Geben Sie Ihre Nummer unter **Portierungsnummer** ein und klicken Sie auf **Portierbarkeit prüfen**.
+3. Wenn die Nummer portiert werden kann, klicken Sie auf **Anfrage starten** und erfüllen Sie die **Dokumentenanforderungen** wie bei einer neuen Nummer.
+
+> **Tipp:** Eine Portierung dauert meist länger als der Kauf einer neuen Nummer, weil Ihr bisheriger Anbieter sie freigeben muss. Kündigen Sie Ihren bisherigen Anschluss erst, wenn die Nummer in Ihrer Liste **Nummern** erscheint.
 
 Dieser Teil des Prozesses ist wichtig, weil die Anforderungen nicht immer gleich sind. Sie können sich je nach **Land**, **Nummerntyp** und danach unterscheiden, ob die Anfrage von einer **Privatperson**, einem **Einzelunternehmen** oder einem **Unternehmen** gestellt wird.
 
 ##### So funktioniert der Dokumentationsschritt
 
-Nachdem Sie auf **Anfrage starten** geklickt haben, kann das Formular Folgendes anzeigen:
+Nachdem Sie auf **Anfrage starten** geklickt haben, kann das Formular eine Kombination aus Folgendem zeigen:
 
-- Textfelder, die Sie manuell ausfüllen müssen
-- Upload-Felder für unterstützende Dokumente
-- Eine **Speichern**-Schaltfläche für jede einzelne Anforderung
-- Einen Status **Ausstehend**, bis dieses konkrete Element korrekt gespeichert oder hochgeladen wurde
+- Textfelder, die Sie manuell ausfüllen
+- Upload-Felder für Nachweise
+- Eine Schaltfläche **Speichern** für jede einzelne Anforderung
+- Den Status **Ausstehend**, bis das jeweilige Element korrekt gespeichert oder hochgeladen ist
 
-Das bedeutet, dass die Anfrage normalerweise **Schritt für Schritt** abgeschlossen wird und nicht alles auf einmal. Wenn bei einem Feld oder Upload weiterhin **Ausstehend** angezeigt wird, ist diese Anforderung in der Regel noch nicht abgeschlossen.
+Die Anfrage wird also meist **Schritt für Schritt** ausgefüllt, nicht auf einmal. Wenn ein Feld oder Upload noch **Ausstehend** zeigt, ist diese Anforderung in der Regel noch nicht erfüllt.
 
-In vielen Ländern mit Anfrageverfahren kann das Formular Angaben wie diese verlangen:
+In vielen Ländern mit Anfrage kann das Formular Angaben wie diese verlangen:
 
 - **Art des Ausweisdokuments**
 - **Nummer des Ausweisdokuments**
@@ -117,310 +134,368 @@ In vielen Ländern mit Anfrageverfahren kann das Formular Angaben wie diese verl
 - **Ablaufdatum des Ausweisdokuments**
 - **Lokale Adresse im selben Land**
 - **Persönliche Steuernummer**
-- **Umsatzsteuer-Identifikationsnummer**
+- **Umsatzsteuer-ID**
 - **Steuernummer des Unternehmens**
 - **IT-Kundentyp**
 - **Adressnachweis**
 - **Kopie von Reisepass/Ausweis**
-- **Unternehmensregistrierungszertifikat**
+- **Handelsregisterauszug des Unternehmens**
 
-Einige Bezeichnungen können außerdem klarstellen, wer welches Element bereitstellen muss, zum Beispiel:
+Manche Bezeichnungen geben auch an, wer das jeweilige Element einreichen muss, zum Beispiel:
 
 - **Nur für juristische Personen**
 - **Nur für juristische Personen und Einzelunternehmen**
 - **Nur für natürliche Personen und Einzelunternehmen**
 
-Selbst wenn also zwei Kunden Nummern im selben Land anfragen, kann sich die erforderliche Dokumentation je nach Geschäftsart und genauer Nummernkategorie unterscheiden.
+Selbst wenn zwei Kunden Nummern im selben Land anfragen, können die nötigen Unterlagen also je nach Unternehmensart und genauer Nummernkategorie unterschiedlich sein.
 
-> **Tipp:** Im Anfrageformular haben einige Felder ihre eigene **Speichern**-Schaltfläche. Das Eingeben eines Werts allein reicht nicht immer aus. Das Element kann weiterhin **Ausstehend** anzeigen, bis Sie erfolgreich auf **Speichern** geklickt haben.
+> **Tipp:** Im Anfrageformular haben manche Felder eine eigene Schaltfläche **Speichern**. Einen Wert einzugeben reicht nicht immer: Das Element kann **Ausstehend** bleiben, bis Sie erfolgreich auf **Speichern** klicken.
 
 ##### Häufige Dokumentationsanforderungen (Beispiele)
 
-Die genauen Anforderungen hängen vom Land und vom Nummerntyp ab, aber es können unter anderem folgende Elemente verlangt werden:
+Die genauen Anforderungen hängen vom Land und Nummerntyp ab, aber Sie werden möglicherweise nach Folgendem gefragt:
 
 | Anforderung | Bedeutung | Beispiel |
 | --- | --- | --- |
-| Adresse passend zur DID-Vorwahl | Möglicherweise benötigen Sie eine Adresse in derselben Stadt, Region oder im selben Versorgungsbereich wie die angefragte Nummer | „Via Roma 22, Mailand“ für eine lokale Nummer aus Mailand |
-| Nationaler Ausweis / Steuernummer | Persönliche oder geschäftliche Identifikation zur Validierung des Antragstellers | Reisepassnummer, nationaler Ausweis, Steuernummer, USt-IdNr. |
-| Kontaktinformationen | Eine erreichbare Person oder ein erreichbarer Unternehmenskontakt für die Anfrage | „Luca Bianchi, +39 345 000 1111“ |
-| Adressnachweis (Upload) | Ein Dokument, das die in der Anfrage eingetragene Adresse zeigt | Strom- oder Gasrechnung, Kontoauszug, Mietvertrag oder offizielles Behördenschreiben |
-| Kopie von Reisepass/Ausweis (Upload) | Identitätsprüfung für eine Privatperson oder einen Unternehmensvertreter | Reisepass-Scan oder Vorder-/Rückseitenkopie des Ausweises |
-| Unternehmensnachweis (Upload) | Nachweis, dass das Unternehmen rechtlich registriert ist | Gründungsurkunde, Handelsregisterauszug |
-| Steuernummer des Unternehmens / Umsatzsteuer-Identifikationsnummer | Steuerinformationen des Unternehmens für geschäftliche Anfragen | Umsatzsteuer-Identifikationsnummer oder Unternehmenssteuernummer |
-| Geburtsdatum und Geburtsort | Persönliche Identifikationsdaten, die in einigen Ländern erforderlich sind | „14. März 1988, Neapel“ |
-| Ausstellende Behörde und Ablaufdatum des Ausweisdokuments | Informationen zur ausstellenden Behörde und zur Gültigkeit des Dokuments | „Ausgestellt von Comune di Torino, Ablauf 08/2028“ |
+| Adresse passend zur Vorwahl der Nummer | Sie brauchen eventuell eine Adresse in derselben Stadt, Region oder demselben Versorgungsgebiet wie die angefragte Nummer | „Via Roma 22, Mailand“ für eine lokale Mailänder Nummer |
+| Ausweis / Steuernummer | Persönliche oder geschäftliche Identifikation zur Prüfung des Antragstellers | Reisepassnummer, Personalausweis, Steuernummer, Umsatzsteuer-ID |
+| Kontaktdaten | Eine erreichbare Person oder ein Unternehmenskontakt für die Anfrage | „Luca Bianchi, +39 345 000 1111“ |
+| Adressnachweis (Upload) | Ein Dokument mit der Adresse, die Sie in der Anfrage angegeben haben | Versorgerrechnung, Kontoauszug, Mietvertrag oder amtliches Schreiben |
+| Kopie von Reisepass/Ausweis (Upload) | Identitätsprüfung einer Privatperson oder eines Unternehmensvertreters | Scan des Reisepasses oder Vorder- und Rückseite des Ausweises |
+| Unternehmensnachweis (Upload) | Nachweis, dass das Unternehmen rechtlich eingetragen ist | Gründungsurkunde, Handelsregisterauszug |
+| Steuernummer des Unternehmens / Umsatzsteuer-ID | Steuerdaten des Unternehmens für Unternehmensanfragen | Umsatzsteuer-ID oder Steuernummer des Unternehmens |
+| Geburtsdatum und -ort | Persönliche Angaben, die manche Länder verlangen | „14. März 1988, Neapel“ |
+| Ausstellende Behörde und Ablaufdatum des Ausweises | Angaben zur ausstellenden Behörde und zur Gültigkeit | „Ausgestellt von der Comune di Torino, gültig bis 08/2028“ |
 
 ##### Adressnachweis: was am häufigsten Probleme verursacht
 
-Das Dokument für den **Adressnachweis** ist einer der häufigsten Gründe dafür, dass sich eine Anfrage verzögert.
+Der **Adressnachweis** ist einer der häufigsten Gründe, warum sich eine Anfrage verzögert.
 
-In vielen Ländern muss der hochgeladene Adressnachweis alle folgenden Bedingungen erfüllen:
+In vielen Ländern muss der hochgeladene Adressnachweis alle diese Bedingungen erfüllen:
 
-- Er muss deutlich denselben **Namen** zeigen, der in der Anfrage verwendet wurde, oder den Firmennamen, wenn es sich um eine Unternehmensanfrage handelt
-- Er muss deutlich dieselbe **Adresse** zeigen, die im Formular eingetragen wurde
-- Er muss **aktuell** sein
-- Er muss vollständig und gut lesbar sein
-- Er darf nicht so zugeschnitten sein, dass wichtige Details fehlen
+- Er zeigt deutlich **denselben Namen** wie in der Anfrage, bei Unternehmensanfragen den Firmennamen
+- Er zeigt deutlich **dieselbe Adresse** wie im Formular
+- Er ist **aktuell**
+- Er ist vollständig und lesbar
+- Er ist nicht so zugeschnitten, dass wichtige Angaben fehlen
 
-Eine sehr wichtige Regel ist, dass die Rechnung oder das Adressdokument zum Zeitpunkt der Einreichung oft **nicht älter als 3 Monate** sein darf.
+Eine sehr wichtige Regel: Die Rechnung oder der Adressnachweis darf beim Einreichen oft **nicht älter als 3 Monate** sein.
 
-Das bedeutet in der Regel, dass Sie ein aktuelles Dokument hochladen sollten, zum Beispiel:
+Laden Sie daher in der Regel ein aktuelles Dokument hoch, zum Beispiel:
 
-- Eine Versorgungsrechnung aus den letzten 3 Monaten
+- Eine Versorgerrechnung aus den letzten 3 Monaten
 - Einen Kontoauszug aus den letzten 3 Monaten
-- Ein offizielles Behörden- oder Steuerschreiben aus den letzten 3 Monaten
+- Ein amtliches Schreiben oder einen Steuerbescheid aus den letzten 3 Monaten
 
-Ältere Dokumente können abgelehnt werden, selbst wenn die Adresse korrekt ist.
+Ältere Dokumente können abgelehnt werden, selbst wenn die Adresse stimmt.
 
-> **Wichtig:** Wenn Sie eine Rechnung oder einen Kontoauszug als Adressnachweis hochladen, stellen Sie sicher, dass das Dokument **weniger als 3 Monate alt** ist. Wenn das Dokument älter ist, kann die Anfrage ausstehend bleiben oder während der Prüfung abgelehnt werden.
+> **Wichtig:** Wenn Sie eine Rechnung oder einen Kontoauszug als Adressnachweis hochladen, achten Sie darauf, dass er **nicht älter als 3 Monate** ist. Ist er älter, kann die Anfrage ausstehend bleiben oder bei der Prüfung abgelehnt werden.
 
 ##### So bereiten Sie Dokumente vor dem Upload vor
 
-Um Verzögerungen zu vermeiden, prüfen Sie jedes Dokument, bevor Sie es hochladen.
+Prüfen Sie jedes Dokument vor dem Hochladen, um Verzögerungen zu vermeiden.
 
-Ein gutes Dokument sollte sein:
+Ein gutes Dokument ist:
 
 - **Klar und lesbar**
 - **Vollständig**, ohne abgeschnittene Ränder
-- **Konsistent** mit den im Formular eingetragenen Daten
+- **Stimmig** mit den Angaben im Formular
 - **Aktuell**, besonders bei Adressnachweisen
-- **Passend** zum Antragstellertyp, egal ob Privatperson oder Unternehmen
+- **Passend** zur Art des Antragstellers, Privatperson oder Unternehmen
 
-Wenn die Anfrage zum Beispiel für ein Unternehmen gestellt wird, kann der Prüfer erwarten, dass Firmenname, Registrierungsnummer, Steuerangaben und Unternehmensdokumente zueinander passen. Wenn die Anfrage für eine Privatperson gestellt wird, kann der Prüfer kontrollieren, ob persönlicher Name, Ausweisdokument und Adressnachweis übereinstimmen.
+Bei einer Unternehmensanfrage erwartet der Prüfer zum Beispiel, dass Firmenname, Registernummer, Steuerdaten und Registerunterlagen übereinstimmen. Bei einer Privatperson prüft er möglicherweise, ob Name, Ausweis und Adressnachweis übereinstimmen.
 
-Häufige Probleme, die die Genehmigung verzögern können, sind unter anderem:
+Häufige Probleme, die die Freigabe verzögern:
 
-- Die Adresse im Formular stimmt nicht mit der im hochgeladenen Dokument überein
+- Die Adresse im Formular stimmt nicht mit dem hochgeladenen Dokument überein
 - Die hochgeladene Rechnung ist älter als 3 Monate
 - Die Kopie des Reisepasses oder Ausweises ist unscharf
 - Eine Unternehmensanfrage wird nur mit persönlichen Dokumenten eingereicht
-- Ein Feld wurde ausgefüllt, aber der Benutzer hat nicht auf **Speichern** geklickt
-- Ein Dokument wurde hochgeladen, aber der Status zeigt weiterhin **Ausstehend** an
+- Ein Feld ist ausgefüllt, aber es wurde nicht auf **Speichern** geklickt
+- Ein Dokument wurde hochgeladen, zeigt aber noch **Ausstehend**
 
-> **Häufiger Fehler:** Das Hochladen der richtigen Datei reicht nicht immer aus. Prüfen Sie nach jedem Upload oder jeder Texteingabe, dass bei der Anforderung nicht mehr **Ausstehend** angezeigt wird.
+> **Häufiger Fehler:** Die richtige Datei hochzuladen reicht nicht immer. Prüfen Sie nach jedem Upload oder jeder Eingabe, dass die Anforderung nicht mehr **Ausstehend** zeigt.
 
 ##### Gebühren + Prüfung
 
-Einige Länder zeigen nach Abschluss der Dokumentation einen Schritt zur **Gebührenzahlung** an. Dieser kann Folgendes umfassen:
+Manche Länder zeigen nach der Dokumentation einen **Zahlungsschritt**. Er kann Folgendes enthalten:
 
 - Eine **einmalige Aktivierungsgebühr**
-- Die **monatlich wiederkehrenden Kosten** der Nummer
+- Die **monatlichen Kosten** der Nummer
 
-Die Anfrage wird in der Regel erst weiterbearbeitet, nachdem die erforderlichen Dokumente hochgeladen und der Zahlungsschritt abgeschlossen wurden.
+Die Anfrage geht in der Regel erst weiter, wenn die nötigen Dokumente hochgeladen und die Zahlung abgeschlossen ist.
 
 Nach dem Absenden und Bezahlen:
 
 - Sie erhalten eine **Anfrage-ID**
-- Die Anfrage wird von einem Betreiber geprüft
-- Nach der Genehmigung erscheint die Nummer in Ihrer Numbers-Liste
+- Ein Mitarbeiter prüft die Anfrage
+- Nach der Freigabe erscheint die Nummer in Ihrer Liste **Nummern**
 
-Die Prüfung erfolgt in vielen Fällen manuell, daher ist die Genehmigung nicht immer sofort verfügbar.
+Die Prüfung erfolgt oft manuell, deshalb ist die Freigabe nicht immer sofort da.
 
-> **Wichtig:** Die Genehmigungsdauer kann je nach Land, Anbieterregeln und Qualität der Dokumentation variieren. Wenn Sie die Nummer für einen bevorstehenden Start oder eine Kampagne benötigen, senden Sie die Anfrage so früh wie möglich ab und verwenden Sie aktuelle, gut lesbare Dokumente.
+> **Wichtig:** Die Dauer der Freigabe hängt vom Land, den Regeln des Anbieters und der Qualität der Dokumente ab. Wenn Sie die Nummer für einen Start oder eine Kampagne brauchen, reichen Sie die Anfrage so früh wie möglich mit aktuellen, gut lesbaren Dokumenten ein.
+
+### Ihre Anfragen verfolgen (Nummernanfragen)
+
+Der Tab **Nummernanfragen** listet Ihre Kauf- und Portierungsanfragen für Länder außerhalb der USA und Kanadas auf.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/numbers-requests.png" alt="Tab Nummernanfragen mit den Filtern Status, Ablauf und Zahlungsstatus, der Schaltfläche Aktualisieren und einer Karte pro Anfrage mit Land, Status, Nummerntyp, Ablauf, gewählter Nummer, Datum und Zahlungsstatus." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Bildschirmfoto: Jede Karte ist eine Anfrage. Mit den Filtern finden Sie die Anfragen, die Ihre Aufmerksamkeit brauchen.
+</p>
+
+Jede Karte zeigt das **Land**, den **Status** der Anfrage, den **Nummerntyp**, den **Ablauf**, die **Gewählte Nummer**, das Datum und den Zahlungsstatus.
+
+Mit den Filtern grenzen Sie die Liste ein:
+
+| Filter | Optionen |
+| --- | --- |
+| **Status** | **Entwurf**, **Ausstehend**, **Genehmigt**, **Info benötigt**, **Abgelehnt**, **Abgeschlossen**, **Storniert** |
+| **Ablauf** | **Bestellung** (neue Nummer), **Portierung** (bestehende Nummer) |
+| **Zahlungsstatus** | **Fällig**, **Bezahlt** |
+
+Klicken Sie auf **Aktualisieren**, um den neuesten Stand zu sehen.
+
+> **Tipp:** Schauen Sie regelmäßig in diesen Tab, solange eine Anfrage offen ist. Eine Anfrage mit **Info benötigt** wartet darauf, dass Sie etwas korrigieren oder ergänzen, und **Zahlung fällig** bedeutet, dass sie erst nach Ihrer Zahlung weitergeht.
 
 ---
 
 ### Option B: Nummern von Twilio importieren
 
-Wenn Sie bereits Nummern bei Twilio haben, können Sie diese in Callin.io importieren:
+Wenn Sie bereits Nummern bei Twilio haben, können Sie sie in Callin.io importieren:
 
 1. Gehen Sie zu [Nummern öffnen](https://app.callin.io/numbers).
-2. Klicken Sie auf die Hinzufügen-Aktion und wählen Sie den Twilio-Import.
-3. Geben Sie Ihre Twilio-Konto-ID und Ihr Twilio-Authentifizierungstoken ein.
-4. Starten Sie die Suche nach Twilio-Nummern und wählen Sie die zu importierenden Nummern aus.
-5. Weisen Sie importierte Nummern einem Agenten zu, sobald Sie sie verwenden möchten.
+2. Klicken Sie auf **+ Nummer hinzufügen** → **Von Twilio importieren**.
+3. Geben Sie Ihre **Twilio Account SID** und Ihr **Twilio Auth Token** ein.
+4. Klicken Sie auf **Twilio-Nummern suchen** und wählen Sie die Nummern aus, die Sie importieren möchten.
+5. Weisen Sie die importierten Nummern einem KI-Agenten zu, wenn Sie sie nutzen möchten.
 
-> **Häufiger Fehler:** Falsche Twilio-Zugangsdaten (zum Beispiel das falsche Projekt). Wenn keine Nummern angezeigt werden, prüfen Sie ID, Token sowie das richtige Konto bzw. Unterkonto.
+> **Häufiger Fehler:** Die falschen Twilio-Zugangsdaten kopieren (zum Beispiel Testdaten statt der echten). Wenn keine Nummern erscheinen, prüfen Sie Ihr Twilio-Projekt und dessen Berechtigungen.
 
 ---
 
 ### Option C: Eine persönliche Nummer hinzufügen (nur ausgehende Anrufe)
 
-Eine **persönliche Nummer** ist praktisch, um ausgehende Anrufe mit Ihrer eigenen Nummer zu tätigen, hat aber eine wichtige Einschränkung:
-
-- **Nur für ausgehende Anrufe**
-- **Kann keine eingehenden Anrufe** in Callin.io empfangen
+Eine **persönliche Nummer** ist praktisch, wenn Sie von Ihrer eigenen Nummer aus anrufen möchten, sie kann in Callin.io aber keine eingehenden Anrufe empfangen.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers2.png"
-    alt="Dialog zum Hinzufügen einer persönlichen Nummer mit Länderauswahl, Telefonnummernfeld und Verifizierungsschritten"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers2.png" alt="Fenster Persönliche Nummer hinzufügen mit Länderauswahl, Telefonfeld, Hinweis auf eine ungültige Nummer und den Schritten der Verifizierung." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Persönliche Nummer hinzufügen mit Verifizierungsablauf (Sie erhalten einen Anruf und geben den Code ein).
+  Bildschirmfoto: das Fenster Persönliche Nummer hinzufügen mit dem Telefonfeld und der Verifizierung (Sie erhalten einen Anruf und geben den Code ein).
 </p>
 
 #### So verifizieren Sie Ihre persönliche Nummer
 
 1. Gehen Sie zu [Nummern öffnen](https://app.callin.io/numbers).
-2. Klicken Sie auf die Hinzufügen-Aktion und wählen Sie die Option für persönliche Nummern.
-3. Wählen Sie das Land und geben Sie Ihre Nummer ein.
-4. Starten Sie die Verifizierung.
-5. Sie erhalten einen **Verifizierungsanruf**.
-6. Geben Sie den Code ein, wenn Sie dazu aufgefordert werden.
+2. Klicken Sie auf **+ Nummer hinzufügen** → **Persönliche Nummer hinzufügen**.
+3. Wählen Sie die Ländervorwahl und geben Sie Ihre Telefonnummer ein.
+4. Klicken Sie auf **Nummer verifizieren**.
+5. Sie erhalten einen **Verifizierungsanruf** von Twilio.
+6. Geben Sie den Verifizierungscode ein, wenn Sie dazu aufgefordert werden.
 7. Nach der Verifizierung wird die Nummer Ihrem Konto hinzugefügt.
 
-> **Wichtig:** Für eingehende Anrufe benötigen Sie eine gekaufte/importierte Nummer oder BYOC (SIP Trunk).
+> **Wichtig:** Persönliche Nummern sind **nur für ausgehende Anrufe**. Wenn Sie Anrufe empfangen müssen, nutzen Sie eine gekaufte oder importierte Nummer oder BYOC.
 
 ---
 
 ### Option D: Telnyx-Nummern hinzufügen/importieren
 
-Wenn Sie Telnyx bereits verbunden haben (über BYOC), können Sie aktive Nummern importieren:
+Wenn Ihr Telnyx-Konto verbunden ist (über BYOC), können Sie Ihre aktiven Telnyx-Nummern in Callin.io importieren:
 
 1. Gehen Sie zu [Nummern öffnen](https://app.callin.io/numbers).
-2. Klicken Sie auf die Hinzufügen-Aktion und wählen Sie die Telnyx-Option.
-3. Wählen Sie die Nummern aus, die Sie hinzufügen/importieren möchten.
-4. Bestätigen Sie und weisen Sie sie bei Bedarf Ihren Agenten zu.
+2. Klicken Sie auf **+ Nummer hinzufügen** → **Telnyx-Nummer hinzufügen**.
+3. Finden Sie die Nummern mit **Nummern suchen...** und setzen Sie bei jeder gewünschten Nummer das Häkchen unter **Auswählen**. **Sichtbare auswählen** wählt alle Nummern der Liste aus.
+4. Klicken Sie auf **Importieren** und weisen Sie die Nummern bei Bedarf Ihren Agenten zu.
+
+> **Wichtig:** Wenn Sie Telnyx noch nicht verbunden haben, zeigt das Fenster einen Fehler wegen des fehlenden Telnyx-API-Schlüssels und keine Nummern. Verbinden Sie Telnyx zuerst unter [BYOC (SIP-Trunk)](#byoc-sip-trunk).
+
+---
+
+### Ihre Nummern verwalten
+
+Klicken Sie in der Liste **Nummern** auf das Menü **⋮** einer Nummer, um sie zu verwalten:
+
+- **Label bearbeiten**: Geben Sie der Nummer einen gut erkennbaren Namen, zum Beispiel den Kunden oder die Kampagne, für die sie gedacht ist.
+- **Abo kündigen** (gekaufte Nummern): Beenden Sie die Verlängerung einer Nummer, die Sie über Callin.io gekauft haben.
+- **Entfernen** (persönliche Nummern): Löschen Sie eine persönliche Nummer aus Ihrem Konto.
+
+> **Wichtig:** Bevor Sie eine Nummer kündigen oder entfernen, weisen Sie den Agenten, die sie nutzen, eine andere Nummer zu, damit sie weiter Anrufe tätigen und entgegennehmen können.
 
 ---
 
 ### Eine Nummer einem Agenten zuweisen
 
-Der Kauf oder Import ist nicht immer der letzte Schritt. Achten Sie in der Nummernliste auf Hinweise wie:
+Eine Nummer zu kaufen oder zu importieren ist nur der erste Schritt: Ihr Agent muss sie noch nutzen. Wenn die Liste **Nummern** den Hinweis **Diese Nummer ist keinem Agenten zugewiesen** zeigt, weisen Sie sie vor dem Livegang zu:
 
-- Nummer ist keinem Agenten zugewiesen
-
-Wenn das erscheint, weisen Sie die Nummer vor echten Anrufen dem richtigen Agenten zu.
-
-> **Tipp:** Halten Sie eine „Testnummer“ getrennt von der Produktionsnummer, solange Sie Anweisungen und Anrufabläufe optimieren.
-
----
-
-## BYOC (SIP Trunk)
-
-BYOC (Bring Your Own Carrier) ermöglicht es Ihnen, Ihren eigenen Telefonieanbieter über einen **SIP Trunk** zu verbinden, statt Nummern zu verwenden, die von Callin.io verwaltet werden.
-
-Öffnen Sie die Einrichtung hier: [BYOC öffnen](https://app.callin.io/byoc)
+1. Gehen Sie zu **KI-Agenten**.
+2. Klicken Sie auf das Menü **⋮** des Agenten und wählen Sie **Nummer zuweisen**.
+3. Suchen Sie im Zuweisungsfenster die Nummer (nach Nummer, Bezeichnung oder Anbieter) und klicken Sie auf **Zuweisen**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/byoc1.png"
-    alt="BYOC-Seite mit Telnyx-Konfiguration: API-Schlüsselfeld, Start-Schaltfläche und Liste der Einrichtungsschritte"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers-assign.png" alt="Fenster Nummer zuweisen eines Agenten mit der Nummernliste, dem Status jeder Nummer (einem anderen Agenten zugewiesen oder nicht zugewiesen), dem Anbieter und einer Schaltfläche Zuweisen sowie dem Link Neue Nummern kaufen." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: BYOC-Bereich zum Verbinden von Telnyx, Synchronisieren von DIDs und Bereitstellen des SIP Trunk.
+  Bildschirmfoto: Das Fenster Nummer zuweisen zeigt, welche Nummern frei sind und welche bereits ein anderer Agent nutzt.
 </p>
 
-### Was ist ein SIP Trunk (einfach erklärt)
+Die Spalte **Status** zeigt, ob jede Nummer **Nicht zugewiesen** oder bereits einem anderen Agenten zugewiesen ist. Wenn Sie keine passende Nummer haben, klicken Sie auf **Neue Nummern kaufen**.
 
-Ein **SIP Trunk** ist eine „Telefonie-über-Internet“-Verbindung zwischen Ihrem Carrier und Ihrem Anrufsystem. In Unternehmen wird das häufig genutzt, um ein- und ausgehende Anrufe zu steuern, inklusive Routing, SBC, Zugangsdaten und Richtlinien.
+> **Häufiger Fehler:** Eine Nummer zuweisen, die ein anderer Agent nutzt. Wie das Fenster warnt, wird sie bei der Zuweisung hier **vom anderen Agenten getrennt**, der sie dann nicht mehr nutzt.
+
+> **Tipp:** Halten Sie eine „Test“-Nummer getrennt von der Produktivnummer, während Sie Anweisungen und Gesprächsabläufe anpassen.
+
+---
+
+## BYOC (SIP-Trunk)
+
+**BYOC** steht für *Bring Your Own Carrier*, also die Nutzung Ihres eigenen Netzbetreibers. Statt Nummern über Callin.io zu kaufen, verbinden Sie Ihren Telefonieanbieter über einen SIP-Trunk.
+
+Typische Gründe für BYOC:
+
+- Sie haben bereits einen Vertrag mit einem Netzbetreiber (Unternehmenstelefonie)
+- Sie brauchen individuelles Routing, Kontrolle über den SBC oder müssen regulatorische Vorgaben erfüllen
+- Sie möchten die Regeln der von Callin verwalteten Telefonie umgehen und Ihren eigenen Anbieter nutzen
+
+Hier richten Sie es ein: [BYOC öffnen](https://app.callin.io/byoc)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/byoc1.png" alt="Seite BYOC im Tab Telnyx mit dem Feld Telnyx API-Schlüssel, der Schaltfläche Start und den Einrichtungsschritten: Schlüssel speichern, Nummern abrufen, speichern, SIP-Trunk bereitstellen und Telefonnummern anlegen." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Bildschirmfoto: die BYOC-Einrichtung, in der Sie Telnyx verbinden und Ihre Nummern mit Callin.io synchronisieren.
+</p>
+
+### Was ist ein SIP-Trunk (einfach erklärt)
+
+Ein **SIP-Trunk** ist eine Verbindung zwischen einem Netzbetreiber und Ihrem Telefonsystem. Stellen Sie sich eine „Telefonleitung über das Internet“ vor, die eingehende und ausgehende Anrufe abwickelt und von Unternehmen häufig genutzt wird.
 
 ---
 
 ### Option 1: Telnyx verbinden
 
-Wenn Sie Telnyx nutzen, führt Callin.io Sie mit einem API-Schlüssel durch den Prozess:
+Wenn Sie **Telnyx** nutzen, führt Callin.io Sie mit einem API-Schlüssel durch die Einrichtung:
 
 1. Gehen Sie zu [BYOC öffnen](https://app.callin.io/byoc).
-2. Öffnen Sie den Telnyx-Tab.
-3. Fügen Sie Ihren Telnyx-API-Schlüssel ein.
-4. Starten Sie die Einrichtung.
+2. Wählen Sie den Tab **Telnyx**.
+3. Fügen Sie Ihren **Telnyx API-Schlüssel** ein.
+4. Klicken Sie auf **Start**.
 
-Währenddessen sehen Sie typischerweise Schritte wie:
+Während der Einrichtung sehen Sie Schritte wie:
 
 - Telnyx-API-Schlüssel speichern
-- Aktive Nummern (DIDs) abrufen
-- Nummern in Ihrem Konto speichern
-- SIP Trunk bereitstellen (eingehend und ausgehend)
+- Aktive Telnyx-Nummern (DIDs) abrufen
+- Nummern in Ihrem Callin.io-Konto speichern
+- SIP-Trunk bereitstellen (eingehend und ausgehend)
+- Telefonnummern des Anbieters anlegen
 
-Am Ende sollten Ihre Telnyx-Nummern in Nummern erscheinen.
+Danach sollten Ihre Telnyx-Nummern unter **Nummern** erscheinen.
 
-> **Wichtig:** Wenn Ihr API-Schlüssel nicht die nötigen Berechtigungen zum Lesen von DIDs/Nummern hat, kann Callin.io sie nicht importieren.
+> **Wichtig:** Wenn Ihr Telnyx-Schlüssel keine Berechtigung zum Lesen der Nummern (DIDs) hat, kann Callin.io sie nicht abrufen.
 
 ---
 
 ### Option 2: Anderen Anbieter verbinden (generischer SIP-Trunk)
 
-Wenn Ihr Anbieter nicht Telnyx ist, nutzen Sie den Tab für einen anderen SIP-Anbieter. Üblicherweise sehen Sie drei Bereiche: **Basis**, **Eingehend** und **Ausgehend**.
+Wenn Ihr Anbieter nicht Telnyx ist, nutzen Sie den Tab **Anderer SIP-Anbieter** (**Generischer SIP-Trunk / PBX-Erweiterung (beliebiger Anbieter)**). Er funktioniert mit einer SIP-Trunk-Nummer (DID) und auch mit einer **Nebenstelle Ihrer Telefonanlage** (PBX). Sie richten drei Tabs ein: **Basis**, **Eingehend** und **Ausgehend**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/byoc-sip.png" alt="Tab Anderer SIP-Anbieter in BYOC mit den Tabs Basis, Eingehend und Ausgehend, den Feldern Bezeichnung und Telefonnummer / Erweiterung, den Kästchen für eingehende und ausgehende Anrufe sowie den Schaltflächen Speichern & Importieren und Zurücksetzen." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Bildschirmfoto: das Formular für einen generischen SIP-Trunk / eine PBX-Erweiterung. Füllen Sie Basis, Eingehend und Ausgehend aus und klicken Sie auf Speichern & Importieren.
+</p>
 
 #### Basis
 
-- **Bezeichnung**: ein sprechender Name (Beispiel: “HQ SIP Trunk”)
-- **Nummer im E.164-Format**: vollständiges internationales Format (Beispiel: `+15551234567`)
-- Optionen zur Unterstützung eingehender und ausgehender Anrufe
+- **Bezeichnung**: ein gut erkennbarer Name (Beispiel: „SIP-Trunk Zentrale“)
+- **Telefonnummer / Erweiterung (E.164 oder Erweiterung)**: die vollständige internationale Nummer (Beispiel: `+15551234567`) oder die Nebenstelle der Telefonanlage (Beispiel: `101`)
+- **Unterstützt eingehend** und **Unterstützt ausgehend**: Markieren Sie die Richtungen, die diese Nummer abwickeln soll
 
 #### Eingehend
 
-- **Eingehender SBC/FQDN**: SIP-Zieladresse (Beispiel: `sip.example.com:5061`)
-- **Transport**: meist TLS oder UDP
-- **Medienverschlüsselung**: aktivieren, falls unterstützt
+Eingehende Anrufe gehen vom Netzbetreiber zu Ihrem System.
 
-> **Tipp:** Für eingehende Anrufe werden oft keine Zugangsdaten benötigt. Viele Carrier authentifizieren über Trunk-Konfiguration oder erlaubte IPs.
+- **Eingehender SBC / FQDN**: Ihre SIP-Adresse (Beispiel: `sip.example.com:5061`)
+- **Transport**: **TLS**, **TCP** oder **UDP**
+- **Medienverschlüsselung**: **Erlaubt**, **Erforderlich** oder **Deaktiviert**
+
+> **Tipp:** Eingehende Anrufe brauchen oft **keine** Zugangsdaten. Viele Netzbetreiber authentifizieren sie über IP-Freigabelisten oder die Trunk-Konfiguration.
 
 #### Ausgehend
 
-- **Ausgehender SBC/FQDN**: SIP-Server des Anbieters
-- **Transport** und **Medienverschlüsselung**
-- **Benutzername** und **Passwort**: SIP-Zugangsdaten
-- **Erlaubte Länder (ausgehend)**: zum Beispiel weltweit oder benutzerdefinierte Liste
+Ausgehende Anrufe gehen von Callin.io zu Ihrem Netzbetreiber.
 
-Wenn alles ausgefüllt ist, speichern und importieren Sie.
+- **Ausgehender SBC / FQDN**: der SIP-Server Ihres Anbieters
+- **Transport** und **Medienverschlüsselung** (dieselben Optionen wie bei Eingehend)
+- **Benutzername** und **Passwort**: Ihre SIP-Zugangsdaten
+- **Zulässige Länder (ausgehend)**: **Weltweit** oder eine **Benutzerdefinierte Liste**
 
-> **Häufiger Fehler:** Falscher SBC/FQDN oder falsche Zugangsdaten. Wenn ausgehende Anrufe scheitern, prüfen Sie Benutzername/Passwort, Transport und die vom Anbieter geforderten Ports.
+Klicken Sie zum Schluss auf **Speichern & Importieren**. Um neu zu beginnen, klicken Sie auf **Zurücksetzen**.
+
+Nach dem Speichern prüft Callin.io, ob die Nummer für Anrufe genutzt werden kann. Wenn Ihre SIP-Einstellungen angepasst werden müssen, sehen Sie Hinweise auf dieser Seite. In der Zwischenzeit kann die Nummer trotzdem in Ihrer Liste **Nummern** erscheinen.
+
+> **Häufiger Fehler:** Einen falschen SBC/FQDN oder falsche Zugangsdaten verwenden. Wenn ausgehende Anrufe fehlschlagen, prüfen Sie Ihren SIP-Benutzernamen und das Passwort sowie, ob Ihr Anbieter einen bestimmten Port oder Transport verlangt.
 
 ---
 
 ## Minuten und Abrechnung (das Wichtigste)
 
-Die Abrechnung besteht meist aus zwei Teilen:
+Die Abrechnung kann zwei Teile haben: die **Callin-Nutzung** und die **Kosten des Netzbetreibers**. Was Sie sehen, hängt davon ab, wie Sie Ihre Nummern verbinden.
 
-- **Callin-Nutzung (compute minutes)**: Zeit, in der der Agent aktiv ist (hört zu, verarbeitet, antwortet).
-- **Telefoniekosten**: abhängig davon, wie Sie die Nummer verbinden und welcher Anbieter genutzt wird.
+### Callin-Rechenminuten
+
+**Rechenminuten** sind die Zeit, in der Ihr KI-Agent aktiv ist (zuhört, verarbeitet und antwortet). Sie sind die zentrale Nutzungskennzahl für KI-Anrufe.
 
 ### Wichtiger Abrechnungshinweis (erste Minute)
 
-Wenn Sie Anrufe über Telefonie tätigen, die über den Anbieter von Callin geroutet wird (zum Beispiel Nummern, die über Callin.io gekauft wurden), kann eine Regel zur **Abrechnung der ersten Minute** gelten:
+Wenn Sie Anrufe über die **von Callin verwaltete Telefonie** tätigen (zum Beispiel mit Nummern, die über Callin.io gekauft und über den Netzbetreiber von Callin geleitet werden), gilt eine Regel zur **Abrechnung der ersten Minute**:
 
-- Mindestabrechnung ist **1 Minute**
-- Dauert der Anruf länger als eine Minute, folgt die Abrechnung nach der ersten Minute der tatsächlichen Dauer (keine Zusatzkosten über das Minimum hinaus)
+- Die Mindestabrechnung beträgt **1 Minute**
+- Nach der ersten Minute wird nach der tatsächlichen Anrufdauer abgerechnet
+- Diese Regel **gilt nicht** für:
+  - **Testanrufe im Browser**
+  - **Importierte eigene Nummern** (Telnyx oder Twilio)
+  - **Externe SIP-Trunks (BYOC)**
 
-Außerdem gilt beim Kauf einer Telnyx/Twilio-Nummer über Callin.io:
-
-- **Es wird keine zusätzliche Plattformgebühr allein für die Nummer berechnet**
-
-Diese Regel zur ersten Minute gilt in der Regel nicht für:
-
-- Testanrufe im Browser
-- Importierte Nummern (Twilio oder Telnyx)
-- Externer SIP-Trunk (BYOC)
-
-> **Wichtig:** Das genaue Verhalten kann je nach Routing-Konfiguration Ihres Kontos variieren. Wenn Sie Regeln vermeiden möchten, die an einen von Callin verwalteten Anbieter gekoppelt sind, nutzen Sie importierte Nummern oder BYOC (SIP Trunk).
+> **Wichtig:** Das genaue Abrechnungsverhalten kann je nach Ihrer Einrichtung und dem Routing des Anbieters variieren. Wenn Sie die Regeln der von Callin verwalteten Telefonie vermeiden möchten, importieren Sie Ihre eigenen Nummern oder nutzen Sie BYOC.
 
 ### Hinweis: Abrechnung bei persönlicher Nummer
 
-Eine **persönliche Nummer** ist **nur für ausgehende Anrufe** und kann je nach Routing in den Abrechnungsbereich des Callin-Anbieters fallen.
-
-> **Wichtig:** Auch wenn Sie eine persönliche Nummer für ausgehende Anrufe nutzen, benötigen Sie für eingehende Anrufe eine gekaufte/importierte Nummer oder BYOC (SIP Trunk).
+Persönliche Nummern sind **nur für ausgehende Anrufe**, und Anrufe mit einer persönlichen Nummer können trotzdem unter die Regeln der von Callin verwalteten Telefonie fallen, je nachdem, wie die Anrufe Ihres Kontos geleitet werden.
 
 ---
 
 ## Fehlerbehebung
 
 ### „Ich kann keine Anrufe tätigen“
-- Stellen Sie sicher, dass mindestens **eine aktive Nummer** vorhanden ist
-- Prüfen Sie, ob die Nummer einem **Agenten zugewiesen** ist
-- Wenn Sie BYOC (SIP Trunk) nutzen, prüfen Sie **SBC/FQDN**, Transport, Medienverschlüsselung und Zugangsdaten
+
+- Prüfen Sie, ob Sie mindestens **eine aktive Nummer** haben
+- Stellen Sie sicher, dass die Nummer **einem Agenten zugewiesen** ist
+- Wenn Sie BYOC nutzen, prüfen Sie Ihre SIP-Trunk-Einstellungen (SBC/FQDN, Transport, Zugangsdaten)
 
 ### „Meine persönliche Nummer erhält keine eingehenden Anrufe“
-- Das ist normal: eine **persönliche Nummer ist nur für ausgehende Anrufe**
-- Nutzen Sie eine gekaufte/importierte Nummer oder BYOC (SIP Trunk) für eingehende Anrufe
+
+- Das ist so vorgesehen: **Persönliche Nummern sind nur für ausgehende Anrufe**
+- Nutzen Sie eine gekaufte oder importierte Nummer oder BYOC, um Anrufe zu empfangen
 
 ### „Meine importierten Nummern werden nicht angezeigt“
-- Prüfen Sie die Zugangsdaten (Twilio Account SID/Auth Token oder Telnyx-API-Schlüssel)
-- Bestätigen Sie, dass die Nummern beim Anbieter aktiv sind
-- Stellen Sie sicher, dass Sie das richtige Konto/Unterkonto verwenden
+
+- Prüfen Sie die Zugangsdaten (Twilio Account SID und Auth Token oder Telnyx API-Schlüssel)
+- Bestätigen Sie, dass die Nummern im Konto des Anbieters aktiv sind
+- Versuchen Sie es erneut und prüfen Sie, ob Sie das richtige Projekt oder Unterkonto beim Anbieter nutzen
 
 ---
 
 ## Abschließende Notiz
 
-Wenn Sie die schnellste Einrichtung möchten, starten Sie mit einer Nummer für **USA oder Kanada**, die Sie über Callin.io kaufen. Wenn Sie bereits einen Carrier haben oder mehr Routing-Kontrolle benötigen, verbinden Sie BYOC (SIP Trunk).
+Für die schnellste Einrichtung beginnen Sie mit **einer in Callin.io gekauften Nummer aus den USA oder Kanada**. Wenn Sie erweitertes Routing brauchen oder bereits einen Netzbetreiber haben, verbinden Sie **BYOC**.
 
-Sobald die Nummer hinzugefügt und zugewiesen ist, können Ihre KI-Agenten echte Anrufe in großem Umfang tätigen und entgegennehmen.
+Sobald Ihre Nummer hinzugefügt und zugewiesen ist, können Ihre KI-Agenten in großem Umfang echte Anrufe tätigen und entgegennehmen.

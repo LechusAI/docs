@@ -1,113 +1,130 @@
 ---
 title: "Números y BYOC"
-description: "Aprende a comprar, importar o verificar números telefónicos y a conectar BYOC (SIP Trunk) para que tus agentes de IA puedan hacer y recibir llamadas."
+description: "Aprende a comprar, importar o verificar números de teléfono y a conectar BYOC (troncal SIP) para que tus agentes de IA puedan hacer y recibir llamadas."
 ---
 
 ## Descripción general
 
-Los números telefónicos son el puente entre tus agentes de IA y las llamadas reales. En Callin.io, lo gestionarás en dos lugares:
+Los números de teléfono son el puente entre tus agentes de IA y las llamadas reales. En Callin.io los gestionas en dos lugares:
 
-- **Números**: Compra números a través de Callin.io, importa desde proveedores o verifica un número personal.
-- **BYOC (SIP Trunk)**: Trae tu propio carrier conectando Telnyx o cualquier proveedor SIP.
+- **Números**: compra números a través de Callin.io, impórtalos de otros proveedores o verifica un número personal.
+- **BYOC (troncal SIP)**: usa tu propio operador conectando Telnyx o cualquier proveedor SIP.
 
-Usa estos accesos directos para abrir cada sección en la app:
+Usa estos accesos directos para ir a la app:
 
 - Ir a **Números**: [Abrir Números](https://app.callin.io/numbers)
-- Ir a **BYOC (SIP Trunk)**: [Abrir BYOC](https://app.callin.io/byoc)
+- Ir a **BYOC (troncal SIP)**: [Abrir BYOC](https://app.callin.io/byoc)
 
-> **Consejo:** Si quieres empezar rápido, compra un número de **Estados Unidos o Canadá** (normalmente es instantáneo). Si necesitas un número internacional, prepárate para aportar datos y subir documentación (las reglas varían según el país).
+> **Consejo:** Si quieres empezar rápido, compra un número de **Estados Unidos o Canadá** (es instantáneo). Si necesitas un número internacional, prepárate para enviar documentación (las reglas cambian según el país).
 
 ---
 
 ## Números
 
-La página de **Números** muestra todos los números conectados a tu workspace (comprados, importados, personal, Telnyx o BYOC). Desde aquí puedes añadir números nuevos, revisar el estado y ver avisos importantes (por ejemplo, si un número aún no está asignado a ningún agente).
+La página **Números** muestra todos los números conectados a tu espacio de trabajo (comprados, importados, personales, de Telnyx o de BYOC). Desde aquí puedes añadir números nuevos y comprobar el estado de cada uno.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers1.png"
-    alt="Página de Números con filtros por proveedor y el menú + Add Number con opciones para comprar o importar"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers1.png" alt="Página Números con las pestañas Números y Solicitudes de Números, los filtros por tipo, la lista de números y el menú + Agregar número abierto con Comprar número, Importar desde Twilio, Agregar número personal y Agregar número de Telnyx." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: La página de Números, con filtros por proveedor y el menú + Add Number para comprar o importar números.
+  Captura: la página Números, donde puedes filtrar por tipo y pulsar + Agregar número para comprar o importar números.
 </p>
 
 ### Qué puedes hacer desde Números
 
-Al pulsar **+ Add Number**, normalmente verás opciones como (el texto puede variar según tu cuenta/plan):
+La página tiene dos pestañas:
 
-- **Purchase Number** (comprar a través de Callin.io)
-- **Import from Twilio**
-- **Add Personal Number**
-- **Add Telnyx Number** (después de conectar Telnyx)
+- **Números**: todos los números de tu espacio de trabajo, con su **Tipo** y su **Estado** (por ejemplo, cuándo se añadió y cuándo se renueva).
+- **Solicitudes de Números**: tus solicitudes de compra para países fuera de Estados Unidos y Canadá. Consulta la sección **Seguir tus solicitudes**, más abajo.
 
-También suelen aparecer filtros como **Purchased**, **Twilio**, **Personal**, **Telnyx** y **BYOC (SIP Trunk)** para localizar rápidamente cada tipo de número.
+Al pulsar **+ Agregar número**, verás estas opciones:
+
+- **Comprar número** (a través de Callin.io)
+- **Importar desde Twilio**
+- **Agregar número personal**
+- **Agregar número de Telnyx** (después de conectar Telnyx)
+
+Usa los filtros **Todos**, **Comprados**, **Twilio**, **Personales**, **Telnyx** y **BYOC (Troncal SIP)**, o el buscador **Buscar números...**, para encontrar rápido lo que buscas.
 
 ---
 
 ### Opción A: Comprar un número a través de Callin.io
 
-Comprar números a través de Callin.io es la forma más directa de empezar.
+Comprar números a través de Callin.io es la forma más sencilla de empezar.
 
 #### Estados Unidos y Canadá: compra instantánea
 
-Para **Estados Unidos** y **Canadá**, el flujo de compra suele ser rápido e inmediato:
+Para **Estados Unidos** y **Canadá**, la compra es instantánea:
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/numbers-purchase.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: + Agregar número → Comprar número → Buscar números → seleccionar un número.
+</p>
 
 1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Add Number** → **Purchase Number**.
-3. Elige el **Country**.
+2. Pulsa **+ Agregar número** → **Comprar número**.
+3. Elige el **País**. Puedes buscar en la lista por nombre, código ISO o prefijo.
 4. Elige el tipo:
-   - **Local**
-   - **Toll-Free** (si está disponible)
-5. (Opcional) Usa **Search by Area Code** (ejemplo: `415`).
-6. Pulsa **Search Numbers**.
-7. Selecciona un número de la lista.
-8. Pulsa **Purchase Selected Number**.
+   - **Local**: código de área local estándar.
+   - **Gratuito**: prefijos como 800 u 888.
+5. (Opcional) Usa **Buscar por código de área** (ejemplo: `415`).
+6. Pulsa **Buscar números**.
+7. Selecciona un número de la lista. Cada uno muestra su estado o provincia (por ejemplo, `NV`).
+8. Pulsa **Comprar número seleccionado**.
 
-> **Importante:** Si ves un aviso como “this number is not assigned to any agent”, el número todavía no está listo para usarse: primero tienes que asignarlo a un agente.
+> **Importante:** Después de la compra, el número debería aparecer en tu lista. Si ves el aviso **Este número no está asignado a ningún agente**, todavía tienes que asignarlo a un agente antes de usarlo.
 
 #### Otros países: solicitud + documentación
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers13.png"
-    alt="Formulario Purchase a New Number que muestra campos de documentación específicos del país y botones de guardado para cada elemento obligatorio"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers13.png" alt="Ventana Comprar un número nuevo para España, con las opciones de Tipo de solicitud Nuevo número y Portabilidad, la lista de números disponibles, el aviso de Requisitos de documentos y el botón Iniciar solicitud." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: después de iniciar la solicitud, la plataforma carga los campos y documentos específicos del país que debes completar antes del pago y la revisión.
+  Captura: en los países fuera de Estados Unidos y Canadá, eliges el tipo de solicitud y un número, y pulsas Iniciar solicitud para cargar los documentos del país.
 </p>
 
-Para muchos países **fuera de EE. UU./Canadá**, la compra sigue un flujo **basado en solicitud** en lugar de una compra instantánea.
+En los países **fuera de Estados Unidos y Canadá**, la compra sigue un flujo **basado en solicitud** en lugar de una compra instantánea:
 
-- Seleccionas el país y el tipo de número (por ejemplo, **Local** o **Móvil**).
-- Puedes ver opciones de **Tipo de solicitud** como **Nuevo número** y **Portabilidad**.
-- Eliges uno de los números disponibles y haces clic en **Iniciar solicitud**.
-- La plataforma carga entonces la información y los requisitos de documentación **específicos del país**.
-- Debes completar los campos obligatorios, subir documentos y guardar cada elemento.
-- Envías la solicitud, pagas las tarifas requeridas y luego la solicitud es revisada por un operador.
+1. Pulsa **+ Agregar número** → **Comprar número** y elige el **País**.
+2. Elige el **Tipo de solicitud**:
+   - **Nuevo número**: conseguir un número nuevo.
+   - **Portabilidad**: conservar tu número actual (ver más abajo).
+3. Elige uno de los **números** disponibles. Cada uno muestra el operador que lo proporciona (por ejemplo, **telnyx**). Según el país, también puedes elegir el tipo de número (por ejemplo, **Local** o **Móvil**).
+4. Pulsa **Iniciar solicitud**. La plataforma carga entonces la información y los **Requisitos de documentos** específicos del país.
+5. Completa los campos obligatorios, sube los documentos y guarda cada elemento.
+6. Envía la solicitud y paga las tarifas necesarias. Después, un operador revisa la solicitud.
 
-Normalmente puedes seguir estas solicitudes en una pestaña como **Solicitudes de números**.
+Puedes seguir todas tus solicitudes en la pestaña **Solicitudes de Números**.
 
-Esta parte del proceso es importante porque los requisitos no siempre son los mismos. Pueden cambiar según el **país**, el **tipo de número** y si la solicitud la realiza un **particular**, un **autónomo** o una **empresa**.
+##### Portar un número que ya tienes
+
+La **Portabilidad** te permite traer un número que ya tienes con otro proveedor, para que tus clientes sigan llamando al mismo número.
+
+1. En **Comprar un número nuevo**, elige el **País** y selecciona **Portabilidad** como **Tipo de solicitud**.
+2. Escribe tu número en **Número a portar** y pulsa **Verificar portabilidad**.
+3. Si el número se puede portar, pulsa **Iniciar solicitud** y completa los **Requisitos de documentos**, igual que con un número nuevo.
+
+> **Consejo:** La portabilidad suele tardar más que comprar un número nuevo, porque tu proveedor actual tiene que liberarlo. No des de baja tu línea actual hasta que el número aparezca en tu lista de **Números**.
+
+Esta parte del proceso es importante porque los requisitos no siempre son los mismos. Pueden cambiar según el **país**, el **tipo de número** y si la solicitud la hace un **particular**, un **autónomo** o una **empresa**.
 
 ##### Cómo funciona el paso de documentación
 
-Después de hacer clic en **Iniciar solicitud**, el formulario puede mostrar una combinación de:
+Después de pulsar **Iniciar solicitud**, el formulario puede mostrar una combinación de:
 
-- Campos de texto que debes completar manualmente
-- Campos de carga para documentos de respaldo
-- Un botón **Guardar** para cada requisito individual
-- Un estado **Pendiente** hasta que ese elemento específico se guarde o suba correctamente
+- Campos de texto que debes completar a mano
+- Campos para subir documentos justificativos
+- Un botón **Guardar** para cada requisito
+- Un estado **Pendiente** hasta que ese elemento se guarde o se suba correctamente
 
-Esto significa que la solicitud normalmente se completa **pieza por pieza**, no toda de una sola vez. Si un campo o una carga sigue mostrando **Pendiente**, ese requisito normalmente todavía no está completo.
+Esto significa que la solicitud normalmente se completa **por partes**, no toda de una vez. Si un campo o una subida sigue mostrando **Pendiente**, ese requisito normalmente todavía no está completo.
 
-En muchos países con solicitud previa, el formulario puede pedir datos como:
+En muchos países con solicitud, el formulario puede pedir datos como:
 
 - **Tipo de documento de identidad**
 - **Número de documento de identidad**
@@ -124,55 +141,55 @@ En muchos países con solicitud previa, el formulario puede pedir datos como:
 - **Copia de pasaporte/DNI**
 - **Certificado de registro de la empresa**
 
-Algunas etiquetas también pueden aclarar quién debe aportar cada elemento, por ejemplo:
+Algunas etiquetas también aclaran quién debe aportar cada elemento, por ejemplo:
 
 - **Solo para entidades legales**
 - **Solo para entidades legales y autónomos**
 - **Solo para personas físicas y autónomos**
 
-Así que, incluso si dos clientes solicitan números en el mismo país, la documentación requerida puede variar según el tipo de empresa y la categoría exacta del número.
+Así que, aunque dos clientes soliciten números en el mismo país, la documentación necesaria puede variar según el tipo de empresa y la categoría exacta del número.
 
-> **Consejo:** En el formulario de solicitud, algunos campos tienen su propio botón **Guardar**. Introducir un valor no siempre es suficiente por sí solo. El elemento puede seguir mostrando **Pendiente** hasta que hagas clic en **Guardar** correctamente.
+> **Consejo:** En el formulario de solicitud, algunos campos tienen su propio botón **Guardar**. Escribir un valor no siempre es suficiente: el elemento puede seguir mostrando **Pendiente** hasta que pulses **Guardar** correctamente.
 
 ##### Requisitos documentales habituales (ejemplos)
 
-Los requisitos exactos dependen del país y del tipo de número, pero es posible que te pidan elementos como estos:
+Los requisitos exactos dependen del país y del tipo de número, pero es posible que te pidan cosas como estas:
 
 | Requisito | Qué significa | Ejemplo |
 | --- | --- | --- |
-| Dirección que coincida con el código de área DID | Puede que necesites una dirección en la misma ciudad, región o zona de cobertura del número que estás solicitando | “Via Roma 22, Milán” para un número local de Milán |
-| Documento nacional de identidad / Número fiscal | Identificación personal o empresarial utilizada para validar al solicitante | Número de pasaporte, documento nacional de identidad, código fiscal, número de IVA |
-| Información de contacto | Una persona o contacto de empresa localizable para la solicitud | “Luca Bianchi, +39 345 000 1111” |
-| Comprobante de domicilio (subida) | Un documento que muestre la dirección que introdujiste en la solicitud | Factura de servicios, extracto bancario, contrato de alquiler o carta oficial del gobierno |
-| Copia de pasaporte/DNI (subida) | Verificación de identidad para un particular o un representante de la empresa | Escaneo del pasaporte o copia del DNI por ambas caras |
-| Certificado empresarial (subida) | Prueba de que la empresa está registrada legalmente | Certificado de constitución, extracto del registro mercantil |
-| Código fiscal de la empresa / Número de IVA | Información fiscal de la empresa para solicitudes corporativas | Número de IVA o número fiscal de la empresa |
-| Fecha y lugar de nacimiento | Datos de identificación personal requeridos en algunos países | “14 de marzo de 1988, Nápoles” |
-| Emisor y fecha de caducidad del documento de identidad | Información sobre la autoridad emisora y la validez del documento | “Emitido por Comune di Torino, caduca en 08/2028” |
+| Dirección que coincida con el código de área del número | Puede que necesites una dirección en la misma ciudad, región o zona de cobertura del número que solicitas | “Via Roma 22, Milán” para un número local de Milán |
+| Documento de identidad / número fiscal | Identificación personal o de empresa para validar al solicitante | Número de pasaporte, documento de identidad, código fiscal, número de IVA |
+| Datos de contacto | Una persona o un contacto de empresa localizable para la solicitud | “Luca Bianchi, +39 345 000 1111” |
+| Comprobante de domicilio (subida) | Un documento que muestre la dirección que introdujiste en la solicitud | Factura de suministros, extracto bancario, contrato de alquiler o carta oficial de la administración |
+| Copia de pasaporte/DNI (subida) | Verificación de identidad de un particular o de un representante de la empresa | Escaneo del pasaporte o copia del DNI por las dos caras |
+| Certificado de empresa (subida) | Prueba de que la empresa está registrada legalmente | Escritura de constitución, nota del registro mercantil |
+| Código fiscal de la empresa / número de IVA | Datos fiscales de la empresa para solicitudes de empresa | Número de IVA o número fiscal de la empresa |
+| Fecha y lugar de nacimiento | Datos de identificación personal que piden algunos países | “14 de marzo de 1988, Nápoles” |
+| Emisor y fecha de caducidad del documento de identidad | Información sobre la autoridad que lo emitió y su validez | “Emitido por el Comune di Torino, caduca en 08/2028” |
 
 ##### Comprobante de domicilio: lo que suele causar problemas
 
-El documento de **comprobante de domicilio** es una de las razones más comunes por las que una solicitud se retrasa.
+El **comprobante de domicilio** es uno de los motivos más habituales por los que se retrasa una solicitud.
 
-En muchos países, el comprobante de domicilio que subas debe cumplir todas estas condiciones:
+En muchos países, el comprobante que subas debe cumplir todas estas condiciones:
 
-- Debe mostrar claramente el **mismo nombre** utilizado en la solicitud, o el nombre de la empresa si la solicitud es empresarial
-- Debe mostrar claramente la **misma dirección** introducida en el formulario
-- Debe ser **reciente**
-- Debe estar completo y ser legible
-- No debe estar recortado de forma que oculte detalles importantes
+- Mostrar claramente el **mismo nombre** que aparece en la solicitud, o el nombre de la empresa si la solicitud es de empresa
+- Mostrar claramente la **misma dirección** introducida en el formulario
+- Ser **reciente**
+- Estar completo y ser legible
+- No estar recortado de forma que oculte datos importantes
 
-Una regla muy importante es que la factura o el documento de domicilio normalmente debe tener **menos de 3 meses de antigüedad** en el momento del envío.
+Una regla muy importante es que la factura o el documento de domicilio suele tener que tener **menos de 3 meses** en el momento de enviarlo.
 
-Eso normalmente significa que debes subir un documento reciente como:
+Eso normalmente significa subir un documento reciente como:
 
-- Una factura de servicios emitida en los últimos 3 meses
-- Un extracto bancario emitido en los últimos 3 meses
-- Una carta oficial del gobierno o de impuestos emitida en los últimos 3 meses
+- Una factura de suministros de los últimos 3 meses
+- Un extracto bancario de los últimos 3 meses
+- Una carta oficial de la administración o de Hacienda de los últimos 3 meses
 
-Los documentos más antiguos pueden ser rechazados aunque la dirección sea correcta.
+Los documentos más antiguos pueden rechazarse aunque la dirección sea correcta.
 
-> **Importante:** Cuando subas una factura o un extracto bancario como comprobante de domicilio, asegúrate de que tenga **menos de 3 meses de antigüedad**. Si el documento es más antiguo, la solicitud puede seguir pendiente o ser rechazada durante la revisión.
+> **Importante:** Cuando subas una factura o un extracto bancario como comprobante de domicilio, asegúrate de que tenga **menos de 3 meses**. Si es más antiguo, la solicitud puede quedarse pendiente o ser rechazada en la revisión.
 
 ##### Cómo preparar los documentos antes de subirlos
 
@@ -182,41 +199,67 @@ Un buen documento debe ser:
 
 - **Claro y legible**
 - **Completo**, sin bordes cortados
-- **Coherente** con los datos introducidos en el formulario
-- **Actual**, especialmente en el caso de los comprobantes de domicilio
-- **Adecuado** para el tipo de solicitante, ya sea particular o empresa
+- **Coherente** con los datos del formulario
+- **Actual**, sobre todo si es un comprobante de domicilio
+- **Adecuado** al tipo de solicitante, particular o empresa
 
-Por ejemplo, si la solicitud es para una empresa, el revisor puede esperar que el nombre de la empresa, el número de registro, los datos fiscales y los documentos de constitución coincidan entre sí. Si la solicitud es para un particular, el revisor puede comprobar que el nombre personal, el documento de identidad y el comprobante de domicilio coincidan.
+Por ejemplo, si la solicitud es de una empresa, el revisor puede esperar que el nombre de la empresa, su número de registro, sus datos fiscales y sus documentos de constitución coincidan entre sí. Si es de un particular, puede comprobar que el nombre, el documento de identidad y el comprobante de domicilio coinciden.
 
-Problemas habituales que pueden retrasar la aprobación:
+Problemas habituales que retrasan la aprobación:
 
 - La dirección del formulario no coincide con la del documento subido
-- La factura subida tiene más de 3 meses de antigüedad
+- La factura subida tiene más de 3 meses
 - La copia del pasaporte o del DNI está borrosa
-- Se envía una solicitud de empresa solo con documentos personales
-- Un campo está completado, pero el usuario no hizo clic en **Guardar**
+- Una solicitud de empresa se envía solo con documentos personales
+- Un campo está completado, pero no se pulsó **Guardar**
 - Se subió un documento, pero su estado sigue mostrando **Pendiente**
 
-> **Error común:** Subir el archivo correcto no siempre es suficiente. Después de cada carga o entrada de texto, comprueba que el requisito ya no muestre **Pendiente**.
+> **Error común:** Subir el archivo correcto no siempre basta. Después de cada subida o texto, comprueba que el requisito ya no muestra **Pendiente**.
 
 ##### Tarifas + revisión
 
-Algunos países muestran un paso de **pago de tarifas** después de completar la documentación. Esto puede incluir:
+Algunos países muestran un paso de **pago** después de completar la documentación. Puede incluir:
 
 - Una **tarifa única de activación**
-- El **coste mensual recurrente** del número
+- El **coste mensual** del número
 
-La solicitud normalmente avanza solo después de que se hayan subido los documentos requeridos y se haya completado el paso de pago.
+La solicitud normalmente solo avanza cuando se han subido los documentos necesarios y se ha completado el pago.
 
 Después de enviar y pagar:
 
 - Recibirás un **ID de solicitud**
-- La solicitud será revisada por un operador
-- Una vez aprobada, el número aparecerá en tu lista de Numbers
+- Un operador revisará la solicitud
+- Cuando se apruebe, el número aparecerá en tu lista de **Números**
 
-La revisión es manual en muchos casos, por lo que la aprobación no siempre es inmediata.
+La revisión suele ser manual, por eso la aprobación no siempre es inmediata.
 
-> **Importante:** El tiempo de aprobación puede variar según el país, las reglas del proveedor y la calidad de la documentación. Si necesitas el número para un lanzamiento o una campaña próxima, envía la solicitud lo antes posible y utiliza documentos recientes y claramente legibles.
+> **Importante:** El tiempo de aprobación varía según el país, las reglas del proveedor y la calidad de los documentos. Si necesitas el número para un lanzamiento o una campaña, envía la solicitud lo antes posible con documentos recientes y bien legibles.
+
+### Seguir tus solicitudes (Solicitudes de Números)
+
+La pestaña **Solicitudes de Números** muestra tus solicitudes de compra y de portabilidad para países fuera de Estados Unidos y Canadá.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/numbers-requests.png" alt="Pestaña Solicitudes de Números con los filtros Estado, Flujo y Estado del pago, el botón Actualizar y una tarjeta por solicitud con el país, el estado, el tipo de número, el flujo, el número elegido, la fecha y el estado del pago." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: cada tarjeta es una solicitud. Usa los filtros para encontrar las que necesitan tu atención.
+</p>
+
+Cada tarjeta muestra el **país**, el **estado** de la solicitud, el **Tipo de Número**, el **Flujo**, el **Número Elegido**, la fecha y el estado del pago.
+
+Usa los filtros para acotar la lista:
+
+| Filtro | Opciones |
+| --- | --- |
+| **Estado** | **Borrador**, **Pendiente**, **Aprobado**, **Necesita Info**, **Rechazado**, **Completado**, **Cancelado** |
+| **Flujo** | **Pedido** (número nuevo), **Portabilidad** (número que ya tienes) |
+| **Estado del Pago** | **Pendiente**, **Pagado** |
+
+Pulsa **Actualizar** para ver el estado más reciente.
+
+> **Consejo:** Revisa esta pestaña con frecuencia mientras tengas una solicitud abierta. Una solicitud en **Necesita Info** espera que corrijas o añadas algo, y **Pago Pendiente** significa que no avanzará hasta que pagues.
 
 ---
 
@@ -225,202 +268,234 @@ La revisión es manual en muchos casos, por lo que la aprobación no siempre es 
 Si ya tienes números en Twilio, puedes importarlos a Callin.io:
 
 1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Add Number** → **Import from Twilio**.
-3. Introduce tu **Twilio Account SID** y **Twilio Auth Token**.
-4. Pulsa **Search Twilio Numbers** y selecciona los números a importar.
-5. Asigna los números importados a un agente cuando quieras usarlos.
+2. Pulsa **+ Agregar número** → **Importar desde Twilio**.
+3. Introduce tu **Twilio Account SID** y tu **Twilio Auth Token**.
+4. Pulsa **Buscar números de Twilio** y selecciona los números que quieres importar.
+5. Asigna los números importados a un agente de IA cuando quieras usarlos.
 
-> **Error común:** Usar credenciales equivocadas (por ejemplo, del proyecto incorrecto). Si no aparece ningún número, revisa el SID/Token y que estés en la cuenta/subcuenta correcta.
+> **Error común:** Copiar las credenciales de Twilio equivocadas (por ejemplo, unas de prueba en lugar de las reales). Si no aparece ningún número, revisa tu proyecto de Twilio y sus permisos.
 
 ---
 
-### Opción C: Añadir un número personal (solo outbound)
+### Opción C: Añadir un número personal (solo llamadas salientes)
 
-Un **Personal Number** es útil para hacer llamadas salientes desde tu propio número, pero tiene una limitación clave:
-
-- **Solo sirve para outbound**
-- **No puede recibir llamadas inbound** dentro de Callin.io
+Un **número personal** es útil cuando quieres hacer llamadas salientes desde tu propio número, pero no puede recibir llamadas entrantes en Callin.io.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/numbers2.png"
-    alt="Modal Add Personal Number con selector de país, campo de teléfono, mensaje de número inválido y pasos del proceso de verificación"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers2.png" alt="Ventana Agregar número personal con el selector de país, el campo de teléfono, el mensaje de número no válido y los pasos del proceso de verificación." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Modal de Add Personal Number con el flujo de verificación (recibes una llamada y completas el código).
+  Captura: la ventana Agregar número personal, con el campo del teléfono y el proceso de verificación (recibes una llamada e introduces el código).
 </p>
 
 #### Cómo verificar tu número personal
 
 1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Add Number** → **Add Personal Number**.
-3. Elige el país e introduce tu número.
-4. Pulsa **Verify Number**.
-5. Recibirás una **llamada de verificación**.
-6. Introduce el código cuando se te indique.
+2. Pulsa **+ Agregar número** → **Agregar número personal**.
+3. Elige el país e introduce tu número de teléfono.
+4. Pulsa **Verificar número**.
+5. Recibirás una **llamada de verificación** de Twilio.
+6. Introduce el código de verificación cuando se te pida.
 7. Tras la verificación, el número se añade a tu cuenta.
 
-> **Importante:** Si necesitas inbound, usa un número comprado/importado o BYOC (SIP Trunk).
+> **Importante:** Los números personales son **solo para llamadas salientes**. Si necesitas recibir llamadas, usa un número comprado o importado, o BYOC.
 
 ---
 
 ### Opción D: Añadir/Importar números de Telnyx
 
-Si ya conectaste Telnyx (desde BYOC), podrás importar tus números activos:
+Si tu cuenta de Telnyx está conectada (desde BYOC), puedes importar tus números activos de Telnyx a Callin.io:
 
 1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Add Number** → **Add Telnyx Number**.
-3. Selecciona los números que quieres añadir/importar.
-4. Confirma y asígnalos a tus agentes cuando lo necesites.
+2. Pulsa **+ Agregar número** → **Agregar número de Telnyx**.
+3. Usa **Buscar números...** para encontrarlos y marca la casilla **Seleccionar** de cada número que quieras. **Seleccionar visibles** marca todos los números de la lista.
+4. Pulsa **Importar** y después asígnalos a tus agentes cuando lo necesites.
+
+> **Importante:** Si todavía no has conectado Telnyx, la ventana muestra un error por falta de la clave API de Telnyx y ningún número. Conecta Telnyx primero en [BYOC (troncal SIP)](#byoc-troncal-sip).
+
+---
+
+### Gestionar tus números
+
+En la lista de **Números**, pulsa el menú **⋮** de un número para gestionarlo:
+
+- **Editar etiqueta**: ponle al número un nombre reconocible, por ejemplo el cliente o la campaña para la que es.
+- **Cancelar suscripción** (números comprados): deja de renovar un número que compraste a través de Callin.io.
+- **Eliminar** (números personales): borra un número personal de tu cuenta.
+
+> **Importante:** Antes de cancelar o eliminar un número, asigna otro número a los agentes que lo usan, para que puedan seguir haciendo y recibiendo llamadas.
 
 ---
 
 ### Asignar un número a un agente
 
-Comprar o importar el número no siempre es el último paso. En la lista de Números, presta atención a avisos como:
+Comprar o importar un número es solo el primer paso: tu agente todavía tiene que usarlo. Si la lista de **Números** muestra **Este número no está asignado a ningún agente**, asígnalo antes de empezar a llamar:
 
-- “this number is not assigned to any agent”
-
-Si aparece, asigna el número al agente correcto antes de hacer llamadas reales.
-
-> **Consejo:** Mantén un número “de pruebas” separado del número de producción mientras ajustas prompts y flujos.
-
----
-
-## BYOC (SIP Trunk)
-
-BYOC (Bring Your Own Carrier) te permite usar tu propio proveedor de telefonía conectándolo mediante un **SIP Trunk**, en lugar de depender de números gestionados por Callin.io.
-
-Ve directamente a la configuración aquí: [Abrir BYOC](https://app.callin.io/byoc)
+1. Ve a **Agentes de IA**.
+2. Pulsa el menú **⋮** del agente y elige **Asignar número**.
+3. En la ventana de asignación, busca el número (puedes buscar por número, etiqueta u operador) y pulsa **Asignar**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/byoc1.png"
-    alt="Página BYOC con configuración de Telnyx: campo Telnyx API Key, botón Start y lista de pasos de aprovisionamiento"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/numbers-assign.png" alt="Ventana Asignar número de un agente, con la lista de números, su estado (asignado a otro agente o no asignado), el operador y un botón Asignar, además del enlace Comprar números nuevos." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Pantalla de BYOC para conectar Telnyx, sincronizar DIDs y aprovisionar el SIP Trunk.
+  Captura: la ventana Asignar número muestra qué números están libres y cuáles usa ya otro agente.
 </p>
 
-### Qué es un SIP Trunk (en sencillo)
+La columna **Estado** indica si cada número está **No asignado** o ya está asignado a otro agente. Si no tienes un número adecuado, pulsa **Comprar números nuevos**.
 
-Un **SIP Trunk** es una conexión “de telefonía por internet” entre tu carrier y tu sistema de llamadas. Se usa mucho en empresas para gestionar inbound/outbound con control de routing, SBC, credenciales y políticas.
+> **Error común:** Asignar un número que está usando otro agente. Como avisa la ventana, si lo asignas aquí **se desvinculará del otro agente**, que dejará de usar ese número.
+
+> **Consejo:** Mantén un número “de pruebas” separado del de producción mientras ajustas las instrucciones y los flujos de llamada.
+
+---
+
+## BYOC (troncal SIP)
+
+**BYOC** significa *Bring Your Own Carrier*, es decir, usar tu propio operador. En lugar de comprar números a través de Callin.io, conectas tu proveedor de telefonía mediante una troncal SIP.
+
+Motivos habituales para usar BYOC:
+
+- Ya tienes un contrato con un operador (telefonía de empresa)
+- Necesitas un enrutamiento a medida, control del SBC o cumplir requisitos normativos
+- Quieres evitar las reglas de la telefonía gestionada por Callin usando tu propio proveedor
+
+Configúralo aquí: [Abrir BYOC](https://app.callin.io/byoc)
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/byoc1.png" alt="Página BYOC en la pestaña Telnyx, con el campo Clave de Telnyx, el botón Comenzar y los pasos de la configuración: guardar la clave, obtener los números, guardarlos, aprovisionar la troncal SIP y crear los números de teléfono." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la configuración de BYOC, donde puedes conectar Telnyx y sincronizar tus números con Callin.io.
+</p>
+
+### Qué es una troncal SIP (en sencillo)
+
+Una **troncal SIP** es una conexión entre un operador telefónico y tu sistema de llamadas. Piensa en ella como una “línea de teléfono por internet” que puede gestionar llamadas entrantes y salientes, muy usada por las empresas.
 
 ---
 
 ### Opción 1: Conectar Telnyx
 
-Si usas Telnyx, Callin.io guía el proceso con una API key:
+Si usas **Telnyx**, Callin.io te guía en la configuración con una clave API:
 
 1. Ve a [Abrir BYOC](https://app.callin.io/byoc).
 2. Abre la pestaña **Telnyx**.
-3. Pega tu **Telnyx API Key**.
-4. Pulsa **Start**.
+3. Pega tu **Clave de Telnyx**.
+4. Pulsa **Comenzar**.
 
-Durante el proceso suelen aparecer pasos como:
+Durante la configuración verás pasos como:
 
-- Guardar la Telnyx API key
-- Obtener números activos (DIDs)
-- Guardar números en tu cuenta
-- Aprovisionar el SIP Trunk (inbound y outbound)
+- Guardar la clave API de Telnyx
+- Obtener los números activos de Telnyx (DID)
+- Guardar los números en tu cuenta de Callin.io
+- Aprovisionar la troncal SIP (entrante y saliente)
+- Crear los números de teléfono del proveedor
 
-Al finalizar, tus números de Telnyx deberían aparecer en Números.
+Cuando termine, tus números de Telnyx deberían aparecer en **Números**.
 
-> **Importante:** Si tu API key no tiene permisos para leer DIDs/números, Callin.io no podrá importarlos.
+> **Importante:** Si tu clave de Telnyx no tiene permiso para leer los números (DID), Callin.io no podrá obtenerlos.
 
 ---
 
-### Opción 2: Conectar otro proveedor (Generic SIP Trunk)
+### Opción 2: Conectar otro proveedor (troncal SIP genérica)
 
-Si tu proveedor no es Telnyx, usa la pestaña **Other SIP Provider**. Normalmente verás tres secciones: **Basic**, **Inbound** y **Outbound**.
+Si tu proveedor no es Telnyx, usa la pestaña **Otro proveedor SIP** (**Troncal SIP genérica / Extensión PBX (cualquier proveedor)**). Sirve para un número de troncal SIP (DID) y también para una **extensión de tu centralita** (PBX). Configurarás tres pestañas: **Básico**, **Entrante** y **Saliente**.
 
-#### Basic
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/byoc-sip.png" alt="Pestaña Otro proveedor SIP en BYOC, con las pestañas Básico, Entrante y Saliente, los campos Etiqueta y Número de teléfono / Extensión, las casillas de llamadas entrantes y salientes, y los botones Guardar e importar y Restablecer." style={{ width:"100%", display:"block" }} />
+</div>
 
-- **Label**: Un nombre descriptivo (ejemplo: “HQ SIP Trunk”)
-- **Phone Number (E.164)**: Formato internacional completo (ejemplo: `+15551234567`)
-- Opciones como **Supports inbound** y **Supports outbound**
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el formulario de troncal SIP genérica / extensión PBX. Completa Básico, Entrante y Saliente, y pulsa Guardar e importar.
+</p>
 
-#### Inbound
+#### Básico
 
-- **Inbound SBC / FQDN**: Dirección SIP destino (ejemplo: `sip.example.com:5061`)
-- **Transport**: normalmente **TLS** o **UDP**
-- **Media encryption**: actívalo si tu proveedor lo soporta
+- **Etiqueta**: un nombre fácil de reconocer (ejemplo: “Troncal SIP oficina central”)
+- **Número de teléfono / Extensión (E.164 o extensión)**: el número completo en formato internacional (ejemplo: `+15551234567`) o la extensión de la centralita (ejemplo: `101`)
+- **Admite llamadas entrantes** y **Admite llamadas salientes**: marca las direcciones que gestionará este número
 
-> **Consejo:** En inbound, a menudo no se usan credenciales. Muchos carriers autentican por configuración del trunk o allowlist.
+#### Entrante
 
-#### Outbound
+Las llamadas entrantes van del operador a tu sistema.
 
-- **Outbound SBC / FQDN**: servidor SIP del proveedor
-- **Transport** y **Media encryption**
-- **Username** y **Password**: credenciales SIP
-- **Allowed countries (outbound)**: por ejemplo **Worldwide** o **Custom list**
+- **SBC / FQDN entrante**: tu dirección SIP (ejemplo: `sip.example.com:5061`)
+- **Transporte**: **TLS**, **TCP** o **UDP**
+- **Cifrado de medios**: **Permitido**, **Requerido** o **Deshabilitado**
 
-Cuando termines, pulsa **Save & Import**.
+> **Consejo:** Las llamadas entrantes a menudo **no** necesitan credenciales. Muchos operadores las autentican por lista de IP permitidas o por la configuración de la troncal.
 
-> **Error común:** Un SBC/FQDN incorrecto o credenciales erróneas. Si outbound falla, revisa usuario/contraseña, transport y puertos requeridos por tu proveedor.
+#### Saliente
+
+Las llamadas salientes van de Callin.io a tu operador.
+
+- **SBC / FQDN saliente**: el servidor SIP de tu proveedor
+- **Transporte** y **Cifrado de medios** (las mismas opciones que en Entrante)
+- **Usuario** y **Contraseña**: tus credenciales SIP
+- **Países permitidos (saliente)**: **Mundial** o una **Lista personalizada**
+
+Cuando termines, pulsa **Guardar e importar**. Para empezar de cero, pulsa **Restablecer**.
+
+Después de guardar, Callin.io comprueba que el número se puede usar para llamar. Si tu configuración SIP necesita algún ajuste, verás indicaciones en esta página. Mientras lo corriges, el número puede seguir apareciendo en tu lista de **Números**.
+
+> **Error común:** Usar un SBC/FQDN o unas credenciales incorrectas. Si fallan las llamadas salientes, revisa tu usuario y contraseña SIP y si tu proveedor exige un puerto o un transporte concreto.
 
 ---
 
 ## Minutos y facturación (lo más importante)
 
-La facturación suele tener dos partes:
+La facturación puede tener dos partes: el **uso de Callin** y los **costes del operador telefónico**. Lo que veas depende de cómo conectes los números.
 
-- **Uso de Callin (compute minutes)**: tiempo en el que el agente está activo (escucha, procesa y responde).
-- **Costes de telefonía**: dependen de cómo conectes el número y del carrier que use tu cuenta.
+### Minutos de cómputo de Callin
+
+Los **minutos de cómputo** son el tiempo en que tu agente de IA está activo (escuchando, procesando y respondiendo). Es la métrica principal de uso de las llamadas con IA.
 
 ### Aviso de facturación importante (primer minuto)
 
-Cuando realizas llamadas usando telefonía enruta a través del carrier de Callin (por ejemplo, números comprados a través de Callin.io), puede aplicarse una regla de **first-minute billing**:
+Cuando haces llamadas con la **telefonía gestionada por Callin** (por ejemplo, números comprados a través de Callin.io y enrutados por el operador de Callin), se aplica una regla de **facturación del primer minuto**:
 
-- El cobro mínimo es **1 minuto**
-- Si la llamada dura más de 1 minuto, después del primer minuto la facturación sigue la duración real (sin cargos extra más allá del mínimo)
+- El cobro mínimo es de **1 minuto**
+- A partir del primer minuto, se factura la duración real de la llamada
+- Esta regla **no se aplica** a:
+  - **Llamadas de prueba en el navegador**
+  - **Numeración propia importada** (Telnyx o Twilio)
+  - **Troncal SIP externa (BYOC)**
 
-Además, cuando compras un número de Telnyx/Twilio a través de Callin.io:
+> **Importante:** El comportamiento exacto puede variar según tu configuración y el enrutamiento del proveedor. Si quieres evitar las reglas de la telefonía gestionada por Callin, importa tus propios números o usa BYOC.
 
-- **No se añade una tarifa extra de plataforma por el número en sí**
+### Recordatorio: facturación con número personal
 
-Esta regla de primer minuto normalmente **no aplica** a:
-
-- **Browser test calls**
-- Números importados (Twilio o Telnyx)
-- **External SIP trunk** (BYOC / bring your own carrier)
-
-> **Importante:** El comportamiento exacto puede variar según cómo esté configurado el routing de tu cuenta. Si quieres evitar reglas asociadas a carrier gestionado por Callin, usa números importados o BYOC (SIP Trunk).
-
-### Recordatorio: facturación en Personal Number
-
-Un **Personal Number** es **solo outbound**, y puede estar dentro del alcance de la facturación del carrier de Callin según cómo se enruten tus llamadas.
-
-> **Importante:** Aunque uses Personal Number para outbound, para inbound necesitas un número comprado/importado o BYOC (SIP Trunk).
+Los números personales son **solo para llamadas salientes**, y las llamadas que hagas con ellos pueden seguir las reglas de la telefonía gestionada por Callin, según cómo se enruten las llamadas de tu cuenta.
 
 ---
 
 ## Solución de problemas
 
 ### “No puedo hacer llamadas”
-- Confirma que tienes al menos **un número activo**
-- Revisa si el número está **asignado a un agente**
-- Si usas BYOC (SIP Trunk), valida **SBC/FQDN**, **Transport**, **Media encryption** y credenciales
 
-### “Mi Personal Number no recibe llamadas inbound”
-- Es lo esperado: **Personal Number es solo outbound**
-- Usa un número comprado/importado o BYOC (SIP Trunk) para inbound
+- Comprueba que tienes al menos **un número activo**
+- Asegúrate de que el número está **asignado a un agente**
+- Si usas BYOC, confirma que la configuración de tu troncal SIP es correcta (SBC/FQDN, transporte, credenciales)
+
+### “Mi número personal no recibe llamadas entrantes”
+
+- Es lo esperado: **los números personales son solo para llamadas salientes**
+- Usa un número comprado o importado, o BYOC, para recibir llamadas
 
 ### “Mis números importados no aparecen”
-- Revisa credenciales (Twilio Account SID/Auth Token o Telnyx API Key)
-- Confirma que los números estén activos en el proveedor
-- Verifica que estás usando la cuenta/subcuenta correcta
+
+- Revisa las credenciales (Twilio Account SID y Auth Token, o la clave de Telnyx)
+- Confirma que los números están activos en la cuenta del proveedor
+- Vuelve a intentarlo y comprueba que usas el proyecto o la subcuenta correctos del proveedor
 
 ---
 
 ## Nota final
 
-Si buscas la configuración más rápida, empieza con un número de **Estados Unidos o Canadá** comprado a través de Callin.io. Si ya tienes carrier o necesitas más control de routing, conecta BYOC (SIP Trunk).
+Si quieres la configuración más rápida, empieza con **un número de Estados Unidos o Canadá comprado en Callin.io**. Si necesitas un enrutamiento avanzado o ya tienes operador, conecta **BYOC**.
 
-Cuando el número esté añadido y asignado, tus agentes de IA podrán hacer y recibir llamadas reales a escala.
+Cuando tu número esté añadido y asignado, tus agentes de IA podrán hacer y recibir llamadas reales a gran escala.
