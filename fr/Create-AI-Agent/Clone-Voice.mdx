@@ -6,40 +6,41 @@ icon: "waveform-lines"
 
 ## Ouvrir la page Voix
 
-La section **Voix** vous permet de gérer la façon dont vos agents sonnent. Depuis cette page, vous pouvez :
+La section **Voix** est l’endroit où vous gérez la façon dont vos agents parlent. Depuis cette page, vous pouvez :
 
-- Parcourir la **bibliothèque de voix** (voix prêtes à l’emploi)
-- **Écouter** des extraits avant utilisation
-- **Assigner** une voix à un agent spécifique
-- **Cloner une voix** pour que votre agent parle avec un son personnalisé
+- Parcourir la **Bibliothèque de Voix** (voix prêtes à l’emploi)
+- **Écouter** les voix avant de les utiliser
+- **Attribuer** une voix à un agent précis
+- **Cloner une voix** (pour que votre agent parle avec une voix personnalisée)
 
 Accédez à la section **Voix** ici : [Voix](https://app.callin.io/voices)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/voices1.png"
-    alt="La page Voix affichant une liste de voix disponibles avec un bouton de lecture, des filtres et une action pour assigner une voix."
+    alt="La page Voix avec les onglets Essayer des Voix et Cloner la Voix, la barre de recherche, les filtres de genre et de langue, et la liste de la Bibliothèque de Voix avec un bouton Attribuer sur chaque voix."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : La page Voix où vous pouvez écouter des voix de la bibliothèque et accéder au clonage de voix.
+  Capture d’écran : la Bibliothèque de Voix dans l’onglet Essayer des Voix, avec la barre de recherche et les filtres de genre et de langue.
 </p>
 
 ## Parcourir et écouter les voix
 
-Lorsque vous ouvrez cette page, vous voyez la **bibliothèque de voix**. Chaque ligne de voix contient généralement :
+Par défaut, vous arrivez sur **Essayer des Voix**. C’est la **Bibliothèque de Voix** : une collection de voix IA professionnelles (plus de 150), répartie sur plusieurs pages. Chaque ligne comprend :
 
-- Un bouton de **lecture** pour écouter un extrait
-- Le **nom de la voix** et une courte description du style (par exemple : calme, rassurante, énergique)
-- Des **étiquettes de détails** comme le genre, la langue et l’accent
-- Une action à droite pour **assigner** cette voix à un agent
+- Un bouton de **lecture** pour écouter la voix
+- Le **nom de la voix** et une courte description de son style (par exemple : « détendue », « rassurante », « énergique »)
+- Les étiquettes **Détails** : genre, langue et accent (par exemple : masculin, anglais (**en**) et accent américain)
+- Un bouton **Attribuer** à droite pour utiliser cette voix avec un agent
 
-Vous pouvez aussi affiner la liste grâce à :
+Utilisez les contrôles au-dessus de la liste pour l’affiner :
 
-- La **barre de recherche** (recherche par nom ou par accent)
-- Des filtres comme le **genre** et d’autres menus (les options peuvent varier selon votre compte ou votre offre)
+- **Rechercher des voix par nom ou accent** : saisissez un nom (par exemple « Sarah ») ou un accent (par exemple « british »).
+- **Genre** : **Tous les Genres**, **Masculin**, **Féminin** ou **Autre**.
+- **Langue** : choisissez une langue dans la liste. Vous pouvez la chercher par nom ou par code (par exemple « Français » ou « fr »). Choisissez **Tout** pour revoir toutes les langues.
 
 > **Astuce :** Pour comparer les voix, utilisez toujours le même petit script.
 >
@@ -47,43 +48,83 @@ Vous pouvez aussi affiner la liste grâce à :
 
 ## Assigner une voix à un agent
 
-Pour qu’un agent parle avec une voix spécifique :
+Pour qu’un agent parle avec une voix précise :
 
-1. Dans la bibliothèque de voix, trouvez la voix souhaitée.
-2. Utilisez l’action à droite pour **l’assigner**.
-3. Dans la fenêtre d’assignation, sélectionnez l’agent à mettre à jour.
-4. Confirmez pour enregistrer le changement.
+1. Dans **Essayer des Voix**, trouvez la voix souhaitée. Utilisez les filtres pour aller plus vite.
+2. Cliquez sur **Attribuer**, à droite de cette voix.
+3. La fenêtre **Attribuer une Voix à un Agent** s’ouvre. En haut, vous voyez la fiche de la voix : son nom, une description complète et des étiquettes comme le genre, la langue, l’accent, l’âge et l’usage.
+4. Sous **Sélectionnez un agent pour attribuer cette voix**, trouvez l’agent à mettre à jour et cliquez sur le bouton **Attribuer** à côté.
 
-Une fois assignée, l’agent utilisera cette voix pendant les appels.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/voices-assign.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-> **Important :** Vous pouvez changer la voix plus tard en en assignant une autre. En général, le choix de la voix se fait par agent.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : filtrez la bibliothèque par genre et par langue, puis cliquez sur Attribuer et choisissez l’agent.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/voices-assign.png"
+    alt="La fenêtre Attribuer une Voix à un Agent avec la fiche de la voix en haut et la liste des agents, chacun avec son propre bouton Attribuer."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la fenêtre Attribuer une Voix à un Agent. Chaque agent de la liste a son propre bouton Attribuer.
+</p>
+
+Une fois la voix attribuée, l’agent l’utilisera pour parler pendant les appels.
+
+> **Important :** La voix se règle par agent (et non de façon globale). Pour changer plus tard la voix d’un agent, attribuez-en une autre depuis cette page, ou ouvrez l’agent et modifiez-la dans l’onglet **Agent** → **Voix**. Voir [Agents IA](/fr/Create-AI-Agent/Create-Agent-Enchanced).
 
 ## Cloner une voix
 
-Si vous souhaitez un rendu plus personnalisé (pour une voix de marque ou un personnage), vous pouvez cloner une voix depuis cette section.
+Si vous voulez un rendu plus personnalisé (pour la voix de votre marque ou un personnage précis), utilisez **Cloner la Voix**.
 
-1. Ouvrez la zone de clonage de voix.
-2. Cliquez sur le bouton pour créer une nouvelle voix clonée.
-3. Dans le formulaire, renseignez :
-   - **Nom de la voix** (obligatoire)
-   - **Description** (facultatif)
-   - **Langue** (obligatoire)
-   - **Genre** (obligatoire)
-4. Ajoutez un **échantillon de voix** (obligatoire) en :
-   - Téléversant un fichier audio
-   - Enregistrant votre voix
-5. Suivez les étapes à l’écran pour envoyer l’échantillon. Une fois créée, la voix clonée apparaîtra dans la liste des voix clonées et pourra être assignée comme n’importe quelle autre voix.
+1. Ouvrez l’onglet **Cloner la Voix**.
+2. Cliquez sur **Cloner la Voix**.
+3. Dans la fenêtre **Aperçu de la Voix**, remplissez :
+   - **Nom de la Voix** (obligatoire)
+   - **Description** (facultative)
+   - **Langue** (obligatoire) : anglais, italien, français, allemand, portugais, espagnol, néerlandais, hindi ou arabe
+   - **Genre** (obligatoire) : Masculin, Féminin ou Autre
+4. Ajoutez un **Échantillon Vocal** (obligatoire) avec l’une des options :
+   - **Importer Audio** : cliquez sur **Sélectionner Fichier** ou glissez-déposez un fichier audio (4MB max.)
+   - **Enregistrer Voix** : enregistrez l’échantillon directement dans votre navigateur
+5. Cliquez sur **Cloner** pour envoyer l’échantillon. Une fois la voix clonée créée, elle apparaît dans l’onglet **Cloner la Voix** et vous pouvez l’attribuer comme n’importe quelle autre voix.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/voices-clone.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : ouvrez Cloner la Voix, remplissez le nom, la description, la langue et le genre, puis ajoutez l’échantillon vocal.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/voices-clone.png"
+    alt="La fenêtre Aperçu de la Voix avec les champs Nom de la Voix, Description, Langue et Genre, les options Importer Audio et Enregistrer Voix, et la zone d'import de l'Échantillon Vocal."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la fenêtre Aperçu de la Voix, prête pour l’échantillon vocal.
+</p>
 
 > **Erreur fréquente :** Utiliser un échantillon trop court ou avec du bruit de fond. Un enregistrement propre change vraiment le résultat.
 
 ## Règles et bonnes pratiques pour le clonage de voix
 
-Pour enregistrer ou téléverser votre échantillon, respectez ces recommandations :
+Quand vous enregistrez ou importez votre échantillon, suivez ces règles (elles figurent aussi en bas de l’onglet **Cloner la Voix**) :
 
-- Enregistrez dans un **endroit calme**, avec un minimum de bruit de fond
-- **Parlez clairement** à un rythme naturel
-- Pour les fichiers téléversés, fournissez **au moins 30 secondes** de parole continue
-- La taille maximale du fichier est de **4 MB**
-- Les langues prises en charge incluent : **anglais, italien, français, allemand, portugais, espagnol, néerlandais, arabe et hindi**
+- Enregistrez dans un **endroit calme**, avec le moins de bruit de fond possible
+- **Parlez clairement**, à un rythme naturel
+- Pour les fichiers importés, fournissez **au moins 30 secondes** de parole continue
+- La taille maximale du fichier est de **4MB**
+- Langues prises en charge : **anglais, italien, français, allemand, portugais, espagnol, néerlandais, hindi et arabe**
 
 > **Important :** Ne téléversez que de l’audio que vous avez le droit d’utiliser (par exemple votre propre voix ou une voix sous licence).
