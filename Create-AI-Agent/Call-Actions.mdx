@@ -5,13 +5,13 @@ description: "Filter, export, and analyze past calls. Open call details to revie
 
 ## Overview
 
-**Call History** is where you review past calls in your workspace. From this page you can:
+**Call History** is where you review every past call in your workspace. From this page you can:
 
-- **Search and filter** calls (by phone number, agent, status, date range, and more)
-- **See call outcomes** (for example, whether an appointment or voicemail was detected)
-- **Export** the current list to **CSV**
-- **Open call details** to analyze the conversation (recording, transcript, summary, key moments, sentiments)
-- **Download** the call recording (when available)
+- **Search transcripts** and **filter** calls (by phone number, agent, squad, status, date, sentiment, and more).
+- **See call outcomes** at a glance: voicemail detected, data extracted, and call transferred.
+- **Export** the list to **CSV**, choosing exactly which columns to include.
+- **Open call details** to read the transcript, see the summary and sentiment, check extracted data and goals, and review key moments.
+- **Listen to** and **download** the call recording.
 
 Use this direct link to open the page:
 [Open Call History](https://app.callin.io/call-history)
@@ -23,106 +23,159 @@ Use this direct link to open the page:
 1. In the left sidebar, go to **Evaluate**.
 2. Click **Call History**.
 
+The table shows one row per call, newest first:
+
+| Column | What it shows |
+| --- | --- |
+| **Call Info** | The caller's phone number and the date and time of the call. Test calls made from the browser have no phone number. |
+| **Agent / Squad** | The agent or squad that handled the call. |
+| **Duration** | How long the call lasted. |
+| **Origin** | Where the call came from, for example **Application**. |
+| **Status** | The final status of the call, for example **Completed** or **No Answer**. |
+| **Call Outcomes** | Icons that summarize what happened during the call. See below. |
+
 ## Filter and search calls
 
-At the top of the page you’ll typically see two main actions:
+At the top of the page you'll find:
 
-- **Filters** (to narrow down the list)
-- **Export CSV** (to download the results)
+- **Search transcripts...**: type a word or phrase to find calls where it was said.
+- **Filter buttons**: click one to open its options. You can combine several.
+- **Export CSV**: download the calls you're seeing.
 
-The filter area includes fields like the following (availability can vary by account/plan):
-
-| Filter | What it helps you do | Example |
+| Filter | What it helps you do | Options |
 | --- | --- | --- |
-| Phone Number | Find calls for a specific number | Search for “+1 415…” |
-| Call ID | Jump to a specific call | Paste a call ID |
-| Handling Agent | See calls handled by a specific agent | “Sales Agent 1” |
-| Status | Filter by call status | “Completed” |
-| Direction | Separate inbound vs outbound calls | “Inbound” |
-| Date Range | Focus on a time window | “Last 7 days” |
-| Call Duration | Filter by length | “Over 1 minute” |
-| Call Origin | Identify where the call came from | “Application” |
-| Campaign ID | Filter by campaign identifier | Paste an ID |
-| Appointment | Find calls with an appointment detected | “All” / filtered |
-| Call Transfer | Find calls with transfer activity | “All” / filtered |
-| Machine | Find calls where voicemail/machine was detected | “All” / filtered |
+| **Phone Number** | Find calls with a specific number | Type the number |
+| **Call ID** | Jump to a specific call | Paste the call ID |
+| **Agent** | See calls handled by one agent | Pick from the list (with search) |
+| **Squad** | See calls handled by one squad | Pick from the list |
+| **Status** | Filter by call status | **In Progress**, **Completed**, **Cancelled**, **Busy**, **No Answer**, **Unknown** |
+| **Direction** | Separate inbound and outbound calls | **Inbound**, **Outbound** |
+| **Appointment** | Find calls where an appointment was scheduled | **Yes**, **No** |
+| **Call Transfer** | Find calls that were transferred | **Yes**, **No** |
+| **Voicemail** | Find calls where a voicemail or answering machine was detected | **Yes**, **No** |
+| **Date Range** | Focus on a time window | **Today**, **Yesterday**, **Last 7 Days**, **Last 30 Days**, **This Week**, **This Month**, **Last Month**, **Custom Range** |
+| **Call Duration** | Filter by length | **Under 1 minute**, **1 - 5 minutes**, **5 - 10 minutes**, **Over 10 minutes** |
+| **Origin** | See where the call came from | **Application**, **Zapier**, **Make**, **N8N**, **Google Meet**, **Custom Webhook** |
+| **Campaign ID** | See the calls of one campaign | Paste the campaign ID |
+| **Sentiment** | Find calls by the caller's overall mood | **Positive**, **Neutral**, **Negative** |
+| **Ticket ID** | Find the call linked to a ticket | Paste the ticket ID |
 
 > **Common mistake:** Applying too many filters at once can return no results. If the table looks empty, remove one filter and try again.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/callhistory1.png"
-    alt="Call History page with the filter fields (Phone Number, Call ID, Handling Agent, Status, Direction, Date Range, and more) plus the Filters and Export CSV buttons."
+    alt="Call History page with the Search transcripts box, the filter buttons (Phone Number, Call ID, Agent, Squad, Status, and more), the Export CSV button, and the list of calls."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Use the filter panel to narrow down calls before exporting or opening call details.
+  Screenshot: Search transcripts or use the filter buttons to narrow down calls before exporting or opening call details.
 </p>
 
 ## Understand call outcomes (icons)
 
-In the calls table, you may see a **Call Outcomes** column with icons that summarize what was detected during the call.
+The **Call Outcomes** column shows three icons for each call. An icon lights up in color when that outcome happened:
 
-- **Calendar icon**: An **appointment** was detected for that call.  
-  - If you **hover your mouse** over the calendar icon, you’ll see the appointment details.
-- **Robot head icon**: A **voicemail / answering machine** was detected (the agent identified a voicemail).
+- **Robot icon (green)**: a **voicemail or answering machine** was detected.
+- **Database icon (purple)**: the agent **extracted data** during the call. Open the call to see it in the **Extracted Data** tab.
+- **Phone with arrow icon**: the call was **transferred** to another number or agent.
 
-> **Important:** Which outcomes appear can vary depending on what the system detects on each call.
+Gray icons mean that outcome didn't happen on that call.
+
+> **Tip:** To find calls where an appointment was scheduled, use the **Appointment** filter.
 
 ## Export Call History to CSV
 
-You can export the calls you’re currently seeing (including any filters you applied).
+You can export the calls you're currently seeing, including any filters you applied.
 
 1. Click **Export CSV**.
-2. In the export window, select the **columns** you want to include.
-   - You can use **Select All** or **Deselect All** to speed things up.
+2. In the **Export Call History** window, select the columns you want to include. All 27 columns are selected by default.
+   - Use **Select All** or **Deselect All** to speed things up.
 3. Click **Export CSV** to download the file.
 
-> **Tip:** If you want “all calls,” clear filters before exporting.
+The available columns are:
 
-## Open call details to analyze a call
-
-To view everything about a specific call:
-
-1. Click any call row in the table.
-2. A **Call Details** panel opens on the right.
-
-Inside **Call Details**, you can review and analyze the conversation. Depending on your account/plan, you may see:
-
-- **Call Recording** player (with playback controls)
-- A menu with **playback speed** options
-- Tabs such as:
-  - **Call Transcript**
-  - **Summary**
-  - **Key Moments**
-  - **Sentiments**
-- Actions like **Copy** (for example, to copy the transcript or selected content)
-- Options to **download** items such as the **transcript** (availability can vary)
-
-> **Tip:** Use the transcript search box to quickly find a specific phrase or moment in the call.
-
-## Download call audio (recording)
-
-To download the audio for a call (when a recording is available):
-
-1. Click a call row to open **Call Details**.
-2. In the **Call Recording** card, click the **three-dots (… )** menu.
-3. Select **Download Recording**.
-
-In the same menu, you can also adjust playback **Speed** (for example 0.5x, 0.75x, 1x, 1.25x, 1.5x, 2x).
-
-> **Important:** If you don’t see **Download Recording**, recording may not be available for that call, or access can vary by plan and permissions.
+- **Call details**: Call ID, Contact Number, Contact Name, Customer Email, Direction, Status, Duration, Started At, Ended At, Created At, Call Origin, Campaign ID, Ticket ID.
+- **Agent**: Agent Name, Agent ID.
+- **Outcomes**: Machine Detected, Appointment Scheduled, Call Transferred, Extracted Data.
+- **Call transfer**: Call Transfer Duration, Call Transfer Status, Call Transfer Recording URL, Call Transfer Transcription, Call Transfer Number, Call Transfer Agent Name.
+- **Content**: Recording URL, Transcription.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
-    src="/images/callhistory2.png"
-    alt="Call Details panel showing the Call Recording section with the three-dots menu open, including speed controls and the Download Recording option."
+    src="/images/call-history-export.png"
+    alt="Export Call History window with Select All, Deselect All, the column checkboxes, and the Export CSV button."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Open a call, then use the “…” menu in Call Recording to change speed or download the audio.
+  Screenshot: Choose the columns for your CSV file, then click Export CSV.
 </p>
+
+> **Tip:** If you want "all calls," clear filters before exporting.
+
+## Open call details to analyze a call
+
+Click any call row in the table. The **Call Details** panel opens.
+
+At the top of the panel you'll find:
+
+- The **call ID**. Click it to copy it.
+- **Search in transcript...**: find a word or phrase in the conversation.
+- **Copy**: copy the transcript.
+
+### Transcript
+
+The left side shows the full conversation, turn by turn. Next to each of the caller's messages, a label shows the **sentiment** of that turn (**Positive**, **Neutral**, or **Negative**) with its score.
+
+### Analysis tabs
+
+The right side has these tabs:
+
+| Tab | What you'll find |
+| --- | --- |
+| **Overview** | A **Summary** of the call and its **Metadata**: Conversation ID, Start Date/Time, Agent (click it to open the agent), Status, Sentiment, Duration, and Call Origin. |
+| **Extracted Data** | The fields the agent captured during the call, with how many have values. Empty fields show **Not captured**. Click **Copy as JSON** to copy them. Only appears when the agent extracts data. |
+| **Goals** | Whether each goal of the agent was met on this call. You set the goals in the agent's **Conversation** tab. If the agent has no goals, you'll see **No goals were evaluated for this call**. |
+| **Key Moments** | The most important moments of the call. Each one shows who said it (**User** or **Assistant**), its type (for example **Question**, **Commitment**, **Objection**, **Buying signal**, or **Frustration**), and the exact words. |
+
+> **Important:** The summary, sentiment, goals, and key moments are generated by AI. As the panel says, they are an **AI-assisted analysis — use as a guide**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/callhistory2.png"
+    alt="Call Details panel with the transcript on the left, the Overview tab with the Summary and Metadata on the right, and the recording player at the bottom."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Call Details panel shows the transcript, the analysis tabs, and the recording player.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-key-moments.png"
+    alt="Key Moments tab in Call Details, listing moments labeled Question, Small Talk, Commitment, and Frustration."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Key Moments shows who said what, and what kind of moment it was.
+</p>
+
+> **Tip:** Use **Search in transcript...** to quickly find a specific phrase or moment in the call.
+
+## Download call audio (recording)
+
+The recording player is at the bottom of the **Call Details** panel. From there you can:
+
+- Click **Play** to listen to the call, and use the buttons on each side to skip back or forward.
+- Click the speed button (**1.0x**) to change the playback speed: 0.5x, 0.75x, 1x, 1.25x, 1.5x, or 2x.
+- Click the **download** icon on the left to **Download Recording**.
+
+> **Important:** If you don't see the player or the download icon, there's no recording for that call. Recording can be turned off in the agent's settings.

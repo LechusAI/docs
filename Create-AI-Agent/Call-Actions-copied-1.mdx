@@ -1,119 +1,181 @@
 ---
 title: "Anrufverlauf"
-description: "Filtern, exportieren und analysieren Sie vergangene Anrufe. Öffnen Sie die Anrufdetails, um Aufnahme, Transkript und Einblicke anzusehen, und laden Sie das Audio herunter, wenn verfügbar."
+description: "Filtern, exportieren und analysieren Sie vergangene Anrufe. Öffnen Sie die Anrufdetails, um Aufnahme, Transkript und Auswertungen anzusehen, und laden Sie das Audio herunter, wenn verfügbar."
 ---
 
 ## Überblick
 
-**Anrufverlauf** ist der Bereich, in dem Sie vergangene Anrufe in Ihrem Workspace überprüfen. Auf dieser Seite können Sie:
+Im **Anrufverlauf** sehen Sie alle vergangenen Anrufe Ihres Arbeitsbereichs. Auf dieser Seite können Sie:
 
-- **Anrufe suchen und filtern** (nach Telefonnummer, Agent, Status, Datumsbereich und mehr)
-- **Anrufergebnisse sehen** (z. B. ob ein Termin oder eine Mailbox erkannt wurde)
-- **Die aktuelle Liste** als **CSV** **exportieren**
-- **Anrufdetails öffnen**, um das Gespräch zu analysieren (Aufnahme, Transkript, Zusammenfassung, Schlüsselmomente, Stimmungen)
-- **Die Anrufaufnahme herunterladen** (wenn verfügbar)
+- **Transkripte durchsuchen** und Anrufe **filtern** (nach Telefonnummer, Agent, Squad, Status, Datum, Stimmung und mehr).
+- **Anrufresultate** auf einen Blick sehen: erkannte Mailbox, extrahierte Daten und weitergeleitete Anrufe.
+- Die Liste als **CSV exportieren** und genau festlegen, welche Spalten enthalten sind.
+- **Anrufdetails öffnen**, um das Transkript zu lesen, Zusammenfassung und Stimmung zu sehen, extrahierte Daten und Ziele zu prüfen und wichtige Momente durchzugehen.
+- Die Anrufaufzeichnung **anhören** und **herunterladen**.
 
-Nutzen Sie diesen Direktlink, um die Seite zu öffnen: [Anrufverlauf öffnen](https://app.callin.io/call-history)
+Mit diesem direkten Link öffnen Sie die Seite:
+[Anrufverlauf öffnen](https://app.callin.io/call-history)
 
 > **Tipp:** Speichern Sie den Link als Lesezeichen, wenn Sie den Anrufverlauf täglich nutzen.
 
 ## Anrufverlauf öffnen
 
-1. Gehen Sie in der linken Seitenleiste zum Bereich **Auswertung**.
-2. Klicken Sie auf **Anrufverlauf**.
+1. Gehen Sie in der linken Seitenleiste zu **Auswerten**.
+2. Klicken Sie auf **Anrufliste**.
+
+Die Tabelle zeigt eine Zeile pro Anruf, die neuesten zuerst:
+
+| Spalte | Was sie zeigt |
+| --- | --- |
+| **Anrufinfo** | Die Telefonnummer des Anrufers sowie Datum und Uhrzeit des Anrufs. Testanrufe aus dem Browser haben keine Telefonnummer. |
+| **Agent / Squad** | Der Agent oder das Squad, der bzw. das den Anruf bearbeitet hat. |
+| **Dauer** | Wie lange der Anruf gedauert hat. |
+| **Quelle** | Woher der Anruf kam, zum Beispiel **Anwendung**. |
+| **Status** | Der Endstatus des Anrufs, zum Beispiel **Abgeschlossen** oder **Keine Antwort**. |
+| **Anrufresultate** | Symbole, die zusammenfassen, was während des Anrufs passiert ist. Siehe unten. |
 
 ## Anrufe filtern und suchen
 
-Oben auf der Seite sehen Sie in der Regel zwei Hauptaktionen:
+Oben auf der Seite finden Sie:
 
-- **Filter** (um die Liste einzugrenzen)
-- **CSV exportieren** (um die Ergebnisse herunterzuladen)
+- **Transkripte durchsuchen...**: Geben Sie ein Wort oder einen Satz ein, um die Anrufe zu finden, in denen es gesagt wurde.
+- **Filter-Schaltflächen**: Klicken Sie auf eine, um ihre Optionen zu öffnen. Sie können mehrere kombinieren.
+- **CSV exportieren**: Laden Sie die angezeigten Anrufe herunter.
 
-Der Filterbereich enthält Felder wie die folgenden (die Verfügbarkeit kann je nach Konto/Plan variieren):
-
-| Filter             | Wobei es hilft                               | Beispiel              |
-| ------------------ | -------------------------------------------- | --------------------- |
-| Telefonnummer      | Anrufe für eine bestimmte Nummer finden      | Suchen nach „+1 415…“ |
-| Anruf-ID           | Direkt zu einem bestimmten Anruf springen    | Anruf-ID einfügen     |
-| Zuständiger Agent  | Anrufe eines bestimmten Agents sehen         | „Sales Agent 1“       |
-| Status             | Nach Anrufstatus filtern                     | „Abgeschlossen“       |
-| Richtung           | Eingehend vs. ausgehend trennen              | „Eingehend“           |
-| Datumsbereich      | Auf einen Zeitraum fokussieren               | „Letzte 7 Tage“       |
-| Anrufdauer         | Nach Dauer filtern                           | „Über 1 Minute“       |
-| Anrufursprung      | Erkennen, woher der Anruf kommt              | „Anwendung“           |
-| Kampagnen-ID       | Nach Kampagnenkennung filtern                | ID einfügen           |
-| Termin             | Anrufe mit erkanntem Termin finden           | „Alle“ / gefiltert    |
-| Anrufweiterleitung | Anrufe mit Weiterleitungen finden            | „Alle“ / gefiltert    |
-| Maschine           | Anrufe mit erkannter Mailbox/Maschine finden | „Alle“ / gefiltert    |
+| Filter | Wofür er dient | Optionen |
+| --- | --- | --- |
+| **Telefonnummer** | Anrufe einer bestimmten Nummer finden | Nummer eingeben |
+| **Anruf-ID** | Direkt zu einem bestimmten Anruf springen | Anruf-ID einfügen |
+| **Agent** | Anrufe eines Agenten anzeigen | Aus der Liste wählen (mit Suche) |
+| **Squad** | Anrufe eines Squads anzeigen | Aus der Liste wählen |
+| **Status** | Nach Anrufstatus filtern | **In Arbeit**, **Abgeschlossen**, **Abgebrochen**, **Beschäftigt**, **Keine Antwort**, **Unbekannt** |
+| **Richtung** | Eingehende und ausgehende Anrufe trennen | **Eingehend**, **Ausgehend** |
+| **Termin** | Anrufe finden, in denen ein Termin vereinbart wurde | **Ja**, **Nein** |
+| **Anrufweiterleitung** | Weitergeleitete Anrufe finden | **Ja**, **Nein** |
+| **Voicemail** | Anrufe finden, bei denen eine Mailbox oder ein Anrufbeantworter erkannt wurde | **Ja**, **Nein** |
+| **Datumsbereich** | Einen Zeitraum eingrenzen | **Heute**, **Gestern**, **Letzte 7 Tage**, **Letzte 30 Tage**, **Diese Woche**, **Dieser Monat**, **Letzter Monat**, **Benutzerdefinierter Bereich** |
+| **Anrufdauer** | Nach Länge filtern | **Unter 1 Minute**, **1 - 5 Minuten**, **5 - 10 Minuten**, **Über 10 Minuten** |
+| **Quelle** | Sehen, woher der Anruf kam | **Anwendung**, **Zapier**, **Make**, **N8N**, **Google Meet**, **Benutzerdefinierter Webhook** |
+| **Kampagnen-ID** | Die Anrufe einer Kampagne anzeigen | Kampagnen-ID einfügen |
+| **Stimmung** | Anrufe nach der Gesamtstimmung des Anrufers finden | **Positiv**, **Neutral**, **Negativ** |
+| **Ticket-ID** | Den Anruf zu einem Ticket finden | Ticket-ID einfügen |
 
 > **Häufiger Fehler:** Zu viele Filter gleichzeitig können zu keinen Ergebnissen führen. Wenn die Tabelle leer ist, entfernen Sie einen Filter und versuchen Sie es erneut.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/callhistory1.png" alt="Seite „Anrufverlauf“ mit Filterfeldern (Telefonnummer, Anruf-ID, zuständiger Agent, Status, Richtung, Datumsbereich usw.) sowie den Buttons für Filter und CSV-Export." style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/callhistory1.png"
+    alt="Seite Anrufverlauf mit der Transkriptsuche, den Filter-Schaltflächen (Telefonnummer, Anruf-ID, Agent, Squad, Status und mehr), der Schaltfläche CSV exportieren und der Anrufliste."
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Nutzen Sie das Filterpanel, um die Liste einzugrenzen, bevor Sie exportieren oder Anrufdetails öffnen.
+  Bildschirmfoto: Durchsuchen Sie die Transkripte oder nutzen Sie die Filter-Schaltflächen, um die Anrufe einzugrenzen, bevor Sie sie exportieren oder die Details öffnen.
 </p>
 
 ## Anrufergebnisse verstehen (Symbole)
 
-In der Anruftabelle sehen Sie möglicherweise eine Spalte mit **Anrufergebnissen** und Symbolen, die zusammenfassen, was während des Anrufs erkannt wurde.
+Die Spalte **Anrufresultate** zeigt drei Symbole pro Anruf. Ein Symbol wird farbig, wenn das Ergebnis eingetreten ist:
 
-- **Kalender-Symbol**: Für diesen Anruf wurde ein **Termin** erkannt.
-  - Wenn Sie mit der Maus über das Kalender-Symbol fahren, sehen Sie die Termindetails.
-- **Roboterkopf-Symbol**: Eine **Mailbox / ein Anrufbeantworter** wurde erkannt (der Agent hat eine Mailbox identifiziert).
+- **Roboter-Symbol (grün)**: Eine **Mailbox oder ein Anrufbeantworter** wurde erkannt.
+- **Datenbank-Symbol (lila)**: Der Agent hat während des Anrufs **Daten extrahiert**. Öffnen Sie den Anruf, um sie im Tab **Extrahierte Daten** zu sehen.
+- **Telefon-mit-Pfeil-Symbol**: Der Anruf wurde an eine andere Nummer oder einen anderen Agenten **weitergeleitet**.
 
-> **Wichtig:** Welche Ergebnisse angezeigt werden, kann je nach Erkennung pro Anruf variieren.
+Graue Symbole bedeuten, dass das Ergebnis bei diesem Anruf nicht eingetreten ist.
+
+> **Tipp:** Um Anrufe zu finden, in denen ein Termin vereinbart wurde, nutzen Sie den Filter **Termin**.
 
 ## Anrufverlauf als CSV exportieren
 
-Sie können die aktuell angezeigten Anrufe exportieren (einschließlich angewendeter Filter).
+Sie können die angezeigten Anrufe exportieren, einschließlich der angewendeten Filter.
 
 1. Klicken Sie auf **CSV exportieren**.
-2. Wählen Sie im Exportfenster die **Spalten** aus, die enthalten sein sollen.
-   - Mit **Alles auswählen** oder **Alles abwählen** geht es schneller.
+2. Wählen Sie im Fenster **Anrufverlauf exportieren** die Spalten aus, die enthalten sein sollen. Standardmäßig sind alle 27 Spalten ausgewählt.
+   - Mit **Alle auswählen** oder **Alle abwählen** geht es schneller.
 3. Klicken Sie auf **CSV exportieren**, um die Datei herunterzuladen.
+
+Verfügbare Spalten:
+
+- **Anrufdaten**: Anruf-ID, Kontaktnummer, Kontaktname, Kunden-E-Mail, Richtung, Status, Dauer, Gestartet am, Beendet am, Erstellt am, Anrufquelle, Kampagnen-ID, Ticket-ID.
+- **Agent**: Agentenname, Agenten-ID.
+- **Ergebnisse**: Maschine erkannt, Termin geplant, Anruf weitergeleitet, Extrahierte Daten.
+- **Anrufweiterleitung**: Dauer weitergeleiteter Anruf, Status weitergeleiteter Anruf, URL der weitergeleiteten Aufnahme, Transkript des weitergeleiteten Anrufs, Weiterleitungsnummer, Name des Weiterleitungsagenten.
+- **Inhalt**: Aufnahme-URL, Transkript.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-export.png"
+    alt="Fenster Anrufverlauf exportieren mit Alle auswählen, Alle abwählen, den Spalten-Kontrollkästchen und der Schaltfläche CSV exportieren."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Bildschirmfoto: Wählen Sie die Spalten Ihrer CSV-Datei und klicken Sie dann auf CSV exportieren.
+</p>
 
 > **Tipp:** Wenn Sie „alle Anrufe“ exportieren möchten, entfernen Sie vorher die Filter.
 
 ## Anrufdetails öffnen, um einen Anruf zu analysieren
 
-So sehen Sie alle Details zu einem bestimmten Anruf:
+Klicken Sie auf eine beliebige Zeile der Tabelle. Das Fenster **Anrufdetails** öffnet sich.
 
-1. Klicken Sie in der Tabelle auf eine Anrufzeile.
-2. Rechts öffnet sich ein Panel **Anrufdetails**.
+Oben im Fenster finden Sie:
 
-In den **Anrufdetails** können Sie das Gespräch ansehen und analysieren. Je nach Konto/Plan sehen Sie möglicherweise:
+- Die **Anruf-ID**. Klicken Sie darauf, um sie zu kopieren.
+- **Im Transkript suchen...**: Finden Sie ein Wort oder einen Satz im Gespräch.
+- **Kopieren**: Kopiert das Transkript.
 
-- Einen Player für die **Anrufaufnahme** (mit Wiedergabesteuerung)
-- Ein Menü mit Optionen zur **Wiedergabegeschwindigkeit**
-- Tabs wie:
-  - **Anruftranskript**
-  - **Zusammenfassung**
-  - **Schlüsselmomente**
-  - **Stimmungen**
-- Aktionen wie **Kopieren** (z. B. um das Transkript oder ausgewählte Inhalte zu kopieren)
-- Optionen zum **Herunterladen** von Inhalten wie dem **Transkript** (Verfügbarkeit kann variieren)
+### Transkript
 
-> **Tipp:** Nutzen Sie die Suche im Transkript, um schnell eine bestimmte Formulierung oder Stelle zu finden.
+Links sehen Sie das komplette Gespräch, Wortbeitrag für Wortbeitrag. Neben jeder Nachricht des Anrufers zeigt eine Markierung die **Stimmung** dieses Beitrags (**Positiv**, **Neutral** oder **Negativ**) mit ihrem Wert.
 
-## Anruf-Audio herunterladen (Aufnahme)
+### Analyse-Tabs
 
-So laden Sie das Audio eines Anrufs herunter (wenn eine Aufnahme verfügbar ist):
+Rechts gibt es diese Tabs:
 
-1. Klicken Sie auf eine Anrufzeile, um die **Anrufdetails** zu öffnen.
-2. Klicken Sie in der Karte **Anrufaufnahme** auf das Menü **drei Punkte (… )**.
-3. Wählen Sie **Aufnahme herunterladen**.
+| Tab | Was Sie dort finden |
+| --- | --- |
+| **Übersicht** | Eine **Zusammenfassung** des Anrufs und seine **Metadaten**: Konversations-ID, Startdatum und -uhrzeit, Agent (anklicken, um den Agenten zu öffnen), Status, Stimmung, Dauer und Anrufquelle. |
+| **Extrahierte Daten** | Die Felder, die der Agent während des Anrufs erfasst hat, und wie viele davon einen Wert haben. Leere Felder zeigen **Nicht erfasst**. Klicken Sie auf **Als JSON kopieren**, um sie zu kopieren. Erscheint nur, wenn der Agent Daten extrahiert. |
+| **Ziele** | Ob jedes Ziel des Agenten bei diesem Anruf erreicht wurde. Die Ziele legen Sie im Tab **Konversation** des Agenten fest. Hat der Agent keine Ziele, sehen Sie **Für diesen Anruf wurden keine Ziele ausgewertet**. |
+| **Wichtige Momente** | Die wichtigsten Momente des Anrufs. Jeder zeigt, wer es gesagt hat (**Benutzer** oder **Assistent**), die Art des Moments (zum Beispiel **Frage**, **Verbindlichkeit**, **Einwand**, **Kaufsignal** oder **Frustration**) und den genauen Wortlaut. |
 
-Im selben Menü können Sie auch die **Geschwindigkeit** anpassen (z. B. 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
-
-> **Wichtig:** Wenn **Aufnahme herunterladen** nicht angezeigt wird, ist die Aufnahme für diesen Anruf möglicherweise nicht verfügbar oder der Zugriff hängt von Plan und Berechtigungen ab.
+> **Wichtig:** Zusammenfassung, Stimmung, Ziele und wichtige Momente werden von der KI erstellt. Wie das Fenster selbst sagt, handelt es sich um eine **KI-gestützte Analyse — als Orientierungshilfe nutzen**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/callhistory2.png" alt="Panel „Anrufdetails“ mit dem Bereich zur Aufnahme und geöffnetem Drei-Punkte-Menü, inklusive Geschwindigkeitsoptionen und der Option zum Herunterladen des Audios." style={{ width:"100%", display:"block" }} />
+  <img
+    src="/images/callhistory2.png"
+    alt="Fenster Anrufdetails mit dem Transkript links, dem Tab Übersicht mit Zusammenfassung und Metadaten rechts und der Wiedergabeleiste der Aufnahme unten."
+    style={{ width:"100%", display:"block" }}
+  />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Öffnen Sie einen Anruf und verwenden Sie das Menü „…“ in der Aufnahme, um die Geschwindigkeit zu ändern oder das Audio herunterzuladen.
+  Bildschirmfoto: Das Fenster Anrufdetails zeigt das Transkript, die Analyse-Tabs und die Wiedergabeleiste der Aufnahme.
 </p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-key-moments.png"
+    alt="Tab Wichtige Momente in den Anrufdetails mit Momenten wie Frage, Plauderei, Verbindlichkeit und Frustration."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Bildschirmfoto: Wichtige Momente zeigt, wer was gesagt hat und um welche Art von Moment es sich handelt.
+</p>
+
+> **Tipp:** Nutzen Sie **Im Transkript suchen...**, um schnell eine bestimmte Formulierung oder Stelle im Anruf zu finden.
+
+## Anruf-Audio herunterladen (Aufnahme)
+
+Die Wiedergabeleiste der Aufnahme befindet sich unten im Fenster **Anrufdetails**. Dort können Sie:
+
+- Auf **Abspielen** klicken, um den Anruf anzuhören, und mit den Schaltflächen links und rechts zurück- oder vorspringen.
+- Auf die Geschwindigkeits-Schaltfläche (**1.0x**) klicken, um die Wiedergabegeschwindigkeit zu ändern: 0.5x, 0.75x, 1x, 1.25x, 1.5x oder 2x.
+- Auf das Symbol zum **Herunterladen** links klicken, um die **Aufnahme herunterzuladen**.
+
+> **Wichtig:** Wenn Sie die Wiedergabeleiste oder das Symbol zum Herunterladen nicht sehen, gibt es für diesen Anruf keine Aufnahme. Die Aufzeichnung kann in den Einstellungen des Agenten deaktiviert werden.

@@ -1,128 +1,181 @@
 ---
 title: "Cronologia chiamate"
-description: "Filtra, esporta e analizza le chiamate passate. Apri i dettagli di una chiamata per consultare la registrazione, la trascrizione e gli insight, e scaricare l’audio quando disponibile."
+description: "Filtra, esporta e analizza le chiamate passate. Apri i dettagli di una chiamata per consultare la registrazione, la trascrizione e le analisi, e scaricare l’audio quando disponibile."
 ---
 
 ## Panoramica
 
-**Cronologia chiamate** è la sezione in cui rivedi le chiamate passate del tuo workspace. Da questa pagina puoi:
+La **Cronologia chiamate** è dove rivedi tutte le chiamate passate del tuo spazio di lavoro. Da questa pagina puoi:
 
-- **Cercare e filtrare** le chiamate (per numero di telefono, agente, stato, intervallo di date e altro)
-- **Vedere gli esiti della chiamata** (ad esempio, se è stato rilevato un appuntamento o la segreteria)
-- **Esportare** l’elenco corrente in **CSV**
-- **Aprire i dettagli della chiamata** per analizzare la conversazione (registrazione, trascrizione, riepilogo, momenti chiave, sentiment)
-- **Scaricare** la registrazione della chiamata (quando disponibile)
+- **Cercare nelle trascrizioni** e **filtrare** le chiamate (per numero di telefono, agente, squad, stato, data, sentimento e altro).
+- **Vedere i risultati della chiamata** a colpo d’occhio: segreteria rilevata, dati estratti e chiamata trasferita.
+- **Esportare** l’elenco in **CSV**, scegliendo esattamente quali colonne includere.
+- **Aprire i dettagli della chiamata** per leggere la trascrizione, vedere il riepilogo e il sentimento, controllare i dati estratti e gli obiettivi, e rivedere i momenti chiave.
+- **Ascoltare** e **scaricare** la registrazione della chiamata.
 
 Usa questo link diretto per aprire la pagina:
 [Apri la cronologia chiamate](https://app.callin.io/call-history)
 
-> **Suggerimento:** Salva il link tra i preferiti se consulti le chiamate ogni giorno.
+> **Suggerimento:** Salva il link qui sopra nei preferiti se rivedi le chiamate ogni giorno.
 
 ## Aprire la cronologia chiamate
 
-1. Nella barra laterale sinistra, vai alla sezione **Valutazione**.
-2. Clicca su **Cronologia chiamate**.
+1. Nella barra laterale sinistra, vai su **Valuta**.
+2. Fai clic su **Storico chiamate**.
+
+La tabella mostra una riga per chiamata, dalla più recente:
+
+| Colonna | Cosa mostra |
+| --- | --- |
+| **Info chiamata** | Il numero di telefono di chi chiama e la data e l’ora della chiamata. Le chiamate di prova fatte dal browser non hanno un numero di telefono. |
+| **Agente / Squad** | L’agente o lo squad che ha gestito la chiamata. |
+| **Durata** | Quanto è durata la chiamata. |
+| **Origine** | Da dove è arrivata la chiamata, per esempio **Applicazione**. |
+| **Stato** | Lo stato finale della chiamata, per esempio **Completato** o **Nessuna risposta**. |
+| **Risultati chiamata** | Icone che riassumono cosa è successo durante la chiamata. Vedi sotto. |
 
 ## Filtrare e cercare le chiamate
 
-In alto nella pagina vedrai in genere due azioni principali:
+In alto nella pagina trovi:
 
-- **Filtri** (per restringere l’elenco)
-- **Esporta CSV** (per scaricare i risultati)
+- **Cerca nelle trascrizioni...**: scrivi una parola o una frase per trovare le chiamate in cui è stata detta.
+- **Pulsanti dei filtri**: fai clic su uno per aprirne le opzioni. Puoi combinarne diversi.
+- **Esporta CSV**: scarica le chiamate che stai vedendo.
 
-L’area dei filtri include campi come i seguenti (la disponibilità può variare in base ad account/piano):
-
-| Filtro | A cosa serve | Esempio |
+| Filtro | A cosa serve | Opzioni |
 | --- | --- | --- |
-| Numero di telefono | Trovare chiamate di un numero specifico | Cerca “+1 415…” |
-| ID chiamata | Aprire una chiamata specifica | Incolla un ID chiamata |
-| Agente assegnato | Vedere le chiamate gestite da un agente | “Agente vendite 1” |
-| Stato | Filtrare per stato della chiamata | “Completata” |
-| Direzione | Separare entrate e uscite | “In entrata” |
-| Intervallo di date | Concentrarsi su un periodo | “Ultimi 7 giorni” |
-| Durata della chiamata | Filtrare per durata | “Oltre 1 minuto” |
-| Origine della chiamata | Identificare da dove arriva la chiamata | “Applicazione” |
-| ID campagna | Filtrare per identificatore campagna | Incolla un ID |
-| Appuntamento | Trovare chiamate con appuntamento rilevato | “Tutti” / filtrato |
-| Trasferimento chiamata | Trovare chiamate con trasferimenti | “Tutti” / filtrato |
-| Macchina | Trovare chiamate con segreteria/macchina rilevata | “Tutti” / filtrato |
+| **Numero di telefono** | Trovare le chiamate di un numero specifico | Scrivi il numero |
+| **ID chiamata** | Andare direttamente a una chiamata specifica | Incolla l’ID della chiamata |
+| **Agente** | Vedere le chiamate gestite da un agente | Scegli dall’elenco (con ricerca) |
+| **Squad** | Vedere le chiamate gestite da uno squad | Scegli dall’elenco |
+| **Stato** | Filtrare per stato della chiamata | **In corso**, **Completato**, **Annullato**, **Occupato**, **Nessuna risposta**, **Sconosciuto** |
+| **Direzione** | Separare le chiamate in entrata e in uscita | **In entrata**, **In uscita** |
+| **Appuntamento** | Trovare le chiamate in cui è stato fissato un appuntamento | **Sì**, **No** |
+| **Trasferimento chiamata** | Trovare le chiamate trasferite | **Sì**, **No** |
+| **Segreteria telefonica** | Trovare le chiamate in cui è stata rilevata una segreteria | **Sì**, **No** |
+| **Intervallo di date** | Concentrarti su un periodo di tempo | **Oggi**, **Ieri**, **Ultimi 7 giorni**, **Ultimi 30 giorni**, **Questa settimana**, **Questo mese**, **Mese scorso**, **Intervallo personalizzato** |
+| **Durata chiamata** | Filtrare per durata | **Meno di 1 minuto**, **1 - 5 minuti**, **5 - 10 minuti**, **Oltre 10 minuti** |
+| **Origine** | Vedere da dove è arrivata la chiamata | **Applicazione**, **Zapier**, **Make**, **N8N**, **Google Meet**, **Webhook personalizzato** |
+| **ID campagna** | Vedere le chiamate di una campagna | Incolla l’ID della campagna |
+| **Sentimento** | Trovare le chiamate in base all’umore generale di chi chiama | **Positivo**, **Neutrale**, **Negativo** |
+| **ID ticket** | Trovare la chiamata collegata a un ticket | Incolla l’ID del ticket |
 
-> **Errore comune:** Applicare troppi filtri insieme può non restituire risultati. Se la tabella è vuota, rimuovi un filtro e riprova.
+> **Errore comune:** Applicare troppi filtri contemporaneamente può non restituire risultati. Se la tabella è vuota, rimuovi un filtro e riprova.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/callhistory1.png"
-    alt="Pagina della cronologia chiamate con i campi di filtro (numero di telefono, ID chiamata, agente assegnato, stato, direzione, intervallo di date, ecc.) e i pulsanti Filtri ed Esporta CSV."
+    alt="Pagina della cronologia chiamate con la ricerca nelle trascrizioni, i pulsanti dei filtri (Numero di telefono, ID chiamata, Agente, Squad, Stato e altri), il pulsante Esporta CSV e l’elenco delle chiamate."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: usa il pannello dei filtri per restringere l’elenco prima di esportare o aprire i dettagli di una chiamata.
+  Schermata: cerca nelle trascrizioni o usa i pulsanti dei filtri per restringere le chiamate prima di esportarle o aprirne i dettagli.
 </p>
 
 ## Capire gli esiti della chiamata (icone)
 
-Nella tabella delle chiamate potresti vedere una colonna di **esiti della chiamata** con icone che riassumono cosa è stato rilevato durante la chiamata.
+La colonna **Risultati chiamata** mostra tre icone per ogni chiamata. Un’icona si colora quando quel risultato si è verificato:
 
-- **Icona calendario**: è stato rilevato un **appuntamento** per quella chiamata.  
-  - Se passi il mouse sopra l’icona del calendario, vedrai i dettagli dell’appuntamento.
-- **Icona testa di robot**: è stata rilevata una **segreteria / risposta automatica** (l’agente ha identificato una segreteria).
+- **Icona del robot (verde)**: è stata rilevata una **segreteria telefonica**.
+- **Icona del database (viola)**: l’agente ha **estratto dei dati** durante la chiamata. Apri la chiamata per vederli nella scheda **Dati estratti**.
+- **Icona del telefono con freccia**: la chiamata è stata **trasferita** a un altro numero o agente.
 
-> **Importante:** Gli esiti visualizzati possono variare in base a ciò che il sistema rileva per ogni chiamata.
+Le icone grigie indicano che quel risultato non si è verificato in quella chiamata.
+
+> **Suggerimento:** Per trovare le chiamate in cui è stato fissato un appuntamento, usa il filtro **Appuntamento**.
 
 ## Esportare la cronologia chiamate in CSV
 
-Puoi esportare le chiamate che stai visualizzando (inclusi i filtri applicati).
+Puoi esportare le chiamate che stai vedendo, compresi i filtri che hai applicato.
 
-1. Clicca su **Esporta CSV**.
-2. Nella finestra di esportazione, seleziona le **colonne** da includere.
-   - Puoi usare **Seleziona tutto** o **Deseleziona tutto** per fare più in fretta.
-3. Clicca su **Esporta CSV** per scaricare il file.
+1. Fai clic su **Esporta CSV**.
+2. Nella finestra **Esporta cronologia chiamate**, seleziona le colonne da includere. Tutte le 27 colonne sono selezionate per impostazione predefinita.
+   - Usa **Seleziona tutto** o **Deseleziona tutto** per fare prima.
+3. Fai clic su **Esporta CSV** per scaricare il file.
+
+Le colonne disponibili sono:
+
+- **Dati della chiamata**: ID chiamata, Numero contatto, Nome contatto, Email cliente, Direzione, Stato, Durata, Iniziata il, Terminata il, Creata il, Origine chiamata, ID campagna, ID ticket.
+- **Agente**: Nome agente, ID agente.
+- **Risultati**: Segreteria rilevata, Appuntamento programmato, Chiamata trasferita, Dati estratti.
+- **Trasferimento chiamata**: Durata chiamata trasferita, Stato chiamata trasferita, URL registrazione trasferimento, Trascrizione trasferimento, Numero di trasferimento, Nome agente trasferimento.
+- **Contenuto**: URL registrazione, Trascrizione.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-export.png"
+    alt="Finestra Esporta cronologia chiamate con Seleziona tutto, Deseleziona tutto, le caselle delle colonne e il pulsante Esporta CSV."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: scegli le colonne del tuo file CSV, poi fai clic su Esporta CSV.
+</p>
 
 > **Suggerimento:** Se vuoi “tutte le chiamate”, rimuovi i filtri prima di esportare.
 
 ## Aprire i dettagli della chiamata per analizzarla
 
-Per visualizzare tutto su una chiamata specifica:
+Fai clic su una qualsiasi riga della tabella. Si apre il pannello **Dettagli chiamata**.
 
-1. Clicca su una riga della tabella.
-2. Si apre un pannello **Dettagli della chiamata** sulla destra.
+In alto nel pannello trovi:
 
-Nei **dettagli della chiamata** puoi consultare e analizzare la conversazione. In base ad account/piano, potresti vedere:
+- L’**ID della chiamata**. Fai clic per copiarlo.
+- **Cerca nella trascrizione...**: trova una parola o una frase nella conversazione.
+- **Copia**: copia la trascrizione.
 
-- Un lettore della **registrazione della chiamata** (con controlli di riproduzione)
-- Un menu con opzioni di **velocità di riproduzione**
-- Schede come:
-  - **Trascrizione della chiamata**
-  - **Riepilogo**
-  - **Momenti chiave**
-  - **Sentiment**
-- Azioni come **Copia** (ad esempio per copiare la trascrizione o contenuti selezionati)
-- Opzioni per **scaricare** elementi come la **trascrizione** (la disponibilità può variare)
+### Trascrizione
 
-> **Suggerimento:** Usa la ricerca nella trascrizione per trovare rapidamente una frase o un momento preciso.
+A sinistra c’è la conversazione completa, turno per turno. Accanto a ogni messaggio di chi chiama, un’etichetta mostra il **sentimento** di quel turno (**Positivo**, **Neutrale** o **Negativo**) con il suo punteggio.
 
-## Scaricare l’audio della chiamata (registrazione)
+### Schede di analisi
 
-Per scaricare l’audio di una chiamata (quando è disponibile una registrazione):
+A destra trovi queste schede:
 
-1. Clicca su una riga per aprire i **dettagli della chiamata**.
-2. Nella scheda **Registrazione della chiamata**, clicca sul menu **tre puntini (… )**.
-3. Seleziona **Scarica registrazione**.
+| Scheda | Cosa trovi |
+| --- | --- |
+| **Panoramica** | Un **Riepilogo** della chiamata e i suoi **Metadati**: ID conversazione, data e ora di inizio, agente (fai clic per aprire l’agente), stato, sentimento, durata e origine della chiamata. |
+| **Dati estratti** | I campi che l’agente ha raccolto durante la chiamata, con quanti hanno un valore. I campi vuoti mostrano **Non catturato**. Fai clic su **Copia come JSON** per copiarli. Compare solo quando l’agente estrae dati. |
+| **Obiettivi** | Se ogni obiettivo dell’agente è stato raggiunto in questa chiamata. Gli obiettivi si impostano nella scheda **Conversazione** dell’agente. Se l’agente non ha obiettivi, vedrai **Nessun obiettivo è stato valutato per questa chiamata**. |
+| **Momenti chiave** | I momenti più importanti della chiamata. Ognuno mostra chi l’ha detto (**Utente** o **Assistente**), il tipo (per esempio **Domanda**, **Impegno**, **Obiezione**, **Segnale di acquisto** o **Frustrazione**) e le parole esatte. |
 
-Nello stesso menu puoi anche regolare la **velocità** (ad esempio 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
-
-> **Importante:** Se non vedi **Scarica registrazione**, la registrazione potrebbe non essere disponibile per quella chiamata, oppure l’accesso può variare in base a piano e permessi.
+> **Importante:** Riepilogo, sentimento, obiettivi e momenti chiave sono generati dall’IA. Come indica il pannello, sono un’**analisi assistita dall’IA: usala come guida**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/callhistory2.png"
-    alt="Pannello dei dettagli della chiamata che mostra la sezione di registrazione con il menu dei tre puntini aperto, incluse le opzioni di velocità e l’opzione per scaricare l’audio."
+    alt="Pannello Dettagli chiamata con la trascrizione a sinistra, la scheda Panoramica con il riepilogo e i metadati a destra, e il lettore della registrazione in basso."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: apri una chiamata e usa il menu “…” nella registrazione per cambiare la velocità o scaricare l’audio.
+  Schermata: il pannello Dettagli chiamata mostra la trascrizione, le schede di analisi e il lettore della registrazione.
 </p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-key-moments.png"
+    alt="Scheda Momenti chiave nei dettagli della chiamata, con momenti etichettati come Domanda, Piccolo talk, Impegno e Frustrazione."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: Momenti chiave mostra chi ha detto cosa e che tipo di momento era.
+</p>
+
+> **Suggerimento:** Usa **Cerca nella trascrizione...** per trovare rapidamente una frase o un momento specifico della chiamata.
+
+## Scaricare l’audio della chiamata (registrazione)
+
+Il lettore della registrazione si trova in basso nel pannello **Dettagli chiamata**. Da lì puoi:
+
+- Fare clic su **Riproduci** per ascoltare la chiamata, e usare i pulsanti ai lati per tornare indietro o andare avanti.
+- Fare clic sul pulsante della velocità (**1.0x**) per cambiare la velocità di riproduzione: 0.5x, 0.75x, 1x, 1.25x, 1.5x o 2x.
+- Fare clic sull’icona per **scaricare** a sinistra per **Scarica registrazione**.
+
+> **Importante:** Se non vedi il lettore o l’icona per scaricare, quella chiamata non ha una registrazione. La registrazione si può disattivare nelle impostazioni dell’agente.
