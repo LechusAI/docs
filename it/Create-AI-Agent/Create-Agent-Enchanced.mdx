@@ -11,6 +11,14 @@ La pagina **Agenti AI** è il posto in cui crei e gestisci gli agenti che rispon
 L'editor di ogni agente è organizzato in nove schede in alto: **Agente**, **Flusso di lavoro**, **Base di conoscenza**, **Conversazione**, **Analisi**, **Strumenti**, **Azione chiamata**, **Widget del sito web** e **Avanzate**. Questa pagina ti spiega come creare un agente e cosa puoi fare in ogni scheda.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: un rapido giro tra le nove schede dell’editor dell’agente.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
     alt="La pagina Agenti AI di Callin.io con il pulsante Crea agente, la barra di ricerca, i filtri Direzione e Ordina e l'elenco degli agenti."
@@ -65,15 +73,11 @@ Fai clic su **Crea agente**, in alto a destra. Callin.io ti chiede come vuoi ini
    - **Obiettivo principale** — in massimo 300 caratteri, cosa deve ottenere l'agente in ogni chiamata.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/ai-agents-complete-template.png"
-    alt="La schermata Completa il tuo agente per un modello, con Nome agente, Stack dell'agente, Sito web e Obiettivo principale."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: completare un agente creato da un modello.
+  Video: Sfoglia i nostri modelli → settore → caso d’uso → completare l’agente.
 </p>
 
 > **Suggerimento:** Scrivi l'**Obiettivo principale** come un unico risultato chiaro, per esempio "Prenotare, confermare o spostare gli appuntamenti dei pazienti e rispondere alle domande sugli orari". Più l'obiettivo è chiaro, migliore sarà la prima versione del prompt.
@@ -304,6 +308,14 @@ Per aggiungere un nodo, trascina un collegamento da un nodo esistente (per esemp
 
 Il nuovo nodo compare collegato al precedente e le sue impostazioni si aprono nel pannello a destra.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: crea un flusso con due percorsi da Inizio: un Sottoagente che prenota gli appuntamenti e poi chiude la chiamata, e un trasferimento a un numero di telefono.
+</p>
+
 ### Inizio
 
 **Inizio** è il punto di ingresso. Ogni conversazione inizia qui. Il nodo non parla e non agisce: avvia solo il percorso e passa la chiamata al nodo successivo.
@@ -471,12 +483,12 @@ Il modo più ordinato di lavorare è separare la creazione dalla selezione:
 
 ## Sezione 4: Conversazione
 
-La scheda **Conversazione** elenca tutte le chiamate gestite da questo agente, in entrata e in uscita. È qui che controlli cosa è successo in ogni chiamata.
+La scheda **Conversazione** elenca tutte le chiamate gestite da questo agente, in entrata e in uscita. È qui che controlli cosa è successo in ogni chiamata. Ha due sottoschede: **Conversazioni** (chiamate telefoniche e web) e **Sessioni Google Meet**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/ai-agents-conversation.png"
-    alt="La scheda Conversazione con la ricerca nelle trascrizioni e i filtri delle chiamate dell'agente."
+    alt="La scheda Conversazione con le sottoschede Conversazioni e Sessioni Google Meet, la ricerca nelle trascrizioni e i filtri delle chiamate dell'agente."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -491,6 +503,10 @@ La scheda **Conversazione** elenca tutte le chiamate gestite da questo agente, i
 - **Filtri** — restringi l'elenco per **Numero di telefono**, **ID chiamata**, **Squad**, **Stato**, **Direzione**, **Appuntamento**, **Trasferimento di chiamata**, **Segreteria telefonica**, **Intervallo di date**, **Durata chiamata**, **Origine**, **ID campagna**, **Sentimento** o **ID ticket**.
 
 Finché l'agente non fa o riceve la sua prima chiamata, la scheda mostra *Nessuna chiamata in entrata o in uscita*.
+
+### Sessioni Google Meet
+
+Questa sottoscheda elenca le riunioni Google Meet a cui l’agente ha partecipato (con il pulsante **Partecipa a Meet**, in alto nell’editor). Cerca per URL o codice di accesso della riunione e filtra l’elenco per **Stato**. Se l’agente non ha partecipato a nessuna riunione, vedrai *Nessuna sessione Google Meet trovata*.
 
 > **Suggerimento:** Dopo aver modificato il prompt o il flusso, fai qualche chiamata di prova e controllala qui. Leggere le trascrizioni è il modo più veloce per capire dove l'agente esce dal percorso.
 
@@ -526,7 +542,7 @@ La scheda ha due sottoschede: **Strumenti**, per i tuoi strumenti personalizzati
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia5.png"
-    alt="La scheda Strumenti con il pulsante per aggiungere strumenti a sinistra e l'elenco degli strumenti di sistema a destra."
+    alt="La scheda Strumenti con il pulsante per aggiungere strumenti a sinistra e l'elenco degli strumenti di sistema a destra, incluso Accesso ai dati immobiliari."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -626,6 +642,10 @@ Nelle sue impostazioni, **Messaggio segreteria (opzionale)** decide cosa succede
 
 - Lascialo vuoto per chiudere la chiamata appena viene rilevata la segreteria.
 - Scrivi un messaggio (per esempio "Salve, questa è una chiamata automatica. La preghiamo di richiamarci quando le è comodo. Grazie.") per riprodurlo prima di chiudere la chiamata.
+
+#### Accesso ai dati immobiliari
+
+Permette all’agente di usare, durante la conversazione, gli URL dei feed XML via HTTPS che hai configurato con gli annunci immobiliari. È pensato per gli agenti immobiliari che devono rispondere a domande sugli immobili disponibili. È disattivato per impostazione predefinita.
 
 #### Descrizione e disabilita interruzioni
 
@@ -868,7 +888,7 @@ La maggior parte degli agenti funziona bene senza toccare nulla qui. Apri questa
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="La scheda Avanzate con il blocco Voce e comprensione (Qualità di cattura vocale e Parole chiave prioritarie) e il blocco Flusso di conversazione (Prontezza e Pazienza nello spelling)."
+    alt="La scheda Avanzate con il blocco Memoria (Ricorda chi chiama), il blocco Voce e comprensione e il blocco Flusso di conversazione."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -877,7 +897,13 @@ La maggior parte degli agenti funziona bene senza toccare nulla qui. Apri questa
   Schermata: la scheda Avanzate. La maggior parte degli agenti funziona bene con i valori predefiniti.
 </p>
 
-La scheda è divisa in sei blocchi: **Voce e comprensione**, **Flusso di conversazione**, **Suono di sottofondo**, **Timeout soft**, **Privacy e dati** ed **Extra telefonia**.
+La scheda è divisa in sette blocchi: **Memoria**, **Voce e comprensione**, **Flusso di conversazione**, **Suono di sottofondo**, **Timeout soft**, **Privacy e dati** ed **Extra telefonia**.
+
+### Memoria
+
+**Ricorda chi chiama** salva i dettagli utili dopo ogni chiamata e li usa la volta successiva in cui l’agente riconosce la stessa persona. Per impostazione predefinita, ogni persona viene riconosciuta dal numero da cui chiama. È disattivato per impostazione predefinita.
+
+> **Suggerimento:** Attivalo negli agenti che parlano spesso con gli stessi clienti, come quelli di assistenza o di appuntamenti, così chi chiama non deve ripetere i propri dati.
 
 ### Voce e comprensione
 
