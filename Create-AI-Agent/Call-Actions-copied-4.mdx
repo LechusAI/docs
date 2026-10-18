@@ -1,17 +1,17 @@
 ---
 title: "Historique des appels"
-description: "Filtrez, exportez et analysez les appels passés. Ouvrez les détails d’un appel pour consulter l’enregistrement, la transcription et les informations clés, et télécharger l’audio lorsqu’il est disponible."
+description: "Filtrez, exportez et analysez les appels passés. Ouvrez les détails d’un appel pour consulter l’enregistrement, la transcription et les analyses, et télécharger l’audio lorsqu’il est disponible."
 ---
 
 ## Présentation
 
-**Historique des appels** est l’endroit où vous consultez les appels passés dans votre espace de travail. Depuis cette page, vous pouvez :
+L’**Historique des appels** est l’endroit où vous consultez tous les appels passés de votre espace de travail. Depuis cette page, vous pouvez :
 
-- **Rechercher et filtrer** les appels (par numéro de téléphone, agent, statut, période, etc.)
-- **Voir les résultats de l’appel** (par exemple, si un rendez-vous ou une messagerie vocale a été détecté)
-- **Exporter** la liste actuelle en **CSV**
-- **Ouvrir les détails d’un appel** pour analyser la conversation (enregistrement, transcription, résumé, moments clés, sentiments)
-- **Télécharger** l’enregistrement de l’appel (lorsqu’il est disponible)
+- **Rechercher dans les transcriptions** et **filtrer** les appels (par numéro de téléphone, agent, squad, statut, date, sentiment, etc.).
+- **Voir les résultats de l’appel** en un coup d’œil : messagerie vocale détectée, données extraites et appel transféré.
+- **Exporter** la liste en **CSV**, en choisissant exactement les colonnes à inclure.
+- **Ouvrir les détails de l’appel** pour lire la transcription, voir le résumé et le sentiment, consulter les données extraites et les objectifs, et revoir les moments clés.
+- **Écouter** et **télécharger** l’enregistrement de l’appel.
 
 Utilisez ce lien direct pour ouvrir la page :
 [Ouvrir l’historique des appels](https://app.callin.io/call-history)
@@ -20,109 +20,162 @@ Utilisez ce lien direct pour ouvrir la page :
 
 ## Ouvrir l’historique des appels
 
-1. Dans la barre latérale gauche, allez dans la section **Évaluation**.
+1. Dans la barre latérale gauche, allez dans **Évaluer**.
 2. Cliquez sur **Historique des appels**.
+
+Le tableau affiche une ligne par appel, du plus récent au plus ancien :
+
+| Colonne | Ce qu’elle affiche |
+| --- | --- |
+| **Informations d’appel** | Le numéro de téléphone de l’appelant, ainsi que la date et l’heure de l’appel. Les appels de test passés depuis le navigateur n’ont pas de numéro. |
+| **Agent / Squad** | L’agent ou le squad qui a traité l’appel. |
+| **Durée** | La durée de l’appel. |
+| **Origine** | La provenance de l’appel, par exemple **Application**. |
+| **Statut** | Le statut final de l’appel, par exemple **Terminé** ou **Pas de réponse**. |
+| **Résultats de l’appel** | Des icônes qui résument ce qui s’est passé pendant l’appel. Voir ci-dessous. |
 
 ## Filtrer et rechercher des appels
 
-En haut de la page, vous verrez généralement deux actions principales :
+En haut de la page, vous trouverez :
 
-- **Filtres** (pour réduire la liste)
-- **Exporter en CSV** (pour télécharger les résultats)
+- **Rechercher dans les transcriptions...** : saisissez un mot ou une phrase pour trouver les appels où il a été prononcé.
+- **Boutons de filtre** : cliquez sur l’un d’eux pour ouvrir ses options. Vous pouvez en combiner plusieurs.
+- **Exporter CSV** : téléchargez les appels affichés.
 
-La zone de filtres comprend des champs comme les suivants (la disponibilité peut varier selon votre compte/forfait) :
-
-| Filtre | À quoi ça sert | Exemple |
+| Filtre | À quoi il sert | Options |
 | --- | --- | --- |
-| Numéro de téléphone | Trouver les appels d’un numéro précis | Rechercher “+1 415…” |
-| ID de l’appel | Accéder à un appel précis | Coller un ID d’appel |
-| Agent en charge | Voir les appels gérés par un agent | “Agent commercial 1” |
-| Statut | Filtrer par statut de l’appel | “Terminé” |
-| Sens | Séparer les entrants et les sortants | “Entrant” |
-| Plage de dates | Se concentrer sur une période | “7 derniers jours” |
-| Durée de l’appel | Filtrer par durée | “Plus d’1 minute” |
-| Origine de l’appel | Identifier la source de l’appel | “Application” |
-| ID de campagne | Filtrer par identifiant de campagne | Coller un ID |
-| Rendez-vous | Trouver les appels avec rendez-vous détecté | “Tous” / filtré |
-| Transfert d’appel | Trouver les appels avec transfert | “Tous” / filtré |
-| Machine | Trouver les appels avec messagerie/machine détectée | “Tous” / filtré |
+| **Numéro de téléphone** | Trouver les appels d’un numéro précis | Saisissez le numéro |
+| **ID de l’appel** | Accéder directement à un appel précis | Collez l’ID de l’appel |
+| **Agent** | Voir les appels traités par un agent | Choisissez dans la liste (avec recherche) |
+| **Squad** | Voir les appels traités par un squad | Choisissez dans la liste |
+| **Statut** | Filtrer par statut d’appel | **En cours**, **Terminé**, **Annulé**, **Occupé**, **Pas de réponse**, **Inconnu** |
+| **Direction** | Séparer les appels entrants et sortants | **Entrant**, **Sortant** |
+| **Rendez-vous** | Trouver les appels où un rendez-vous a été planifié | **Oui**, **Non** |
+| **Transfert d’appel** | Trouver les appels transférés | **Oui**, **Non** |
+| **Messagerie vocale** | Trouver les appels où une messagerie vocale ou un répondeur a été détecté | **Oui**, **Non** |
+| **Plage de dates** | Vous concentrer sur une période | **Aujourd’hui**, **Hier**, **7 derniers jours**, **30 derniers jours**, **Cette semaine**, **Ce mois-ci**, **Mois dernier**, **Plage personnalisée** |
+| **Durée de l’appel** | Filtrer par durée | **Moins d’une minute**, **1 - 5 minutes**, **5 - 10 minutes**, **Plus de 10 minutes** |
+| **Origine** | Voir la provenance de l’appel | **Application**, **Zapier**, **Make**, **N8N**, **Google Meet**, **Webhook personnalisé** |
+| **ID de la campagne** | Voir les appels d’une campagne | Collez l’ID de la campagne |
+| **Sentiment** | Trouver les appels selon l’humeur générale de l’appelant | **Positif**, **Neutre**, **Négatif** |
+| **ID du ticket** | Trouver l’appel associé à un ticket | Collez l’ID du ticket |
 
 > **Erreur fréquente :** Appliquer trop de filtres à la fois peut ne renvoyer aucun résultat. Si le tableau est vide, retirez un filtre et réessayez.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/callhistory1.png"
-    alt="Page d’historique des appels avec les champs de filtre (numéro de téléphone, ID d’appel, agent en charge, statut, sens, plage de dates, etc.) et les boutons de filtres et d’export CSV."
+    alt="Page Historique des appels avec la recherche dans les transcriptions, les boutons de filtre (Numéro de téléphone, ID de l’appel, Agent, Squad, Statut, etc.), le bouton Exporter CSV et la liste des appels."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : utilisez le panneau de filtres pour affiner la liste avant d’exporter ou d’ouvrir les détails d’un appel.
+  Capture d’écran : recherchez dans les transcriptions ou utilisez les boutons de filtre pour affiner les appels avant de les exporter ou d’ouvrir leurs détails.
 </p>
 
 ## Comprendre les résultats de l’appel (icônes)
 
-Dans le tableau des appels, vous pouvez voir une colonne de **résultats de l’appel** avec des icônes qui résument ce qui a été détecté pendant l’appel.
+La colonne **Résultats de l’appel** affiche trois icônes pour chaque appel. Une icône s’allume en couleur quand ce résultat s’est produit :
 
-- **Icône calendrier** : un **rendez-vous** a été détecté pour cet appel.  
-  - Si vous survolez l’icône calendrier avec la souris, vous verrez les détails du rendez-vous.
-- **Icône tête de robot** : une **messagerie vocale / répondeur** a été détectée (l’agent a identifié une messagerie).
+- **Icône de robot (verte)** : une **messagerie vocale ou un répondeur** a été détecté.
+- **Icône de base de données (violette)** : l’agent a **extrait des données** pendant l’appel. Ouvrez l’appel pour les voir dans l’onglet **Données extraites**.
+- **Icône de téléphone avec flèche** : l’appel a été **transféré** vers un autre numéro ou agent.
 
-> **Important :** Les résultats affichés peuvent varier selon ce que le système détecte pour chaque appel.
+Les icônes grises indiquent que ce résultat ne s’est pas produit pendant cet appel.
+
+> **Conseil :** Pour trouver les appels où un rendez-vous a été planifié, utilisez le filtre **Rendez-vous**.
 
 ## Exporter l’historique des appels en CSV
 
-Vous pouvez exporter les appels que vous voyez actuellement (y compris les filtres appliqués).
+Vous pouvez exporter les appels affichés, y compris les filtres appliqués.
 
-1. Cliquez sur **Exporter en CSV**.
-2. Dans la fenêtre d’export, sélectionnez les **colonnes** à inclure.
-   - Vous pouvez utiliser **Tout sélectionner** ou **Tout désélectionner** pour aller plus vite.
-3. Cliquez sur **Exporter en CSV** pour télécharger le fichier.
+1. Cliquez sur **Exporter CSV**.
+2. Dans la fenêtre **Exporter l’historique des appels**, sélectionnez les colonnes à inclure. Les 27 colonnes sont sélectionnées par défaut.
+   - Utilisez **Tout sélectionner** ou **Tout désélectionner** pour aller plus vite.
+3. Cliquez sur **Exporter CSV** pour télécharger le fichier.
+
+Les colonnes disponibles sont :
+
+- **Données de l’appel** : ID de l’appel, Numéro du contact, Nom du contact, Email du client, Direction, Statut, Durée, Commencé le, Terminé le, Créé le, Origine de l’appel, ID de la campagne, ID de Ticket.
+- **Agent** : Nom de l’agent, ID de l’agent.
+- **Résultats** : Machine détectée, Rendez-vous planifié, Appel transféré, Données extraites.
+- **Transfert d’appel** : Durée de l’appel transféré, Statut de l’appel transféré, URL de l’enregistrement transféré, Transcription de l’appel transféré, Numéro de transfert, Nom de l’agent de transfert.
+- **Contenu** : URL de l’enregistrement, Transcription.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-export.png"
+    alt="Fenêtre Exporter l’historique des appels avec Tout sélectionner, Tout désélectionner, les cases des colonnes et le bouton Exporter CSV."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : choisissez les colonnes de votre fichier CSV, puis cliquez sur Exporter CSV.
+</p>
 
 > **Conseil :** Si vous voulez “tous les appels”, supprimez les filtres avant l’export.
 
 ## Ouvrir les détails d’un appel pour l’analyser
 
-Pour afficher tout ce qui concerne un appel précis :
+Cliquez sur n’importe quelle ligne du tableau. Le panneau **Détails de l’appel** s’ouvre.
 
-1. Cliquez sur une ligne d’appel dans le tableau.
-2. Un panneau **Détails de l’appel** s’ouvre à droite.
+En haut du panneau, vous trouverez :
 
-Dans les **détails de l’appel**, vous pouvez consulter et analyser la conversation. Selon votre compte/forfait, vous pouvez voir :
+- L’**ID de l’appel**. Cliquez dessus pour le copier.
+- **Rechercher dans la transcription...** : trouvez un mot ou une phrase dans la conversation.
+- **Copier** : copiez la transcription.
 
-- Un lecteur d’**enregistrement de l’appel** (avec des commandes de lecture)
-- Un menu avec des options de **vitesse de lecture**
-- Des onglets comme :
-  - **Transcription de l’appel**
-  - **Résumé**
-  - **Moments clés**
-  - **Sentiments**
-- Des actions comme **Copier** (par exemple pour copier la transcription ou un contenu sélectionné)
-- Des options pour **télécharger** des éléments comme la **transcription** (la disponibilité peut varier)
+### Transcription
 
-> **Conseil :** Utilisez la barre de recherche de la transcription pour retrouver rapidement une phrase ou un moment précis.
+À gauche s’affiche la conversation complète, tour par tour. À côté de chaque message de l’appelant, une étiquette indique le **sentiment** de ce tour (**Positif**, **Neutre** ou **Négatif**) avec son score.
 
-## Télécharger l’audio de l’appel (enregistrement)
+### Onglets d’analyse
 
-Pour télécharger l’audio d’un appel (lorsqu’un enregistrement est disponible) :
+À droite, vous trouverez ces onglets :
 
-1. Cliquez sur une ligne d’appel pour ouvrir les **détails de l’appel**.
-2. Dans la carte **Enregistrement de l’appel**, cliquez sur le menu **trois points (… )**.
-3. Sélectionnez **Télécharger l’enregistrement**.
+| Onglet | Ce que vous y trouverez |
+| --- | --- |
+| **Aperçu** | Un **Résumé** de l’appel et ses **Métadonnées** : ID de conversation, date et heure de début, agent (cliquez dessus pour ouvrir l’agent), statut, sentiment, durée et origine de l’appel. |
+| **Données extraites** | Les champs que l’agent a recueillis pendant l’appel, avec le nombre de champs remplis. Les champs vides affichent **Non capturé**. Cliquez sur **Copier en JSON** pour les copier. N’apparaît que lorsque l’agent extrait des données. |
+| **Objectifs** | Si chaque objectif de l’agent a été atteint pendant cet appel. Vous définissez les objectifs dans l’onglet **Conversation** de l’agent. Si l’agent n’a pas d’objectifs, vous verrez **Aucun objectif n’a été évalué pour cet appel**. |
+| **Moments clés** | Les moments les plus importants de l’appel. Chacun indique qui l’a dit (**Utilisateur** ou **Assistant**), son type (par exemple **Question**, **Engagement**, **Objection**, **Signal d’achat** ou **Frustration**) et les mots exacts. |
 
-Dans ce même menu, vous pouvez aussi ajuster la **vitesse** (par exemple 0,5x, 0,75x, 1x, 1,25x, 1,5x, 2x).
-
-> **Important :** Si vous ne voyez pas **Télécharger l’enregistrement**, l’enregistrement n’est peut-être pas disponible pour cet appel, ou l’accès peut varier selon votre forfait et vos autorisations.
+> **Important :** Le résumé, le sentiment, les objectifs et les moments clés sont générés par l’IA. Comme l’indique le panneau, il s’agit d’une **analyse assistée par l’IA — à titre indicatif**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/callhistory2.png"
-    alt="Panneau des détails de l’appel montrant la section d’enregistrement avec le menu trois points ouvert, incluant les options de vitesse et l’option de téléchargement de l’audio."
+    alt="Panneau Détails de l’appel avec la transcription à gauche, l’onglet Aperçu avec le résumé et les métadonnées à droite, et le lecteur de l’enregistrement en bas."
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : ouvrez un appel, puis utilisez le menu “…” dans l’enregistrement pour changer la vitesse ou télécharger l’audio.
+  Capture d’écran : le panneau Détails de l’appel affiche la transcription, les onglets d’analyse et le lecteur de l’enregistrement.
 </p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/call-history-key-moments.png"
+    alt="Onglet Moments clés dans les détails de l’appel, avec des moments étiquetés Question, Petite conversation, Engagement et Frustration."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : Moments clés indique qui a dit quoi et de quel type de moment il s’agissait.
+</p>
+
+> **Conseil :** Utilisez **Rechercher dans la transcription...** pour retrouver rapidement une phrase ou un moment précis de l’appel.
+
+## Télécharger l’audio de l’appel (enregistrement)
+
+Le lecteur de l’enregistrement se trouve en bas du panneau **Détails de l’appel**. Depuis ce lecteur, vous pouvez :
+
+- Cliquer sur **Lire** pour écouter l’appel, et utiliser les boutons de chaque côté pour reculer ou avancer.
+- Cliquer sur le bouton de vitesse (**1.0x**) pour changer la vitesse de lecture : 0.5x, 0.75x, 1x, 1.25x, 1.5x ou 2x.
+- Cliquer sur l’icône de **téléchargement** à gauche pour **Télécharger l’enregistrement**.
+
+> **Important :** Si vous ne voyez pas le lecteur ou l’icône de téléchargement, cet appel n’a pas d’enregistrement. L’enregistrement peut être désactivé dans les paramètres de l’agent.
