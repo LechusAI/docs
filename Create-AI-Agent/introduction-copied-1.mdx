@@ -3,73 +3,136 @@ title: "Bevor du startest: So funktionieren KI-Telefonagenten"
 description: "Verstehe, was KI-Telefonagenten sind, wie sie funktionieren und wie du Nummern, Kosten und Integrationen verbindest, bevor du deinen ersten Agenten erstellst."
 ---
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+Auf dieser Seite lernst du in wenigen Minuten die Grundlagen: was ein KI-Telefonagent ist, wie er eine Telefonnummer bekommt, wie Anrufe abgerechnet werden und wie er sich mit deinen Tools verbindet. Danach bist du bereit, deinen ersten Agenten zu erstellen.
+
 ## Was ist ein KI-Telefonagent?
 
-Ein KI-Telefonagent ist ein intelligenter Sprachassistent, der sprechen, zuhören und wie eine geschulte menschliche Fachkraft handeln kann. Er nimmt Anrufe automatisch entgegen oder startet sie selbst — begrüßt Anrufende, versteht ihre Absicht, bucht Termine oder verbindet sie bei Bedarf mit einer echten Person.
+Ein KI-Telefonagent ist ein intelligenter Sprachassistent, der spricht, zuhört und handelt wie ein gut geschulter Mitarbeiter. Er nimmt Anrufe automatisch entgegen oder tätigt sie selbst. Er begrüßt Anrufer, versteht ihr Anliegen und handelt.
 
-Diese Agenten führen echte Gespräche rund um die Uhr, reduzieren verpasste Anrufe und entlasten dein Team von repetitiver Telefonarbeit. Sie klingen natürlich, befolgen Anweisungen und können in mehreren Sprachen und Zeitzonen eingesetzt werden.
+Agenten führen echte Gespräche rund um die Uhr. Sie reduzieren verpasste Anrufe und entlasten dein Team von wiederkehrender Telefonarbeit. Sie klingen natürlich, folgen deinen Anweisungen und sprechen mehrere Sprachen.
+
+<CardGroup cols={2}>
+  <Card title="Anrufe annehmen" icon="phone-arrow-down-left" href="/Create-AI-Agent/Configure-Numbers-copied-1">
+    Nimm jeden eingehenden Anruf an, Tag und Nacht, und beantworte häufige Fragen.
+  </Card>
+  <Card title="Anrufe tätigen" icon="phone-arrow-up-right" href="/Create-AI-Agent/Campaign-copied-1">
+    Rufe deine Kontakte automatisch mit ausgehenden Kampagnen an.
+  </Card>
+  <Card title="Termine buchen" icon="calendar-check" href="/Create-AI-Agent/Google-Calendar-copied-1">
+    Prüfe die Verfügbarkeit und buche Besprechungen direkt in deinem Kalender.
+  </Card>
+  <Card title="An eine Person weiterleiten" icon="headset" href="/Create-AI-Agent/Call-Transfer-copied-1">
+    Übergib den Anruf an dein Team, wenn ein Mensch gebraucht wird.
+  </Card>
+</CardGroup>
 
 ## Eine Telefonnummer verbinden
 
-Jeder Agent benötigt eine Telefonnummer, um Anrufe zu tätigen oder entgegenzunehmen. Du hast mehrere Optionen:
+Jeder Agent benötigt eine Telefonnummer, um Anrufe zu tätigen oder entgegenzunehmen. Öffne **Nummern** und klicke auf **+ Nummer hinzufügen**. Du hast mehrere Optionen:
 
-- **Eine neue Nummer kaufen** direkt über Twilio in deinem Callin-Workspace.
-- **Eine vorhandene Nummer importieren** von Telnyx oder einem anderen Anbieter.
-- **Deine aktuelle Geschäftsnummer verbinden**, falls du bereits eine zugewiesene Nummer hast.
+<CardGroup cols={2}>
+  <Card title="Nummer kaufen" icon="cart-shopping">
+    Kaufe eine neue Nummer direkt in deinem Callin.io-Arbeitsbereich.
+  </Card>
+  <Card title="Von Twilio importieren" icon="arrow-right-to-bracket">
+    Übernimm die Nummern, die du bereits bei Twilio hast.
+  </Card>
+  <Card title="Telnyx-Nummer hinzufügen" icon="sim-card">
+    Importiere deine Telnyx-Nummern, sobald Telnyx verbunden ist.
+  </Card>
+  <Card title="Persönliche Nummer hinzufügen" icon="mobile-screen">
+    Verifiziere eine Nummer, die du bereits nutzt, zum Beispiel deine Geschäftsnummer.
+  </Card>
+</CardGroup>
 
-Mehr dazu hier: [Nummern konfigurieren](https://support.callin.io/Create-AI-Agent/Configure-Numbers).
+Du kannst auch deinen eigenen Anbieter mit **BYOC (SIP-Trunk)** nutzen.
 
-Sobald deine Nummer aktiv ist, nutzt dein KI-Agent sie wie eine echte Telefonleitung — inklusive Anrufer-ID, Voicemail-Erkennung und Anrufhistorie.
+Sobald deine Nummer aktiv ist, nutzt dein Agent sie wie eine echte Telefonleitung, mit Anrufer-ID, Mailbox-Erkennung und Anrufverlauf.
+
+> **Tipp:** Alle Optionen findest du Schritt für Schritt unter [Nummern und BYOC](/Create-AI-Agent/Configure-Numbers-copied-1).
 
 ---
 
 ## Anrufnutzung und Kosten verstehen
 
-Jeder Anruf verbraucht zwei unterschiedliche Arten von Minuten:
+Jeder Anruf verbraucht zwei Arten von Minuten:
 
-1. **Carrier-Minuten** – werden von Twilio oder deinem externen Anbieter für die tatsächliche Telefonverbindung berechnet.
-2. **Callin-KI-Minuten** – decken die Rechenleistung und LLM-Nutzung ab, während der Agent zuhört, verarbeitet und antwortet.
+1. **Anbieter-Minuten**: werden vom Telefonanbieter (Twilio, Telnyx oder dein eigener Anbieter) für die Telefonverbindung berechnet.
+2. **Callin-KI-Minuten**: decken die KI ab, die während des Anrufs zuhört, nachdenkt und antwortet.
 
-**Beispiel:**\
-Ein 5-minütiges Gespräch = 5 Twilio-Minuten + 5 Callin-KI-Minuten.
+<Note>
+**Beispiel:** ein 5-minütiger Anruf = 5 Anbieter-Minuten + 5 Callin-KI-Minuten.
+</Note>
 
-Längere Anrufe oder Agenten, die erweitertes LLM-Reasoning nutzen, können geringfügig mehr KI-Minuten verbrauchen, ermöglichen dafür aber reichhaltigere, menschenähnlichere Dialoge.
+Wenn du eine Nummer über Callin.io kaufst, fällt **keine zusätzliche Plattformgebühr** für die Nummer selbst an.
 
-Du kannst beide Kosten in deinem **Callin Dashboard → Usage**-Bereich nachverfolgen.
+> **Wichtig:** Anrufe mit Nummern, die über Callin.io gekauft wurden, und über unseren Anbieter werden mit **mindestens 1 Minute** abgerechnet. Ein 20-Sekunden-Anruf wird als 1 Minute berechnet. Nach der ersten Minute zahlst du die tatsächliche Dauer. Diese Regel gilt nicht für Testanrufe im Browser, importierte Nummern (Twilio oder Telnyx) oder deinen eigenen SIP-Trunk.
+
+Deine Minuten insgesamt siehst du auf der **Startseite** (**Gesamte Verwendung**). Um deinen Tarif zu sehen oder Guthaben hinzuzufügen, öffne **Tarif upgraden**.
 
 ---
 
 ## Integrationen und Webhooks
 
-Dein KI-Telefonagent muss nicht allein arbeiten. Er kann sich mit den Tools verbinden, die du bereits für Terminplanung, CRM und Automatisierung nutzt.
+Dein KI-Telefonagent muss nicht allein arbeiten. Er verbindet sich mit den Tools, die du bereits für Terminplanung, CRM und Automatisierung nutzt. Du findest sie alle unter **Aktionen** in der Seitenleiste.
 
-Das geschieht über **Webhooks** — einfache URLs, die Daten aus jedem Anruf in Echtzeit empfangen.
-
-Ein Webhook sendet strukturierte Informationen wie Anruferdetails, extrahierte Entitäten, Zeitstempel oder Transkripte an jedes System, das HTTP-Anfragen empfangen kann.
+Viele Integrationen nutzen **Webhooks**: einfache URLs, die die Daten jedes Anrufs in Echtzeit empfangen. Ein Webhook sendet strukturierte Informationen an jedes System, das HTTP-Anfragen empfangen kann, zum Beispiel Anruferdaten, extrahierte Informationen, Zeitstempel oder Transkripte.
 
 ### Warum das wichtig ist
 
-Webhooks öffnen die Tür zu Tausenden von Integrationen:
+Integrationen öffnen dir die Tür zu Tausenden von Tools:
 
-- **Make (Integromat)** – automatisierte Workflows ohne Code erstellen.
-- **Zapier** – Callin sofort mit Google Sheets, Slack, HubSpot und mehr verbinden.
-- **n8n** – benutzerdefinierte Logik-Flows in einer Open-Source-Umgebung erstellen.
-- **GoHighLevel** – Leads, Anrufe und Transkripte direkt in dein CRM synchronisieren.
+<CardGroup cols={2}>
+  <Card title="Google Calendar" icon="calendar" href="/Create-AI-Agent/Google-Calendar-copied-1">
+    Lass deinen Agenten die Verfügbarkeit prüfen und Termine buchen.
+  </Card>
+  <Card title="Make" icon="diagram-project" href="/Create-AI-Agent/Connect-Make-copied-1">
+    Erstelle automatisierte Szenarien ohne Code.
+  </Card>
+  <Card title="Zapier" icon="bolt" href="/Create-AI-Agent/Connect-Zapier-copied-1">
+    Verbinde deine Anrufe mit Google Sheets, Slack, HubSpot und vielem mehr.
+  </Card>
+  <Card title="n8n" icon="sitemap" href="/Create-AI-Agent/Connect-N8N-copied-1">
+    Erstelle eigene Abläufe, die durch Anrufereignisse ausgelöst werden.
+  </Card>
+</CardGroup>
 
-**Beispiel-Use-Cases:**
+Du kannst auch **Cal.com**, **GoHighLevel**, **Zoho** und **Claude** (über MCP) verbinden oder eine **Eigene Integration** mit der [Callin.io-API](/api-reference/introduction) erstellen.
+
+**Anwendungsbeispiele:**
 
 - Nach jedem verpassten Anruf eine Slack-Nachricht senden.
-- Einen neuen CRM-Lead mit Anruferinformationen und Transkript erstellen.
-- Eine Follow-up-E-Mail auslösen, wenn ein Termin gebucht wurde.
-
-Webhooks sind die Brücke zwischen Callin und deinem Ökosystem — einfach, flexibel und leistungsstark.
+- Einen neuen Interessenten im CRM mit den Anruferdaten und dem Transkript anlegen.
+- Eine Nachfass-E-Mail senden, wenn ein Termin gebucht wird.
 
 ---
 
 ## Was du als Nächstes tun solltest
 
-Jetzt, da du verstehst, was KI-Telefonagenten sind, wie du Telefonnummern verbindest, wie Minuten und Kosten funktionieren und wie Integrationen ihre Möglichkeiten erweitern, bist du bereit loszulegen.
+Jetzt weißt du, was KI-Telefonagenten sind, wie sie eine Telefonnummer bekommen, wie Anrufe abgerechnet werden und wie sie sich mit deinen Tools verbinden. Folge diesen Schritten, um deinen ersten Agenten zu starten:
 
-Erstelle deinen ersten Agenten hier: [Agent erstellen](https://app.callin.io/agents/create?step=0&section=choose)
+<Steps>
+  <Step title="Erstelle deinen Agenten">
+    Starte von Grund auf oder mit einer Vorlage und schreibe seine Anweisungen. Siehe [KI-Agenten](/Create-AI-Agent/Create-Agent-Enchanced-copied-1).
+  </Step>
+  <Step title="Füge eine Wissensdatenbank hinzu">
+    Gib deinem Agenten deine Dokumente und häufigen Fragen, damit er mit deinen Informationen antwortet. Siehe [Wissensdatenbank](/Create-AI-Agent/Knowledbase-copied-4).
+  </Step>
+  <Step title="Verbinde Tools">
+    Lass deinen Agenten Besprechungen buchen, Anrufe weiterleiten oder Daten an deine Anwendungen senden. Siehe [Tools](/Create-AI-Agent/Create-Tools-copied-1).
+  </Step>
+  <Step title="Weise eine Telefonnummer zu">
+    Verbinde eine Nummer, damit dein Agent Anrufe tätigen und entgegennehmen kann. Siehe [Nummern und BYOC](/Create-AI-Agent/Configure-Numbers-copied-1).
+  </Step>
+  <Step title="Starte mit dem Telefonieren">
+    Nimm Anrufe entgegen oder starte eine ausgehende Kampagne an deine Kontakte. Siehe [Kampagnen](/Create-AI-Agent/Campaign-copied-1).
+  </Step>
+</Steps>
 
-Experimentiere zuerst mit einem Basic-Setup, erkunde später Enhanced und sieh zu, wie dein KI-Agent echte Gespräche für dich führt.
+<Card title="Erstelle deinen ersten Agenten" icon="rocket" href="https://app.callin.io/agents/create?step=0&section=choose" horizontal>
+  Öffne Callin.io und leg jetzt los.
+</Card>
