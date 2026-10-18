@@ -11,6 +11,14 @@ La página de **Agentes de IA** es donde creas y gestionas los agentes que atien
 El editor de cada agente se organiza en nueve pestañas en la parte superior: **Agente**, **Flujo de trabajo**, **Base de conocimiento**, **Conversación**, **Análisis**, **Herramientas**, **Acción de llamada**, **Widget para sitio web** y **Avanzado**. Esta página te explica cómo crear un agente y qué puedes hacer en cada pestaña.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: un recorrido rápido por las nueve pestañas del editor del agente.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
     alt="La página de Agentes de IA en Callin.io con el botón Crear agente, la barra de búsqueda, los filtros Dirección y Ordenar, y la lista de agentes."
@@ -65,15 +73,11 @@ Haz clic en **Crear agente**, arriba a la derecha. Callin.io te pregunta cómo q
    - **Objetivo principal** — en hasta 300 caracteres, lo que el agente debe conseguir en cada llamada.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/ai-agents-complete-template.png"
-    alt="La pantalla Completa tu agente para una plantilla, con Nombre del agente, Stack del agente, Sitio web y Objetivo principal."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: completar un agente creado a partir de una plantilla.
+  Vídeo: Explorar nuestras plantillas → sector → caso de uso → completar el agente.
 </p>
 
 > **Consejo:** Escribe el **Objetivo principal** como un único resultado claro, por ejemplo "Reservar, confirmar o cambiar citas de pacientes y responder preguntas sobre el horario". Cuanto más claro sea el objetivo, mejor será la primera versión del prompt.
@@ -304,6 +308,14 @@ Para añadir un nodo, arrastra una conexión desde un nodo existente (por ejempl
 
 El nodo nuevo aparece conectado al anterior y sus ajustes se abren en el panel de la derecha.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: crea un flujo con dos rutas desde Inicio: un Subagente que reserva citas y después termina la llamada, y una transferencia a un número de teléfono.
+</p>
+
 ### Inicio
 
 **Inicio** es el punto de entrada. Toda conversación empieza aquí. El nodo no habla ni actúa: solo lanza la ruta y envía la llamada al siguiente nodo.
@@ -471,12 +483,12 @@ La forma más ordenada de trabajar es separar la creación de la selección:
 
 ## Sección 4: Conversación
 
-La pestaña **Conversación** lista todas las llamadas que ha atendido este agente, entrantes y salientes. Es donde revisas lo que pasó en cada llamada.
+La pestaña **Conversación** lista todas las llamadas que ha atendido este agente, entrantes y salientes. Es donde revisas lo que pasó en cada llamada. Tiene dos subpestañas: **Conversaciones** (llamadas telefónicas y web) y **Sesiones de Google Meet**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/ai-agents-conversation.png"
-    alt="La pestaña Conversación con la barra de búsqueda de transcripciones y los filtros de las llamadas del agente."
+    alt="La pestaña Conversación con las subpestañas Conversaciones y Sesiones de Google Meet, la barra de búsqueda de transcripciones y los filtros de las llamadas del agente."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -491,6 +503,10 @@ La pestaña **Conversación** lista todas las llamadas que ha atendido este agen
 - **Filtros** — reduce la lista por **Número de teléfono**, **ID de llamada**, **Squad**, **Estado**, **Dirección**, **Cita**, **Transferencia de llamada**, **Buzón de voz**, **Rango de fechas**, **Duración de la llamada**, **Origen**, **ID de campaña**, **Sentimiento** o **ID del ticket**.
 
 Hasta que el agente haga o reciba su primera llamada, la pestaña muestra *Aún no hay llamadas entrantes o salientes*.
+
+### Sesiones de Google Meet
+
+Esta subpestaña lista las reuniones de Google Meet a las que se ha unido el agente (con el botón **Unirse a Meet**, arriba en el editor). Busca por la URL o el código de acceso de la reunión y filtra la lista por **Estado**. Si el agente no se ha unido a ninguna reunión, verás *No se encontraron sesiones de Google Meet*.
 
 > **Consejo:** Después de cambiar el prompt o el flujo, haz unas cuantas llamadas de prueba y revísalas aquí. Leer las transcripciones es la forma más rápida de ver dónde se desvía el agente.
 
@@ -526,7 +542,7 @@ La pestaña tiene dos subpestañas: **Herramientas**, para tus herramientas pers
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia5.png"
-    alt="La pestaña Herramientas con el botón para agregar herramientas a la izquierda y la lista de herramientas del sistema a la derecha."
+    alt="La pestaña Herramientas con el botón para agregar herramientas a la izquierda y la lista de herramientas del sistema a la derecha, incluida Acceso a datos inmobiliarios."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -626,6 +642,10 @@ En sus ajustes, **Mensaje de buzón (opcional)** decide qué pasa:
 
 - Déjalo en blanco para colgar en cuanto se detecte el buzón.
 - Escribe un mensaje (por ejemplo, "Hola, esta es una llamada automática. Llámenos cuando le venga bien. Gracias.") para que se reproduzca antes de colgar.
+
+#### Acceso a datos inmobiliarios
+
+Permite al agente usar, durante la conversación, las URL de feeds XML por HTTPS que hayas configurado con anuncios de inmuebles. Está pensada para agentes inmobiliarios que tienen que responder preguntas sobre los inmuebles disponibles. Viene desactivada por defecto.
 
 #### Descripción y desactivar interrupciones
 
@@ -868,7 +888,7 @@ La mayoría de agentes funcionan bien sin tocar nada aquí. Abre esta pestaña c
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="La pestaña Avanzado con el bloque Voz y comprensión (Calidad de captura de voz y Palabras clave prioritarias) y el bloque Flujo de conversación (Prontitud y Paciencia al deletrear)."
+    alt="La pestaña Avanzado con el bloque Memoria (Recordar a quien llama), el bloque Voz y comprensión y el bloque Flujo de conversación."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -877,7 +897,13 @@ La mayoría de agentes funcionan bien sin tocar nada aquí. Abre esta pestaña c
   Captura: la pestaña Avanzado. La mayoría de agentes funcionan bien con los valores por defecto.
 </p>
 
-La pestaña se divide en seis bloques: **Voz y comprensión**, **Flujo de conversación**, **Sonido de fondo**, **Tiempo de espera suave**, **Privacidad y datos** y **Extras de telefonía**.
+La pestaña se divide en siete bloques: **Memoria**, **Voz y comprensión**, **Flujo de conversación**, **Sonido de fondo**, **Tiempo de espera suave**, **Privacidad y datos** y **Extras de telefonía**.
+
+### Memoria
+
+**Recordar a quien llama** guarda datos útiles después de cada llamada y los usa la próxima vez que el agente reconoce a la misma persona. Por defecto, cada persona se reconoce por el número desde el que llama. Viene desactivado por defecto.
+
+> **Consejo:** Actívalo en agentes que hablan a menudo con los mismos clientes, como los de soporte o de citas, para que no tengan que repetir sus datos.
 
 ### Voz y comprensión
 

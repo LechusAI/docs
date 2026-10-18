@@ -11,6 +11,14 @@ The **AI Agents** page is where you create and manage the agents that handle you
 Each agent's editor is organized in nine tabs at the top: **Agent**, **Workflow**, **Knowledge Base**, **Conversation**, **Analytics**, **Tools**, **Call Action**, **Website widget**, and **Advanced**. This page explains how to create an agent and what you can do in each tab.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: a quick tour of the nine tabs of the agent editor.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
     alt="The AI Agents page in Callin.io with the Create Agent button, the search bar, the Direction and Sort filters, and the list of agents."
@@ -65,15 +73,11 @@ Click **Create Agent** at the top right. Callin.io asks how you want to start.
    - **Main Goal** — in up to 300 characters, what the agent should achieve on each call.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/ai-agents-complete-template.png"
-    alt="The Complete your agent screen for a template, with Agent Name, Agent stack, Website, and Main Goal."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: completing an agent created from a template.
+  Video: Browse our Templates → industry → use case → Complete your agent.
 </p>
 
 > **Tip:** Write the **Main Goal** as one clear outcome, for example "Book, confirm, or reschedule patient appointments and answer questions about opening hours." The clearer the goal, the better the first version of the prompt.
@@ -304,6 +308,14 @@ To add a node, drag a connection from an existing node (for example, from the bo
 
 The new node appears connected to the previous one, and its settings open in the panel on the right.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: build a workflow with two routes from Start: a Subagent that books appointments and then ends the call, and a transfer to a phone number.
+</p>
+
 ### Start
 
 **Start** is the entry point. Every conversation begins here. The node doesn't speak or act — it just launches the route and sends the call to the next node.
@@ -471,12 +483,12 @@ The cleanest way to work is to keep creation and selection separate:
 
 ## Section 4: Conversation
 
-The **Conversation** tab lists every call handled by this agent, incoming and outgoing. It's where you review what happened on each call.
+The **Conversation** tab lists every call handled by this agent, incoming and outgoing. It's where you review what happened on each call. It has two sub-tabs: **Conversations** (phone and web calls) and **Google Meet Sessions**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/ai-agents-conversation.png"
-    alt="The Conversation tab with the transcript search bar and the filters: Phone Number, Call ID, Squad, Status, Direction, Appointment, Call Transfer, Voicemail, Date Range, Call Duration, Origin, Campaign ID, Sentiment, and Ticket ID."
+    alt="The Conversation tab with the Conversations and Google Meet Sessions sub-tabs, the transcript search bar, and the filters: Phone Number, Call ID, Squad, Status, Direction, Appointment, Call Transfer, Voicemail, Date Range, Call Duration, Origin, Campaign ID, Sentiment, and Ticket ID."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -491,6 +503,10 @@ The **Conversation** tab lists every call handled by this agent, incoming and ou
 - **Filters** — narrow the list by **Phone Number**, **Call ID**, **Squad**, **Status**, **Direction**, **Appointment**, **Call Transfer**, **Voicemail**, **Date Range**, **Call Duration**, **Origin**, **Campaign ID**, **Sentiment**, or **Ticket ID**.
 
 Until the agent makes or receives its first call, the tab shows *No incoming or outgoing calls yet*.
+
+### Google Meet Sessions
+
+This sub-tab lists the Google Meet meetings the agent has joined (with the **Join Meet** button at the top of the editor). Search by the meeting URL or join code, and filter the list by **Status**. If the agent hasn't joined any meeting, you'll see *No Google Meet sessions found*.
 
 > **Tip:** After changing the prompt or the workflow, place a few test calls and review them here. Reading the transcripts is the fastest way to spot where the agent goes off track.
 
@@ -526,7 +542,7 @@ The tab has two sub-tabs: **Tools**, for your custom tools and the built-in **Sy
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia5.png"
-    alt="The Tools tab with the Add Tool button on the left and the System Tools list on the right: Smart Hang-up, Language Switching, Intelligent Listening, Transfer to agent, Transfer to number, and Voicemail Intelligence."
+    alt="The Tools tab with the Add Tool button on the left and the System Tools list on the right: Smart Hang-up, Language Switching, Intelligent Listening, Transfer to agent, Transfer to number, Voicemail Intelligence, and Access Property Data."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -626,6 +642,10 @@ In its settings, **Voicemail Message** *(optional)* decides what happens:
 
 - Leave it blank to end the call immediately when voicemail is detected.
 - Write a message (for example, "Hello, this is an automated call. Please call us back at your convenience. Thank you.") to play it before ending the call.
+
+#### Access Property Data
+
+Lets the agent use configured HTTPS XML feed URLs with property listings during the conversation. It's designed for real estate agents that need to answer questions about available properties. It's off by default.
 
 #### Description and Disable interruption
 
@@ -868,7 +888,7 @@ Most agents work fine without touching anything here. Open this tab when you wan
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="The Advanced tab showing the Voice & Understanding block with Speech Capture Quality and Priority Keywords, and the Conversation Flow block with Eagerness and Spelling patience."
+    alt="The Advanced tab showing the Memory block with Remember callers, the Voice & Understanding block with Speech Capture Quality and Priority Keywords, and the Conversation Flow block with Eagerness and Spelling patience."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -877,7 +897,13 @@ Most agents work fine without touching anything here. Open this tab when you wan
   Screenshot: the Advanced tab. Most agents work well with the default values.
 </p>
 
-The tab is split into six blocks: **Voice & Understanding**, **Conversation Flow**, **Background sound**, **Soft timeout**, **Privacy & Data**, and **Telephony Extras**.
+The tab is split into seven blocks: **Memory**, **Voice & Understanding**, **Conversation Flow**, **Background sound**, **Soft timeout**, **Privacy & Data**, and **Telephony Extras**.
+
+### Memory
+
+**Remember callers** saves useful details after each call and uses them the next time the agent recognizes the same person. By default, each person is recognized by the phone number they called from. It's off by default.
+
+> **Tip:** Turn it on for agents that talk to the same customers often, such as support or appointment agents, so callers don't have to repeat themselves.
 
 ### Voice & Understanding
 

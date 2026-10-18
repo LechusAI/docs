@@ -11,6 +11,14 @@ La page **AI Agents** est l'endroit où tu crées et gères les agents qui prenn
 L'éditeur de chaque agent est organisé en neuf onglets en haut : **Agent**, **Workflow**, **Base de connaissances**, **Conversation**, **Analyses**, **Outils**, **Action d'appel**, **Widget de site web** et **Avancé**. Cette page t'explique comment créer un agent et ce que tu peux faire dans chaque onglet.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : un tour rapide des neuf onglets de l’éditeur de l’agent.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
     alt="La page AI Agents de Callin.io avec le bouton Créer un agent, la barre de recherche, les filtres Direction et Trier, et la liste des agents."
@@ -65,15 +73,11 @@ Clique sur **Créer un agent**, en haut à droite. Callin.io te demande comment 
    - **Objectif principal** — en 300 caractères maximum, ce que l'agent doit obtenir à chaque appel.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/ai-agents-complete-template.png"
-    alt="L'écran Complétez votre agent pour un modèle, avec le nom de l'agent, la stack, le site web et l'objectif principal."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : finaliser un agent créé à partir d'un modèle.
+  Vidéo : Parcourir nos modèles → secteur → cas d’usage → compléter l’agent.
 </p>
 
 > **Astuce :** Rédige l'**Objectif principal** comme un seul résultat clair, par exemple « Réserver, confirmer ou déplacer les rendez-vous des patients et répondre aux questions sur les horaires ». Plus l'objectif est clair, meilleure sera la première version du prompt.
@@ -304,6 +308,14 @@ Pour ajouter un nœud, fais glisser une connexion depuis un nœud existant (par 
 
 Le nouveau nœud apparaît relié au précédent et ses réglages s'ouvrent dans le panneau de droite.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : crée un flux avec deux parcours depuis Début : un Sous-agent qui prend les rendez-vous puis termine l’appel, et un transfert vers un numéro de téléphone.
+</p>
+
 ### Début
 
 **Début** est le point d'entrée. Toute conversation commence ici. Le nœud ne parle pas et n'agit pas : il lance simplement le chemin et envoie l'appel au nœud suivant.
@@ -471,12 +483,12 @@ La façon la plus propre de travailler est de séparer la création de la sélec
 
 ## Section 4 : Conversation
 
-L'onglet **Conversation** liste tous les appels traités par cet agent, entrants et sortants. C'est là que tu vérifies ce qui s'est passé à chaque appel.
+L'onglet **Conversation** liste tous les appels traités par cet agent, entrants et sortants. C'est là que tu vérifies ce qui s'est passé à chaque appel. Il comporte deux sous-onglets : **Conversations** (appels téléphoniques et web) et **Sessions Google Meet**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/ai-agents-conversation.png"
-    alt="L'onglet Conversation avec la recherche dans les transcriptions et les filtres des appels de l'agent."
+    alt="L'onglet Conversation avec les sous-onglets Conversations et Sessions Google Meet, la recherche dans les transcriptions et les filtres des appels de l'agent."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -491,6 +503,10 @@ L'onglet **Conversation** liste tous les appels traités par cet agent, entrants
 - **Filtres** — affine la liste par **Numéro de téléphone**, **ID de l'appel**, **Squad**, **Statut**, **Direction**, **Rendez-vous**, **Transfert d'appel**, **Messagerie vocale**, **Plage de dates**, **Durée de l'appel**, **Origine**, **ID de la campagne**, **Sentiment** ou **ID du ticket**.
 
 Tant que l'agent n'a pas passé ou reçu son premier appel, l'onglet affiche *Aucun appel entrant ou sortant pour le moment*.
+
+### Sessions Google Meet
+
+Ce sous-onglet liste les réunions Google Meet auxquelles l’agent a participé (avec le bouton **Rejoindre Meet**, en haut de l’éditeur). Recherche par URL ou code de la réunion et filtre la liste par **Statut**. Si l’agent n’a rejoint aucune réunion, tu verras *Aucune session Google Meet trouvée*.
 
 > **Astuce :** Après avoir modifié le prompt ou le workflow, passe quelques appels de test et vérifie-les ici. Lire les transcriptions est le moyen le plus rapide de voir où l'agent s'écarte du bon chemin.
 
@@ -526,7 +542,7 @@ L'onglet comporte deux sous-onglets : **Outils**, pour tes outils personnalisés
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia5.png"
-    alt="L'onglet Outils avec le bouton pour ajouter un outil à gauche et la liste des outils système à droite."
+    alt="L'onglet Outils avec le bouton pour ajouter un outil à gauche et la liste des outils système à droite, dont Accès aux données immobilières."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -626,6 +642,10 @@ Dans ses réglages, **Message messagerie (optionnel)** décide de ce qui se pass
 
 - Laisse-le vide pour raccrocher dès que la messagerie est détectée.
 - Écris un message (par exemple « Bonjour, ceci est un appel automatique. Merci de nous rappeler quand cela vous convient. ») pour qu'il soit diffusé avant de raccrocher.
+
+#### Accès aux données immobilières
+
+Permet à l’agent d’utiliser, pendant la conversation, les URL de flux XML en HTTPS que tu as configurées avec des annonces immobilières. Il est pensé pour les agents immobiliers qui doivent répondre à des questions sur les biens disponibles. Il est désactivé par défaut.
 
 #### Description et désactiver les interruptions
 
@@ -868,7 +888,7 @@ La plupart des agents fonctionnent bien sans rien toucher ici. Ouvre cet onglet 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="L'onglet Avancé avec le bloc Voix et compréhension (Qualité de capture vocale et Mots-clés prioritaires) et le bloc Flux de conversation (Réactivité et Patience à l'orthographe)."
+    alt="L'onglet Avancé avec le bloc Mémoire (Se souvenir des appelants), le bloc Voix et compréhension et le bloc Flux de conversation."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -877,7 +897,13 @@ La plupart des agents fonctionnent bien sans rien toucher ici. Ouvre cet onglet 
   Capture : l'onglet Avancé. La plupart des agents fonctionnent bien avec les valeurs par défaut.
 </p>
 
-L'onglet est divisé en six blocs : **Voix et compréhension**, **Flux de conversation**, **Son d'ambiance**, **Délai d'attente doux**, **Confidentialité et données** et **Options téléphonie**.
+L'onglet est divisé en sept blocs : **Mémoire**, **Voix et compréhension**, **Flux de conversation**, **Son d'ambiance**, **Délai d'attente doux**, **Confidentialité et données** et **Options téléphonie**.
+
+### Mémoire
+
+**Se souvenir des appelants** enregistre les informations utiles après chaque appel et les réutilise la prochaine fois que l’agent reconnaît la même personne. Par défaut, chaque personne est reconnue grâce au numéro depuis lequel elle appelle. Il est désactivé par défaut.
+
+> **Astuce :** Active-le pour les agents qui parlent souvent aux mêmes clients, comme le support ou la prise de rendez-vous, pour que les appelants n’aient pas à tout répéter.
 
 ### Voix et compréhension
 

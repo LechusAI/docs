@@ -11,6 +11,14 @@ Auf der Seite **KI-Agenten** erstellen und verwalten Sie die Agenten, die Ihre T
 Der Editor jedes Agenten ist oben in neun Tabs gegliedert: **Agent**, **Workflow**, **Wissensdatenbank**, **Konversation**, **Analysen**, **Tools**, **Anruf-Aktion**, **Website-Widget** und **Erweitert**. Diese Seite erklärt, wie Sie einen Agenten erstellen und was Sie in jedem Tab tun können.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: ein kurzer Rundgang durch die neun Tabs des Agenten-Editors.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia1.png"
     alt="Die Seite KI-Agenten in Callin.io mit der Schaltfläche Agent erstellen, der Suchleiste, den Filtern Richtung und Sortieren und der Liste der Agenten."
@@ -65,15 +73,11 @@ Klicken Sie oben rechts auf **Agent erstellen**. Callin.io fragt Sie, wie Sie be
    - **Hauptziel** — in bis zu 300 Zeichen, was der Agent in jedem Anruf erreichen soll.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/ai-agents-complete-template.png"
-    alt="Der Bildschirm Agent fertigstellen für eine Vorlage mit Agentenname, Agent-Stack, Website und Hauptziel."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: einen aus einer Vorlage erstellten Agenten fertigstellen.
+  Video: Unsere Vorlagen durchsuchen → Branche → Anwendungsfall → Agenten vervollständigen.
 </p>
 
 > **Tipp:** Formulieren Sie das **Hauptziel** als ein einziges, klares Ergebnis, zum Beispiel „Patiententermine buchen, bestätigen oder verschieben und Fragen zu den Öffnungszeiten beantworten“. Je klarer das Ziel, desto besser wird die erste Version des Prompts.
@@ -304,6 +308,14 @@ Um einen Knoten hinzuzufügen, ziehen Sie eine Verbindung von einem vorhandenen 
 
 Der neue Knoten erscheint mit dem vorherigen verbunden, und seine Einstellungen öffnen sich im Bereich rechts.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Erstellen Sie einen Ablauf mit zwei Routen ab Start: einem Subagenten, der Termine bucht und dann den Anruf beendet, und einer Weiterleitung an eine Telefonnummer.
+</p>
+
 ### Start
 
 **Start** ist der Einstiegspunkt. Jedes Gespräch beginnt hier. Der Knoten spricht oder handelt nicht — er startet nur den Pfad und leitet den Anruf an den nächsten Knoten weiter.
@@ -471,12 +483,12 @@ Am saubersten arbeiten Sie, wenn Sie Erstellung und Auswahl trennen:
 
 ## Abschnitt 4: Konversation
 
-Der Tab **Konversation** listet alle Anrufe auf, die dieser Agent bearbeitet hat, eingehend und ausgehend. Hier prüfen Sie, was in jedem Anruf passiert ist.
+Der Tab **Konversation** listet alle Anrufe auf, die dieser Agent bearbeitet hat, eingehend und ausgehend. Hier prüfen Sie, was in jedem Anruf passiert ist. Er hat zwei Untertabs: **Unterhaltungen** (Telefon- und Webanrufe) und **Google-Meet-Sitzungen**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/ai-agents-conversation.png"
-    alt="Der Tab Konversation mit der Transkriptsuche und den Filtern für die Anrufe des Agenten."
+    alt="Der Tab Konversation mit den Untertabs Unterhaltungen und Google-Meet-Sitzungen, der Transkriptsuche und den Filtern für die Anrufe des Agenten."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -491,6 +503,10 @@ Der Tab **Konversation** listet alle Anrufe auf, die dieser Agent bearbeitet hat
 - **Filter** — grenzen Sie die Liste ein nach **Telefonnummer**, **Anruf-ID**, **Squad**, **Status**, **Richtung**, **Termin**, **Anrufweiterleitung**, **Voicemail**, **Datumsbereich**, **Anrufdauer**, **Quelle**, **Kampagnen-ID**, **Stimmung** oder **Ticket-ID**.
 
 Bis der Agent seinen ersten Anruf tätigt oder erhält, zeigt der Tab *Noch keine eingehenden oder ausgehenden Anrufe*.
+
+### Google-Meet-Sitzungen
+
+Dieser Untertab listet die Google-Meet-Besprechungen auf, an denen der Agent teilgenommen hat (über die Schaltfläche **Meet beitreten** oben im Editor). Suchen Sie nach der URL oder dem Beitrittscode der Besprechung und filtern Sie die Liste nach **Status**. Hat der Agent an keiner Besprechung teilgenommen, sehen Sie *Keine Google-Meet-Sitzungen gefunden*.
 
 > **Tipp:** Führen Sie nach Änderungen am Prompt oder am Workflow einige Testanrufe durch und prüfen Sie sie hier. Das Lesen der Transkripte ist der schnellste Weg, um zu erkennen, wo der Agent vom Kurs abkommt.
 
@@ -526,7 +542,7 @@ Der Tab hat zwei Untertabs: **Tools** für Ihre benutzerdefinierten Tools und di
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia5.png"
-    alt="Der Tab Tools mit der Schaltfläche zum Hinzufügen von Werkzeugen links und der Liste der System-Tools rechts."
+    alt="Der Tab Tools mit der Schaltfläche zum Hinzufügen von Werkzeugen links und der Liste der System-Tools rechts, einschließlich Immobiliendaten abrufen."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -626,6 +642,10 @@ In den Einstellungen bestimmt **Voicemail-Nachricht (optional)**, was passiert:
 
 - Lassen Sie das Feld leer, um den Anruf sofort zu beenden, sobald die Mailbox erkannt wird.
 - Schreiben Sie eine Nachricht (zum Beispiel „Hallo, dies ist ein automatischer Anruf. Bitte rufen Sie uns zurück, wann es Ihnen passt. Vielen Dank.“), damit sie vor dem Auflegen abgespielt wird.
+
+### Immobiliendaten abrufen
+
+Ermöglicht dem Agenten, während des Gesprächs die von Ihnen konfigurierten HTTPS-XML-Feed-URLs mit Immobilienangeboten zu nutzen. Gedacht für Immobilien-Agenten, die Fragen zu verfügbaren Objekten beantworten müssen. Standardmäßig deaktiviert.
 
 ### Beschreibung und Unterbrechung deaktivieren
 
@@ -868,7 +888,7 @@ Die meisten Agenten funktionieren gut, ohne dass Sie hier etwas ändern. Öffnen
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/agentesia8.png"
-    alt="Der Tab Erweitert mit dem Block Stimme & Verständnis (Qualität der Spracherfassung und Prioritäts-Schlüsselwörter) und dem Block Gesprächsfluss (Reaktionsbereitschaft und Geduld beim Buchstabieren)."
+    alt="Der Tab Erweitert mit dem Block Gedächtnis (Anrufer merken), dem Block Stimme & Verständnis und dem Block Gesprächsfluss."
     style={{ width:"100%", display:"block" }}
   />
 </div>
@@ -877,7 +897,13 @@ Die meisten Agenten funktionieren gut, ohne dass Sie hier etwas ändern. Öffnen
   Screenshot: der Tab Erweitert. Die meisten Agenten funktionieren mit den Standardwerten gut.
 </p>
 
-Der Tab ist in sechs Blöcke gegliedert: **Stimme & Verständnis**, **Gesprächsfluss**, **Hintergrundsound**, **Soft-Timeout**, **Datenschutz & Daten** und **Telefonie-Extras**.
+Der Tab ist in sieben Blöcke gegliedert: **Gedächtnis**, **Stimme & Verständnis**, **Gesprächsfluss**, **Hintergrundsound**, **Soft-Timeout**, **Datenschutz & Daten** und **Telefonie-Extras**.
+
+### Gedächtnis
+
+**Anrufer merken** speichert nach jedem Anruf nützliche Details und nutzt sie, wenn der Agent dieselbe Person das nächste Mal erkennt. Standardmäßig wird jede Person an der Nummer erkannt, von der sie anruft. Standardmäßig deaktiviert.
+
+> **Tipp:** Aktivieren Sie es für Agenten, die oft mit denselben Kunden sprechen, etwa im Support oder bei Terminen, damit Anrufer ihre Angaben nicht wiederholen müssen.
 
 ### Stimme & Verständnis
 
