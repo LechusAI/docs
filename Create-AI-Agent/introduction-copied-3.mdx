@@ -1,75 +1,138 @@
 ---
-title: "Prima di creare: come funzionano gli AI Call Agents"
-description: "Comprendi cosa sono gli AI Call Agents, come funzionano e come collegare numeri, costi e integrazioni prima di crearne il primo."
+title: "Prima di creare: come funzionano gli agenti di chiamata IA"
+description: "Comprendi cosa sono gli agenti di chiamata IA, come funzionano e come collegare numeri, costi e integrazioni prima di crearne il primo."
 ---
 
-## Che cos'è un AI Call Agent
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-Un AI Call Agent è un assistente vocale intelligente in grado di parlare, ascoltare e agire come un operatore umano addestrato. Risponde o avvia chiamate automaticamente — salutando chi chiama, comprendendo l’intento, prenotando appuntamenti o trasferendo la chiamata a una persona reale quando necessario.
+In pochi minuti, questa pagina ti spiega le basi: cos'è un agente di chiamata IA, come ottiene un numero di telefono, come vengono addebitate le chiamate e come si collega ai tuoi strumenti. Poi sarai pronto a creare il tuo primo agente.
 
-Questi agenti gestiscono conversazioni reali 24/7, riducendo le chiamate perse e liberando il tuo team dal lavoro telefonico ripetitivo. Suonano naturali, seguono le istruzioni e possono operare in più lingue e fusi orari.
+## Che cos'è un agente di chiamata IA
+
+Un agente di chiamata IA è un assistente vocale intelligente che parla, ascolta e agisce come un operatore umano ben formato. Risponde o effettua chiamate in automatico. Saluta chi chiama, capisce di cosa ha bisogno e agisce.
+
+Gli agenti gestiscono conversazioni reali 24/7. Riducono le chiamate perse e liberano il tuo team dal lavoro telefonico ripetitivo. Hanno una voce naturale, seguono le tue istruzioni e possono parlare più lingue.
+
+<CardGroup cols={2}>
+  <Card title="Rispondere alle chiamate" icon="phone-arrow-down-left" href="/Create-AI-Agent/Configure-Numbers-copied-5">
+    Risponde a ogni chiamata in arrivo, di giorno e di notte, e risolve le domande più comuni.
+  </Card>
+  <Card title="Effettuare chiamate" icon="phone-arrow-up-right" href="/Create-AI-Agent/Campaign-copied-3">
+    Chiama i tuoi contatti in automatico con le campagne in uscita.
+  </Card>
+  <Card title="Fissare appuntamenti" icon="calendar-check" href="/Create-AI-Agent/Google-Calendar-copied-3">
+    Controlla la disponibilità e prenota riunioni direttamente nel tuo calendario.
+  </Card>
+  <Card title="Trasferire a una persona" icon="headset" href="/Create-AI-Agent/Call-Transfer-copied-3">
+    Passa la chiamata al tuo team quando serve una persona.
+  </Card>
+</CardGroup>
 
 ## Collegare un numero di telefono
 
-Ogni agente ha bisogno di un numero di telefono per effettuare o ricevere chiamate. Hai diverse opzioni:
+Ogni agente ha bisogno di un numero di telefono per effettuare o ricevere chiamate. Vai su **Numeri** e fai clic su **+ Aggiungi numero**. Hai diverse opzioni:
 
-- **Acquistare un nuovo numero** direttamente tramite Twilio all’interno del tuo workspace Callin.
-- **Importare un numero esistente** da Telnyx o da un altro provider.
-- **Collegare il tuo numero aziendale attuale** se ne hai già uno assegnato.
+<CardGroup cols={2}>
+  <Card title="Acquista numero" icon="cart-shopping">
+    Acquista un nuovo numero direttamente nel tuo spazio di lavoro Callin.io.
+  </Card>
+  <Card title="Importa da Twilio" icon="arrow-right-to-bracket">
+    Porta i numeri che possiedi già su Twilio.
+  </Card>
+  <Card title="Aggiungi numero Telnyx" icon="sim-card">
+    Importa i tuoi numeri Telnyx dopo aver collegato Telnyx.
+  </Card>
+  <Card title="Aggiungi numero personale" icon="mobile-screen">
+    Verifica un numero che usi già, come la linea della tua azienda.
+  </Card>
+</CardGroup>
 
-Scopri di più in [Configure Numbers](https://support.callin.io/Create-AI-Agent/Configure-Numbers-copied-5).
+Puoi anche usare il tuo operatore con **BYOC (Tronco SIP)**.
 
-Una volta che il numero è attivo, il tuo agente AI lo utilizzerà come una vera linea telefonica—con identificativo chiamante, rilevamento della segreteria e cronologia chiamate.
+Una volta attivo il numero, il tuo agente lo usa come una vera linea telefonica, con ID chiamante, rilevamento della segreteria e cronologia delle chiamate.
+
+> **Suggerimento:** Scopri ogni opzione passo dopo passo in [Numeri e BYOC](/Create-AI-Agent/Configure-Numbers-copied-5).
 
 ---
 
 ## Comprendere utilizzo e costi delle chiamate
 
-Ogni chiamata consuma due tipi diversi di minuti:
+Ogni chiamata usa due tipi di minuti:
 
-1. **Minuti del carrier** – addebitati da Twilio o dal tuo provider esterno per la connessione telefonica effettiva.
-2. **Minuti AI di Callin** – coprono la computazione e l’uso dell’LLM mentre l’agente ascolta, elabora e risponde.
+1. **Minuti dell'operatore**: addebitati dal fornitore telefonico (Twilio, Telnyx o il tuo operatore) per la connessione telefonica.
+2. **Minuti IA di Callin**: coprono l'IA che ascolta, ragiona e risponde durante la chiamata.
 
-**Esempio:**\
-Una conversazione di 5 minuti = 5 minuti Twilio + 5 minuti AI di Callin.
+<Note>
+**Esempio:** una chiamata di 5 minuti = 5 minuti dell'operatore + 5 minuti IA di Callin.
+</Note>
 
-Chiamate più lunghe o agenti che usano ragionamento LLM avanzato possono consumare leggermente più minuti AI, ma consentono dialoghi più ricchi e più simili a quelli umani.
+Quando acquisti un numero tramite Callin.io, **non c'è alcun costo aggiuntivo della piattaforma** per il numero stesso.
 
-Puoi monitorare entrambi i costi nella sezione **Callin Dashboard → Usage**.
+> **Importante:** Le chiamate effettuate con numeri acquistati su Callin.io e con il nostro operatore hanno un **addebito minimo di 1 minuto**. Una chiamata di 20 secondi viene addebitata come 1 minuto. Dopo il primo minuto, paghi la durata effettiva. Questa regola non si applica alle chiamate di prova dal browser, ai numeri importati (Twilio o Telnyx) né al tuo tronco SIP.
+
+Puoi controllare i minuti totali in **Home** (**Totale utilizzo**). Per vedere il tuo piano o aggiungere credito, apri **Aggiorna piano**.
 
 ---
 
 ## Integrazioni e webhooks
 
-Il tuo AI Call Agent non deve lavorare da solo. Può collegarsi agli strumenti che già utilizzi per scheduling, CRM e automazione.
+Il tuo agente di chiamata IA non deve lavorare da solo. Si collega agli strumenti che usi già per agenda, CRM e automazione. Li trovi tutti in **Azioni**, nella barra laterale.
 
-Questo avviene tramite **webhooks** — URL semplici che ricevono dati da ogni chiamata in tempo reale.
-
-Un webhook invia informazioni strutturate come dettagli del chiamante, entità estratte, timestamp o trascrizioni a qualsiasi sistema in grado di ricevere richieste HTTP.
+Molte integrazioni usano i **webhook**: semplici URL che ricevono i dati di ogni chiamata in tempo reale. Un webhook invia informazioni strutturate a qualsiasi sistema in grado di ricevere richieste HTTP, come i dati di chi chiama, le informazioni estratte, data e ora o la trascrizione.
 
 ### Perché è importante
 
-I webhooks aprono la porta a migliaia di integrazioni:
+Le integrazioni ti aprono le porte a migliaia di strumenti:
 
-- **Make (Integromat)** – crea workflow automatizzati senza codice.
-- **Zapier** – collega subito Callin con Google Sheets, Slack, HubSpot e altro.
-- **n8n** – crea flussi con logica personalizzata in un ambiente open-source.
-- **GoHighLevel** – sincronizza lead, chiamate e trascrizioni direttamente nel tuo CRM.
+<CardGroup cols={2}>
+  <Card title="Google Calendar" icon="calendar" href="/Create-AI-Agent/Google-Calendar-copied-3">
+    Fai controllare al tuo agente la disponibilità e prenotare appuntamenti.
+  </Card>
+  <Card title="Make" icon="diagram-project" href="/Create-AI-Agent/Connect-Make-copied-3">
+    Crea scenari automatizzati senza codice.
+  </Card>
+  <Card title="Zapier" icon="bolt" href="/Create-AI-Agent/Connect-Zapier-copied-3">
+    Collega le tue chiamate a Google Sheets, Slack, HubSpot e molto altro.
+  </Card>
+  <Card title="n8n" icon="sitemap" href="/Create-AI-Agent/Connect-N8N-copied-3">
+    Crea flussi di lavoro personalizzati attivati dagli eventi delle chiamate.
+  </Card>
+</CardGroup>
+
+Puoi anche collegare **Cal.com**, **GoHighLevel**, **Zoho** e **Claude** (tramite MCP), oppure creare un'**Integrazione personalizzata** con l'[API di Callin.io](/api-reference/introduction).
 
 **Esempi di utilizzo:**
 
 - Inviare un messaggio Slack dopo ogni chiamata persa.
-- Creare un nuovo lead nel CRM con info del chiamante e trascrizione.
-- Attivare un’email di follow-up quando viene prenotato un appuntamento.
-
-I webhooks sono il ponte tra Callin e il tuo ecosistema—semplici, flessibili e potenti.
+- Creare un nuovo contatto commerciale nel CRM con i dati di chi chiama e la trascrizione.
+- Inviare un'email di ricontatto quando viene prenotato un appuntamento.
 
 ---
 
 ## Cosa fare dopo
 
-Ora che sai cosa sono gli AI Call Agents, come si collegano ai numeri di telefono, come funzionano minuti e costi e come le integrazioni possono amplificarne le capacità, sei pronto per iniziare.
+Ora sai cosa sono gli agenti di chiamata IA, come ottengono un numero di telefono, come vengono addebitate le chiamate e come si collegano ai tuoi strumenti. Segui questi passaggi per lanciare il tuo primo agente:
 
-Crea il tuo primo agente qui: [Create Agent](https://app.callin.io/agents/create?step=0&section=choose)
+<Steps>
+  <Step title="Crea il tuo agente">
+    Inizia da zero o da un modello e scrivi le sue istruzioni. Vedi [Agenti IA](/Create-AI-Agent/Create-Agent-Enchanced-copied-4).
+  </Step>
+  <Step title="Aggiungi una base di conoscenza">
+    Dai al tuo agente i tuoi documenti e le domande frequenti, così risponde con le tue informazioni. Vedi [Base di conoscenza](/Create-AI-Agent/Knowledbase-copied-3).
+  </Step>
+  <Step title="Collega gli strumenti">
+    Fai prenotare riunioni al tuo agente, trasferire chiamate o inviare dati alle tue applicazioni. Vedi [Strumenti](/Create-AI-Agent/Create-Tools-copied-3).
+  </Step>
+  <Step title="Assegna un numero di telefono">
+    Collega un numero perché il tuo agente possa effettuare e ricevere chiamate. Vedi [Numeri e BYOC](/Create-AI-Agent/Configure-Numbers-copied-5).
+  </Step>
+  <Step title="Inizia a chiamare">
+    Ricevi chiamate o lancia una campagna in uscita verso i tuoi contatti. Vedi [Campagne](/Create-AI-Agent/Campaign-copied-3).
+  </Step>
+</Steps>
 
-Sperimenta con una configurazione Basic, esplora Enhanced più avanti e lascia che il tuo agente AI gestisca conversazioni reali per te.
+<Card title="Crea il tuo primo agente" icon="rocket" href="https://app.callin.io/agents/create?step=0&section=choose" horizontal>
+  Apri Callin.io e inizia a crearlo adesso.
+</Card>
