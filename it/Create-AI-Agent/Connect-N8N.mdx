@@ -14,10 +14,10 @@ Crea potenti automazioni tra Callin.io e i tuoi strumenti preferiti con n8n. Cal
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Integrazioni → Vai a n8n → accesso → aggiungi il nodo Callin.io → Start call → configura la credenziale con la chiave API del profilo.
+  Video: Integrazioni → Vai a n8n → accesso → aggiungi il nodo Callin.io → Avvia chiamata → configura la credenziale con la chiave API del profilo.
 </p>
 
-> **Nota:** L’interfaccia di n8n è in inglese. In questa guida pulsanti e campi di n8n sono riportati come li vedrai sullo schermo.
+> **Nota:** L’interfaccia di n8n è in inglese: i nomi di pulsanti e campi in questa guida sono tradotti, quindi sullo schermo li vedrai in inglese.
 
 ## Passaggi
 
@@ -27,12 +27,12 @@ n8n è uno strumento di automazione che collega app diverse perché lavorino ins
 
 Con Callin.io, questa integrazione ti permette di:
 
-- **Avviare chiamate in uscita a partire da eventi esterni**: ad esempio quando arriva un nuovo lead nel CRM, quando qualcuno compila un modulo sul tuo sito o a un orario programmato. Il nodo **Callin.io** ha un’unica azione, **Start call**, che fa chiamare un contatto da uno dei tuoi agenti IA.
+- **Avviare chiamate in uscita a partire da eventi esterni**: ad esempio quando arriva un nuovo lead nel CRM, quando qualcuno compila un modulo sul tuo sito o a un orario programmato. Il nodo **Callin.io** ha un’unica azione, **Avvia chiamata**, che fa chiamare un contatto da uno dei tuoi agenti IA.
 - **Ricevere i dati delle chiamate in n8n**: invia i dettagli di ogni chiamata conclusa a un flusso n8n con la **Sincronizzazione dati (webhook post-chiamata)** dell’agente (nella scheda **Azione chiamata**), e da lì a Slack, Google Sheets, il tuo CRM, ecc.
 
 In breve: n8n trasforma gli eventi dei tuoi altri strumenti in chiamate, e le chiamate in azioni nei tuoi altri strumenti.
 
-> **Importante:** Il nodo **Callin.io** non ha trigger propri. Per avviare un flusso usa un trigger di n8n (ad esempio **On a Webhook call**, **On a Schedule** o un trigger del tuo CRM) e poi aggiungi il nodo **Callin.io**.
+> **Importante:** Il nodo **Callin.io** non ha attivatore propri. Per avviare un flusso usa un attivatore di n8n (ad esempio **Alla ricezione di una chiamata webhook**, **Secondo una pianificazione** o un attivatore del tuo CRM) e poi aggiungi il nodo **Callin.io**.
 
 ### Passaggio 2: Accedi al pannello integrazioni di Callin.io
 
@@ -44,10 +44,10 @@ In breve: n8n trasforma gli eventi dei tuoi altri strumenti in chiamate, e le ch
 ### Passaggio 3: Accedi al tuo account n8n
 
 1. Si apre una nuova scheda su **n8n.callin.io**.
-2. Inserisci **Email** e **Password** di n8n e clicca su **Sign in**.
+2. Inserisci **Email** e **Password** di n8n e clicca su **Accedi**.
 3. Se non hai ancora accesso, contatta l’amministratore del tuo account Callin.io.
 
-Una volta dentro, vedrai la schermata **Overview** di n8n con i tuoi flussi e il pulsante **Create workflow**.
+Una volta dentro, vedrai la schermata **Panoramica** di n8n con i tuoi flussi e il pulsante **Crea flusso di lavoro**.
 
 ### Passaggio 4: Ottieni la tua chiave API di Callin.io
 
@@ -69,62 +69,62 @@ Il nodo **Callin.io** ha bisogno di una chiave API per agire sul tuo account.
 
 ### Passaggio 5: Crea la tua prima automazione
 
-1. In n8n, clicca su **Create workflow**.
-2. Aggiungi un trigger che avvii il flusso (ad esempio **On a Webhook call** per ricevere un nuovo lead dal tuo sito o dal CRM).
-3. Clicca su **+** per aggiungere il passo successivo, cerca **Callin.io** e scegli l’azione **Start call**.
+1. In n8n, clicca su **Crea flusso di lavoro**.
+2. Aggiungi un attivatore che avvii il flusso (ad esempio **Alla ricezione di una chiamata webhook** per ricevere un nuovo lead dal tuo sito o dal CRM).
+3. Clicca su **+** per aggiungere il passo successivo, cerca **Callin.io** e scegli l’azione **Avvia chiamata**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/n8n-node.png" alt="Editor dei flussi di n8n con un trigger collegato al nodo Start call di Callin.io e, a destra, i dettagli del nodo Callin.io con l'azione Start call" style={{ width:"100%", display:"block" }} />
+  <img src="/images/n8n-node.png" alt="Editor dei flussi di n8n con un attivatore collegato al nodo Avvia chiamata di Callin.io e, a destra, i dettagli del nodo Callin.io con l'azione Avvia chiamata" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: il nodo Callin.io in n8n, con la sua azione Start call.
+  Screenshot: il nodo Callin.io in n8n, con la sua azione Avvia chiamata.
 </p>
 
-4. In **Credential**, clicca su **Set up credential**, incolla la tua **Api Key** di Callin.io e clicca su **Save**.
-5. Compila i campi di **Start call**:
-   - **Phone**: il numero che l’agente chiamerà.
-   - **Name**: il nome del contatto.
+4. In **Credenziale**, clicca su **Configura credenziale**, incolla la tua **Chiave API** di Callin.io e clicca su **Salva**.
+5. Compila i campi di **Avvia chiamata**:
+   - **Telefono**: il numero che l’agente chiamerà.
+   - **Nome**: il nome del contatto.
    - **Email**: l’email del contatto.
-   - **Agent Name or ID**: l’agente che farà la chiamata (l’elenco compare dopo aver configurato la credenziale).
-   - **Webhook Url (optional)**: un URL a cui inviare i dati della chiamata.
-   - **Additional Fields**: clicca su **Add Field** per inviare dati extra come coppie **Field Name** / **Field Value**.
+   - **Nome o ID dell’agente**: l’agente che farà la chiamata (l’elenco compare dopo aver configurato la credenziale).
+   - **URL del webhook (facoltativo)**: un URL a cui inviare i dati della chiamata.
+   - **Campi aggiuntivi**: clicca su **Aggiungi campo** per inviare dati extra come coppie **Nome campo** / **Valore campo**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/n8n-start-call.png" alt="Parametri del nodo Start call in n8n: Credential, Resource Callin, Operation Start Call, Phone, Name, Email, Agent Name or ID, Webhook Url (optional) e Additional Fields" style={{ width:"100%", display:"block" }} />
+  <img src="/images/n8n-start-call.png" alt="Parametri del nodo Avvia chiamata in n8n: Credenziale, Risorsa Callin, Operazione Avvia chiamata, Telefono, Nome, Email, Nome o ID dell’agente, URL del webhook (facoltativo) e Campi aggiuntivi" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: i parametri di Start call, compilati con un contatto di esempio.
+  Screenshot: i parametri di Avvia chiamata, compilati con un contatto di esempio.
 </p>
 
 > **Suggerimento:** Invece di scrivere valori fissi, usa le espressioni di n8n per prendere i dati dal passo precedente (ad esempio `{{ $json.phone }}` per il telefono inviato dal tuo modulo o dal CRM).
 
 ### Passaggio 6: Attiva e testa
 
-1. Clicca su **Execute step** (o **Execute workflow**) per fare una chiamata di prova a un numero reale che controlli.
-2. Quando tutto funziona, clicca su **Publish** perché il flusso venga eseguito automaticamente.
+1. Clicca su **Esegui passo** (o **Esegui flusso di lavoro**) per fare una chiamata di prova a un numero reale che controlli.
+2. Quando tutto funziona, clicca su **Pubblica** perché il flusso venga eseguito automaticamente.
 
 ## Suggerimenti e note
 
-- **Usa i tuoi dati**: con le espressioni di n8n passi i valori del trigger (nome, telefono, email) ai campi di **Start call**.
-- **Logica condizionale**: aggiungi nodi **IF** o **Switch** per automazioni più complesse (ad esempio chiamare solo i lead di un certo paese).
-- **Ricevi i risultati delle chiamate**: incolla l’URL di un trigger **On a Webhook call** di n8n nella **Sincronizzazione dati (webhook post-chiamata)** dell’agente per ricevere in n8n i dettagli di ogni chiamata conclusa.
+- **Usa i tuoi dati**: con le espressioni di n8n passi i valori del attivatore (nome, telefono, email) ai campi di **Avvia chiamata**.
+- **Logica condizionale**: aggiungi nodi **Se** o **Selettore** per automazioni più complesse (ad esempio chiamare solo i lead di un certo paese).
+- **Ricevi i risultati delle chiamate**: incolla l’URL di un attivatore **Alla ricezione di una chiamata webhook** di n8n nella **Sincronizzazione dati (webhook post-chiamata)** dell’agente per ricevere in n8n i dettagli di ogni chiamata conclusa.
 - **Flussi concatenati**: combina Callin.io con CRM e strumenti di messaggistica in un unico processo continuo.
 
 ## Risoluzione dei problemi
 
-**Sintomo:** L’elenco **Agent Name or ID** è vuoto\
+**Sintomo:** L’elenco **Nome o ID dell’agente** è vuoto\
 **Causa probabile:** La credenziale non è configurata o la chiave API è errata. Configura di nuovo la credenziale con una chiave valida da **Profilo → Chiavi API**.
 
 **Sintomo:** Ha smesso di funzionare dopo un cambio di chiave\
 **Causa probabile:** La chiave API è stata rigenerata. Aggiorna la credenziale in n8n con la nuova chiave.
 
 **Sintomo:** Il flusso non si avvia\
-**Causa probabile:** Verifica che il flusso sia pubblicato e che il suo trigger stia ricevendo dati.
+**Causa probabile:** Verifica che il flusso sia pubblicato e che il suo attivatore stia ricevendo dati.
 
 **Sintomo:** La chiamata non parte\
-**Causa probabile:** Verifica che **Phone** contenga un numero valido in formato internazionale (ad esempio `+15550102040`) e che all’agente sia assegnato un numero di telefono.
+**Causa probabile:** Verifica che **Telefono** contenga un numero valido in formato internazionale (ad esempio `+15550102040`) e che all’agente sia assegnato un numero di telefono.
 
 ## Nota finale
 
