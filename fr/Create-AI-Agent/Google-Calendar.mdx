@@ -1,236 +1,264 @@
 ---
 title: "Google Calendar"
-description: "Guide pas à pas pour connecter Google Calendar dans Callin.io, créer un modèle d’événement (disponibilité + durée + rappels) et l’attribuer à un AI Agent afin qu’il puisse réserver des rendez-vous pendant les appels—sans ajouter de règles d’horaires conflictuelles dans le prompt."
+description: "Guide pas à pas pour connecter Google Calendar dans Callin.io, créer un modèle d’événement (disponibilité + durée + rappels) et l’attribuer à un agent IA afin qu’il réserve des rendez-vous pendant les appels, sans ajouter de règles d’horaires conflictuelles dans le prompt."
 sidebarTitle: "Google Calendar"
 icon: "calendar"
 ---
 
 ## Ce que vous allez configurer (et pourquoi c’est important)
 
-La prise de rendez-vous avec Google Calendar dans Callin.io est pensée pour être cohérente et fiable. Pour y parvenir, la configuration est séparée en deux parties :
+La prise de rendez-vous avec Google Calendar dans Callin.io est conçue pour être fiable et cohérente. Pour cela, la configuration se fait en deux parties :
 
 1. **Configuration de l’intégration Google Calendar**\
-   Vous connectez votre compte Google et créez un **Event Template**. C’est dans ce modèle que vous définissez les règles de réservation (jours disponibles, durée, rappels et gestion des conflits).
-2. **Configuration de l’AI Agent (Call Action)**\
-   Vous activez **Schedule Appointment** dans votre agent et vous sélectionnez le modèle créé.
+   Vous connectez votre compte Google et créez un **modèle d’événement**. C’est dans ce modèle que vous définissez les règles de réservation (jours disponibles, durée du rendez-vous, rappels et règles de conflit).
+2. **Configuration de l’agent IA (Action d’appel)**\
+   Vous activez **Prise de rendez-vous** dans l’agent et sélectionnez le modèle créé.
 
-> **Important :** Les règles de réservation doivent être définies dans l’**Event Template**, pas dans le prompt de l’agent. Évitez d’ajouter des instructions du type « uniquement du lundi au vendredi » ou « seulement entre 9 h et 17 h » dans le prompt : une fois Google Calendar connecté, cela peut entrer en conflit avec la logique de planification intégrée de la plateforme.
+> **Important :** Les règles de réservation doivent se trouver dans le **modèle d’événement**, pas dans le prompt de l’agent. Évitez des instructions comme « uniquement du lundi au vendredi » ou « seulement entre 9 h et 17 h » dans le prompt : une fois Google Calendar connecté, elles peuvent entrer en conflit avec la logique de planification intégrée à la plateforme.
 
 ## Ouvrir l’intégration Google Calendar
 
-Utilisez ce lien direct pour ouvrir la page d’intégration Google Calendar : [**cliquez ici**](https://app.callin.io/actions/google-calendar).
+Utilisez ce lien direct pour ouvrir la page de l’intégration Google Calendar : [**cliquez ici**](https://app.callin.io/actions/google-calendar). Vous pouvez aussi y accéder depuis **Intégrations → Actions** : cliquez sur **Connecter** (ou sur **Gérer**, si elle est déjà connectée) sur la carte **Google Calendar**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions1.png" alt="Page d’intégration Google Calendar avec les boutons Sync et Connect Google Account, une barre de recherche des calendriers, le panneau du compte connecté et la section Event Templates" style={{ width:"100%", display:"block" }} />
+  <img src="/images/google-calendar-page.png" alt="Page de l'intégration Google Calendar avec les boutons Synchroniser et Connecter un compte Google, la recherche de calendriers, le compte connecté avec ses calendriers et Déconnecter le compte, et la section Modèles d'événements" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : Zone Google Calendar où vous connectez votre compte, choisissez un calendrier et gérez les modèles d’événements.
+  Capture d’écran : l’espace de l’intégration Google Calendar, où vous connectez votre compte, choisissez un calendrier et gérez les modèles d’événements.
 </p>
 
-> **Conseil :** Si votre interface est légèrement différente, c’est normal : certains éléments peuvent varier selon votre compte ou votre plan.
+> **Astuce :** Vous pouvez créer **plusieurs modèles d’événements par calendrier** et attribuer des modèles de calendriers différents à différents agents IA.
 
 ## Étape 1 : Connecter votre compte Google
 
-1. Sur la page d’intégration Google Calendar, cliquez sur **Connect Google Account**.
-2. Une fenêtre de connexion Google s’ouvre. Choisissez le compte Google que vous souhaitez utiliser pour les réservations.
-3. Acceptez l’écran d’autorisations afin que Callin.io puisse créer des événements et vérifier les disponibilités.
+1. Sur la page de l’intégration Google Calendar, cliquez sur **Connecter un compte Google**.
+2. Une fenêtre de connexion Google s’ouvre. Choisissez le compte Google à utiliser pour les réservations.
+3. Acceptez l’écran des autorisations pour que Callin.io puisse créer des événements et vérifier les disponibilités.
 
-Une fois connecté, vous verrez généralement :
+Une fois connecté, vous verrez :
 
-- Votre compte Google affiché dans le panneau de gauche
-- La liste des calendriers disponibles
-- L’option **Disconnect Account** (utile si vous avez connecté le mauvais compte)
+- Votre compte Google (nom et email) dans le panneau de gauche
+- La liste des calendriers de ce compte, que vous pouvez sélectionner
+- L’option **Déconnecter le compte** (utilisez-la si vous avez connecté le mauvais compte)
 
-> **Important :** Utilisez un calendrier qui reflète votre disponibilité réelle. Si votre Google Calendar est toujours « occupé » (ou toujours « libre »), l’expérience de réservation ne correspondra pas à la réalité.
+Utilisez **Rechercher des calendriers...** pour trouver rapidement un calendrier, et **Synchroniser** pour mettre à jour la liste si vous venez de créer un calendrier dans Google.
+
+> **Important :** Utilisez un calendrier qui reflète vos vraies disponibilités. Si votre Google Calendar est toujours « occupé » (ou toujours « libre »), les réservations ne correspondront pas à la réalité.
 
 ## Étape 2 : Choisir le calendrier dans lequel les rendez-vous seront créés
 
-Dans le panneau de gauche, sélectionnez le calendrier dans lequel vous souhaitez que les réservations soient ajoutées.
+Dans le panneau de gauche, sélectionnez le calendrier où enregistrer les réservations. Le calendrier sélectionné apparaît en haut du panneau de droite, au-dessus de ses **Modèles d’événements**.
 
 Exemples :
 
-- Une entreprise de services peut utiliser un calendrier nommé « Appointments »
-- Une équipe commerciale peut utiliser « Discovery Calls »
-- Un cabinet peut utiliser « Consultations »
+- Une entreprise de services peut utiliser un calendrier « Rendez-vous »
+- Une équipe commerciale peut utiliser « Appels de découverte »
+- Une clinique peut utiliser « Consultations »
 
 Pourquoi ce choix est important :
 
 - Votre modèle est créé **pour un calendrier précis**
-- Ensuite, l’agent réservera en utilisant le calendrier/le modèle que vous lui attribuerez
+- L’agent réservera dans le calendrier et avec le modèle que vous lui attribuerez ensuite
 
-> **Conseil :** Si vous avez plusieurs calendriers (par équipe ou par service), vous pouvez créer différents modèles par calendrier et attribuer le bon modèle à chaque AI Agent.
+> **Astuce :** Si vous avez plusieurs calendriers (pour différentes équipes ou différents services), vous pouvez créer des modèles différents par calendrier et attribuer le bon à chaque agent IA.
 
-## Étape 3 : Créer un Event Template (c’est ici que vivent les règles de planification)
+## Étape 3 : Créer un modèle d’événement (c’est ici que vivent les règles de planification)
 
-Avant de rattacher la planification à un AI Agent, vous devez créer au moins un **Event Template**.
+Avant d’ajouter la prise de rendez-vous à un agent IA, vous devez créer au moins un **modèle d’événement**.
 
-Ce modèle définit :
+Le modèle définit :
 
 - La durée des rendez-vous
 - Le fonctionnement des rappels
 - Si les réservations qui se chevauchent sont autorisées
 - La gestion des conflits
-- Les jours ouverts à la réservation (Working Hours)
+- Les jours et heures ouverts à la réservation (Heures de travail)
 
-Pour le créer :
+Pour en créer un :
 
-1. Dans la section **Event Templates**, cliquez sur **Create Event Template**.
-2. Renseignez les champs (explications ci-dessous).
-3. Cliquez sur **Save**.
+1. Dans la section **Modèles d’événements**, cliquez sur **Créer un modèle d’événement**. Un panneau s’ouvre à droite.
+2. Remplissez les champs (détails ci-dessous).
+3. Cliquez sur **Sauvegarder**. Pour l’abandonner, cliquez sur **Annuler**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions2.png" alt="Panneau Create Event Template avec les champs Name, Description, Slot Duration, Reminder Minutes, Reminder Type, Allow Event Overlap, Conflict Handling et Working Hours avec des cases par jour" style={{ width:"100%", display:"block" }} />
+  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : Éditeur du modèle d’événement où vous définissez la durée, les rappels, les règles de conflit et les jours de disponibilité.
+  Vidéo : Créer un modèle d’événement → nom et description → rappel et chevauchement → gestion des conflits → heures de travail du lundi au vendredi.
+</p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions2.png" alt="Panneau Créer un modèle d'événement avec les champs Nom et Description, Durée du créneau, Minutes de rappel, Type de rappel, Autoriser le chevauchement des événements sur Non, Gestion des conflits et le début des Heures de travail" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’éditeur du modèle d’événement, où vous définissez la durée, les rappels et les règles de conflit.
 </p>
 
 ### Explication champ par champ (avec exemples concrets)
 
-| Champ                   | À quoi ça sert                                                | Exemple prêt à copier                             |
-| ----------------------- | ------------------------------------------------------------- | ------------------------------------------------- |
-| **Name**                | Le nom du type de rendez-vous (pour le retrouver facilement)  | « Appel découverte (30 min) »                     |
-| **Description**         | Un mémo pour préciser l’objectif du rendez-vous               | « Premier échange + besoins + prochaines étapes » |
-| **Slot Duration**       | Durée de chaque rendez-vous (en minutes)                      | 30                                                |
-| **Reminder Minutes**    | Nombre de minutes avant le rendez-vous pour envoyer le rappel | 15                                                |
-| **Reminder Type**       | Canal du rappel (peut varier)                                 | Email                                             |
-| **Allow Event Overlap** | Autoriser ou non plusieurs réservations au même créneau       | No                                                |
-| **Conflict Handling**   | Comment gérer les chevauchements                              | Block overlapping events                          |
-| **Working Hours**       | Jours autorisés pour la réservation                           | Activer Monday–Friday                             |
+| Champ                                              | Ce qu’il contrôle                                                                                                                                         | Exemple à copier                                 |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
+| **Nom** (obligatoire)                              | Le nom de ce type de rendez-vous. Un nom clair aide à choisir le bon modèle au moment de la réservation                                                  | « Appel de découverte 30 min »                   |
+| **Description** (obligatoire)                      | L’objet du rendez-vous. Une description claire aide aussi à choisir le bon modèle                                                                         | « Présentation + besoins + prochaines étapes »   |
+| **Durée du créneau**                               | La durée de chaque rendez-vous en minutes (par défaut : 30)                                                                                               | 30                                               |
+| **Minutes de rappel**                              | Combien de minutes avant le rendez-vous le rappel est envoyé (par défaut : 15)                                                                            | 15                                               |
+| **Type de rappel**                                 | Comment le rappel est envoyé : **Email** ou **Notification**                                                                                              | Email                                            |
+| **Autoriser le chevauchement des événements**      | Si plusieurs rendez-vous peuvent être réservés sur le même créneau (par défaut : **Oui**)                                                                 | Non                                              |
+| **Gestion des conflits**                           | N’apparaît que si **Autoriser le chevauchement des événements** est sur **Non** : **Bloquer tous les événements qui se chevauchent** ou **Bloquer uniquement les événements avec le même nom** | Bloquer tous les événements qui se chevauchent   |
+| **Heures de travail**                              | Les jours disponibles, avec une heure de début et de fin pour chacun (quand vous cochez un jour : 09:00–17:00 par défaut)                                 | Du lundi au vendredi, 09:00–17:00                |
 
-> **Erreur fréquente :** Laisser **Working Hours** sans jour sélectionné. Le modèle ne sera pas utilisable tant qu’au moins un jour n’est pas activé.
+> **Erreur fréquente :** Laisser les **Heures de travail** sans aucun jour coché. Le modèle ne peut pas être enregistré tant qu’au moins un jour n’est pas disponible (« Au moins un jour doit être disponible dans votre planning »).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/google-calendar-hours.png" alt="Section Heures de travail du modèle d'événement avec du lundi au vendredi cochés de 09:00 à 17:00 et samedi et dimanche indisponibles" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : les heures de travail avec du lundi au vendredi disponibles de 09:00 à 17:00.
+</p>
 
 ### Exemple de modèle complet (recommandation de départ)
 
-Si vous voulez un réglage par défaut « sûr » :
+Si vous voulez une base sûre :
 
-- **Name :** « Discovery Call (30 min) »
-- **Description :** « Premier appel pour comprendre le besoin et définir les prochaines étapes »
-- **Slot Duration :** 30
-- **Reminder Minutes :** 15
-- **Reminder Type :** Email
-- **Allow Event Overlap :** No
-- **Conflict Handling :** Block overlapping events
-- **Working Hours :** Monday–Friday
+- **Nom :** « Appel de découverte (30 min) »
+- **Description :** « Premier appel pour comprendre les besoins et convenir des prochaines étapes »
+- **Durée du créneau :** 30
+- **Minutes de rappel :** 15
+- **Type de rappel :** Email
+- **Autoriser le chevauchement des événements :** Non
+- **Gestion des conflits :** Bloquer tous les événements qui se chevauchent
+- **Heures de travail :** du lundi au vendredi, 09:00–17:00
 
-Cette configuration évite les doubles réservations et rend la planification plus prévisible.
+Cette configuration évite les doubles réservations et offre une planification claire et prévisible.
 
-## Étape 4 : Rattacher la planification Google Calendar à un AI Agent (Call Action)
+## Étape 4 : Rattacher la planification Google Calendar à un agent IA (Action d’appel)
 
 Une fois que vous avez :
 
 - Connecté un compte Google, et
-- Créé un Event Template,
+- Créé un modèle d’événement,
 
-vous pouvez activer la réservation dans un AI Agent.
+vous pouvez activer la réservation dans un agent IA.
 
-1. Allez dans **AI Agents** dans le menu de gauche.
-2. Ouvrez l’agent à configurer et cliquez sur **Edit**.
-3. Ouvrez l’onglet **Call Action**.
-4. Activez **Schedule Appointment**.
-5. Sélectionnez **Google Calendar** comme fournisseur.
-6. Cliquez sur l’**icône de réglages** (roue dentée) pour ouvrir la configuration et sélectionner le modèle que vous avez créé.
-7. Cliquez sur **Save**.
+1. Allez dans **Agents IA** dans le menu de gauche.
+2. Ouvrez l’agent à configurer.
+3. Allez dans l’onglet **Action d’appel**.
+4. Activez **Prise de rendez-vous**. Le panneau **Configuration de la planification** s’ouvre.
+5. Dans **Fournisseur de planification**, choisissez **Google Calendar** (« Utiliser Google Calendar pour la planification »).
+6. Sélectionnez le modèle d’événement créé. La liste affiche chaque calendrier avec ses modèles, et chaque modèle indique sa durée, son rappel et le nombre de jours disponibles.
+7. Fermez le panneau et cliquez sur **Enregistrer**.
+
+Pour changer de modèle plus tard, cliquez sur l’**icône des paramètres** (roue dentée) à côté de **Prise de rendez-vous**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions3.png" alt="Écran Edit AI Agent sur l’onglet Call Action montrant Schedule Appointment activé et Google Calendar sélectionné comme fournisseur de réservation" style={{ width:"100%", display:"block" }} />
+  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : Dans Call Action de l’agent, activez la planification et choisissez Google Calendar comme fournisseur.
+  Vidéo : onglet Action d’appel → Prise de rendez-vous → Google Calendar → sélection du modèle.
 </p>
 
-> **Important :** Pour de meilleurs résultats, assurez-vous que le fuseau horaire de l’agent correspond à celui de votre calendrier. Un décalage peut entraîner des suggestions d’horaires incorrectes.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions3.png" alt="Onglet Action d'appel de l'agent avec le panneau Configuration de la planification ouvert : Google Calendar choisi comme fournisseur et un modèle d'événement sélectionné dans le calendrier connecté" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : dans l’Action d’appel de l’agent, choisissez Google Calendar comme fournisseur de réservation et sélectionnez votre modèle.
+</p>
+
+> **Important :** Pour une précision maximale, le fuseau horaire de l’agent doit correspondre à celui du calendrier. Sinon, l’agent peut proposer de mauvais horaires.
 
 ## Comment la réservation doit se dérouler pendant un appel (flux recommandé)
 
-Une fois la configuration terminée, l’expérience est optimale quand l’agent suit un flux simple et naturel :
+Une fois tout connecté, la meilleure expérience est obtenue quand l’agent suit un déroulé simple et naturel :
 
 1. **Confirmer l’intention**\
-   Exemple : « Très bien — souhaitez-vous réserver un rendez-vous maintenant ? »
-2. **Collecter le minimum d’informations nécessaires**\
+   « Bien sûr, souhaitez-vous prendre rendez-vous maintenant ? »
+2. **Recueillir les informations minimales**\
    Demandez :
    - Nom complet
    - Numéro de téléphone\
-     (Optionnel : une courte raison du rendez-vous, si utile.)
+     (Facultatif : un court motif du rendez-vous, si utile.)
 3. **Proposer des disponibilités et confirmer**\
-   L’agent doit proposer des créneaux qu’il peut réserver (selon votre modèle + la disponibilité du calendrier), puis confirmer le créneau choisi.
+   L’agent propose les horaires réservables (selon votre modèle et les disponibilités du calendrier), puis confirme celui qui est choisi.
 4. **Réserver et confirmer les détails**\
-   Après la réservation, l’agent répète :
-   - La date
-   - L’heure
-   - La durée
-   - Le motif du rendez-vous
+   L’agent réserve l’événement et répète :
+   - Date
+   - Heure
+   - Durée
+   - Objet du rendez-vous
 
-### Exemple (à quoi ressemble une “bonne” réservation)
+### Exemple (à quoi ressemble une « bonne » réservation)
 
-- Appelant : « Je peux prendre un rendez-vous pour une consultation ? »
-- Agent : « Oui. Quel est votre nom complet et le meilleur numéro de téléphone pour le rendez-vous ? »
+- Appelant : « Est-ce que je peux réserver un créneau pour une consultation ? »
+- Agent : « Oui. Pouvez-vous me donner votre nom complet et le meilleur numéro de téléphone pour le rendez-vous ? »
 - Appelant : « Jordan Lee, +1 555-010-2040. »
-- Agent : « Merci. Préférez-vous plutôt en début de journée ou plus tard ? Je peux réserver une consultation de 30 minutes. »
-- Appelant : « Plus tard. »
-- Agent : « Parfait — est-ce que jeudi à 16h00 vous convient ? »
+- Agent : « Merci. Vous préférez le matin ou l’après-midi ? Je peux réserver une consultation de 30 minutes. »
+- Appelant : « Plutôt l’après-midi. »
+- Agent : « Très bien, jeudi à 16 h, ça vous convient ? »
 - Appelant : « Oui. »
-- Agent : « Super. C’est réservé pour jeudi à 16h00 pour 30 minutes. Vous recevrez aussi un rappel avant le rendez-vous. »
+- Agent : « Parfait. Votre rendez-vous est jeudi à 16 h, pour 30 minutes. Vous recevrez aussi un rappel avant le rendez-vous. »
 
-> **Conseil :** Gardez le prompt centré sur **la collecte d’informations et la confirmation**. Laissez l’Event Template gérer les règles de planification.
+> **Astuce :** Concentrez le prompt sur **la collecte des informations et la confirmation**. Laissez le modèle gérer les règles de planification.
 
 ## Règles du prompt : quoi inclure (et quoi éviter)
 
 ### Ce que vous devez inclure dans le prompt
 
-Votre prompt doit guider l’agent à :
+Votre prompt doit demander à l’agent de :
 
 - Demander le nom et le téléphone avant de réserver
-- Confirmer le motif du rendez-vous brièvement (une phrase)
-- Confirmer clairement l’heure choisie avant de finaliser
+- Confirmer brièvement l’objet du rendez-vous (une phrase)
+- Confirmer clairement l’horaire choisi avant de finaliser
 - Confirmer les détails de la réservation à la fin
 
-Exemple d’instruction (en texte simple) :
+Une instruction pratique pour le prompt (rédigée comme une consigne simple) pourrait être :
 
-- « Si la personne veut réserver, demande d’abord son nom complet et son numéro de téléphone. Propose ensuite des créneaux disponibles et confirme celui qui est choisi. Après la réservation, répète la date, l’heure et la durée pour confirmer. »
+- « Quand l’appelant veut réserver, demande d’abord son nom complet et son numéro de téléphone. Propose ensuite des horaires disponibles et confirme celui qui est choisi. Après la réservation, répète la date, l’heure et la durée pour confirmer. »
 
 ### Ce que vous ne devez PAS inclure dans le prompt
 
-Évitez les instructions qui dupliquent ou remplacent l’Event Template, par exemple :
+Évitez les instructions qui reprennent ou contredisent le modèle d’événement, par exemple :
 
-- « Réserver uniquement du lundi au vendredi »
-- « Réserver uniquement entre 9 h et 17 h »
-- « Ne jamais réserver le jour même »
-- « Autoriser seulement un rendez-vous par jour »
+- « Réserve uniquement du lundi au vendredi »
+- « Réserve uniquement entre 9 h et 17 h »
+- « Ne réserve jamais pour le jour même »
+- « N’autorise qu’un seul rendez-vous par jour »
 
-Ces règles doivent être définies dans l’**Event Template** (Working Hours, conflits, chevauchement). Garder le prompt “propre” évite les contradictions et améliore la précision.
+Ces règles doivent être configurées dans le **modèle d’événement** (heures de travail, règles de conflit et de chevauchement). Garder un prompt propre évite les contradictions et améliore la précision des réservations.
 
-> **Important :** Pensez comme ceci :\
-> **Event Template = règles et disponibilité**\
+> **Important :** Voyez-le ainsi :\
+> **Modèle = règles et disponibilités**\
 > **Prompt = conversation et collecte d’informations**
 
 ## Meilleur LLM pour la planification : Gemini 2.5 Flash (recommandé)
 
-Pour une meilleure précision de planification, Callin.io fonctionne mieux avec **Gemini 2.5 Flash**.
+Pour des réservations précises, Callin.io fonctionne mieux avec **Gemini 2.5 Flash**.
 
-> **Conseil :** Si la réservation échoue (mauvais horaires, disponibilité mal interprétée, confusion), basculez le LLM de l’agent sur **Gemini 2.5 Flash**, enregistrez, puis testez à nouveau.
+> **Astuce :** Si la réservation échoue (mauvais horaires, disponibilités manquées, confusion), passez le LLM de l’agent sur **Gemini 2.5 Flash**, enregistrez et testez à nouveau.
 
 ## Liste de dépannage (solutions rapides)
 
 ### « J’ai connecté Google Calendar mais je ne vois pas mon calendrier »
 
-- Cliquez sur **Sync** sur la page Google Calendar.
+- Cliquez sur **Synchroniser** sur la page Google Calendar.
 - Vérifiez que vous avez connecté le bon compte Google.
 
 ### « Il n’y a aucune disponibilité »
 
-- Vérifiez **Working Hours** dans votre Event Template (au moins un jour doit être activé).
-- Assurez-vous que votre Google Calendar n’est pas entièrement bloqué par des événements “occupés”.
+- Vérifiez les **Heures de travail** de votre modèle d’événement : au moins un jour doit être coché, avec les bonnes heures de début et de fin.
+- Vérifiez que votre Google Calendar n’est pas entièrement rempli d’événements occupés.
 
 ### « L’agent réserve à la mauvaise heure »
 
 - Vérifiez que le fuseau horaire de l’agent correspond à celui du calendrier.
-- Si le comportement est incohérent, passez à **Gemini 2.5 Flash**.
+- Si le comportement est irrégulier, passez à **Gemini 2.5 Flash**.
 
 ### « Il y a des doubles réservations »
 
-- Réglez **Allow Event Overlap** sur **No**.
-- Choisissez une option de conflit qui bloque les événements qui se chevauchent.
+- Réglez **Autoriser le chevauchement des événements** sur **Non**.
+- Dans **Gestion des conflits**, choisissez **Bloquer tous les événements qui se chevauchent**.

@@ -1,238 +1,264 @@
 ---
-title: "Google calendar"
-description: "Schritt-für-Schritt-Anleitung zum Verbinden von Google Calendar in Callin.io, zum Erstellen einer Event-Vorlage (Verfügbarkeit + Dauer + Erinnerungen) und zum Zuweisen an einen AI Agent, damit Termine während Anrufen gebucht werden können—ohne im Prompt widersprüchliche Zeitregeln zu hinterlegen."
+title: "Google Calendar"
+description: "Schritt-für-Schritt-Anleitung zum Verbinden von Google Calendar in Callin.io, zum Erstellen einer Eventvorlage (Verfügbarkeit + Dauer + Erinnerungen) und zum Zuweisen an einen KI-Agenten, damit Termine während Anrufen gebucht werden – ohne widersprüchliche Zeitregeln im Prompt."
 sidebarTitle: "Google Calendar"
 icon: "calendar"
 ---
 
 ## Was Sie einrichten (und warum das wichtig ist)
 
-Die Terminbuchung mit Google Calendar in Callin.io ist darauf ausgelegt, zuverlässig und konsistent zu funktionieren. Deshalb ist die Einrichtung in zwei Teile aufgeteilt:
+Die Terminbuchung mit Google Calendar in Callin.io ist auf Zuverlässigkeit und Konsistenz ausgelegt. Dafür ist die Einrichtung in zwei Teile gegliedert:
 
-1) **Einrichtung der Google-Calendar-Integration**  
-   Sie verbinden Ihr Google-Konto und erstellen ein **Event Template**. In dieser Vorlage definieren Sie die Buchungsregeln (verfügbare Tage, Dauer, Erinnerungen und Konfliktregeln).
+1. **Einrichtung der Google-Calendar-Integration**\
+   Sie verbinden Ihr Google-Konto und erstellen eine **Eventvorlage**. In dieser Vorlage legen Sie die Buchungsregeln fest (verfügbare Tage, Termindauer, Erinnerungen und Konfliktregeln).
+2. **Einrichtung des KI-Agenten (Anruf-Aktion)**\
+   Sie aktivieren **Terminplanung** im Agenten und wählen die erstellte Vorlage aus.
 
-2) **Einrichtung des AI Agent (Call Action)**  
-   Sie aktivieren **Schedule Appointment** im Agenten und wählen die erstellte Vorlage aus.
-
-> **Wichtig:** Die Buchungsregeln gehören in das **Event Template**, nicht in den Prompt des Agenten. Vermeiden Sie im Prompt Anweisungen wie „nur Montag bis Freitag“ oder „nur zwischen 9 und 17 Uhr“—nach dem Verbinden mit Google Calendar kann das mit der integrierten Scheduling-Logik der Plattform kollidieren.
+> **Wichtig:** Ihre Buchungsregeln gehören in die **Eventvorlage**, nicht in den Prompt des Agenten. Vermeiden Sie Anweisungen wie „Nur Montag bis Freitag“ oder „Nur zwischen 9 und 17 Uhr“ im Prompt – solche Regeln können mit der integrierten Terminlogik der Plattform kollidieren, sobald Google Calendar verbunden ist.
 
 ## Google-Calendar-Integration öffnen
 
-Nutzen Sie diesen Direktlink zur Google-Calendar-Integrationsseite: **[hier klicken](https://app.callin.io/actions/google-calendar)**.
+Über diesen direkten Link öffnen Sie die Seite der Google-Calendar-Integration: [**hier klicken**](https://app.callin.io/actions/google-calendar). Sie erreichen sie auch über **Integrationen → Aktionen**: Klicken Sie auf der Karte **Google Calendar** auf **Verbinden** (oder auf **Verwalten**, wenn sie bereits verbunden ist).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/actions1.png"
-    alt="Google-Calendar-Integrationsseite mit den Buttons Sync und Connect Google Account, einer Kalender-Suchleiste, dem verbundenen Account-Bereich und der Event-Templates-Sektion"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/google-calendar-page.png" alt="Seite der Google-Calendar-Integration mit den Schaltflächen Synchronisieren und Google-Konto verbinden, der Kalendersuche, dem verbundenen Konto mit seinen Kalendern und Konto trennen sowie dem Bereich Eventvorlagen" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Bereich für Google Calendar, in dem Sie Ihr Konto verbinden, einen Kalender auswählen und Event Templates verwalten.
+  Screenshot: Der Bereich der Google-Calendar-Integration, in dem Sie Ihr Konto verbinden, einen Kalender auswählen und Eventvorlagen verwalten.
 </p>
 
-> **Tipp:** Wenn Ihre Oberfläche leicht anders aussieht, ist das normal—einige Elemente können je nach Konto oder Plan variieren.
+> **Tipp:** Sie können **mehrere Eventvorlagen pro Kalender** erstellen und Vorlagen aus verschiedenen Kalendern verschiedenen KI-Agenten zuweisen.
 
 ## Schritt 1: Google-Konto verbinden
 
-1) Klicken Sie auf der Google-Calendar-Integrationsseite auf **Connect Google Account**.  
-2) Ein Google-Anmeldefenster öffnet sich. Wählen Sie das Google-Konto aus, das Sie für Buchungen verwenden möchten.  
-3) Bestätigen Sie die Berechtigungen, damit Callin.io Termine erstellen und Verfügbarkeiten prüfen kann.
+1. Klicken Sie auf der Seite der Google-Calendar-Integration auf **Google-Konto verbinden**.
+2. Ein Google-Anmeldefenster öffnet sich. Wählen Sie das Google-Konto, das Sie für Buchungen nutzen möchten.
+3. Bestätigen Sie die Berechtigungen, damit Callin.io Termine erstellen und die Verfügbarkeit prüfen kann.
 
-Nach dem Verbinden sehen Sie typischerweise:
-- Ihr Google-Konto im linken Bereich
-- Eine Liste verfügbarer Kalender
-- Die Option **Disconnect Account** (falls Sie das falsche Konto verbunden haben)
+Nach dem Verbinden sehen Sie:
 
-> **Wichtig:** Verwenden Sie einen Kalender, der Ihre echte Verfügbarkeit abbildet. Wenn Ihr Google Calendar immer „beschäftigt“ (oder immer „frei“) ist, passt die Buchungserfahrung nicht zur Realität.
+- Ihr Google-Konto (Name und E-Mail) im linken Bereich
+- Die Liste der Kalender dieses Kontos, die Sie auswählen können
+- Die Option **Konto trennen** (nutzen Sie sie, wenn Sie das falsche Konto verbunden haben)
+
+Mit **Kalender suchen...** finden Sie schnell einen Kalender, und mit **Synchronisieren** aktualisieren Sie die Liste, wenn Sie gerade einen neuen Kalender in Google erstellt haben.
+
+> **Wichtig:** Verwenden Sie einen Kalender, der Ihre tatsächliche Verfügbarkeit abbildet. Ist Ihr Google Calendar immer „belegt“ (oder immer „frei“), passen die Buchungen nicht zur Realität.
 
 ## Schritt 2: Den Kalender auswählen, in dem Termine erstellt werden sollen
 
-Wählen Sie im linken Bereich den Kalender aus, in den Buchungen geschrieben werden sollen.
+Wählen Sie im linken Bereich den Kalender aus, in dem Buchungen gespeichert werden sollen. Der ausgewählte Kalender erscheint oben im rechten Bereich, über seinen **Eventvorlagen**.
 
 Beispiele:
-- Ein Dienstleistungsbetrieb nutzt einen Kalender wie „Appointments“
-- Ein Vertriebsteam nutzt „Discovery Calls“
-- Eine Praxis nutzt „Consultations“
 
-Warum das wichtig ist:
+- Ein Dienstleister nutzt vielleicht einen Kalender namens „Termine“
+- Ein Vertriebsteam nutzt „Erstgespräche“
+- Eine Praxis nutzt „Sprechstunden“
+
+Warum diese Auswahl wichtig ist:
+
 - Ihre Vorlage wird **für einen bestimmten Kalender** erstellt
-- Später bucht der Agent über den Kalender/die Vorlage, die Sie zuweisen
+- Der Agent bucht in den Kalender und mit der Vorlage, die Sie ihm später zuweisen
 
-> **Tipp:** Wenn Sie mehrere Kalender haben (z. B. pro Team oder Service), können Sie unterschiedliche Vorlagen pro Kalender erstellen und jedem AI Agent die passende Vorlage zuweisen.
+> **Tipp:** Wenn Sie mehrere Kalender haben (für verschiedene Teams oder Leistungen), können Sie pro Kalender eigene Vorlagen erstellen und jedem KI-Agenten die passende zuweisen.
 
-## Schritt 3: Ein Event Template erstellen (hier stehen die Scheduling-Regeln)
+## Schritt 3: Eine Eventvorlage erstellen (hier stehen die Terminregeln)
 
-Bevor Sie die Terminbuchung an einen AI Agent anbinden, müssen Sie mindestens ein **Event Template** erstellen.
+Bevor Sie die Terminbuchung zu einem KI-Agenten hinzufügen, müssen Sie mindestens eine **Eventvorlage** erstellen.
 
-Diese Vorlage definiert:
-- Terminlänge
-- Erinnerungen
-- Ob überlappende Buchungen erlaubt sind
-- Konfliktverhalten
-- Welche Tage buchbar sind (Working Hours)
+Die Vorlage legt fest:
 
-So erstellen Sie eine Vorlage:
-1) Klicken Sie im Bereich **Event Templates** auf **Create Event Template**.  
-2) Füllen Sie die Felder aus (Erklärungen unten).  
-3) Klicken Sie auf **Save**.
+- Wie lange Termine dauern
+- Wie Erinnerungen funktionieren
+- Ob sich überschneidende Buchungen erlaubt sind
+- Wie Konflikte behandelt werden
+- Welche Tage und Uhrzeiten buchbar sind (Arbeitszeiten)
+
+So erstellen Sie eine:
+
+1. Klicken Sie im Bereich **Eventvorlagen** auf **Eventvorlage erstellen**. Rechts öffnet sich ein Fenster.
+2. Füllen Sie die Felder aus (Details unten).
+3. Klicken Sie auf **Speichern**. Zum Verwerfen klicken Sie auf **Abbrechen**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/actions2.png"
-    alt="Create-Event-Template-Panel mit Feldern für Name, Description, Slot Duration, Reminder Minutes, Reminder Type, Allow Event Overlap, Conflict Handling und Working Hours mit Checkboxen für Wochentage"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Editor für Event Templates, in dem Sie Dauer, Erinnerungen, Konfliktregeln und buchbare Tage festlegen.
+  Video: Eventvorlage erstellen → Name und Beschreibung → Erinnerung und Überschneidung → Konflikte behandeln → Arbeitszeiten von Montag bis Freitag.
 </p>
 
-### Feld-für-Feld erklärt (mit praxisnahen Beispielen)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions2.png" alt="Fenster Eventvorlage erstellen mit den Feldern Name und Beschreibung, Slot-Dauer, Erinnerungsminuten, Erinnerungstyp, Event-Überschneidung erlauben auf Nein, Konflikte behandeln und dem Anfang der Arbeitszeiten" style={{ width:"100%", display:"block" }} />
+</div>
 
-| Feld | Was es steuert | Beispiel zum Übernehmen |
-|---|---|---|
-| **Name** | Bezeichnung des Termin-Typs (damit Sie ihn später wiederfinden) | „Kennenlern-Call (30 Min.)“ |
-| **Description** | Kurze Beschreibung, wofür der Termin gedacht ist | „Erstgespräch + Bedarf + nächste Schritte“ |
-| **Slot Duration** | Länge jedes Termins in Minuten | 30 |
-| **Reminder Minutes** | Wie viele Minuten vorher eine Erinnerung gesendet wird | 15 |
-| **Reminder Type** | Kanal der Erinnerung (kann variieren) | Email |
-| **Allow Event Overlap** | Ob mehrere Buchungen zur gleichen Zeit erlaubt sind | No |
-| **Conflict Handling** | Was bei Überschneidungen passieren soll | Block overlapping events |
-| **Working Hours** | Welche Tage für Buchungen freigegeben sind | Monday–Friday aktivieren |
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Der Editor der Eventvorlage, in dem Sie Dauer, Erinnerungen und Konfliktregeln festlegen.
+</p>
 
-> **Häufiger Fehler:** **Working Hours** ohne ausgewählte Tage lassen. Die Vorlage ist erst nutzbar, wenn mindestens ein Tag aktiviert ist.
+### Feld für Feld erklärt (mit praxisnahen Beispielen)
+
+| Feld                                   | Was es steuert                                                                                                                                  | Beispiel zum Übernehmen                       |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| **Name** (Pflichtfeld)                 | Die Bezeichnung dieses Termintyps. Ein klarer Name hilft, bei der Buchung die richtige Vorlage zu wählen                                       | „30-Min.-Erstgespräch“                         |
+| **Beschreibung** (Pflichtfeld)         | Wofür der Termin ist. Eine klare Beschreibung hilft ebenfalls, die richtige Vorlage zu wählen                                                  | „Kurze Vorstellung + Bedarf + nächste Schritte“ |
+| **Slot-Dauer**                         | Die Dauer jedes Termins in Minuten (Standard: 30)                                                                                               | 30                                            |
+| **Erinnerungsminuten**                 | Wie viele Minuten vor dem Termin die Erinnerung gesendet wird (Standard: 15)                                                                    | 15                                            |
+| **Erinnerungstyp**                     | Wie die Erinnerung gesendet wird: **E-Mail** oder **Benachrichtigung**                                                                          | E-Mail                                        |
+| **Event-Überschneidung erlauben**      | Ob mehr als ein Termin im selben Zeitfenster gebucht werden kann (Standard: **Ja**)                                                             | Nein                                          |
+| **Konflikte behandeln**                | Erscheint nur, wenn **Event-Überschneidung erlauben** auf **Nein** steht: **Alle überlappenden Ereignisse blockieren** oder **Nur Ereignisse mit demselben Namen blockieren** | Alle überlappenden Ereignisse blockieren      |
+| **Arbeitszeiten**                      | Welche Tage verfügbar sind, jeweils mit Start- und Endzeit (beim Anhaken eines Tages standardmäßig 09:00–17:00)                                  | Montag bis Freitag, 09:00–17:00               |
+
+> **Häufiger Fehler:** **Arbeitszeiten** ohne angehakten Tag lassen. Die Vorlage lässt sich erst speichern, wenn mindestens ein Tag verfügbar ist („Mindestens ein Tag muss in Ihrem Zeitplan verfügbar sein“).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/google-calendar-hours.png" alt="Bereich Arbeitszeiten der Eventvorlage mit Montag bis Freitag angehakt von 09:00 bis 17:00 und Samstag und Sonntag nicht verfügbar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Arbeitszeiten mit Montag bis Freitag von 09:00 bis 17:00 verfügbar.
+</p>
 
 ### Beispiel für eine vollständige Vorlage (empfohlener Start)
 
-Wenn Sie eine sichere Standardkonfiguration möchten:
-- **Name:** „Discovery Call (30 min)“
-- **Description:** „Erstgespräch, um den Bedarf zu verstehen und nächste Schritte festzulegen“
-- **Slot Duration:** 30
-- **Reminder Minutes:** 15
-- **Reminder Type:** Email
-- **Allow Event Overlap:** No
-- **Conflict Handling:** Block overlapping events
-- **Working Hours:** Monday–Friday
+Wenn Sie eine sichere Grundeinstellung möchten:
 
-Diese Einstellung reduziert Doppelbuchungen und macht die Terminplanung vorhersehbarer.
+- **Name:** „Erstgespräch (30 Min.)“
+- **Beschreibung:** „Erstes Gespräch, um den Bedarf zu verstehen und die nächsten Schritte festzulegen“
+- **Slot-Dauer:** 30
+- **Erinnerungsminuten:** 15
+- **Erinnerungstyp:** E-Mail
+- **Event-Überschneidung erlauben:** Nein
+- **Konflikte behandeln:** Alle überlappenden Ereignisse blockieren
+- **Arbeitszeiten:** Montag bis Freitag, 09:00–17:00
 
-## Schritt 4: Google-Calendar-Terminbuchung an einen AI Agent anbinden (Call Action)
+Diese Einstellung verhindert Doppelbuchungen und sorgt für eine klare, vorhersehbare Terminplanung.
+
+## Schritt 4: Google-Calendar-Terminbuchung an einen KI-Agenten anbinden (Anruf-Aktion)
 
 Sobald Sie:
-- Ein Google-Konto verbunden haben und
-- Ein Event Template erstellt haben,
 
-können Sie die Buchung im AI Agent aktivieren.
+- ein Google-Konto verbunden und
+- eine Eventvorlage erstellt haben,
 
-1) Gehen Sie im linken Menü zu **AI Agents**.  
-2) Öffnen Sie den gewünschten Agenten und klicken Sie auf **Edit**.  
-3) Wechseln Sie zum Tab **Call Action**.  
-4) Aktivieren Sie **Schedule Appointment**.  
-5) Wählen Sie **Google Calendar** als Anbieter aus.  
-6) Klicken Sie auf das **Einstellungs-Symbol** (Zahnrad), um die Konfiguration zu öffnen, und wählen Sie die erstellte Vorlage aus.  
-7) Klicken Sie auf **Save**.
+können Sie die Buchung in einem KI-Agenten aktivieren.
+
+1. Gehen Sie im linken Menü zu **KI-Agenten**.
+2. Öffnen Sie den Agenten, den Sie konfigurieren möchten.
+3. Öffnen Sie den Tab **Anruf-Aktion**.
+4. Aktivieren Sie **Terminplanung**. Das Fenster **Terminplanungs-Konfiguration** öffnet sich.
+5. Wählen Sie unter **Terminplanungs-Anbieter** **Google Calendar** („Google Kalender für Termine nutzen“).
+6. Wählen Sie die erstellte Eventvorlage aus. Die Liste zeigt jeden Kalender mit seinen Vorlagen, und jede Vorlage zeigt Dauer, Erinnerung und Anzahl der verfügbaren Tage.
+7. Schließen Sie das Fenster und klicken Sie auf **Speichern**.
+
+Um die Vorlage später zu ändern, klicken Sie auf das **Einstellungssymbol** (Zahnrad) neben **Terminplanung**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/actions3.png"
-    alt="Edit-AI-Agent-Seite im Tab Call Action mit aktivierter Option Schedule Appointment und ausgewähltem Google Calendar als Buchungsanbieter"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: In den Call-Action-Einstellungen des Agenten aktivieren Sie die Terminbuchung und wählen Google Calendar als Anbieter.
+  Video: Tab Anruf-Aktion → Terminplanung → Google Calendar → Vorlage auswählen.
 </p>
 
-> **Wichtig:** Für die beste Genauigkeit sollte die Zeitzone des Agenten zur Zeitzone des Kalenders passen. Eine Abweichung kann zu falschen Zeitvorschlägen führen.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions3.png" alt="Tab Anruf-Aktion des Agenten mit geöffnetem Fenster Terminplanungs-Konfiguration: Google Calendar als Anbieter gewählt und eine Eventvorlage im verbundenen Kalender ausgewählt" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: In der Anruf-Aktion des Agenten wählen Sie Google Calendar als Buchungsanbieter und Ihre Vorlage aus.
+</p>
+
+> **Wichtig:** Für die beste Genauigkeit sollte die Zeitzone des Agenten mit der des Kalenders übereinstimmen. Andernfalls kann der Agent falsche Uhrzeiten vorschlagen.
 
 ## Wie die Buchung während eines Anrufs ablaufen sollte (empfohlener Ablauf)
 
-Wenn alles verbunden ist, funktioniert es am besten, wenn der Agent einem einfachen, menschlichen Ablauf folgt:
+Wenn alles verbunden ist, funktioniert es am besten, wenn der Agent einem einfachen, natürlichen Ablauf folgt:
 
-1) **Absicht bestätigen**  
-   Beispiel: „Alles klar—möchten Sie jetzt einen Termin buchen?“
-
-2) **Minimale Informationen abfragen**  
+1. **Absicht bestätigen**\
+   „Gern – möchten Sie jetzt einen Termin vereinbaren?“
+2. **Die nötigsten Angaben erfragen**\
    Fragen Sie nach:
    - Vollständigem Namen
-   - Telefonnummer  
-   (Optional: kurzer Anlass des Termins, wenn sinnvoll.)
-
-3) **Verfügbarkeiten anbieten und bestätigen**  
-   Der Agent sollte buchbare Zeiten vorschlagen (basierend auf Vorlage + Kalenderverfügbarkeit) und die ausgewählte Zeit bestätigen.
-
-4) **Buchen und Details bestätigen**  
-   Nach der Buchung wiederholt der Agent:
+   - Telefonnummer\
+     (Optional: einem kurzen Grund für den Termin, falls sinnvoll.)
+3. **Verfügbarkeit anbieten und bestätigen**\
+   Der Agent schlägt buchbare Zeiten vor (basierend auf Ihrer Vorlage und der Kalenderverfügbarkeit) und bestätigt den gewählten Termin.
+4. **Buchen und Details bestätigen**\
+   Der Agent bucht den Termin und wiederholt:
    - Datum
    - Uhrzeit
    - Dauer
-   - Grund/Zweck des Termins
+   - Zweck des Termins
 
 ### Beispiel (wie eine „gute“ Buchung klingt)
 
-- Anrufer: „Kann ich einen Beratungstermin buchen?“  
-- Agent: „Ja. Wie ist Ihr vollständiger Name und welche Telefonnummer ist am besten für den Termin?“  
-- Anrufer: „Jordan Lee, +1 555-010-2040.“  
-- Agent: „Danke. Lieber früher am Tag oder später? Ich kann eine 30-minütige Beratung buchen.“  
-- Anrufer: „Später.“  
-- Agent: „Super—passt Donnerstag um 16:00 Uhr?“  
-- Anrufer: „Ja.“  
-- Agent: „Perfekt. Sie sind für Donnerstag um 16:00 Uhr für 30 Minuten gebucht. Sie erhalten außerdem vor dem Termin eine Erinnerung.“
+- Anrufer: „Kann ich einen Termin für eine Beratung buchen?“
+- Agent: „Ja. Wie ist Ihr vollständiger Name und unter welcher Nummer erreichen wir Sie am besten?“
+- Anrufer: „Jordan Lee, +1 555-010-2040.“
+- Agent: „Danke. Lieber früher am Tag oder später? Ich kann eine 30-minütige Beratung buchen.“
+- Anrufer: „Lieber später.“
+- Agent: „Gut – passt Ihnen Donnerstag um 16:00 Uhr?“
+- Anrufer: „Ja.“
+- Agent: „Perfekt. Ihr Termin ist am Donnerstag um 16:00 Uhr für 30 Minuten. Sie erhalten vorher auch eine Erinnerung.“
 
-> **Tipp:** Halten Sie den Prompt auf **Datenerfassung und Bestätigung** fokussiert. Lassen Sie die Scheduling-Regeln im Event Template.
+> **Tipp:** Konzentrieren Sie den Prompt auf **das Erfassen der Angaben und das Bestätigen**. Die Terminregeln übernimmt die Vorlage.
 
 ## Prompt-Regeln: was hinein gehört (und was nicht)
 
 ### Was in den Prompt gehört
 
-Der Prompt sollte den Agenten anleiten:
-- Vor dem Buchen nach Name und Telefonnummer zu fragen
-- Den Termingrund kurz zu bestätigen (ein Satz)
-- Die ausgewählte Zeit klar zu bestätigen, bevor final gebucht wird
+Ihr Prompt sollte den Agenten anweisen:
+
+- Vor der Buchung nach Name und Telefonnummer zu fragen
+- Den Zweck des Termins kurz zu bestätigen (ein Satz)
+- Die gewählte Uhrzeit vor dem Abschluss klar zu bestätigen
 - Am Ende die Buchungsdetails zu bestätigen
 
-Beispiel-Anweisung (als normaler Text):
-- „Wenn jemand buchen möchte, frage zuerst nach vollständigem Namen und Telefonnummer. Schlage dann verfügbare Zeiten vor und bestätige die ausgewählte Zeit. Nach der Buchung wiederhole Datum, Uhrzeit und Dauer zur Bestätigung.“
+Eine praktische Anweisung für den Prompt (als einfache Vorgabe formuliert) könnte so aussehen:
+
+- „Wenn der Anrufer buchen möchte, frage zuerst nach seinem vollständigen Namen und seiner Telefonnummer. Schlage dann verfügbare Zeiten vor und bestätige die gewählte. Wiederhole nach der Buchung Datum, Uhrzeit und Dauer zur Bestätigung.“
 
 ### Was NICHT in den Prompt gehört
 
-Vermeiden Sie Anweisungen, die das Event Template duplizieren oder überschreiben, z. B.:
+Vermeiden Sie Anweisungen, die die Eventvorlage doppeln oder überschreiben, zum Beispiel:
+
 - „Nur Montag bis Freitag buchen“
 - „Nur zwischen 9 und 17 Uhr buchen“
-- „Nie am selben Tag buchen“
+- „Nie Termine am selben Tag buchen“
 - „Nur 1 Termin pro Tag erlauben“
 
-Diese Regeln sollten im **Event Template** konfiguriert werden (Working Hours, Konflikte, Überschneidungen). Ein „sauberer“ Prompt verhindert Widersprüche und verbessert die Genauigkeit.
+Diese Regeln gehören in die **Eventvorlage** (Arbeitszeiten, Konflikt- und Überschneidungsregeln). Ein sauberer Prompt verhindert Widersprüche und verbessert die Buchungsgenauigkeit.
 
-> **Wichtig:** Denken Sie so:  
-> **Event Template = Regeln und Verfügbarkeit**  
-> **Prompt = Gesprächsführung und Datenerfassung**
+> **Wichtig:** Merken Sie sich:\
+> **Vorlage = Regeln und Verfügbarkeit**\
+> **Prompt = Gespräch und Datenerfassung**
 
-## Bestes LLM für Scheduling: Gemini 2.5 Flash (empfohlen)
+## Bestes LLM für die Terminplanung: Gemini 2.5 Flash (empfohlen)
 
-Für eine höhere Scheduling-Genauigkeit funktioniert Callin.io am besten mit **Gemini 2.5 Flash**.
+Für genaue Buchungen funktioniert Callin.io am besten mit **Gemini 2.5 Flash**.
 
-> **Tipp:** Wenn Buchungen fehlschlagen (falsche Zeiten, Verfügbarkeit wird falsch interpretiert, Verwirrung), stellen Sie das LLM des Agenten auf **Gemini 2.5 Flash** um, speichern Sie und testen Sie erneut.
+> **Tipp:** Wenn die Buchung nicht klappt (falsche Zeiten, übersehene Verfügbarkeit, Verwirrung), stellen Sie das LLM des Agenten auf **Gemini 2.5 Flash** um, speichern Sie und testen Sie erneut.
 
-## Troubleshooting-Checkliste (schnelle Lösungen)
+## Checkliste zur Fehlerbehebung (schnelle Lösungen)
 
-### „Ich habe Google Calendar verbunden, aber ich sehe meinen Kalender nicht“
-- Klicken Sie auf der Google-Calendar-Seite auf **Sync**.
+### „Ich habe Google Calendar verbunden, sehe aber meinen Kalender nicht“
+
+- Klicken Sie auf der Google-Calendar-Seite auf **Synchronisieren**.
 - Prüfen Sie, ob Sie das richtige Google-Konto verbunden haben.
 
 ### „Es wird keine Verfügbarkeit gefunden“
-- Prüfen Sie **Working Hours** im Event Template (mindestens ein Tag muss aktiviert sein).
-- Stellen Sie sicher, dass Ihr Google Calendar nicht vollständig durch „busy“-Termine blockiert ist.
+
+- Prüfen Sie die **Arbeitszeiten** in Ihrer Eventvorlage: Mindestens ein Tag muss angehakt sein, mit den richtigen Start- und Endzeiten.
+- Prüfen Sie, ob Ihr Google Calendar nicht komplett mit belegten Terminen gefüllt ist.
 
 ### „Der Agent bucht zur falschen Uhrzeit“
-- Prüfen Sie, ob die Zeitzone des Agenten zur Zeitzone des Kalenders passt.
-- Wenn das Verhalten inkonsistent ist, wechseln Sie zu **Gemini 2.5 Flash**.
+
+- Prüfen Sie, ob die Zeitzone des Agenten mit der des Kalenders übereinstimmt.
+- Wenn das Verhalten uneinheitlich ist, wechseln Sie zu **Gemini 2.5 Flash**.
 
 ### „Es kommt zu Doppelbuchungen“
-- Setzen Sie **Allow Event Overlap** auf **No**.
-- Wählen Sie eine Konfliktoption, die überschneidende Termine blockiert.
+
+- Stellen Sie **Event-Überschneidung erlauben** auf **Nein**.
+- Wählen Sie unter **Konflikte behandeln** **Alle überlappenden Ereignisse blockieren**.
