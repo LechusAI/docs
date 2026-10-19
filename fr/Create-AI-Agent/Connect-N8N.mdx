@@ -7,87 +7,126 @@ icon: "diagram-project"
 
 ## Aperçu
 
-Créez des automatisations puissantes entre Callin.io et vos outils préférés avec n8n.
+Créez des automatisations puissantes entre Callin.io et vos outils préférés avec n8n. Callin.io vous fournit votre propre espace n8n sur **n8n.callin.io**, avec un nœud **Callin.io** prêt à l’emploi pour que vos agents IA lancent des appels.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/n8n-connect.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : Intégrations → Aller vers n8n → connexion → ajout du nœud Callin.io → Démarrer l’appel → configuration de l’identifiant avec la clé API du profil.
+</p>
+
+> **Remarque :** L’interface de n8n est en anglais : les noms des boutons et des champs de ce guide sont traduits, vous les verrez donc en anglais à l’écran.
 
 ## Étapes
 
 ### Étape 1 : Qu’est-ce que n8n et pourquoi l’utiliser avec Callin.io ?
 
-n8n (prononcé « en-eight-en ») est un outil d’automatisation de workflows qui connecte différentes applications pour qu’elles fonctionnent ensemble de manière fluide.
+n8n est un outil d’automatisation qui relie différentes applications pour qu’elles fonctionnent ensemble.
 
 Avec Callin.io, cette intégration vous permet de :
 
-Envoyer des données d’appel (appelant, agent, durée, enregistrement, etc.) vers des applications externes.
+- **Déclencher des appels sortants à partir d’événements externes** : par exemple quand un nouveau lead arrive dans votre CRM, quand quelqu’un remplit un formulaire sur votre site ou à une heure planifiée. Le nœud **Callin.io** a une seule action, **Démarrer l’appel**, qui fait appeler un contact par l’un de vos agents IA.
+- **Recevoir les données des appels dans n8n** : envoyez les détails de chaque appel terminé vers un flux de travail n8n avec la **Synchronisation des données (webhook post-appel)** de l’agent (dans son onglet **Action d’appel**), puis vers Slack, Google Sheets, votre CRM, etc.
 
-Créer des automatisations, comme envoyer des alertes Slack après un appel ou ajouter des données d’appel dans Google Sheets.
+En bref : n8n transforme les événements de vos autres outils en appels, et les appels en actions dans vos autres outils.
 
-Déclencher des appels sortants à partir d’événements externes, par exemple lorsqu’un nouveau lead CRM est créé.
-
-En bref : n8n transforme vos appels en déclencheurs (triggers) ou en actions pour n’importe quel flux d’automatisation.
+> **Important :** Le nœud **Callin.io** n’a pas de déclencheur propre. Pour démarrer un flux de travail, utilisez un déclencheur n8n (par exemple **À la réception d’un appel webhook**, **Selon une planification** ou un déclencheur de votre CRM), puis ajoutez le nœud **Callin.io**.
 
 ### Étape 2 : Accéder au panneau d’intégrations Callin.io
 
-Connectez-vous à votre compte Callin.io.
-
-Dans le menu de gauche, cliquez sur Actions.
-
-Dans le tableau de bord, sélectionnez l’onglet Automation ou All Integrations.
-
-Trouvez la carte n8n et cliquez sur Connect.
-
-Vous serez redirigé vers une page de connexion comme celle-ci : [Callin.io Integrations](https://app.callin.io/actions)
+1. Connectez-vous à votre compte Callin.io.
+2. Dans le menu de gauche, cliquez sur **Intégrations → Actions** ([ouvrir ici](https://app.callin.io/actions)).
+3. Utilisez le filtre **Automatisation** (ou parcourez **Toutes**).
+4. Trouvez la carte **N8N** et cliquez sur **Aller vers n8n**.
 
 ### Étape 3 : Se connecter à votre compte n8n
 
-Un nouvel onglet s’ouvrira avec l’URL n8n.callin.io.
+1. Un nouvel onglet s’ouvre sur **n8n.callin.io**.
+2. Saisissez votre **E-mail** et votre **Mot de passe** n8n, puis cliquez sur **Se connecter**.
+3. Si vous n’avez pas encore d’accès, contactez l’administrateur de votre compte Callin.io.
 
-Saisissez votre e-mail et votre mot de passe n8n.
+Une fois connecté, vous voyez l’écran **Vue d’ensemble** de n8n avec vos flux de travail et le bouton **Créer un flux de travail**.
 
-Si vous n’avez pas encore accès, contactez votre administrateur Callin.io.
+### Étape 4 : Obtenir votre clé API Callin.io
 
-Une fois connecté, vous verrez l’interface visuelle de création de workflows n8n.
+Le nœud **Callin.io** a besoin d’une clé API pour agir sur votre compte.
 
-### Étape 4 : Créer votre première automatisation
+1. Dans Callin.io, ouvrez votre profil ([app.callin.io/profile](https://app.callin.io/profile)) et allez dans l’onglet **Clés API**.
+2. Si vous n’avez pas encore de clé (« Aucune clé API trouvée »), cliquez sur **Régénérer la clé** pour en créer une.
+3. Utilisez l’icône de copie pour copier la clé.
 
-Cliquez sur + New Workflow et ajoutez les nœuds suivants :
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-api-key.png" alt="L'onglet Clés API du profil Callin.io avec le bouton Régénérer la clé, un avertissement de sécurité et le cadre de la clé avec les icônes afficher et copier" style={{ width:"100%", display:"block" }} />
+</div>
 
-Trigger : Sélectionnez « Callin.io → New Call » pour démarrer le flux lorsqu’un nouvel appel arrive.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : Profil → Clés API, où vous créez et copiez votre clé API.
+</p>
 
-Action : Ajoutez une action, par exemple :
+> **Important :** Gardez cette clé API en sécurité. Si vous cliquez sur **Régénérer la clé** alors que vous en avez déjà une, l’ancienne cesse de fonctionner et vous devrez mettre à jour avec la nouvelle clé tous les workflows qui l’utilisent.
 
-« Slack → Send Message » pour alerter votre équipe.
+### Étape 5 : Créer votre première automatisation
 
-« Google Sheets → Add Row » pour enregistrer les données d’appel.
+1. Dans n8n, cliquez sur **Créer un flux de travail**.
+2. Ajoutez un déclencheur qui démarre le flux de travail (par exemple **À la réception d’un appel webhook** pour recevoir un nouveau lead depuis votre site ou votre CRM).
+3. Cliquez sur **+** pour ajouter l’étape suivante, cherchez **Callin.io** et choisissez l’action **Démarrer l’appel**.
 
-« Webhook → POST » pour envoyer les données à une application personnalisée.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-node.png" alt="Éditeur de flux de travail n8n avec un déclencheur relié au nœud Démarrer l’appel de Callin.io et, à droite, les détails du nœud Callin.io avec l'action Démarrer l’appel" style={{ width:"100%", display:"block" }} />
+</div>
 
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : le nœud Callin.io dans n8n, avec son action Démarrer l’appel.
+</p>
 
-### Étape 5 : Activer et tester
+4. Dans **Identifiant**, cliquez sur **Configurer l’identifiant**, collez votre **Clé API** Callin.io et cliquez sur **Enregistrer**.
+5. Remplissez les champs de **Démarrer l’appel** :
+   - **Téléphone** : le numéro que l’agent appellera.
+   - **Nom** : le nom du contact.
+   - **E-mail** : l’email du contact.
+   - **Nom ou ID de l’agent** : l’agent qui passera l’appel (la liste apparaît une fois l’identifiant configuré).
+   - **URL du webhook (facultatif)** : une URL à laquelle envoyer les données de l’appel.
+   - **Champs supplémentaires** : cliquez sur **Ajouter un champ** pour envoyer des données supplémentaires sous forme de paires **Nom du champ** / **Valeur du champ**.
 
-Enregistrez le workflow.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-start-call.png" alt="Paramètres du nœud Démarrer l’appel dans n8n : Identifiant, Ressource Callin, Opération Démarrer l’appel, Téléphone, Nom, E-mail, Nom ou ID de l’agent, URL du webhook (facultatif) et Champs supplémentaires" style={{ width:"100%", display:"block" }} />
+</div>
 
-Activez-le via le bouton Active.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : les paramètres de Démarrer l’appel, remplis avec un contact d’exemple.
+</p>
 
-Effectuez un appel de test depuis Callin.io et vérifiez que votre automatisation fonctionne.
+> **Astuce :** Plutôt que de saisir des valeurs fixes, utilisez les expressions n8n pour reprendre les données de l’étape précédente (par exemple `{{ $json.phone }}` pour le téléphone envoyé par votre formulaire ou votre CRM).
+
+### Étape 6 : Activer et tester
+
+1. Cliquez sur **Exécuter l’étape** (ou **Exécuter le flux de travail**) pour passer un appel de test vers un vrai numéro que vous contrôlez.
+2. Quand tout fonctionne, cliquez sur **Publier** pour que le flux de travail s’exécute automatiquement.
 
 ## Conseils & remarques
 
-- **Variables personnalisées** : Utilisez callerName, callDuration ou agentEmail pour personnaliser vos flux.
-- **Logique conditionnelle** : Ajoutez des nœuds IF ou Switch pour des automatisations plus complexes.
-- **Flux chaînés** : Combinez Callin.io avec des CRM et des outils de messagerie dans un processus continu.
+- **Utilisez vos données** : avec les expressions n8n, transmettez les valeurs du déclencheur (nom, téléphone, email) aux champs de **Démarrer l’appel**.
+- **Logique conditionnelle** : ajoutez des nœuds **Si** ou **Aiguillage** pour des automatisations plus complexes (par exemple n’appeler que les leads d’un pays donné).
+- **Recevez les résultats des appels** : collez l’URL d’un déclencheur **À la réception d’un appel webhook** de n8n dans la **Synchronisation des données (webhook post-appel)** de l’agent pour recevoir dans n8n les détails de chaque appel terminé.
+- **Flux enchaînés** : combinez Callin.io avec des CRM et des outils de messagerie dans un seul processus continu.
 
 ## Dépannage
 
-**Symptôme :** Erreur « Not Connected »\
-**Cause probable :** Vérifiez vos identifiants n8n et les autorisations d’intégration.
+**Symptôme :** La liste **Nom ou ID de l’agent** est vide\
+**Cause probable :** L’identifiant n’est pas configuré ou la clé API est incorrecte. Configurez de nouveau l’identifiant avec une clé valide de **Profil → Clés API**.
 
-**Symptôme :** Le flux ne s’exécute pas\
-**Cause probable :** Assurez-vous que le workflow est en mode Active dans n8n.
+**Symptôme :** Ça ne fonctionne plus après un changement de clé\
+**Cause probable :** La clé API a été régénérée. Mettez à jour l’identifiant dans n8n avec la nouvelle clé.
 
-**Symptôme :** Données manquantes\
-**Cause probable :** Vérifiez que tous les champs Callin.io sont correctement mappés.
+**Symptôme :** Le flux de travail ne se lance pas\
+**Cause probable :** Vérifiez que le flux de travail est publié et que son déclencheur reçoit bien des données.
+
+**Symptôme :** L’appel n’est pas passé\
+**Cause probable :** Vérifiez que **Téléphone** contient un numéro valide au format international (par exemple `+15550102040`) et qu’un numéro de téléphone est attribué à l’agent.
 
 ## Note finale
 
-Connecter Callin.io à n8n ouvre un univers d’automatisation intelligente.\
-Commencez petit — par exemple en envoyant un message Slack après chaque appel — et vous verrez rapidement comment n8n transforme Callin.io en un hub d’automatisation intelligent.
+Connecter Callin.io à n8n ouvre un monde d’automatisation intelligente.\
+Commencez simplement, par exemple en appelant chaque nouveau lead qui arrive depuis le formulaire de votre site, et vous verrez vite comment n8n fait de Callin.io un véritable centre d’automatisation.

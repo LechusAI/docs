@@ -7,7 +7,15 @@ icon: "diagram-project"
 
 ## Overview
 
-Create powerful automations between Callin.io and your favorite tools with n8n.
+Create powerful automations between Callin.io and your favorite tools with n8n. Callin.io gives you its own n8n workspace at **n8n.callin.io**, with a ready-made **Callin.io** node that makes your AI agents start calls.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/n8n-connect.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Integrations → Go to n8n → sign in → add the Callin.io node → Start call → set up the credential with your API key from Profile → API Keys.
+</p>
 
 ## Steps
 
@@ -17,82 +25,106 @@ n8n (pronounced “en-eight-en”) is a workflow automation tool that connects d
 
 With Callin.io, this integration lets you:
 
-Send call data (caller, agent, duration, recording, etc.) to external apps.
+- **Trigger outbound calls from external events**: for example, when a new lead arrives in your CRM, when someone fills in a form on your website, or on a schedule. The **Callin.io** node has one action, **Start call**, which makes one of your AI agents call a contact.
+- **Receive call data in n8n**: send the details of each finished call to an n8n workflow with the agent’s **Data Sync (Post-Call Webhook)** (in the agent’s **Call Action** tab), and from there to Slack, Google Sheets, your CRM, etc.
 
-Create automations like sending Slack alerts after a call or adding call data to Google Sheets.
+In short: n8n turns events in your other tools into calls, and calls into actions in your other tools.
 
-Trigger outbound calls based on external events, such as a new CRM lead.
-
-In short: n8n turns your calls into triggers or actions for any automation flow.
+> **Important:** The **Callin.io** node has no triggers of its own. To start a workflow, use an n8n trigger (for example, **On a Webhook call**, **On a Schedule** or a trigger from your CRM) and then add the **Callin.io** node.
 
 ### Step 2: Access the Callin.io Integrations Panel
 
-Log in to your Callin.io account.
-
-From the left menu, click Actions.
-
-In the dashboard, select the Automation or All Integrations tab.
-
-Find the n8n card and click Connect.
-
-You’ll be redirected to a login page like this one: [Callin.io Integrations](https://app.callin.io/actions)
+1. Log in to your Callin.io account.
+2. From the left menu, click **Integrations → Actions** ([open it here](https://app.callin.io/actions)).
+3. Use the **Automation** filter (or scroll through **All**).
+4. Find the **N8N** card and click **Go to n8n**.
 
 ### Step 3: Sign In to Your n8n Account
 
-A new tab will open with the URL n8n.callin.io.
+1. A new tab opens on **n8n.callin.io**.
+2. Enter your n8n **Email** and **Password** and click **Sign in**.
+3. If you don’t have access yet, contact your Callin.io administrator.
 
-Enter your n8n email and password.
+Once inside, you’ll see the n8n **Overview** with your workflows, and the **Create workflow** button.
 
-If you don’t have access yet, contact your Callin.io administrator.
+### Step 4: Get Your Callin.io API Key
 
-Once inside, you’ll see the visual workflow builder of n8n.
+The **Callin.io** node needs an API key to act on your account.
 
-### Step 4: Build Your First Automation
+1. In Callin.io, open your **Profile** ([app.callin.io/profile](https://app.callin.io/profile)) and go to the **API Keys** tab.
+2. If you don’t have a key yet (“No API key found”), click **Regenerate Key** to create one.
+3. Use the copy icon to copy the key.
 
-Click + New Workflow and add the following nodes:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-api-key.png" alt="The API Keys tab of the Callin.io profile with the Regenerate Key button, a security warning and the API key box with show and copy icons" style={{ width:"100%", display:"block" }} />
+</div>
 
-Trigger: Select “Callin.io → New Call” to start the flow when a new call arrives.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Profile → API Keys, where you create and copy your API key.
+</p>
 
-Action: Add an action such as:
+> **Important:** Keep this API key secure. If you click **Regenerate Key** when you already have one, the old key stops working, and any workflow that uses it must be updated with the new key.
 
-“Slack → Send Message” to alert your team.
+### Step 5: Build Your First Automation
 
-“Google Sheets → Add Row” to log call data.
+1. In n8n, click **Create workflow**.
+2. Add a trigger that starts the flow (for example, **On a Webhook call** to receive a new lead from your website or CRM).
+3. Click **+** to add the next step, search for **Callin.io** and choose the **Start call** action.
 
-“Webhook → POST” to send data to a custom app.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-node.png" alt="n8n workflow editor with a trigger connected to the Callin.io Start call node, and the Callin.io node details on the right: Activates an agent for calling purpose, with the Start call action" style={{ width:"100%", display:"block" }} />
+</div>
 
-Example:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Callin.io node in n8n, with its Start call action.
+</p>
 
-```json
-{   "Trigger": "Callin.io (New Call)",   "Action": "Google Sheets (Add Row)",   "Fields": ["Number", "Agent", "Duration", "Date"] }
-```
+4. In **Credential**, click **Set up credential**, paste your Callin.io **Api Key** and click **Save**.
+5. Fill in the **Start call** fields:
+   - **Phone**: the number the agent will call.
+   - **Name**: the contact’s name.
+   - **Email**: the contact’s email.
+   - **Agent Name or ID**: the agent that will make the call (the list appears once the credential is set up).
+   - **Webhook Url (optional)**: a URL to send the call data to.
+   - **Additional Fields**: click **Add Field** to send extra data as **Field Name** / **Field Value** pairs.
 
-### Step 5: Activate and Test
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/n8n-start-call.png" alt="Start call node parameters in n8n: Credential, Resource Callin, Operation Start Call, Phone, Name, Email, Agent Name or ID, Webhook Url (optional) and Additional Fields" style={{ width:"100%", display:"block" }} />
+</div>
 
-Save the workflow.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Start call parameters, filled in with an example contact.
+</p>
 
-Turn it on using the Active toggle.
+> **Tip:** Instead of typing fixed values, map the data from the previous step with n8n expressions (for example, `{{ $json.phone }}` for the phone number your form or CRM sends).
 
-Make a test call from Callin.io and check if your automation works.
+### Step 6: Activate and Test
+
+1. Click **Execute step** (or **Execute workflow**) to run a test call with a real number you control.
+2. When everything works, click **Publish** so the workflow runs automatically.
 
 ## Tips & Notes
 
-- **Custom Variables**: Use `{{callerName}}`, `{{callDuration}}`, or `{{agentEmail}}` to personalize your flows.
-- **Conditional Logic**: Add IF or Switch nodes for more complex automations.
+- **Map your data**: Use n8n expressions to pass values from the trigger (name, phone, email) into the **Start call** fields.
+- **Conditional Logic**: Add **IF** or **Switch** nodes for more complex automations (for example, only call leads from a certain country).
+- **Get call results back**: Paste the URL of an n8n **On a Webhook call** trigger into the agent’s **Data Sync (Post-Call Webhook)** to receive the details of every finished call in n8n.
 - **Chained Flows**: Combine Callin.io with CRMs and messaging tools in one continuous process.
 
 ## Troubleshooting
 
-**Symptom:** “Not Connected” error\
-**Likely Cause:** Check your n8n credentials and integration permissions.
+**Symptom:** The **Agent Name or ID** list is empty\
+**Likely Cause:** The credential isn’t set up or the API key is wrong. Set up the credential again with a valid key from **Profile → API Keys**.
+
+**Symptom:** It stopped working after a key change\
+**Likely Cause:** The API key was regenerated. Update the credential in n8n with the new key.
 
 **Symptom:** Flow not running\
-**Likely Cause:** Ensure the workflow is Active in n8n.
+**Likely Cause:** Make sure the workflow is published and that its trigger is receiving data.
 
-**Symptom:** Missing data\
-**Likely Cause:** Verify that all Callin.io fields are properly mapped.
+**Symptom:** The call isn’t made\
+**Likely Cause:** Check that **Phone** contains a valid number in international format (for example, `+15550102040`) and that the agent has a phone number assigned.
 
 ## Final Note
 
 Connecting Callin.io with n8n unlocks a world of smart automation.\
-Start small—like sending a Slack message after each call—and soon you’ll see how n8n turns Callin.io into an intelligent automation hub.
+Start small—like calling every new lead from your website form—and soon you’ll see how n8n turns Callin.io into an intelligent automation hub.
