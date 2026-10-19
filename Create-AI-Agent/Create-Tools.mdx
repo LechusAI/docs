@@ -16,6 +16,11 @@ With a tool, your agent can:
 - **Query data** from an external system (for example: status, availability, verification).
 - **Trigger automations** in external platforms (CRM, tickets, messaging, workflows, etc.).
 
+The **Tools** page has two tabs:
+
+- **Tools**: your webhook tools. This is what this guide covers step by step.
+- **MCPs**: connections to MCP servers, which give your agent a whole set of ready-made tools at once (see [Connect an MCP server](#connect-an-mcp-server-mcps-tab)).
+
 In Callin, correct operation always follows this order:
 
 1. **Create the tool** in the **Tools** section.
@@ -31,8 +36,8 @@ If any of these 3 steps is missing, the tool will not run as expected.
 - **Tool**: a connection that lets the agent “talk” to another system (for example, a CRM).
 - **URL**: the address Callin sends the request to.
 - **GET**: used to **query** information (“Does this contact exist?”).
-- **POST**: used to **send** information (“Create this lead with these details.”).
-- **Body parameters**: the **data** the agent will send (email, phone, name, etc.).
+- **POST**: used to **send** information (“Create this lead with these details.”). **PUT** (update) and **DELETE** (remove) are also available.
+- **Body Parameters**: the **data** the agent will send (email, phone, name, etc.).
 - **Required**: **mandatory** fields. If one is missing, the result may be incomplete or the flow can fail.
 
 > If your user is not technical, keep this idea: **the tool creates the connection**, and the **Conversation Prompt decides when it is used and with which data**.
@@ -43,44 +48,127 @@ If any of these 3 steps is missing, the tool will not run as expected.
 
 To create a tool in Callin:
 
-1. Go to **Tools** in the Callin dashboard.
-2. Click **\+ Add Tool**.
+1. Go to **Tools** in the Callin dashboard ([open Tools](https://app.callin.io/tools)).
+2. Click **\+ Add Tool**. The **Create Tool** panel opens on the right.
 3. Fill in the main fields:
 
 - **Name**\
-  Use a short, clear, stable name. Recommendation: **verb + objective**.\
-  Examples: `query-crm-contact`, `create-crm-lead`, `send-registration-link`.
-- **Description**\
+  Use a short, clear, stable name. Recommendation: **verb + objective**. It can have 1–64 characters: only letters, numbers, underscores (`_`) or hyphens (`-`), with no spaces.\
+  Examples: `query_crm_contact`, `create_crm_lead`, `send_registration_link`.
+- **Description** (required)\
   Explain **what it does** and, especially, **when it must be used** (at what moment in the call).\
   Example: “Check whether the contact exists in the CRM only after confirming email and phone.”
 - **Method**
   - Use **GET** if you are going to **query** information.
   - Use **POST** if you are going to **send** information (most common when the agent collects data and sends it).
+  - Use **PUT** to **update** existing data, or **DELETE** to **remove** it, if your API works that way.
 - **URL**\
   Paste the HTTPS URL of your API or your external platform webhook.
 
 > Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
 
-### Configure “Body parameters” (if you use POST)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-If your tool sends information (POST), define exactly which data it will send:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Add Tool → name, description, method and URL → speech and sound settings → a header → a body parameter.
+</p>
 
-1. Go to **Body parameters**.
-2. Click **Add property**.
-3. Configure each field:
+### Timing and speech settings
 
-- **Type**: the data type (text, number, true/false, etc.).
+Below the URL, you can decide how the tool behaves during the conversation:
+
+- **Response Timeout (seconds)**: how long to wait for your endpoint to respond before giving up. Default: **20 seconds**.
+- **Disable Interruptions**: tick this box so the caller cannot interrupt the agent while the tool is running.
+- **Pre Tool Speech**: **Auto** (the agent decides whether to say something before running the tool, based on how long it usually takes) or **Force** (the agent always speaks before running it, for example “Give me a second while I check”).
+- **Execution Mode**: when the tool runs compared to what the agent says:
+  - **Immediate**: it runs right away.
+  - **Post speech**: it runs after the agent finishes speaking.
+  - **Async**: it runs in the background, so the conversation can continue while it works.
+- **Tool Call Sound**: an optional sound while the tool runs: **None**, **Typing** or **Elevator Music 1–4**. Use the play button next to it to preview the sound.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-create.png"
+    alt="The Create Tool panel with the POST method and an example URL, followed by Response Timeout, Disable Interruptions, Pre Tool Speech, Execution Mode and Tool Call Sound, and the Headers and Body Parameters sections."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Create Tool panel with the timing and speech settings.
+</p>
+
+> **Tip:** If your endpoint takes a few seconds, set **Pre Tool Speech** to **Force** or add a **Tool Call Sound**, so the caller doesn’t hear silence.
+
+### Configure “Body Parameters” (if you use POST)
+
+If your tool sends information (POST), define exactly which data it will send. The agent (the LLM) collects these parameters during the call and sends them as the body of the request.
+
+1. Go to **Body Parameters**.
+2. Optionally, add a general **Description** of the data you send.
+3. Click **Add property**.
+4. Configure each field:
+
+- **Data Type**: **String** (text), **Number**, **Boolean** (true/false) or **Integer** (whole number).
 - **Identifier**: the exact field name your endpoint expects (for example: `email`, `phone`, `full_name`).
-- **Required**: enable it if the field is mandatory.
-- **Description**: explain what it represents and the expected format (for example: “Phone in international format” or “Valid email address”).
+- **Required**: ticked by default. Untick it if the field is optional.
+- **Value Type**: where the value comes from:
+  - **LLM Prompt**: the agent fills it in from the conversation. Add a **Description** with what it represents and the expected format (for example: “Phone in international format” or “Valid email address”). You can also add **Enum Values (optional)**: a list of allowed values. If you add them, the agent can only choose from that list.
+  - **Constant Value**: always sends the same fixed value (for example, the name of your campaign).
+  - **Dynamic Variable**: sends the value of a call variable. Pick it in **Variable Name**, for example `system__caller_id` (the caller’s number), `system__called_number`, `system__conversation_id` or `system__time_utc`.
+
+To send more fields, click **Add property** again. To remove one, click **Delete**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-body.png"
+    alt="The Body Parameters section with a property: Data Type String, Identifier email, Required ticked, Value Type LLM Prompt, a description and the optional Enum Values field."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: A body parameter that the agent fills in from the conversation (LLM Prompt).
+</p>
 
 > Practical recommendation: if you mark a field as **Required**, your agent must be forced (via the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
 
 ### Headers and authentication (if applicable)
 
-If your endpoint requires authentication (for example, a token or key), you must configure it following your API requirements exactly (which headers it needs and what values).
+If your endpoint requires authentication (for example, a token or key), add it in **Headers**:
 
-4. Click **Save** to save the tool.
+1. Click **Add header**.
+2. Fill in the **Name** (for example, `Authorization`) and the **Value** (for example, `Bearer` followed by your key), exactly as your API requires.
+
+Every header needs a name and a value. Remove the empty ones with the bin icon, or the tool can’t be saved.
+
+4. Click **Save** to save the tool. To discard your changes, click **Clear**.
+
+### Connect an MCP server (MCPs tab)
+
+An **MCP server** gives your agent a whole set of tools at once (for example, all the actions of your CRM), without creating them one by one. To add one:
+
+1. In **Tools**, open the **MCPs** tab and click **\+ Add MCP**.
+2. In **Basic Information**, fill in the **Name** (for example, “CRM MCP”) and a **Description** of what the server provides.
+3. In **Server Configuration**, choose the **Server type** (**SSE** or **Streamable HTTP**) and paste the **Server URL**.
+4. If the server needs authentication, add it in **HTTP Headers** with **Add header**.
+5. Choose the **Tool Approval Mode**:
+   - **Always Ask**: maximum security. The agent asks for permission before each tool use.
+   - **Fine-Grained Tool Approval** (selected by default): you choose which tools are disabled and which can run automatically.
+   - **No Approval**: the agent can use any tool without approval.
+6. Click **Create**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Add MCP → name, description and server URL → Tool Approval Mode, and then the agent’s Tools tab, where you add tools and MCPs to the agent.
+</p>
+
+> **Important:** Only connect MCP servers you trust. With **No Approval**, the agent can use every tool on that server without asking.
 
 ---
 
@@ -90,12 +178,29 @@ Creating the tool is not enough. You must assign it to the agent:
 
 1. Go to **AI Agents**.
 2. Select the agent you want to configure.
-3. In the agent editor, scroll down to the **Tools** section.
-4. Click **\+ Add Tool**.
-5. Select the tool and save.
+3. In the agent editor, open the **Tools** tab.
+4. In the **Tools** sub-tab, click **Add Tool**.
+5. Search for your tool and select it. You can also click **Add Webhook Tool** to create a new one from there.
+6. Save the agent.
+
+To add an MCP server to the agent, open the **MCP** sub-tab and click **Add MCP**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-agent.png"
+    alt="The agent's Tools tab with the Tools and MCP sub-tabs, the Add Tool list with a search box and the Add Webhook Tool button, and the System Tools on the right."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The agent’s Tools tab. Add Tool lists the tools you created in the Tools section.
+</p>
 
 **Quick check:**\
 If the tool appears in the agent’s list, it is assigned correctly. If it does not appear, the agent will not be able to run it.
+
+> **Tip:** On the right of the same tab you’ll find the **System Tools** (Smart Hang-up, Language Switching, Transfer to number…). They are built in and you only need to switch them on. See [AI Agents](/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
@@ -289,7 +394,7 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | The tool does not run               | It is not assigned to the agent                                               | Go to **AI Agents \> your agent \> Tools** and add it                                             |
 | No information reaches the endpoint | Endpoint is inaccessible or URL is incorrect                                  | Verify the URL is **HTTPS** and publicly accessible                                               |
-| Missing fields                      | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body parameters** and adjust the **Conversation Prompt** to require and confirm the data |
+| Missing fields                      | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body Parameters** and adjust the **Conversation Prompt** to require and confirm the data |
 | It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                       | Specify rules like “only at the end”, “only after confirming email and phone”                     |
 
 ---

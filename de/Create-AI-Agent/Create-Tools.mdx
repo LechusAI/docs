@@ -1,92 +1,412 @@
 ---
-title: "Tools "
-description: "Nutze Webhooks in Callin, um in Echtzeit Daten von deinem Agenten an jede externe API oder Automatisierungsplattform zu senden oder von dort abzurufen."
+title: "Tools"
+description: "Erstelle Tools (Webhooks) in Callin und nutze sie im Feld Konversations-Prompt deines Agenten, um während eines Anrufs in Echtzeit Daten zu senden oder abzufragen."
 icon: "screwdriver-wrench"
 ---
 
 ## Überblick
 
-Webhooks ermöglichen es deinem Callin-Agenten, in Echtzeit mit externen Systemen zu interagieren. Das bedeutet, dass dein Agent jedes Mal, wenn er einen Anruf tätigt oder entgegennimmt, automatisch **Daten senden oder anfordern** kann — über eine einfache HTTP-Anfrage an einen anderen Service.
+**Tools** (Webhooks) verbinden deinen Callin-Agenten **in Echtzeit** mit externen Systemen, während er mit einer Person spricht.
 
-Das ist hilfreich, wenn du möchtest, dass dein Agent Kundendaten abruft, Datensätze in externen Tools erstellt oder Automatisierungen auslöst — alles während eines laufenden Gesprächs.
+Einfach gesagt: Ein Tool ist eine **automatische Aktion**, die der Agent ausführen kann, um Informationen bei einem anderen System (zum Beispiel deinem CRM) **abzufragen** oder dorthin zu **senden**, ohne das Gespräch zu unterbrechen.
 
-In Callin werden Webhooks als **Tools** erstellt. Das sind wiederverwendbare Komponenten, die du jedem Sprachagenten zuweisen kannst.
+Mit einem Tool kann dein Agent:
+
+- **Daten senden**, die die Person im Anruf nennt (zum Beispiel: Name, E-Mail, Telefon, Anliegen).
+- **Daten abfragen** aus einem externen System (zum Beispiel: Status, Verfügbarkeit, Prüfung).
+- **Automatisierungen auslösen** auf externen Plattformen (CRM, Tickets, Messaging, Workflows usw.).
+
+Die Seite **Werkzeuge** hat zwei Tabs:
+
+- **Tools**: deine Webhook-Tools. Darum geht es Schritt für Schritt in dieser Anleitung.
+- **MCPs**: Verbindungen zu MCP-Servern, die deinem Agenten auf einen Schlag eine ganze Reihe fertiger Tools geben (siehe „MCP-Server verbinden“ weiter unten).
+
+In Callin funktioniert es immer in dieser Reihenfolge:
+
+1. **Tool erstellen** im Bereich **Werkzeuge**.
+2. **Tool dem Agenten zuweisen** unter **KI-Agenten**.
+3. **Im Feld Konversations-Prompt festlegen**, wann es ausgeführt wird und was der Agent mit dem Ergebnis macht.
+
+Fehlt einer dieser 3 Schritte, funktioniert das Tool nicht wie erwartet.
+
+---
+
+## Bevor du startest (Grundbegriffe in 60 Sekunden)
+
+- **Tool**: eine Verbindung, über die der Agent mit einem anderen System „spricht“ (zum Beispiel einem CRM).
+- **URL**: die Adresse, an die Callin die Anfrage sendet.
+- **GET**: dient zum **Abfragen** von Informationen („Gibt es diesen Kontakt?“).
+- **POST**: dient zum **Senden** von Informationen („Lege diesen Lead mit diesen Daten an.“). Außerdem gibt es **PUT** (aktualisieren) und **DELETE** (löschen).
+- **Body-Parameter**: die **Daten**, die der Agent sendet (E-Mail, Telefon, Name usw.).
+- **Erforderlich**: **Pflichtfelder**. Fehlt eines, kann das Ergebnis unvollständig sein oder der Ablauf fehlschlagen.
+
+> Wenn du nicht technisch unterwegs bist, merk dir: **Das Tool stellt die Verbindung her**, und der **Konversations-Prompt entscheidet, wann und mit welchen Daten es genutzt wird**.
 
 ---
 
 ## Schritt 1: Ein Webhook-Tool erstellen
 
-Zum Start musst du ein neues Tool im Callin-Dashboard erstellen:
+So erstellst du ein Tool in Callin:
 
-1. Gehe zu [Tools](https://app.callin.io/tools) in deinem [Callin workspace](https://app.callin.io).
-2. Klicke auf **\+ Add Tool**.
-3. Fülle die folgenden Felder aus:
-   - **Name**: `get-customer-data`
-   - **Description**: `Ruft Kundeninformationen anhand der Telefonnummer ab.`
-   - **Method**: Wähle `GET`, wenn du Daten abrufst, oder `POST`, wenn du sie sendest.
-   - **URL**: Gib den externen API-Endpoint an, z. B. `https://api.mycompany.com/customers`
+1. Öffne **Werkzeuge** im Callin-Dashboard ([Werkzeuge öffnen](https://app.callin.io/tools)).
+2. Klicke auf **\+ Werkzeug hinzufügen**. Rechts öffnet sich das Fenster **Werkzeug erstellen**.
+3. Fülle die Hauptfelder aus:
 
-> Stelle sicher, dass die URL HTTPS verwendet und öffentlich erreichbar ist. Andernfalls funktioniert der Webhook nicht.
+- **Name**\
+  Wähle einen kurzen, klaren und dauerhaften Namen. Empfehlung: **Verb + Ziel**. Er darf 1–64 Zeichen haben: nur Buchstaben, Zahlen, Unterstriche (`_`) oder Bindestriche (`-`), ohne Leerzeichen.\
+  Beispiele: `crm_kontakt_pruefen`, `crm_lead_anlegen`, `registrierungslink_senden`.
+- **Beschreibung** (Pflichtfeld)\
+  Erkläre, **was es tut** und vor allem, **wann es genutzt werden soll** (zu welchem Zeitpunkt im Anruf).\
+  Beispiel: „Prüft erst nach Bestätigung von E-Mail und Telefon, ob der Kontakt im CRM existiert.“
+- **Methode**
+  - Nutze **GET**, wenn du Informationen **abfragen** willst.
+  - Nutze **POST**, wenn du Informationen **senden** willst (der häufigste Fall, wenn der Agent Daten sammelt und weitergibt).
+  - Nutze **PUT** zum **Aktualisieren** bestehender Daten oder **DELETE** zum **Löschen**, wenn deine API so arbeitet.
+- **URL**\
+  Füge die HTTPS-URL deiner API oder des Webhooks deiner externen Plattform ein.
 
-4. Klicke auf **Save**, um das Tool zu erstellen.
+> Achte darauf, dass die URL **HTTPS** nutzt und öffentlich erreichbar ist. Ist der Endpoint nicht erreichbar, funktioniert das Tool nicht.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Werkzeug hinzufügen → Name, Beschreibung, Methode und URL → Sprach- und Sound-Einstellungen → ein Header → ein Body-Parameter.
+</p>
+
+### Zeit- und Spracheinstellungen
+
+Unter der URL legst du fest, wie sich das Tool im Gespräch verhält:
+
+- **Antwort-Timeout (Sekunden)**: wie lange auf die Antwort deines Endpoints gewartet wird, bevor abgebrochen wird. Standard: **20 Sekunden**.
+- **Unterbrechungen deaktivieren**: Aktiviere dieses Kästchen, damit der Anrufer den Agenten nicht unterbrechen kann, während das Tool läuft.
+- **Vor-Werkzeug-Sprache**: **Automatisch** (der Agent entscheidet je nach üblicher Laufzeit, ob er vor der Ausführung etwas sagt) oder **Erzwingen** (der Agent spricht immer vorher, zum Beispiel „Einen Moment, ich schaue nach“).
+- **Ausführungsmodus**: wann das Tool im Verhältnis zur Rede des Agenten ausgeführt wird:
+  - **Sofort**: Es läuft direkt los.
+  - **Nach der Sprache**: Es läuft, wenn der Agent fertig gesprochen hat.
+  - **Asynchron**: Es läuft im Hintergrund, sodass das Gespräch weitergehen kann.
+- **Werkzeug-Sound**: ein optionaler Sound, während das Tool läuft: **Keiner**, **Tippgeräusch** oder **Fahrstuhlmusik 1–4**. Mit der Wiedergabe-Schaltfläche daneben hörst du ihn dir an.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-create.png"
+    alt="Das Fenster Werkzeug erstellen mit der Methode POST und einer Beispiel-URL, darunter Antwort-Timeout, Unterbrechungen deaktivieren, Vor-Werkzeug-Sprache, Ausführungsmodus und Werkzeug-Sound sowie die Bereiche Headers und Body-Parameter."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Das Fenster Werkzeug erstellen mit den Zeit- und Spracheinstellungen.
+</p>
+
+> **Tipp:** Braucht dein Endpoint ein paar Sekunden, stelle **Vor-Werkzeug-Sprache** auf **Erzwingen** oder füge einen **Werkzeug-Sound** hinzu, damit der Anrufer keine Stille hört.
+
+### „Body-Parameter“ konfigurieren (bei POST)
+
+Wenn dein Tool Informationen sendet (POST), lege genau fest, welche Daten es sendet. Der Agent (das LLM) sammelt diese Parameter im Anruf und sendet sie als Inhalt der Anfrage.
+
+1. Gehe zu **Body-Parameter**.
+2. Füge bei Bedarf eine allgemeine **Beschreibung** der gesendeten Daten hinzu.
+3. Klicke auf **Eigenschaft hinzufügen**.
+4. Konfiguriere jedes Feld:
+
+- **Datentyp**: **String** (Text), **Zahl**, **Boolean** (wahr/falsch) oder **Ganzzahl**.
+- **Bezeichner**: der genaue Feldname, den dein Endpoint erwartet (zum Beispiel: `email`, `phone`, `full_name`).
+- **Erforderlich**: standardmäßig aktiviert. Deaktiviere es, wenn das Feld optional ist.
+- **Werttyp**: woher der Wert kommt:
+  - **LLM Prompt**: Der Agent füllt ihn aus dem Gespräch aus. Füge eine **Beschreibung** hinzu, was er bedeutet und in welchem Format er erwartet wird (zum Beispiel: „Telefonnummer im internationalen Format“ oder „Gültige E-Mail-Adresse“). Du kannst auch **Enum-Werte (optional)** hinzufügen: eine Liste erlaubter Werte. Dann kann der Agent nur aus dieser Liste wählen.
+  - **Konstanter Wert**: sendet immer denselben festen Wert (zum Beispiel den Namen deiner Kampagne).
+  - **Dynamische Variable**: sendet den Wert einer Anrufvariable. Wähle sie unter **Variablenname** aus, zum Beispiel `system__caller_id` (die Nummer des Anrufers), `system__called_number`, `system__conversation_id` oder `system__time_utc`.
+
+Für weitere Felder klickst du erneut auf **Eigenschaft hinzufügen**. Zum Entfernen klickst du auf **Löschen**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-body.png"
+    alt="Der Bereich Body-Parameter mit einer Eigenschaft: Datentyp String, Bezeichner email, Erforderlich aktiviert, Werttyp LLM Prompt, eine Beschreibung und das optionale Feld Enum-Werte."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Ein Body-Parameter, den der Agent aus dem Gespräch ausfüllt (LLM Prompt).
+</p>
+
+> Praxistipp: Wenn du ein Feld als **Erforderlich** markierst, musst du den Agenten (über den Konversations-Prompt) verpflichten, es **zu erfragen und zu bestätigen**, bevor er das Tool ausführt. Sonst erhält der Webhook unvollständige Daten oder der Ablauf schlägt fehl.
+
+### Headers und Authentifizierung (falls nötig)
+
+Wenn dein Endpoint eine Authentifizierung verlangt (zum Beispiel einen Token oder Schlüssel), füge sie unter **Headers** hinzu:
+
+1. Klicke auf **Header hinzufügen**.
+2. Trage den **Name** (zum Beispiel `Authorization`) und den **Wert** (zum Beispiel `Bearer` gefolgt von deinem Schlüssel) genau so ein, wie deine API es verlangt.
+
+Jeder Header braucht einen Namen und einen Wert. Entferne leere Header über das Papierkorb-Symbol, sonst lässt sich das Tool nicht speichern.
+
+4. Klicke auf **Speichern**, um das Tool zu speichern. Mit **Leeren** verwirfst du deine Änderungen.
+
+### MCP-Server verbinden (Tab MCPs)
+
+Ein **MCP-Server** gibt deinem Agenten auf einen Schlag eine ganze Reihe von Tools (zum Beispiel alle Aktionen deines CRM), ohne dass du sie einzeln anlegen musst. So fügst du einen hinzu:
+
+1. Öffne unter **Werkzeuge** den Tab **MCPs** und klicke auf **\+ MCP hinzufügen**.
+2. Trage unter **Grundinformationen** den **Namen** (zum Beispiel „CRM MCP“) und eine **Beschreibung** ein, was der Server bietet.
+3. Wähle unter **Serverkonfiguration** den **Servertyp** (**SSE** oder **Streamable HTTP**) und füge die **Server-URL** ein.
+4. Braucht der Server eine Authentifizierung, füge sie unter **HTTP-Header** mit **Header hinzufügen** hinzu.
+5. Wähle den **Freigabemodus für Tools**:
+   - **Immer fragen**: maximale Sicherheit. Der Agent fragt vor jeder Tool-Nutzung um Erlaubnis.
+   - **Detaillierte Tool-Freigabe** (standardmäßig ausgewählt): Du legst fest, welche Tools deaktiviert sind und welche automatisch laufen dürfen.
+   - **Keine Freigabe**: Der Agent darf jedes Tool ohne Freigabe nutzen.
+6. Klicke auf **Erstellen**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: MCP hinzufügen → Name, Beschreibung und Server-URL → Freigabemodus, danach der Tab Tools des Agenten, in dem du dem Agenten Tools und MCPs hinzufügst.
+</p>
+
+> **Wichtig:** Verbinde nur MCP-Server, denen du vertraust. Mit **Keine Freigabe** kann der Agent alle Tools dieses Servers ohne Rückfrage nutzen.
 
 ---
 
 ## Schritt 2: Das Tool einem Sprachagenten zuweisen
 
-Sobald dein Tool erstellt ist, musst du es mit dem Agenten verbinden, der es nutzen soll:
+Das Tool zu erstellen reicht nicht. Du musst es dem Agenten zuweisen:
 
-1. Gehe zu [AI Agents](https://app.callin.io/agents).
-2. Wähle den Agenten aus, den du konfigurieren möchtest.
-3. Scrolle zum Abschnitt **Tools** und klicke auf **\+ Add Tool**.
-4. Wähle das Tool aus, das du gerade erstellt hast, und speichere deine Änderungen.
+1. Gehe zu **KI-Agenten**.
+2. Wähle den Agenten, den du konfigurieren möchtest.
+3. Öffne im Agenten-Editor den Tab **Tools**.
+4. Klicke im Untertab **Tools** auf **Werkzeug hinzufügen**.
+5. Suche dein Tool und wähle es aus. Du kannst auch auf **Webhook-Tool hinzufügen** klicken, um dort direkt ein neues anzulegen.
+6. Speichere den Agenten.
 
-Jetzt ist dein Agent bereit, diesen Webhook auszuführen, wann immer er während eines Anrufs benötigt wird.
+Um dem Agenten einen MCP-Server hinzuzufügen, öffne den Untertab **MCP** und klicke auf **MCP hinzufügen**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-agent.png"
+    alt="Der Tab Tools des Agenten mit den Untertabs Tools und MCP, der Liste Werkzeug hinzufügen mit Suchfeld und der Schaltfläche Webhook-Tool hinzufügen sowie den System-Tools rechts."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Der Tab Tools des Agenten. Werkzeug hinzufügen zeigt die Tools, die du im Bereich Werkzeuge erstellt hast.
+</p>
+
+**Kurzer Check:**\
+Erscheint das Tool in der Liste des Agenten, ist es richtig zugewiesen. Erscheint es nicht, kann der Agent es nicht ausführen.
+
+> **Tipp:** Rechts im selben Tab findest du die **System-Tools** (Smartes Auflegen, Sprachwechsel, An Nummer übergeben…). Sie sind integriert und müssen nur eingeschaltet werden. Siehe [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
-## Schritt 3: Deinen Webhook testen
+## Schritt 3: Im „Konversations-Prompt“ festlegen, wie das Tool genutzt wird
 
-Bevor du ihn in Produktion nutzt, ist es wichtig zu testen, ob dein Webhook korrekt konfiguriert ist.
+Das ist der wichtigste Schritt. Der Agent führt das Tool nur aus, wenn der **Konversations-Prompt** ihm klar sagt:
 
-Du kannst [Webhook.site](https://webhook.site) verwenden — ein kostenloses Tool, das dir eine temporäre URL gibt, um Testanfragen zu empfangen und die Daten zu prüfen.
+- **Welche Daten er vorher sammeln muss** (Pflichtfelder).
+- **Wie er diese Daten bestätigt** (um Fehler zu vermeiden).
+- **Wann** er es ausführen soll (genauer Zeitpunkt im Anruf).
+- **Was er direkt danach sagen soll** (auch genaue Sätze, wenn dein Prozess sie verlangt).
+- **Was er NICHT tun soll** (damit er keine Abläufe vermischt oder zu früh handelt).
 
-Hier ist ein Beispiel für ein Payload, das Callin senden könnte:
+### Wichtige Regel (für Nicht-Techniker)
 
-"call_id": "ab12cd34", "agent_name": "Laura AI", "duration": 145, "direction": "outbound", "caller_number": "+34123456789", "summary": "Der Kunde hat um ein Follow-up gebeten."
+Wenn du dem Agenten nicht sagst, **„wann“** und **„unter welchen Bedingungen“** er das Tool nutzen soll, kann es passieren, dass er:
 
-Prüfe, ob das Payload ankommt und ob es zu dem passt, was deine externe API erwartet.
+- es zu früh nutzt,
+- es mit unvollständigen Daten nutzt,
+- oder es nie nutzt.
 
 ---
 
-## Schritt 4: Mit anderen Plattformen automatisieren
+## Beispiel 1: Ein CRM in Echtzeit anbinden (abfragen + anlegen)
 
-Sobald dein Webhook funktioniert, kannst du ihn in Automatisierungstools einbinden, zum Beispiel:
+Dieses Beispiel zeigt einen sehr häufigen Fall: Der Agent spricht mit einer Person und prüft, **bevor es weitergeht**, im CRM, ob der Kontakt schon existiert. Wenn nicht, legt er die Person als Lead an und setzt den Anruf fort.
 
-- [**Zapier**](https://support.callin.io/Create-AI-Agent/Connect-Zapier): Automatisierungen in über 3.000 Apps auslösen.
-- [**n8n**](https://support.callin.io/Create-AI-Agent/Connect-N8N): Bedingte Flows und fortgeschrittene Workflows visuell erstellen.
-- [**Make.com**](https://support.callin.io/Create-AI-Agent/Connect-Make): Leistungsstarke Szenarien entwerfen, ohne Code zu schreiben.
+### Tools in diesem Beispiel
 
-Diese Tools können die Webhook-Antwort verarbeiten und Slack-Nachrichten senden, CRM-Leads erstellen, E-Mails auslösen und vieles mehr.
+**Tool 1: Query_CRM_Contact**\
+**Ziel:** prüfen, ob der Kontakt schon im CRM existiert.\
+**Wann es genutzt wird:** direkt nach der Bestätigung von **E-Mail + Telefon**.\
+**Erwartetes Ergebnis:** „gefunden / nicht gefunden“ und, falls gefunden, Basisdaten (zum Beispiel Name und Status).
+
+**Tool 2: Create_CRM_Lead**\
+**Ziel:** einen Lead anlegen, wenn der Kontakt nicht existiert.\
+**Wann es genutzt wird:** nur, wenn die vorherige Abfrage „nicht gefunden“ liefert.\
+**Empfohlene Mindestdaten:** Name, E-Mail, Telefon, Anliegen.
+
+### Bedingungen für die Ausführung (sehr wichtig)
+
+- Der Agent darf **kein** Tool ausführen, bevor:
+  - die **E-Mail** bestätigt ist (wiederholt und von der Person bestätigt),
+  - und das **Telefon** bestätigt ist (wiederholt und von der Person bestätigt).
+- Wenn die Person zögert oder eine Angabe korrigiert, muss der Agent sie **aktualisieren und erneut bestätigen**, bevor es weitergeht.
+
+### Was in den Konversations-Prompt gehört (erfundener Text, leicht anpassbar)
+
+**Ziel des Ablaufs:**
+
+1. Basisdaten sammeln → 2) bestätigen → 3) CRM abfragen → 4) falls nicht gefunden, Lead anlegen → 5) Gespräch fortsetzen.
+
+**Klare Anweisungen für den Agenten (Beispiel):**
+
+- Sammle und bestätige im Anruf diese Daten:
+  - **Vor- und Nachname**
+  - **E-Mail**
+  - **Telefon**
+  - **Anliegen** (ein kurzer Satz)
+- Zum Bestätigen:
+  - Wiederhole die E-Mail und frage: „Ist das richtig?“
+  - Wiederhole die Telefonnummer und frage: „Ist das richtig?“
+- Erst wenn E-Mail und Telefon bestätigt sind:
+  - Führe **Query_CRM_Contact** aus.
+- Wenn das Ergebnis zeigt, dass der Kontakt **existiert**:
+  - Sag: „Perfekt, ich sehe Ihren Eintrag bereits. Machen wir weiter.“
+  - Erfinde keine Daten. Wenn der Status im Ergebnis steht, kannst du ihn neutral erwähnen.
+- Wenn das Ergebnis zeigt, dass der Kontakt **nicht existiert**:
+  - Sag: „Perfekt, ich finde Sie noch nicht. Ich lege Sie jetzt an und dann machen wir weiter.“
+  - Führe **Create_CRM_Lead** mit den bestätigten Daten aus.
+  - Bestätige danach: „Erledigt, Sie sind jetzt registriert. Machen wir mit dem nächsten Schritt weiter.“
+- Wenn das Tool fehlschlägt oder keine Antwort liefert:
+  - Nenne keine technischen Details.
+  - Sag: „Ich konnte das gerade nicht prüfen. Machen wir weiter, und falls nötig, schauen wir es uns am Ende an.“
+  - Führe Tools nicht in einer Schleife immer wieder aus.
+
+### So könnte es im Anruf klingen (Gesprächsbeispiel)
+
+**Agent:** „Perfekt. Damit ich Ihnen helfen kann, brauche ich nur ein paar kurze Angaben. Wie ist Ihr Vor- und Nachname?“\
+**Person:** „Laura Martin.“\
+**Agent:** „Danke, Laura. Wie lautet Ihre E-Mail-Adresse?“\
+**Person:** „[laura.martin@example.com](mailto:laura.martin@example.com)“\
+**Agent:** „Gut. Ich habe verstanden: laura punkt martin at example punkt com. Ist das richtig?“\
+**Person:** „Ja.“\
+**Agent:** „Perfekt. Wie ist Ihre Telefonnummer?“\
+**Person:** „Sechs sechs fünf, eins zwei drei, vier fünf sechs.“\
+**Agent:** „Perfekt. Zur Bestätigung: 665 123 456. Ist das richtig?“\
+**Person:** „Ja.“\
+**Agent:** „Danke. Eine letzte Sache: Worum geht es bei Ihrem Anruf, in einem Satz?“\
+**Person:** „Ich möchte Informationen zu den Tarifen.“\
+**Agent:** „Perfekt. Ich prüfe kurz, ob Sie schon bei uns registriert sind, und dann machen wir weiter.“
+
+(Der Agent führt **Query_CRM_Contact** aus)
+
+- **Wenn gefunden:**\
+  **Agent:** „Perfekt, ich sehe Ihren Eintrag bereits. Machen wir mit den Informationen zu den Tarifen weiter.“
+- **Wenn nicht gefunden:**\
+  **Agent:** „Perfekt, ich finde Sie noch nicht. Ich lege Sie jetzt an und dann machen wir weiter.“
+
+(Der Agent führt **Create_CRM_Lead** aus)
+
+**Agent:** „Erledigt, Sie sind jetzt registriert. Jetzt gehen wir die Informationen zu den Tarifen durch.“
+
+### Sicherheitsregeln für den Ablauf (um Fehler zu vermeiden)
+
+- Führe keine Tools mit unbestätigten Daten aus.
+- Erfinde keine CRM-Ergebnisse: Nutze nur, was in der Antwort zurückkommt.
+- Wiederhole das Tool nicht ständig, wenn es fehlschlägt: Mach weiter und biete an, es später zu prüfen.
+- Vermische keine Abläufe: erst das CRM (prüfen/anlegen), dann der Rest des Prozesses.
+
+---
+
+## Beispiel 2: Links im richtigen Moment senden (während des Anrufs und am Ende)
+
+Hier ein vollständiges (erfundenes) Beispiel mit zwei Tools: ein Hauptlink während des Anrufs und ein Zugangslink am Ende.
+
+**Tool 1: Send_Registration_Link (Link A)**\
+**Ziel:** den Hauptlink senden, über den die Person den gesamten Hauptprozess abschließt.\
+**Wann es genutzt wird:** während des Anrufs, nur wenn die Person bestätigt, dass sie weitermachen möchte, und E-Mail + Telefon bestätigt sind.
+
+**Link A enthält (im Link selbst):**
+
+1. Erstregistrierung (Pflichtangaben)
+2. Prüfung/Bestätigung der Angaben
+3. Auswahl des Tarifs oder der Option
+4. Einrichtung der Zahlung (falls zutreffend)
+5. Annahme der Bedingungen oder Unterschrift (falls zutreffend)
+6. Hochladen von Dokumenten (falls zutreffend)
+7. Abschließende Bestätigung
+
+**Bedingungen für „Send_Registration_Link“:**
+
+- Die Person sagt klar, dass sie weitermachen möchte.
+- Die E-Mail ist bestätigt (wiederholt und von der Person bestätigt).
+- Das Telefon ist bestätigt (wiederholt und von der Person bestätigt).
+
+**Genauer Satz nach dem Senden von Link A (erfundenes Beispiel):**
+
+> „Öffnen Sie den Link, den wir Ihnen gerade geschickt haben, und scrollen Sie zum Abschnitt ‚Erstregistrierung‘. Füllen Sie Ihre Daten aus und sagen Sie mir Bescheid, wenn Sie weitermachen können.“
+
+**Regeln während des Anrufs (sehr wichtig):**
+
+- Bitte die Person nicht, Link A zu verlassen, um während des Anrufs anderswo Schritte zu erledigen.
+- Bitte sie nicht, sich in einem separaten Portal anzumelden, während sie den Hauptprozess durchläuft.
+- Führe die Person Schritt für Schritt, immer von dort aus, wo sie gerade ist.
+
+---
+
+**Tool 2: Send_Portal_Link (Link B)**\
+**Ziel:** den Zugangslink zum sicheren Portal senden, damit die Person den Fortschritt später prüfen kann.\
+**Wann es genutzt wird:** nur am Ende des Anrufs.
+
+**Genaue Sätze nach dem Senden von Link B (erfundenes Beispiel):**
+
+> „Hier ist der Link zu Ihrem sicheren Portal.“\
+> „Wir haben Ihnen außerdem E-Mails mit Ihren Zugangsdaten geschickt.“\
+> „Falls Sie sie nicht finden, suchen Sie in Ihrem Postfach nach unserem Firmennamen.“
+
+**Abschluss (erfundenes Beispiel):**
+
+> „Vielen Dank für Ihre Zeit. Wenn Sie bei einem Schritt Hilfe brauchen, sind wir für Sie da.“
+
+---
+
+## Schritt 4: Das Tool vor dem Live-Einsatz testen
+
+Bevor du das Tool mit Kunden nutzt, prüfe:
+
+- Die Anfrage läuft erfolgreich durch.
+- Die Felder kommen mit dem erwarteten Namen an (**Bezeichner**).
+- Die Pflichtfelder (**Erforderlich**) sind immer vorhanden.
+- Der Endpoint antwortet schnell und zuverlässig.
+
+Bewährt hat sich, den Webhook zuerst mit einer temporären Inspektions-URL zu testen (um zu sehen, was ankommt) und danach mit deinem echten Endpoint.
+
+### Kurze Checkliste (30 Sekunden)
+
+- Das Tool ist unter **Werkzeuge** erstellt und gespeichert.
+- Das Tool ist dem Agenten unter **KI-Agenten \> dein Agent \> Tools** zugewiesen.
+- Der **Konversations-Prompt** legt klar fest:
+  - welche Daten erfragt werden,
+  - wie sie bestätigt werden,
+  - wann das Tool ausgeführt wird,
+  - und was direkt danach gesagt wird.
 
 ---
 
 ## Häufige Fehler und wie du sie behebst
 
-| Problem                    | Wahrscheinliche Ursache      | Lösung                                             |
-| -------------------------- | ---------------------------- | -------------------------------------------------- |
-| Webhook-URL fehlt          | URL-Feld ist leer            | Füge einen gültigen HTTPS-Endpoint hinzu           |
-| Tool wird nicht ausgeführt | Nicht dem Agenten zugewiesen | Gehe zu agent \> Tools tab \> Tool erneut zuweisen |
-| Keine Daten empfangen      | API ist nicht erreichbar     | Teste die URL mit Webhook.site                     |
-| Timeout-Fehler             | API braucht zu lange         | Erhöhe das Webhook-Response-Timeout im Tool        |
+| Problem                              | Wahrscheinliche Ursache                                                          | Lösung                                                                                                          |
+| ------------------------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| Das Tool wird nicht ausgeführt       | Es ist dem Agenten nicht zugewiesen                                              | Gehe zu **KI-Agenten \> dein Agent \> Tools** und füge es hinzu                                                  |
+| Am Endpoint kommen keine Daten an    | Der Endpoint ist nicht erreichbar oder die URL ist falsch                        | Prüfe, ob die URL **HTTPS** nutzt und öffentlich erreichbar ist                                                  |
+| Es fehlen Felder                     | „Bezeichner / Erforderlich“ falsch definiert oder der Agent sammelt sie nicht    | Prüfe die **Body-Parameter** und passe den **Konversations-Prompt** an, damit er die Daten verlangt und bestätigt |
+| Es läuft zum falschen Zeitpunkt      | Der Konversations-Prompt legt keine klaren Bedingungen fest                      | Lege Regeln fest wie „nur am Ende“ oder „erst nach Bestätigung von E-Mail und Telefon“                          |
 
 ---
 
 ## Abschlusstipp
 
-Webhooks sind eine der leistungsstärksten Möglichkeiten, um zu erweitern, was dein Callin-Agent leisten kann.
+Für ein stabiles Ergebnis:
 
-Starte mit etwas Einfachem:\
-Richte einen `GET`-Webhook ein, um Kundendaten anhand der Telefonnummer abzurufen. Wenn das funktioniert, gehe zu fortgeschrittenen Flows mit **Zapier**, **n8n** oder **Make.com** über.
-
-Durch die Kombination von Echtzeit-Sprachautomatisierung und Automatisierung kann dein KI-Agent nicht nur sprechen — er kann Daten abrufen, Aktionen auslösen und Ergebnisse über all deine Tools hinweg vorantreiben.
+- Starte mit einem einfachen Tool.
+- Lege am Anfang nur wenige Pflichtfelder fest.
+- Sei im Konversations-Prompt eindeutig bei:
+  - den **Ausführungsbedingungen**,
+  - der **Reihenfolge des Ablaufs**,
+  - den **genauen Sätzen** (falls nötig),
+  - **und den Verboten** (was der Agent nicht tun darf).

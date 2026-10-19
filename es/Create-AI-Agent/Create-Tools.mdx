@@ -1,41 +1,46 @@
 ---
 title: "Herramientas"
-description: "Crea herramientas (webhooks) en Callin y úsalas desde el campo Conversation Prompt de tu agente para enviar o consultar datos en tiempo real durante una llamada."
+description: "Crea herramientas (webhooks) en Callin y úsalas desde el campo Prompt de conversación de tu agente para enviar o consultar datos en tiempo real durante una llamada."
 icon: "screwdriver-wrench"
 ---
 
 ## Visión general
 
-Las **herramientas** (webhooks) permiten que tu agente de Callin se conecte con sistemas externos **en tiempo real** mientras conversa con un usuario.
+Las **herramientas** (webhooks) permiten que tu agente de Callin se conecte con sistemas externos **en tiempo real** mientras habla con un usuario.
 
-Dicho de forma simple: una herramienta es una **acción automática** que el agente ejecuta para **preguntar** o **enviar** información a otro sistema (por ejemplo, tu CRM) sin cortar la conversación.
+Dicho de forma sencilla: una herramienta es una **acción automática** que el agente puede ejecutar para **consultar** o **enviar** información a otro sistema (por ejemplo, tu CRM) sin interrumpir la conversación.
 
 Con una herramienta, tu agente puede:
 
-- **Enviar datos** que el usuario dicta durante la llamada (por ejemplo: nombre, email, teléfono, motivo).
-- **Consultar datos** en un sistema externo (por ejemplo: estado, disponibilidad, verificación).
-- **Activar automatizaciones** en plataformas externas (CRM, tickets, mensajería, flujos, etc.).
+- **Enviar datos** que el usuario dice durante la llamada (por ejemplo: nombre, email, teléfono, motivo).
+- **Consultar datos** de un sistema externo (por ejemplo: estado, disponibilidad, verificación).
+- **Lanzar automatizaciones** en plataformas externas (CRM, tickets, mensajería, flujos de trabajo, etc.).
+
+La página **Herramientas** tiene dos pestañas:
+
+- **Herramientas**: tus herramientas webhook. Es lo que explica esta guía paso a paso.
+- **MCP**: conexiones a servidores MCP, que le dan a tu agente un conjunto completo de herramientas ya hechas de una sola vez (consulta «Conectar un servidor MCP», más abajo).
 
 En Callin, el funcionamiento correcto siempre sigue este orden:
 
-1. **Crear la herramienta** en la sección **Tools**.
-2. **Asignar la herramienta** al agente en **AI Agents**.
-3. **Indicar en el campo Conversation Prompt** cuándo debe ejecutarse y qué debe hacer el agente con el resultado.
+1. **Crear la herramienta** en la sección **Herramientas**.
+2. **Asignar la herramienta** al agente en **Agentes de IA**.
+3. **Indicar en el campo Prompt de conversación** cuándo debe ejecutarse y qué debe hacer el agente con el resultado.
 
-Si falta cualquiera de estos 3 pasos, la herramienta no se ejecutará como esperas.
+Si falta alguno de estos 3 pasos, la herramienta no se ejecutará como esperas.
 
 ---
 
 ## Antes de empezar (conceptos en 60 segundos)
 
-- **Tool / Herramienta**: conexión para que el agente pueda “hablar” con otro sistema (por ejemplo, un CRM).
+- **Herramienta**: una conexión que permite al agente “hablar” con otro sistema (por ejemplo, un CRM).
 - **URL**: la dirección a la que Callin envía la solicitud.
-- **GET**: se usa para **consultar** información (“¿existe este contacto?”).
-- **POST**: se usa para **enviar** información (“crea este lead con estos datos”).
-- **Body parameters**: los **datos** que el agente enviará (email, teléfono, nombre, etc.).
-- **Required**: campos **obligatorios**. Si falta uno, el resultado será incompleto o el flujo puede fallar.
+- **GET**: sirve para **consultar** información (“¿Existe este contacto?”).
+- **POST**: sirve para **enviar** información (“Crea este lead con estos datos.”). También están **PUT** (actualizar) y **DELETE** (eliminar).
+- **Parámetros del cuerpo**: los **datos** que el agente enviará (email, teléfono, nombre, etc.).
+- **Requerido**: campos **obligatorios**. Si falta alguno, el resultado puede quedar incompleto o el flujo puede fallar.
 
-> Si tu usuario no es técnico, quédate con esta idea: **la herramienta hace la conexión**, y el **Conversation Prompt decide cuándo se usa y con qué datos**.
+> Si tu usuario no es técnico, quédate con esta idea: **la herramienta crea la conexión**, y el **Prompt de conversación decide cuándo se usa y con qué datos**.
 
 ---
 
@@ -43,65 +48,165 @@ Si falta cualquiera de estos 3 pasos, la herramienta no se ejecutará como esper
 
 Para crear una herramienta en Callin:
 
-1. Entra en **Tools** dentro del panel de Callin.
-2. Haz clic en **\+ Add Tool**.
-3. Completa los campos principales:
+1. Ve a **Herramientas** en el panel de Callin ([abrir Herramientas](https://app.callin.io/tools)).
+2. Haz clic en **\+ Agregar herramienta**. Se abre el panel **Crear herramienta** a la derecha.
+3. Rellena los campos principales:
 
-- **Name**\
-  Usa un nombre corto, claro y estable. Recomendación: **verbo + objetivo**.\
-  Ejemplos: `consultar-contacto-crm`, `crear-lead-crm`, `enviar-enlace-registro`.
-- **Description**\
-  Explica **para qué sirve** y, sobre todo, **cuándo debe usarse** (en qué momento de la llamada).\
-  Ejemplo: “Consultar si el contacto existe en el CRM solo después de confirmar email y teléfono.”
-- **Method**
+- **Nombre**\
+  Usa un nombre corto, claro y estable. Recomendación: **verbo + objetivo**. Puede tener de 1 a 64 caracteres: solo letras, números, guiones bajos (`_`) o guiones (`-`), sin espacios.\
+  Ejemplos: `consultar_contacto_crm`, `crear_lead_crm`, `enviar_enlace_registro`.
+- **Descripción** (obligatoria)\
+  Explica **qué hace** y, sobre todo, **cuándo debe usarse** (en qué momento de la llamada).\
+  Ejemplo: “Comprueba si el contacto existe en el CRM solo después de confirmar el email y el teléfono.”
+- **Método**
   - Usa **GET** si vas a **consultar** información.
-  - Usa **POST** si vas a **enviar** información (lo más habitual cuando el agente recopila datos y los envía).
+  - Usa **POST** si vas a **enviar** información (lo más habitual cuando el agente recoge datos y los envía).
+  - Usa **PUT** para **actualizar** datos existentes, o **DELETE** para **eliminarlos**, si tu API funciona así.
 - **URL**\
-  Pega la URL HTTPS de tu API o el webhook de tu plataforma externa.
+  Pega la URL HTTPS de tu API o del webhook de tu plataforma externa.
 
-> Asegúrate de que la URL sea **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
+> Asegúrate de que la URL es **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
 
-### Configurar “Body parameters” (si usas POST)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-Si tu herramienta envía información (POST), define exactamente qué datos enviará:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Agregar herramienta → nombre, descripción, método y URL → ajustes de voz y sonido → un encabezado → un parámetro del cuerpo.
+</p>
 
-1. Ve a **Body parameters**.
-2. Haz clic en **Add property**.
-3. Configura cada campo:
+### Ajustes de tiempo y de voz
 
-- **Type**: el tipo de dato (texto, número, verdadero/falso, etc.).
-- **Identifier**: el nombre exacto del campo que espera tu endpoint (por ejemplo: `email`, `telefono`, `nombre_completo`).
-- **Required**: actívalo si el campo es obligatorio.
-- **Description**: explica qué representa el campo y el formato esperado (por ejemplo: “Teléfono en formato internacional” o “Email válido”).
+Debajo de la URL puedes decidir cómo se comporta la herramienta durante la conversación:
 
-> Recomendación práctica: si marcas un campo como **Required**, tu agente debe estar obligado (por instrucciones en el Conversation Prompt) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
+- **Tiempo de espera de respuesta (segundos)**: cuánto esperar a que tu endpoint responda antes de darse por vencido. Por defecto: **20 segundos**.
+- **Deshabilitar interrupciones**: marca esta casilla para que quien llama no pueda interrumpir al agente mientras se ejecuta la herramienta.
+- **Discurso previo a la herramienta**: **Automático** (el agente decide si dice algo antes de ejecutar la herramienta, según lo que suele tardar) o **Forzar** (el agente siempre habla antes de ejecutarla, por ejemplo “Dame un segundo mientras lo compruebo”).
+- **Modo de ejecución**: cuándo se ejecuta la herramienta respecto a lo que dice el agente:
+  - **Inmediato**: se ejecuta en el momento.
+  - **Después del discurso**: se ejecuta cuando el agente termina de hablar.
+  - **Asíncrono**: se ejecuta en segundo plano, así la conversación puede continuar mientras trabaja.
+- **Sonido de herramienta**: un sonido opcional mientras se ejecuta la herramienta: **Ninguno**, **Teclado** o **Música de ascensor 1–4**. Usa el botón de reproducir que tiene al lado para escucharlo.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-create.png"
+    alt="El panel Crear herramienta con el método POST y una URL de ejemplo, seguido de Tiempo de espera de respuesta, Deshabilitar interrupciones, Discurso previo a la herramienta, Modo de ejecución y Sonido de herramienta, y las secciones Encabezados y Parámetros del cuerpo."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el panel Crear herramienta con los ajustes de tiempo y de voz.
+</p>
+
+> **Consejo:** Si tu endpoint tarda unos segundos, pon **Discurso previo a la herramienta** en **Forzar** o añade un **Sonido de herramienta**, para que quien llama no oiga silencio.
+
+### Configurar los “Parámetros del cuerpo” (si usas POST)
+
+Si tu herramienta envía información (POST), define exactamente qué datos enviará. El agente (el LLM) recoge estos parámetros durante la llamada y los envía en el cuerpo de la solicitud.
+
+1. Ve a **Parámetros del cuerpo**.
+2. Si quieres, añade una **Descripción** general de los datos que envías.
+3. Haz clic en **Agregar propiedad**.
+4. Configura cada campo:
+
+- **Tipo de datos**: **String** (texto), **Número**, **Boolean** (verdadero/falso) o **Integer** (número entero).
+- **Identificador**: el nombre exacto del campo que espera tu endpoint (por ejemplo: `email`, `phone`, `full_name`).
+- **Requerido**: viene marcado por defecto. Desmárcalo si el campo es opcional.
+- **Tipo de valor**: de dónde sale el valor:
+  - **LLM Prompt**: el agente lo rellena a partir de la conversación. Añade una **Descripción** con lo que representa y el formato esperado (por ejemplo: “Teléfono en formato internacional” o “Dirección de email válida”). También puedes añadir **Valores de Enum (opcional)**: una lista de valores permitidos. Si los añades, el agente solo podrá elegir de esa lista.
+  - **Valor constante**: envía siempre el mismo valor fijo (por ejemplo, el nombre de tu campaña).
+  - **Variable dinámica**: envía el valor de una variable de la llamada. Elígela en **Nombre de variable**, por ejemplo `system__caller_id` (el número de quien llama), `system__called_number`, `system__conversation_id` o `system__time_utc`.
+
+Para enviar más campos, vuelve a hacer clic en **Agregar propiedad**. Para quitar uno, haz clic en **Eliminar**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-body.png"
+    alt="La sección Parámetros del cuerpo con una propiedad: tipo de datos String, identificador email, Requerido marcado, tipo de valor LLM Prompt, una descripción y el campo opcional de valores de Enum."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: un parámetro del cuerpo que el agente rellena a partir de la conversación (LLM Prompt).
+</p>
+
+> Recomendación práctica: si marcas un campo como **Requerido**, tienes que obligar al agente (mediante el Prompt de conversación) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
 
 ### Encabezados y autenticación (si aplica)
 
-Si tu endpoint requiere autenticación (por ejemplo, un token o una clave), deberás configurarlo siguiendo los requisitos exactos de tu API (qué encabezados necesita y con qué valores).
+Si tu endpoint requiere autenticación (por ejemplo, un token o una clave), añádela en **Encabezados**:
 
-4. Haz clic en **Save** para guardar la herramienta.
+1. Haz clic en **Agregar encabezado**.
+2. Rellena el **Nombre** (por ejemplo, `Authorization`) y el **Valor** (por ejemplo, `Bearer` seguido de tu clave), exactamente como lo pide tu API.
+
+Cada encabezado necesita un nombre y un valor. Quita los vacíos con el icono de la papelera; si no, no se podrá guardar la herramienta.
+
+4. Haz clic en **Guardar** para guardar la herramienta. Para descartar los cambios, haz clic en **Borrar**.
+
+### Conectar un servidor MCP (pestaña MCP)
+
+Un **servidor MCP** le da a tu agente un conjunto completo de herramientas de una sola vez (por ejemplo, todas las acciones de tu CRM), sin crearlas una a una. Para añadir uno:
+
+1. En **Herramientas**, abre la pestaña **MCP** y haz clic en **\+ Agregar MCP**.
+2. En **Información básica**, rellena el **Nombre** (por ejemplo, “CRM MCP”) y una **Descripción** de lo que ofrece el servidor.
+3. En **Configuración del servidor**, elige el **Tipo de servidor** (**SSE** o **Streamable HTTP**) y pega la **URL del servidor**.
+4. Si el servidor necesita autenticación, añádela en **Encabezados HTTP** con **Agregar encabezado**.
+5. Elige el **Modo de aprobación de herramientas**:
+   - **Preguntar siempre**: máxima seguridad. El agente pide permiso antes de cada uso de una herramienta.
+   - **Aprobación detallada de herramientas** (elegida por defecto): tú decides qué herramientas se desactivan y cuáles pueden ejecutarse automáticamente.
+   - **Sin aprobación**: el agente puede usar cualquier herramienta sin pedir permiso.
+6. Haz clic en **Crear**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Agregar MCP → nombre, descripción y URL del servidor → modo de aprobación, y después la pestaña Herramientas del agente, donde añades herramientas y MCP al agente.
+</p>
+
+> **Importante:** Conecta solo servidores MCP de confianza. Con **Sin aprobación**, el agente puede usar todas las herramientas de ese servidor sin preguntar.
 
 ---
 
 ## Paso 2 — Asignar la herramienta a un agente
 
-Crear la herramienta no es suficiente. Debes asignarla al agente:
+Crear la herramienta no es suficiente. Tienes que asignársela al agente:
 
-1. Ve a **AI Agents**.
-2. Selecciona el agente que vas a configurar.
-3. En el editor del agente, baja a la sección **Tools**.
-4. Haz clic en **\+ Add Tool**.
-5. Selecciona la herramienta y guarda.
+1. Ve a **Agentes de IA**.
+2. Selecciona el agente que quieres configurar.
+3. En el editor del agente, abre la pestaña **Herramientas**.
+4. En la subpestaña **Herramientas**, haz clic en **Agregar herramienta**.
+5. Busca tu herramienta y selecciónala. También puedes hacer clic en **Añadir herramienta webhook** para crear una nueva desde ahí.
+6. Guarda el agente.
+
+Para añadir un servidor MCP al agente, abre la subpestaña **MCP** y haz clic en **Agregar MCP**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-agent.png"
+    alt="La pestaña Herramientas del agente con las subpestañas Herramientas y MCP, la lista de Agregar herramienta con un buscador y el botón Añadir herramienta webhook, y las herramientas del sistema a la derecha."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Herramientas del agente. Agregar herramienta muestra las herramientas que creaste en la sección Herramientas.
+</p>
 
 **Comprobación rápida:**\
-Si la herramienta aparece listada en el agente, está asignada correctamente. Si no aparece, el agente no podrá ejecutarla.
+Si la herramienta aparece en la lista del agente, está bien asignada. Si no aparece, el agente no podrá ejecutarla.
+
+> **Consejo:** A la derecha de la misma pestaña tienes las **Herramientas del sistema** (Colgado inteligente, Cambio de idioma, Transferir a número…). Vienen integradas y solo tienes que activarlas. Consulta [Agentes de IA](/es/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
-## Paso 3 — Indicar cómo usar la herramienta en “Conversation Prompt”
+## Paso 3 — Indicar cómo usar la herramienta en “Prompt de conversación”
 
-Este es el paso más importante. El agente solo ejecutará la herramienta si el **Conversation Prompt** le deja claro:
+Este es el paso más importante. El agente solo ejecutará la herramienta si el **Prompt de conversación** le deja claro:
 
 - **Qué datos debe recopilar** antes de ejecutarla (campos obligatorios).
 - **Cómo confirmar esos datos** (para reducir errores).
@@ -142,7 +247,7 @@ Este ejemplo está pensado para un caso muy común: el agente habla con un usuar
   - y el **teléfono** esté confirmado (repetido y confirmado por el usuario).
 - Si el usuario duda o corrige un dato, el agente debe **actualizarlo y volver a confirmarlo** antes de continuar.
 
-### Qué escribir en el Conversation Prompt (texto inventado y fácil de adaptar)
+### Qué escribir en el Prompt de conversación (texto inventado y fácil de adaptar)
 
 **Objetivo del flujo:**\\
 
@@ -265,17 +370,17 @@ A continuación tienes un ejemplo completo (inventado) con dos herramientas: un 
 Antes de usar la herramienta con clientes, valida que:
 
 - La petición se ejecuta correctamente.
-- Los campos llegan con el nombre esperado (Identifier).
-- Los campos obligatorios (Required) están siempre presentes.
+- Los campos llegan con el nombre esperado (**Identificador**).
+- Los campos obligatorios (**Requerido**) están siempre presentes.
 - El endpoint responde de forma rápida y consistente.
 
 Una buena práctica es probar el webhook con una URL de inspección temporal (para ver qué llega) y luego con tu endpoint real.
 
 ### Checklist rápida (30 segundos)
 
-- La herramienta está creada y guardada en **Tools**.
-- La herramienta está asignada al agente en **AI Agents \> tu agente \> Tools**.
-- El **Conversation Prompt** indica claramente:
+- La herramienta está creada y guardada en **Herramientas**.
+- La herramienta está asignada al agente en **Agentes de IA \> tu agente \> Herramientas**.
+- El **Prompt de conversación** indica claramente:
   - qué datos pedir,
   - cómo confirmarlos,
   - cuándo ejecutar la herramienta,
@@ -287,10 +392,10 @@ Una buena práctica es probar el webhook con una URL de inspección temporal (pa
 
 | Problema                            | Causa probable                                                    | Solución                                                                                         |
 | ----------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| La herramienta no se ejecuta        | No está asignada al agente                                        | Ve a **AI Agents \> tu agente \> Tools** y añádela                                               |
+| La herramienta no se ejecuta        | No está asignada al agente                                        | Ve a **Agentes de IA \> tu agente \> Herramientas** y añádela                                               |
 | No llega información al endpoint    | Endpoint inaccesible o URL incorrecta                             | Verifica que la URL sea **HTTPS** y accesible públicamente                                       |
-| Faltan campos                       | “Identifier / Required” mal definidos o el agente no los recopila | Revisa **Body parameters** y ajusta el **Conversation Prompt** para exigir y confirmar los datos |
-| Se ejecuta en el momento equivocado | El Conversation Prompt no define condiciones claras               | Especifica reglas del tipo “solo al final”, “solo tras confirmar email y teléfono”               |
+| Faltan campos                       | “Identificador / Requerido” mal definidos o el agente no los recopila | Revisa los **Parámetros del cuerpo** y ajusta el **Prompt de conversación** para exigir y confirmar los datos |
+| Se ejecuta en el momento equivocado | El Prompt de conversación no define condiciones claras               | Especifica reglas del tipo “solo al final”, “solo tras confirmar email y teléfono”               |
 
 ---
 
@@ -300,7 +405,7 @@ Para conseguir un resultado estable:
 
 - Empieza con una herramienta simple.
 - Define pocos campos obligatorios al inicio.
-- En el Conversation Prompt, sé explícito con:
+- En el Prompt de conversación, sé explícito con:
   - **condiciones de ejecución**,
   - **orden del flujo**,
   - **frases exactas** (si aplican),
