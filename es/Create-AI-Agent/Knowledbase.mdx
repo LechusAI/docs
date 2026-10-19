@@ -6,149 +6,192 @@ icon: "books"
 
 ## Para qué sirve la Base de conocimiento
 
-La **Base de conocimiento** es el lugar donde guardas información que tus agentes de IA pueden usar durante las conversaciones, para que no dependan solo del prompt principal.
+La **Base de conocimiento** es el lugar donde guardas información que tus agentes de IA pueden usar durante las conversaciones, para que no dependan solo del prompt principal. Es ideal para contenido largo o detallado, como manuales, preguntas frecuentes o políticas, que no cabe en el prompt.
 
-Casos típicos de uso:
+Casos de uso habituales:
+
 - Responder preguntas sobre tu negocio (servicios, precios, políticas, horarios).
-- Guiar a los usuarios en procesos (pasos de reembolso, preparación de citas, onboarding).
-- Mantener respuestas consistentes entre varios agentes.
+- Guiar a los usuarios en procesos (pasos para un reembolso, preparación de una cita, alta de cliente).
+- Mantener respuestas coherentes entre varios agentes.
 
 Accede aquí: [Base de conocimiento](https://app.callin.io/knowledge-base)
+
+La página tiene dos pestañas, arriba a la derecha:
+
+- **Archivos**: documentos que subes (PDF, DOC, DOCX, TXT), organizados en grupos.
+- **Web**: páginas web (URLs) de las que aprende el agente, que puedes organizar en carpetas.
 
 > **Consejo:** Piensa en la Base de conocimiento como “material de referencia aprobado” que el agente puede consultar cuando una persona hace preguntas detalladas.
 
 ## Cómo se conecta con los agentes de IA
 
-No añades el contenido directamente dentro de un agente. En su lugar:
-1. Construyes el contenido de la Base de conocimiento aquí (Files o Web URLs).
-2. Luego, al editar un agente, **seleccionas el grupo** de Base de conocimiento que quieres que use ese agente.
+El contenido no se añade directamente dentro de un agente. En su lugar:
 
-> **Importante:** Si actualizas un grupo de Base de conocimiento y quieres que los cambios se reflejen en un agente existente, puede que tengas que volver al editor del agente y hacer clic en una acción de **Update** dentro de la sección de Base de conocimiento (esto puede variar según tu cuenta/plan).
+1. Creas el contenido aquí, en la Base de conocimiento (archivos o URLs web).
+2. Después, en el editor del agente, abres la pestaña **Base de conocimiento** y **añades los documentos** que quieres que use ese agente.
 
-## Base de conocimiento con Files
+Un mismo documento lo pueden usar varios agentes.
 
-La pestaña **Files** sirve para subir documentos de los que el agente debe aprender (por ejemplo: una política en PDF, un guion en DOCX o un FAQ en TXT). Los archivos se organizan en **grupos**, para que puedas asignar el conjunto correcto de documentos al agente correcto.
+## Base de conocimiento con archivos
+
+La pestaña **Archivos** sirve para subir documentos de los que debe aprender tu agente (por ejemplo: una política en PDF, un guion en DOCX o unas preguntas frecuentes en TXT). Los archivos se organizan en **grupos**, para mantener juntos los documentos relacionados.
+
+Junto a **Crear base de conocimiento** puedes cambiar entre dos vistas: una **lista** con todos tus archivos o tus **grupos** mostrados como carpetas. Usa **Buscar archivos...** para encontrar un documento.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/knowledgebase1.png"
-    alt="Página de Knowledge Base con la pestaña Files seleccionada y un estado vacío que indica que no se encontraron archivos"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: La Base de conocimiento en modo Files, donde subes documentos y los organizas en grupos.
+  Vídeo: pestaña Archivos → Crear base de conocimiento → nombre del grupo, y después la pestaña Base de conocimiento del agente → Añadir documento.
 </p>
 
 ### Crear un grupo de archivos y subir documentos
 
-1. Abre la pestaña **Files**.
-2. Haz clic en **Create Knowledge base**.
-3. En el modal de subida, escribe un **Group Name** (obligatorio).
+1. Abre la pestaña **Archivos**.
+2. Haz clic en **Crear base de conocimiento**.
+3. En la ventana **Subir archivos**, escribe un **Nombre del grupo** (obligatorio). Los archivos que subas quedarán agrupados con ese nombre.
 4. Añade tus documentos:
-   - Arrastra y suelta los archivos en el área de subida, o
-   - Haz clic en **Select Files** para buscarlos.
-5. Haz clic en **Upload Files** para finalizar.
+   - Arrastra y suelta los archivos en la zona de subida, o
+   - Haz clic en **Seleccionar archivos** para buscarlos.
+5. Haz clic en **Subir archivos** para terminar.
 
-Formatos y límites compatibles (tal como aparecen en el cargador):
+Formatos y límites admitidos (según el cargador):
+
 - PDF, DOC, DOCX, TXT
-- Máx. 5MB por archivo
+- Máximo 5MB por archivo
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledgebase1.png" alt="La ventana Subir archivos con el campo Nombre del grupo, la zona para arrastrar y soltar con el botón Seleccionar archivos, los formatos admitidos (PDF, DOC, DOCX, TXT, máximo 5MB por archivo) y el botón Subir archivos." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Subir archivos, donde pones nombre al grupo y añades tus documentos.
+</p>
 
 > **Error común:** Subir documentos no relacionados dentro del mismo grupo. Si tienes casos de uso diferentes (Ventas vs. Soporte), crea grupos separados para asignar el conocimiento correcto a cada agente.
 
 ### Administrar y actualizar archivos en un grupo
 
-Después de crear un grupo, puedes abrirlo para administrar lo que contiene:
-- Añadir más documentos (por ejemplo, usando **Add New Files**).
-- Ver la lista de **Current Files** ya incluidos.
-- Eliminar archivos que ya no quieres que el agente consulte.
+Cuando ya existe un grupo, puedes abrirlo para gestionar lo que contiene:
 
-> **Consejo:** Usa nombres de grupo claros como **“Políticas de soporte”**, **“Precios y planes”** o **“Guion de admisión de clínica”** para que sea fácil seleccionar el grupo correcto más adelante.
+- Añadir más documentos.
+- Ver la lista de **Archivos actuales** que ya incluye.
+- Quitar los archivos que ya no quieres que consulte el agente.
 
-## Base de conocimiento con Web URLs
+> **Consejo:** Usa nombres de grupo claros como **“Políticas de soporte”**, **“Precios y planes”** o **“Guion de admisión de clínica”** para que sea fácil encontrar los documentos correctos más adelante.
 
-La pestaña **Web** sirve para enseñar al agente usando páginas web. Creas un **grupo de URLs**, le das un título y añades una o varias URLs. Esto es útil cuando tu fuente de verdad está en tu web (centro de ayuda, documentación, políticas, landing pages).
+## Base de conocimiento con URLs web
+
+La pestaña **Web** sirve para que tu agente aprenda de páginas web. Es útil cuando tu información de referencia está en tu sitio web (centro de ayuda, documentación, páginas de políticas, landing pages).
+
+La lista muestra cada URL con su **Nombre**, su dirección y su **Última actualización**. Usa **Buscar en la base de conocimiento...** para encontrar una.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/kanowledgebase2.png"
-    alt="Página de Knowledge Base con la pestaña Web seleccionada, mostrando un estado vacío y el botón Add Web URL"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/kanowledgebase2.png" alt="La Base de conocimiento con la pestaña Web seleccionada: los botones Agregar URL y Crear carpeta, la barra de búsqueda y la lista de URLs con su fecha de última actualización y un menú de acciones." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: La Base de conocimiento en modo Web, donde añades y gestionas grupos de URLs de tu sitio.
+  Captura: la Base de conocimiento en modo Web, con Agregar URL, Crear carpeta y la lista de URLs.
 </p>
 
-### Crear un grupo de URLs
+### Agregar una URL
 
 1. Abre la pestaña **Web**.
-2. Haz clic en **Add Web URL**.
-3. Completa:
-   - **Title** (obligatorio): el nombre del grupo de URLs (este título se usa para todas las URLs del grupo).
-   - **URL #1**: pega el primer enlace de la página web.
-4. (Opcional) Haz clic en **Add Another URL** para incluir más páginas.
-5. Haz clic en **Add URL** para guardar el grupo.
+2. Haz clic en **Agregar URL**.
+3. Rellena:
+   - **Carpeta superior**: dónde guardarla. Por defecto, **Base de conocimiento (nivel superior)**.
+   - **Título** (obligatorio): un nombre claro para esta página (por ejemplo, “Página de precios”).
+   - **URL** (obligatoria): el enlace a la página web.
+4. (Opcional) Activa la **Actualización automática** para que Callin vuelva a leer la página cada cierto tiempo. Después elige el **Intervalo** y la **Unidad de intervalo** (**Días** u **Horas**). Por defecto, cada **7 días**.
+5. Haz clic en **Agregar URL** para guardarla.
 
-> **Consejo:** Mantén los grupos de URLs enfocados. Por ejemplo, un grupo para URLs de **“Precios y facturación”** y otro distinto para URLs de **“Política de reembolsos”**.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-### Editar o eliminar un grupo de URLs
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Agregar URL → título y URL → actualización automática con su intervalo → Crear carpeta → Ver detalles de una URL.
+</p>
 
-Una vez creado un grupo de URLs, puedes gestionarlo desde la lista:
-- **Editar** el título del grupo y las URLs.
-- **Eliminar** el grupo si ya no lo necesitas.
-- Abrir el grupo para ver lo que incluye.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledge-base-url.png" alt="La ventana Agregar URL con Carpeta superior, Título, URL, la actualización automática activada, el intervalo en 7 y la unidad en días." style={{ width:"100%", display:"block" }} />
+</div>
 
-Dentro del modal de edición, puedes:
-- Actualizar el **Title**
-- Añadir o eliminar URLs individuales
-- Hacer clic en **Save** para aplicar cambios
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Agregar URL con la actualización automática activada.
+</p>
 
-> **Importante:** Si cambias las URLs y necesitas que un agente existente use el contenido actualizado, puede que tengas que reabrir el editor del agente y aplicar un **Update** en la sección de Base de conocimiento (esto puede variar según tu cuenta/plan).
+> **Consejo:** Activa la **Actualización automática** en las páginas que cambian a menudo, como los precios o el horario, para que tu agente responda siempre con la información más reciente.
+
+### Organizar las URLs en carpetas
+
+Para mantener juntas las páginas relacionadas (por ejemplo, todas las páginas de tu web), haz clic en **Crear carpeta**:
+
+1. Elige la **Carpeta superior** (o deja **Base de conocimiento (nivel superior)**).
+2. Escribe el **Nombre de la carpeta** (obligatorio).
+3. (Opcional) Activa la **Actualización automática** para actualizar todas las URLs de la carpeta con el intervalo que elijas.
+4. Haz clic en **Crear carpeta**.
+
+Después, al agregar una URL, elige esa carpeta en **Carpeta superior**.
+
+> **Consejo:** Mantén las carpetas enfocadas. Por ejemplo, una carpeta para las páginas de **“Precios y facturación”** y otra distinta para las de **“Política de reembolsos”**.
+
+### Ver, actualizar o eliminar una URL
+
+Haz clic en **⋯**, a la derecha de una URL, para abrir su menú:
+
+- **Ver detalles**: abre un panel con el **ID de documento**, la **Última actualización**, el **Tamaño del documento**, la **URL de origen** y la **Actualización automática**, y a la derecha el **Contenido de la URL** (el texto que tu agente lee realmente de esa página). Haz clic en **Actualizar contenido** para volver a leer la página en ese momento.
+- **Copiar ID**: copia el ID del documento.
+- **Eliminar**: quita la URL de la Base de conocimiento.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledge-base-details.png" alt="El panel de detalles de una URL con ID de documento, última actualización, tamaño del documento, URL de origen y actualización automática a la izquierda, y el contenido de la URL con el botón Actualizar contenido a la derecha." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: Ver detalles muestra el texto que el agente lee de la página.
+</p>
+
+> **Importante:** Revisa el **Contenido de la URL** después de agregar una página. Si está vacío o muestra un texto que no es (por ejemplo, un aviso de cookies), el agente no podrá usar esa página. Prueba con otra URL que tenga la misma información.
 
 ## Seleccionar una Base de conocimiento para un agente
 
-Después de crear tus grupos (Files o Web URLs), los asignas a un agente durante la edición del agente.
+Cuando ya tienes tus documentos (archivos o URLs web), los asignas a un agente desde el editor del agente.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/knowledgebase3.png"
-    alt="Panel Select Knowledge Base al editar un agente, con un selector de origen Files o Web URLs y una lista de grupos"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/knowledgebase3.png" alt="La pestaña Base de conocimiento del agente con la lista de Añadir documento abierta: un buscador, los documentos de la Base de conocimiento y un botón Añadir documento abajo." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Selección de un grupo de Base de conocimiento al editar un agente de IA (elige Files o Web URLs y luego un grupo).
+  Captura: añadir un documento de la Base de conocimiento mientras editas un agente de IA.
 </p>
 
 ### Asignar un grupo a un agente
 
-1. Ve a **AI Agents** y abre un agente para editarlo.
-2. Busca la sección **Knowledge Base**.
-3. Haz clic en **Add**.
-4. Elige el **Source**:
-   - **Files**, o
-   - **Web URLs**
-5. Selecciona un **Group** (por ejemplo: “Políticas de soporte” o “Docs del sitio de la empresa”).
-6. Haz clic en **Select** para asignarlo al agente.
+1. Ve a **Agentes de IA** y abre un agente para editarlo.
+2. Abre la pestaña **Base de conocimiento**.
+3. Haz clic en **Añadir documento**.
+4. Usa **Buscar documentos...** para encontrar el documento que quieres y haz clic en él para añadirlo al agente.
+5. Repite el paso para cada documento que necesite el agente.
 
-También puede aparecer una opción **Refresh** para recargar la lista de grupos.
+Si el documento que necesitas todavía no existe, haz clic en **Añadir documento** al final de la lista. Te lleva a la página **Base de conocimiento** para crearlo.
 
-> **Consejo:** Si tienes varios agentes con roles distintos, asigna a cada agente un grupo de Base de conocimiento diferente para que se mantengan enfocados y no respondan fuera de su alcance.
+> **Consejo:** Si tienes varios agentes con roles distintos, dale a cada uno solo los documentos que necesita, para que se mantengan enfocados y no respondan fuera de su alcance.
 
 ## Ejemplo práctico
 
 Imagina que tienes una clínica dental y dos agentes:
-- **Agente de recepción** (citas, horarios, cómo llegar)
-- **Agente de facturación** (precios, facturas, preguntas de seguros)
 
-Una buena configuración podría ser:
-- Grupo de archivos: **“FAQs de la clínica (TXT)”** para respuestas rápidas y guiones
-- Grupo de URLs web: **“Páginas de precios y seguros”** apuntando a páginas públicas de tu sitio
+- **Agente de recepción** (citas, horario, cómo llegar)
+- **Agente de facturación** (precios, facturas, preguntas sobre seguros)
 
-Luego:
-- El **Agente de recepción** usa el grupo de FAQs.
-- El **Agente de facturación** usa el grupo de URLs de precios y seguros.
+Una buena configuración sería:
+
+- Grupo de archivos: **“Preguntas frecuentes de la clínica (TXT)”** para respuestas rápidas y guiones
+- Carpeta web: **“Páginas de precios y seguros”** con las páginas públicas de tu web, con la **Actualización automática** activada
+
+Así:
+
+- El **Agente de recepción** recibe los documentos de preguntas frecuentes.
+- El **Agente de facturación** recibe las páginas de precios y seguros.
