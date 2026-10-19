@@ -6,149 +6,192 @@ icon: "books"
 
 ## Wofür die Wissensdatenbank gedacht ist
 
-Die **Wissensdatenbank** ist der Ort, an dem Sie Informationen speichern, die Ihre KI-Agenten während Gesprächen nutzen können – damit sie nicht nur vom Haupt-Prompt abhängen.
+Die **Wissensdatenbank** ist der Ort, an dem Sie Informationen speichern, die Ihre KI-Agenten während Gesprächen nutzen können – damit sie nicht nur vom Haupt-Prompt abhängen. Sie eignet sich für lange oder detaillierte Inhalte wie Handbücher, FAQs oder Richtlinien, die nicht in den Prompt passen.
 
 Typische Anwendungsfälle:
-- Fragen zu Ihrem Unternehmen beantworten (Leistungen, Preise, Richtlinien, Öffnungszeiten).
-- Nutzer durch Prozesse führen (Erstattungsschritte, Terminvorbereitung, Onboarding).
-- Konsistente Antworten über mehrere Agenten hinweg sicherstellen.
 
-Zugriff hier: [Wissensdatenbank](https://app.callin.io/knowledge-base)
+- Fragen zu Ihrem Unternehmen beantworten (Leistungen, Preise, Richtlinien, Öffnungszeiten).
+- Nutzer durch Abläufe führen (Schritte zur Erstattung, Terminvorbereitung, Onboarding).
+- Einheitliche Antworten über mehrere Agenten hinweg sicherstellen.
+
+Hier geht es zur Seite: [Wissensdatenbank](https://app.callin.io/knowledge-base)
+
+Die Seite hat oben rechts zwei Tabs:
+
+- **Dateien**: Dokumente, die Sie hochladen (PDF, DOC, DOCX, TXT), in Gruppen organisiert.
+- **Web**: Webseiten (URLs), aus denen der Agent lernt und die Sie in Ordnern organisieren können.
 
 > **Tipp:** Sehen Sie die Wissensdatenbank als „freigegebenes Referenzmaterial“, das der Agent heranziehen kann, wenn jemand detaillierte Fragen stellt.
 
 ## Wie das mit KI-Agenten zusammenhängt
 
-Sie fügen Inhalte nicht direkt in einen Agenten ein. Stattdessen:
-1. Sie bauen Ihre Wissensdatenbank hier auf (Files oder Web URLs).
-2. Danach wählen Sie beim Bearbeiten eines Agenten die **Gruppe** aus, die dieser Agent verwenden soll.
+Sie fügen die Inhalte nicht direkt in einen Agenten ein. Stattdessen:
 
-> **Wichtig:** Wenn Sie eine Wissensdatenbank-Gruppe aktualisieren und die Änderungen bei einem bestehenden Agenten sichtbar sein sollen, müssen Sie möglicherweise zum Agent-Editor zurückkehren und in der Wissensdatenbank-Sektion eine **Update**-Aktion ausführen (kann je nach Konto/Plan variieren).
+1. Erstellen Sie die Inhalte hier in der Wissensdatenbank (Dateien oder Web-URLs).
+2. Danach öffnen Sie im Agenten-Editor den Tab **Wissensdatenbank** und **fügen die Dokumente hinzu**, die dieser Agent nutzen soll.
 
-## Wissensdatenbank mit Files
+Dasselbe Dokument kann von mehreren Agenten genutzt werden.
 
-Der Tab **Files** ist zum Hochladen von Dokumenten gedacht, aus denen der Agent lernen soll (z. B. eine Richtlinie als PDF, ein Skript als DOCX oder eine FAQ als TXT). Dateien werden in **Gruppen** organisiert, damit Sie dem richtigen Agenten den richtigen Dokumentensatz zuweisen können.
+## Wissensdatenbank mit Dateien
+
+Im Tab **Dateien** laden Sie Dokumente hoch, aus denen Ihr Agent lernen soll (zum Beispiel eine Richtlinie als PDF, ein Skript als DOCX oder eine FAQ als TXT). Dateien werden in **Gruppen** organisiert, damit zusammengehörige Dokumente beieinander bleiben.
+
+Neben **Wissensdatenbank erstellen** können Sie zwischen zwei Ansichten wechseln: einer **Liste** aller Dateien oder Ihren **Gruppen** als Ordner. Mit **Dateien suchen...** finden Sie ein Dokument.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/knowledgebase1.png"
-    alt="Knowledge-Base-Seite mit ausgewähltem Tab Files und einem leeren Zustand, der anzeigt, dass keine Dateien gefunden wurden"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Wissensdatenbank im Files-Modus, in dem Sie Dokumente hochladen und in Gruppen organisieren.
+  Video: Tab Dateien → Wissensdatenbank erstellen → Gruppenname, danach der Tab Wissensdatenbank des Agenten → Dokument hinzufügen.
 </p>
 
 ### Eine Dateigruppe erstellen und Dokumente hochladen
 
-1. Öffnen Sie den Tab **Files**.
-2. Klicken Sie auf **Create Knowledge base**.
-3. Geben Sie im Upload-Modal einen **Group Name** ein (erforderlich).
+1. Öffnen Sie den Tab **Dateien**.
+2. Klicken Sie auf **Wissensdatenbank erstellen**.
+3. Geben Sie im Fenster **Dateien hochladen** einen **Gruppennamen** ein (Pflichtfeld). Die hochgeladenen Dateien werden unter diesem Namen gruppiert.
 4. Fügen Sie Ihre Dokumente hinzu:
-   - Dateien per Drag-and-Drop in den Upload-Bereich ziehen, oder
-   - **Select Files** klicken, um sie auszuwählen.
-5. Klicken Sie auf **Upload Files**, um abzuschließen.
+   - Ziehen Sie die Dateien per Drag & Drop in den Upload-Bereich, oder
+   - Klicken Sie auf **Dateien auswählen**, um sie auszuwählen.
+5. Klicken Sie auf **Dateien hochladen**, um abzuschließen.
 
-Unterstützte Formate und Limits (wie im Uploader angezeigt):
+Unterstützte Formate und Limits (wie im Upload-Fenster angezeigt):
+
 - PDF, DOC, DOCX, TXT
 - Max. 5MB pro Datei
 
-> **Häufiger Fehler:** Mehrere themenfremde Dokumente in eine Gruppe zu packen. Wenn Sie unterschiedliche Anwendungsfälle haben (Sales vs. Support), erstellen Sie getrennte Gruppen, damit jeder Agent das passende Wissen bekommt.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledgebase1.png" alt="Das Fenster Dateien hochladen mit dem Feld Gruppenname, dem Drag-and-drop-Bereich mit der Schaltfläche Dateien auswählen, den unterstützten Formaten (PDF, DOC, DOCX, TXT, max. 5MB pro Datei) und der Schaltfläche Dateien hochladen." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Das Fenster Dateien hochladen, in dem Sie die Gruppe benennen und Ihre Dokumente hinzufügen.
+</p>
+
+> **Häufiger Fehler:** Mehrere themenfremde Dokumente in eine Gruppe zu packen. Wenn Sie unterschiedliche Anwendungsfälle haben (Vertrieb vs. Support), erstellen Sie getrennte Gruppen, damit jeder Agent das passende Wissen bekommt.
 
 ### Dateien in einer Gruppe verwalten und aktualisieren
 
-Sobald eine Gruppe existiert, können Sie sie öffnen und den Inhalt verwalten:
-- Weitere Dokumente hinzufügen (z. B. über **Add New Files**).
-- Die Liste der **Current Files** ansehen.
+Sobald eine Gruppe existiert, können Sie sie öffnen und ihren Inhalt verwalten:
+
+- Weitere Dokumente hinzufügen.
+- Die Liste der **Aktuellen Dateien** ansehen, die bereits enthalten sind.
 - Dateien entfernen, die der Agent nicht mehr nutzen soll.
 
-> **Tipp:** Verwenden Sie klare Gruppennamen wie **„Support-Richtlinien“**, **„Preise & Pläne“** oder **„Klinik-Intake-Skript“**, damit Sie später schnell die richtige Gruppe auswählen.
+> **Tipp:** Verwenden Sie klare Gruppennamen wie **„Support-Richtlinien“**, **„Preise & Tarife“** oder **„Aufnahmeskript der Praxis“**, damit Sie später schnell die richtigen Dokumente finden.
 
-## Wissensdatenbank mit Web URLs
+## Wissensdatenbank mit Web-URLs
 
-Der Tab **Web** ist dafür da, den Agenten mit Webseiten zu versorgen. Sie erstellen eine **URL-Gruppe**, vergeben einen Titel und fügen eine oder mehrere URLs hinzu. Das ist hilfreich, wenn Ihre „Single Source of Truth“ auf Ihrer Website liegt (Help Center, Doku, Richtlinien, Landingpages).
+Im Tab **Web** lernt Ihr Agent aus Webseiten. Das ist hilfreich, wenn Ihre maßgeblichen Informationen auf Ihrer Website liegen (Hilfecenter, Dokumentation, Richtlinienseiten, Landingpages).
+
+Die Liste zeigt jede URL mit **Name**, Adresse und **Zuletzt aktualisiert**. Mit **Wissensdatenbank durchsuchen...** finden Sie eine URL.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/kanowledgebase2.png"
-    alt="Knowledge-Base-Seite mit ausgewähltem Tab Web, leerem Zustand und der Schaltfläche Add Web URL"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/kanowledgebase2.png" alt="Die Wissensdatenbank mit ausgewähltem Tab Web: die Schaltflächen URL hinzufügen und Ordner erstellen, die Suche und die Liste der URLs mit Datum der letzten Aktualisierung und einem Aktionsmenü." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Wissensdatenbank im Web-Modus, in dem Sie Website-URLs als Gruppen hinzufügen und verwalten.
+  Screenshot: Die Wissensdatenbank im Web-Modus mit URL hinzufügen, Ordner erstellen und der URL-Liste.
 </p>
 
-### Eine URL-Gruppe erstellen
+### Eine URL hinzufügen
 
 1. Öffnen Sie den Tab **Web**.
-2. Klicken Sie auf **Add Web URL**.
-3. Tragen Sie ein:
-   - **Title** (erforderlich): der Name der URL-Gruppe (dieser Titel gilt für alle URLs in der Gruppe).
-   - **URL #1**: fügen Sie den Link zur ersten Webseite ein.
-4. (Optional) Klicken Sie auf **Add Another URL**, um weitere Seiten hinzuzufügen.
-5. Klicken Sie auf **Add URL**, um die Gruppe zu speichern.
+2. Klicken Sie auf **URL hinzufügen**.
+3. Füllen Sie aus:
+   - **Übergeordneter Ordner**: wo die URL gespeichert wird. Standardmäßig **Wissensdatenbank (oberste Ebene)**.
+   - **Titel** (Pflichtfeld): ein klarer Name für diese Seite (zum Beispiel „Preisseite“).
+   - **URL** (Pflichtfeld): der Link zur Webseite.
+4. (Optional) Aktivieren Sie die **Automatische Aktualisierung**, damit Callin die Seite regelmäßig neu einliest. Wählen Sie dann das **Intervall** und die **Einheit** (**Tage** oder **Stunden**). Standardmäßig alle **7 Tage**.
+5. Klicken Sie auf **URL hinzufügen**, um sie zu speichern.
 
-> **Tipp:** Halten Sie URL-Gruppen fokussiert. Zum Beispiel eine Gruppe für **„Preise & Abrechnung“** und eine andere für **„Erstattungsrichtlinie“**.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-### Eine URL-Gruppe bearbeiten oder löschen
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: URL hinzufügen → Titel und URL → automatische Aktualisierung mit Intervall → Ordner erstellen → Details einer URL anzeigen.
+</p>
 
-Sobald eine URL-Gruppe erstellt wurde, können Sie sie in der Liste verwalten:
-- Den Gruppentitel und die URLs **bearbeiten**.
-- Die Gruppe **löschen**, wenn Sie sie nicht mehr benötigen.
-- Die Gruppe öffnen, um zu sehen, was enthalten ist.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledge-base-url.png" alt="Das Fenster URL hinzufügen mit Übergeordneter Ordner, Titel, URL, aktivierter automatischer Aktualisierung, Intervall 7 und Einheit Tage." style={{ width:"100%", display:"block" }} />
+</div>
 
-Im Bearbeitungs-Modal können Sie:
-- Den **Title** aktualisieren
-- Einzelne URLs hinzufügen oder entfernen
-- Auf **Save** klicken, um Änderungen zu übernehmen
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Das Fenster URL hinzufügen mit aktivierter automatischer Aktualisierung.
+</p>
 
-> **Wichtig:** Wenn Sie URLs ändern und ein bestehender Agent die aktualisierten Inhalte nutzen soll, müssen Sie möglicherweise den Agent-Editor erneut öffnen und in der Wissensdatenbank-Sektion ein **Update** anwenden (kann je nach Konto/Plan variieren).
+> **Tipp:** Aktivieren Sie die **Automatische Aktualisierung** für Seiten, die sich oft ändern, etwa Preise oder Öffnungszeiten, damit Ihr Agent immer mit den aktuellsten Informationen antwortet.
+
+### URLs in Ordnern organisieren
+
+Um zusammengehörige Seiten zu bündeln (zum Beispiel alle Seiten Ihrer Website), klicken Sie auf **Ordner erstellen**:
+
+1. Wählen Sie den **Übergeordneten Ordner** (oder lassen Sie **Wissensdatenbank (oberste Ebene)**).
+2. Geben Sie den **Ordnernamen** ein (Pflichtfeld).
+3. (Optional) Aktivieren Sie die **Automatische Aktualisierung**, um alle URLs im Ordner im gewählten Intervall zu aktualisieren.
+4. Klicken Sie auf **Ordner erstellen**.
+
+Wenn Sie danach eine URL hinzufügen, wählen Sie diesen Ordner unter **Übergeordneter Ordner**.
+
+> **Tipp:** Halten Sie Ordner fokussiert. Zum Beispiel ein Ordner für die Seiten **„Preise & Abrechnung“** und ein anderer für **„Erstattungsrichtlinie“**.
+
+### Eine URL ansehen, aktualisieren oder löschen
+
+Klicken Sie rechts neben einer URL auf **⋯**, um ihr Menü zu öffnen:
+
+- **Details anzeigen**: öffnet ein Fenster mit **Dokument-ID**, **Zuletzt aktualisiert**, **Dokumentgröße**, **Quell-URL** und **Automatische Aktualisierung**, und rechts mit dem **URL-Inhalt** (dem Text, den Ihr Agent tatsächlich von dieser Seite liest). Mit **Inhalt aktualisieren** wird die Seite sofort neu eingelesen.
+- **ID kopieren**: kopiert die Dokument-ID.
+- **Löschen**: entfernt die URL aus der Wissensdatenbank.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/knowledge-base-details.png" alt="Das Detailfenster einer URL mit Dokument-ID, Zuletzt aktualisiert, Dokumentgröße, Quell-URL und automatischer Aktualisierung links und dem URL-Inhalt mit der Schaltfläche Inhalt aktualisieren rechts." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Details anzeigen zeigt den Text, den der Agent von der Seite liest.
+</p>
+
+> **Wichtig:** Prüfen Sie nach dem Hinzufügen einer Seite den **URL-Inhalt**. Ist er leer oder zeigt er den falschen Text (zum Beispiel einen Cookie-Hinweis), kann der Agent diese Seite nicht nutzen. Versuchen Sie eine andere URL mit denselben Informationen.
 
 ## Eine Wissensdatenbank für einen Agenten auswählen
 
-Nachdem Sie Ihre Gruppen (Files oder Web URLs) erstellt haben, ordnen Sie sie einem Agenten während der Bearbeitung zu.
+Sobald Ihre Dokumente angelegt sind (Dateien oder Web-URLs), weisen Sie sie im Agenten-Editor einem Agenten zu.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/knowledgebase3.png"
-    alt="Select-Knowledge-Base-Panel beim Bearbeiten eines Agenten, mit Auswahl der Quelle Files oder Web URLs und einer Gruppenliste"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/knowledgebase3.png" alt="Der Tab Wissensdatenbank des Agenten mit geöffneter Liste Dokument hinzufügen: ein Suchfeld, die Dokumente der Wissensdatenbank und unten eine Schaltfläche Dokument hinzufügen." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Auswahl einer Wissensdatenbank-Gruppe beim Bearbeiten eines KI-Agenten (Files oder Web URLs wählen und anschließend eine Gruppe auswählen).
+  Screenshot: Ein Dokument aus der Wissensdatenbank beim Bearbeiten eines KI-Agenten hinzufügen.
 </p>
 
 ### Eine Gruppe einem Agenten zuweisen
 
-1. Gehen Sie zu **AI Agents** und öffnen Sie einen Agenten zur Bearbeitung.
-2. Suchen Sie den Abschnitt **Knowledge Base**.
-3. Klicken Sie auf **Add**.
-4. Wählen Sie die **Source**:
-   - **Files**, oder
-   - **Web URLs**
-5. Wählen Sie eine **Group** (z. B. „Support-Richtlinien“ oder „Website-Dokumentation“).
-6. Klicken Sie auf **Select**, um die Gruppe dem Agenten zuzuweisen.
+1. Gehen Sie zu **KI-Agenten** und öffnen Sie einen Agenten zum Bearbeiten.
+2. Öffnen Sie den Tab **Wissensdatenbank**.
+3. Klicken Sie auf **Dokument hinzufügen**.
+4. Suchen Sie mit **Dokumente suchen...** das gewünschte Dokument und klicken Sie darauf, um es dem Agenten hinzuzufügen.
+5. Wiederholen Sie das für jedes Dokument, das der Agent braucht.
 
-Möglicherweise sehen Sie außerdem **Refresh**, um die Gruppenliste neu zu laden.
+Wenn das benötigte Dokument noch nicht existiert, klicken Sie unten in der Liste auf **Dokument hinzufügen**. Sie gelangen dann zur Seite **Wissensdatenbank**, um es anzulegen.
 
-> **Tipp:** Wenn Sie mehrere Agenten mit unterschiedlichen Rollen haben, weisen Sie jedem Agenten eine eigene Wissensdatenbank-Gruppe zu, damit sie fokussiert bleiben und nicht außerhalb ihres Aufgabenbereichs antworten.
+> **Tipp:** Wenn Sie mehrere Agenten mit unterschiedlichen Rollen haben, geben Sie jedem nur die Dokumente, die er braucht, damit sie fokussiert bleiben und nicht außerhalb ihres Aufgabenbereichs antworten.
 
 ## Praxisbeispiel
 
-Angenommen, Sie betreiben eine Zahnarztpraxis mit zwei Agenten:
-- **Empfangs-Agent** (Termine, Öffnungszeiten, Wegbeschreibung)
+Angenommen, Sie betreiben eine Zahnarztpraxis und haben zwei Agenten:
+
+- **Empfangs-Agent** (Termine, Öffnungszeiten, Anfahrt)
 - **Abrechnungs-Agent** (Preise, Rechnungen, Versicherungsfragen)
 
-Eine sinnvolle Struktur wäre:
+Ein gutes Setup könnte so aussehen:
+
 - Dateigruppe: **„Praxis-FAQs (TXT)“** für schnelle Antworten und Skripte
-- Web-URL-Gruppe: **„Preis- & Versicherungsseiten“** mit Links auf öffentliche Seiten Ihrer Website
+- Web-Ordner: **„Preis- & Versicherungsseiten“** mit den öffentlichen Seiten Ihrer Website, mit aktivierter **Automatischer Aktualisierung**
 
 Dann:
-- Der **Empfangs-Agent** nutzt die FAQ-Gruppe.
-- Der **Abrechnungs-Agent** nutzt die Preis- & Versicherungs-URLs.
+
+- Der **Empfangs-Agent** erhält die FAQ-Dokumente.
+- Der **Abrechnungs-Agent** erhält die Preis- und Versicherungsseiten.
