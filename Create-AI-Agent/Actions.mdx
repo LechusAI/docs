@@ -6,16 +6,16 @@ icon: "puzzle-piece"
 
 ## Actions
 
-Actions is the place where you connect Callin to other platforms so your AI Agents can **schedule**, **sync customer data**, **trigger automations**, and **send updates**—without doing everything manually.
+Actions is the place where you connect Callin to other platforms so your AI Agents can **schedule**, **sync customer data**, **trigger automations**, and **send updates**—without doing everything manually. In the app, the page is called **Integrations**.
 
 [Open Actions in the Console](https://app.callin.io/actions)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions1.png" alt="The Actions page in Callin, showing integration cards like Google Calendar, Cal.com, GoHighLevel, Zoho, n8n, Zapier, Make.com, Slack (Coming Soon), and Custom Integration." style={{ width:"100%", display:"block" }} />
+  <img src="/images/actions1.png" alt="The Integrations page in Callin, with the search bar, the category filters (All, Calendar, CRM, Automation, Communication, AI, Custom) and integration cards like Claude, Google Calendar, Cal.com, GoHighLevel, Zoho, N8N, Zapier, Make.com and WhatsApp." style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Actions hub where you can connect external platforms to Callin. Each card shows whether it’s connected and what button to use (Connect, View, Manage, etc.).
+  Screenshot: The Integrations page, where you connect external platforms to Callin. Each card shows its category, whether it’s connected and the button to use.
 </p>
 
 > **Tip:** If you’re not sure where to start, begin with **Calendar** (for booking) or **Automation** (for workflows like follow-ups and CRM updates).
@@ -25,19 +25,44 @@ Actions is the place where you connect Callin to other platforms so your AI Agen
 1. Open your Callin Console.
 2. In the left menu, go to **Integrations → Actions**.
 
+At the top of the page you’ll find:
+
+- **Search integrations**: type a name (for example, “Google”, “Slack” or “Zapier”).
+- **Category filters**: **All**, **Calendar**, **CRM**, **Automation**, **Communication**, **AI** and **Custom**.
+- **Request integration**: ask for a platform that isn’t on the list yet.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/actions-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: the Integrations page, the details of a connected integration and the Calendar, CRM, Automation and Communication filters.
+</p>
+
 ## How connecting works
 
-Each integration card shows a status and an action button:
+Each integration card shows its category, a short description and a status or button:
 
-- **Not Connected** → You’ll usually see **Connect**.
-- **Connected** → You may see **View** and **Disconnect** (example: Google Calendar).
-- **Coming Soon** → The integration is listed but not available to connect yet (example: Slack).
-- Some platforms may use a different button label (example: **Manage** for Custom Integration, or **Go to n8n**).
+- **Connect** → The integration isn’t connected yet. Click it to start.
+- **Connected** with **Manage** → The integration is already connected (example: Google Calendar).
+- **Coming soon** → The integration is listed but not available to connect yet (example: WhatsApp and Slack).
+- **New** → A recently added integration (example: Claude).
+- Some platforms use a different button label (example: **Go to n8n**).
+
+Click a connected card to see its details: what it does, its features, and the **View** and **Disconnect** buttons. You’ll also find **Disconnect** in the **⋮** menu at the top right of the card.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions-details.png" alt="The details window of the Google Calendar integration with its description, the list of features, the Connected status and the View and Disconnect buttons." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The details of a connected integration.
+</p>
 
 General flow:
 
-1. Click the integration card’s button (**Connect / Manage / View**).
-2. Follow the platform’s authorization or setup steps.
+1. Click the integration card’s button (**Connect**, **Manage** or **Go to n8n**).
+2. Follow the setup steps. Depending on the platform, Callin opens the platform’s sign-in page in a new tab (for example, GoHighLevel or Zapier) or a setup page inside Callin (for example, Claude, Cal.com or Custom Integration).
 3. Return to Callin and confirm the card status updates.
 
 > **Important:** The exact authorization screens can vary depending on your account, plan, or how your organization manages permissions.
@@ -48,48 +73,94 @@ General flow:
 
 Below is what each available platform is typically used for and how you connect it from the Actions page.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/actions-connect.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: the Claude, Cal.com and Custom Integration setup pages.
+</p>
+
+### Claude (New)
+
+**What it’s for**<br />Work with your AI agents, calls and transcripts from Claude, using MCP. Claude can only access the Callin data you authorize.
+
+**What you can do**
+
+- View your AI agents
+- Review recent calls
+- Access call transcripts
+- Summarize conversations
+- Search Callin calls using natural language
+
+**How to connect in Callin**
+
+1. On the **Claude** card, click **Connect**. The **Claude × Callin** page opens.
+2. Click **Connect Claude** to open Claude.
+3. In Claude, open **Settings → Connectors** and add a custom connector.
+4. Paste the **Callin connector URL** shown on the page (use **Copy URL**).
+5. Sign in to Callin if asked, then click **Allow access** on the consent screen.
+
+No API keys are pasted: authorization happens securely in Callin.
+
+**Example questions to ask Claude**
+
+- “Show my latest 10 calls.”
+- “Summarize my latest customer call.”
+- “Find calls handled by my sales agent this week.”
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions-claude.png" alt="The Claude × Callin page with the Not connected status, the list of what you can do, the Connect Claude and Learn more buttons, and the How to connect steps." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: The Claude × Callin page.
+</p>
+
+> **Important:** This first version is read-only: Claude can’t place calls, change agents or update billing.
+
 ### Google Calendar
 
-**What it’s for**<br />Use Google Calendar to keep appointments organized in a calendar your team already uses.
+**What it’s for**<br />Sync availability and let your AI agent book appointments directly on Google Calendar, the calendar your team already uses.
 
 **How to connect in Callin**
 
 - If it’s not connected, click **Connect** on the Google Calendar card and complete the Google authorization steps.
-- If it’s already connected (like in the screenshot), you’ll see:
-  - **View** to review the connection details
+- If it’s already connected, you’ll see **Connected** and **Manage**. Click the card to see its details, with:
+  - **View** to review the connection
   - **Disconnect** to remove the connection
+
+For the full setup, see [Google Calendar](/Create-AI-Agent/Google-Calendar).
 
 **Example uses with AI Agents**
 
-- A scheduling agent can coordinate times and keep confirmed appointments reflected in your calendar (for example: “Demo with Alex Rivera — Tue 3:30 PM”).
+- A scheduling agent can check availability in real time and book confirmed appointments in your calendar (for example: “Demo with Alex Rivera — Tue 3:30 PM”).
 - An agent can help reduce no-shows by using calendar details as the “source of truth” for upcoming meetings (for example, confirming: “You’re booked for Wednesday at 10:00 AM”).
 
-### Cal.com (Beta)
+### Cal.com
 
-**What it’s for**<br />Cal.com is an appointment scheduling platform. Connecting it can help align Callin with your scheduling setup.
+**What it’s for**<br />Cal.com is an appointment scheduling platform. Connect it so your AI agent can check availability and book meetings automatically.
 
 **How to connect in Callin**
 
 1. Find **Cal.com** and click **Connect**.
-2. Follow the steps shown during setup (may vary because it’s marked **Beta**).
-3. Return to Actions and confirm it no longer shows **Not Connected**.
+2. On the **Cal.com Integration** page, paste your API key in **Connect with API Key**. You’ll find it in your Cal.com settings (there’s a link on the page).
+3. Click **Connect**, then return to Actions and confirm the card shows **Connected**.
 
 **Example uses with AI Agents**
 
 - A booking agent can guide a customer to the right appointment type (for example: “15-minute intro call” vs. “30-minute onboarding”).
 - If your team uses Cal.com scheduling links, an agent can help route customers to the right option based on intent (sales, support, onboarding).
 
-> **Important:** Because this integration is labeled **Beta**, the setup flow and available options may change.
-
 ### GoHighLevel
 
-**What it’s for**<br />GoHighLevel is a CRM platform. Connecting it helps you keep customer and lead information aligned between Callin and your CRM workflows.
+**What it’s for**<br />GoHighLevel is a CRM platform. Connecting it syncs contacts, appointments and call outcomes with your GoHighLevel CRM and marketing workflows.
 
 **How to connect in Callin**
 
 1. On the **GoHighLevel** card, click **Connect**.
-2. Complete the sign-in/authorization steps.
-3. Confirm the integration status updates.
+2. A new tab opens on GoHighLevel: choose your location and complete the authorization steps.
+3. Return to Callin and confirm the integration status updates.
 
 **Example uses with AI Agents**
 
@@ -98,13 +169,13 @@ Below is what each available platform is typically used for and how you connect 
 
 ### Zoho
 
-**What it’s for**<br />Zoho is another CRM option. Use it if your team manages leads, contacts, or customer records in Zoho.
+**What it’s for**<br />Zoho is another CRM option. Connect Zoho CRM to sync leads, contacts and call activity from your AI agents.
 
 **How to connect in Callin**
 
 1. On the **Zoho** card, click **Connect**.
 2. Follow the authorization steps.
-3. Confirm the status changes from **Not Connected**.
+3. Confirm the card shows **Connected**.
 
 **Example uses with AI Agents**
 
@@ -113,12 +184,12 @@ Below is what each available platform is typically used for and how you connect 
 
 ### n8n
 
-**What it’s for**<br />n8n is a workflow automation platform. It’s useful when you want to build custom automations that connect multiple tools together.
+**What it’s for**<br />n8n is a workflow automation platform. Build automated workflows that trigger from call events and send data to your apps.
 
 **How to connect in Callin**
 
-- On the **n8n** card, click **Go to n8n**.
-- Follow the setup instructions shown there to create your workflow and connect it back to Callin (steps can vary based on how your n8n is hosted).
+- On the **N8N** card, click **Go to n8n**.
+- Follow the setup instructions to create your workflow and connect it back to Callin (steps can vary based on how your n8n is hosted). See [n8n](/Create-AI-Agent/Connect-N8N).
 
 **Example uses with AI Agents**
 
@@ -127,13 +198,13 @@ Below is what each available platform is typically used for and how you connect 
 
 ### Zapier
 
-**What it’s for**<br />Zapier helps you connect Callin to thousands of apps and automate simple workflows without custom development.
+**What it’s for**<br />Zapier connects your calls to thousands of apps and automates follow-ups after every conversation, without custom development.
 
 **How to connect in Callin**
 
-1. On the **Zapier** card, click **Connect**.
-2. Complete the connection steps.
-3. Build “if this, then that” workflows in Zapier based on your needs.
+1. On the **Zapier** card, click **Connect**. A new tab opens on Zapier.
+2. Sign in to Zapier and complete the connection steps.
+3. Build “if this, then that” workflows in Zapier based on your needs. See [Zapier](/Create-AI-Agent/Connect-Zapier).
 
 **Example uses with AI Agents**
 
@@ -142,24 +213,30 @@ Below is what each available platform is typically used for and how you connect 
 
 ### Make.com
 
-**What it’s for**<br />Make (formerly Integromat) is another automation platform for building multi-step scenarios across tools.
+**What it’s for**<br />Make (formerly Integromat) lets you create automated scenarios that move call data into your tools without manual work.
 
 **How to connect in Callin**
 
 1. On the **Make.com** card, click **Connect**.
-2. Follow the connection steps shown during setup.
-3. Build scenarios in Make to match your workflow.
+2. Follow the connection steps.
+3. Build scenarios in Make to match your workflow. See [Make](/Create-AI-Agent/Connect-Make).
 
 **Example uses with AI Agents**
 
 - If an agent qualifies a lead as “high intent,” trigger a multi-step workflow (for example: alert a salesperson, create a deal, schedule a task).
 - Send structured updates to internal tools your team already uses.
 
-### Slack (Coming Soon)
+### WhatsApp (Coming soon)
 
-**What it’s for**<br />Slack is commonly used for team notifications and internal communication.
+**What it’s for**<br />Send post-call WhatsApp messages with approved templates from your WhatsApp Business account.
 
-**Availability**<br />In the screenshot, Slack shows **Coming Soon**, which means it’s visible in Actions but not available to connect yet.
+**Availability**<br />WhatsApp shows **Coming soon**: it’s visible in Actions but not available to connect yet.
+
+### Slack (Coming soon)
+
+**What it’s for**<br />Receive call notifications and transcripts in Slack so your whole team stays informed.
+
+**Availability**<br />Slack shows **Coming soon**: it’s visible in Actions but not available to connect yet.
 
 **Example uses with AI Agents (once available)**
 
@@ -168,23 +245,36 @@ Below is what each available platform is typically used for and how you connect 
 
 ### Custom Integration
 
-**What it’s for**<br />Custom Integration is for teams that want to connect Callin to their own systems or external services via webhooks.
+**What it’s for**<br />Build your own integration with the Callin API to send and receive call data. It’s for teams that want to connect Callin to their own systems.
 
 **How to connect in Callin**
 
-- Click **Manage** on the **Custom Integration** card.
-- Configure the webhook settings shown there (the available fields and options may vary by account or plan).
+1. Click **Connect** on the **Custom Integration** card. The **Receive Data (Make Call)** page opens, with two tabs: **AI Workflows** and **Logs**.
+2. Click **Create Workflow** and fill in:
+   - **Workflow Name**
+   - **AI Agent**: the agent that will make the call.
+   - **Mandatory Fields**: the data your request must include. By default: **name**, **phone** and **email**, each with a definition. Use **Add Entity** to add more (for example, `firstName`, `appointmentDate` or `isInterested`).
+3. Click **Save**. Each workflow gets its own unique **Webhook URL**: copy it and use it to send data from your external services. Make sure to include the mandatory fields in your request.
+4. Check the **Logs** tab to see the requests received.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/actions-custom.png" alt="The Create Workflow window with Workflow Name, AI Agent, the Mandatory Fields table (name, phone, email) with their definitions, and the Add Entity button." style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: Creating a workflow in Custom Integration.
+</p>
 
 **Example uses with AI Agents**
 
-- Send a call outcome to your internal dashboard (for example: “Qualified lead,” “Needs follow-up,” “Not interested”).
-- Trigger a custom workflow in your own backend whenever an agent completes a specific type of interaction.
+- When a new lead fills in a form on your website, send it to the workflow’s Webhook URL so the agent calls them right away.
+- Trigger calls from your own backend or CRM whenever a contact reaches a specific stage.
 
-> **Tip:** Custom Integration is a good choice when you already have an internal tool and want Callin to “push” events into it.
+> **Tip:** Custom Integration is a good choice when you already have an internal tool and want it to trigger Callin calls automatically.
 
 ## Troubleshooting
 
-### The integration stays on “Not Connected”
+### The integration doesn’t show “Connected”
 
 - Refresh the page and check again.
 - Try disconnecting and reconnecting (if the option exists).
@@ -192,7 +282,7 @@ Below is what each available platform is typically used for and how you connect 
 
 ### You connected the wrong account
 
-- Use **Disconnect** (if available), then reconnect and select the correct account during authorization.
+- Use **Disconnect** (on the card’s **⋮** menu or in its details), then reconnect and select the correct account during authorization.
 
 ### Buttons or options look different
 
