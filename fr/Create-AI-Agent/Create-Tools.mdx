@@ -1,41 +1,46 @@
 ---
 title: "Outils"
-description: "Créez des outils (webhooks) dans Callin et utilisez-les depuis le champ Conversation Prompt de votre agent pour envoyer ou consulter des données en temps réel pendant un appel."
+description: "Créez des outils (webhooks) dans Callin et utilisez-les depuis le champ Invite de conversation de votre agent pour envoyer ou consulter des données en temps réel pendant un appel."
 icon: "screwdriver-wrench"
 ---
 
 ## Vue d’ensemble
 
-Les **outils** (webhooks) permettent à votre agent Callin de se connecter à des systèmes externes **en temps réel** pendant qu’il converse avec un utilisateur.
+Les **outils** (webhooks) permettent à votre agent Callin de se connecter à des systèmes externes **en temps réel** pendant qu’il parle avec un utilisateur.
 
-Dit simplement : un outil est une **action automatique** que l’agent peut exécuter pour **demander** ou **envoyer** des informations à un autre système (par exemple, votre CRM) sans interrompre la conversation.
+En clair : un outil est une **action automatique** que l’agent peut exécuter pour **demander** ou **envoyer** des informations à un autre système (par exemple votre CRM) sans interrompre la conversation.
 
 Avec un outil, votre agent peut :
 
-- **Envoyer des données** dictées par l’utilisateur pendant l’appel (par exemple : nom, email, téléphone, motif).
+- **Envoyer des données** que l’utilisateur donne pendant l’appel (par exemple : nom, email, téléphone, motif).
 - **Consulter des données** dans un système externe (par exemple : statut, disponibilité, vérification).
 - **Déclencher des automatisations** sur des plateformes externes (CRM, tickets, messagerie, workflows, etc.).
 
+La page **Outils** comporte deux onglets :
+
+- **Outils** : vos outils webhook. C’est ce que ce guide explique pas à pas.
+- **MCP** : des connexions à des serveurs MCP, qui donnent à votre agent tout un ensemble d’outils prêts à l’emploi d’un coup (voir « Connecter un serveur MCP », plus bas).
+
 Dans Callin, le bon fonctionnement suit toujours cet ordre :
 
-1. **Créer l’outil** dans la section **Tools**.
-2. **Assigner l’outil** à l’agent dans **AI Agents**.
-3. **Indiquer dans le champ Conversation Prompt** quand l’outil doit s’exécuter et ce que l’agent doit faire avec le résultat.
+1. **Créer l’outil** dans la section **Outils**.
+2. **Assigner l’outil** à l’agent dans **Agents IA**.
+3. **Indiquer dans le champ Invite de conversation** quand il doit s’exécuter et ce que l’agent doit faire du résultat.
 
-S’il manque l’une de ces 3 étapes, l’outil ne s’exécutera pas comme prévu.
+S’il manque une de ces 3 étapes, l’outil ne fonctionnera pas comme prévu.
 
 ---
 
 ## Avant de commencer (concepts en 60 secondes)
 
-- **Outil / Tool** : connexion qui permet à l’agent de “parler” à un autre système (par exemple, un CRM).
+- **Outil** : une connexion qui permet à l’agent de « parler » à un autre système (par exemple un CRM).
 - **URL** : l’adresse à laquelle Callin envoie la requête.
-- **GET** : utilisé pour **consulter** une information (“Ce contact existe-t-il ?”).
-- **POST** : utilisé pour **envoyer** une information (“Créez ce lead avec ces données.”).
-- **Body parameters** : les **données** que l’agent enverra (email, téléphone, nom, etc.).
-- **Required** : champs **obligatoires**. S’il en manque un, le résultat peut être incomplet ou le flux peut échouer.
+- **GET** : sert à **consulter** des informations (« Ce contact existe-t-il ? »).
+- **POST** : sert à **envoyer** des informations (« Crée ce lead avec ces données. »). **PUT** (mettre à jour) et **DELETE** (supprimer) sont aussi disponibles.
+- **Paramètres du corps** : les **données** que l’agent enverra (email, téléphone, nom, etc.).
+- **Obligatoire** : les champs **obligatoires**. S’il en manque un, le résultat peut être incomplet ou le flux peut échouer.
 
-> Si votre utilisateur n’est pas technique, retenez cette idée : **l’outil crée la connexion**, et le **Conversation Prompt** décide quand il est utilisé et avec quelles données.
+> Si votre utilisateur n’est pas technique, retenez cette idée : **l’outil crée la connexion**, et **l’Invite de conversation décide quand il est utilisé et avec quelles données**.
 
 ---
 
@@ -43,44 +48,127 @@ S’il manque l’une de ces 3 étapes, l’outil ne s’exécutera pas comme pr
 
 Pour créer un outil dans Callin :
 
-1. Allez dans **Tools** dans le tableau de bord Callin.
-2. Cliquez sur **\+ Add Tool**.
+1. Allez dans **Outils** dans le tableau de bord Callin ([ouvrir Outils](https://app.callin.io/tools)).
+2. Cliquez sur **\+ Ajouter un outil**. Le panneau **Créer un outil** s’ouvre à droite.
 3. Remplissez les champs principaux :
 
-- **Name**\
-  Utilisez un nom court, clair et stable. Recommandation : **verbe + objectif**.\
-  Exemples : `consulter-contact-crm`, `creer-lead-crm`, `envoyer-lien-inscription`.
-- **Description**\
-  Expliquez **à quoi ça sert** et surtout **quand l’utiliser** (à quel moment dans l’appel).\
-  Exemple : “Vérifier si le contact existe dans le CRM uniquement après confirmation de l’email et du téléphone.”
-- **Method**
+- **Nom**\
+  Utilisez un nom court, clair et stable. Recommandation : **verbe + objectif**. Il peut contenir de 1 à 64 caractères : uniquement des lettres, des chiffres, des tirets bas (`_`) ou des tirets (`-`), sans espaces.\
+  Exemples : `verifier_contact_crm`, `creer_lead_crm`, `envoyer_lien_inscription`.
+- **Description** (obligatoire)\
+  Expliquez **ce qu’il fait** et surtout **quand il doit être utilisé** (à quel moment de l’appel).\
+  Exemple : « Vérifier si le contact existe dans le CRM uniquement après avoir confirmé l’email et le téléphone. »
+- **Méthode**
   - Utilisez **GET** si vous allez **consulter** des informations.
   - Utilisez **POST** si vous allez **envoyer** des informations (le plus courant quand l’agent collecte des données et les envoie).
+  - Utilisez **PUT** pour **mettre à jour** des données existantes, ou **DELETE** pour les **supprimer**, si votre API fonctionne ainsi.
 - **URL**\
-  Collez l’URL HTTPS de votre API ou le webhook de votre plateforme externe.
+  Collez l’URL HTTPS de votre API ou du webhook de votre plateforme externe.
 
-> Assurez-vous que l’URL est **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
+> Vérifiez que l’URL est en **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
 
-### Configurer “Body parameters” (si vous utilisez POST)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-Si votre outil envoie des informations (POST), définissez exactement quelles données il enverra :
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : Ajouter un outil → nom, description, méthode et URL → réglages de voix et de son → un en-tête → un paramètre du corps.
+</p>
 
-1. Allez dans **Body parameters**.
-2. Cliquez sur **Add property**.
-3. Configurez chaque champ :
+### Réglages de délai et de voix
 
-- **Type** : le type de donnée (texte, nombre, vrai/faux, etc.).
-- **Identifier** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `telephone`, `nom_complet`).
-- **Required** : activez-le si le champ est obligatoire.
-- **Description** : expliquez ce que cela représente et le format attendu (par exemple : “Téléphone au format international” ou “Email valide”).
+Sous l’URL, vous pouvez choisir comment l’outil se comporte pendant la conversation :
 
-> Recommandation pratique : si vous marquez un champ comme **Required**, votre agent doit être obligé (via le Conversation Prompt) de **le demander et de le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
+- **Délai d’attente de réponse (secondes)** : combien de temps attendre la réponse de votre endpoint avant d’abandonner. Par défaut : **20 secondes**.
+- **Désactiver les interruptions** : cochez cette case pour que l’appelant ne puisse pas interrompre l’agent pendant l’exécution de l’outil.
+- **Discours avant outil** : **Auto** (l’agent décide s’il dit quelque chose avant d’exécuter l’outil, selon le temps qu’il prend d’habitude) ou **Forcer** (l’agent parle toujours avant de l’exécuter, par exemple « Un instant, je vérifie »).
+- **Mode d’exécution** : quand l’outil s’exécute par rapport à ce que dit l’agent :
+  - **Immédiat** : il s’exécute tout de suite.
+  - **Après le discours** : il s’exécute quand l’agent a fini de parler.
+  - **Asynchrone** : il s’exécute en arrière-plan, la conversation peut donc continuer pendant ce temps.
+- **Son d’outil** : un son facultatif pendant l’exécution de l’outil : **Aucun**, **Frappe au clavier** ou **Musique d’ascenseur 1–4**. Utilisez le bouton de lecture à côté pour l’écouter.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-create.png"
+    alt="Le panneau Créer un outil avec la méthode POST et une URL d'exemple, suivi de Délai d'attente de réponse, Désactiver les interruptions, Discours avant outil, Mode d'exécution et Son d'outil, puis des sections En-têtes et Paramètres du corps."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : le panneau Créer un outil avec les réglages de délai et de voix.
+</p>
+
+> **Astuce :** Si votre endpoint met quelques secondes à répondre, réglez **Discours avant outil** sur **Forcer** ou ajoutez un **Son d’outil**, pour que l’appelant n’entende pas de silence.
+
+### Configurer les « Paramètres du corps » (si vous utilisez POST)
+
+Si votre outil envoie des informations (POST), définissez exactement quelles données il enverra. L’agent (le LLM) collecte ces paramètres pendant l’appel et les envoie dans le corps de la requête.
+
+1. Allez dans **Paramètres du corps**.
+2. Si vous le souhaitez, ajoutez une **Description** générale des données envoyées.
+3. Cliquez sur **Ajouter une propriété**.
+4. Configurez chaque champ :
+
+- **Type de données** : **String** (texte), **Nombre**, **Boolean** (vrai/faux) ou **Integer** (nombre entier).
+- **Identifiant** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `phone`, `full_name`).
+- **Obligatoire** : coché par défaut. Décochez-le si le champ est facultatif.
+- **Type de valeur** : d’où vient la valeur :
+  - **Invite LLM** : l’agent la remplit à partir de la conversation. Ajoutez une **Description** de ce qu’elle représente et du format attendu (par exemple : « Téléphone au format international » ou « Adresse email valide »). Vous pouvez aussi ajouter des **Valeurs Enum (facultatif)** : une liste de valeurs autorisées. Si vous en ajoutez, l’agent ne pourra choisir que dans cette liste.
+  - **Valeur constante** : envoie toujours la même valeur fixe (par exemple le nom de votre campagne).
+  - **Variable dynamique** : envoie la valeur d’une variable de l’appel. Choisissez-la dans **Nom de la variable**, par exemple `system__caller_id` (le numéro de l’appelant), `system__called_number`, `system__conversation_id` ou `system__time_utc`.
+
+Pour envoyer d’autres champs, cliquez à nouveau sur **Ajouter une propriété**. Pour en retirer un, cliquez sur **Supprimer**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-body.png"
+    alt="La section Paramètres du corps avec une propriété : type de données String, identifiant email, Obligatoire coché, type de valeur Invite LLM, une description et le champ facultatif Valeurs Enum."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : un paramètre du corps que l’agent remplit à partir de la conversation (Invite LLM).
+</p>
+
+> Recommandation pratique : si vous marquez un champ comme **Obligatoire**, votre agent doit être obligé (via l’Invite de conversation) de **le demander et le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
 
 ### En-têtes et authentification (si applicable)
 
-Si votre endpoint nécessite une authentification (par exemple, un token ou une clé), vous devrez la configurer selon les exigences exactes de votre API (quels en-têtes et quelles valeurs).
+Si votre endpoint exige une authentification (par exemple un token ou une clé), ajoutez-la dans **En-têtes** :
 
-4. Cliquez sur **Save** pour enregistrer l’outil.
+1. Cliquez sur **Ajouter un en-tête**.
+2. Remplissez le **Nom** (par exemple `Authorization`) et la **Valeur** (par exemple `Bearer` suivi de votre clé), exactement comme l’exige votre API.
+
+Chaque en-tête doit avoir un nom et une valeur. Supprimez les en-têtes vides avec l’icône de corbeille, sinon l’outil ne pourra pas être enregistré.
+
+4. Cliquez sur **Sauvegarder** pour enregistrer l’outil. Pour annuler vos modifications, cliquez sur **Effacer**.
+
+### Connecter un serveur MCP (onglet MCP)
+
+Un **serveur MCP** donne à votre agent tout un ensemble d’outils d’un coup (par exemple toutes les actions de votre CRM), sans les créer un par un. Pour en ajouter un :
+
+1. Dans **Outils**, ouvrez l’onglet **MCP** et cliquez sur **\+ Ajouter un MCP**.
+2. Dans **Informations de base**, remplissez le **Nom** (par exemple « CRM MCP ») et une **Description** de ce que propose le serveur.
+3. Dans **Configuration du serveur**, choisissez le **Type de serveur** (**SSE** ou **Streamable HTTP**) et collez l’**URL du serveur**.
+4. Si le serveur exige une authentification, ajoutez-la dans **En-têtes HTTP** avec **Ajouter un en-tête**.
+5. Choisissez le **Mode d’approbation des outils** :
+   - **Toujours demander** : sécurité maximale. L’agent demande l’autorisation avant chaque utilisation d’un outil.
+   - **Approbation détaillée des outils** (sélectionné par défaut) : vous choisissez quels outils sont désactivés et lesquels peuvent s’exécuter automatiquement.
+   - **Aucune approbation** : l’agent peut utiliser n’importe quel outil sans autorisation.
+6. Cliquez sur **Créer**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : Ajouter un MCP → nom, description et URL du serveur → mode d’approbation, puis l’onglet Outils de l’agent, où vous ajoutez des outils et des MCP à l’agent.
+</p>
+
+> **Important :** Ne connectez que des serveurs MCP de confiance. Avec **Aucune approbation**, l’agent peut utiliser tous les outils de ce serveur sans demander.
 
 ---
 
@@ -88,20 +176,37 @@ Si votre endpoint nécessite une authentification (par exemple, un token ou une 
 
 Créer l’outil ne suffit pas. Vous devez l’assigner à l’agent :
 
-1. Allez dans **AI Agents**.
+1. Allez dans **Agents IA**.
 2. Sélectionnez l’agent que vous voulez configurer.
-3. Dans l’éditeur de l’agent, descendez jusqu’à la section **Tools**.
-4. Cliquez sur **\+ Add Tool**.
-5. Sélectionnez l’outil et enregistrez.
+3. Dans l’éditeur de l’agent, ouvrez l’onglet **Outils**.
+4. Dans le sous-onglet **Outils**, cliquez sur **Ajouter un outil**.
+5. Cherchez votre outil et sélectionnez-le. Vous pouvez aussi cliquer sur **Ajouter un outil webhook** pour en créer un nouveau depuis cet écran.
+6. Enregistrez l’agent.
+
+Pour ajouter un serveur MCP à l’agent, ouvrez le sous-onglet **MCP** et cliquez sur **Ajouter un MCP**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img
+    src="/images/tools-agent.png"
+    alt="L'onglet Outils de l'agent avec les sous-onglets Outils et MCP, la liste Ajouter un outil avec une recherche et le bouton Ajouter un outil webhook, et les outils système à droite."
+    style={{ width:"100%", display:"block" }}
+  />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’onglet Outils de l’agent. Ajouter un outil liste les outils créés dans la section Outils.
+</p>
 
 **Vérification rapide :**\
 Si l’outil apparaît dans la liste de l’agent, il est bien assigné. S’il n’apparaît pas, l’agent ne pourra pas l’exécuter.
 
+> **Astuce :** À droite du même onglet se trouvent les **Outils système** (Raccrochage intelligent, Changement de langue, Transfert vers un numéro…). Ils sont intégrés et il suffit de les activer. Voir [Agents IA](/fr/Create-AI-Agent/Create-Agent-Enchanced).
+
 ---
 
-## Étape 3 — Indiquer comment utiliser l’outil dans “Conversation Prompt”
+## Étape 3 — Indiquer comment utiliser l’outil dans l’« Invite de conversation »
 
-C’est l’étape la plus importante. L’agent n’exécutera l’outil que si le **Conversation Prompt** lui indique clairement :
+C’est l’étape la plus importante. L’agent n’exécutera l’outil que si l’**Invite de conversation** lui indique clairement :
 
 - **Quelles données il doit collecter** avant d’exécuter l’outil (champs obligatoires).
 - **Comment confirmer ces données** (pour réduire les erreurs).
@@ -142,7 +247,7 @@ Cet exemple correspond à un cas très courant : l’agent parle avec un utilisa
   - et le **téléphone** n’est pas confirmé (répété et confirmé par l’utilisateur).
 - Si l’utilisateur hésite ou corrige une information, l’agent doit **la mettre à jour et confirmer à nouveau** avant de continuer.
 
-### Qu’écrire dans le Conversation Prompt (texte inventé et facile à adapter)
+### Qu’écrire dans l’Invite de conversation (texte inventé et facile à adapter)
 
 **Objectif du flux :**\\
 
@@ -265,17 +370,17 @@ Voici un exemple complet (inventé) avec deux outils : un lien principal pendant
 Avant d’utiliser l’outil avec des clients, vérifiez que :
 
 - La requête s’exécute correctement.
-- Les champs arrivent avec le nom attendu (Identifier).
-- Les champs obligatoires (Required) sont toujours présents.
+- Les champs arrivent avec le nom attendu (**Identifiant**).
+- Les champs obligatoires (**Obligatoire**) sont toujours présents.
 - L’endpoint répond rapidement et de manière cohérente.
 
 Une bonne pratique consiste à tester le webhook avec une URL d’inspection temporaire (pour voir ce qui arrive) puis avec votre endpoint réel.
 
 ### Checklist rapide (30 secondes)
 
-- L’outil est créé et enregistré dans **Tools**.
-- L’outil est assigné à l’agent dans **AI Agents \> votre agent \> Tools**.
-- Le **Conversation Prompt** précise clairement :
+- L’outil est créé et enregistré dans **Outils**.
+- L’outil est assigné à l’agent dans **Agents IA \> votre agent \> Outils**.
+- L’**Invite de conversation** précise clairement :
   - quelles informations demander,
   - comment les confirmer,
   - quand exécuter l’outil,
@@ -287,10 +392,10 @@ Une bonne pratique consiste à tester le webhook avec une URL d’inspection tem
 
 | Problème                                 | Cause probable                                                     | Solution                                                                                                     |
 | ---------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
-| L’outil ne s’exécute pas                 | Il n’est pas assigné à l’agent                                     | Allez dans **AI Agents \> votre agent \> Tools** et ajoutez-le                                               |
+| L’outil ne s’exécute pas                 | Il n’est pas assigné à l’agent                                     | Allez dans **Agents IA \> votre agent \> Outils** et ajoutez-le                                               |
 | Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                            | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                                  |
-| Champs manquants                         | “Identifier / Required” mal définis ou l’agent ne les collecte pas | Vérifiez **Body parameters** et ajustez le **Conversation Prompt** pour exiger et confirmer les données      |
-| Exécution au mauvais moment              | Le Conversation Prompt ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
+| Champs manquants                         | « Identifiant / Obligatoire » mal définis ou l’agent ne les collecte pas | Vérifiez les **Paramètres du corps** et ajustez l’**Invite de conversation** pour exiger et confirmer les données      |
+| Exécution au mauvais moment              | L’Invite de conversation ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
 
 ---
 
@@ -300,7 +405,7 @@ Pour obtenir un résultat stable :
 
 - Commencez par un outil simple.
 - Définissez peu de champs obligatoires au début.
-- Dans le Conversation Prompt, soyez explicite sur :
+- Dans l’Invite de conversation, soyez explicite sur :
   - **les conditions d’exécution**,
   - **l’ordre du flux**,
   - **les phrases exactes** (si applicable),
