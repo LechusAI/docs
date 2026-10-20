@@ -1,0 +1,122 @@
+---
+title: "Composer"
+description: "Usa Callin Composer, l’assistente AI della tua dashboard, per creare, analizzare, testare e correggere i tuoi agenti in linguaggio naturale."
+sidebarTitle: "Composer"
+icon: "wand-magic-sparkles"
+---
+
+## Che cos’è Composer
+
+**Callin Composer** (Beta) è un assistente AI dentro la tua dashboard. Gli chiedi le cose con parole tue e ti aiuta a creare, analizzare, testare e migliorare i tuoi agenti e tutto ciò che li circonda.
+
+Usa solo i dati reali del tuo account (agenti, numeri, knowledge base e chiamate), mai dati di esempio o record di altri utenti. Prima di applicare qualsiasi modifica, ti chiede l’approvazione.
+
+Aprilo da **Composer** nel menu a sinistra o con il pulsante **Composer** in alto nella dashboard ([aprilo qui](https://app.callin.io/composer)).
+
+> **Nota:** Parte di Composer è in inglese nell’app. In questa guida i nomi di pulsanti e opzioni sono tradotti, quindi alcuni li vedrai in inglese sullo schermo.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/composer-tour.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: un nuovo thread di Composer con le schede di suggerimento → Che cos’è Composer? → limiti e funzionamento.
+</p>
+
+## Iniziare una conversazione
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/composer-home.png" alt="Callin Composer con l'elenco Thread e Nuovo thread a sinistra, il saluto, il pulsante Che cos'è Composer?, le schede Crea, Debug, Ripara chiamate, Analizza e Test, e la casella del messaggio" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: un nuovo thread di Composer con le schede di suggerimento.
+</p>
+
+1. Clicca su **Nuovo thread**. Ogni conversazione viene salvata come thread nell’elenco **Thread** a sinistra, così puoi riprenderla in seguito.
+2. Scegli una delle schede di suggerimento o scrivi la tua richiesta nella casella del messaggio:
+   - **Crea**: guidami nella creazione di un agente.
+   - **Debug**: diagnostica i fallimenti delle chiamate recenti.
+   - **Ripara chiamate**: trova i problemi delle chiamate e applica le correzioni.
+   - **Analizza**: rivedi le analitiche delle chiamate della settimana.
+   - **Test**: parla con il mio agente nella dashboard.
+3. Premi **Invio** per inviare, o **Maiusc + Invio** per andare a capo.
+
+Possono comparire anche schede come **Trasferimento** (crea una regola per trasferire le chiamate a una persona), **Campagna** (crea una campagna in uscita con tutte le impostazioni), **Parole chiave** (correggi errori di trascrizione con termini di dominio) o **Errori comuni** (diagnostica email, date appuntamento, STT e latenza, poi applica la correzione).
+
+> **Suggerimento:** Sii preciso. _«Analizza l’ultima chiamata del mio agente di accoglienza e dimmi perché ha riattaccato prima»_ dà una risposta migliore di _«controlla il mio agente»_.
+
+### Allegare file
+
+Clicca sulla graffetta, o trascina i file nella chat, per allegare documenti, foto di identità, file di conoscenza, audio o un CSV della campagna. Aspetta che ogni file sia **pronto** prima di inviare il messaggio.
+
+## In cosa ti aiuta Composer
+
+Clicca su **Che cos’è Composer?** per vedere l’elenco completo. Composer ti aiuta con:
+
+- **Istruzioni dell’agente**: aggiornare prompt, saluti, voce, LLM, lingue, trasferimenti, webhook e altre impostazioni dell’agente.
+- **Causa e soluzione**: diagnosticare agenti e chiamate, spiegare la causa e aggiornare la configurazione.
+- **Diagnosi e correzione delle chiamate**: rivedere una chiamata o i fallimenti recenti e trasformare i problemi in correzioni di configurazione o del prompt.
+- **Strumenti e azioni**: impostare o regolare gli strumenti che l’agente usa durante le chiamate.
+- **Numeri e chiamate**: numeri di telefono, chiamate di prova e impostazioni correlate.
+- **Revisione delle chiamate**: rivedere le chiamate recenti, individuare i problemi e proporre miglioramenti chiari.
+- **Trasferimenti**: impostare i trasferimenti perché il chiamante possa parlare con una persona quando serve.
+- **Configurazione della dashboard**: creare agenti e aggiornare la configurazione in tutta la dashboard.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/composer-about.png" alt="Pannello Che cos'è Composer? con la descrizione e le schede di ciò in cui aiuta: istruzioni dell'agente, causa e soluzione, diagnosi delle chiamate, strumenti, numeri, revisione delle chiamate, trasferimenti e configurazione della dashboard" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: il pannello Che cos’è Composer?
+</p>
+
+Alcune richieste frequenti: _analizza l’ultima chiamata_, _crea un agente receptionist per le chiamate in entrata_, _aggiorna il mio saluto e il prompt_, _rivedi le analitiche di questa settimana_.
+
+## Approvare le modifiche
+
+Composer non modifica mai la tua configurazione da solo. Quando vuole applicare una modifica, mostra una scheda **Approvazione richiesta** con i dettagli:
+
+- Clicca su **Approva** per applicare la modifica.
+- Clicca su **Rifiuta** per scartarla.
+
+Devi approvare o rifiutare prima che la conversazione continui. A volte Composer ti fa una domanda con delle opzioni: scegline una, scrivi la tua risposta o clicca su **Salta** per lasciarlo decidere al meglio.
+
+> **Importante:** Controlla ogni suggerimento prima di approvarlo, così il tuo agente resta preciso e in linea con il tuo brand.
+
+### Come funziona
+
+1. Di’ a Composer cosa vuoi migliorare, creare, rivedere o aggiornare.
+2. Composer propone le migliori modifiche alla dashboard o i passi successivi, in base agli strumenti e alle impostazioni disponibili.
+3. Controlla la proposta e continua a perfezionare la configurazione finché l’agente non si comporta come vuoi.
+
+## Esportare una conversazione
+
+In un thread, clicca su **Esporta** (in alto a destra) per scaricarlo come:
+
+- **Report PDF**
+- **Cartella di lavoro Excel**
+- **Chat in Markdown**: tutta la conversazione in un file Markdown.
+
+## Limiti
+
+Composer lavora solo con la configurazione della dashboard e le funzioni già disponibili nel tuo account:
+
+- Può aiutarti con la configurazione: prompt, strumenti, numeri, trasferimenti e revisione delle chiamate.
+- Non può cambiare il funzionamento interno del prodotto, impostazioni nascoste o qualsiasi cosa non presente nella dashboard.
+- Non può aggiungere funzioni che il tuo piano o la tua dashboard non includono.
+- Lavora solo con gli agenti, le chiamate e le impostazioni a cui il tuo account ha già accesso.
+
+## Risoluzione dei problemi
+
+**Problema:** Composer non ha cambiato nulla.\
+**Causa:** La modifica è in attesa della tua approvazione.\
+**Soluzione:** Cerca la scheda **Approvazione richiesta** e clicca su **Approva**.
+
+**Problema:** La risposta è troppo generica.\
+**Causa:** La richiesta non indica quale agente o quale chiamata.\
+**Soluzione:** Indica l’agente o la chiamata e spiega cosa ti aspettavi.
+
+**Problema:** Non riesco a inviare un messaggio con un file.\
+**Causa:** Il file è ancora in caricamento oppure il caricamento non è riuscito.\
+**Soluzione:** Aspetta che sia **pronto**. Se non è riuscito, rimuovilo e allegalo di nuovo.

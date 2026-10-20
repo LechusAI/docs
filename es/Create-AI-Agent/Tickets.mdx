@@ -1,0 +1,84 @@
+---
+title: "Tickets"
+description: "Haz el seguimiento de las incidencias y quejas que registran tus agentes en las llamadas, actualiza su estado y vuelve a llamar al cliente cuando estén resueltas."
+sidebarTitle: "Tickets"
+icon: "ticket"
+---
+
+## Qué son los tickets
+
+Un **ticket** es una incidencia o una queja que registra uno de tus agentes durante una llamada. Cuando un cliente cuenta un problema, el agente crea un ticket con sus datos y una descripción, para que tu equipo pueda intervenir y resolverlo.
+
+Los tickets los crean los agentes que tienen activado **Seguimiento de incidencias y quejas** en la pestaña **Acción de llamada**. Consulta [Agentes de IA](/es/Create-AI-Agent/Create-Agent-Enchanced).
+
+Los encontrarás en el menú de la izquierda, en **Telefonía** ([ábrelo aquí](https://app.callin.io/tickets)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/tickets-list.png" alt="Página Tickets con los botones Configuración de callback y Actualizar, los filtros Todos, En progreso, Resuelto y Archivado, el buscador y el mensaje No se encontraron tickets" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la página Tickets. Cuando tus agentes registran incidencias, aparecen aquí.
+</p>
+
+## Encontrar tus tickets
+
+- Usa los filtros **Todos**, **En progreso**, **Resuelto** y **Archivado** para ver los tickets según su estado.
+- Usa **Buscar tickets…** para encontrar uno.
+- Haz clic en **Actualizar** para cargar los últimos tickets.
+
+De cada ticket ves su **ID del ticket**, el **Nombre del contacto**, el **Número de teléfono**, el **Correo electrónico**, la **Fecha de apertura**, el **Asunto**, el **Estado**, el **Comentario del operador** y la **Última actualización**.
+
+> **Consejo:** También puedes encontrar las llamadas de un ticket en el [Historial de llamadas](/es/Create-AI-Agent/Call-Actions), con el filtro **ID del ticket**.
+
+## Trabajar con un ticket
+
+En cada ticket puedes:
+
+- **Ver ticket**: abre el **Detalle del ticket**.
+- **Marcar como en progreso**: indica que tu equipo está con ello.
+- **Marcar como resuelto**: lo da por solucionado.
+- **Archivar**: lo saca de la lista activa.
+- **Copiar ID del ticket**: copia el ID para compartirlo o buscar la llamada.
+
+Al cambiar el estado (**Actualizar estado**) puedes añadir un **Comentario (opcional)**: una nota sobre ese cambio, por ejemplo lo que se ha hecho. Verás **Estado actualizado correctamente**.
+
+También puedes crear un ticket a mano con **Agregar ticket**, con un **Asunto**, una **Descripción del problema** y **Notas adicionales**.
+
+### Detalle del ticket
+
+El detalle de un ticket muestra:
+
+- Los datos del contacto, el asunto y la **Descripción del problema**.
+- **Historial de estado**: cada cambio de estado, con su comentario.
+- **Actividad de callback**: las llamadas de vuelta hechas para este ticket y su estado (**Generado**, **Ejecutado**, **Fallido** o **Completado**).
+- **Realizar callback manual**: llama al cliente en ese momento.
+
+## Configuración de callback
+
+Un **callback** es una llamada que hace el agente al cliente para contarle cómo se ha resuelto su incidencia. Haz clic en **Configuración de callback** para ajustarlo:
+
+- **Ejecución del callback**:
+  - **Automático**: la llamada se hace sola cuando el estado del ticket cambia a **Resuelto**.
+  - **Manual**: la lanzas tú con **Realizar callback manual**.
+- **Script de resolución**: el mensaje que se lee al contacto durante la llamada. Personalízalo con las **Variables disponibles**: `{{ticket_date}}`, `{{ticket_subject}}`, `{{operator_comment}}` y `{{contact_name}}`.
+
+Haz clic en **Guardar configuración**. Verás **Configuración guardada**.
+
+> **Ejemplo:** _«Hola, `{{contact_name}}`. Te llamamos por la incidencia que nos comunicaste el `{{ticket_date}}`: `{{ticket_subject}}`. `{{operator_comment}}` ¿Podemos ayudarte en algo más?»_
+
+> **Importante:** Escribe un **Comentario del operador** claro al resolver un ticket. Si el script usa `{{operator_comment}}`, ese comentario es lo que oye el cliente.
+
+## Solución de problemas
+
+**Problema:** No aparece ningún ticket.\
+**Causa:** Ningún agente tiene activado **Seguimiento de incidencias y quejas**, o todavía ningún cliente ha comunicado una incidencia.\
+**Solución:** Activa **Seguimiento de incidencias y quejas** en la pestaña **Acción de llamada** del agente y haz clic en **Actualizar**.
+
+**Problema:** No se llamó al cliente después de resolver el ticket.\
+**Causa:** La **Ejecución del callback** está en **Manual**, o la llamada falló.\
+**Solución:** Revisa la **Actividad de callback** del ticket y usa **Realizar callback manual** o cambia a **Automático**.
+
+**Problema:** El mensaje de la llamada suena incompleto.\
+**Causa:** El ticket no tiene asunto ni comentario del operador.\
+**Solución:** Rellena el asunto y añade un comentario al cambiar el estado.

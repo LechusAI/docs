@@ -1,0 +1,154 @@
+---
+title: "Squads"
+description: "Crea un equipo de agentes Enhanced que se pasan la llamada entre ellos en mitad de la conversación."
+sidebarTitle: "Squads"
+icon: "users"
+---
+
+## Qué es un squad
+
+Un **squad** es un equipo de agentes de IA que trabajan en la misma llamada. Un agente contesta y, cuando el cliente necesita algo más concreto, **traspasa** la llamada al especialista adecuado sin colgar. Por ejemplo, un agente de recepción saluda y pasa la llamada a un agente de citas cuando el cliente quiere reservar.
+
+Los squads solo funcionan con agentes **Enhanced** (marcados como **Ultra-low latency**). Los encontrarás en el menú de la izquierda, en **Construir** ([ábrelo aquí](https://app.callin.io/squads)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-list.png" alt="Página Squads con la etiqueta Ultra-low latency, el botón Crear squad, el buscador y el mensaje Aún no hay squads" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la página Squads, donde creas un squad y encuentras los que ya tienes.
+</p>
+
+> **Consejo:** Usa un squad cuando un solo agente necesitaría un prompt larguísimo para cubrirlo todo. Varios agentes cortos y centrados son más fáciles de probar y mejorar que uno enorme.
+
+## Crear un squad
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Crear squad → ponerle nombre → Añadir agente → definir el rol y la especialización de cada agente.
+</p>
+
+1. Ve a **Squads** y haz clic en **\+ Crear squad**.
+2. En **Nombra tu squad**, escribe un nombre que tu equipo reconozca (por ejemplo, _Squad de recepción de la clínica_) y haz clic en **Continuar**. Puedes cambiarlo cuando quieras desde el cuadro de arriba a la izquierda.
+3. Se abre el editor del squad: un lienzo a la izquierda y el panel **Primeros pasos** a la derecha, con los tres pasos: **Añadir agentes**, **Configurar un agente** y **Crear traspasos**.
+
+### Añadir agentes
+
+1. Haz clic en **\+ Añadir agente** (arriba a la derecha del lienzo, o en el centro si está vacío).
+2. Busca y elige uno de tus agentes Enhanced. Aparece en el lienzo.
+3. Repite con cada agente que quieras en el squad.
+
+El primer agente que añades lleva la etiqueta **Inicia la llamada**: es el que contesta.
+
+### Configurar cada agente
+
+Haz clic en un agente del lienzo para abrir sus ajustes a la derecha:
+
+- **Rol**: un nombre corto para lo que hace el agente (por ejemplo, _Recepción_, _Calificación_ o _Agenda_).
+- **Especialización**: la responsabilidad concreta del agente y cuándo debe tomar el control.
+- **Definir como entrada**: hace que este agente sea el que **inicia la llamada**.
+- **Quitar agente**: saca al agente del squad.
+
+El icono junto al nombre del agente abre ese agente, para que cambies su prompt, su voz o sus herramientas.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-agent.png" alt="Editor del squad con un agente de recepción marcado como Inicia la llamada y sus ajustes a la derecha: Rol, Especialización y Quitar agente" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el agente que inicia la llamada, con su rol y su especialización.
+</p>
+
+> **Importante:** Solo los agentes **Enhanced** (Ultra-low latency) pueden formar parte de un squad. Si no ves un agente en la lista, revisa su tipo en [Agentes de IA](/es/Create-AI-Agent/Create-Agent-Enchanced).
+
+## Crear traspasos
+
+Un **traspaso** es la conexión que pasa la llamada de un agente a otro.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-handoff.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: conectar dos agentes → rellenar el panel Traspaso → elegir el Plan de contexto.
+</p>
+
+1. Arrastra desde la parte de abajo de un agente hasta el otro. Aparece una conexión, y el primer agente muestra **Transferir a** con el nombre del segundo.
+2. Haz clic en la conexión para abrir el panel **Traspaso** y rellena:
+   - **Cuándo traspasar**: la condición para pasar la llamada (por ejemplo, _«El paciente quiere reservar, cambiar o cancelar una cita.»_). Por defecto dice _El llamante necesita este especialista_.
+   - **Resumen de transición**: una nota interna para el siguiente agente. Nunca se dice al cliente.
+   - **Plan de contexto**: cuánta conversación recibe el siguiente agente:
+     - **Todos los mensajes**: toda la conversación hasta ese momento.
+     - **Últimos N mensajes**: solo los mensajes más recientes. Indica cuántos en **Máx. mensajes**.
+     - **Solo agente anterior**: solo lo que dijo el agente anterior.
+     - **Ninguno (empezar de cero)**: nada; el siguiente agente empieza desde cero.
+     - **Solo usuario + agente**: solo los mensajes del cliente y del agente.
+   - **Pasar variables**: variables separadas por comas que se conservan en el traspaso (por ejemplo, `patient_name, reason`).
+   - **Traspaso silencioso**: no anuncia el traspaso al cliente. Desactívalo para decir primero una frase corta de transferencia.
+3. Usa **Quitar traspaso** para borrar la conexión.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-handoff.png" alt="Editor del squad con un traspaso del agente de recepción al de citas, y el panel Traspaso con Cuándo traspasar, Resumen de transición, Plan de contexto, Pasar variables, Traspaso silencioso y Quitar traspaso" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: un traspaso del agente de recepción al agente de citas.
+</p>
+
+> **Consejo:** Pasa las variables que necesita el siguiente agente (nombre, motivo, número de cuenta…) para que el cliente no tenga que repetirlas.
+
+## Guardar y probar el squad
+
+Mientras editas, abajo aparece una barra con **Tienes cambios sin guardar**. Haz clic en **Guardar** para conservar el squad, o en **Borrar** para descartar los cambios.
+
+Para guardar, el squad necesita:
+
+- Un nombre (si no, verás **Pon un nombre a esta squad**).
+- Al menos **2** agentes Ultra-low latency en el lienzo (si no, **Faltan agentes**).
+- Al menos un traspaso entre dos agentes distintos, con la descripción de cuándo debe traspasar el agente inicial (si no, **Añade un traspaso**).
+
+La primera vez verás **Squad creado**, y después **Squad guardado**.
+
+### Usar y gestionar tus squads
+
+Cada squad de la lista muestra cuántos agentes y traspasos tiene y cuál es el agente de entrada. Desde ahí puedes:
+
+- **Asignar número**: da al squad un número de teléfono para que pueda recibir y hacer llamadas. Usa **Cambiar número** o **Quitar número** para cambiarlo. Sin número, el squad muestra **Sin número asignado** y no puede recibir ni hacer llamadas telefónicas.
+- **Probar squad**: llama al squad desde tu navegador. Los traspasos funcionan igual que por teléfono.
+- **Probar llamada**: llama a un teléfono con el squad. Escribe el **Número del cliente** en formato internacional (por ejemplo, `+14155550123`) y haz clic en **Iniciar llamada**. El agente de entrada habla primero y los traspasos siguen tu lienzo.
+- **Abrir lienzo**: abre el editor del squad para cambiar agentes o traspasos.
+- **Eliminar squad**: borra el squad. Los agentes que lo forman no se eliminan.
+
+Usa **Buscar squads…** para encontrar un squad por su nombre.
+
+## Consejos y buenas prácticas
+
+- **Da a cada agente una tarea clara.** Las especializaciones cortas y concretas hacen los traspasos más fiables.
+- **Escribe las condiciones de traspaso como reglas.** _«El cliente pregunta por precios o quiere comprar»_ funciona mejor que _«ventas»_.
+- **Elige bien el contexto.** **Todos los mensajes** conserva toda la historia; **Ninguno (empezar de cero)** sirve cuando el siguiente agente no debe ver lo anterior.
+- **Haz breve el resumen de transición.** Una o dos frases con lo que el siguiente agente tiene que saber.
+
+## Solución de problemas
+
+**Problema:** No encuentro un agente al hacer clic en Añadir agente.\
+**Causa:** No es un agente Enhanced (Ultra-low latency).\
+**Solución:** Usa un agente Enhanced. Los squads solo funcionan con ese tipo.
+
+**Problema:** No puedo guardar el squad.\
+**Causa:** No tiene nombre, tiene menos de 2 agentes o le falta un traspaso con condición.\
+**Solución:** Lee el mensaje que aparece y completa lo que falta.
+
+**Problema:** La llamada nunca pasa al siguiente agente.\
+**Causa:** La condición del traspaso no encaja con lo que dicen los clientes, o el squad no se guardó.\
+**Solución:** Aclara **Cuándo traspasar** y haz clic en **Guardar**.
+
+**Problema:** El squad no recibe llamadas telefónicas.\
+**Causa:** No tiene número asignado.\
+**Solución:** Usa **Asignar número** en el squad.
+
+**Problema:** El siguiente agente vuelve a pedir datos que el cliente ya dio.\
+**Causa:** El plan de contexto o las variables no pasan esa información.\
+**Solución:** Usa **Todos los mensajes** o añade esos datos en **Pasar variables**.
