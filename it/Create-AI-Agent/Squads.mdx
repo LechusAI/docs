@@ -1,0 +1,154 @@
+---
+title: "Squad"
+description: "Crea una squadra di agenti Enhanced che si passano la chiamata a metà conversazione."
+sidebarTitle: "Squad"
+icon: "users"
+---
+
+## Che cos’è una squad
+
+Una **squad** è una squadra di agenti AI che lavorano sulla stessa chiamata. Un agente risponde e, quando il chiamante ha bisogno di qualcosa di più specifico, **passa** la chiamata allo specialista giusto senza riagganciare. Ad esempio, un agente di accoglienza saluta e passa la chiamata a un agente per gli appuntamenti quando il chiamante vuole prenotare.
+
+Le squad funzionano solo con agenti **Enhanced** (contrassegnati come **Ultra-low latency**). Le trovi nel menu a sinistra, in **Crea** ([aprila qui](https://app.callin.io/squads)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-list.png" alt="Pagina Squad con l'etichetta Ultra-low latency, il pulsante Crea squad, la casella di ricerca e il messaggio Nessuna squad ancora" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: la pagina Squad, dove crei una squad e trovi quelle che hai già.
+</p>
+
+> **Suggerimento:** Usa una squad quando un solo agente avrebbe bisogno di un prompt lunghissimo per coprire tutto. Più agenti brevi e mirati sono più facili da testare e migliorare di un unico agente enorme.
+
+## Creare una squad
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Crea squad → dai un nome → Aggiungi agente → imposta ruolo e specializzazione di ogni agente.
+</p>
+
+1. Vai su **Squad** e clicca su **\+ Crea squad**.
+2. In **Nomina il tuo squad**, scrivi un nome che il tuo team riconosca (ad esempio, _Squad accoglienza clinica_) e clicca su **Continua**. Puoi cambiarlo in qualsiasi momento dalla casella in alto a sinistra.
+3. Si apre l’editor della squad: un canvas a sinistra e il pannello **Inizia** a destra, con i tre passaggi: **Aggiungi agenti**, **Configura un agente** e **Crea passaggi**.
+
+### Aggiungere agenti
+
+1. Clicca su **\+ Aggiungi agente** (in alto a destra del canvas, o al centro se è vuoto).
+2. Cerca e scegli uno dei tuoi agenti Enhanced. Compare sul canvas.
+3. Ripeti per ogni agente che vuoi nella squad.
+
+Il primo agente che aggiungi ha l’etichetta **Avvia la chiamata**: è quello che risponde.
+
+### Configurare ogni agente
+
+Clicca su un agente nel canvas per aprire le sue impostazioni a destra:
+
+- **Ruolo**: un nome breve per ciò che fa l’agente (ad esempio, _Accoglienza_, _Qualifica_ o _Scheduling_).
+- **Specializzazione**: la responsabilità specifica dell’agente e quando deve intervenire.
+- **Imposta come ingresso**: rende questo agente quello che **avvia la chiamata**.
+- **Rimuovi agente**: toglie l’agente dalla squad.
+
+L’icona accanto al nome dell’agente apre quell’agente, così puoi cambiarne prompt, voce o strumenti.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-agent.png" alt="Editor della squad con un agente di accoglienza contrassegnato come Avvia la chiamata e le sue impostazioni a destra: Ruolo, Specializzazione e Rimuovi agente" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: l’agente che avvia la chiamata, con ruolo e specializzazione.
+</p>
+
+> **Importante:** Solo gli agenti **Enhanced** (Ultra-low latency) possono far parte di una squad. Se non vedi un agente nell’elenco, controlla il suo tipo in [Agenti AI](/it/Create-AI-Agent/Create-Agent-Enchanced).
+
+## Creare passaggi
+
+Un **passaggio** è il collegamento che passa la chiamata da un agente all’altro.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-handoff.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: collega due agenti → compila il pannello Passaggio → scegli il Piano di contesto.
+</p>
+
+1. Trascina dalla parte inferiore di un agente fino all’altro. Compare un collegamento, e il primo agente mostra **Passaggio a** con il nome del secondo.
+2. Clicca sul collegamento per aprire il pannello **Passaggio** e compila:
+   - **Quando passare**: la condizione per passare la chiamata (ad esempio, _«Il paziente vuole prenotare, spostare o annullare un appuntamento.»_). Di default indica _Il chiamante ha bisogno di questo specialista_.
+   - **Brief di transizione**: una nota interna per l’agente successivo. Non viene mai detta al chiamante.
+   - **Piano di contesto**: quanta conversazione riceve l’agente successivo:
+     - **Tutti i messaggi**: tutta la conversazione fino a quel momento.
+     - **Ultimi N messaggi**: solo i messaggi più recenti. Indica quanti in **Messaggi max**.
+     - **Solo agente precedente**: solo ciò che ha detto l’agente precedente.
+     - **Nessuno (riparti da zero)**: niente; l’agente successivo riparte da zero.
+     - **Solo utente + agente**: solo i messaggi del chiamante e dell’agente.
+   - **Passa variabili**: variabili separate da virgola da preservare nel passaggio (ad esempio, `patient_name, reason`).
+   - **Passaggio silenzioso**: non annuncia il passaggio al chiamante. Disattivalo per dire prima una breve frase di trasferimento.
+3. Usa **Rimuovi passaggio** per eliminare il collegamento.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-handoff.png" alt="Editor della squad con un passaggio dall'agente di accoglienza a quello degli appuntamenti, e il pannello Passaggio con Quando passare, Brief di transizione, Piano di contesto, Passa variabili, Passaggio silenzioso e Rimuovi passaggio" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: un passaggio dall’agente di accoglienza all’agente per gli appuntamenti.
+</p>
+
+> **Suggerimento:** Passa le variabili che servono all’agente successivo (nome, motivo, numero cliente…) così il chiamante non deve ripeterle.
+
+## Salvare e testare la squad
+
+Mentre modifichi, in basso compare una barra con **Hai modifiche non salvate**. Clicca su **Salva** per mantenere la squad, o su **Pulisci** per annullare le modifiche.
+
+Per salvare, la squad deve avere:
+
+- Un nome (altrimenti vedrai **Assegna un nome alla squad**).
+- Almeno **2** agenti Ultra-low latency sul canvas (altrimenti, **Servono più agenti**).
+- Almeno un passaggio tra due agenti diversi, con la descrizione di quando l’agente iniziale deve passare la chiamata (altrimenti, **Aggiungi un passaggio**).
+
+La prima volta vedrai **Squad creata**, poi **Squad salvata**.
+
+### Usare e gestire le tue squad
+
+Ogni squad nell’elenco mostra quanti agenti e passaggi ha e qual è l’agente di ingresso. Da lì puoi:
+
+- **Assegna numero**: dai alla squad un numero di telefono per ricevere ed effettuare chiamate. Usa **Cambia numero** o **Rimuovi numero** per modificarlo. Senza numero, la squad mostra **Nessun numero assegnato** e non può ricevere né effettuare chiamate.
+- **Prova squad**: chiama la squad dal browser. I passaggi funzionano come al telefono.
+- **Prova chiamata**: chiama un numero di telefono con la squad. Inserisci il **Numero del cliente** in formato internazionale (ad esempio, `+14155550123`) e clicca su **Avvia chiamata**. L’agente di ingresso parla per primo e i passaggi seguono il canvas.
+- **Apri canvas**: apre l’editor della squad per cambiare agenti o passaggi.
+- **Elimina squad**: elimina la squad. Gli agenti membri non vengono eliminati.
+
+Usa **Cerca squad…** per trovare una squad per nome.
+
+## Suggerimenti e buone pratiche
+
+- **Dai a ogni agente un compito chiaro.** Specializzazioni brevi e precise rendono i passaggi più affidabili.
+- **Scrivi le condizioni di passaggio come regole.** _«Il chiamante chiede i prezzi o vuole acquistare»_ funziona meglio di _«vendite»_.
+- **Scegli bene il contesto.** **Tutti i messaggi** mantiene tutta la storia; **Nessuno (riparti da zero)** è utile quando l’agente successivo non deve vedere i dettagli precedenti.
+- **Tieni breve il brief di transizione.** Una o due frasi con ciò che l’agente successivo deve sapere.
+
+## Risoluzione dei problemi
+
+**Problema:** Non trovo un agente quando clicco su Aggiungi agente.\
+**Causa:** Non è un agente Enhanced (Ultra-low latency).\
+**Soluzione:** Usa un agente Enhanced. Le squad funzionano solo con quel tipo.
+
+**Problema:** Non riesco a salvare la squad.\
+**Causa:** Manca il nome, ci sono meno di 2 agenti o manca un passaggio con condizione.\
+**Soluzione:** Leggi il messaggio che compare e completa ciò che manca.
+
+**Problema:** La chiamata non passa mai all’agente successivo.\
+**Causa:** La condizione del passaggio non corrisponde a ciò che dicono i chiamanti, o la squad non è stata salvata.\
+**Soluzione:** Rendi più chiaro **Quando passare** e clicca su **Salva**.
+
+**Problema:** La squad non riceve chiamate telefoniche.\
+**Causa:** Non ha un numero assegnato.\
+**Soluzione:** Usa **Assegna numero** sulla squad.
+
+**Problema:** L’agente successivo chiede di nuovo dati che il chiamante ha già dato.\
+**Causa:** Il piano di contesto o le variabili non passano quell’informazione.\
+**Soluzione:** Usa **Tutti i messaggi** o aggiungi quei dati in **Passa variabili**.

@@ -1,0 +1,154 @@
+---
+title: "Squads"
+description: "Stellen Sie ein Team aus Enhanced-Agenten zusammen, die sich den Anruf mitten im Gespräch übergeben."
+sidebarTitle: "Squads"
+icon: "users"
+---
+
+## Was ist ein Squad
+
+Ein **Squad** ist ein Team aus KI-Agenten, die am selben Anruf arbeiten. Ein Agent nimmt ab, und wenn der Anrufer etwas Spezielleres braucht, **übergibt** er den Anruf ohne Auflegen an den passenden Spezialisten. Zum Beispiel begrüßt ein Empfangsagent den Anrufer und übergibt an einen Terminagenten, wenn der Anrufer einen Termin möchte.
+
+Squads funktionieren nur mit **Enhanced**-Agenten (gekennzeichnet mit **Ultra-low latency**). Sie finden sie im linken Menü unter **Erstellen** ([hier öffnen](https://app.callin.io/squads)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-list.png" alt="Seite Squads mit dem Etikett Ultra-low latency, der Schaltfläche Squad erstellen, der Suche und der Meldung Noch keine Squads" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Seite Squads, auf der Sie ein Squad erstellen und Ihre vorhandenen finden.
+</p>
+
+> **Tipp:** Nutzen Sie ein Squad, wenn ein einzelner Agent einen sehr langen Prompt bräuchte, um alles abzudecken. Mehrere kurze, fokussierte Agenten lassen sich leichter testen und verbessern als ein riesiger Agent.
+
+## Ein Squad erstellen
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Squad erstellen → benennen → Agent hinzufügen → Rolle und Spezialisierung jedes Agenten festlegen.
+</p>
+
+1. Gehen Sie zu **Squads** und klicken Sie auf **\+ Squad erstellen**.
+2. Geben Sie in **Squad benennen** einen Namen ein, den Ihr Team wiedererkennt (zum Beispiel _Squad Praxisempfang_), und klicken Sie auf **Weiter**. Sie können ihn jederzeit im Feld oben links ändern.
+3. Der Squad-Editor öffnet sich: links ein Canvas und rechts der Bereich **Erste Schritte** mit den drei Schritten **Agenten hinzufügen**, **Agent konfigurieren** und **Übergaben erstellen**.
+
+### Agenten hinzufügen
+
+1. Klicken Sie auf **\+ Agent hinzufügen** (oben rechts im Canvas oder in der Mitte, wenn es leer ist).
+2. Suchen und wählen Sie einen Ihrer Enhanced-Agenten. Er erscheint im Canvas.
+3. Wiederholen Sie das für jeden Agenten, den Sie im Squad haben möchten.
+
+Der erste hinzugefügte Agent erhält das Etikett **Startet den Anruf**: Er nimmt den Anruf an.
+
+### Jeden Agenten konfigurieren
+
+Klicken Sie im Canvas auf einen Agenten, um rechts seine Einstellungen zu öffnen:
+
+- **Rolle**: ein kurzer Name für die Aufgabe des Agenten (zum Beispiel _Begrüßung_, _Qualifizierung_ oder _Terminplanung_).
+- **Spezialisierung**: die enge Verantwortung des Agenten und wann er übernehmen soll.
+- **Als Einstieg festlegen**: macht diesen Agenten zu dem, der **den Anruf startet**.
+- **Agent entfernen**: nimmt den Agenten aus dem Squad.
+
+Das Symbol neben dem Agentennamen öffnet diesen Agenten, damit Sie seinen Prompt, seine Stimme oder seine Tools ändern können.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-agent.png" alt="Squad-Editor mit einem Empfangsagenten mit dem Etikett Startet den Anruf und seinen Einstellungen rechts: Rolle, Spezialisierung und Agent entfernen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Agent, der den Anruf startet, mit seiner Rolle und Spezialisierung.
+</p>
+
+> **Wichtig:** Nur **Enhanced**-Agenten (Ultra-low latency) können Teil eines Squads sein. Wenn Sie einen Agenten nicht in der Liste sehen, prüfen Sie seinen Typ unter [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
+
+## Übergaben erstellen
+
+Eine **Übergabe** ist die Verbindung, die den Anruf von einem Agenten an einen anderen weitergibt.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-handoff.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: zwei Agenten verbinden → den Bereich Übergabe ausfüllen → den Kontextplan wählen.
+</p>
+
+1. Ziehen Sie von der Unterseite eines Agenten zum anderen. Es erscheint eine Verbindung, und der erste Agent zeigt **Weiterleitung an** mit dem Namen des zweiten.
+2. Klicken Sie auf die Verbindung, um den Bereich **Übergabe** zu öffnen, und füllen Sie aus:
+   - **Wann übergeben**: die Bedingung für die Übergabe (zum Beispiel _„Der Patient möchte einen Termin buchen, verschieben oder absagen.“_). Standardmäßig steht dort _Anrufer braucht diesen Spezialisten_.
+   - **Übergabe-Briefing**: eine interne Notiz für den nächsten Agenten. Sie wird dem Anrufer nie vorgelesen.
+   - **Kontextplan**: wie viel vom Gespräch der nächste Agent erhält:
+     - **Alle Nachrichten**: das gesamte bisherige Gespräch.
+     - **Letzte N Nachrichten**: nur die neuesten Nachrichten. Legen Sie die Anzahl unter **Max. Nachrichten** fest.
+     - **Nur vorheriger Agent**: nur das, was der vorherige Agent gesagt hat.
+     - **Keine (Neustart)**: nichts; der nächste Agent beginnt von vorn.
+     - **Nur Nutzer + Agent**: nur die Nachrichten des Anrufers und des Agenten.
+   - **Variablen übergeben**: durch Kommas getrennte Variablen, die bei der Übergabe erhalten bleiben (zum Beispiel `patient_name, reason`).
+   - **Stille Übergabe**: kündigt die Übergabe dem Anrufer nicht an. Schalten Sie sie aus, um zuerst eine kurze Transferphrase zu sprechen.
+3. Mit **Übergabe entfernen** löschen Sie die Verbindung.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-handoff.png" alt="Squad-Editor mit einer Übergabe vom Empfangsagenten an den Terminagenten und dem Bereich Übergabe mit Wann übergeben, Übergabe-Briefing, Kontextplan, Variablen übergeben, Stille Übergabe und Übergabe entfernen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: eine Übergabe vom Empfangsagenten an den Terminagenten.
+</p>
+
+> **Tipp:** Übergeben Sie die Variablen, die der nächste Agent braucht (Name, Anliegen, Kundennummer …), damit der Anrufer sie nicht wiederholen muss.
+
+## Das Squad speichern und testen
+
+Während Sie bearbeiten, erscheint unten eine Leiste mit **Sie haben ungespeicherte Änderungen**. Klicken Sie auf **Speichern**, um das Squad zu behalten, oder auf **Leeren**, um die Änderungen zu verwerfen.
+
+Zum Speichern braucht das Squad:
+
+- Einen Namen (sonst sehen Sie **Squad benennen**).
+- Mindestens **2** Ultra-low-latency-Agenten im Canvas (sonst **Mehr Agenten nötig**).
+- Mindestens eine Übergabe zwischen zwei verschiedenen Agenten mit einer Beschreibung, wann der Startagent übergeben soll (sonst **Übergabe hinzufügen**).
+
+Beim ersten Mal sehen Sie **Squad erstellt**, danach **Squad gespeichert**.
+
+### Ihre Squads nutzen und verwalten
+
+Jedes Squad in der Liste zeigt, wie viele Agenten und Übergaben es hat und welcher Agent der Einstieg ist. Von dort aus können Sie:
+
+- **Nummer zuweisen**: gibt dem Squad eine Telefonnummer, damit es Anrufe empfangen und tätigen kann. Mit **Nummer ändern** oder **Nummer entfernen** passen Sie sie an. Ohne Nummer zeigt das Squad **Keine Nummer zugewiesen** und kann keine Anrufe empfangen oder tätigen.
+- **Squad testen**: rufen Sie das Squad im Browser an. Übergaben funktionieren wie am Telefon.
+- **Anruf testen**: rufen Sie mit dem Squad eine Telefonnummer an. Geben Sie die **Kundennummer** im internationalen Format ein (zum Beispiel `+14155550123`) und klicken Sie auf **Anruf starten**. Der Einstiegsagent spricht zuerst, und die Übergaben folgen Ihrem Canvas.
+- **Canvas öffnen**: öffnet den Squad-Editor, um Agenten oder Übergaben zu ändern.
+- **Squad löschen**: löscht das Squad. Die Mitgliedsagenten werden nicht gelöscht.
+
+Mit **Squads suchen…** finden Sie ein Squad nach Namen.
+
+## Tipps und bewährte Vorgehensweisen
+
+- **Geben Sie jedem Agenten eine klare Aufgabe.** Kurze, konkrete Spezialisierungen machen Übergaben zuverlässiger.
+- **Formulieren Sie Übergabebedingungen wie Regeln.** _„Der Anrufer fragt nach Preisen oder möchte kaufen“_ funktioniert besser als _„Vertrieb“_.
+- **Wählen Sie den Kontext bewusst.** **Alle Nachrichten** behält die ganze Geschichte; **Keine (Neustart)** ist nützlich, wenn der nächste Agent frühere Details nicht sehen soll.
+- **Halten Sie das Übergabe-Briefing kurz.** Ein bis zwei Sätze mit dem, was der nächste Agent wissen muss.
+
+## Fehlerbehebung
+
+**Problem:** Ich finde einen Agenten nicht, wenn ich auf Agent hinzufügen klicke.\
+**Ursache:** Es ist kein Enhanced-Agent (Ultra-low latency).\
+**Lösung:** Nutzen Sie einen Enhanced-Agenten. Squads funktionieren nur mit diesem Typ.
+
+**Problem:** Ich kann das Squad nicht speichern.\
+**Ursache:** Es hat keinen Namen, weniger als 2 Agenten oder keine Übergabe mit Bedingung.\
+**Lösung:** Lesen Sie die angezeigte Meldung und ergänzen Sie, was fehlt.
+
+**Problem:** Der Anruf geht nie an den nächsten Agenten über.\
+**Ursache:** Die Übergabebedingung passt nicht zu dem, was Anrufer sagen, oder das Squad wurde nicht gespeichert.\
+**Lösung:** Formulieren Sie **Wann übergeben** klarer und klicken Sie auf **Speichern**.
+
+**Problem:** Das Squad empfängt keine Telefonanrufe.\
+**Ursache:** Ihm ist keine Nummer zugewiesen.\
+**Lösung:** Nutzen Sie **Nummer zuweisen** beim Squad.
+
+**Problem:** Der nächste Agent fragt erneut nach Daten, die der Anrufer schon genannt hat.\
+**Ursache:** Der Kontextplan oder die Variablen geben diese Informationen nicht weiter.\
+**Lösung:** Nutzen Sie **Alle Nachrichten** oder fügen Sie diese Daten unter **Variablen übergeben** hinzu.

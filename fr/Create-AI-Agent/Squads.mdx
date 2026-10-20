@@ -1,0 +1,154 @@
+---
+title: "Squads"
+description: "Créez une équipe d’agents Enhanced qui se transfèrent l’appel en cours de conversation."
+sidebarTitle: "Squads"
+icon: "users"
+---
+
+## Qu’est-ce qu’un squad
+
+Un **squad** est une équipe d’agents IA qui travaillent sur le même appel. Un agent répond et, quand l’appelant a besoin de quelque chose de plus précis, il **transfère** l’appel au bon spécialiste sans raccrocher. Par exemple, un agent d’accueil salue l’appelant et passe l’appel à un agent de rendez-vous quand l’appelant veut réserver.
+
+Les squads fonctionnent uniquement avec des agents **Enhanced** (marqués **Ultra-low latency**). Vous les trouverez dans le menu de gauche, sous **Créer** ([ouvrir ici](https://app.callin.io/squads)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-list.png" alt="Page Squads avec l'étiquette Ultra-low latency, le bouton Créer un squad, la recherche et le message Aucun squad pour l'instant" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la page Squads, où vous créez un squad et retrouvez ceux que vous avez.
+</p>
+
+> **Astuce :** Utilisez un squad quand un seul agent aurait besoin d’un prompt interminable pour tout couvrir. Plusieurs agents courts et ciblés sont plus faciles à tester et à améliorer qu’un seul agent énorme.
+
+## Créer un squad
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : Créer un squad → le nommer → Ajouter un agent → définir le rôle et la spécialisation de chaque agent.
+</p>
+
+1. Allez dans **Squads** et cliquez sur **\+ Créer un squad**.
+2. Dans **Nommez votre squad**, saisissez un nom que votre équipe reconnaîtra (par exemple, _Squad accueil de la clinique_) et cliquez sur **Continuer**. Vous pourrez le modifier à tout moment depuis la case en haut à gauche.
+3. L’éditeur du squad s’ouvre : un canevas à gauche et le panneau **Premiers pas** à droite, avec les trois étapes : **Ajouter des agents**, **Configurer un agent** et **Créer des transferts**.
+
+### Ajouter des agents
+
+1. Cliquez sur **\+ Ajouter un agent** (en haut à droite du canevas, ou au centre s’il est vide).
+2. Recherchez et choisissez l’un de vos agents Enhanced. Il apparaît sur le canevas.
+3. Répétez pour chaque agent que vous voulez dans le squad.
+
+Le premier agent ajouté porte l’étiquette **Démarre l’appel** : c’est lui qui répond.
+
+### Configurer chaque agent
+
+Cliquez sur un agent du canevas pour ouvrir ses réglages à droite :
+
+- **Rôle** : un nom court pour ce que fait l’agent (par exemple, _Accueil_, _Qualification_ ou _Planning_).
+- **Spécialisation** : la responsabilité précise de l’agent et quand il doit prendre le relais.
+- **Définir comme entrée** : fait de cet agent celui qui **démarre l’appel**.
+- **Retirer l’agent** : retire l’agent du squad.
+
+L’icône à côté du nom de l’agent ouvre cet agent, pour modifier son prompt, sa voix ou ses outils.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-agent.png" alt="Éditeur du squad avec un agent d'accueil marqué Démarre l'appel et ses réglages à droite : Rôle, Spécialisation et Retirer l'agent" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’agent qui démarre l’appel, avec son rôle et sa spécialisation.
+</p>
+
+> **Important :** Seuls les agents **Enhanced** (Ultra-low latency) peuvent faire partie d’un squad. Si un agent n’apparaît pas dans la liste, vérifiez son type dans [AI Agents](/fr/Create-AI-Agent/Create-Agent-Enchanced).
+
+## Créer des transferts
+
+Un **transfert** est la connexion qui fait passer l’appel d’un agent à un autre.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/squads-handoff.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : relier deux agents → remplir le panneau Transfert → choisir le Plan de contexte.
+</p>
+
+1. Faites glisser depuis le bas d’un agent jusqu’à l’autre. Une connexion apparaît, et le premier agent affiche **Transfert vers** avec le nom du second.
+2. Cliquez sur la connexion pour ouvrir le panneau **Transfert** et remplissez :
+   - **Quand transférer** : la condition pour passer l’appel (par exemple, _« Le patient veut prendre, déplacer ou annuler un rendez-vous. »_). Par défaut, il indique _L’appelant a besoin de ce spécialiste_.
+   - **Brief de transition** : une note interne pour l’agent suivant. Elle n’est jamais dite à l’appelant.
+   - **Plan de contexte** : la part de conversation que reçoit l’agent suivant :
+     - **Tous les messages** : toute la conversation jusque-là.
+     - **Derniers N messages** : seulement les messages les plus récents. Indiquez combien dans **Messages max.**
+     - **Agent précédent uniquement** : seulement ce qu’a dit l’agent précédent.
+     - **Aucun (nouveau départ)** : rien ; l’agent suivant repart de zéro.
+     - **Utilisateur + agent uniquement** : seulement les messages de l’appelant et de l’agent.
+   - **Transmettre les variables** : variables séparées par des virgules à conserver lors du transfert (par exemple, `patient_name, reason`).
+   - **Transfert silencieux** : n’annonce pas le transfert à l’appelant. Désactivez-le pour dire d’abord une courte phrase de transfert.
+3. Utilisez **Supprimer le transfert** pour effacer la connexion.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/squads-handoff.png" alt="Éditeur du squad avec un transfert de l'agent d'accueil vers l'agent de rendez-vous, et le panneau Transfert avec Quand transférer, Brief de transition, Plan de contexte, Transmettre les variables, Transfert silencieux et Supprimer le transfert" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : un transfert de l’agent d’accueil vers l’agent de rendez-vous.
+</p>
+
+> **Astuce :** Transmettez les variables dont l’agent suivant a besoin (nom, motif, numéro de compte…) pour que l’appelant n’ait pas à les répéter.
+
+## Enregistrer et tester le squad
+
+Pendant l’édition, une barre **Vous avez des modifications non enregistrées** apparaît en bas. Cliquez sur **Enregistrer** pour garder le squad, ou sur **Effacer** pour annuler les modifications.
+
+Pour enregistrer, le squad doit avoir :
+
+- Un nom (sinon, vous verrez **Nommez cette squad**).
+- Au moins **2** agents Ultra-low latency sur le canevas (sinon, **Plus d’agents nécessaires**).
+- Au moins un transfert entre deux agents différents, avec la description du moment où l’agent de départ doit transférer (sinon, **Ajoutez un transfert**).
+
+La première fois, vous verrez **Squad créé**, puis **Squad enregistré**.
+
+### Utiliser et gérer vos squads
+
+Chaque squad de la liste indique combien d’agents et de transferts il compte, et quel est l’agent d’entrée. De là, vous pouvez :
+
+- **Attribuer un numéro** : donne au squad un numéro de téléphone pour recevoir et passer des appels. Utilisez **Changer de numéro** ou **Retirer le numéro** pour le modifier. Sans numéro, le squad affiche **Aucun numéro attribué** et ne peut ni recevoir ni passer d’appels.
+- **Tester le squad** : appelez le squad depuis votre navigateur. Les transferts fonctionnent comme au téléphone.
+- **Tester l’appel** : appelez un numéro avec le squad. Saisissez le **Numéro du client** au format international (par exemple, `+14155550123`) et cliquez sur **Démarrer l’appel**. L’agent d’entrée parle en premier, et les transferts suivent votre canevas.
+- **Ouvrir le canevas** : ouvre l’éditeur du squad pour modifier les agents ou les transferts.
+- **Supprimer le squad** : supprime le squad. Les agents membres ne sont pas supprimés.
+
+Utilisez **Rechercher des squads…** pour retrouver un squad par son nom.
+
+## Conseils et bonnes pratiques
+
+- **Donnez une mission claire à chaque agent.** Des spécialisations courtes et précises rendent les transferts plus fiables.
+- **Rédigez les conditions de transfert comme des règles.** _« L’appelant demande les tarifs ou veut acheter »_ fonctionne mieux que _« ventes »_.
+- **Choisissez bien le contexte.** **Tous les messages** garde toute l’histoire ; **Aucun (nouveau départ)** est utile quand l’agent suivant ne doit pas voir les détails précédents.
+- **Gardez le brief de transition court.** Une ou deux phrases avec ce que l’agent suivant doit savoir.
+
+## Dépannage
+
+**Problème :** Je ne trouve pas un agent quand je clique sur Ajouter un agent.\
+**Cause :** Ce n’est pas un agent Enhanced (Ultra-low latency).\
+**Solution :** Utilisez un agent Enhanced. Les squads ne fonctionnent qu’avec ce type.
+
+**Problème :** Je ne peux pas enregistrer le squad.\
+**Cause :** Il n’a pas de nom, il a moins de 2 agents ou il manque un transfert avec condition.\
+**Solution :** Lisez le message affiché et complétez ce qui manque.
+
+**Problème :** L’appel ne passe jamais à l’agent suivant.\
+**Cause :** La condition du transfert ne correspond pas à ce que disent les appelants, ou le squad n’a pas été enregistré.\
+**Solution :** Clarifiez **Quand transférer** et cliquez sur **Enregistrer**.
+
+**Problème :** Le squad ne reçoit pas d’appels téléphoniques.\
+**Cause :** Aucun numéro ne lui est attribué.\
+**Solution :** Utilisez **Attribuer un numéro** sur le squad.
+
+**Problème :** L’agent suivant redemande des informations déjà données par l’appelant.\
+**Cause :** Le plan de contexte ou les variables ne transmettent pas ces informations.\
+**Solution :** Utilisez **Tous les messages** ou ajoutez ces données dans **Transmettre les variables**.

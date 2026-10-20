@@ -1,0 +1,84 @@
+---
+title: "Tickets"
+description: "Verfolgen Sie Probleme und Beschwerden, die Ihre Agenten in Anrufen erfassen, aktualisieren Sie ihren Status und rufen Sie Kunden zurück, wenn sie gelöst sind."
+sidebarTitle: "Tickets"
+icon: "ticket"
+---
+
+## Was sind Tickets
+
+Ein **Ticket** ist ein Problem oder eine Beschwerde, die einer Ihrer Agenten während eines Anrufs erfasst. Wenn ein Anrufer ein Problem meldet, legt der Agent ein Ticket mit seinen Kontaktdaten und einer Beschreibung an, damit Ihr Team eingreifen und es lösen kann.
+
+Tickets werden von Agenten erstellt, bei denen **Problem- und Beschwerdeverfolgung** im Tab **Anrufaktion** eingeschaltet ist. Siehe [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
+
+Sie finden sie im linken Menü unter **Telefonie** ([hier öffnen](https://app.callin.io/tickets)).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/tickets-list.png" alt="Seite Tickets mit den Schaltflächen Callback-Konfiguration und Aktualisieren, den Filtern Alle, In Bearbeitung, Gelöst und Archiviert, der Suche und der Meldung Keine Tickets gefunden" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Seite Tickets. Wenn Ihre Agenten Probleme erfassen, erscheinen sie hier.
+</p>
+
+## Ihre Tickets finden
+
+- Mit den Filtern **Alle**, **In Bearbeitung**, **Gelöst** und **Archiviert** sehen Sie Tickets nach Status.
+- Mit **Tickets suchen…** finden Sie ein Ticket.
+- Klicken Sie auf **Aktualisieren**, um die neuesten Tickets zu laden.
+
+Zu jedem Ticket sehen Sie **Ticket-ID**, **Kontaktname**, **Telefonnummer**, **E-Mail**, **Erstellungsdatum**, **Betreff**, **Status**, **Kommentar des Operators** und wann es **Zuletzt aktualisiert** wurde.
+
+> **Tipp:** Die Anrufe zu einem Ticket finden Sie auch in der [Anrufliste](/de/Create-AI-Agent/Call-Actions) mit dem Filter **Ticket-ID**.
+
+## Ein Ticket bearbeiten
+
+Bei jedem Ticket können Sie:
+
+- **Ticket anzeigen**: öffnet die **Ticketdetails**.
+- **Auf In Bearbeitung setzen**: zeigt, dass Ihr Team daran arbeitet.
+- **Auf Gelöst setzen**: markiert es als gelöst.
+- **Archivieren**: nimmt es aus der aktiven Liste.
+- **Ticket-ID kopieren**: kopiert die ID, um sie zu teilen oder den Anruf zu suchen.
+
+Wenn Sie den Status ändern (**Status aktualisieren**), können Sie einen **Kommentar (optional)** hinzufügen: eine Notiz zu dieser Änderung, etwa was getan wurde. Sie sehen dann **Status erfolgreich aktualisiert**.
+
+Mit **Ticket hinzufügen** können Sie auch selbst ein Ticket anlegen, mit **Betreff**, **Problembeschreibung** und **Zusätzlichen Notizen**.
+
+### Ticketdetails
+
+Die Details eines Tickets zeigen:
+
+- Die Kontaktdaten, den Betreff und die **Problembeschreibung**.
+- **Statusverlauf**: jede Statusänderung mit ihrem Kommentar.
+- **Callback-Aktivität**: die Rückrufe zu diesem Ticket und ihren Status (**Generiert**, **Ausgeführt**, **Fehlgeschlagen** oder **Abgeschlossen**).
+- **Manuellen Callback durchführen**: den Kunden sofort zurückrufen.
+
+## Callback-Konfiguration
+
+Ein **Callback** ist ein Anruf, mit dem der Agent dem Kunden mitteilt, wie sein Problem gelöst wurde. Klicken Sie auf **Callback-Konfiguration**, um ihn einzurichten:
+
+- **Callback-Ausführung**:
+  - **Automatisch**: Der Anruf erfolgt automatisch, wenn der Ticketstatus auf **Gelöst** wechselt.
+  - **Manuell**: Sie starten ihn selbst mit **Manuellen Callback durchführen**.
+- **Lösungsskript**: die Nachricht, die dem Kontakt während des Anrufs vorgelesen wird. Personalisieren Sie sie mit den **Verfügbaren Variablen**: `{{ticket_date}}`, `{{ticket_subject}}`, `{{operator_comment}}` und `{{contact_name}}`.
+
+Klicken Sie auf **Konfiguration speichern**. Sie sehen **Konfiguration gespeichert**.
+
+> **Beispiel:** _„Guten Tag `{{contact_name}}`, wir rufen wegen des Problems an, das Sie am `{{ticket_date}}` gemeldet haben: `{{ticket_subject}}`. `{{operator_comment}}` Können wir Ihnen sonst noch helfen?“_
+
+> **Wichtig:** Schreiben Sie beim Lösen eines Tickets einen klaren **Kommentar des Operators**. Wenn das Skript `{{operator_comment}}` nutzt, hört der Kunde genau diesen Kommentar.
+
+## Fehlerbehebung
+
+**Problem:** Es erscheinen keine Tickets.\
+**Ursache:** Bei keinem Agenten ist **Problem- und Beschwerdeverfolgung** eingeschaltet, oder noch kein Anrufer hat ein Problem gemeldet.\
+**Lösung:** Schalten Sie **Problem- und Beschwerdeverfolgung** im Tab **Anrufaktion** des Agenten ein und klicken Sie auf **Aktualisieren**.
+
+**Problem:** Der Kunde wurde nach dem Lösen des Tickets nicht zurückgerufen.\
+**Ursache:** **Callback-Ausführung** steht auf **Manuell**, oder der Anruf ist fehlgeschlagen.\
+**Lösung:** Prüfen Sie die **Callback-Aktivität** im Ticket und nutzen Sie **Manuellen Callback durchführen** oder wechseln Sie zu **Automatisch**.
+
+**Problem:** Die Rückrufnachricht klingt unvollständig.\
+**Ursache:** Das Ticket hat keinen Betreff und keinen Kommentar des Operators.\
+**Lösung:** Füllen Sie den Betreff aus und fügen Sie beim Statuswechsel einen Kommentar hinzu.
