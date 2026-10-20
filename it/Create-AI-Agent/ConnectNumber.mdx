@@ -7,226 +7,152 @@ icon: "plug"
 
 ## Collega il tuo numero esistente a un agente
 
-Se la tua azienda ha già un numero di telefono e vuoi che un agente IA risponda alle chiamate su quella linea, non devi ricostruire tutta la tua configurazione telefonica per iniziare. In Callin, puoi farlo in tre modi diversi a seconda del livello di integrazione di cui hai bisogno e dell’infrastruttura telefonica che hai già.
+Se la tua azienda ha già un numero di telefono, non devi rifare il tuo impianto telefonico perché un agente AI risponda. In Callin.io ci sono tre modi per farlo:
 
-Puoi collegare il tuo numero esistente tramite:
+- **Inoltro di chiamata**: mantieni la tua linea attuale e inoltri le chiamate al numero dell’agente.
+- **Portabilità**: trasferisci il tuo numero attuale su Callin.io, così l’agente risponde direttamente.
+- **BYOC (tronco SIP)**: colleghi il tuo operatore, il tuo tronco SIP o il tuo centralino (PBX).
 
-- **Inoltro di chiamata**, se vuoi mantenere la tua linea attuale e reindirizzare le chiamate al numero dell’agente.
-- **Portabilità**, se vuoi mantenere lo stesso numero e richiederne la migrazione tramite il flusso compatibile con Callin.
-- **BYOC (tronco SIP)**, se lavori già con un operatore SIP, un centralino o un sistema telefonico e vuoi collegare quell’infrastruttura alla piattaforma.
-
-L’opzione migliore dipende dal fatto che tu voglia rapidità, continuità con il tuo numero attuale o una configurazione tecnica più avanzata.
+L’opzione migliore dipende da cosa cerchi: rapidità, mantenere il tuo numero o una configurazione tecnica avanzata.
 
 ## Dove viene gestita ogni opzione
 
-Tutto ciò che riguarda l’acquisto di numeri, l’avvio di una richiesta di portabilità e la gestione dei numeri viene gestito dalla sezione [**Numeri**](https://app.callin.io/numbers).
+- **Numeri** ([aprilo qui](https://app.callin.io/numbers)): acquistare numeri, avviare una richiesta di portabilità e vedere tutti i tuoi numeri.
+- **BYOC** ([aprilo qui](https://app.callin.io/byoc)): collegare Telnyx o un altro provider SIP.
+- **Agenti AI**: assegnare un numero a ogni agente.
 
-Il collegamento del tuo operatore, dei tronchi SIP o dei fornitori esterni viene gestito dalla sezione [**BYOC**](https://app.callin.io/byoc).
-
-Se il tuo obiettivo è usare un numero esistente con un agente, di solito inizierai da [**Numeri**](https://app.callin.io/numbers) e passerai a [**BYOC**](https://app.callin.io/byoc) se hai bisogno di un’integrazione telefonica più avanzata.
+Le trovi nel menu a sinistra, in **Crea** (Agenti AI) e **Telefonia** (BYOC e Numeri).
 
 ## Opzione 1: Mantieni il tuo numero attuale e usa l’inoltro di chiamata
 
-Questo è il modo più rapido e semplice per iniziare.
+È il modo più rapido e semplice per iniziare.
 
-Con questa opzione, il tuo numero principale resta con il tuo attuale operatore telefonico. Non viene trasferito e non viene migrato. Al suo posto, colleghi un numero in Callin, lo assegni al tuo agente e poi attivi l’inoltro di chiamata dal tuo normale numero aziendale al numero dell’agente.
-
-Quando qualcuno chiama la tua linea principale, la chiamata viene reindirizzata al numero collegato all’agente e l’agente risponde.
+Il tuo numero principale resta con il tuo operatore attuale. Ottieni un numero in Callin.io, lo assegni al tuo agente e inoltri lì il tuo numero aziendale. Quando qualcuno chiama la tua linea principale, risponde l’agente.
 
 ### Come funziona
 
-Per prima cosa, hai bisogno di un numero attivo in [**Numeri**](https://app.callin.io/numbers). Sarà il numero usato dall’agente. Poi assegni quel numero all’agente corretto. Una volta fatto, attivi l’inoltro dal tuo numero originale al numero dell’agente.
+1. In **Numeri**, acquista un numero o aggiungine uno che hai già (vedi [Numeri e BYOC](/it/Create-AI-Agent/Configure-Numbers)).
+2. Assegna quel numero al tuo agente (vedi **Assegna il numero all’agente**, più sotto).
+3. Con il tuo operatore, inoltra il tuo numero aziendale al numero dell’agente.
 
-Da quel momento in poi, i tuoi clienti possono continuare a chiamare lo stesso numero che già conoscono, mentre l’agente gestisce la chiamata.
+Da quel momento i tuoi clienti continuano a chiamare il numero che conoscono e l’agente gestisce la chiamata.
 
-### Cosa devi sapere
+> **Importante:** L’inoltro di chiamata si configura con il tuo operatore, sul telefono o nel centralino, non dentro Callin.io. Alcuni operatori lo permettono dall’area clienti; altri richiedono una domanda, e le chiamate inoltrate possono avere un costo in base alla tua tariffa.
 
-L’inoltro di chiamata non viene attivato all’interno di Callin.
+### Quando ha senso questa opzione
 
-Callin riceve la chiamata sul numero assegnato all’agente, ma l’attivazione dell’inoltro dipende dal cliente e dal suo operatore telefonico. Questo significa che l’utente deve configurarlo dal proprio telefono, tramite il proprio centralino o con il proprio fornitore di telecomunicazioni, a seconda di come viene gestita la linea attuale.
-
-### Quando questa opzione ha senso
-
-Questa opzione è ideale se vuoi muoverti rapidamente, mantenere invariato il tuo numero aziendale pubblico ed evitare un processo più tecnico o una migrazione del numero.
-
-È anche una soluzione molto pratica se vuoi iniziare a usare l’agente in produzione senza cambiare ancora la tua struttura telefonica principale.
+- Vuoi iniziare subito.
+- Vuoi mantenere il tuo numero pubblico senza cambiamenti.
+- Non vuoi ancora migrare il numero.
 
 ### Esempio pratico
 
-Una clinica usa lo stesso numero fisso da anni. Quel numero compare sul suo sito, nelle schede Google e in tutte le sue comunicazioni aziendali. Invece di cambiarlo, la clinica acquista un numero in Callin tramite [**Numeri**](https://app.callin.io/numbers), lo assegna al proprio agente e attiva l’inoltro dalla linea principale tramite il proprio operatore telefonico. I pazienti continuano a chiamare lo stesso numero, ma a rispondere è l’agente.
-
-### Vantaggi
-
-- È l’opzione più rapida da attivare.
-- Ti permette di mantenere il numero che i tuoi clienti già conoscono.
-- Non richiede di spostare il tuo numero in una configurazione diversa.
-- È facile da capire e facile da implementare.
-
-### Considerazioni importanti
-
-L’inoltro dipende dal tuo operatore. Alcuni fornitori lo consentono da un portale cliente o direttamente dal telefono, mentre altri richiedono una richiesta specifica. A seconda del tuo piano, potrebbero esserci anche costi associati alle chiamate inoltrate.
-
-> **Importante:** L’inoltro di chiamata si configura con il tuo operatore telefonico o con il tuo sistema telefonico interno, non dentro Callin.
+Una clinica usa lo stesso numero fisso da anni. Compare sul suo sito e su Google. La clinica acquista un numero in **Numeri**, lo assegna al suo agente e chiede al suo operatore di inoltrare lì la linea principale. I pazienti continuano a chiamare lo stesso numero e risponde l’agente.
 
 ## Opzione 2: Porta il tuo numero
 
-La portabilità ti permette di mantenere il tuo numero attuale e richiedere che continui a funzionare tramite il flusso compatibile con Callin, invece di dipendere da un inoltro permanente.
-
-Questa opzione è molto adatta quando vuoi mantenere lo stesso numero visibile ai clienti ma preferisci un’integrazione più diretta.
-
-### Da dove inizia
-
-Una richiesta di portabilità inizia da [**Numeri**](https://app.callin.io/numbers).
-
-All’interno del flusso di richiesta, puoi scegliere tra richiedere un nuovo numero o avviare una richiesta di portabilità. Per continuare con questa opzione, selezioni la portabilità, scegli il paese, selezioni il tipo di numero disponibile e inserisci il numero che vuoi portare.
+La portabilità trasferisce il tuo numero attuale su Callin.io («Mantieni il tuo numero esistente»). I tuoi clienti continuano a chiamare lo stesso numero, senza dipendere dall’inoltro.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/porting1.png"
-    alt="Schermata del flusso di portabilità dove si scelgono il paese, il tipo di richiesta e il numero da portare"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/connect-number-porting.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: schermata della richiesta di portabilità, dove l’utente inserisce il proprio numero e verifica se può continuare.
+  Video: Numeri → Aggiungi numero → Acquista numero → scegli il paese → Portabilità → inserisci il numero → Verifica portabilità.
 </p>
 
-### Come funziona
+### Avvia una richiesta di portabilità
 
-Una volta inserito il numero, la piattaforma esegue un controllo di portabilità per verificare se quel numero può continuare nel processo.
+1. Vai su [Numeri](https://app.callin.io/numbers) e clicca su **\+ Aggiungi numero** → **Acquista numero**.
+2. In **Paese**, scegli il paese del tuo numero.
+3. In **Tipo di richiesta**, seleziona **Portabilità**.
+4. Inserisci il tuo numero in **Numero da portare** in formato internazionale (esempio: `+34910000000`) e clicca su **Verifica portabilità**.
+5. Se il numero è portabile, clicca su **Avvia richiesta** e completa i **Requisiti documenti** di quel paese.
 
-Questa verifica conferma se esistono copertura o disponibilità per quella richiesta. Non tutti i numeri possono essere portati in tutti i paesi e non tutti i tipi di numero seguono le stesse regole.
+> **Nota:** **Portabilità** compare solo nei paesi che funzionano su richiesta (fuori da Stati Uniti e Canada). Per Stati Uniti e Canada, la finestra mostra l’acquisto immediato.
 
-### Cosa succede se il numero non è compatibile
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/porting1.png" alt="Finestra Acquista un nuovo numero per la Spagna con Portabilità selezionata, un numero di esempio in Numero da portare, il messaggio Questo numero è idoneo alla portabilità con Nome operatore, Numero di telefono e Tipo, e il pulsante Avvia richiesta" style={{ width:"100%", display:"block" }} />
+</div>
 
-Se il numero non può continuare, la piattaforma indicherà chiaramente che non è disponibile copertura per quel numero di telefono.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: la verifica della portabilità. Se il numero è portabile, vedi operatore, numero e tipo, e puoi cliccare su Avvia richiesta.
+</p>
 
-Questo non significa necessariamente che il numero non sia valido. Significa che, in quel caso, il numero non può continuare nel flusso di portabilità disponibile.
+### Cosa ti dice la verifica
 
-### Cosa succede se il numero è compatibile
+- **Questo numero è idoneo alla portabilità**: la richiesta può continuare. Vedi il **Nome operatore**, il **Numero di telefono** e il suo **Tipo** (ad esempio, `local`).
+- Se non c’è copertura per quel numero, la finestra te lo segnala e la richiesta non può continuare. Non significa che il numero non sia valido, solo che non si può portare con questa procedura.
 
-Se il numero è idoneo, la richiesta può continuare. I passaggi successivi possono variare in base al paese, al tipo di numero e alle condizioni applicabili in quel caso.
+Dopo aver cliccato su **Avvia richiesta**, il processo è lo stesso di un numero nuovo: documenti, costi e revisione. Puoi seguirlo nella scheda **Richieste Numeri**. Vedi [Numeri e BYOC](/it/Create-AI-Agent/Configure-Numbers) per i dettagli.
 
-### Quando questa opzione ha senso
-
-La portabilità è una buona scelta quando vuoi continuare a usare il tuo numero attuale ma non vuoi dipendere dall’inoltro esterno come soluzione a lungo termine.
-
-È anche il percorso naturale quando il tuo numero principale fa già parte del tuo marchio e vuoi integrarlo in modo più diretto nel tuo modello operativo.
+> **Suggerimento:** La portabilità richiede più tempo dell’acquisto di un numero, perché il tuo operatore attuale deve rilasciarlo. Non disattivare la linea attuale finché il numero non compare nell’elenco **Numeri**. Se il tuo numero non è portabile, l’inoltro di chiamata resta il modo più rapido per iniziare.
 
 ### Esempio pratico
 
-Uno studio professionale usa lo stesso numero aziendale da anni. I clienti lo conoscono e cambiarlo creerebbe attrito. In questo caso, la portabilità permette allo studio di mantenere quel numero come principale punto di contatto mentre passa a una configurazione più integrata.
-
-### Vantaggi
-
-- Ti permette di mantenere il numero che la tua azienda già usa.
-- Evita di dipendere dall’inoltro esterno come soluzione permanente.
-- Offre una continuità più naturale sia per i clienti sia per i team interni.
-
-### Considerazioni importanti
-
-La portabilità dipende dall’idoneità. La disponibilità può variare in base al paese, al tipo di numero e alla copertura associata al numero. Per questo il processo inizia sempre con un controllo da [**Numeri**](https://app.callin.io/numbers).
-
-> **Suggerimento:** Se il tuo numero non supera il controllo di disponibilità, l’inoltro di chiamata può comunque essere il modo più rapido per iniziare a usare l’agente.
+Uno studio legale usa lo stesso numero da anni e i suoi clienti lo conoscono. Con la portabilità, lo studio lo mantiene come numero principale di contatto e l’agente risponde direttamente, senza inoltri.
 
 ## Opzione 3: Collega la tua infrastruttura con BYOC (tronco SIP)
 
-BYOC ti permette di collegare il tuo fornitore di telefonia a Callin in modo che l’agente possa operare sopra la tua infrastruttura esistente.
+BYOC significa **Bring Your Own Carrier** («porta il tuo operatore»). Colleghi il tuo provider telefonico a Callin.io, così l’agente lavora sull’infrastruttura che hai già.
 
-È l’opzione più avanzata ed è pensata per le aziende che già usano voce su IP, un centralino, un sistema telefonico o un proprio fornitore SIP.
-
-### Dove si configura
-
-Tutta la configurazione dei fornitori personalizzati viene gestita dalla sezione [**BYOC**](https://app.callin.io/byoc).
-
-Da questa sezione, puoi collegare Telnyx o configurare un tronco SIP generico con un altro fornitore.
+È l’opzione più avanzata, pensata per aziende che usano già VoIP, un centralino (PBX) o un proprio provider SIP.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/byoc1.png"
-    alt="Schermata della sezione BYOC dove si collegano operatori e si configurano tronchi SIP"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/connect-number-byoc.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: sezione BYOC, dove gli utenti collegano il proprio operatore esistente, importano numeri o configurano un tronco SIP.
+  Video: BYOC → scheda Telnyx → scheda Altro provider SIP con le schede Base, In entrata e In uscita.
 </p>
-
-### Quando ha senso
-
-BYOC è la scelta migliore quando la tua azienda ha già una configurazione telefonica aziendale e non vuole duplicare i sistemi o ricostruire la propria architettura vocale.
-
-È consigliato anche se hai bisogno di maggiore controllo su come le chiamate entrano ed escono dalla piattaforma, oppure se il tuo team tecnico lavora già con tronchi SIP e credenziali proprie.
 
 ### BYOC con Telnyx
 
-Se usi già Telnyx, puoi collegarlo da [**BYOC**](https://app.callin.io/byoc) usando una chiave API.
+Se usi già Telnyx:
 
-Dopo aver collegato l’account, la piattaforma recupera i tuoi numeri attivi, li aggiunge al tuo spazio di lavoro e prepara la connessione necessaria per le chiamate in entrata e in uscita.
+1. Vai su [BYOC](https://app.callin.io/byoc) e apri la scheda **Telnyx**.
+2. Incolla la tua **Chiave API Telnyx** e clicca su **Avvia**.
 
-### Quando scegliere questa opzione
+Callin.io salva la chiave, recupera i tuoi numeri Telnyx attivi, li salva nel tuo account, configura il tronco SIP e crea i numeri di telefono per le chiamate in entrata e in uscita. Poi i tuoi numeri Telnyx compaiono in **Numeri**.
 
-Questo è il percorso migliore se hai già numeri attivi in Telnyx e vuoi integrarli con Callin in modo più guidato e veloce.
+### BYOC con un altro provider SIP
 
-### Esempio pratico
+Se il tuo provider non è Telnyx, apri la scheda **Altro provider SIP** (**Trunk SIP generico / Estensione PBX (qualsiasi provider)**). Funziona con un numero di tronco (DID) e con un’estensione del tuo centralino.
 
-Un’azienda usa già Telnyx per la propria telefonia aziendale. Invece di acquistare nuovi numeri, collega Telnyx da [**BYOC**](https://app.callin.io/byoc), importa i suoi numeri e continua a lavorare con l’inventario di numeri che ha già in produzione.
+- **Base**: un’**Etichetta**, il **Numero di telefono / Estensione** e se **Supporta in entrata** e **Supporta in uscita**.
+- **In entrata**: dove arrivano le chiamate al tuo sistema (**SBC / FQDN in entrata**, **Trasporto** e **Crittografia dei media**).
+- **In uscita**: come escono le chiamate da Callin.io (**SBC / FQDN in uscita**, **Trasporto**, **Crittografia dei media**, **Nome utente**, **Password** e **Paesi consentiti (in uscita)**).
 
-### BYOC con un altro fornitore SIP
+Quando hai finito, clicca su **Salva e importa**. Callin.io controlla poi che il numero si possa usare per chiamare.
 
-Se il tuo fornitore non è Telnyx, puoi usare la configurazione generica disponibile in [**BYOC**](https://app.callin.io/byoc).
-
-Questa opzione ti permette di collegare un tronco SIP di un altro fornitore e definire come verranno gestite le chiamate in entrata e in uscita.
-
-### Cosa viene definito in questa configurazione
-
-Per prima cosa definisci i dettagli di base del tronco e il numero che vuoi usare. Poi configuri la parte in entrata, che determina dove devono essere consegnate le chiamate in arrivo. Infine configuri la parte in uscita, che definisce quale server e quali credenziali verranno usati per le chiamate in uscita.
-
-### In termini semplici
-
-La parte in entrata determina dove il tuo sistema riceve le chiamate.  
-La parte in uscita determina come le chiamate lasciano la piattaforma.
-
-Questa separazione è comune negli ambienti di telefonia aziendale e ti offre maggiore controllo operativo.
-
-### Quando usare questa opzione
-
-Questo è il percorso migliore quando la tua azienda lavora già con un altro fornitore SIP, quando hai il tuo centralino o quando devi mantenere un’architettura telefonica aziendale esistente.
+> **Importante:** BYOC è consigliato alle aziende che hanno già un team di telefonia, un provider SIP o un centralino. Per il dettaglio di ogni campo, vedi [Numeri e BYOC](/it/Create-AI-Agent/Configure-Numbers#byoc-tronco-sip).
 
 ### Esempio pratico
 
-Un’azienda internazionale lavora con un fornitore SIP che già gestisce i suoi numeri, l’instradamento e le regole interne. Invece di ricostruire tutto il proprio ambiente telefonico, collega quel tronco da [**BYOC**](https://app.callin.io/byoc) e permette all’agente di operare all’interno di quella configurazione esistente.
-
-> **Importante:** BYOC è consigliato per le aziende che hanno già un team di telefonia, un fornitore SIP o una configurazione di centralino esistente.
+Un’azienda usa già Telnyx per le sue linee. Invece di acquistare numeri nuovi, collega Telnyx in **BYOC**, importa i suoi numeri e li assegna ai suoi agenti.
 
 ## Assegna il numero all’agente
 
-Avere il numero nel tuo spazio di lavoro non è l’ultimo passaggio. Perché l’agente possa usarlo, il numero deve essere assegnato all’agente corretto.
+Avere il numero nel tuo account non è l’ultimo passo. L’agente usa solo un numero che gli è stato assegnato. In **Numeri**, un numero non assegnato mostra **Questo numero non è assegnato a nessun agente**, e in **Agenti AI** un agente senza numero mostra **Nessun numero telefonico assegnato**.
 
-Questa assegnazione fa parte dell’attivazione effettiva della linea. Se il numero esiste nel tuo account ma non è stato assegnato, non è ancora pronto per funzionare come linea telefonica attiva dell’agente.
+1. Vai su **Agenti AI**.
+2. Clicca sul menu **⋮** dell’agente e seleziona **Assegna numero**.
+3. Nella finestra **Assegna numero a**, trova il numero (puoi cercare per numero, etichetta od operatore) e clicca su **Assegna**.
 
-### Dove viene gestito
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/connect-number-assign.png" alt="Finestra Assegna numero di un agente, con la casella di ricerca, i pulsanti Filtri e Aggiorna, e l'elenco dei numeri con stato, operatore e pulsante Assegna" style={{ width:"100%", display:"block" }} />
+</div>
 
-Il numero in sé viene gestito da [**Numeri**](https://app.callin.io/numbers), ma l’assegnazione fa anche parte della configurazione operativa dell’agente.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: la finestra Assegna numero. La colonna Stato indica se ogni numero è libero o già assegnato a un altro agente.
+</p>
 
-### Perché è importante
-
-Un numero può essere stato acquistato, collegato o importato correttamente e comunque non comportarsi come previsto se non è collegato all’agente giusto.
-
-### Esempio pratico
-
-Se la tua azienda ha un agente per l’assistenza e un altro per le vendite, devi assicurarti che ogni numero sia assegnato a quello corretto. In questo modo eviti una situazione in cui una linea pensata per le vendite venga gestita dal flusso di assistenza, o viceversa.
-
-> **Errore comune:** Importare o acquistare un numero non basta da solo. Il numero deve comunque essere assegnato all’agente corretto.
+> **Errore comune:** Assegnare un numero usato da un altro agente. Come avvisa la finestra, **assegnarlo qui lo scollegherà dall’altro agente**. Se hai un agente per l’assistenza e uno per le vendite, controlla che ogni linea sia assegnata a quello giusto.
 
 ## Quale opzione dovresti scegliere
 
-Se vuoi una raccomandazione semplice:
+- **Per iniziare subito senza cambiare il tuo numero principale**, usa l’inoltro di chiamata.
+- **Per mantenere il tuo numero e far rispondere direttamente l’agente**, usa la portabilità quando è disponibile.
+- **Se hai già una tua infrastruttura telefonica**, usa BYOC.
 
-- Se vuoi iniziare rapidamente senza cambiare il tuo numero principale, usa l’inoltro di chiamata.
-- Se vuoi mantenere quel numero all’interno di un modello operativo più integrato, usa la portabilità quando è disponibile.
-- Se la tua azienda ha già una propria infrastruttura telefonica, usa BYOC.
-
-L’opzione migliore è quella che si adatta alle tue operazioni attuali, al tuo fornitore e al livello di controllo che vuoi mantenere.
+L’opzione migliore è quella che si adatta al tuo impianto attuale, al tuo provider e al livello di controllo che vuoi.
