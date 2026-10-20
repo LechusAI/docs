@@ -6,150 +6,204 @@ icon: "address-book"
 
 ## Descripción general
 
-La página de **Contactos** es donde gestionas a quién vas a llamar.
+La página **Contactos** es donde gestionas a quién llamarán tus agentes. Está en el menú de la izquierda, en **Telefonía** ([ábrela aquí](https://app.callin.io/contacts)).
 
 Desde aquí puedes:
-- **Añadir contactos manualmente** (uno o varios)
-- **Subir un CSV** para importar una lista grande
-- **Buscar y filtrar** tu lista de contactos
-- **Exportar** tus contactos a CSV
-- **Iniciar campañas** usando contactos seleccionados
-- **Eliminar seleccionados** (acción permanente)
 
-Para abrir Contactos directamente: [Haz clic aquí para ir a Contactos](https://app.callin.io/contacts)
+- **Añadir contactos manualmente**, uno o varios a la vez.
+- **Subir un CSV** para importar una lista más grande.
+- **Buscar y filtrar** tu lista de contactos.
+- **Ver y editar** cada contacto.
+- **Exportar** tus contactos a CSV.
+- **Iniciar una campaña** con los contactos que selecciones.
+- **Eliminar** los contactos seleccionados (de forma permanente).
+
+> **Nota:** La página **Contactos** de la app está en inglés. En esta guía los nombres de sus botones y opciones están traducidos, así que en pantalla los verás en inglés.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/contacts1.png"
-    alt="Página de Contactos mostrando la tabla de Contact List, los botones Add Contact y Upload CSV, además de búsqueda y filtros"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/contacts1.png" alt="Lista de contactos con dos contactos de ejemplo seleccionados y los botones Eliminar seleccionados, Iniciar campaña, Añadir contacto y Exportar a CSV, además de la búsqueda y los filtros" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: La página de Contactos donde puedes añadir/importar contactos y gestionar tu lista.
+  Captura: la lista de contactos. Al seleccionar contactos aparecen los botones Eliminar seleccionados, Iniciar campaña y Exportar a CSV.
 </p>
+
+Si todavía no tienes contactos, la página muestra **No se encontraron contactos** con los botones **Añadir contacto** y **Subir CSV**.
 
 ## Añadir contactos manualmente
 
-La entrada manual es ideal cuando vas a añadir pocos contactos (o pegar datos desde una hoja de cálculo).
-
-### Pasos
-
-1. Haz clic en **Add Contact**.
-2. Rellena los campos que necesites:
-   - **Name** (opcional)
-   - **Phone Number** (obligatorio)
-   - **Email** (opcional)
-3. Añade más personas agregando más filas (si está disponible en tu modal).
-
-> **Importante:** **Phone Number es obligatorio** para cada contacto.
-
-### Consejos de edición (como una hoja de cálculo)
-
-En la cuadrícula de añadir contactos normalmente puedes:
-- Hacer clic y arrastrar para seleccionar varias celdas
-- Copiar y pegar valores dentro de la cuadrícula
-- Hacer doble clic en una celda para editar
-- Pulsar **Enter** para añadir una fila nueva
-- Pulsar **Esc** para limpiar la selección
-
-> **Consejo:** Si ya tienes los contactos en Google Sheets/Excel, copia las celdas y pégalas directamente en la cuadrícula.
-
-### Columnas opcionales
-
-Puede que veas un botón **Add Column** en el modal. Sirve para incluir campos extra si tu espacio de trabajo los soporta.
-
-> **Importante:** Las columnas disponibles pueden variar según tu cuenta o plan.
-
-## Importar contactos desde un CSV
-
-La importación por CSV es lo mejor para listas grandes.
-
-### Requisitos de subida
-
-- **Tipo de archivo:** solo CSV
-- **Tamaño máximo:** 10MB
-- Puedes subirlo seleccionando un archivo o arrastrándolo y soltándolo.
-
-> **Error común:** Subir un .xlsx. Primero expórtalo como **CSV**.
-
-### Subir un CSV
-
-1. Haz clic en **Upload CSV**.
-2. (Opcional) Haz clic en **Download Template** para partir del formato recomendado.
-3. Sube tu CSV haciendo clic en **Select File** o arrastrando el archivo al área de subida.
+Añadirlos a mano va mejor cuando son pocos contactos, o cuando los pegas desde una hoja de cálculo.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/contacts2.png"
-    alt="Modal de subida de CSV con Download Template y Select File, indicando solo CSV y máximo 10MB"
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Modal de subida de CSV, incluyendo el requisito de solo CSV y el límite de 10MB.
+  Vídeo: Añadir contacto → rellenar dos contactos de ejemplo → Añadir columna → Guardar contactos.
 </p>
 
-### Mapear tus columnas
+### Pasos
 
-Después de subirlo, mapearás los encabezados del CSV con los campos que importará Callin.
+1. Haz clic en **\+ Añadir contacto**. Se abre la ventana **Añadir contactos** con una tabla.
+2. Rellena cada fila:
+   - **Nombre**
+   - **Número de teléfono** (obligatorio)
+   - **Correo electrónico** (opcional)
+3. Haz clic en **Añadir fila** (o pulsa **Intro**) para añadir más personas.
+4. Haz clic en **Guardar contactos**.
 
-- **Phone** (obligatorio)
-- **Name** (opcional)
-- **Email** (opcional)
+> **Importante:** El **número de teléfono es obligatorio** en todos los contactos. Si falta, la ventana muestra **El número de teléfono es obligatorio**.
 
-> **Importante:** Si **Phone** no está mapeado, la importación no puede continuar.
+### Consejos de edición (como en una hoja de cálculo)
 
-### Reglas de validación (aplican a manual + CSV)
+La ventana muestra estos **consejos rápidos**:
 
-- Los teléfonos deben incluir **código de país** (ejemplo: **+1234567890**)
-- Los teléfonos deben tener **7–15 dígitos** (excluyendo el código de país)
-- Los teléfonos son **obligatorios** para todos los contactos
-- Los emails deben ser **válidos** si se proporcionan
-- Los campos con errores de validación se resaltan con un **borde rojo**
-- Los campos vacíos se resaltan con un **borde rojo**
+- Haz clic y arrastra para seleccionar varias celdas.
+- Usa **Ctrl+C** (**Cmd+C** en Mac) para copiar las celdas seleccionadas.
+- Haz clic en cualquier celda y pulsa **Ctrl+V** (**Cmd+V** en Mac) para pegar datos.
+- Pulsa **Esc** para quitar la selección.
+- Haz doble clic en una celda para editar su contenido.
+- Pulsa **Intro** para añadir una fila nueva.
 
-> **Consejo:** Si tu CSV tiene teléfonos sin código de país, añade el código antes de importar para evitar errores de validación.
+> **Consejo:** Si tus contactos ya están en Google Sheets o Excel, copia las celdas y pégalas directamente en la tabla.
+
+### Columnas opcionales
+
+Encima de la tabla se ven las columnas actuales (**Columns: name, phoneNumber, email**). Haz clic en **Añadir columna** para añadir un campo propio, por ejemplo _empresa_ o _ciudad_. En **Añadir nueva columna**, escribe un **nombre de columna** y haz clic en **Añadir columna**. Los nombres se convierten a minúsculas con guiones bajos.
+
+Después puedes usar estas columnas en los filtros de contactos.
+
+## Importar contactos desde un CSV
+
+Importar un CSV va mejor para listas grandes.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Subir CSV → Asignar columnas → revisar los contactos en Añadir contactos.
+</p>
+
+### Requisitos del archivo
+
+- **Tipo de archivo:** solo CSV.
+- **Tamaño máximo:** 10 MB.
+- Puedes hacer clic para elegir el archivo o arrastrarlo y soltarlo.
+
+> **Error común:** Subir un archivo .xlsx. Expórtalo antes como **CSV**.
+
+### Subir un CSV
+
+1. Haz clic en **Subir CSV**. Se abre la ventana **Subir archivo CSV**.
+2. (Opcional) Haz clic en **Descargar plantilla** para partir del formato recomendado.
+3. Haz clic en **Seleccionar archivo**, o arrastra el archivo a la zona de subida.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/contacts2.png" alt="Ventana Subir archivo CSV con el botón Descargar plantilla, la zona para arrastrar y soltar, solo archivos CSV (máx. 10 MB) y el botón Seleccionar archivo" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Subir archivo CSV, con el requisito de solo CSV y el límite de 10 MB.
+</p>
+
+### Asigna tus columnas
+
+Después de subirlo, la ventana **Asignar columnas** muestra el nombre del archivo y cuántos contactos tiene. En **Asigna tus columnas**, elige qué columna de tu archivo va a cada campo:
+
+- **Teléfono** (obligatorio)
+- **Nombre**
+- **Correo electrónico**
+
+Si tus números no llevan **\+**, elige su país en **Los números no incluyen «+»… elige un país**, para que Callin.io añada el prefijo del país.
+
+Debajo verás una vista previa de tus contactos. Haz clic en **Continuar**: los contactos se abren en la tabla de **Añadir contactos**, donde puedes revisarlos o corregirlos antes de hacer clic en **Guardar contactos**.
+
+> **Importante:** Si no asignas el **Teléfono**, la importación no puede continuar.
+
+### Reglas de validación (manual y CSV)
+
+- Los números de teléfono deben incluir el **prefijo del país** (ejemplo: **\+1234567890**).
+- Los números de teléfono deben tener **entre 7 y 15 dígitos** (sin contar el prefijo del país).
+- El número de teléfono es **obligatorio** en todos los contactos.
+- Si pones un correo electrónico, debe ser **válido**.
+- Los campos con errores se marcan con un **borde rojo**.
+- Los campos vacíos se marcan con un **borde rojo**.
+
+> **Consejo:** Si tu CSV tiene números sin prefijo del país, elige el país al asignar las columnas o añade el prefijo antes de importar.
 
 ## Gestionar tu lista de contactos
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: ver y editar un contacto → seleccionar contactos → Filtros → Iniciar campaña → Eliminar seleccionados.
+</p>
+
 ### Búsqueda y filtros
 
-- Usa **Search contacts…** para encontrar por nombre, teléfono o email.
-- Haz clic en **Filters** para acotar tu lista.
+- Usa **Buscar contactos...** para encontrar personas por nombre, teléfono o correo.
+- Haz clic en **Filtros** para abrir los **filtros avanzados** y luego en **Añadir filtro**. Cada filtro tiene un campo (**name**, **email**, **phoneNumber** o cualquier columna que hayas añadido), una condición (**Es igual a**, **No es igual a**, **Contiene**, **Empieza por**, **Termina en**, **Está vacío**, **No está vacío**) y un valor.
 
-> **Importante:** Las opciones de filtro pueden variar según tu cuenta o plan.
+El panel muestra cuántos contactos coinciden. Haz clic en **Seleccionar todos los filtrados** para seleccionarlos todos (por ejemplo, para iniciar una campaña), o en **Limpiar todo** para quitar los filtros.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/contacts-filters.png" alt="Filtros avanzados con un filtro name Contiene Emma, 1 contacto que coincide y el botón Seleccionar todos los filtrados" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: un filtro que encuentra los contactos cuyo nombre contiene «Emma».
+</p>
 
 ### Ver y editar
 
-En la columna **Actions**, normalmente puedes:
-- **Ver** los detalles del contacto
-- **Editar** el contacto
+En la columna **Acciones**:
+
+- El icono del **ojo** abre los **detalles del contacto**, con su nombre, correo y teléfono.
+- El icono del **lápiz** te deja editar el contacto en la misma lista. Haz clic en el icono de **guardar** para conservar los cambios. Verás **Contacto editado correctamente**.
 
 ### Exportar a CSV
 
-Haz clic en **Export to CSV** para descargar tu lista actual de contactos.
+Selecciona contactos con las casillas y haz clic en **Exportar a CSV** para descargarlos. La casilla de la cabecera selecciona todos los contactos de la lista.
 
 ## Iniciar una campaña desde Contactos
 
-1. Selecciona uno o varios contactos usando las casillas.
-2. Haz clic en **Start Campaign**.
-3. Escribe un **nombre de campaña** y **selecciona un agente**.
-4. (Opcional) Activa **Follow-up Calls**.
+1. Selecciona uno o varios contactos con las casillas.
+2. Haz clic en **Iniciar campaña**.
+3. Escribe un nombre para la campaña y elige un agente en **Seleccionar agente**.
+4. (Opcional) Activa **Llamadas de seguimiento**.
+5. Haz clic en **Iniciar campaña**.
 
-Si está activado, los seguimientos se programan para cada contacto después de una llamada **no contestada** o **ocupada**:
-- Tras **2 horas**
-- Tras **1 día**
-- Tras **3 días**
+Con **Llamadas de seguimiento** activado, para cada contacto con una llamada **sin respuesta** o **comunicando** se programan nuevos intentos:
 
-> **Consejo:** Si estás probando, empieza con una selección pequeña (5–10 contactos) para confirmar que el agente y el guion funcionan como esperas.
+- A las **2 horas**
+- Al **1 día**
+- A los **3 días**
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/contacts-campaign.png" alt="Ventana Iniciar campaña con un nombre de campaña de ejemplo, un agente elegido y Llamadas de seguimiento activado" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: iniciar una campaña con los contactos seleccionados.
+</p>
+
+> **Consejo:** Si estás haciendo pruebas, empieza con pocos contactos (5–10) para comprobar que tu agente y tu guion funcionan como esperas.
 
 ## Eliminar contactos seleccionados (permanente)
 
-1. Selecciona los contactos que quieres eliminar.
-2. Haz clic en **Delete Selected**.
-3. Confirma el borrado (puede que tengas que escribir **DELETE**).
+1. Selecciona los contactos que quieres quitar.
+2. Haz clic en **Eliminar seleccionados**.
+3. En **Eliminar contactos**, escribe **DELETE** para confirmar y haz clic en **Eliminar**.
 
-> **Importante:** Esta es una acción **permanente** y no se puede deshacer.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/contacts-delete.png" alt="Ventana Eliminar contactos con el aviso de que es una acción permanente, DELETE escrito en el campo de confirmación y el botón Eliminar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el borrado solo se hace después de escribir DELETE.
+</p>
+
+> **Importante:** Es una **acción permanente** y no se puede deshacer. Si puedes necesitar los contactos más adelante, expórtalos antes a CSV.
