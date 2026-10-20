@@ -6,97 +6,150 @@ icon: "phone-arrow-right"
 
 ## Vue d’ensemble
 
-Les transferts d’appels permettent à votre assistant IA de rediriger facilement les appels entrants vers le bon service, la bonne équipe ou un numéro externe — sans raccrocher et sans délai inutile. Cette fonctionnalité garantit une expérience client professionnelle et aide votre organisation à gérer les appels efficacement.
+Les transferts permettent à votre agent IA de passer un appel en cours à la bonne personne, à la bonne équipe ou au bon agent IA, sans raccrocher. Par exemple, l’agent peut passer à votre ligne commerciale un client qui demande un devis, ou confier une question technique à un agent spécialisé.
 
-Vous effectuerez la configuration en deux étapes principales : créer une **configuration de transfert** et la lier à votre **agent IA**.
+La configuration se fait à deux endroits :
+
+- **Transfert d’appel** (menu de gauche, sous **Téléphonie**) : votre liste de **règles de transfert d’appel**, chacune avec un nom, un numéro et une condition.
+- L’onglet **Outils** de l’agent : les outils système **Transfert vers un numéro** et **Transfert vers un agent**, qui activent les transferts pour cet agent.
 
 ---
 
 ## Étape 1 : Créer une configuration de transfert
 
-1. **Ouvrir la page Call Transfer**\
-   Dans votre tableau de bord Callin.io, ouvrez le menu de gauche et sélectionnez **Call Transfer**.
-   - Si c’est votre première configuration, vous verrez un message indiquant **« No Call Transfer Configurations found. »**
-   - Cliquez sur **\+ Create Configuration** pour commencer.
-2. **Compléter la section des informations de base**\
-   Cette section permet d’identifier et d’organiser vos règles de transfert.
-   - **Title :** le nom interne de cette configuration (par exemple _Sales LATAM_ ou _Support Team_).
-   - **Department :** l’équipe ou le groupe responsable de traiter les appels transférés.
+Dans l’application, les configurations de transfert s’appellent des **règles de transfert d’appel**.
 
-   Les deux champs sont obligatoires. S’ils sont vides, une alerte rouge (par exemple _« Title is required! »_) s’affichera pour vous demander de les compléter.
-3. **Ajouter les détails du transfert**\
-   Définissez vers où l’appel doit être redirigé et ce qui se passe pendant le transfert.
-   - Cliquez sur **\+ Add** et renseignez ces champs :
-     - **Agent Name :** pré-rempli par défaut, il identifie l’agent IA actuel.
-     - **Transfer Phone Number :** le numéro vers lequel les appels seront transférés (par exemple `+44 700123456`).
-     - **Transfer Message :** le court message que votre agent IA prononce avant de transférer l’appel (par exemple _« Je vous mets en relation avec notre service commercial, un instant s’il vous plaît. »_).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-   Cliquez sur **Save** une fois tous les champs remplis. La configuration apparaîtra alors dans votre liste **Call Transfer**.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : Transfert d’appel → Créer une règle → remplir Titre, Numéro et Condition.
+</p>
+
+1. Dans le menu de gauche, ouvrez **Transfert d’appel** ([ouvrir ici](https://app.callin.io/call-transfer)). Si vous n’avez encore aucune règle, vous voyez **Aucune règle de transfert d’appel trouvée**.
+2. Cliquez sur **\+ Créer une règle**.
+3. Remplissez les trois champs. Ils sont tous obligatoires :
+   - **Titre** : un nom pour cette règle (par exemple, _Équipe commerciale_ ou _Support_).
+   - **Numéro** : le numéro vers lequel l’appel sera transféré, au format E.164, avec **\+** et l’indicatif du pays (par exemple, `+15550100200`).
+   - **Condition** : quand l’agent doit transférer l’appel. Le LLM sait ainsi quand transférer l’appel vers ce numéro (par exemple, _« Transfère l’appel quand le client demande à parler au service commercial, veut un devis ou est prêt à acheter. »_).
+4. Cliquez sur **Sauvegarder**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-rule.png" alt="Fenêtre Créer une règle avec les champs Titre, Numéro et Condition remplis avec une règle commerciale d'exemple, et les boutons Effacer, Annuler et Sauvegarder" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : une règle qui transfère les appels commerciaux à l’équipe commerciale.
+</p>
+
+Si un champ est vide ou incorrect, la fenêtre vous le signale : **Le titre est requis**, **Le numéro doit être au format E.164 (ex. \+1234567890)** ou **La condition de transfert est requise !**. Utilisez **Effacer** pour vider le formulaire, ou **Annuler** pour le fermer sans enregistrer.
+
+Vos règles apparaissent dans la liste des **règles de transfert d’appel**, où vous pouvez les retrouver avec la recherche.
 
 ---
 
 ## Étape 2 : Activer le transfert d’appel pour un agent IA
 
-Une fois la configuration prête, vous pouvez l’activer pour n’importe lequel de vos agents IA.
+Les transferts s’activent dans chaque agent, dans les **Outils système** de l’onglet **Outils**.
 
-1. Allez dans **AI Agents** dans le menu principal.
-2. Sélectionnez l’agent pour lequel vous souhaitez activer les transferts.
-3. Ouvrez l’onglet **Call Action** dans les paramètres de l’agent.
-4. Repérez l’option **Transfer Call** et activez-la. Le bouton bascule devient bleu pour indiquer l’activation.
-5. Cliquez sur l’icône ⚙️ **engrenage** à côté du bouton. Cela ouvre un panneau listant toutes les configurations de transfert disponibles.
-6. Sélectionnez la configuration que vous venez de créer (par exemple _Sales LATAM_). Une fois sélectionnée, elle apparaîtra comme **Selected** en vert.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-Ce processus lie la configuration à votre agent et la prépare pour une utilisation en appels réels.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : onglet Outils → Transfert vers un numéro → Ajouter une règle → Type de destination → Numéro de téléphone et Condition.
+</p>
+
+1. Allez dans **AI Agents** et ouvrez l’agent.
+2. Ouvrez l’onglet **Outils**. À droite, sous **Outils système**, activez **Transfert vers un numéro** (« Met l’appelant en relation avec un membre de l’équipe quand une intervention humaine est nécessaire ou demandée »).
+3. Le panneau **Modifier l’outil Transfert vers numéro** s’ouvre. Sous **Règles transfert humain**, cliquez sur **Ajouter une règle** et remplissez :
+   - **Type de destination** : **Numéro de téléphone** (toujours le même numéro) ou **Numéro comme variable dynamique** (un numéro qui vient d’une variable, par exemple un par contact ou par agence).
+   - **Numéro de téléphone** (ou **Numéro comme variable dynamique**) : où va l’appel.
+   - **Condition** : quand transférer vers ce numéro.
+4. Ajoutez une règle par destination. Utilisez **Supprimer la règle** pour en retirer une.
+5. Cliquez sur **Sauvegarder** dans le panneau.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-number.png" alt="Panneau Modifier l'outil Transfert vers numéro avec Description (optionnel), Désactiver les interruptions et une règle de transfert humain avec le type de destination Numéro de téléphone, un numéro d'exemple et une condition" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : une règle de transfert humain dans l’outil Transfert vers un numéro.
+</p>
+
+Le panneau propose aussi deux réglages facultatifs :
+
+- **Description (optionnel)** : indique au LLM comment et quand utiliser l’outil. Laissez-la vide pour utiliser les instructions optimisées par défaut.
+- **Désactiver les interruptions** : l’appelant ne peut pas interrompre pendant le transfert.
+
+> **Astuce :** Utilisez le même numéro et la même condition que dans vos **règles de transfert d’appel**, pour que votre liste dans **Transfert d’appel** et vos agents restent cohérents.
+
+### Transférer vers un autre agent IA
+
+Pour passer l’appel à un agent IA plus spécialisé plutôt qu’à une personne, activez **Transfert vers un agent** dans la même liste d’**Outils système**. Sous **Règles de transfert**, cliquez sur **Ajouter une règle** et choisissez :
+
+- **Agent** : l’agent qui prend l’appel.
+- **Condition** : quand transférer vers cet agent.
+- **Délai avant transfert (ms)** : combien de temps attendre avant de transférer.
+- **Message de transfert** : la phrase exacte que l’agent dit avant de transférer.
+- **Activer le premier message** : si le nouvel agent lit son message d’accueil après le transfert.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-agent.png" alt="Panneau Modifier l'outil Transfert vers agent avec une règle de transfert : Agent, Condition, Délai avant transfert, Message de transfert et Activer le premier message" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : une règle de transfert dans l’outil Transfert vers un agent.
+</p>
+
+Pour en savoir plus sur tous les outils système, voir [AI Agents](/fr/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
 ## Étape 3 : Enregistrer et tester la configuration
 
-Après avoir assigné la règle de transfert, faites défiler jusqu’en bas à droite de la page de l’agent et cliquez sur **Save**.
-
-Si un message indique _« You have unsaved changes »_, cela signifie que la configuration n’a pas encore été enregistrée — cliquez à nouveau sur **Save** pour confirmer.
-
-Une fois enregistré, votre agent IA peut détecter quand un appel doit être redirigé et effectuer le transfert automatiquement en temps réel.
+Quand vous modifiez l’agent, une barre **Vous avez des modifications non enregistrées** apparaît en bas de la page. Cliquez sur **Sauvegarder** pour enregistrer les modifications, ou sur **Effacer** pour les annuler.
 
 ### Tester votre configuration
 
-Pour vérifier que tout fonctionne :
+1. Dans l’agent, cliquez sur **Tester l’agent IA** pour lui parler depuis le navigateur, ou sur **Appel test** pour recevoir un vrai appel.
+2. Dites quelque chose qui correspond à l’une de vos conditions (par exemple, _« Je voudrais un devis »_).
+3. Vérifiez que l’agent transfère l’appel vers le bon numéro ou le bon agent.
 
-- Allez sur le profil de votre agent IA.
-- Utilisez la fonctionnalité **Test Call** pour simuler un appel entrant.
-- Déclenchez un scénario de transfert (par exemple le client demande à parler au service commercial) pour vérifier que le bon numéro et le bon message sont utilisés.
+Après l’appel, ouvrez l’**Historique des appels** et utilisez le filtre **Transfert d’appel** pour retrouver les appels transférés. Voir [Historique des appels](/fr/Create-AI-Agent/Call-Actions).
 
 ---
 
 ## Conseils et bonnes pratiques
 
-- **Créez des configurations distinctes pour chaque service.**\
-  Exemple : _Sales_, _Support_, _Billing_ et _Customer Success_. Assignez chacune à l’agent IA correspondant.
-- **Utilisez un nommage clair et cohérent.**\
-  Cela vous aide à identifier rapidement les configurations lorsque vous gérez plusieurs agents.
-- **Gardez les messages de transfert courts et professionnels.**\
-  Exemple : _« Je vous mets en relation avec notre équipe support. »_ Évitez les formulations longues ou répétitives.
-- **Modifiez ou supprimez les configurations à tout moment.**\
-  Vous pouvez les ajuster dans **Call Transfer**, et les changements s’appliqueront dès que les agents associés seront enregistrés à nouveau.
+- **Créez une règle par destination.**\
+  Par exemple : _Ventes_, _Support_, _Facturation_. Chacune avec son numéro et sa condition.
+- **Rédigez des conditions claires et précises.**\
+  Le LLM décide quand transférer selon la condition. _« Quand le client demande un remboursement ou un changement de facturation »_ fonctionne mieux que _« facturation »_.
+- **Utilisez des noms clairs et cohérents.**\
+  Vous retrouvez ainsi vos règles rapidement quand vous gérez de nombreux agents.
+- **Utilisez toujours le format international.**\
+  Les numéros doivent commencer par **\+** et l’indicatif du pays (E.164).
 
 ---
 
 ## Dépannage
 
-**Problème :** pas d’icône d’engrenage à côté de Transfer Call\
-**Cause :** aucune configuration de transfert n’existe encore.\
-**Solution :** créez d’abord une configuration dans **Call Transfer**.
+**Problème :** Je ne peux pas enregistrer la règle\
+**Cause :** Un champ obligatoire est vide ou le numéro n’est pas au format E.164.\
+**Solution :** Remplissez **Titre**, **Numéro** et **Condition**, et écrivez le numéro avec **\+** et l’indicatif du pays.
 
-**Problème :** les modifications ne s’enregistrent pas\
-**Cause :** des champs obligatoires sont incomplets ou non enregistrés.\
-**Solution :** remplissez tous les champs puis cliquez à nouveau sur **Save**.
+**Problème :** L’agent ne transfère jamais\
+**Cause :** **Transfert vers un numéro** n’est pas activé, l’agent n’a pas été enregistré ou la condition ne correspond pas à ce que disent les appelants.\
+**Solution :** Vérifiez l’outil dans l’onglet **Outils**, cliquez sur **Sauvegarder** dans l’agent et clarifiez la condition.
 
-**Problème :** les appels ne sont pas transférés correctement\
-**Cause :** format de numéro invalide ou mauvaise configuration sélectionnée.\
-**Solution :** vérifiez que le numéro inclut l’indicatif international et que la configuration apparaît comme **Selected**.
+**Problème :** Les appels partent vers le mauvais numéro\
+**Cause :** Deux règles avec des conditions qui se chevauchent, ou un numéro erroné.\
+**Solution :** Rendez chaque condition précise et vérifiez les numéros dans **Règles transfert humain**.
 
 ---
 
 ## Résumé
 
-Vos agents IA peuvent désormais acheminer les appelants vers la personne ou le service approprié, sans interruption. Cette configuration améliore l’efficacité, garantit un traitement cohérent des appels et offre une expérience fluide aux clients.
+Avec les **règles de transfert d’appel** et les outils **Transfert vers un numéro** et **Transfert vers un agent**, vos agents IA orientent chaque appelant vers la bonne personne, la bonne équipe ou le bon agent, sans interruption. La gestion des appels reste cohérente et vos clients vivent une expérience fluide.

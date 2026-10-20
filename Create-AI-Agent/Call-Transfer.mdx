@@ -7,97 +7,150 @@ icon: "phone-arrow-right"
 
 ## Overview
 
-Call transfers allow your AI assistant to seamlessly redirect incoming calls to the correct department, team, or external number — without hanging up or causing delays. This feature ensures a professional customer experience and helps your organization manage calls efficiently.
+Call transfers let your AI agent pass a live call to the right person, team, or AI agent, without hanging up. For example, the agent can send a caller who wants a quote to your sales line, or hand a technical question to a specialized agent.
 
-You’ll complete this setup in two main steps: creating a **transfer configuration** and linking it to your **AI agent**.
+You set it up in two places:
+
+- **Call Transfer** (left menu, under **Telephony**): your list of **Call Transfer Rules**, each with a name, a number, and a condition.
+- The agent’s **Tools** tab: the **Transfer to number** and **Transfer to agent** system tools, which turn transfers on for that agent.
 
 ---
 
 ## Step 1: Create a Transfer Configuration
 
-1. **Open the Call Transfer Page**\
-   In your Callin.io dashboard, open the left-hand menu and select **Call Transfer**.
-   - If you’re setting this up for the first time, you’ll see a message saying **“No Call Transfer Configurations found.”**
-   - Click **\+ Create Configuration** to begin.
-2. **Complete the Basic Information Section**\
-   This section helps identify and organize your transfer rules.
-   - **Title:** The internal name for this configuration (for example, _Sales LATAM_ or _Support Team_).
-   - **Department:** The team or group responsible for handling the transferred calls.
+In the app, transfer configurations are called **Call Transfer Rules**.
 
-   Both fields are required. If left blank, a red alert (e.g., _“Title is required!”_) will appear to prompt completion.
-3. **Add Transfer Details**\
-   Define where the call should be redirected and what happens during the transfer process.
-   - Click **\+ Add** and complete these fields:
-     - **Agent Name:** This is pre-filled by default, identifying the current AI agent.
-     - **Transfer Phone Number:** The phone number to which calls will be transferred (for example, `+44 700123456`).
-     - **Transfer Message:** The short message your AI agent says before transferring the call (for example, _“Let me connect you with our sales department, one moment please.”_).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-   Click **Save** once you’ve filled in all fields. The configuration will now appear in your **Call Transfer** list.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Call Transfer → Create Rule → fill in Title, Number, and Condition.
+</p>
+
+1. In the left menu, open **Call Transfer** ([open it here](https://app.callin.io/call-transfer)). If you don’t have any rules yet, you’ll see **No Call Transfer Rules found**.
+2. Click **\+ Create Rule**.
+3. Fill in the three fields. All of them are required:
+   - **Title**: a name for this rule (for example, _Sales team_ or _Support_).
+   - **Number**: the number where the call will be transferred, in E.164 format, with **\+** and the country code (for example, `+15550100200`).
+   - **Condition**: when the agent should transfer the call. This lets the LLM know when to transfer the call to this number (for example, _“Transfer the call when the caller asks to speak with sales, wants a price quote or is ready to buy.”_).
+4. Click **Save**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-rule.png" alt="Create Rule window with the Title, Number and Condition fields filled in with an example sales rule, and the Clear, Cancel and Save buttons" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: a rule that sends sales calls to the sales team.
+</p>
+
+If a field is empty or wrong, the window tells you: **Title is required**, **Number must be in E.164 format (e.g., \+1234567890)**, or **Transfer condition is required!**. Use **Clear** to empty the form, or **Cancel** to close it without saving.
+
+Your rules appear in the **Call Transfer Rules** list, where you can find them with **Search call transfer rules...**.
 
 ---
 
 ## Step 2: Activate Call Transfer for an AI Agent
 
-Once the configuration is ready, you can activate it for any of your AI agents.
+Transfers are turned on in each agent, in the **System Tools** of the **Tools** tab.
 
-1. Go to **AI Agents** in the main navigation menu.
-2. Select the agent you want to enable call transfers for.
-3. Open the **Call Action** tab in the agent settings.
-4. Locate the **Transfer Call** option and toggle it on. The toggle will turn blue to indicate activation.
-5. Click the ⚙️ **gear icon** next to the toggle. This opens a configuration panel listing all available transfer setups.
-6. Select the configuration you just created (for example, _Sales LATAM_). Once selected, it will appear as **Selected** in green text.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-This process links the configuration to your agent and prepares it for use in live calls.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Tools tab → Transfer to number → Add Rule → Destination Type → Phone Number and Condition.
+</p>
+
+1. Go to **AI Agents** and open the agent.
+2. Open the **Tools** tab. On the right, under **System Tools**, turn on **Transfer to number** (“Provides a seamless connection to a live team member when a human touch is needed or requested by the caller”).
+3. The **Edit Transfer to Number Tool** panel opens. Under **Human Transfer Rules**, click **Add Rule** and fill in:
+   - **Destination Type**: **Phone Number** (always the same number) or **Phone Number as Dynamic Variable** (a number that comes from a variable, for example one per contact or per office).
+   - **Phone Number** (or **Phone Number as Dynamic Variable**): where the call goes.
+   - **Condition**: when to transfer to this number.
+4. Add one rule for each destination. Use **Remove Rule** to delete one.
+5. Click **Save** in the panel.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-number.png" alt="Edit Transfer to Number Tool panel with Description (optional), Disable interruption, and a Human Transfer Rule with Destination Type Phone Number, an example phone number and a condition" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: a Human Transfer Rule in the Transfer to number tool.
+</p>
+
+The panel also has two optional settings:
+
+- **Description (optional)**: tells the LLM how and when to use the tool. Leave it blank to use the default optimized prompt.
+- **Disable interruption**: the caller can’t interrupt while the transfer is running.
+
+> **Tip:** Use the same number and condition you wrote in your **Call Transfer Rules**, so your list in **Call Transfer** and your agents stay consistent.
+
+### Transfer to another AI agent
+
+To pass the call to a more specialized AI agent instead of a person, turn on **Transfer to agent** in the same **System Tools** list. In **Transfer Rules**, click **Add Rule** and choose:
+
+- **Agent**: the agent that takes over the call.
+- **Condition**: when to transfer to that agent.
+- **Delay before transfer (milliseconds)**: how long to wait before transferring.
+- **Transfer message**: the exact phrase the agent says before transferring.
+- **Enable First Message**: whether the new agent plays its greeting after the transfer.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-agent.png" alt="Edit Transfer to Agent Tool panel with a Transfer Rule: Agent, Condition, Delay before transfer, Transfer message and Enable First Message" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: a Transfer Rule in the Transfer to agent tool.
+</p>
+
+For more about all system tools, see [AI Agents](/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
 ## Step 3: Save and Test the Setup
 
-After assigning the transfer rule, scroll to the lower-right corner of the agent page and click **Save**.
-
-If a message appears saying _“You have unsaved changes,”_ the configuration has not been stored yet — click **Save** again to confirm.
-
-Once saved, your AI agent can now detect when a call should be redirected and perform the transfer automatically in real time.
+When you change the agent, a bar with **You have unsaved changes** appears at the bottom of the page. Click **Save** to store the changes, or **Clear** to discard them.
 
 ### Testing Your Configuration
 
-To ensure the setup works as expected:
+1. In the agent, click **Test AI agent** to talk to it in your browser, or **Test Call** to receive a real call.
+2. Say something that matches one of your conditions (for example, _“I’d like a price quote”_).
+3. Check that the agent transfers the call to the right number or agent.
 
-- Go to your AI agent profile.
-- Use the **Test Call** feature to simulate an incoming call.
-- Trigger a transfer scenario (for example, the customer requests to speak to sales) to verify the correct number and message are used.
+After the call, open **Call History** and use the **Call Transfer** filter to find transferred calls. See [Call History](/Create-AI-Agent/Call-Actions).
 
 ---
 
 ## Tips & Best Practices
 
-- **Create separate configurations for each department.**\
-  Example: _Sales_, _Support_, _Billing_, and _Customer Success_. Assign each to the corresponding AI agent.
-- **Use clear, consistent naming.**\
-  This helps you quickly identify configurations when managing multiple agents.
-- **Keep transfer messages short and professional.**\
-  Example: _“I’ll connect you with our support team now.”_ Avoid long or repetitive phrasing.
-- **Update or delete configurations anytime.**\
-  You can modify them in **Call Transfer**, and changes will take effect once the associated agents are re-saved.
+- **Create one rule per destination.**\
+  For example: _Sales_, _Support_, _Billing_. Each one with its own number and condition.
+- **Write clear, specific conditions.**\
+  The LLM decides when to transfer based on the condition. _“When the caller asks for a refund or a billing change”_ works better than _“billing”_.
+- **Use clear, consistent names.**\
+  This helps you find rules quickly when you manage many agents.
+- **Always use the international format.**\
+  Numbers must start with **\+** and the country code (E.164).
 
 ---
 
 ## Troubleshooting
 
-**Issue:** No gear icon next to Transfer Call\
-**Cause:** No transfer configurations exist yet.\
-**Fix:** Create one first in **Call Transfer**.
+**Issue:** I can’t save the rule\
+**Cause:** A required field is empty or the number isn’t in E.164 format.\
+**Fix:** Fill in **Title**, **Number**, and **Condition**, and write the number with **\+** and the country code.
 
-**Issue:** Changes not saving\
-**Cause:** Required fields are incomplete or unsaved.\
-**Fix:** Fill all fields and click **Save** again.
+**Issue:** The agent never transfers\
+**Cause:** **Transfer to number** isn’t on, the agent wasn’t saved, or the condition doesn’t match what callers say.\
+**Fix:** Check the tool in the **Tools** tab, click **Save** in the agent, and make the condition clearer.
 
-**Issue:** Calls not transferring correctly\
-**Cause:** Invalid phone number format or wrong configuration selected.\
-**Fix:** Ensure the phone number includes the international code and that the configuration shows as **Selected**.
+**Issue:** Calls go to the wrong number\
+**Cause:** Two rules with overlapping conditions, or a wrong number.\
+**Fix:** Make each condition specific and check the numbers in **Human Transfer Rules**.
 
 ---
 
 ## Summary
 
-Your AI agents can now route callers directly to the appropriate person or department without interruption. This setup improves efficiency, ensures consistent call handling, and provides a seamless experience for customers.
+With **Call Transfer Rules** and the **Transfer to number** and **Transfer to agent** tools, your AI agents can route callers to the right person, team, or agent without interruption. This keeps call handling consistent and gives customers a seamless experience.
