@@ -1,0 +1,71 @@
+---
+title: "Herramientas"
+description: "Conecta servicios externos a tus agentes de correo, como la Amazon Seller API, y añade datos de pedidos y de seguimiento a sus respuestas."
+icon: "toolbox"
+---
+
+**Herramientas** forma parte del Gestor de correo con IA. Ábrela desde la barra lateral izquierda, debajo de **Correo**.
+
+Aquí conectas servicios externos que dan datos en tiempo real a tus agentes cuando gestionan cada correo.
+
+## Amazon Seller API
+
+Con esta integración, cuando el correo de un cliente incluye un número de pedido de Amazon, el agente consulta el pedido automáticamente. Puede usar esos datos en su respuesta en lugar de pedírselos al cliente.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Sección Herramientas con la tarjeta Amazon Seller API en estado Conectado, los datos de la cuenta y los botones Probar conexión y Desconectar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La tarjeta Amazon Seller API, conectada.
+</p>
+
+Cuando la integración está activa, su tarjeta muestra la insignia verde **Conectado** y los datos de la conexión: **Nombre de la cuenta de vendedor**, **ID de vendedor**, **Región**, **ID de marketplace** y **Conectado el**. Desde la tarjeta puedes:
+
+- Escribir un número de pedido en **ID de pedido de prueba (opcional)** y hacer clic en **Probar conexión** para comprobar que todo funciona.
+- Hacer clic en **Desconectar** para desvincularla.
+
+Si no está conectada, haz clic en **Conectar cuenta de vendedor Amazon**. Necesitas una aplicación de Amazon SP-API aprobada y la autorización en Seller Central. En algunas cuentas la integración se configura automáticamente: la tarjeta muestra **Gestionado por el servidor** y no tienes que hacer nada.
+
+## Añadir enlaces de seguimiento a las respuestas
+
+Los datos del pedido se cargan cuando el correo de un cliente incluye un número de pedido de Amazon (con el formato 123-1234567-1234567). Para usarlos en una respuesta, menciónalos en el prompt de conversación con variables: marcadores entre dobles llaves que se sustituyen por el valor real de cada pedido. Usa el estado del envío y las actualizaciones de seguimiento, no solo el enlace.
+
+Prompt de ejemplo:
+
+> Cuando el cliente pregunte por el envío o la entrega, indica el último estado del envío de `{{amazon_shipment_status}}` (y `{{amazon_tracking_updates}}` cuando esté disponible), y luego incluye este enlace de seguimiento: `{{amazon_tracking_url}}`. Si el pedido tiene más de un mes o no es el último pedido del comprador, pídele primero que confirme el número de pedido.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mail-agent-tracking.png" alt="Panel Enlaces de seguimiento en borradores y respuestas automáticas con un prompt de ejemplo, la lista de variables disponibles y los requisitos" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Haz clic en Enlaces de seguimiento en borradores y respuestas automáticas, debajo de la tarjeta, para ver las variables en la app.
+</p>
+
+Estas son las variables disponibles:
+
+| Variable | Se sustituye por |
+| --- | --- |
+| `{{amazon_order_id}}` | El ID del pedido de Amazon |
+| `{{amazon_order_status}}` | El estado del pedido |
+| `{{amazon_shipment_status}}` | El estado del envío o del transportista |
+| `{{amazon_marketplace}}` | El marketplace o el país |
+| `{{amazon_destination_country}}` | El país de destino |
+| `{{amazon_shipping_country}}` | El país de envío (el mismo que el de destino) |
+| `{{amazon_tracking_number}}` | El número de seguimiento |
+| `{{amazon_tracking_url}}` | El enlace de seguimiento |
+| `{{amazon_tracking_updates}}` | Las últimas actualizaciones del seguimiento |
+| `{{amazon_estimated_arrival}}` | La fecha estimada de llegada |
+| `{{amazon_carrier}}` | El transportista (por ejemplo, DHL) |
+| `{{amazon_shipping_service}}` | El servicio de envío (por ejemplo, Packet International) |
+| `{{amazon_purchase_date}}` | La fecha de compra |
+| `{{amazon_order_age_days}}` | La antigüedad del pedido en días |
+| `{{amazon_is_latest_order}}` | Si es el último pedido del comprador |
+| `{{amazon_latest_order_id}}` | El ID del último pedido del comprador |
+
+El sistema también detecta las fotos que el cliente ya ha enviado en el hilo, y pide confirmación cuando el pedido es muy antiguo o no es el último del cliente.
+
+> **Nota:** Para que se rellenen los datos de seguimiento, la integración debe estar conectada, el hilo debe incluir un número de pedido de Amazon, el pedido debe estar ya enviado y tu prompt debe mencionar el seguimiento o el estado del envío, o usar `{{amazon_tracking_url}}`.
+
+Irán llegando más herramientas a esta sección a medida que el Gestor de correo con IA salga de la fase Beta.

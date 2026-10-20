@@ -1,0 +1,71 @@
+---
+title: "Tools"
+description: "Verbinden Sie externe Dienste mit Ihren Mail-Agenten, etwa die Amazon Seller API, und fügen Sie Bestell- und Sendungsdaten in ihre Antworten ein."
+icon: "toolbox"
+---
+
+**Tools** gehört zum KI-E-Mail-Manager. Sie öffnen es in der linken Seitenleiste unter **E-Mail**.
+
+Hier verbinden Sie externe Dienste, die Ihren Agenten Echtzeitdaten liefern, wenn sie eine E-Mail bearbeiten.
+
+## Amazon Seller API
+
+Mit dieser Integration fragt der Agent eine Bestellung automatisch ab, sobald eine Kunden-E-Mail eine Amazon-Bestellnummer enthält. Er kann diese Daten in seiner Antwort verwenden, statt den Kunden danach zu fragen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Bereich Tools mit der Karte Amazon Seller API im Status Verbunden, den Kontodaten und den Schaltflächen Verbindung testen und Trennen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Die Karte Amazon Seller API, verbunden.
+</p>
+
+Wenn die Integration aktiv ist, zeigt ihre Karte das grüne Badge **Verbunden** und die Verbindungsdaten: **Name des Verkäuferkontos**, **Selling Partner ID**, **Region**, **Marketplace-ID** und **Verbunden am**. Auf der Karte können Sie:
+
+- Eine Bestellnummer in **Test-Bestell-ID (optional)** eingeben und auf **Verbindung testen** klicken, um zu prüfen, ob alles funktioniert.
+- Auf **Trennen** klicken, um die Verbindung aufzuheben.
+
+Wenn sie nicht verbunden ist, klicken Sie auf **Amazon-Verkäuferkonto verbinden**. Sie brauchen eine genehmigte Amazon-SP-API-Anwendung und die Autorisierung in Seller Central. In manchen Konten wird die Integration automatisch eingerichtet: Die Karte zeigt **Vom Server verwaltet**, und Sie müssen nichts tun.
+
+## Sendungsverfolgungslinks in Antworten einfügen
+
+Die Bestelldaten werden geladen, wenn eine Kunden-E-Mail eine Amazon-Bestellnummer enthält (im Format 123-1234567-1234567). Um sie in einer Antwort zu nutzen, erwähnen Sie sie im Konversations-Prompt mit Variablen: Platzhalter in doppelten geschweiften Klammern, die durch den echten Wert jeder Bestellung ersetzt werden. Nutzen Sie den Versandstatus und die Sendungsupdates, nicht nur den Link.
+
+Beispiel-Prompt:
+
+> Wenn der Kunde nach Versand oder Lieferung fragt, nenne den aktuellen Versandstatus aus `{{amazon_shipment_status}}` (und `{{amazon_tracking_updates}}`, wenn verfügbar), und füge dann diesen Sendungsverfolgungslink ein: `{{amazon_tracking_url}}`. Wenn die Bestellung älter als einen Monat ist oder nicht die letzte Bestellung des Käufers, bitte ihn zuerst, die Bestellnummer zu bestätigen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mail-agent-tracking.png" alt="Panel Tracking-Links in Entwürfen und automatischen Antworten mit einem Beispiel-Prompt, der Liste der verfügbaren Variablen und den Voraussetzungen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Klicken Sie unter der Karte auf Tracking-Links in Entwürfen & automatischen Antworten, um die Variablen in der App zu sehen.
+</p>
+
+Das sind die verfügbaren Variablen:
+
+| Variable | Wird ersetzt durch |
+| --- | --- |
+| `{{amazon_order_id}}` | Die Amazon-Bestell-ID |
+| `{{amazon_order_status}}` | Den Bestellstatus |
+| `{{amazon_shipment_status}}` | Den Versand- oder Zustellerstatus |
+| `{{amazon_marketplace}}` | Den Marktplatz oder das Land |
+| `{{amazon_destination_country}}` | Das Zielland |
+| `{{amazon_shipping_country}}` | Das Versandland (wie das Zielland) |
+| `{{amazon_tracking_number}}` | Die Sendungsnummer |
+| `{{amazon_tracking_url}}` | Den Sendungsverfolgungslink |
+| `{{amazon_tracking_updates}}` | Die letzten Sendungsupdates |
+| `{{amazon_estimated_arrival}}` | Das voraussichtliche Lieferdatum |
+| `{{amazon_carrier}}` | Den Zusteller (zum Beispiel DHL) |
+| `{{amazon_shipping_service}}` | Die Versandart (zum Beispiel Packet International) |
+| `{{amazon_purchase_date}}` | Das Kaufdatum |
+| `{{amazon_order_age_days}}` | Das Alter der Bestellung in Tagen |
+| `{{amazon_is_latest_order}}` | Ob es die letzte Bestellung des Käufers ist |
+| `{{amazon_latest_order_id}}` | Die ID der letzten Bestellung des Käufers |
+
+Das System erkennt außerdem Fotos, die der Kunde bereits im Verlauf geschickt hat, und bittet um Bestätigung, wenn die Bestellung sehr alt ist oder nicht die letzte des Kunden.
+
+> **Hinweis:** Damit die Sendungsdaten ausgefüllt werden, muss die Integration verbunden sein, der Verlauf muss eine Amazon-Bestellnummer enthalten, die Bestellung muss bereits versendet sein, und Ihr Prompt muss die Sendungsverfolgung oder den Versandstatus erwähnen oder `{{amazon_tracking_url}}` verwenden.
+
+Weitere Tools kommen in diesen Bereich, sobald der KI-E-Mail-Manager die Beta-Phase verlässt.
