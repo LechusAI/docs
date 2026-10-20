@@ -1,128 +1,193 @@
 ---
 title: "Campañas"
-description: "Crea campañas de llamadas salientes, selecciona contactos, elige cuándo lanzarlas y revisa resultados con Campaigns Analytics."
+description: "Crea campañas de llamadas salientes, selecciona contactos, elige cuándo lanzarlas y revisa los resultados con las analíticas de campañas."
 icon: "bullhorn"
 ---
 
 ## Descripción general
 
-La sección **Campaigns** es donde configuras y ejecutas campañas de llamadas salientes, y después revisas su rendimiento.
+En **Campañas** preparas y lanzas campañas de llamadas salientes, y luego ves cómo han ido. Está en el menú de la izquierda, en **Telefonía** ([ábrela aquí](https://app.callin.io/campaigns?activeTab=campaigns&view=list)).
 
 Desde aquí puedes:
-- Crear una campaña con un **AI Agent**
-- Seleccionar contactos (o subir un CSV dentro del flujo de campaña)
-- Lanzar al instante o programar para más tarde
-- Monitorizar el progreso y los resultados
-- Revisar el rendimiento en **Campaigns Analytics**
 
-Para abrir Campaigns directamente: [Haz clic aquí para ir a Campaigns](https://app.callin.io/campaigns?activeTab=campaigns&view=list)
+- Crear una campaña con un **agente de IA**.
+- Seleccionar contactos, o subir un CSV dentro de la campaña.
+- Lanzarla ahora o programarla para más tarde.
+- Activar llamadas de seguimiento para los contactos que no contestan o comunican.
+- Seguir el progreso y los resultados de cada contacto.
+- Revisar el rendimiento en **Analíticas de campañas**.
+
+> **Nota:** Parte de esta sección de la app está en inglés. En esta guía todos los nombres de botones y opciones están traducidos, así que algunos los verás en inglés en pantalla.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/campaigns1.png"
-    alt="Página de Campaigns mostrando tarjetas de campañas, Filters, el botón Create Campaign y campos de filtro como Status y Date Range"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/campaigns1.png" alt="Pestaña Campañas con el panel de filtros abierto (ID o nombre de campaña, Estado, Rango de fechas, Mostrar eliminados), el botón Crear campaña y una tarjeta de campaña de ejemplo en estado En espera, con su agente, 2 contactos, Programado y los botones Ver y Lanzar ahora" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Tu lista de campañas, donde puedes filtrar, crear campañas nuevas y abrir una campaña para ver detalles.
+  Captura: tu lista de campañas, con los filtros abiertos y una campaña programada.
 </p>
+
+Si todavía no tienes campañas, la página muestra **No hay campañas** y un botón **\+ Crear campaña**.
 
 ## Crear una campaña
 
-Haz clic en **Create Campaign** para abrir el panel de configuración de la campaña.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/campaigns-create.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Crear campaña → nombre, agente y contactos → Programar para más tarde → Llamadas de seguimiento → la campaña programada en la lista.
+</p>
+
+Haz clic en **\+ Crear campaña** para abrir el panel **Crear campaña**.
 
 ### 1) Información básica
 
 Rellena:
-- **Campaign Name** (obligatorio)
-- **AI Agent** (obligatorio)
 
-> **Importante:** La interfaz avisa de que el agente debería tener un número asignado durante la ejecución de la campaña. Si el agente no puede hacer llamadas, la campaña no funcionará correctamente.
+- **Nombre de la campaña** (obligatorio).
+- **Agente IA** (obligatorio). Puedes escribir para buscar entre tus agentes.
+
+> **Importante:** Como avisa el panel, asegúrate de que el agente tenga siempre un número asignado mientras dure la campaña. Si no, no funcionará bien. Si no tiene número, verás **Este agente no tiene ningún número asignado** y la campaña no se creará. Consulta [Conectar tu número](/es/Create-AI-Agent/ConnectNumber).
 
 ### 2) Seleccionar contactos
 
-En **Select Contacts**, puedes:
-- Buscar contactos con **Search contacts…**
-- Acotar la lista con **Filters**
-- Seleccionar uno o varios contactos con las casillas
-- Navegar listas grandes con la paginación
-- Usar **Upload CSV** si quieres traer contactos a esta campaña desde un archivo
+En **Seleccionar contactos** puedes:
+
+- Buscar con **Buscar contactos...**.
+- Acotar la lista con **Filtros** (los mismos filtros avanzados que en [Contactos](/es/Create-AI-Agent/Contact)).
+- Seleccionar contactos con las casillas. La casilla de la cabecera los selecciona todos.
+- Usar **Subir CSV** para añadir contactos a la campaña desde un archivo.
+
+Abajo del panel verás cuántos tienes seleccionados (por ejemplo, **2 contactos seleccionados**).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/campaigns-create.png" alt="Panel Crear campaña con Nombre de la campaña, Agente IA, el aviso sobre el número del agente, Seleccionar contactos con dos contactos de ejemplo seleccionados y las opciones Lanzar ahora y Programar para más tarde" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el panel Crear campaña con el nombre, el agente y los contactos seleccionados.
+</p>
 
 > **Consejo:** Si tus contactos ya están en una hoja de cálculo, expórtalos como archivo **.csv** antes de subirlos.
 
 ### 3) Mapear columnas (al subir CSV)
 
-Si subes un CSV, se te pedirá mapear columnas antes de continuar. Los campos típicos incluyen:
-- **Phone** (obligatorio)
-- **Name** (opcional)
-- **Email** (opcional)
+Si subes un CSV, asignarás sus columnas antes de continuar, igual que en [Contactos](/es/Create-AI-Agent/Contact):
 
-> **Error común:** No mapear **Phone**. La campaña no puede añadir contactos sin un número de teléfono.
+- **Teléfono** (obligatorio)
+- **Nombre**
+- **Correo electrónico**
+
+> **Error común:** No asignar el **Teléfono**. La campaña no puede añadir contactos sin número de teléfono.
 
 ### 4) Opciones de lanzamiento
 
-En **Launch Options**, elige cómo y cuándo se ejecuta la campaña:
+En **Opciones de lanzamiento**, elige cuándo se ejecuta la campaña:
 
-- **Launch Now**: empieza inmediatamente.
-- **Schedule for Later**: te permite definir:
-  - **Start Time**
-  - **End Time**
-  - **Timezone**
+- **Lanzar ahora**: empieza de inmediato.
+- **Programar para más tarde**: te deja indicar:
+  - **Hora de inicio**: la campaña programada empezará a esta hora.
+  - **Hora de fin**: si ya ha pasado la hora de fin, la campaña se pausa hasta el día siguiente.
+  - **Zona horaria**.
 
-También puedes activar **Follow-up Calls** para reintentar automáticamente llamadas a contactos que no respondieron o estaban ocupados.
+Después haz clic en **Lanzar** (o en **Programar** si elegiste **Programar para más tarde**). Verás **Campaña programada correctamente** y la campaña aparecerá en la lista.
 
-> **Importante:** El comportamiento de los reintentos puede variar según la configuración de tu workspace. Si no tienes claro cómo funcionan en tu cuenta, empieza con una campaña de prueba pequeña.
+#### Llamadas de seguimiento
 
-## Gestionar campañas
+Activa **Llamadas de seguimiento** para volver a llamar automáticamente a los contactos que no contestaron o comunicaban. Después indica:
 
-### Filtrar y encontrar campañas
+- **Número de llamadas de seguimiento**: de 1 a 10.
+- **Intervalos entre intentos (en minutos)**: un campo por intento (**Seguimiento n.º 1**, **Seguimiento n.º 2**…), contado desde el intento anterior. Por defecto: 120, 1440 y 4320 minutos.
 
-Usa la barra de filtros para acotar lo que ves, por ejemplo:
-- Buscar por **Campaign ID or Name**
-- Filtrar por **Status**
-- Limitar por **Date Range**
-- Activar **Show Deleted** para ver campañas eliminadas (si está disponible en tu cuenta)
-
-### Ver detalles de una campaña
-
-Haz clic en **View** en una tarjeta de campaña para abrir sus detalles. Dentro, normalmente puedes ver:
-- Progreso de la campaña
-- Contadores (por ejemplo, en progreso, ocupado, no responde, completado, fallido)
-- Una tabla por contacto con estados y resultados
-- Una opción **Refresh** para actualizar resultados
-
-### Eliminar una campaña (permanente)
-
-Las tarjetas de campaña pueden incluir un icono de eliminar (papelera). Al eliminar una campaña:
-- Verás un modal de confirmación
-- Puede que tengas que escribir **DELETE** para confirmar
-
-> **Importante:** Eliminar una campaña es una acción **permanente** y no se puede deshacer.
-
-## Campaigns Analytics
-
-Cambia a **Campaigns Analytics** para entender cómo han rendido las campañas a lo largo del tiempo.
-
-### Qué puedes revisar
-
-En el overview de analíticas, normalmente puedes revisar métricas como:
-- Total de llamadas
-- Duración media de llamada
-- Uso
-- Citas
-- Tasas de detección y éxito
-- Tendencias y desgloses (volumen en el tiempo, resultados, métricas clave)
+El **Resumen** muestra el resultado en palabras (por ejemplo, a las 2 horas, luego al día y luego a los 3 días).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/campaigns2.png"
-    alt="Overview de Campaigns Analytics mostrando tarjetas de métricas y gráficos como volumen de llamadas y resultados"
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/campaigns-followup.png" alt="Llamadas de seguimiento activadas, con Número de llamadas de seguimiento 3, intervalos de 120, 1440 y 4320 minutos, el Resumen y los botones Cancelar y Programar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Overview de Campaigns Analytics, donde puedes revisar métricas de rendimiento y tendencias.
+  Captura: llamadas de seguimiento con tres reintentos.
+</p>
+
+> **Consejo:** Haz primero una campaña de prueba pequeña (5–10 contactos) para comprobar que tu agente, el guion y los reintentos funcionan como esperas.
+
+## Gestionar campañas
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/campaigns-manage.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: Filtros → Ver → Detalles de la campaña → el menú ⋮ con Editar y Eliminar.
+</p>
+
+Cada tarjeta de campaña muestra el nombre, el estado (por ejemplo, **En espera**), el agente, el número de contactos y si está **Programada**. Tiene un botón **Ver** y, mientras no haya empezado, un botón **Lanzar ahora** para iniciarla en ese momento.
+
+### Filtrar y encontrar campañas
+
+Haz clic en **Filtros** para mostrar la barra de filtros:
+
+- **ID o nombre de campaña**.
+- **Estado**: **En espera**, **En curso**, **Completada**, **Fallida**, **En pausa**, **Retrasada** o **Detenida**.
+- **Rango de fechas**: **Hoy**, **Ayer**, **Últimos 7 días**, **Últimos 30 días**, **Esta semana**, **Este mes**, **Mes pasado** o **Rango personalizado**.
+- **Mostrar eliminados**: muestra también las campañas eliminadas.
+
+### Ver detalles de una campaña
+
+Haz clic en **Ver** en una tarjeta para abrir los **detalles de la campaña**:
+
+- El nombre de la campaña, su agente y un botón **Actualizar** para refrescar los resultados.
+- **Progreso de la campaña**, con un porcentaje y contadores: **Total**, **En progreso**, **Ocupado**, **Sin respuesta**, **Dados de baja**, **Completadas** y **Fallidas**.
+- Una tabla con el **nombre**, el **correo**, el **teléfono**, el **estado** (por ejemplo, **No iniciado**) y el **resultado** de cada contacto.
+- Si la campaña está **Programada** y usa **Llamadas de seguimiento**, y los **Detalles del horario** (hora de inicio, hora de fin y zona horaria).
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/campaigns-details.png" alt="Panel de detalles de la campaña con su nombre y agente, Actualizar, Progreso de la campaña al 0% con los contadores, la tabla de contactos en estado No iniciado y las etiquetas Programada y Llamadas de seguimiento" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: los detalles de una campaña programada que todavía no ha empezado.
+</p>
+
+### Editar una campaña
+
+Haz clic en el menú **⋮** de la tarjeta y elige **Editar**. El panel **Editar campaña** tiene los mismos campos que al crearla: nombre, agente, contactos, opciones de lanzamiento y llamadas de seguimiento.
+
+### Eliminar una campaña (permanente)
+
+1. Haz clic en el menú **⋮** de la tarjeta y elige **Eliminar**.
+2. En **Eliminar campaña**, escribe **DELETE** para confirmar y haz clic en **Eliminar**.
+
+Si la campaña está programada, ya no hará las llamadas previstas.
+
+> **Importante:** Eliminar una campaña es una **acción permanente** y no se puede deshacer.
+
+## Analíticas de campañas
+
+Pasa a la pestaña **Analíticas de campañas** para ver cómo han funcionado tus campañas. Usa el selector de arriba a la derecha para ver **Todos** o una campaña concreta, y el botón de actualizar para refrescar los datos.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/campaigns-analytics.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: el resumen de analíticas, desde las tarjetas hasta los gráficos.
+</p>
+
+### Qué puedes revisar
+
+El **Resumen de analíticas** incluye:
+
+- Tarjetas de resumen: **Total de llamadas**, **Duración media de la llamada**, **Total de uso**, **Total de eventos**, **Tasa de detección AMD** (cuántas veces se detectó un contestador) y **Tasa de éxito**.
+- **Volumen de llamadas conectadas**: la actividad de llamadas en el tiempo, con el total, la media diaria y el día de más llamadas.
+- **Citas por hora**: las citas programadas y la hora con más citas.
+- **Resultados de la llamada** y **Métricas clave** del periodo elegido.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/campaigns2.png" alt="Analíticas de campañas con el Resumen de analíticas, el selector de campaña en Todos y las tarjetas Total de llamadas, Duración media, Total de uso, Total de eventos, Tasa de detección AMD y Tasa de éxito" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el resumen de analíticas de campañas, donde revisas métricas y tendencias.
 </p>
