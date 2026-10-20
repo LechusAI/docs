@@ -6,97 +6,150 @@ icon: "phone-arrow-right"
 
 ## Überblick
 
-Anrufweiterleitungen ermöglichen es deinem KI-Assistenten, eingehende Anrufe nahtlos an die richtige Abteilung, das passende Team oder eine externe Nummer umzuleiten — ohne aufzulegen oder Verzögerungen zu verursachen. Diese Funktion sorgt für ein professionelles Kundenerlebnis und hilft deiner Organisation, Anrufe effizient zu verwalten.
+Mit Weiterleitungen gibt dein KI-Agent ein laufendes Gespräch an die richtige Person, das richtige Team oder den richtigen KI-Agenten weiter, ohne aufzulegen. Zum Beispiel kann der Agent jemanden, der ein Angebot möchte, an deinen Vertrieb weiterleiten oder eine technische Frage an einen spezialisierten Agenten übergeben.
 
-Du führst dieses Setup in zwei Hauptschritten durch: Du erstellst eine **Transfer-Konfiguration** und verknüpfst sie mit deinem **KI-Agenten**.
+Du richtest das an zwei Stellen ein:
+
+- **Anrufweiterleitung** (linkes Menü, unter **Telefonie**): deine Liste von **Anrufweiterleitungsregeln**, jede mit einem Namen, einer Nummer und einer Bedingung.
+- Der Tab **Tools** des Agenten: die System-Tools **An Nummer übergeben** und **An Agent übergeben**, mit denen du Weiterleitungen für diesen Agenten einschaltest.
 
 ---
 
-## Schritt 1: Eine Transfer-Konfiguration erstellen
+## Schritt 1: Eine Weiterleitungskonfiguration erstellen
 
-1. **Die Seite „Call Transfer“ öffnen**\
-   Öffne in deinem Callin.io-Dashboard das linke Menü und wähle **Call Transfer**.
-   - Wenn du das zum ersten Mal einrichtest, siehst du eine Meldung: **„No Call Transfer Configurations found.“**
-   - Klicke auf **\+ Create Configuration**, um zu beginnen.
-2. **Den Bereich „Basic Information“ ausfüllen**\
-   Dieser Bereich hilft dabei, deine Weiterleitungsregeln zu identifizieren und zu organisieren.
-   - **Title:** Der interne Name für diese Konfiguration (zum Beispiel _Sales LATAM_ oder _Support Team_).
-   - **Department:** Das Team oder die Gruppe, die für die übernommenen Anrufe zuständig ist.
+In der App heißen Weiterleitungskonfigurationen **Anrufweiterleitungsregeln**.
 
-   Beide Felder sind erforderlich. Wenn sie leer bleiben, erscheint ein roter Hinweis (z. B. _„Title is required!“_), der zur Eingabe auffordert.
-3. **Transfer-Details hinzufügen**\
-   Lege fest, wohin der Anruf umgeleitet werden soll und was während des Weiterleitungsprozesses passiert.
-   - Klicke auf **\+ Add** und fülle diese Felder aus:
-     - **Agent Name:** Dieses Feld ist standardmäßig vorausgefüllt und identifiziert den aktuellen KI-Agenten.
-     - **Transfer Phone Number:** Die Telefonnummer, an die Anrufe weitergeleitet werden (zum Beispiel `+44 700123456`).
-     - **Transfer Message:** Die kurze Nachricht, die dein KI-Agent vor der Weiterleitung sagt (zum Beispiel _„Ich verbinde Sie kurz mit unserer Vertriebsabteilung, einen Moment bitte.“_).
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-   Klicke auf **Save**, sobald du alle Felder ausgefüllt hast. Die Konfiguration erscheint anschließend in deiner **Call Transfer**-Liste.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Anrufweiterleitung → Regel erstellen → Titel, Nummer und Bedingung ausfüllen.
+</p>
+
+1. Öffne im linken Menü **Anrufweiterleitung** ([hier öffnen](https://app.callin.io/call-transfer)). Wenn du noch keine Regeln hast, siehst du **Keine Anrufweiterleitungsregeln gefunden**.
+2. Klicke auf **\+ Regel erstellen**.
+3. Fülle die drei Felder aus. Alle sind Pflichtfelder:
+   - **Titel**: ein Name für diese Regel (zum Beispiel _Vertriebsteam_ oder _Support_).
+   - **Nummer**: die Nummer, an die der Anruf weitergeleitet wird, im E.164-Format mit **\+** und Ländervorwahl (zum Beispiel `+15550100200`).
+   - **Bedingung**: wann der Agent den Anruf weiterleiten soll. So weiß das LLM, wann es den Anruf an diese Nummer weiterleiten soll (zum Beispiel _„Leite den Anruf weiter, wenn der Anrufer mit dem Vertrieb sprechen möchte, ein Angebot will oder kaufbereit ist.“_).
+4. Klicke auf **Speichern**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-rule.png" alt="Fenster Regel erstellen mit den Feldern Titel, Nummer und Bedingung, ausgefüllt mit einer Beispielregel für den Vertrieb, und den Schaltflächen Leeren, Abbrechen und Speichern" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: eine Regel, die Vertriebsanrufe an das Vertriebsteam weiterleitet.
+</p>
+
+Ist ein Feld leer oder falsch, zeigt das Fenster es an: **Titel ist erforderlich**, **Die Nummer muss im E.164-Format sein (z. B. \+1234567890)** oder **Transferbedingung ist erforderlich!**. Mit **Leeren** setzt du das Formular zurück, mit **Abbrechen** schließt du es ohne zu speichern.
+
+Deine Regeln erscheinen in der Liste der **Anrufweiterleitungsregeln**, wo du sie über die Suche findest.
 
 ---
 
 ## Schritt 2: Anrufweiterleitung für einen KI-Agenten aktivieren
 
-Sobald die Konfiguration bereit ist, kannst du sie für jeden deiner KI-Agenten aktivieren.
+Weiterleitungen schaltest du in jedem Agenten ein, unter **System-Tools** im Tab **Tools**.
 
-1. Gehe im Hauptmenü zu **AI Agents**.
-2. Wähle den Agenten aus, für den du Anrufweiterleitungen aktivieren möchtest.
-3. Öffne den Tab **Call Action** in den Agenten-Einstellungen.
-4. Suche die Option **Transfer Call** und aktiviere sie. Der Schalter wird blau, um die Aktivierung anzuzeigen.
-5. Klicke auf das ⚙️ **Zahnrad-Symbol** neben dem Schalter. Dadurch öffnet sich ein Konfigurationspanel mit allen verfügbaren Weiterleitungs-Setups.
-6. Wähle die Konfiguration aus, die du gerade erstellt hast (zum Beispiel _Sales LATAM_). Nach der Auswahl wird sie in grünem Text als **Selected** angezeigt.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" style={{ width:"100%", display:"block" }} />
+</div>
 
-Dieser Prozess verknüpft die Konfiguration mit deinem Agenten und bereitet sie für Live-Anrufe vor.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: Tab Tools → An Nummer übergeben → Regel hinzufügen → Zieltyp → Telefonnummer und Bedingung.
+</p>
+
+1. Gehe zu **KI-Agenten** und öffne den Agenten.
+2. Öffne den Tab **Tools**. Schalte rechts unter **System-Tools** **An Nummer übergeben** ein („Verbindet den Anrufer mit einem Teammitglied, wenn ein persönlicher Kontakt nötig ist oder gewünscht wird“).
+3. Das Fenster **Tool „An Nummer übergeben“ bearbeiten** öffnet sich. Klicke unter **Regeln für menschliche Übergabe** auf **Regel hinzufügen** und fülle aus:
+   - **Zieltyp**: **Telefonnummer** (immer dieselbe Nummer) oder **Telefonnummer als dynamische Variable** (eine Nummer aus einer Variable, zum Beispiel eine pro Kontakt oder pro Standort).
+   - **Telefonnummer** (oder **Telefonnummer als dynamische Variable**): wohin der Anruf geht.
+   - **Bedingung**: wann an diese Nummer weitergeleitet wird.
+4. Füge für jedes Ziel eine Regel hinzu. Mit **Regel entfernen** löschst du eine.
+5. Klicke im Fenster auf **Speichern**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-number.png" alt="Fenster Tool An Nummer übergeben bearbeiten mit Beschreibung (optional), Unterbrechungen deaktivieren und einer Regel für menschliche Übergabe mit Zieltyp Telefonnummer, einer Beispielnummer und einer Bedingung" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: eine Regel für menschliche Übergabe im Tool An Nummer übergeben.
+</p>
+
+Das Fenster hat außerdem zwei optionale Einstellungen:
+
+- **Beschreibung (optional)**: sagt dem LLM, wie und wann es das Tool nutzen soll. Lass sie leer, um die optimierten Standardanweisungen zu verwenden.
+- **Unterbrechungen deaktivieren**: Der Anrufer kann während der Weiterleitung nicht unterbrechen.
+
+> **Tipp:** Nutze dieselbe Nummer und Bedingung wie in deinen **Anrufweiterleitungsregeln**, damit deine Liste unter **Anrufweiterleitung** und deine Agenten übereinstimmen.
+
+### An einen anderen KI-Agenten übergeben
+
+Um den Anruf statt an eine Person an einen spezialisierteren KI-Agenten zu übergeben, schalte in derselben Liste der **System-Tools** **An Agent übergeben** ein. Klicke unter **Übergaberegeln** auf **Regel hinzufügen** und wähle:
+
+- **Agent**: der Agent, der den Anruf übernimmt.
+- **Bedingung**: wann an diesen Agenten übergeben wird.
+- **Verzögerung vor Übergabe (ms)**: wie lange vor der Übergabe gewartet wird.
+- **Übergabenachricht**: der genaue Satz, den der Agent vor der Übergabe sagt.
+- **Erste Nachricht aktivieren**: ob der neue Agent nach der Übergabe seine Begrüßung abspielt.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/call-transfer-agent.png" alt="Fenster Tool An Agent übergeben bearbeiten mit einer Übergaberegel: Agent, Bedingung, Verzögerung vor Übergabe, Übergabenachricht und Erste Nachricht aktivieren" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: eine Übergaberegel im Tool An Agent übergeben.
+</p>
+
+Mehr zu allen System-Tools findest du unter [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
 
 ---
 
 ## Schritt 3: Setup speichern und testen
 
-Nachdem du die Weiterleitungsregel zugewiesen hast, scrolle in die rechte untere Ecke der Agenten-Seite und klicke auf **Save**.
-
-Wenn eine Meldung erscheint wie _„You have unsaved changes,“_ wurde die Konfiguration noch nicht gespeichert — klicke erneut auf **Save**, um zu bestätigen.
-
-Sobald gespeichert, kann dein KI-Agent erkennen, wann ein Anruf umgeleitet werden soll, und die Weiterleitung in Echtzeit automatisch durchführen.
+Wenn du den Agenten änderst, erscheint unten eine Leiste mit **Sie haben nicht gespeicherte Änderungen**. Klicke auf **Speichern**, um die Änderungen zu sichern, oder auf **Leeren**, um sie zu verwerfen.
 
 ### Deine Konfiguration testen
 
-Um sicherzustellen, dass alles wie erwartet funktioniert:
+1. Klicke im Agenten auf **KI-Agent testen**, um im Browser mit ihm zu sprechen, oder auf **Testanruf**, um einen echten Anruf zu erhalten.
+2. Sage etwas, das zu einer deiner Bedingungen passt (zum Beispiel _„Ich hätte gern ein Angebot“_).
+3. Prüfe, ob der Agent den Anruf an die richtige Nummer oder den richtigen Agenten weiterleitet.
 
-- Gehe zu deinem KI-Agentenprofil.
-- Nutze die Funktion **Test Call**, um einen eingehenden Anruf zu simulieren.
-- Löse ein Weiterleitungs-Szenario aus (zum Beispiel: Der Kunde möchte mit dem Vertrieb sprechen), um zu prüfen, ob die richtige Nummer und Nachricht verwendet werden.
+Öffne nach dem Anruf die **Anrufliste** und nutze den Filter **Anrufweiterleitung**, um weitergeleitete Anrufe zu finden. Siehe [Anrufliste](/de/Create-AI-Agent/Call-Actions).
 
 ---
 
-## Tipps & Best Practices
+## Tipps und bewährte Vorgehensweisen
 
-- **Erstelle separate Konfigurationen pro Abteilung.**\
-  Beispiel: _Sales_, _Support_, _Billing_ und _Customer Success_. Weise jede Konfiguration dem entsprechenden KI-Agenten zu.
-- **Verwende klare, konsistente Namen.**\
-  So kannst du Konfigurationen schnell identifizieren, wenn du mehrere Agenten verwaltest.
-- **Halte Transfer-Nachrichten kurz und professionell.**\
-  Beispiel: _„Ich verbinde Sie jetzt mit unserem Support-Team.“_ Vermeide lange oder repetitive Formulierungen.
-- **Aktualisiere oder lösche Konfigurationen jederzeit.**\
-  Du kannst sie unter **Call Transfer** anpassen. Änderungen greifen, sobald die zugehörigen Agenten erneut gespeichert werden.
+- **Lege pro Ziel eine Regel an.**\
+  Zum Beispiel: _Vertrieb_, _Support_, _Abrechnung_. Jede mit eigener Nummer und Bedingung.
+- **Formuliere klare, konkrete Bedingungen.**\
+  Das LLM entscheidet anhand der Bedingung, wann es weiterleitet. _„Wenn der Anrufer eine Erstattung oder eine Änderung der Rechnung möchte“_ funktioniert besser als _„Abrechnung“_.
+- **Nutze klare, einheitliche Namen.**\
+  So findest du Regeln schnell, wenn du viele Agenten verwaltest.
+- **Nutze immer das internationale Format.**\
+  Nummern müssen mit **\+** und der Ländervorwahl beginnen (E.164).
 
 ---
 
 ## Fehlerbehebung
 
-**Problem:** Kein Zahnrad-Symbol neben „Transfer Call“\
-**Ursache:** Es existieren noch keine Transfer-Konfigurationen.\
-**Lösung:** Erstelle zuerst eine Konfiguration unter **Call Transfer**.
+**Problem:** Ich kann die Regel nicht speichern\
+**Ursache:** Ein Pflichtfeld ist leer oder die Nummer ist nicht im E.164-Format.\
+**Lösung:** Fülle **Titel**, **Nummer** und **Bedingung** aus und schreibe die Nummer mit **\+** und Ländervorwahl.
 
-**Problem:** Änderungen werden nicht gespeichert\
-**Ursache:** Pflichtfelder sind unvollständig oder nicht gespeichert.\
-**Lösung:** Fülle alle Felder aus und klicke erneut auf **Save**.
+**Problem:** Der Agent leitet nie weiter\
+**Ursache:** **An Nummer übergeben** ist nicht eingeschaltet, der Agent wurde nicht gespeichert oder die Bedingung passt nicht zu dem, was Anrufer sagen.\
+**Lösung:** Prüfe das Tool im Tab **Tools**, klicke im Agenten auf **Speichern** und formuliere die Bedingung klarer.
 
-**Problem:** Anrufe werden nicht korrekt weitergeleitet\
-**Ursache:** Ungültiges Telefonnummernformat oder falsche Konfiguration ausgewählt.\
-**Lösung:** Stelle sicher, dass die Telefonnummer den internationalen Ländercode enthält und dass die Konfiguration als **Selected** angezeigt wird.
+**Problem:** Anrufe gehen an die falsche Nummer\
+**Ursache:** Zwei Regeln mit sich überschneidenden Bedingungen oder eine falsche Nummer.\
+**Lösung:** Formuliere jede Bedingung konkret und prüfe die Nummern unter **Regeln für menschliche Übergabe**.
 
 ---
 
 ## Zusammenfassung
 
-Deine KI-Agenten können Anrufende jetzt ohne Unterbrechung direkt zur passenden Person oder Abteilung weiterleiten. Dieses Setup verbessert die Effizienz, sorgt für eine konsistente Anrufbearbeitung und bietet Kundinnen und Kunden ein nahtloses Erlebnis.
+Mit **Anrufweiterleitungsregeln** und den Tools **An Nummer übergeben** und **An Agent übergeben** leiten deine KI-Agenten jeden Anrufer ohne Unterbrechung an die richtige Person, das richtige Team oder den richtigen Agenten weiter. So bleibt die Anrufbearbeitung einheitlich und deine Kunden erleben einen reibungslosen Ablauf.
