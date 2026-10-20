@@ -1,0 +1,71 @@
+---
+title: "Strumenti"
+description: "Collega servizi esterni ai tuoi agenti mail, come l'Amazon Seller API, e aggiungi dati degli ordini e del tracking alle loro risposte."
+icon: "toolbox"
+---
+
+**Strumenti** fa parte del Gestore email IA. Aprilo dalla barra laterale sinistra, sotto **Email**.
+
+Qui colleghi servizi esterni che danno ai tuoi agenti dati in tempo reale quando gestiscono ogni email.
+
+## Amazon Seller API
+
+Con questa integrazione, quando l'email di un cliente contiene un numero d'ordine Amazon, l'agente consulta l'ordine automaticamente. Può usare quei dati nella risposta invece di chiederli al cliente.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Sezione Strumenti con la scheda Amazon Seller API in stato Connesso, i dati dell'account e i pulsanti Prova connessione e Disconnetti" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La scheda Amazon Seller API, collegata.
+</p>
+
+Quando l'integrazione è attiva, la scheda mostra il badge verde **Connesso** e i dati della connessione: **Nome account venditore**, **ID partner venditore**, **Regione**, **ID marketplace** e **Connesso il**. Dalla scheda puoi:
+
+- Scrivere un numero d'ordine in **ID ordine di prova (facoltativo)** e cliccare su **Prova connessione** per verificare che tutto funzioni.
+- Cliccare su **Disconnetti** per scollegarla.
+
+Se non è collegata, clicca su **Collega account venditore Amazon**. Ti servono un'applicazione Amazon SP-API approvata e l'autorizzazione in Seller Central. In alcuni account l'integrazione viene configurata automaticamente: la scheda mostra **Gestita dal server** e non devi fare nulla.
+
+## Aggiungere link di tracking alle risposte
+
+I dati dell'ordine vengono caricati quando l'email di un cliente contiene un numero d'ordine Amazon (nel formato 123-1234567-1234567). Per usarli in una risposta, citali nel prompt conversazionale con le variabili: segnaposto tra doppie parentesi graffe che vengono sostituiti con il valore reale di ogni ordine. Usa lo stato della spedizione e gli aggiornamenti del tracking, non solo il link.
+
+Prompt di esempio:
+
+> Quando il cliente chiede della spedizione o della consegna, indica l'ultimo stato della spedizione da `{{amazon_shipment_status}}` (e `{{amazon_tracking_updates}}` quando disponibile), poi includi questo link di tracking: `{{amazon_tracking_url}}`. Se l'ordine ha più di un mese o non è l'ultimo ordine dell'acquirente, chiedigli prima di confermare il numero d'ordine.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mail-agent-tracking.png" alt="Pannello Collegamenti di tracking in bozze e risposte automatiche con un prompt di esempio, l'elenco delle variabili disponibili e i requisiti" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Clicca su Collegamenti di tracking in bozze e risposte automatiche, sotto la scheda, per vedere le variabili nell'app.
+</p>
+
+Queste sono le variabili disponibili:
+
+| Variabile | Viene sostituita con |
+| --- | --- |
+| `{{amazon_order_id}}` | L'ID dell'ordine Amazon |
+| `{{amazon_order_status}}` | Lo stato dell'ordine |
+| `{{amazon_shipment_status}}` | Lo stato della spedizione o del corriere |
+| `{{amazon_marketplace}}` | Il marketplace o il paese |
+| `{{amazon_destination_country}}` | Il paese di destinazione |
+| `{{amazon_shipping_country}}` | Il paese di spedizione (uguale alla destinazione) |
+| `{{amazon_tracking_number}}` | Il numero di tracking |
+| `{{amazon_tracking_url}}` | Il link di tracking |
+| `{{amazon_tracking_updates}}` | Gli ultimi aggiornamenti del tracking |
+| `{{amazon_estimated_arrival}}` | La data di arrivo prevista |
+| `{{amazon_carrier}}` | Il corriere (ad esempio, DHL) |
+| `{{amazon_shipping_service}}` | Il servizio di spedizione (ad esempio, Packet International) |
+| `{{amazon_purchase_date}}` | La data di acquisto |
+| `{{amazon_order_age_days}}` | L'età dell'ordine in giorni |
+| `{{amazon_is_latest_order}}` | Se è l'ultimo ordine dell'acquirente |
+| `{{amazon_latest_order_id}}` | L'ID dell'ultimo ordine dell'acquirente |
+
+Il sistema rileva anche le foto che il cliente ha già inviato nel thread, e chiede conferma quando l'ordine è molto vecchio o non è l'ultimo del cliente.
+
+> **Nota:** Perché i dati di tracking vengano compilati, l'integrazione deve essere collegata, il thread deve contenere un numero d'ordine Amazon, l'ordine deve essere già spedito e il tuo prompt deve citare il tracking o lo stato della spedizione, oppure usare `{{amazon_tracking_url}}`.
+
+Altri strumenti arriveranno in questa sezione man mano che il Gestore email IA uscirà dalla fase Beta.

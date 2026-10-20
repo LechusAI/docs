@@ -1,0 +1,71 @@
+---
+title: "Outils"
+description: "Connectez des services externes à vos agents mail, comme l'Amazon Seller API, et ajoutez les informations de commande et de suivi à leurs réponses."
+icon: "toolbox"
+---
+
+**Outils** fait partie du Gestionnaire d'e-mails IA. Ouvrez-le depuis la barre latérale gauche, sous **E-mail**.
+
+Vous y connectez des services externes qui donnent à vos agents des données en temps réel quand ils traitent chaque e-mail.
+
+## Amazon Seller API
+
+Avec cette intégration, quand l'e-mail d'un client contient un numéro de commande Amazon, l'agent consulte la commande automatiquement. Il peut utiliser ces informations dans sa réponse au lieu de les demander au client.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Section Outils avec la carte Amazon Seller API à l'état Connecté, les informations du compte et les boutons Tester la connexion et Déconnecter" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  La carte Amazon Seller API, connectée.
+</p>
+
+Quand l'intégration est active, sa carte affiche le badge vert **Connecté** et les informations de connexion : **Nom du compte vendeur**, **ID partenaire vendeur**, **Région**, **ID de la place de marché** et **Connecté le**. Depuis la carte, vous pouvez :
+
+- Saisir un numéro de commande dans **ID de commande de test (facultatif)** et cliquer sur **Tester la connexion** pour vérifier que tout fonctionne.
+- Cliquer sur **Déconnecter** pour la dissocier.
+
+Si elle n'est pas connectée, cliquez sur **Connecter le compte vendeur Amazon**. Il vous faut une application Amazon SP-API approuvée et l'autorisation dans Seller Central. Dans certains comptes, l'intégration est configurée automatiquement : la carte affiche **Gérée par le serveur** et vous n'avez rien à faire.
+
+## Ajouter des liens de suivi aux réponses
+
+Les informations de commande se chargent quand l'e-mail d'un client contient un numéro de commande Amazon (au format 123-1234567-1234567). Pour les utiliser dans une réponse, citez-les dans l'invite de conversation avec des variables : des repères entre doubles accolades, remplacés par la valeur réelle de chaque commande. Utilisez le statut d'expédition et les mises à jour du suivi, pas seulement le lien.
+
+Exemple d'invite :
+
+> Quand le client pose une question sur l'expédition ou la livraison, indique le dernier statut d'expédition de `{{amazon_shipment_status}}` (et `{{amazon_tracking_updates}}` si disponible), puis ajoute ce lien de suivi : `{{amazon_tracking_url}}`. Si la commande date de plus d'un mois ou n'est pas la dernière commande de l'acheteur, demande-lui d'abord de confirmer le numéro de commande.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mail-agent-tracking.png" alt="Panneau Liens de suivi dans les brouillons et réponses automatiques avec un exemple d'invite, la liste des variables disponibles et les prérequis" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Cliquez sur Liens de suivi dans les brouillons et réponses automatiques, sous la carte, pour voir les variables dans l'application.
+</p>
+
+Voici les variables disponibles :
+
+| Variable | Remplacée par |
+| --- | --- |
+| `{{amazon_order_id}}` | L'ID de la commande Amazon |
+| `{{amazon_order_status}}` | Le statut de la commande |
+| `{{amazon_shipment_status}}` | Le statut de l'expédition ou du transporteur |
+| `{{amazon_marketplace}}` | La place de marché ou le pays |
+| `{{amazon_destination_country}}` | Le pays de destination |
+| `{{amazon_shipping_country}}` | Le pays d'expédition (identique à la destination) |
+| `{{amazon_tracking_number}}` | Le numéro de suivi |
+| `{{amazon_tracking_url}}` | Le lien de suivi |
+| `{{amazon_tracking_updates}}` | Les dernières mises à jour du suivi |
+| `{{amazon_estimated_arrival}}` | La date d'arrivée estimée |
+| `{{amazon_carrier}}` | Le transporteur (par exemple, DHL) |
+| `{{amazon_shipping_service}}` | Le service d'expédition (par exemple, Packet International) |
+| `{{amazon_purchase_date}}` | La date d'achat |
+| `{{amazon_order_age_days}}` | L'ancienneté de la commande en jours |
+| `{{amazon_is_latest_order}}` | S'il s'agit de la dernière commande de l'acheteur |
+| `{{amazon_latest_order_id}}` | L'ID de la dernière commande de l'acheteur |
+
+Le système détecte aussi les photos que le client a déjà envoyées dans le fil, et demande confirmation quand la commande est très ancienne ou n'est pas la dernière du client.
+
+> **Remarque :** Pour que les informations de suivi se remplissent, l'intégration doit être connectée, le fil doit contenir un numéro de commande Amazon, la commande doit déjà être expédiée et votre invite doit mentionner le suivi ou le statut d'expédition, ou utiliser `{{amazon_tracking_url}}`.
+
+D'autres outils arriveront dans cette section à mesure que le Gestionnaire d'e-mails IA sortira de la phase bêta.

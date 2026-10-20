@@ -1,0 +1,71 @@
+---
+title: "Tools"
+description: "Connect third-party services to your mail agents, such as the Amazon Seller API, and add order and tracking details to their replies."
+icon: "toolbox"
+---
+
+**Tools** is part of AI Email Manager. Open it from the left sidebar, under **Email**.
+
+Here you connect third-party services that give your agents live data when they handle each email.
+
+## Amazon Seller API
+
+With this integration, when a customer email contains an Amazon order number, the agent looks up the order automatically. It can use those details in its reply instead of asking the customer for them.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mailagents3.png" alt="Tools section with the Amazon Seller API card showing the Connected status, the account details, and the Test connection and Disconnect buttons" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  The Amazon Seller API card, connected.
+</p>
+
+When the integration is active, its card shows a green **Connected** badge and the connection details: **Seller account name**, **Selling Partner ID**, **Region**, **Marketplace ID** and **Connected at**. From the card you can:
+
+- Type an order number in **Test order ID (optional)** and click **Test connection** to check everything works.
+- Click **Disconnect** to unlink it.
+
+If it isn't connected, click **Connect Amazon Seller Account**. You'll need an approved Amazon SP-API application and authorization in Seller Central. In some accounts the integration is set up automatically: the card shows **Server-managed** and there's nothing for you to do.
+
+## Adding tracking links to replies
+
+Order details load when a customer email contains an Amazon order number (in the format 123-1234567-1234567). To use them in a reply, mention them in the Conversation Prompt with variables: placeholders in double curly braces that are replaced with the real value of each order. Use the shipment status and tracking updates, not only the tracking link.
+
+Example prompt:
+
+> When the customer asks about shipping or delivery, state the latest shipment status from `{{amazon_shipment_status}}` (and `{{amazon_tracking_updates}}` when available), then include this tracking link: `{{amazon_tracking_url}}`. If the order is older than one month or not the buyer's latest order, ask them to confirm the order number first.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/mail-agent-tracking.png" alt="Tracking links in drafts and auto-replies panel with an example prompt, the list of available variables and the requirements" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Click Tracking links in drafts & auto-replies, below the card, to see the variables in the app.
+</p>
+
+These are the available variables:
+
+| Variable | What it's replaced with |
+| --- | --- |
+| `{{amazon_order_id}}` | The Amazon order ID |
+| `{{amazon_order_status}}` | The order status |
+| `{{amazon_shipment_status}}` | The shipment or carrier status |
+| `{{amazon_marketplace}}` | The marketplace or country |
+| `{{amazon_destination_country}}` | The destination country |
+| `{{amazon_shipping_country}}` | The shipping country (same as destination) |
+| `{{amazon_tracking_number}}` | The tracking number |
+| `{{amazon_tracking_url}}` | The tracking link |
+| `{{amazon_tracking_updates}}` | The recent tracking updates |
+| `{{amazon_estimated_arrival}}` | The estimated arrival date |
+| `{{amazon_carrier}}` | The carrier (for example, DHL) |
+| `{{amazon_shipping_service}}` | The shipping service (for example, Packet International) |
+| `{{amazon_purchase_date}}` | The purchase date |
+| `{{amazon_order_age_days}}` | The order's age in days |
+| `{{amazon_is_latest_order}}` | Whether this is the buyer's latest order |
+| `{{amazon_latest_order_id}}` | The buyer's latest order ID |
+
+The system also detects photos the customer has already sent in the thread, and asks customers to confirm very old orders or orders that aren't their latest.
+
+> **Note:** For tracking details to fill in, the integration must be connected, the email thread must contain an Amazon order number, the order must already be shipped, and your prompt must mention tracking or shipment status, or use `{{amazon_tracking_url}}`.
+
+More tools are expected in this section as AI Email Manager grows out of Beta.
