@@ -6,153 +6,200 @@ icon: "star"
 
 ## Para qué sirve esta sección
 
-**Funciones y capacidades** es el lugar donde una cuenta de marca blanca define qué puede incluir un plan de suscripción.
+**Características y Capacidades** es donde una cuenta White Label crea las “piezas” que luego aparecen al crear o editar un **Plan de suscripción**.
 
 Una forma sencilla de verlo:
 
-- **Planes de suscripción** = los niveles que vendes (por ejemplo, Básico vs. Premium)
-- **Funciones y capacidades** = lo que incluye cada nivel (herramientas activadas, límites numéricos u opciones seleccionables)
+- **Planes de suscripción** = los niveles que vendes (Básico, Pro, etc.)
+- **Características y Capacidades** = lo que incluye cada nivel (herramientas activadas, límites numéricos u opciones a elegir)
 
-Cuando creas o editas un plan, más adelante asignarás valores a estos elementos en el paso de **Funciones** del plan.
+Si no creas primero las funciones aquí, el asistente de planes muestra **No hay funciones disponibles. Crea funciones primero.**
 
-[Haz clic aquí para abrir Funciones y capacidades](https://app.callin.io/cms/features-capabilities)
+La encontrarás en la Plataforma white label, dentro de **Planes y facturación** ([ábrela aquí](https://app.callin.io/cms/features-capabilities)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/features1.png"
-    alt="Página de Funciones y capacidades con una barra de búsqueda y un botón para crear una nueva función o capacidad."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: página de Funciones y capacidades, donde puedes buscar elementos existentes o crear uno nuevo.
+  Vídeo: la página vacía → Crear Característica/Capacidad → una traducción al español → una segunda función en una categoría nueva → la lista agrupada por categoría → Editar.
 </p>
 
-> **Importante:** Los nombres exactos y las opciones disponibles pueden variar según tu cuenta y tu plan.
+La lista agrupa tus funciones por **Categoría**. Cada fila muestra el **Nombre** y el **Tipo**. Usa **Buscar características y capacidades…** para encontrar una rápido.
 
-## Cómo se relaciona con los planes de suscripción
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/features1.png" alt="Página Características y Capacidades con el buscador, el botón Crear Característica/Capacidad y tres funciones agrupadas en las categorías Límites, Complementos y Capacidades" style={{ width:"100%", display:"block" }} />
+</div>
 
-El flujo habitual es:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: tres funciones de ejemplo, una de cada tipo, agrupadas por categoría.
+</p>
 
-1) Creas las funciones/capacidades aquí  
-2) Creas (o editas) un plan de suscripción  
-3) En el paso de **Funciones** del plan, asignas el valor de cada función/capacidad
+## Cómo se usan las funciones en los planes de suscripción
 
-Ese valor es el que determina qué recibe cada subcuenta cuando usa ese plan.
+Cuando creas un plan, el paso **Revisar y confirmar** incluye **Configurar funciones**. Ahí pones un valor para cada función que definiste aquí:
+
+- Las funciones **Activado / Desactivado (toggle)** se activan o se desactivan.
+- Las funciones **Límite de uso (limit)** llevan un número.
+- Las funciones **Acceso con opciones (capability)** llevan un texto (por ejemplo, “Voces prémium”).
+
+El flujo es este:
+
+1. Crea una función (aquí)
+2. Asigna un valor a esa función dentro de cada plan (en [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans))
+3. El valor del plan es lo que reciben las subcuentas que usan ese plan
+
+> **Importante:** Para crear planes, tu White Label necesita tener Stripe conectado. Las funciones puedes crearlas en cualquier momento, incluso antes de conectar Stripe.
 
 ## Crear una función o capacidad
 
-Pulsa el botón para crear y completa estos campos.
+Haz clic en **Crear Característica/Capacidad** y rellena estos campos. Los campos marcados con **\*** son obligatorios. Cuando termines, haz clic en **Crear**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-features-create.png" alt="Ventana Crear Característica/Capacidad con las pestañas de Traducciones, los campos Nombre y Descripción, las tres formas en que los planes otorgan la función, una categoría nueva y los botones Cancelar y Crear" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Crear Característica/Capacidad rellenada para “Minutos al mes”.
+</p>
 
 ### Nombre
 
-Es la etiqueta que verás después dentro del plan.
+Una etiqueta corta que se verá en la configuración del plan.
 
 Buenos ejemplos:
-- **Minutos por mes**
-- **Grabación de llamadas**
-- **Selección de voz**
+
+- **Minutos al mes**
+- **Complemento de grabación de llamadas**
+- **Nivel del paquete de voces**
 
 Malos ejemplos (demasiado vagos):
+
 - **Minutos**
 - **Función 1**
 - **Acceso**
 
-> **Consejo:** Usa nombres que se lean como una regla clara. “Minutos por mes” es más claro que “Minutos”.
+> **Consejo:** Usa nombres que se lean como una ventaja o una regla clara. “Minutos al mes” es más claro que “Minutos”.
+
+> **Error común:** Si al pulsar **Crear** sale un error con `duplicate key value`, ese nombre ya está ocupado. Usa un nombre más concreto (por ejemplo, “Complemento de grabación de llamadas” en lugar de “Grabación de llamadas”).
 
 ### Descripción
 
-Opcional, pero recomendable. Escribe una frase para que cualquiera entienda qué controla ese elemento.
+Obligatoria. Escribe una frase corta para que tu equipo sepa exactamente qué controla esta función.
 
 Ejemplo:
-- “Minutos mensuales incluidos en el plan. El uso extra se cobra aparte.”
 
-### Cómo conceden los planes esta función
+- “Minutos de llamada incluidos cada mes en el plan.”
 
-Esta elección define el tipo de valor que podrás configurar dentro de cada plan.
+### Traducciones
 
-#### Activar / Desactivar (interruptor)
+Las pestañas de arriba te permiten traducir el **Nombre** y la **Descripción** a cada idioma de tu plataforma: **English**, **Español**, **Italiano**, **Português**, **हिन्दी**, **Deutsch**, **Nederlands**, **Français** y **Português (Brasil)**.
 
-Úsalo cuando sea simplemente sí o no.
+- **Predeterminado** guarda el texto principal. Su **Nombre** y su **Descripción** son obligatorios.
+- Las pestañas de idioma son opcionales. Los campos vacíos muestran en gris el texto de **Predeterminado**.
+- El tipo y la categoría son los mismos para todos los idiomas.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-features-translations.png" alt="Ventana Crear Característica/Capacidad en la pestaña Español, con el nombre Minutos al mes y su descripción en español" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Español con el nombre y la descripción en español de la misma función.
+</p>
+
+### ¿Cómo otorgan los planes esta característica?
+
+Es la elección más importante. Define qué tipo de valor pondrán los planes.
+
+#### Activado / Desactivado (toggle)
+
+Activar o desactivar simplemente.
 
 Ejemplo:
-- Función: **Grabación de llamadas**
+
+- Función: **Complemento de grabación de llamadas**
   - Plan Básico: **Desactivado**
   - Plan Pro: **Activado**
 
 Ideal para:
-- Extras que se permiten o no se permiten, sin números.
 
-#### Límite de uso (límite)
+- Complementos como “Grabación de llamadas”, “Quitar la marca” o “Soporte prioritario” (si tu configuración los incluye)
 
-Úsalo cuando el plan deba fijar un número por periodo de facturación.
+#### Límite de uso (limit)
+
+Permitir una cantidad fija por período de facturación.
 
 Ejemplo:
-- Función: **Minutos por mes**
+
+- Función: **Minutos al mes**
   - Plan Básico: **400**
   - Plan Pro: **1.000**
 
 Ideal para:
-- Minutos, asientos, número de agentes o cualquier “X por mes” (según lo que soporte tu cuenta).
 
-#### Acceso con opciones (capacidad)
+- Minutos, usuarios, número de agentes, número de teléfonos o cualquier regla del tipo “X al mes” (según lo que admita tu cuenta)
 
-Úsalo cuando el plan deba habilitar una opción entre varias.
+#### Acceso con opciones (capability)
+
+Habilitar acceso con opciones seleccionables. En cada plan, escribes la opción como texto.
 
 Ejemplo:
-- Función: **Selección de voz**
-  - Plan Básico: **Voces estándar**
-  - Plan Pro: **Voces premium**
+
+- Función: **Nivel del paquete de voces**
+  - Plan Básico: **Voces básicas**
+  - Plan Pro: **Voces prémium**
 
 Ideal para:
-- Paquetes o niveles seleccionables (por ejemplo, “estándar” vs. “premium”).
 
-> **Error común:** Elegir un interruptor para algo que debería ser numérico (como minutos). Si puede variar entre planes, normalmente es un **límite**.
+- Derechos del tipo “elige uno de estos paquetes” o “elige un nivel”
+
+> **Error común:** Elegir **toggle** para algo que debería ser un número (como los minutos). Si puede variar según el plan, normalmente es un **limit**.
 
 ### Categoría
 
-Las categorías sirven para agrupar elementos y mantener ordenada la configuración del plan.
+Obligatoria. Las categorías agrupan tus funciones en la lista y mantienen ordenada la configuración de los planes.
 
-Ejemplos de categorías prácticas:
-- **Límites** (minutos, topes de uso)
-- **Extras** (funciones opcionales)
-- **Capacidades** (paquetes u opciones)
+- Elige una categoría existente en **Selecciona una categoría**.
+- O haz clic en **+** para crear una nueva y escríbela en **Introduce el nombre de la nueva categoría**. Haz clic en **×** para volver a la lista.
 
-> **Consejo:** Mantén las categorías consistentes. Si creas “Límite” y “Límites”, terminarás con agrupaciones duplicadas.
+Categorías prácticas:
+
+- **Límites** (minutos, usuarios, topes de uso)
+- **Complementos** (grabación, portal con tu marca, etc.)
+- **Capacidades** (paquetes de voces, modos de enrutamiento, integraciones… según lo que ofrezcas)
+
+> **Consejo:** Mantén las categorías coherentes entre funciones. Si creas “Límite” y “Límites”, la agrupación quedará desordenada.
 
 ## Ejemplo práctico (configuración realista)
 
-Imagina que vendes dos niveles:
+Imagina que vendes dos niveles a tus subcuentas:
 
-- **Básico**: 400 minutos al mes
+- **Básico**: 400 minutos al mes por un precio fijo
 - **Pro**: 1.000 minutos al mes + grabación de llamadas
 
-Crea estas funciones en **Funciones y capacidades**:
+Crea estas funciones en **Características y Capacidades**:
 
-1) **Minutos por mes** → **Límite de uso**  
-   Descripción: “Minutos mensuales incluidos en el plan.”
+1. **Minutos al mes** → **Límite de uso (limit)**, categoría **Límites**\
+   Descripción: “Minutos de llamada incluidos cada mes en el plan.”
+2. **Complemento de grabación de llamadas** → **Activado / Desactivado (toggle)**, categoría **Complementos**\
+   Descripción: “Graba las llamadas que atienden los agentes.”
 
-2) **Grabación de llamadas** → **Activar / Desactivar**  
-   Descripción: “Activa la grabación de llamadas gestionadas por el asistente.”
-
-Luego, en tus planes:
+Después, en **Planes de suscripción**:
 
 - Plan Básico:
-  - Minutos por mes = **400**
-  - Grabación de llamadas = **Desactivado**
-
+  - Minutos al mes = **400**
+  - Complemento de grabación de llamadas = **Desactivado**
 - Plan Pro:
-  - Minutos por mes = **1.000**
-  - Grabación de llamadas = **Activado**
+  - Minutos al mes = **1.000**
+  - Complemento de grabación de llamadas = **Activado**
 
-Así, las subcuentas entienden al instante qué cambia entre niveles.
+Así, las subcuentas entienden enseguida qué cambia entre niveles, y tus precios son más fáciles de justificar.
 
 ## Editar una función o capacidad existente
 
-Desde el listado, abre el elemento para modificar:
-- **Nombre** y **Descripción**
-- El tipo (interruptor / límite / opciones)
-- La **Categoría**
+En la lista, haz clic en **⋮** en la fila de la función:
 
-> **Importante:** Cambiar el tipo de un elemento después de usarlo en planes puede afectar a cómo se guarda o se muestra su valor. Si no estás seguro, crea un elemento nuevo y actualiza los planes para usarlo.
+- **Editar** abre **Editar Característica/Capacidad**, con los mismos campos: **Nombre**, **Descripción**, traducciones, tipo y **Categoría**. Haz clic en **Actualizar** para guardar.
+- **Eliminar** borra la función. Esta acción no se puede deshacer.
+
+> **Importante:** Cambiar el tipo de una función que ya se usa en planes puede afectar a cómo los planes guardan o muestran ese valor. Si no lo tienes claro, crea una función nueva y pasa tus planes a ella.
