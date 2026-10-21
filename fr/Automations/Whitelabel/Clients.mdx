@@ -1,101 +1,173 @@
 ---
 title: "Utilisateurs"
-description: "Gérez vos clients : créez des comptes, vérifiez l’état de leur abonnement et accédez à leur application client depuis un seul endroit."
+description: "Gérez vos clients : créez des comptes, consultez leurs abonnements et la facturation de leurs appels, et ouvrez l’application du client depuis un seul endroit."
 icon: "users"
 ---
 
 ## À quoi sert cette page
 
-La page **Utilisateurs** est l’endroit où vous gérez les *clients de votre White Label* (les personnes qui achètent des abonnements et utilisent votre application sous marque).
+La page **Utilisateurs** (**Gestion des utilisateurs**) est l’endroit où vous gérez les *clients de votre White Label* : les personnes qui achètent des abonnements et utilisent votre application à votre marque. Vous la trouverez dans la Plateforme white label, dans **Gestion des utilisateurs** ([ouvrez-la ici](https://app.callin.io/cms/users)).
 
-Depuis ici, vous pouvez :
+Depuis cette page, vous pouvez :
 
-- Créer de nouveaux comptes clients
-- Rechercher et consulter des clients dans votre espace de travail
-- Mettre à jour les informations de base d’un client (comme le nom et l’entreprise)
-- Consulter des informations comme l’abonnement, les minutes et l’attribution (dans le panneau de détails de l’utilisateur)
-- Accéder directement à l’application du client via l’**icône verte** tout à droite de la ligne (la dernière icône)
+- Créer des comptes clients
+- Rechercher et filtrer vos clients
+- Modifier les informations de base d’un client (nom et entreprise)
+- Consulter les connexions, les abonnements, la facturation des appels, l’attribution marketing et la limite de dépense Twilio de chaque client
+- Ouvrir directement l’application du client
 
-Pour ouvrir cette page, cliquez ici : [Ouvrir Utilisateurs](https://app.callin.io/cms/users)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : la liste des Utilisateurs → Créer un utilisateur → Modifier l’utilisateur → les détails du client : Informations, Abonnements, Facturation 1-Min, UTM et limite Twilio.
+</p>
 
 ## Comment fonctionne la liste des Utilisateurs
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-list.png" alt="Page Gestion des utilisateurs avec le bouton Créer un utilisateur, la recherche, les filtres Statut et Abonnements, et la ligne d’un client avec le statut Actif, la date d’inscription et quatre icônes d’action" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la liste des Utilisateurs, avec un client d’exemple.
+</p>
+
 En haut de la page, vous verrez :
 
-- Une **barre de recherche** pour trouver rapidement un client (généralement par nom ou email).
-- Un bouton **Create User** pour ajouter un nouveau client.
+- La recherche, pour trouver un client par nom ou e-mail.
+- **Statut**, pour filtrer les clients **Actifs**, **Supprimés** ou **Suspendus**.
+- **Abonnements**, pour filtrer les clients selon le forfait auquel ils sont abonnés.
+- **Créer un utilisateur**, pour ajouter un client.
 
-Chaque ligne du tableau représente un client et affiche :
+Chaque ligne affiche le nom, l’e-mail et l’entreprise du client, son statut (par exemple **Actif**), sa date d’inscription (**Rejoint le**) et quatre icônes d’action à droite :
 
-- L’identité du client (nom/email)
-- Le statut (par exemple **Active**)
-- La date d’inscription (**Joined At** dans l’interface)
-- Plusieurs icônes d’action à droite (dont l’**icône verte** à la fin)
+| Icône | Action | Ce qu’elle fait |
+| --- | --- | --- |
+| Crayon | **Modifier l'utilisateur** | Change le nom et l’entreprise du client. |
+| Deux carrés | **Copier l'ID utilisateur** | Copie l’ID unique du client, par exemple pour le transmettre au support Callin. |
+| Personne (orange) | **Plus de détails utilisateur** | Ouvre le panneau des détails du client. |
+| Lien (vert) | **Se connecter en tant que cet utilisateur** | Ouvre l’application du client comme si vous étiez lui. |
 
 ## Créer un compte client
 
-Lorsque vous cliquez sur **Create User**, une fenêtre s’ouvre pour créer un nouveau client.
+Quand vous cliquez sur **Créer un utilisateur**, la fenêtre **Créer un nouvel utilisateur** s’ouvre :
 
-Ce que vous remplirez (selon l’interface) :
+- **E-mail** (obligatoire)
+- **Mot de passe** (obligatoire, 8 caractères minimum)
+- **Nom complet** (facultatif)
+- **Entreprise** (facultatif)
 
-- **Email** (obligatoire)
-- **Password** (obligatoire — la fenêtre indique une longueur minimale)
-- **Full Name** (optionnel)
-- **Company** (optionnel)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-create.png" alt="Fenêtre Créer un nouvel utilisateur avec les champs E-mail, Mot de passe, Nom complet et Entreprise et les boutons Annuler et Créer un utilisateur" style={{ width:"100%", display:"block" }} />
+</div>
 
-Exemple réaliste :
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la fenêtre Créer un nouvel utilisateur, avec des données d’exemple.
+</p>
 
-- Email → `sara@northwindclinic.com`
-- Password → un mot de passe sécurisé que vous partagez avec le client via un canal sûr
-- Full Name → `Sara Ruiz`
-- Company → `Northwind Clinic`
+Un exemple réaliste :
 
-> **Conseil :** Si vous gérez beaucoup de comptes, renseigner correctement **Full Name** et **Company** rend la recherche beaucoup plus simple.
+- E-mail → `sara@northwindclinic.com`
+- Mot de passe → un mot de passe sûr que vous transmettez au client par un canal sécurisé
+- Nom complet → `Sara Ruiz`
+- Entreprise → `Northwind Clinic`
+
+Cliquez sur **Créer un utilisateur**. Le client apparaît dans la liste et peut se connecter à votre application avec cet e-mail et ce mot de passe.
+
+> **Astuce :** Si vous gérez beaucoup de comptes, renseigner **Nom complet** et **Entreprise** facilite beaucoup la recherche et le support.
 
 ## Modifier les informations de base d’un client
 
-Depuis une ligne utilisateur, vous pouvez ouvrir une fenêtre d’édition pour mettre à jour des champs de base comme :
+Cliquez sur le crayon (**Modifier l'utilisateur**) pour changer :
 
-- **Full Name**
-- **Company**
+- **Nom complet**
+- **Entreprise**
 
-C’est utile lorsque :
+Cliquez sur **Mettre à jour** pour enregistrer, ou sur **Annuler** pour fermer sans modifier. L’e-mail ne peut pas être changé ici.
 
-- Le client s’est inscrit avec un nom incomplet
-- Vous souhaitez que le nom de l’entreprise suive votre logique interne (par exemple « Northwind Clinic (Madrid) »)
+C’est utile quand :
+
+- Un client s’est inscrit avec un nom incomplet
+- Vous voulez que le nom de l’entreprise suive votre nomenclature interne (par exemple « Northwind Clinic (Lyon) »)
 
 ## Accéder à l’application du client via l’icône verte
 
-La dernière icône à droite de chaque ligne est une **icône verte**. C’est le moyen le plus rapide d’ouvrir directement la plateforme du client.
+La dernière icône de chaque ligne est une **icône de lien verte** : **Se connecter en tant que cet utilisateur**. Elle ouvre votre application en tant que ce client, sans avoir besoin de son mot de passe.
 
-Utilisez-la lorsque vous devez :
+Utilisez-la quand vous devez :
 
-- Confirmer exactement ce que le client voit
-- Vérifier si une fonctionnalité s’affiche selon son abonnement
-- Aider le client à trouver une section sans supposer
+- Vérifier exactement ce que voit le client
+- Vérifier si une fonctionnalité est disponible avec son abonnement
+- Aider le client à trouver une page sans deviner
 
 Exemple de support :
 
 1. Le client dit : « Je ne trouve pas mes abonnements. »
-2. Vous le retrouvez dans **Utilisateurs**.
-3. Vous cliquez sur l’**icône verte** pour ouvrir son application et le guider avec certitude.
+2. Vous le cherchez dans **Utilisateurs**.
+3. Vous cliquez sur l’**icône verte** pour ouvrir son application et le guider en toute confiance.
 
-> **Important :** Ce que vous verrez en ouvrant l’application du client dépend du statut et de l’abonnement actuel de ce client.
+> **Important :** Tant que vous êtes dans l’application du client, toute modification s’applique à son compte. Regardez, aidez et laissez tout tel quel, sauf si le client vous a demandé de changer quelque chose.
 
 ## Ce que vous pouvez consulter dans le profil d’un client
 
-En ouvrant le panneau de détails d’un client, l’interface affiche des onglets comme :
+Cliquez sur l’icône de personne orange (**Plus de détails utilisateur**) pour ouvrir le panneau des détails du client. En haut, vous voyez son nom, son e-mail et son statut. En dessous, cinq onglets :
 
-- **Info** (détails de la dernière connexion et options de sécurité du compte)
-- **Subscriptions** (minutes, abonnements actifs et actions de facturation si disponibles)
-- **1-Min Billing** (règle de facturation sortante et statistiques des appels récents)
-- **UTM** (attribution marketing capturée lors de l’inscription)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-details.png" alt="Panneau des détails du client sur l’onglet Informations avec Inscription (Entreprise), Détails de la dernière connexion (Appareil, Adresse IP, Emplacement, Heure), Historique des sessions et Sécurité avec Supprimer le compte utilisateur" style={{ width:"100%", display:"block" }} />
+</div>
 
-Cela vous aide à répondre rapidement à des questions comme :
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : le panneau des détails du client, onglet Informations.
+</p>
+
+### Informations
+
+- **Inscription** : l’entreprise indiquée par le client.
+- **Détails de la dernière connexion** : l’**Appareil**, l’**Adresse IP**, l’**Emplacement** et l’**Heure** de sa dernière connexion.
+- **Historique des sessions** : ses sessions récentes.
+- **Sécurité** : **Supprimer le compte utilisateur** supprime définitivement le compte du client et toutes ses données, après confirmation.
+
+> **Important :** La suppression d’un client est irréversible. Si vous voulez seulement couper son accès, vérifiez d’abord son abonnement.
+
+### Abonnements
+
+- **Abonnements actifs** : les forfaits auxquels le client est abonné, avec leurs minutes.
+- **Voir les détails de facturation** : ouvre le portail client Stripe pour gérer sa facturation.
+
+### Facturation 1-Min
+
+**Facturation sortante (règle d’1 minute)** : si 50 % des 100 derniers appels sortants terminés du client durent moins de 50 secondes, ses appels sortants de moins de 60 secondes sont facturés 1 minute. L’onglet affiche :
+
+- **Règle éligible** et **Règle appliquée maintenant**, avec le nombre d’appels pris en compte et le nombre d’appels courts.
+- La **durée moyenne** et le **taux de réussite** de ses appels sortants récents.
+- **Facturation minimale d’1 minute** : un interrupteur pour appliquer le minimum d’1 minute à ce client même s’il ne remplit pas la règle (choix de l’administrateur).
+- **Appels sortants récents (100 derniers)** : chaque appel avec son statut, sa durée et les minutes facturées si la règle s’applique.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-billing.png" alt="Onglet Facturation 1-Min avec l’explication de la règle d’1 minute, les encadrés Règle éligible, Règle appliquée maintenant, durée moyenne et taux de réussite, et l’interrupteur Facturation minimale d’1 minute" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’onglet Facturation 1-Min. Cliquez sur Actualiser pour mettre à jour les données.
+</p>
+
+> **Astuce :** C’est ici qu’il faut regarder quand un client demande pourquoi un appel sortant court lui a été facturé une minute entière. Voir aussi [Téléphonie](/fr/Automations/Whitelabel/telefhony).
+
+### UTM
+
+**Données UTM marketing** : l’attribution marketing enregistrée quand le client s’est inscrit et a commencé son essai gratuit (source, campagne, etc.). S’il n’est pas arrivé par un lien suivi, vous verrez **Aucune donnée UTM disponible pour cet utilisateur.** Voir [Analyse UTM](/fr/Automations/Whitelabel/utm).
+
+### Limite Twilio
+
+**Limite de dépense quotidienne de Twilio** : activez ou désactivez la **Vérification de la limite de dépense quotidienne** pour ce client. Quand elle est activée, le client est soumis à la limite de dépense quotidienne de Twilio, qui vous protège des coûts d’appel imprévus.
+
+Vous pouvez ainsi répondre rapidement à des questions comme :
 
 - « Ce client s’est-il connecté récemment ? »
 - « A-t-il un abonnement actif ? »
-- « Pourquoi un appel court a-t-il été facturé de cette façon ? »
-- « Vient-il d’une campagne avec des paramètres UTM ? »
+- « Pourquoi un appel sortant court a-t-il été facturé ainsi ? »
+- « Est-il arrivé par une campagne avec des paramètres UTM ? »
 
-> **Conseil :** Si un client dit « j’ai payé mais ça n’apparaît pas actif », la première vérification est souvent de confirmer qu’il utilise le bon email/compte.
+> **Astuce :** Si un client dit « J’ai payé mais ce n’est pas actif », la première vérification consiste généralement à confirmer qu’il utilise le bon e-mail et le bon compte.

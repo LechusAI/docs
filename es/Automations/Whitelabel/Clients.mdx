@@ -1,101 +1,173 @@
 ---
 title: "Usuarios"
-description: "Administra a tus clientes: crea cuentas, revisa su estado de suscripción y accede a su app de cliente desde un solo lugar."
+description: "Gestiona a tus clientes: crea cuentas, revisa sus suscripciones y la facturación de sus llamadas, y abre la app del cliente desde un solo sitio."
 icon: "users"
 ---
 
 ## Para qué sirve esta página
 
-La página de **Usuarios** es donde administras a los *clientes de tu White Label* (las personas que compran suscripciones y usan tu app con marca).
+La página **Usuarios** (**Gestión de usuarios**) es donde gestionas a los *clientes de tu White Label*: las personas que compran suscripciones y usan tu app con tu marca. La encontrarás en la Plataforma white label, dentro de **Gestión de usuarios** ([ábrela aquí](https://app.callin.io/cms/users)).
 
 Desde aquí puedes:
 
-- Crear nuevas cuentas de cliente
-- Buscar y revisar clientes en tu workspace
-- Actualizar datos básicos del cliente (como nombre y empresa)
-- Revisar información del cliente como suscripción, minutos y atribución (dentro del panel de detalles del usuario)
-- Acceder directamente a la app del cliente usando el **icono verde** del extremo derecho de la fila (el último icono)
+- Crear cuentas de cliente
+- Buscar y filtrar a tus clientes
+- Cambiar los datos básicos del cliente (nombre y empresa)
+- Revisar la actividad de inicio de sesión, las suscripciones, la facturación de llamadas, la atribución de marketing y el límite de gasto de Twilio de cada cliente
+- Abrir directamente la app del cliente
 
-Para abrir esta página, haz clic aquí: [Abrir Usuarios](https://app.callin.io/cms/users)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: la lista de Usuarios → Crear usuario → Editar usuario → los detalles del cliente: Información, Suscripciones, Facturación 1-Min, UTM y límite de Twilio.
+</p>
 
 ## Cómo funciona la lista de Usuarios
 
-En la parte superior de la página verás:
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-list.png" alt="Página Gestión de usuarios con el botón Crear usuario, el buscador, los filtros Estado y Suscripciones y la fila de un cliente con el estado Activo, la fecha de alta y cuatro iconos de acción" style={{ width:"100%", display:"block" }} />
+</div>
 
-- Una **barra de búsqueda** para encontrar rápido a un cliente (normalmente por nombre o email).
-- Un botón **Create User** para añadir un nuevo cliente.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la lista de Usuarios, con un cliente de ejemplo.
+</p>
 
-Cada fila de la tabla representa un cliente y muestra:
+Arriba verás:
 
-- Identidad del cliente (nombre/email)
-- Estado (por ejemplo, **Active**)
-- Fecha de alta (**Joined At** en la interfaz)
-- Varios iconos de acción en el lado derecho de la fila (incluyendo el **icono verde** al final)
+- El buscador, para encontrar un cliente por nombre o correo.
+- **Estado**, para filtrar clientes **Activos**, **Eliminados** o **Suspendidos**.
+- **Suscripciones**, para filtrar clientes por el plan al que están suscritos.
+- **Crear usuario**, para añadir un cliente.
+
+Cada fila muestra el nombre, el correo y la empresa del cliente, su estado (por ejemplo, **Activo**), la fecha en que se unió (**Se unió el**) y cuatro iconos de acción a la derecha:
+
+| Icono | Acción | Qué hace |
+| --- | --- | --- |
+| Lápiz | **Editar usuario** | Cambia el nombre y la empresa del cliente. |
+| Dos cuadrados | **Copiar ID de usuario** | Copia el ID único del cliente, por ejemplo para pasárselo al soporte de Callin. |
+| Persona (naranja) | **Más detalles del usuario** | Abre el panel de detalles del cliente. |
+| Enlace (verde) | **Iniciar sesión como este usuario** | Abre la app del cliente como si fueras él. |
 
 ## Crear una cuenta de cliente
 
-Cuando haces clic en **Create User**, se abre un modal para crear un cliente nuevo.
+Al hacer clic en **Crear usuario**, se abre la ventana **Crear nuevo usuario**:
 
-Lo que completarás (según la interfaz):
+- **Correo electrónico** (obligatorio)
+- **Contraseña** (obligatoria, mínimo 8 caracteres)
+- **Nombre completo** (opcional)
+- **Empresa** (opcional)
 
-- **Email** (obligatorio)
-- **Password** (obligatorio — el modal indica una longitud mínima)
-- **Full Name** (opcional)
-- **Company** (opcional)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-create.png" alt="Ventana Crear nuevo usuario con los campos Correo electrónico, Contraseña, Nombre completo y Empresa y los botones Cancelar y Crear usuario" style={{ width:"100%", display:"block" }} />
+</div>
 
-Ejemplo realista:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Crear nuevo usuario, con datos de ejemplo.
+</p>
 
-- Email → `sara@northwindclinic.com`
-- Password → una contraseña segura que compartes con el cliente por un canal seguro
-- Full Name → `Sara Ruiz`
-- Company → `Northwind Clinic`
+Un ejemplo real:
 
-> **Consejo:** Si gestionas muchas cuentas, mantener **Full Name** y **Company** bien rellenados hace que la búsqueda sea mucho más fácil.
+- Correo electrónico → `sara@northwindclinic.com`
+- Contraseña → una contraseña segura que compartes con el cliente por un canal seguro
+- Nombre completo → `Sara Ruiz`
+- Empresa → `Northwind Clinic`
+
+Haz clic en **Crear usuario**. El cliente aparece en la lista y puede entrar en tu app con ese correo y esa contraseña.
+
+> **Consejo:** Si gestionas muchas cuentas, rellenar **Nombre completo** y **Empresa** hace mucho más fácil buscar y dar soporte.
 
 ## Editar datos básicos del cliente
 
-Desde una fila de usuario, puedes abrir un modal de edición para actualizar campos básicos como:
+Haz clic en el lápiz (**Editar usuario**) para cambiar:
 
-- **Full Name**
-- **Company**
+- **Nombre completo**
+- **Empresa**
 
-Esto es útil cuando:
+Haz clic en **Actualizar usuario** para guardar, o en **Cancelar** para cerrar sin cambios. El correo no se puede cambiar aquí.
 
-- El cliente se registró con un nombre incompleto
-- Quieres que el nombre de empresa siga tu criterio interno (por ejemplo, “Northwind Clinic (Madrid)”)
+Es útil cuando:
+
+- Un cliente se registró con el nombre incompleto
+- Quieres que el nombre de la empresa coincida con tu nomenclatura interna (por ejemplo, “Northwind Clinic (Madrid)”)
 
 ## Acceder a la app del cliente con el icono verde
 
-El último icono de la derecha en cada fila es un **icono verde**. Es la forma rápida de entrar directamente en la plataforma del cliente.
+El último icono de cada fila es un **icono de enlace verde**: **Iniciar sesión como este usuario**. Abre tu app como ese cliente, sin necesidad de su contraseña.
 
 Úsalo cuando necesites:
 
-- Confirmar exactamente lo que el cliente está viendo
-- Ver si una funcionalidad aparece según su suscripción
-- Ayudar al cliente a encontrar una sección sin suposiciones
+- Comprobar exactamente qué ve el cliente
+- Revisar si una función está disponible en su suscripción
+- Ayudar al cliente a encontrar una página sin adivinar
 
 Ejemplo de soporte:
 
-1. El cliente dice: “No encuentro mis suscripciones.”
-2. Lo localizas en **Usuarios**.
-3. Haces clic en el **icono verde** para abrir su app y guiarle con certeza.
+1. El cliente te dice: “No encuentro mis suscripciones”.
+2. Lo buscas en **Usuarios**.
+3. Haces clic en el **icono verde** para abrir su app y guiarle con seguridad.
 
-> **Importante:** Lo que veas al abrir la app del cliente depende del estado y la suscripción actual de ese cliente.
+> **Importante:** Mientras estás dentro de la app del cliente, cualquier cambio que hagas se aplica a su cuenta. Mira, ayuda y deja todo como estaba, salvo que el cliente te haya pedido cambiar algo.
 
 ## Qué puedes revisar dentro del perfil de un cliente
 
-Al abrir el panel de detalles de un cliente, la interfaz muestra pestañas como:
+Haz clic en el icono de la persona naranja (**Más detalles del usuario**) para abrir el panel de detalles del cliente. Arriba verás su nombre, su correo y su estado. Debajo, cinco pestañas:
 
-- **Info** (detalles del último acceso y opciones de seguridad de la cuenta)
-- **Subscriptions** (minutos, suscripciones activas y acciones de facturación si están disponibles)
-- **1-Min Billing** (regla de facturación saliente y estadísticas de llamadas recientes)
-- **UTM** (atribución de marketing capturada durante el registro)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-details.png" alt="Panel de detalles del cliente en la pestaña Información con Alta (Empresa), Detalles del último inicio de sesión (Dispositivo, Dirección IP, Ubicación, Hora), Historial de sesiones y Seguridad con Eliminar cuenta de usuario" style={{ width:"100%", display:"block" }} />
+</div>
 
-Esto te ayuda a responder rápido preguntas como:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: el panel de detalles del cliente, pestaña Información.
+</p>
 
-- “¿Este cliente ha entrado recientemente?”
+### Información
+
+- **Alta**: la empresa que indicó el cliente.
+- **Detalles del último inicio de sesión**: el **Dispositivo**, la **Dirección IP**, la **Ubicación** y la **Hora** de su último acceso.
+- **Historial de sesiones**: sus sesiones recientes.
+- **Seguridad**: **Eliminar cuenta de usuario** borra para siempre la cuenta del cliente y todos sus datos, tras una confirmación.
+
+> **Importante:** Eliminar un cliente no se puede deshacer. Si solo quieres cortarle el acceso, revisa antes su suscripción.
+
+### Suscripciones
+
+- **Suscripciones activas**: los planes a los que está suscrito el cliente, con sus minutos.
+- **Ver detalles de facturación**: abre el portal de cliente de Stripe para gestionar su facturación.
+
+### Facturación 1-Min
+
+**Facturación saliente (regla de 1 minuto)**: si el 50 % de las últimas 100 llamadas salientes completadas del cliente dura menos de 50 segundos, sus llamadas salientes de menos de 60 segundos se facturan como 1 minuto. La pestaña muestra:
+
+- **Regla elegible** y **La regla aplica ahora**, con cuántas llamadas se han tenido en cuenta y cuántas fueron cortas.
+- La **duración media** y la **tasa de éxito** de sus llamadas salientes recientes.
+- **Facturación mínima de 1 minuto**: un interruptor para aplicar el mínimo de 1 minuto a este cliente aunque no cumpla la regla (decisión del administrador).
+- **Llamadas salientes recientes (últimas 100)**: cada llamada con su estado, su duración y los minutos facturados si se aplica la regla.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-billing.png" alt="Pestaña Facturación 1-Min con la explicación de la regla de 1 minuto, los recuadros Regla elegible, La regla aplica ahora, duración media y tasa de éxito, y el interruptor Facturación mínima de 1 minuto" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Facturación 1-Min. Haz clic en Actualizar para refrescar los datos.
+</p>
+
+> **Consejo:** Aquí es donde mirar cuando un cliente pregunta por qué una llamada saliente corta se le cobró como un minuto entero. Consulta también [Telefonía](/es/Automations/Whitelabel/telefhony).
+
+### UTM
+
+**Datos UTM de marketing**: la atribución de marketing que se guardó cuando el cliente se registró y empezó su prueba gratuita (fuente, campaña, etc.). Si no llegó por un enlace con seguimiento, verás **No hay datos UTM disponibles para este usuario.** Consulta [Analítica UTM](/es/Automations/Whitelabel/utm).
+
+### Límite de Twilio
+
+**Límite diario de gastos de Twilio**: activa o desactiva la **Aplicación del límite diario** para este cliente. Cuando está activada, el cliente participa en el límite diario de gasto de Twilio, que te protege de costes de llamadas inesperados.
+
+Así puedes responder rápido a preguntas como:
+
+- “¿Este cliente ha entrado últimamente?”
 - “¿Tiene una suscripción activa?”
-- “¿Por qué se facturó de cierta manera una llamada corta?”
-- “¿Viene de una campaña con parámetros UTM?”
+- “¿Por qué se cobró así una llamada saliente corta?”
+- “¿Llegó desde una campaña con parámetros UTM?”
 
-> **Consejo:** Si un cliente dice “he pagado pero no aparece activo”, lo primero suele ser comprobar si está usando el email/cuenta correctos.
+> **Consejo:** Si un cliente dice “He pagado pero no está activo”, lo primero suele ser comprobar que usa el correo y la cuenta correctos.
