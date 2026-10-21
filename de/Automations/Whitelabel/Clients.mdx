@@ -1,101 +1,173 @@
 ---
 title: "Benutzer"
-description: "Verwalten Sie Ihre Kunden: Konten anlegen, den Abostatus prüfen und die Kunden-App von einem Ort aus öffnen."
+description: "Verwalten Sie Ihre Kunden: Konten erstellen, Abonnements und Anrufabrechnung prüfen und die Kunden-App an einem Ort öffnen."
 icon: "users"
 ---
 
 ## Wofür diese Seite da ist
 
-Auf der Seite **Benutzer** verwalten Sie die *Kunden Ihres White Labels* (die Personen, die Abonnements kaufen und Ihre gebrandete App nutzen).
+Auf der Seite **Benutzer** (**Benutzerverwaltung**) verwalten Sie die *Kunden Ihres White Labels*: die Personen, die Abonnements kaufen und Ihre App unter Ihrer Marke nutzen. Sie finden sie in der White-Label-Plattform unter **Benutzerverwaltung** ([hier öffnen](https://app.callin.io/cms/users)).
 
-Von hier aus können Sie:
+Hier können Sie:
 
-- Neue Kundenkonten anlegen
-- Kunden in Ihrem Workspace suchen und einsehen
-- Grunddaten des Kunden aktualisieren (z. B. Name und Firma)
-- Informationen wie Abonnement, Minuten und Attribution prüfen (im Detailpanel des Benutzers)
-- Die Kunden-App direkt über das **grüne Symbol** ganz rechts in der Zeile öffnen (das letzte Symbol)
+- Kundenkonten erstellen
+- Ihre Kunden suchen und filtern
+- Grunddaten eines Kunden ändern (Name und Firma)
+- Anmeldungen, Abonnements, Anrufabrechnung, Marketing-Attribution und das Twilio-Ausgabenlimit jedes Kunden prüfen
+- Die App des Kunden direkt öffnen
 
-Zum Öffnen dieser Seite klicken Sie hier: [Benutzer öffnen](https://app.callin.io/cms/users)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: die Benutzerliste → Benutzer erstellen → Benutzer bearbeiten → die Kundendetails: Informationen, Abonnements, 1-Min Abrechnung, UTM und Twilio-Limit.
+</p>
 
 ## Wie die Benutzerliste funktioniert
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-list.png" alt="Seite Benutzerverwaltung mit der Schaltfläche Benutzer erstellen, der Suche, den Filtern Status und Abonnements und der Zeile eines Kunden mit dem Status Aktiv, dem Beitrittsdatum und vier Aktionssymbolen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Benutzerliste mit einem Beispielkunden.
+</p>
+
 Oben auf der Seite sehen Sie:
 
-- Eine **Suchleiste**, um Kunden schnell zu finden (meist nach Name oder E-Mail).
-- Eine Schaltfläche **Create User**, um einen neuen Kunden hinzuzufügen.
+- Die Suche, um einen Kunden nach Name oder E-Mail zu finden.
+- **Status**, um nach **Aktiven**, **Gelöschten** oder **Gesperrten** Kunden zu filtern.
+- **Abonnements**, um Kunden nach ihrem abonnierten Plan zu filtern.
+- **Benutzer erstellen**, um einen Kunden hinzuzufügen.
 
-Jede Tabellenzeile steht für einen Kunden und zeigt:
+Jede Zeile zeigt Name, E-Mail und Firma des Kunden, seinen Status (zum Beispiel **Aktiv**), das Beitrittsdatum (**Beigetreten am**) und rechts vier Aktionssymbole:
 
-- Kundenidentität (Name/E-Mail)
-- Status (z. B. **Active**)
-- Registrierungsdatum (**Joined At** in der Oberfläche)
-- Mehrere Aktionssymbole rechts (einschließlich des **grünen Symbols** am Ende)
+| Symbol | Aktion | Was sie tut |
+| --- | --- | --- |
+| Stift | **Benutzer bearbeiten** | Ändert Name und Firma des Kunden. |
+| Zwei Quadrate | **Benutzer-ID kopieren** | Kopiert die eindeutige ID des Kunden, etwa für den Callin-Support. |
+| Person (orange) | **Weitere Benutzerdetails** | Öffnet das Panel mit den Kundendetails. |
+| Link (grün) | **Als dieser Benutzer anmelden** | Öffnet die App des Kunden so, als wären Sie der Kunde. |
 
 ## Ein Kundenkonto erstellen
 
-Wenn Sie auf **Create User** klicken, öffnet sich ein Dialog, um einen neuen Kunden anzulegen.
+Wenn Sie auf **Benutzer erstellen** klicken, öffnet sich das Fenster **Neuen Benutzer erstellen**:
 
-Was Sie ausfüllen (laut Oberfläche):
+- **E-Mail** (Pflichtfeld)
+- **Passwort** (Pflichtfeld, mindestens 8 Zeichen)
+- **Vollständiger Name** (optional)
+- **Firma** (optional)
 
-- **Email** (erforderlich)
-- **Password** (erforderlich — der Dialog nennt eine Mindestlänge)
-- **Full Name** (optional)
-- **Company** (optional)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-create.png" alt="Fenster Neuen Benutzer erstellen mit den Feldern E-Mail, Passwort, Vollständiger Name und Firma und den Schaltflächen Abbrechen und Benutzer erstellen" style={{ width:"100%", display:"block" }} />
+</div>
 
-Realistisches Beispiel:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: das Fenster Neuen Benutzer erstellen mit Beispieldaten.
+</p>
 
-- Email → `sara@northwindclinic.com`
-- Password → ein sicheres Passwort, das Sie dem Kunden über einen sicheren Kanal mitteilen
-- Full Name → `Sara Ruiz`
-- Company → `Northwind Clinic`
+Ein realistisches Beispiel:
 
-> **Tipp:** Wenn Sie viele Konten verwalten, helfen sauber gepflegte Felder **Full Name** und **Company** enorm bei der späteren Suche.
+- E-Mail → `sara@northwindclinic.com`
+- Passwort → ein sicheres Passwort, das Sie dem Kunden über einen sicheren Kanal mitteilen
+- Vollständiger Name → `Sara Ruiz`
+- Firma → `Northwind Clinic`
+
+Klicken Sie auf **Benutzer erstellen**. Der Kunde erscheint in der Liste und kann sich mit dieser E-Mail und diesem Passwort in Ihrer App anmelden.
+
+> **Tipp:** Wenn Sie viele Konten verwalten, erleichtern ausgefüllte Felder **Vollständiger Name** und **Firma** Suche und Support erheblich.
 
 ## Grunddaten eines Kunden bearbeiten
 
-Aus einer Benutzerzeile können Sie einen Bearbeitungsdialog öffnen, um Basisfelder zu aktualisieren wie:
+Klicken Sie auf den Stift (**Benutzer bearbeiten**), um Folgendes zu ändern:
 
-- **Full Name**
-- **Company**
+- **Vollständiger Name**
+- **Firma**
 
-Das ist hilfreich, wenn:
+Klicken Sie auf **Benutzer aktualisieren**, um zu speichern, oder auf **Abbrechen**, um ohne Änderungen zu schließen. Die E-Mail lässt sich hier nicht ändern.
 
-- Der Kunde sich mit einem unvollständigen Namen registriert hat
-- Sie den Firmennamen nach Ihrer internen Logik vereinheitlichen möchten (z. B. „Northwind Clinic (Madrid)“)
+Das ist nützlich, wenn:
+
+- Sich ein Kunde mit unvollständigem Namen registriert hat
+- Der Firmenname Ihrer internen Benennung entsprechen soll (zum Beispiel „Northwind Clinic (Berlin)“)
 
 ## Die Kunden-App über das grüne Symbol öffnen
 
-Das letzte Symbol rechts in jeder Zeile ist ein **grünes Symbol**. Damit öffnen Sie die Kundenplattform direkt.
+Das letzte Symbol jeder Zeile ist ein **grünes Link-Symbol**: **Als dieser Benutzer anmelden**. Es öffnet Ihre App als dieser Kunde, ohne dass Sie sein Passwort brauchen.
 
 Nutzen Sie es, wenn Sie:
 
-- Genau prüfen möchten, was der Kunde sieht
-- Verifizieren möchten, ob eine Funktion je nach Abonnement sichtbar ist
-- Den Kunden ohne Vermutungen zu einer bestimmten Seite führen möchten
+- Genau sehen möchten, was der Kunde sieht
+- Prüfen möchten, ob eine Funktion in seinem Abonnement verfügbar ist
+- Dem Kunden helfen möchten, eine Seite zu finden, ohne zu raten
 
 Support-Beispiel:
 
 1. Der Kunde sagt: „Ich finde meine Abonnements nicht.“
 2. Sie suchen ihn unter **Benutzer**.
-3. Sie klicken auf das **grüne Symbol**, öffnen seine App und leiten ihn gezielt an.
+3. Sie klicken auf das **grüne Symbol**, öffnen seine App und führen ihn sicher zum Ziel.
 
-> **Wichtig:** Was Sie nach dem Öffnen der Kunden-App sehen, hängt vom Status und dem aktuellen Abonnement dieses Kunden ab.
+> **Wichtig:** Solange Sie in der App des Kunden sind, wirkt sich jede Änderung auf sein Konto aus. Schauen Sie, helfen Sie und lassen Sie alles, wie es war, es sei denn, der Kunde hat Sie um eine Änderung gebeten.
 
 ## Was Sie im Kundenprofil prüfen können
 
-Wenn Sie das Detailpanel eines Kunden öffnen, zeigt die Oberfläche Tabs wie:
+Klicken Sie auf das orange Personensymbol (**Weitere Benutzerdetails**), um das Panel mit den Kundendetails zu öffnen. Oben sehen Sie Name, E-Mail und Status. Darunter fünf Tabs:
 
-- **Info** (Details zur letzten Anmeldung und Sicherheitsoptionen des Kontos)
-- **Subscriptions** (Minuten, aktive Abonnements und ggf. verfügbare Abrechnungsaktionen)
-- **1-Min Billing** (Regel zur Abrechnung ausgehender Anrufe und Statistiken zu letzten Calls)
-- **UTM** (Marketing-Attribution, die bei der Registrierung erfasst wurde)
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-details.png" alt="Panel mit den Kundendetails im Tab Informationen mit Onboarding (Firma), Details zur letzten Anmeldung (Gerät, IP-Adresse, Standort, Zeit), Sitzungsverlauf und Sicherheit mit Benutzerkonto löschen" style={{ width:"100%", display:"block" }} />
+</div>
 
-Damit können Sie schnell Fragen beantworten wie:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: das Panel mit den Kundendetails, Tab Informationen.
+</p>
 
-- „Hat sich dieser Kunde kürzlich eingeloggt?“
+### Informationen
+
+- **Onboarding**: die Firma, die der Kunde angegeben hat.
+- **Details zur letzten Anmeldung**: **Gerät**, **IP-Adresse**, **Standort** und **Zeit** seiner letzten Anmeldung.
+- **Sitzungsverlauf**: seine letzten Sitzungen.
+- **Sicherheit**: **Benutzerkonto löschen** löscht das Konto des Kunden und alle seine Daten nach einer Bestätigung dauerhaft.
+
+> **Wichtig:** Das Löschen eines Kunden lässt sich nicht rückgängig machen. Wenn Sie nur seinen Zugang beenden möchten, prüfen Sie zuerst sein Abonnement.
+
+### Abonnements
+
+- **Aktive Abonnements**: die Pläne, die der Kunde abonniert hat, mit ihren Minuten.
+- **Rechnungsdetails anzeigen**: öffnet das Stripe-Kundenportal, um seine Abrechnung zu verwalten.
+
+### 1-Min Abrechnung
+
+**Ausgehende Abrechnung (1-Minuten-Regel)**: Wenn 50 % der letzten 100 abgeschlossenen ausgehenden Anrufe des Kunden kürzer als 50 Sekunden sind, werden seine ausgehenden Anrufe unter 60 Sekunden als 1 Minute abgerechnet. Der Tab zeigt:
+
+- **Regel erfüllt (berechtigt)** und **Regel gilt aktuell**, mit der Zahl der berücksichtigten und der kurzen Anrufe.
+- Die **durchschnittliche Dauer** und die **Erfolgsquote** seiner letzten ausgehenden Anrufe.
+- **Mindestabrechnung 1 Minute**: ein Schalter, um das 1-Minuten-Minimum für diesen Kunden anzuwenden, auch wenn er die Regel nicht erfüllt (Entscheidung des Administrators).
+- **Letzte ausgehende Anrufe (100)**: jeder Anruf mit Status, Dauer und den abgerechneten Minuten, falls die Regel gilt.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-users-billing.png" alt="Tab 1-Min Abrechnung mit der Erklärung der 1-Minuten-Regel, den Feldern Regel erfüllt, Regel gilt aktuell, durchschnittliche Dauer und Erfolgsquote sowie dem Schalter Mindestabrechnung 1 Minute" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab 1-Min Abrechnung. Klicken Sie auf Aktualisieren, um die Werte zu erneuern.
+</p>
+
+> **Tipp:** Hier schauen Sie nach, wenn ein Kunde fragt, warum ein kurzer ausgehender Anruf als volle Minute berechnet wurde. Siehe auch [Telefonie](/de/Automations/Whitelabel/telefhony).
+
+### UTM
+
+**Marketing-UTM-Daten**: die Marketing-Attribution, die bei der Registrierung und dem Start der kostenlosen Testphase erfasst wurde (Quelle, Kampagne usw.). Kam der Kunde nicht über einen getrackten Link, sehen Sie **Für diesen Benutzer sind keine UTM-Daten verfügbar.** Siehe [UTM-Analyse](/de/Automations/Whitelabel/utm).
+
+### Twilio-Limit
+
+**Twilio-Tageslimit**: Schalten Sie die **Anwendung des Tageslimits** für diesen Kunden ein oder aus. Ist sie eingeschaltet, gilt für den Kunden das tägliche Twilio-Ausgabenlimit, das Sie vor unerwarteten Anrufkosten schützt.
+
+So beantworten Sie schnell Fragen wie:
+
+- „Hat sich dieser Kunde kürzlich angemeldet?“
 - „Hat er ein aktives Abonnement?“
-- „Warum wurde ein kurzer Anruf so abgerechnet?“
+- „Warum wurde ein kurzer ausgehender Anruf so abgerechnet?“
 - „Kam er über eine Kampagne mit UTM-Parametern?“
 
-> **Tipp:** Wenn ein Kunde sagt „ich habe bezahlt, aber es ist nicht aktiv“, prüfen Sie zuerst, ob er die richtige E-Mail/das richtige Konto nutzt.
+> **Tipp:** Wenn ein Kunde sagt „Ich habe bezahlt, aber es ist nicht aktiv“, prüfen Sie zuerst, ob er die richtige E-Mail und das richtige Konto verwendet.
