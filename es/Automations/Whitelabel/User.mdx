@@ -1,204 +1,237 @@
 ---
 title: "Configuración de White Label"
-description: "Configura tu app con marca: nombre, dominio personalizado y DNS, valores por defecto de facturación y la apariencia de cara al cliente (colores, logos, favicon y tema)."
+description: "Configura tu app con tu marca: nombre, dominio personalizado y DNS, moneda, idioma, ubicación del servidor, páginas legales, el correo de aviso por minutos agotados y la apariencia (colores, logotipos, favicon y tema)."
 icon: "palette"
 ---
 
 ## Qué encontrarás en esta página
 
-**Configuración de White Label** es el centro de control de tu app con marca. Arriba verás dos pestañas:
+**Configuración White-Label** es el centro de control de tu app con tu marca. Es la primera sección de la Plataforma white label, dentro de **Configuración de la aplicación**. Arriba verás dos pestañas:
 
-- **Configuración**: ajustes base que afectan a cómo funciona tu app (sobre todo el dominio y el DNS).
-- **Apariencia**: la identidad visual que verán tus clientes (colores, logos, favicon y tema por defecto).
+- **Configuración**: los ajustes básicos de tu app (nombre, dominio, valores de facturación, páginas legales y el correo de aviso por minutos agotados).
+- **Apariencia**: la imagen que verán tus clientes (colores, idioma del correo, logotipos, favicon y tema por defecto).
 
-Ábrela aquí: [Abrir Configuración de White Label](https://app.callin.io/cms/white-label-configuration)
+Ábrela aquí: [Abrir Configuración White-Label](https://app.callin.io/cms/white-label-configuration)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel1.png"
-    alt="Página de White Label Configuration en la pestaña de configuración con campos como nombre de la app, dominio personalizado (con botón de configuración DNS), moneda, idioma de la app y más."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel01.png" alt="Página Configuración White-Label en la pestaña Configuración con Nombre de la app, Dominio personalizado con el botón Configuración DNS, Moneda e Idioma de la App" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña de configuración donde defines el nombre, el dominio y valores por defecto como moneda e idioma.
+  Captura: la pestaña Configuración, con un nombre de app y un dominio de ejemplo.
 </p>
 
-> **Importante:** Algunas opciones pueden variar según tu plan y permisos.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: nombre de la app y dominio → Configuración DNS (Proveedor y Manual) → moneda, idioma y ubicación del servidor → correo de aviso por minutos agotados y su vista previa → pestaña Apariencia.
+</p>
+
+Cuando cambias algo, aparece abajo una barra con **Borrar** (deshace tus cambios) y **Guardar**. Haz clic en **Guardar** antes de salir de la página.
+
+> **Importante:** Algunos ajustes pueden variar según tu plan y tus permisos.
 
 ## Configuración
 
 ### Nombre de la app
 
-El **Nombre de la app** es lo que el cliente reconocerá en la experiencia: por ejemplo, en la navegación y en los títulos de página.
+El **Nombre de la app** se muestra en la barra lateral, en los títulos y en los correos. Es el nombre que reconocerán tus clientes.
 
-Regla práctica: usa el mismo nombre con el que vendes tu servicio.  
+Una buena regla: usa el mismo nombre que en tus materiales de venta.\
 Ejemplo: si vendes “Northwind Reception”, pon **Northwind Reception** como nombre de la app.
 
 ### Dominio personalizado (recomendado: usar un subdominio)
 
-En **Dominio personalizado**, escribe el dominio desde el que tus clientes accederán a la app.
+En **Dominio personalizado**, escribe el dominio desde el que entrarán tus clientes, sin `http://` ni `https://`.
 
 Callin recomienda usar un **subdominio que controles**, por ejemplo:
 
 - `app.tudominio.com`
 
-Por qué es importante usar subdominio:
+Por qué importa usar un subdominio:
 
-- El **dominio raíz** (como `tudominio.com`) suele usarse para la web de marketing, landing pages, blog y otras herramientas.
-- Mantener el producto en `app.tudominio.com` evita interferencias y mantiene tu web principal independiente.
+- Tu **dominio raíz** (como `tudominio.com`) suele alojar tu web, tus landing pages, tu blog y tus scripts de seguimiento.
+- Tener el producto en `app.tudominio.com` evita conflictos y mantiene tu web independiente.
 
 > **Consejo:** Elige un subdominio fácil de recordar: `app`, `portal` o `dashboard`.
 
 ### Configuración de DNS
 
-Después de introducir el dominio, haz clic en **Configuración de DNS**. Se abre un modal con dos formas de configurar el DNS:
+Después de escribir tu dominio, haz clic en **Guardar** y luego en **Configuración DNS**. Hasta que guardes el dominio, verás el aviso **Guarde primero su dominio antes de instalar SSL o configurar DNS.**
 
-- **Proveedor** (configuración asistida/automática)
-- **Manual** (añades los registros tú)
+**Configuración DNS** abre un panel lateral con dos formas de configurar el DNS:
+
+- **Proveedor** (asistida)
+- **Manual** (añades tú los registros)
 
 #### Proveedor (configuración asistida/automática)
 
-Usa **Proveedor** cuando tu proveedor de DNS esté soportado. La idea es: eliges tu proveedor y Callin te ayuda a descubrir lo necesario para que el dominio funcione.
+Usa **Proveedor** si tu dominio está en **Cloudflare**, **GoDaddy** o **Namecheap**. Eliges tu proveedor y Callin te ayuda a configurar el dominio automáticamente.
 
-Qué haces:
+Qué tienes que hacer:
 
-1. Entra en la pestaña **Proveedor**.
-2. En **Proveedor de DNS**, selecciona tu proveedor (por ejemplo: **Cloudflare**, **GoDaddy** y **Namecheap**).
-3. Pulsa **Discover**.
+1. Abre la pestaña **Proveedor**.
+2. En **Proveedor DNS**, elige el tuyo: **Cloudflare**, **GoDaddy** o **Namecheap**.
+3. Haz clic en **Descubrir**.
 
-Qué puedes esperar:
+Qué esperar:
 
-- Callin intentará ayudarte a completar la configuración del DNS para el dominio que has indicado.
-- Si algo falla, puede aparecer una franja de error del estilo “Something went wrong…”; normalmente significa que la configuración del dominio o los registros DNS aún no coinciden con lo esperado.
+- Callin intentará guiarte en la configuración DNS del dominio que has escrito.
+- Si algo falla, verás un aviso de error que te pide revisar la configuración y los registros DNS e intentarlo más tarde. Suele significar que los registros DNS aún no coinciden con lo esperado. Espera un poco o usa **Manual**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel2.png"
-    alt="Modal de configuración de DNS en la pestaña Proveedor con un selector buscable de proveedor DNS (lista de Cloudflare, GoDaddy y Namecheap) y un botón Discover. Se ve una franja de error arriba."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel2.png" alt="Panel Configuración DNS en la pestaña Proveedor con la lista Proveedor DNS abierta (Cloudflare, GoDaddy, Namecheap) y un aviso de error arriba" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de DNS por proveedor, donde eliges el proveedor y ejecutas Discover para un flujo asistido.
+  Captura: la pestaña Proveedor, donde eliges Cloudflare, GoDaddy o Namecheap y haces clic en Descubrir.
 </p>
 
-> **Error común:** Los cambios de DNS no se aplican al instante. Si acabas de modificar registros, espera un poco y vuelve a intentarlo.
+> **Error común:** Los cambios de DNS no se aplican al instante. Si acabas de editar los registros, espera un poco y vuelve a intentarlo.
 
 #### Manual (añadir los registros DNS tú mismo)
 
 Usa **Manual** si:
 
-- Tu proveedor no aparece en la lista, o
-- El flujo por proveedor no funciona, o
-- Prefieres gestionar el DNS manualmente.
+- Tu proveedor no aparece en la lista,
+- La configuración con proveedor falla, o
+- Prefieres gestionar tú el DNS.
 
-En la pestaña **Manual**, Callin te muestra una tabla con los registros DNS que debes crear en tu registrador/proveedor de DNS. La tabla incluye:
+En la pestaña **Manual**, Callin muestra **Añade estos registros DNS en tu registrador** y una tabla con los registros de tu dominio. Por ejemplo, para `app.northwindreception.com`:
+
+| Tipo | Nombre | Valor | TTL |
+| --- | --- | --- | --- |
+| A | `@` | la dirección IP que aparece en tu panel | 300 o automático |
+| CNAME | `app` | `northwindreception.com` | 300 o automático |
+
+La tabla incluye:
 
 - **Tipo** (por ejemplo, A o CNAME)
 - **Nombre** (por ejemplo, `@` o `app`)
-- **Valor** (destino del registro)
-- **TTL** (a menudo “300 o auto”, según el proveedor)
+- **Valor** (el destino)
+- **TTL** (suele ser “300 o automático”, según tu proveedor)
 
-Tu flujo sería:
+Los pasos son:
 
-1. Entra en **Manual**.
+1. Abre **Manual**.
 2. Añade cada registro DNS exactamente como aparece en la tabla.
-3. Cuando estén añadidos, haz clic en **Instalar SSL** para finalizar.
+3. Cuando estén los registros, haz clic en **Instalar SSL** para terminar.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel3.png"
-    alt="Modal de configuración de DNS en la pestaña Manual con una tabla de registros (Tipo, Nombre, Valor, TTL) y un botón para instalar SSL."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel3.png" alt="Panel Configuración DNS en la pestaña Manual con el aviso Añade estos registros DNS en tu registrador, una tabla con un registro A y un registro CNAME, y el botón Instalar SSL" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: opción manual con los registros exactos a crear y el botón para instalar SSL al terminar.
+  Captura: la pestaña Manual con los registros para un dominio de ejemplo y el botón Instalar SSL.
 </p>
 
-> **Importante:** Pulsa **Instalar SSL** solo después de añadir los registros y de que hayan propagado. El tiempo de propagación depende de tu proveedor de DNS.
+> **Importante:** Haz clic en **Instalar SSL** solo cuando hayas añadido los registros DNS y se hayan propagado. El tiempo de propagación depende de tu proveedor DNS.
 
-> **Consejo:** Si no encuentras dónde añadir registros, busca en la documentación de tu proveedor “crear registro A” y “crear registro CNAME”. Los nombres de campos pueden variar.
+> **Consejo:** Si no sabes dónde añadir los registros, busca en la ayuda de tu proveedor DNS “añadir registro A” y “añadir registro CNAME”. Los nombres de los campos pueden variar.
 
 ### Moneda
 
-La **Moneda** se usa para precios de planes y visualización de facturación. Elige la moneda en la que vas a cobrar (por ejemplo, EUR o USD).
+La **Moneda** se usa en los precios de los planes y en la facturación. Puedes elegir **USD - Dólar estadounidense**, **AUD - Dólar australiano**, **CAD - Dólar canadiense**, **EUR - Euro**, **GBP - Libra esterlina** o **BRL - Real brasileño**. Escribe en el buscador para encontrarla antes.
 
-Esto es especialmente importante si vas a crear **planes de suscripción** y cobrar mediante un proveedor de pagos (como Stripe), porque el cliente espera consistencia entre precio y cobro.
+Elige la moneda con la que vas a cobrar a tus clientes. Es especialmente importante si vas a crear **planes de suscripción** y cobrar con Stripe: tus clientes esperan que el precio y el cobro coincidan.
 
 ### Idioma de la app
 
-El **Idioma de la app** define el idioma por defecto que verán tus clientes en la interfaz.
+El **Idioma de la App** es el idioma por defecto de la app para tus clientes. Puedes elegir English, Español, Italiano, Português, हिन्दी (hindi), Deutsch, Nederlands, Français o Português (Brasil).
 
-Si trabajas con clientes de varios países, selecciona el idioma que encaje con tu audiencia principal (según tu configuración y los idiomas disponibles).
+Si tienes clientes en varios países, elige el idioma de tu público principal.
 
 ### Ubicación del servidor
 
-La **Ubicación del servidor** te permite elegir la región donde se alojan los datos para cumplir requisitos de residencia de datos y normativas.
+La **Ubicación del servidor** te permite elegir la región donde se alojan tus datos, para cumplir requisitos de residencia de datos y normativa. Puedes elegir **EE. UU. – Ashburn (Virginia)** o **Alemania – Fráncfort**.
 
-Si trabajas con sectores sensibles (salud, finanzas, administración), alinea esta selección con lo que prometes a tus clientes.
+Si trabajas con clientes con requisitos estrictos (sanidad, finanzas, sector público), elige lo que hayas acordado por contrato.
 
 ### Política de privacidad y Términos de uso
 
-Estos campos sirven para enlazar tus páginas legales:
+Estos campos enlazan a tus páginas legales:
 
-- **Política de privacidad**: cómo gestionas los datos personales.
-- **Términos de uso**: condiciones que acepta el cliente al usar tu servicio.
+- **Política de privacidad**: donde explicas cómo tratas los datos personales.
+- **Términos de uso**: las condiciones que aceptan tus clientes al usar tu servicio.
 
-> **Consejo:** Aunque seas una agencia, trátalo como un producto: publica estas páginas en tu web principal (dominio raíz) y enlázalas aquí.
+Pega la URL completa de cada página, por ejemplo `https://tudominio.com/privacidad`.
 
-## Apariencia
+> **Consejo:** Aunque seas una agencia, trátalo como un producto: publica estas páginas en tu web (dominio raíz) y enlázalas aquí.
 
-Cuando el dominio y los ajustes base estén listos, pasa a la pestaña **Apariencia** para que la interfaz encaje con tu marca.
+### Correo de aviso por minutos agotados
+
+El **Correo de aviso por minutos agotados** avisa a tus clientes por correo cuando han gastado todos los minutos incluidos.
+
+1. Activa **Activar correo de aviso**. Se abre el editor del correo.
+2. Escribe el **Asunto**.
+3. Elige el **Tipo de cuerpo**: **Texto normal** (texto plano; se respetan los saltos de línea) o **HTML** (HTML sin procesar).
+4. Escribe el **Cuerpo**. Por defecto incluye el nombre de tu app y tu dominio.
+5. Haz clic en **Vista previa del correo** para ver el correo final que recibirán tus clientes, y luego en **Cerrar**.
+
+Para editarlo más tarde, haz clic en **Configurar correo**. Recuerda hacer clic en **Guardar**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel4.png"
-    alt="Pestaña de Apariencia con ajustes de colores, subida de logo y logo oscuro, subida de favicon y selector de tema por defecto (Sistema/Claro/Oscuro)."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/wl-config-warning-email.png" alt="Editor del correo de aviso por minutos agotados con el Asunto, los tipos de cuerpo Texto normal y HTML, el Cuerpo y los botones Vista previa del correo y Cerrar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Apariencia donde personalizas colores, logos, favicon y el tema por defecto.
+  Captura: el editor del correo de aviso, con un nombre de app y un dominio de ejemplo.
+</p>
+
+> **Consejo:** Dile a tu cliente qué puede hacer, por ejemplo: “Mejora tu plan o escríbenos para añadir más minutos”.
+
+## Apariencia
+
+Cuando tengas listos el dominio y los ajustes básicos, pasa a la pestaña **Apariencia** para adaptar la app a tu marca.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/whitelabel4.png" alt="Página Configuración White-Label en la pestaña Apariencia con Color primario, Color secundario, Color primario del correo, Color del botón CTA, Idioma del correo y la subida de Logotipo y Logotipo oscuro" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Apariencia, donde eliges tus colores, el idioma del correo, los logotipos, el favicon y el tema por defecto.
 </p>
 
 ### Colores
 
-Normalmente verás controles como:
+Haz clic en un cuadrado de color para elegir el color:
 
-- **Color primario**: se usa para botones y destacados principales.
-- **Color secundario**: se usa para acentos y estados de la interfaz.
-- **Color primario de email**: color de acento en emails transaccionales.
-- **Color del botón CTA en email**: color de botones principales y enlaces dentro de emails.
+- **Color primario**: para botones y elementos destacados de la app.
+- **Color secundario**: para acentos y estados.
+- **Color Primario del Correo**: el color principal de tus correos transaccionales.
+- **Color del Botón CTA**: el color de los botones y enlaces principales de tus correos.
 
-> **Consejo:** Si tienes guía de marca, empieza por el color principal y elige un secundario que se vea bien tanto en fondo claro como en fondo oscuro.
+> **Consejo:** Si tu marca ya tiene una guía de estilo, empieza por tu color principal y elige un secundario que quede bien sobre fondo claro y oscuro.
+
+### Idioma del correo
+
+El **Idioma del correo** es el idioma por defecto de los correos que reciben tus clientes. Tiene los mismos idiomas que el **Idioma de la App**.
 
 ### Logos (claro y oscuro)
 
-Aquí normalmente subirás:
+Sube dos versiones de tu logotipo:
 
-- **Logo**: para fondos claros
-- **Logo oscuro**: para fondos oscuros
+- **Logotipo** (**Seleccionar logotipo**): para fondos claros.
+- **Logotipo Oscuro** (**Seleccionar logotipo oscuro**): para fondos oscuros.
 
-Esto importa porque un mismo logo no siempre se lee bien en ambos temas.
+Usa PNG o SVG, de hasta 2 MB, mejor con fondo transparente. El mismo logotipo no siempre se lee bien en los dos temas.
 
-> **Importante:** Usa **PNG** (idealmente con fondo transparente) o SVG si lo tienes. Si el logo se ve muy pequeño, casi siempre es porque la imagen subida tiene mucho margen/blanco alrededor. Callin ajusta el tamaño al contenido total de la imagen; por eso un PNG transparente y “recortado” suele verse mucho mejor.
+> **Importante:** Si tu logotipo se ve muy pequeño, normalmente la imagen tiene un margen blanco grande alrededor: Callin reduce la imagen entera para que quepa. Un PNG transparente y bien recortado suele resolverlo.
 
 ### Favicon
 
-El **Favicon** es el icono pequeño de la pestaña del navegador y los marcadores. Usa ICO o PNG preparado para favicon (tamaños habituales: 32×32 o 48×48).
+El **Favicon** es el icono pequeño que aparece en la pestaña del navegador y en los marcadores. Haz clic en **Seleccionar favicon** y sube un ICO o PNG de 32×32 o 48×48 píxeles, de hasta 1 MB.
 
 ### Tema por defecto
 
-El **Tema por defecto** controla cómo se verá la app inicialmente:
+El **Tema Predeterminado** define cómo se ve la app por defecto:
 
-- **Sistema**: sigue el tema del dispositivo del usuario
-- **Claro**: fuerza modo claro
-- **Oscuro**: fuerza modo oscuro
+- **Sistema**: sigue el tema del dispositivo de cada usuario.
+- **Claro**: modo claro.
+- **Oscuro**: modo oscuro.
 
-Un enfoque práctico: usar **Sistema** para que la app respete las preferencias de cada usuario.
+Una opción práctica: elige **Sistema** si quieres que la app se adapte a las preferencias de cada usuario.
+
+Cuando termines, haz clic en **Guardar**.

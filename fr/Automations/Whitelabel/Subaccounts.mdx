@@ -1,0 +1,86 @@
+---
+title: "Gestion de sous-comptes"
+description: "Consultez les agents IA et les appels des clients de votre White Label, et fixez une limite de minutes d’appel pour chaque agent."
+icon: "users-gear"
+---
+
+## Qu’est-ce que la Gestion de sous-comptes
+
+Chaque client que vous ajoutez à votre White Label a son propre compte : un **sous-compte**. La **Gestion de sous-comptes** vous permet de consulter depuis un seul endroit les agents IA créés par vos clients et les appels qu’ils passent et reçoivent.
+
+Vous la trouverez en bas du menu de la Plateforme white label ([ouvrez-la ici](https://app.callin.io/cms/subaccount-management)). Elle a deux onglets : **Agents IA** et **Historique des appels**.
+
+> **Astuce :** Utilisez-la quand un client vous demande de l’aide : vous voyez la configuration de son agent et ses appels sans vous connecter à son compte.
+
+## Agents IA
+
+L’onglet **Agents IA** liste les agents de tous vos sous-comptes.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-agents.png" alt="Gestion de sous-comptes sur l’onglet Agents IA avec les filtres Tous, Entrant et Sortant, la recherche d’agents et le bouton Actualiser" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’onglet Agents IA. Quand vos clients créent des agents, ils apparaissent ici.
+</p>
+
+- Utilisez **Tous**, **Entrant** et **Sortant** pour filtrer par type d’agent.
+- Utilisez la recherche pour trouver un agent.
+- Cliquez sur **Actualiser** pour charger les dernières modifications.
+
+### Détails de l’agent
+
+Ouvrez un agent pour voir ses **Détails de l’agent**, en lecture seule :
+
+- **Métadonnées de l’agent** : catégorie, modèle, objectif, site web, mode, étiquettes et **Numéro attribué**.
+- Le **Message d’accueil** et le **Prompt**.
+- **Fonctionnalités et paramètres** : par exemple **Transfert d’appel**, **Durée maximale d’appel**, **Enregistrer les appels**, **Détection de messagerie vocale** et **L’utilisateur parle en premier**.
+- **Configuration IA** : **LLM**, **Température**, **Voix**, **Langues** et **Base de connaissances**.
+- Les actions de l’agent, comme **Planifier sur Google**, **Transférer l’appel**, **Envoyer un e-mail** et **Refus d’appels**, ainsi que son **Extraction de données**, son **Webhook post-appel** et sa **Configuration de nouvelle tentative**.
+
+### Limite de minutes d’appel
+
+Avec **Plafond d'utilisation**, vous pouvez limiter le nombre de minutes d’appel qu’un agent peut utiliser. Cela ne change pas la facturation de l’abonnement du client : c’est une limite supplémentaire.
+
+La fenêtre **Limite de minutes d'appel** a quatre onglets :
+
+- **Paramètres** : activez **Limiter les minutes d'appel de cet agent** et choisissez **Comment la limite doit-elle fonctionner ?** :
+  - **Se réinitialise chaque mois** : les minutes repartent chaque mois. Choisissez **Quand commence chaque mois ?**.
+  - **Enveloppe fixe jusqu'à expiration** : un nombre de minutes jusqu’à une date. Choisissez **Quand cette limite doit-elle se terminer ?**.
+
+  Indiquez ensuite le **Nombre maximal de minutes autorisées** et cliquez sur **Enregistrer les paramètres**.
+- **Ajouter des minutes** : ajoute des minutes sans effacer l’utilisation déjà comptée. Si les appels étaient bloqués, ils fonctionnent de nouveau après l’enregistrement.
+- **Réinitialiser l'usage** : remet l’utilisation à zéro et fixe un nouveau quota, par exemple au début d’une nouvelle période.
+- **Historique** : chaque modification, avec les minutes ajoutées ou retirées et le **Motif** que vous avez saisi.
+
+En haut, vous verrez l’**Utilisation sur cette période** : minutes restantes, minutes des appels en cours, type de limite et dates.
+
+Quand un agent approche de sa limite, vous verrez **Presque épuisé**. Quand il a utilisé toutes ses minutes, vous verrez **Appels bloqués** : les appels sont suspendus jusqu’à ce que vous ajoutiez des minutes ou réinitialisiez la limite.
+
+> **Important :** Avec **Enveloppe fixe jusqu'à expiration**, les appels s’arrêtent aussi une fois la date de fin passée. Fixez une nouvelle date ou passez à **Se réinitialise chaque mois**.
+
+## Historique des appels
+
+L’onglet **Historique des appels** affiche les appels de tous vos sous-comptes, avec les mêmes filtres que l’[Historique des appels](/fr/Create-AI-Agent/Call-Actions) des agents.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-calls.png" alt="Gestion de sous-comptes sur l’onglet Historique des appels avec le bouton Exporter CSV, la recherche dans les transcriptions et les filtres Numéro de téléphone, ID d’appel, Agent, Squad, Statut, Direction et d’autres" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : l’onglet Historique des appels et ses filtres.
+</p>
+
+- La recherche dans les transcriptions trouve des appels selon ce qui a été dit.
+- Filtrez par numéro de téléphone, ID d’appel, agent, Squad, statut, direction, rendez-vous, transfert d’appel, messagerie vocale, période, durée, origine, ID de campagne, sentiment ou ID de ticket.
+- Cliquez sur **Exporter CSV** pour télécharger les appels affichés.
+
+## Dépannage
+
+**Problème :** La liste indique **Aucun agent de sous-compte trouvé**.\
+**Cause :** Vos clients n’ont pas encore créé d’agents, ou la recherche ou le filtre les masquent.\
+**Solution :** Effacez la recherche, choisissez **Tous** et cliquez sur **Actualiser**.
+
+**Problème :** Un client dit que son agent a cessé d’appeler.\
+**Cause :** L’agent a peut-être atteint sa limite de minutes (**Appels bloqués**) ou sa date de fin.\
+**Solution :** Ouvrez le **Plafond d'utilisation** de l’agent et utilisez **Ajouter des minutes**, **Réinitialiser l'usage** ou fixez une nouvelle date de fin.

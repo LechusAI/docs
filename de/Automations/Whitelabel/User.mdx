@@ -1,29 +1,35 @@
 ---
 title: "White-Label-Konfiguration"
-description: "Configure your branded app: name, custom domain and DNS, billing defaults, and your customer-facing appearance (colors, logos, favicon, and theme)."
+description: "Richten Sie Ihre App unter Ihrer Marke ein: Name, eigene Domain und DNS, Währung, Sprache, Server-Standort, rechtliche Seiten, die Warn-E-Mail bei aufgebrauchten Minuten und das Erscheinungsbild (Farben, Logos, Favicon und Theme)."
 icon: "palette"
 ---
 
 ## Was Sie auf dieser Seite finden
 
-**White-Label-Konfiguration** ist das Kontrollzentrum für Ihre gebrandete App. Oben sehen Sie zwei Tabs:
+Die **White-Label-Konfiguration** ist die Schaltzentrale Ihrer App unter Ihrer Marke. Sie ist der erste Bereich der White-Label-Plattform, unter **App-Konfiguration**. Oben sehen Sie zwei Tabs:
 
-- **Konfiguration**: Grundeinstellungen, die beeinflussen, wie Ihre App funktioniert (vor allem Domain und DNS).
-- **Erscheinungsbild**: die visuelle Identität, die Ihre Kunden sehen (Farben, Logos, Favicon und Standard-Theme).
+- **Konfiguration**: die Grundeinstellungen der App (Name, Domain, Abrechnungswerte, rechtliche Seiten und die Warn-E-Mail bei aufgebrauchten Minuten).
+- **Erscheinungsbild**: der Auftritt, den Ihre Kunden sehen (Farben, E-Mail-Sprache, Logos, Favicon und Standard-Theme).
 
-Öffnen Sie die Seite hier: [White-Label-Konfiguration öffnen](https://app.callin.io/cms/white-label-configuration)
+Hier öffnen: [White-Label-Konfiguration öffnen](https://app.callin.io/cms/white-label-configuration)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel1.png"
-    alt="White Label Configuration Seite im Tab Configuration mit Feldern wie App Name, Custom Domain (mit DNS Configuration Button), Currency, App Language und mehr."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel01.png" alt="Seite White-Label-Konfiguration im Tab Konfiguration mit App-Name, Benutzerdefinierte Domain mit der Schaltfläche DNS-Konfiguration, Währung und App-Sprache" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab „Configuration“, in dem Sie App-Name, eigene Domain und Standardwerte wie Währung und Sprache festlegen.
+  Screenshot: der Tab Konfiguration mit einem Beispiel-App-Namen und einer Beispiel-Domain.
 </p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: App-Name und Domain → DNS-Konfiguration (Anbieter und Manuell) → Währung, Sprache und Server-Standort → Warn-E-Mail bei aufgebrauchten Minuten und Vorschau → Tab Erscheinungsbild.
+</p>
+
+Sobald Sie etwas ändern, erscheint unten eine Leiste mit **Leeren** (macht Ihre Änderungen rückgängig) und **Speichern**. Klicken Sie auf **Speichern**, bevor Sie die Seite verlassen.
 
 > **Wichtig:** Einige Einstellungen können je nach Plan und Berechtigungen variieren.
 
@@ -31,14 +37,14 @@ icon: "palette"
 
 ### App-Name
 
-Der **App-Name** ist das, was Kunden in der Erfahrung wiedererkennen – zum Beispiel in der Navigation und in Seitentiteln.
+Der **App-Name** wird in der Seitenleiste, in Titeln und E-Mails angezeigt. Unter diesem Namen erkennen Ihre Kunden die App.
 
-Gute Faustregel: Verwenden Sie denselben Namen wie in Ihren Verkaufsunterlagen.  
-Beispiel: Wenn Sie „Northwind Reception“ verkaufen, setzen Sie den App-Namen auf **Northwind Reception**.
+Eine gute Regel: Verwenden Sie denselben Namen wie in Ihren Verkaufsunterlagen.\
+Beispiel: Wenn Sie „Northwind Reception“ verkaufen, tragen Sie **Northwind Reception** als App-Name ein.
 
 ### Eigene Domain (empfohlen: Subdomain verwenden)
 
-Unter **Eigene Domain** tragen Sie die Domain ein, über die Kunden die App öffnen.
+Geben Sie unter **Benutzerdefinierte Domain** die Domain ein, über die Ihre Kunden die App aufrufen, ohne `http://` oder `https://`.
 
 Callin empfiehlt eine **Subdomain, die Sie kontrollieren**, zum Beispiel:
 
@@ -46,159 +52,186 @@ Callin empfiehlt eine **Subdomain, die Sie kontrollieren**, zum Beispiel:
 
 Warum eine Subdomain wichtig ist:
 
-- Ihre **Root-Domain** (z. B. `ihredomain.com`) hostet meist Ihre Marketing-Website, Landingpages, Blog und Tracking-Skripte.
-- Das Produkt auf `app.ihredomain.com` zu betreiben, hilft Konflikte zu vermeiden und hält Ihre Website unabhängig.
+- Ihre **Hauptdomain** (wie `ihredomain.com`) hostet meist Ihre Website, Landingpages, Ihren Blog und Tracking-Skripte.
+- Liegt das Produkt auf `app.ihredomain.com`, vermeiden Sie Konflikte, und Ihre Website bleibt unabhängig.
 
-> **Tipp:** Wählen Sie eine Subdomain, die sich leicht merken lässt: `app`, `portal` oder `dashboard`.
+> **Tipp:** Wählen Sie eine leicht merkbare Subdomain: `app`, `portal` oder `dashboard`.
 
 ### DNS-Konfiguration
 
-Nachdem Sie Ihre Domain eingetragen haben, klicken Sie auf **DNS Configuration**. Es öffnet sich ein Dialog mit zwei Möglichkeiten für die DNS-Einrichtung:
+Nachdem Sie Ihre Domain eingegeben haben, klicken Sie auf **Speichern** und dann auf **DNS-Konfiguration**. Solange die Domain nicht gespeichert ist, sehen Sie die Meldung **Bitte speichern Sie zuerst Ihre Domain, bevor Sie SSL installieren oder DNS konfigurieren.**
 
-- **Provider** (automatisch/geführt)
-- **Manual** (Sie tragen die Records selbst ein)
+Die **DNS-Konfiguration** öffnet ein Seitenpanel mit zwei Wegen zur DNS-Einrichtung:
 
-#### Provider (automatisch/geführt)
+- **Anbieter** (geführt)
+- **Manuell** (Sie legen die Einträge selbst an)
 
-Nutzen Sie **Provider**, wenn Ihr DNS-Anbieter unterstützt wird. Die Idee: Sie wählen den Anbieter aus und Callin hilft beim „Discover“-Schritt, damit die Domain korrekt eingerichtet wird.
+#### Anbieter (automatisch/geführt)
+
+Nutzen Sie **Anbieter**, wenn Ihre Domain bei **Cloudflare**, **GoDaddy** oder **Namecheap** liegt. Sie wählen Ihren Anbieter, und Callin hilft Ihnen, die Domain automatisch einzurichten.
 
 So gehen Sie vor:
 
-1. Öffnen Sie den Tab **Provider**.
-2. Wählen Sie unter **DNS Provider** Ihren Anbieter (Beispiele: **Cloudflare**, **GoDaddy** und **Namecheap**).
-3. Klicken Sie auf **Discover**.
+1. Öffnen Sie den Tab **Anbieter**.
+2. Wählen Sie unter **DNS-Anbieter** Ihren Anbieter: **Cloudflare**, **GoDaddy** oder **Namecheap**.
+3. Klicken Sie auf **Erkennen**.
 
-Was Sie erwarten können:
+Was Sie erwartet:
 
-- Callin versucht, Sie durch die DNS-Einrichtung für die angegebene Domain zu führen.
-- Wenn etwas fehlschlägt, kann oben ein Fehlerbanner wie „Something went wrong…“ erscheinen; meist bedeutet das, dass Domain-Konfiguration oder DNS-Records noch nicht dem erwarteten Zustand entsprechen.
+- Callin versucht, Sie durch die DNS-Einrichtung der eingegebenen Domain zu führen.
+- Wenn etwas schiefgeht, sehen Sie eine Fehlermeldung, die Sie bittet, Konfiguration und DNS-Einträge zu prüfen und es später erneut zu versuchen. Meist passen die DNS-Einträge dann noch nicht. Warten Sie etwas oder nutzen Sie **Manuell**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel2.png"
-    alt="DNS Configuration Dialog im Provider-Tab mit einem auswählbaren DNS-Provider (Liste mit Cloudflare, GoDaddy und Namecheap) sowie einem Discover-Button. Oben ist ein Fehlerbanner zu sehen."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel2.png" alt="Panel DNS-Konfiguration im Tab Anbieter mit geöffneter Liste DNS-Anbieter (Cloudflare, GoDaddy, Namecheap) und einer Fehlermeldung oben" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: DNS-Einrichtung per Provider, bei der Sie den Anbieter auswählen und Discover starten (geführter Flow).
+  Screenshot: der Tab Anbieter, in dem Sie Cloudflare, GoDaddy oder Namecheap wählen und auf Erkennen klicken.
 </p>
 
-> **Häufiger Fehler:** DNS-Änderungen greifen nicht sofort. Wenn Sie Records gerade erst geändert haben, warten Sie kurz und versuchen Sie es erneut.
+> **Häufiger Fehler:** DNS-Änderungen greifen nicht sofort. Wenn Sie die Einträge gerade geändert haben, warten Sie etwas und versuchen Sie es erneut.
 
-#### Manual (DNS-Records selbst anlegen)
+#### Manuell (DNS-Einträge selbst anlegen)
 
-Nutzen Sie **Manual**, wenn:
+Nutzen Sie **Manuell**, wenn:
 
-- Ihr Anbieter nicht in der Liste erscheint, oder
-- der Provider-Flow nicht funktioniert, oder
+- Ihr Anbieter nicht in der Liste steht,
+- die Einrichtung über den Anbieter fehlschlägt, oder
 - Sie DNS lieber selbst verwalten.
 
-Im Tab **Manual** zeigt Callin eine kleine Tabelle mit den DNS-Records, die Sie bei Ihrem Registrar/DNS-Anbieter anlegen müssen. Die Tabelle enthält:
+Im Tab **Manuell** zeigt Callin **Füge diese DNS-Einträge beim Registrar hinzu** und eine Tabelle mit den Einträgen für Ihre Domain. Zum Beispiel für `app.northwindreception.com`:
 
-- **Type** (z. B. A oder CNAME)
-- **Name** (z. B. `@` oder `app`)
-- **Value** (das Ziel)
-- **TTL** (oft „300 or auto“, je nach Anbieter)
+| Typ | Name | Wert | TTL |
+| --- | --- | --- | --- |
+| A | `@` | die IP-Adresse aus Ihrem Panel | 300 oder automatisch |
+| CNAME | `app` | `northwindreception.com` | 300 oder automatisch |
 
-Ihr Ablauf sieht so aus:
+Die Tabelle enthält:
 
-1. Öffnen Sie **Manual**.
-2. Legen Sie jeden DNS-Record exakt so an, wie er in der Tabelle angezeigt wird.
-3. Wenn alles erledigt ist, klicken Sie auf **Install SSL**, um abzuschließen.
+- **Typ** (zum Beispiel A oder CNAME)
+- **Name** (zum Beispiel `@` oder `app`)
+- **Wert** (das Ziel)
+- **TTL** (oft „300 oder automatisch“, je nach Anbieter)
+
+So gehen Sie vor:
+
+1. Öffnen Sie **Manuell**.
+2. Legen Sie jeden DNS-Eintrag genau wie in der Tabelle an.
+3. Wenn die Einträge stehen, klicken Sie auf **SSL installieren**, um abzuschließen.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel3.png"
-    alt="DNS Configuration Dialog im Manual-Tab mit einer Tabelle der DNS-Records (Type, Name, Value, TTL) und einem Install SSL Button."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/whitelabel3.png" alt="Panel DNS-Konfiguration im Tab Manuell mit der Meldung Füge diese DNS-Einträge beim Registrar hinzu, einer Tabelle mit einem A- und einem CNAME-Eintrag und der Schaltfläche SSL installieren" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: manuelle DNS-Einrichtung mit den exakt anzulegenden Records und dem Install SSL Button zum Finalisieren.
+  Screenshot: der Tab Manuell mit den Einträgen für eine Beispiel-Domain und der Schaltfläche SSL installieren.
 </p>
 
-> **Wichtig:** Klicken Sie **Install SSL** erst, nachdem die DNS-Records angelegt wurden und propagiert sind. Die Propagationszeit hängt von Ihrem DNS-Anbieter ab.
+> **Wichtig:** Klicken Sie erst auf **SSL installieren**, wenn die DNS-Einträge angelegt und verbreitet sind. Wie lange das dauert, hängt von Ihrem DNS-Anbieter ab.
 
-> **Tipp:** Wenn Sie nicht sicher sind, wo Sie Records anlegen, suchen Sie in der Doku Ihres Anbieters nach „A-Record anlegen“ und „CNAME-Record anlegen“. Die Feldnamen in deren UI können variieren.
+> **Tipp:** Wenn Sie nicht wissen, wo Sie die Einträge anlegen, suchen Sie in der Hilfe Ihres DNS-Anbieters nach „A-Eintrag hinzufügen“ und „CNAME-Eintrag hinzufügen“. Die Feldnamen können abweichen.
 
 ### Währung
 
-Die **Währung** wird für Planpreise und die Darstellung der Abrechnung verwendet. Wählen Sie eine Währung, die zu Ihrer Preisstrategie passt (z. B. EUR oder USD).
+Die **Währung** gilt für Planpreise und Abrechnung. Zur Wahl stehen **USD - US-Dollar**, **AUD - Australischer Dollar**, **CAD - Kanadischer Dollar**, **EUR - Euro**, **GBP - Britisches Pfund** und **BRL - Brasilianischer Real**. Tippen Sie in die Suche, um sie schneller zu finden.
 
-Das ist besonders wichtig, wenn Sie **Abo-Pläne** erstellen und über einen Zahlungsanbieter (wie Stripe) abrechnen, weil Kunden Konsistenz zwischen Preis und Abrechnung erwarten.
+Wählen Sie die Währung, in der Sie Ihre Kunden abrechnen. Das ist besonders wichtig, wenn Sie **Abonnementpläne** erstellen und über Stripe kassieren: Ihre Kunden erwarten, dass Preis und Abbuchung übereinstimmen.
 
 ### App-Sprache
 
-Die **App-Sprache** legt die Standardsprache fest, die Ihre Kunden in der Oberfläche sehen.
+Die **App-Sprache** ist die Standardsprache der App für Ihre Kunden. Zur Wahl stehen English, Español, Italiano, Português, हिन्दी (Hindi), Deutsch, Nederlands, Français und Português (Brasil).
 
-Wenn Sie Kunden in mehreren Ländern bedienen, wählen Sie die Sprache, die zu Ihrer Hauptzielgruppe passt. (Je nach Setup und verfügbaren Sprachen können Präferenzen dennoch variieren.)
+Wenn Sie Kunden in mehreren Ländern haben, wählen Sie die Sprache Ihrer wichtigsten Zielgruppe.
 
 ### Serverstandort
 
-Mit dem **Serverstandort** wählen Sie die geografische Region, in der Daten gehostet werden, um Anforderungen an Datenresidenz und Compliance zu erfüllen.
+Mit dem **Server-Standort** wählen Sie die Region, in der Ihre Daten gehostet werden, um Anforderungen an Datenresidenz und Compliance zu erfüllen. Zur Wahl stehen **USA – Ashburn (Virginia)** und **Deutschland – Frankfurt**.
 
-Wenn Sie Kunden mit strengen Vorgaben betreuen (Gesundheit, Finanzen, öffentlicher Sektor), stimmen Sie diese Einstellung mit Ihren vertraglichen Zusagen ab.
+Wenn Sie mit Kunden mit strengen Anforderungen arbeiten (Gesundheitswesen, Finanzen, öffentlicher Sektor), wählen Sie, was vertraglich vereinbart ist.
 
 ### Datenschutzrichtlinie und Nutzungsbedingungen
 
-Diese Felder verlinken Ihre rechtlichen Seiten:
+Diese Felder verlinken auf Ihre rechtlichen Seiten:
 
-- **Datenschutzrichtlinie**: wie Sie personenbezogene Daten verarbeiten.
-- **Nutzungsbedingungen**: die Regeln, denen Kunden bei Nutzung Ihres Dienstes zustimmen.
+- **Datenschutzerklärung**: wie Sie mit personenbezogenen Daten umgehen.
+- **Nutzungsbedingungen**: die Regeln, denen Ihre Kunden bei der Nutzung zustimmen.
 
-> **Tipp:** Auch wenn Sie eine Agentur sind: Behandeln Sie das wie ein Produkt. Veröffentlichen Sie diese Seiten auf Ihrer Hauptwebsite (Root-Domain) und verlinken Sie sie hier.
+Fügen Sie die vollständige URL jeder Seite ein, zum Beispiel `https://ihredomain.com/datenschutz`.
 
-## Erscheinungsbild
+> **Tipp:** Auch als Agentur sollten Sie das wie ein Produkt behandeln: Veröffentlichen Sie diese Seiten auf Ihrer Website (Hauptdomain) und verlinken Sie sie hier.
 
-Wenn Domain und Grundeinstellungen stehen, wechseln Sie zum Tab **Erscheinungsbild**, damit die UI zu Ihrer Marke passt.
+### Warn-E-Mail bei aufgebrauchten Minuten
+
+Die **Warn-E-Mail bei aufgebrauchten Minuten** informiert Ihre Kunden per E-Mail, wenn sie alle enthaltenen Minuten verbraucht haben.
+
+1. Schalten Sie **Warn-E-Mail aktivieren** ein. Der E-Mail-Editor öffnet sich.
+2. Geben Sie den **Betreff** ein.
+3. Wählen Sie den **Inhaltstyp**: **Normaler Text** (reiner Text; Zeilenumbrüche bleiben erhalten) oder **HTML** (reines HTML).
+4. Schreiben Sie den **Inhalt**. Standardmäßig enthält er Ihren App-Namen und Ihre Domain.
+5. Klicken Sie auf **E-Mail-Vorschau**, um die fertige E-Mail zu sehen, die Ihre Kunden erhalten, und dann auf **Schließen**.
+
+Um sie später zu ändern, klicken Sie auf **E-Mail konfigurieren**. Denken Sie daran, auf **Speichern** zu klicken.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/whitelabel4.png"
-    alt="Appearance Tab mit Farbeinstellungen, Uploads für Logo und Dark Logo, einem Favicon-Upload und einer Auswahl für das Standard-Theme (System/Light/Dark)."
-    style={{ width:"100%", display:"block" }}
-  />
+  <img src="/images/wl-config-warning-email.png" alt="Editor der Warn-E-Mail bei aufgebrauchten Minuten mit Betreff, den Inhaltstypen Normaler Text und HTML, dem Inhalt und den Schaltflächen E-Mail-Vorschau und Schließen" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Appearance-Tab, in dem Sie Farben, Logos, Favicon und das Standard-Theme anpassen.
+  Screenshot: der Editor der Warn-E-Mail mit einem Beispiel-App-Namen und einer Beispiel-Domain.
+</p>
+
+> **Tipp:** Sagen Sie Ihrem Kunden, was er tun kann, zum Beispiel: „Wechseln Sie zu einem größeren Plan oder kontaktieren Sie uns für zusätzliche Minuten.“
+
+## Erscheinungsbild
+
+Wenn Domain und Grundeinstellungen stehen, wechseln Sie in den Tab **Erscheinungsbild**, um die App an Ihre Marke anzupassen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/whitelabel4.png" alt="Seite White-Label-Konfiguration im Tab Erscheinungsbild mit Primärfarbe, Sekundärfarbe, Primäre E-Mail-Farbe, CTA-Button-Farbe (E-Mail), E-Mail-Sprache und dem Hochladen von Logo und Dunkles Logo" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Erscheinungsbild, in dem Sie Farben, E-Mail-Sprache, Logos, Favicon und Standard-Theme festlegen.
 </p>
 
 ### Farben
 
-Typischerweise sehen Sie Farbeinstellungen wie:
+Klicken Sie auf ein Farbquadrat, um eine Farbe zu wählen:
 
-- **Primärfarbe**: für Buttons und wichtige Hervorhebungen.
-- **Sekundärfarbe**: für Akzente und UI-Status.
-- **E-Mail-Primärfarbe**: Haupt-Akzentfarbe in transaktionalen E-Mails.
-- **E-Mail-CTA-Buttonfarbe**: Farbe für primäre Buttons und Links in E-Mails.
+- **Primärfarbe**: für Schaltflächen und Hervorhebungen in der App.
+- **Sekundärfarbe**: für Akzente und Zustände.
+- **Primäre E-Mail-Farbe**: die Hauptfarbe Ihrer Transaktions-E-Mails.
+- **CTA-Button-Farbe (E-Mail)**: die Farbe der wichtigsten Schaltflächen und Links in Ihren E-Mails.
 
-> **Tipp:** Wenn Sie eine Brand-Guideline haben, starten Sie mit Ihrer Primärfarbe und wählen Sie eine Sekundärfarbe, die sowohl auf hellen als auch auf dunklen Hintergründen gut aussieht.
+> **Tipp:** Wenn Ihre Marke schon einen Styleguide hat, beginnen Sie mit Ihrer Hauptfarbe und wählen Sie eine Sekundärfarbe, die auf hellem und dunklem Hintergrund gut aussieht.
+
+### E-Mail-Sprache
+
+Die **E-Mail-Sprache** ist die Standardsprache der E-Mails, die Ihre Kunden erhalten. Sie bietet dieselben Sprachen wie die **App-Sprache**.
 
 ### Logos (hell und dunkel)
 
-In der Regel laden Sie hoch:
+Laden Sie zwei Versionen Ihres Logos hoch:
 
-- **Logo**: für helle Hintergründe
-- **Dark Logo**: für dunkle Hintergründe
+- **Logo** (**Logo auswählen**): für helle Hintergründe.
+- **Dunkles Logo** (**Dunkles Logo auswählen**): für dunkle Hintergründe.
 
-Das ist wichtig, weil dasselbe Logo nicht immer in beiden Themes gut lesbar ist.
+Verwenden Sie PNG oder SVG, bis 2 MB, am besten mit transparentem Hintergrund. Dasselbe Logo ist nicht immer in beiden Themes gut lesbar.
 
-> **Wichtig:** Verwenden Sie **PNG** (idealerweise mit transparentem Hintergrund) oder SVG, wenn verfügbar. Wenn Ihr Logo sehr klein wirkt, liegt das oft daran, dass die hochgeladene Datei viel weißen Rand/Leerraum enthält: Callin skaliert das gesamte Bild herunter, um es einzupassen. Ein eng zugeschnittenes, transparentes PNG löst das meist.
+> **Wichtig:** Wirkt Ihr Logo winzig, hat das Bild meist einen großen weißen Rand: Callin verkleinert das ganze Bild, damit es passt. Ein eng zugeschnittenes, transparentes PNG löst das meist.
 
 ### Favicon
 
-Das **Favicon** ist das kleine Icon im Browser-Tab und in Lesezeichen. Verwenden Sie ICO oder PNG, das für Favicons optimiert ist (gängige Größen: 32×32 oder 48×48).
+Das **Favicon** ist das kleine Symbol im Browser-Tab und in den Lesezeichen. Klicken Sie auf **Favicon auswählen** und laden Sie eine ICO- oder PNG-Datei mit 32×32 oder 48×48 Pixeln hoch, bis 1 MB.
 
 ### Standard-Theme
 
-Das **Standard-Theme** bestimmt, wie die App standardmäßig aussieht:
+Das **Standard-Theme** legt fest, wie die App standardmäßig aussieht:
 
-- **System**: folgt dem Theme des Geräts des Nutzers
-- **Hell**: erzwingt hellen Modus
-- **Dunkel**: erzwingt dunklen Modus
+- **System**: folgt dem Theme des Geräts jedes Benutzers.
+- **Hell**: heller Modus.
+- **Dunkel**: dunkler Modus.
 
-Praktischer Ansatz: **System** wählen, wenn die App die Präferenzen jedes Nutzers respektieren soll.
+Ein praktischer Ansatz: Wählen Sie **System**, damit sich die App an die Vorlieben jedes Benutzers anpasst.
+
+Wenn Sie fertig sind, klicken Sie auf **Speichern**.
