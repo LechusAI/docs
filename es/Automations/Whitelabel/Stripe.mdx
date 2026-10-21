@@ -1,87 +1,86 @@
 ---
 title: "Integraciones"
-description: "Conecta servicios externos (pagos, voz/SMS, email, chat en vivo y tracking) para que tu White Label funcione como un producto real."
+description: "Conecta servicios externos (pagos, voz y SMS, correo, chat en directo y seguimiento) para que tu app White Label funcione como un producto real."
 icon: "plug"
 ---
 
 ## Para qué sirve esta página
 
-La página de **Integraciones** es donde conectas tu White Label con los servicios que hacen posible la operativa diaria:
+La página **Integraciones** es donde conectas tu app White Label con los servicios que hacen posible el día a día:
 
-- **Pagos y suscripciones** (para poder cobrar a clientes)
-- **Voz y SMS** (para que funcionen las llamadas y mensajes)
-- **Envío de emails** (para que el cliente reciba correos importantes)
-- **Chat en vivo** (para soporte en tiempo real dentro de la app)
-- **Tracking de marketing** (para medir adquisición y conversiones)
+- **Pagos y suscripciones** con Stripe (para cobrar a tus clientes)
+- **Voz y SMS** con Twilio (para que funcionen las llamadas y los mensajes)
+- **Envío de correos** con SendGrid (para que tus clientes reciban los correos importantes)
+- **Chat en directo** con Intercom o Brevo Chat (para que tus clientes hablen con tu equipo en tiempo real)
+- **Seguimiento de marketing** con Google Ads y Google Analytics (para medir captación y conversiones)
 
-Ábrela aquí: [Abrir Integraciones](https://app.callin.io/cms/api-keys)
+La encontrarás en la Plataforma white label, dentro de **Configuración de la aplicación** ([ábrela aquí](https://app.callin.io/cms/api-keys)). Usa **Buscar integraciones...** para encontrar una rápido.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations1.png" alt="Página de Integrations con tarjetas para Stripe (Connected), Twilio (Required), SendGrid (Connected), Intercom, Brevo Chat y Analytics & Tracking API Keys, y una barra de búsqueda." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations1.png" alt="Página Integraciones con un buscador y las tarjetas de Stripe, Twilio y SendGrid (marcadas como Obligatorio), Intercom, Brevo Chat y Claves de API de Analytics y Tracking" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: vista general de Integraciones. Cada tarjeta abre un panel de configuración con los campos exactos a completar.
+  Captura: la vista general de Integraciones. Cada tarjeta abre un panel lateral con lo que necesitas para conectarla.
 </p>
 
-> **Importante:** Las etiquetas de estado (por ejemplo “conectado” o “requerido”) reflejan tu configuración actual y pueden variar según tu cuenta y plan.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vídeo: el panel de cada integración: Stripe, Twilio, SendGrid, Intercom, Brevo Chat y Claves de API de Analytics y Tracking.
+</p>
+
+> **Importante:** **Stripe**, **Twilio** y **SendGrid** están marcadas como **Obligatorio**: tu White Label las necesita para cobrar, llamar y enviar correos. Intercom, Brevo Chat y el seguimiento son opcionales.
 
 ## Antes de conectar nada
 
-Unas prácticas simples te ahorran problemas (y mejoran la seguridad):
+Unos cuantos hábitos hacen que las integraciones vayan mejor (y sean más seguras):
 
-- **Usa el usuario administrador correcto** en cada proveedor (Stripe, Twilio, etc.) para acceder a claves y ajustes.
+- **Usa la cuenta de administrador adecuada** en cada proveedor (Stripe, Twilio, etc.) para poder ver las claves y los ajustes.
 - **Guarda las claves de forma segura** (trátalas como contraseñas).
-- **Limita el acceso** solo a quien lo necesite. No pegues claves en documentos compartidos o chats.
+- **Limita el acceso** a quien lo necesite. No pegues claves en documentos ni chats compartidos.
 
-> **Consejo:** Si algo no funciona a la primera, revisa que no hayas pegado espacios al principio o al final de una clave.
+> **Consejo:** Si una integración no funciona a la primera, revisa que la clave no tenga espacios al principio o al final antes de probar otra cosa.
 
 ## Cómo se conecta una integración
 
-La mayoría de integraciones siguen el mismo patrón:
+1. Haz clic en la tarjeta de una integración. Se abre un panel lateral.
+2. Lee el recuadro azul de arriba: explica dónde encontrar cada dato.
+3. En **Stripe**, haz clic en **Conectar** e inicia sesión en Stripe. En las demás, copia los datos del panel del proveedor y pégalos en los campos (los marcados con `*` son obligatorios).
+4. Haz clic en **Guardar**.
 
-1. Abres una tarjeta (por ejemplo Twilio o SendGrid).
-2. Se abre un panel lateral con campos obligatorios (marcados con `*`).
-3. Copias los valores desde el panel del proveedor.
-4. Pegas los valores en Callin y guardas.
-
-> **Importante:** El texto exacto de botones y etiquetas puede variar según el idioma de tu cuenta.
+Para cerrar un panel sin guardar, haz clic en la **X** de arriba a la derecha.
 
 ## Stripe
 
-**Para qué sirve:** Stripe se usa para **procesar pagos**. Es la integración típica cuando quieres operar con suscripciones: aceptar pagos, cobrar a clientes y gestionar suscripciones.
+**Para qué sirve:** Stripe se usa para **procesar pagos**: cobrar, gestionar suscripciones y recibir los pagos. Es lo que te permite tener un negocio de suscripciones de verdad.
 
-**Cuándo la necesitas:** Si vas a crear planes de pago y cobrar a tus clientes (mensual, anual, etc.), Stripe suele ser de las primeras integraciones a configurar.
-
-### Qué te va a pedir (tal como se ve en el panel)
-
-- **Secret Key**\*
-- **Webhook Secret**\*
-- **Webhook Secret Connect**\*
-- **Client ID**\*
+**Cuándo la necesitas:** Si vas a crear planes de pago y cobrar a tus clientes, Stripe es de las primeras integraciones que debes configurar.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations2.png" alt="Panel de Stripe API Keys con campos obligatorios: Secret Key, Webhook Secret, Webhook Secret Connect y Client ID, y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations2.png" alt="Panel Conectar con Stripe con los pasos para vincular tu cuenta y el botón Conectar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de Stripe donde se introducen las cuatro claves/valores requeridos y se guarda.
+  Captura: el panel Conectar con Stripe. No pegas ninguna clave: inicias sesión en Stripe.
 </p>
 
 ### Cómo conectar Stripe
 
-1. Abre la tarjeta de **Stripe**.
-2. En tu panel de Stripe, copia los valores necesarios.
-3. Pega cada valor en su campo correspondiente.
-4. Guarda los cambios.
+1. Abre la tarjeta **Stripe**. Se abre el panel **Conectar con Stripe**.
+2. Haz clic en **Conectar**.
+3. Inicia sesión en tu cuenta de Stripe, o crea una nueva cuando te lo pida.
+4. Al terminar, vuelves a Callin y tu cuenta queda vinculada automáticamente.
 
-> **Importante:** Si más adelante rotas claves o cambias webhooks en Stripe, tendrás que volver aquí y actualizar los valores.
+> **Importante:** Conecta la cuenta de Stripe en la que quieras recibir los pagos de tus clientes. Si más adelante usas otra cuenta, vuelve a conectarla desde esta tarjeta.
 
 ## Twilio
 
-**Para qué sirve:** Twilio habilita **llamadas de voz y SMS**. Es la integración que hace posibles las funciones de llamadas/mensajería y también el manejo de números de teléfono.
+**Para qué sirve:** Twilio hace posibles las **llamadas de voz y los SMS**, y la gestión de números de teléfono.
 
-**Cuándo la necesitas:** Si tu White Label incluye llamadas entrantes/salientes o SMS, Twilio suele ser esencial y puede aparecer marcado como “requerido”.
+**Cuándo la necesitas:** Si tu White Label incluye llamadas entrantes o salientes o SMS, Twilio es imprescindible. Por eso está marcada como **Obligatorio**.
 
 ### Qué te va a pedir (tal como se ve en el panel)
 
@@ -89,135 +88,136 @@ La mayoría de integraciones siguen el mismo patrón:
 - **Auth Token**\*
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations3.png" alt="Panel Add Twilio API Keys con campos obligatorios Account SID y Auth Token y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations33.png" alt="Panel Añadir claves de API de Twilio con los campos Account SID y Auth Token y el botón Guardar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de Twilio donde se introduce el Account SID y el Auth Token.
+  Captura: para configurar Twilio necesitas un Account SID y un Auth Token.
 </p>
 
 ### Cómo conectar Twilio
 
-1. Abre la tarjeta de **Twilio**.
-2. En tu panel de Twilio, localiza **Account SID** y **Auth Token**.
-3. Pégalos en Callin.
-4. Guarda los cambios.
+1. Abre la tarjeta **Twilio**. Se abre el panel **Añadir claves de API de Twilio**.
+2. En tu panel de Twilio, copia tu **Account SID** y tu **Auth Token**.
+3. Pégalos en sus campos. Haz clic en el icono del ojo para revisar el token que has pegado.
+4. Haz clic en **Guardar**.
 
-> **Consejo:** Si más adelante las llamadas o los SMS fallan, Twilio suele ser la primera integración que conviene revisar.
+> **Consejo:** Si más adelante dejan de funcionar las llamadas o los SMS, Twilio es lo primero que debes revisar.
 
 ## SendGrid
 
-**Para qué sirve:** SendGrid se usa para **enviar emails** desde tu White Label, especialmente correos automáticos y notificaciones que el cliente necesita recibir (por ejemplo: mensajes del sistema).
+**Para qué sirve:** SendGrid **envía los correos** de tu app White Label: los correos automáticos y avisos que necesitan tus clientes.
 
-**Cuándo la necesitas:** Si tu experiencia branded debe enviar correos a clientes, configura SendGrid pronto.
+**Cuándo la necesitas:** Si tus clientes deben recibir correos de tu app con tu marca, configura SendGrid pronto. Está marcada como **Obligatorio**.
 
 ### Qué te va a pedir (tal como se ve en el panel)
 
 - **API Key**\*
-- **Sender Email**\* (un email remitente verificado)
+- **Sender Email**\* (un correo remitente verificado en SendGrid)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations4.png" alt="Panel Add SendGrid API Keys con campos obligatorios API Key y Sender Email y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations4.png" alt="Panel Añadir claves de API de SendGrid con los campos API Key y Sender Email y el botón Guardar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de SendGrid donde se introduce la API Key y el email remitente.
+  Captura: para configurar SendGrid necesitas una clave de API y un correo remitente verificado.
 </p>
 
 ### Cómo conectar SendGrid
 
-1. Abre la tarjeta de **SendGrid**.
-2. Copia tu **API Key** desde SendGrid.
-3. Introduce un **Sender Email** que esté verificado en SendGrid.
-4. Guarda los cambios.
+1. Abre la tarjeta **SendGrid**. Se abre el panel **Añadir claves de API de SendGrid**.
+2. Copia tu **API Key** de SendGrid.
+3. Escribe en **Sender Email** un correo verificado en SendGrid.
+4. Haz clic en **Guardar**.
 
-> **Error común:** Usar un remitente que no está verificado. Si no se envían emails, verifica primero el remitente en SendGrid.
+> **Error común:** Usar un correo remitente que no está verificado en SendGrid. Si no salen los correos, verifica primero el remitente.
 
 ## Intercom
 
-**Para qué sirve:** Intercom habilita **chat en vivo y soporte** dentro de la app. Es una opción habitual cuando quieres que el cliente pueda escribir a tu equipo sin salir del producto.
+**Para qué sirve:** Intercom añade **chat en directo y atención al cliente** al panel de tus clientes, para que escriban a tu equipo sin salir de la app.
 
-**Cuándo la necesitas:** Si el soporte y el onboarding forman parte de lo que vendes, Intercom hace que tu White Label se sienta más “producto”.
+**Cuándo la necesitas:** Si el soporte y el acompañamiento forman parte de lo que vendes. Es opcional.
 
 ### Qué te va a pedir (tal como se ve en el panel)
 
-- **App ID**\* (desde la configuración de tu workspace de Intercom)
+- **App ID**\* (de los ajustes de tu espacio de trabajo de Intercom)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations5.png" alt="Panel Add Intercom API Keys con un campo App ID y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations5.png" alt="Panel Añadir claves de API de Intercom con el campo App ID y el botón Guardar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de Intercom donde se introduce el App ID.
+  Captura: para configurar Intercom necesitas un App ID.
 </p>
 
 ### Cómo conectar Intercom
 
-1. Abre la tarjeta de **Intercom**.
-2. Busca tu **App ID** en la configuración de tu workspace de Intercom.
-3. Pégalo en Callin y guarda los cambios.
+1. Abre la tarjeta **Intercom**. Se abre el panel **Añadir claves de API de Intercom**.
+2. Busca tu **App ID** en los ajustes de tu espacio de trabajo de Intercom.
+3. Pégalo y haz clic en **Guardar**. El chat de Intercom aparece en el panel de tus clientes.
 
-> **Consejo:** Usa el workspace de Intercom que realmente vaya a atender a tus clientes, para que los mensajes lleguen al equipo correcto.
+> **Consejo:** Usa el espacio de trabajo de Intercom de tu equipo de soporte, para que los mensajes lleguen al sitio correcto.
 
 ## Brevo Chat
 
-**Para qué sirve:** Brevo Chat habilita un **widget de chat** para conversaciones en tiempo real. El panel hace referencia a Brevo (antes Sendinblue) y la activación se realiza con una clave de widget.
+**Para qué sirve:** Brevo Chat (antes Sendinblue) añade un **chat en directo** al panel de tus clientes para hablar en tiempo real.
 
-**Cuándo la necesitas:** Si prefieres un widget de chat más ligero (en lugar de Intercom), Brevo Chat es una opción.
+**Cuándo la necesitas:** Si prefieres el chat de Brevo en lugar de Intercom. Es opcional.
 
 ### Qué te va a pedir (tal como se ve en el panel)
 
-- **Chat Widget Key**\* (también descrita como Chat Widget Key/API Key)
+- **Chat Widget Key**\* (la clave del widget de chat o la clave de API de tu panel de Brevo)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations6.png" alt="Panel Brevo Chat Integration con un campo obligatorio Chat Widget Key y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations6.png" alt="Panel Integración de chat de Brevo con el campo obligatorio Chat Widget Key y el botón Guardar" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de Brevo Chat donde se introduce la clave del widget.
+  Captura: para configurar Brevo Chat necesitas la clave del widget de chat.
 </p>
 
 ### Cómo conectar Brevo Chat
 
-1. Abre la tarjeta de **Brevo Chat**.
-2. En tu panel de Brevo, copia la **Chat Widget Key** (o Chat Widget Key/API Key).
-3. Pégala en Callin y guarda los cambios.
+1. Abre la tarjeta **Brevo Chat**. Se abre el panel **Integración de chat de Brevo**.
+2. En tu panel de Brevo, copia la clave del widget de chat.
+3. Pégala en **Chat Widget Key** y haz clic en **Guardar**.
 
-> **Importante:** Mantén esta clave en privado. Cualquiera con acceso podría intentar reutilizarla en otro entorno.
+> **Importante:** No compartas la clave del widget. Cualquiera que la tenga podría usarla en otro sitio.
 
-## Analytics & Tracking API Keys
+## Claves de API de Analytics y Tracking
 
-**Para qué sirve:** Esta integración conecta tu White Label con **tracking de marketing y analítica**. Según las instrucciones que se ven en el panel, soporta:
+**Para qué sirve:** Esta integración conecta tu White Label con el **seguimiento de marketing y analítica**:
 
-- **Google Ads** mediante un Pixel ID
-- **Google Analytics (GA4)** mediante un Measurement ID
+- Conversiones de **Google Ads**, con un ID de píxel
+- **Google Analytics (GA4)**, con un ID de medición
 
-**Por qué es importante en White Label:** Si vas a hacer campañas (o necesitas atribución), te interesa medir conversiones y tráfico para optimizar inversión y entender qué canal funciona.
+**Por qué importa en un White Label:** Si haces campañas de pago, quieres medir el tráfico y las conversiones de tu marca para saber qué funciona. Los dos campos son opcionales: rellena solo los que uses.
 
 ### Qué te va a pedir (tal como se ve en el panel)
 
-- **Google Ads Pixel ID** (formato de ejemplo: `AW-123456789`)
-- **Google Analytics Measurement ID (GA4)** (formato de ejemplo: `G-XXXXXXXXXX`)
+- **ID de píxel de Google Ads** (formato: `AW-123456789`)
+- **Google Analytics Measurement ID (GA4)** (formato: `G-XXXXXXXXXX`)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations7.png" alt="Panel Analytics & Tracking API Keys con instrucciones y campos para Google Ads Pixel ID y Google Analytics Measurement ID (GA4), y un botón para guardar." style={{ width:"100%", display:"block" }} />
+  <img src="/images/integrations7.png" alt="Panel Claves de API de Analytics y Tracking con las instrucciones Cómo configurarlo y los campos del ID de píxel de Google Ads y del ID de medición de Google Analytics (GA4)" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: configuración de tracking donde se pegan los IDs de Google Ads y GA4 y se guardan.
+  Captura: el panel de seguimiento, con los pasos y los dos ID.
 </p>
 
 ### Cómo conectar el tracking
 
-1. Abre **Analytics & Tracking API Keys**.
-2. En Google Ads, copia tu **Google Ads Pixel ID** y pégalo en su campo.
-3. En Google Analytics (GA4), copia tu **Measurement ID** y pégalo en el campo de GA4.
-4. Guarda los cambios.
+1. Abre **Claves de API de Analytics y Tracking**.
+2. En Google Ads, ve a **Herramientas y configuración → Conversiones**, crea o abre una acción de conversión de sitio web y copia el ID de conversión (tiene el formato `AW-123456789`). Pégalo en **ID de píxel de Google Ads**.
+3. En Google Analytics (GA4), ve a **Administrar → Flujos de datos → Web**, elige el flujo de tu web y copia el ID de medición (tiene el formato `G-XXXXXXXXXX`). Pégalo en el campo de GA4.
+4. Haz clic en **Guardar**.
 
 ### Qué pasa después de guardar (según se indica en el panel)
 
-- Se pueden inyectar scripts de tracking usando los IDs que has introducido (para esta marca).
-- Si dejas un campo vacío, el script de ese proveedor no debería cargarse para esta marca.
-- El acceso para ver o cambiar estos IDs está limitado a usuarios con el nivel de acceso adecuado (tal como se indica en el panel).
+- Solo para tu marca, la app añade automáticamente los scripts de Google Ads y GA4 con los ID que has escrito.
+- El tráfico y las conversiones se miden por separado para cada marca White Label.
+- Si dejas un campo vacío, no se carga el script de ese proveedor para tu marca.
+- Solo los administradores y propietarios de la marca con acceso a la Plataforma white label pueden ver o cambiar estos ID.
 
-> **Consejo:** Conecta el tracking al principio del lanzamiento de una marca, para no perder datos de atribución desde el día 1.
+> **Consejo:** Conecta el seguimiento antes de tus primeras campañas, para no perder datos de atribución.
