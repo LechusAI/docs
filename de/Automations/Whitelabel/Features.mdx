@@ -4,155 +4,202 @@ description: "Definieren Sie die Elemente, die in Abonnementplänen erscheinen, 
 icon: "star"
 ---
 
-## Wofür dieser Bereich gedacht ist
+## Wofür dieser Bereich da ist
 
-**Funktionen und Fähigkeiten** ist der Bereich, in dem ein White-Label-Konto festlegt, was ein Abonnementplan enthalten kann.
+Unter **Funktionen und Fähigkeiten** erstellt ein White-Label-Konto die „Bausteine“, die später erscheinen, wenn Sie einen **Abonnementplan** erstellen oder bearbeiten.
 
-Eine einfache Einordnung:
+Ganz einfach gesagt:
 
-- **Abonnementpläne** = die Stufen, die Sie verkaufen (zum Beispiel Basis vs. Premium)
+- **Abonnementpläne** = die Stufen, die Sie verkaufen (Basis, Pro usw.)
 - **Funktionen und Fähigkeiten** = was jede Stufe enthält (aktivierte Werkzeuge, Zahlenlimits oder auswählbare Optionen)
 
-Wenn Sie einen Plan erstellen oder bearbeiten, vergeben Sie die Werte dieser Elemente später im Schritt **Funktionen** des Plans.
+Wenn Sie hier nicht zuerst Funktionen erstellen, zeigt der Plan-Assistent **Keine Funktionen verfügbar. Bitte erstellen Sie zuerst Funktionen.**
 
-[Klicken Sie hier, um Funktionen und Fähigkeiten zu öffnen](https://app.callin.io/cms/features-capabilities)
+Sie finden sie in der White-Label-Plattform unter **Pläne und Abrechnung** ([hier öffnen](https://app.callin.io/cms/features-capabilities)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/features1.png"
-    alt="Seite Funktionen und Fähigkeiten mit Suchleiste und einer Schaltfläche zum Erstellen einer neuen Funktion oder Fähigkeit."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Seite Funktionen und Fähigkeiten, auf der Sie bestehende Elemente suchen oder ein neues erstellen können.
+  Video: die leere Seite → Funktion/Fähigkeit erstellen → eine spanische Übersetzung → eine zweite Funktion in einer neuen Kategorie → die nach Kategorie gruppierte Liste → Bearbeiten.
 </p>
 
-> **Wichtig:** Die genauen Bezeichnungen und verfügbaren Optionen können je nach Konto und Tarif variieren.
+Die Liste gruppiert Ihre Funktionen nach **Kategorie**. Jede Zeile zeigt **Name** und **Typ**. Mit **Funktionen und Fähigkeiten suchen…** finden Sie eine Funktion schnell.
 
-## Wie das mit Abonnementplänen zusammenhängt
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/features1.png" alt="Seite Funktionen und Fähigkeiten mit der Suche, der Schaltfläche Funktion/Fähigkeit erstellen und drei Funktionen in den Kategorien Limits, Zusatzoptionen und Fähigkeiten" style={{ width:"100%", display:"block" }} />
+</div>
 
-Der typische Ablauf ist:
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: drei Beispielfunktionen, eine pro Typ, nach Kategorie gruppiert.
+</p>
 
-1) Sie erstellen hier Funktionen/Fähigkeiten  
-2) Sie erstellen (oder bearbeiten) einen Abonnementplan  
-3) Im Schritt **Funktionen** des Plans vergeben Sie für jedes Element einen Wert
+## Wie Funktionen in Abonnementplänen verwendet werden
 
-Dieser Wert bestimmt, was ein Unterkonto erhält, wenn es den Plan nutzt.
+Wenn Sie einen Plan erstellen, enthält der Schritt **Überprüfen & Bestätigen** den Bereich **Funktionen konfigurieren**. Dort legen Sie für jede hier definierte Funktion einen Wert fest:
+
+- Funktionen vom Typ **Ein / Aus (toggle)** werden ein- oder ausgeschaltet.
+- Funktionen vom Typ **Nutzungslimit (limit)** erhalten eine Zahl.
+- Funktionen vom Typ **Zugang mit Optionen (capability)** erhalten einen Text (zum Beispiel „Premium-Stimmen“).
+
+Der Ablauf ist also:
+
+1. Funktion erstellen (hier)
+2. Dieser Funktion in jedem Plan einen Wert zuweisen (unter [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans))
+3. Der Wert des Plans ist das, was Unterkonten mit diesem Plan erhalten
+
+> **Wichtig:** Um Pläne zu erstellen, muss Ihr White Label mit Stripe verbunden sein. Funktionen können Sie jederzeit erstellen, auch bevor Stripe verbunden ist.
 
 ## Eine Funktion oder Fähigkeit erstellen
 
-Klicken Sie auf die Erstellungsschaltfläche und füllen Sie die folgenden Felder aus.
+Klicken Sie auf **Funktion/Fähigkeit erstellen** und füllen Sie diese Felder aus. Mit **\*** markierte Felder sind Pflichtfelder. Klicken Sie anschließend auf **Erstellen**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-features-create.png" alt="Fenster Funktion/Fähigkeit erstellen mit den Übersetzungs-Tabs, den Feldern Name und Beschreibung, den drei Arten, wie Pläne die Funktion gewähren, einer neuen Kategorie und den Schaltflächen Abbrechen und Erstellen" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: das Fenster Funktion/Fähigkeit erstellen, ausgefüllt für „Minuten pro Monat“.
+</p>
 
 ### Name
 
-Das ist die Bezeichnung, die später in der Plankonfiguration angezeigt wird.
+Eine kurze Bezeichnung, die in der Plan-Konfiguration angezeigt wird.
 
 Gute Beispiele:
-- **Minuten pro Monat**
-- **Anrufaufzeichnung**
-- **Sprachauswahl**
 
-Ungünstige Beispiele (zu unklar):
+- **Minuten pro Monat**
+- **Zusatzoption Anrufaufzeichnung**
+- **Stufe des Stimmenpakets**
+
+Schlechte Beispiele (zu vage):
+
 - **Minuten**
 - **Funktion 1**
-- **Zugriff**
+- **Zugang**
 
-> **Tipp:** Verwenden Sie Namen, die wie eine klare Regel wirken. „Minuten pro Monat“ ist verständlicher als „Minuten“.
+> **Tipp:** Verwenden Sie Namen, die sich wie ein Vorteil oder eine klare Regel lesen. „Minuten pro Monat“ ist klarer als „Minuten“.
+
+> **Häufiger Fehler:** Wenn **Erstellen** einen Fehler mit `duplicate key value` anzeigt, ist dieser Name bereits vergeben. Wählen Sie einen genaueren Namen (zum Beispiel „Zusatzoption Anrufaufzeichnung“ statt „Anrufaufzeichnung“).
 
 ### Beschreibung
 
-Optional, aber empfohlen. Ein Satz, der genau erklärt, was das Element steuert.
+Pflichtfeld. Schreiben Sie einen kurzen Satz, damit Ihr Team genau weiß, was diese Funktion steuert.
 
 Beispiel:
-- „Monatlich im Plan enthaltene Minuten. Zusätzliche Nutzung wird separat berechnet.“
 
-### Wie Pläne diese Funktion bereitstellen
+- „Im Plan enthaltene Anrufminuten pro Monat.“
 
-Diese Auswahl legt fest, welche Art von Wert Sie in den Plänen einstellen.
+### Übersetzungen
 
-#### Aktivieren / deaktivieren (Schalter)
+Mit den Tabs oben übersetzen Sie **Name** und **Beschreibung** in jede Sprache Ihrer Plattform: **English**, **Español**, **Italiano**, **Português**, **हिन्दी**, **Deutsch**, **Nederlands**, **Français** und **Português (Brasil)**.
 
-Verwenden Sie das, wenn es nur ja/nein ist.
+- **Standard** enthält den Haupttext. **Name** und **Beschreibung** sind dort Pflichtfelder.
+- Die Sprach-Tabs sind optional. Leere Felder zeigen den Text aus **Standard** in Grau.
+- Typ und Kategorie gelten für alle Sprachen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-features-translations.png" alt="Fenster Funktion/Fähigkeit erstellen im Tab Español, mit dem spanischen Namen und der spanischen Beschreibung" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Español mit dem spanischen Namen und der spanischen Beschreibung derselben Funktion.
+</p>
+
+### Wie gewähren Pläne diese Funktion?
+
+Das ist die wichtigste Entscheidung. Sie legt fest, welche Art von Wert die Pläne setzen.
+
+#### Ein / Aus (toggle)
+
+Einfach aktivieren oder deaktivieren.
 
 Beispiel:
-- Funktion: **Anrufaufzeichnung**
-  - Plan Basis: **Deaktiviert**
-  - Plan Pro: **Aktiviert**
 
-Geeignet für:
-- Optionen, die einfach ein- oder ausgeschaltet werden.
+- Funktion: **Zusatzoption Anrufaufzeichnung**
+  - Basis-Plan: **Aus**
+  - Pro-Plan: **Ein**
 
-#### Nutzungslimit (Limit)
+Ideal für:
 
-Verwenden Sie das, wenn der Plan eine Zahl pro Abrechnungszeitraum festlegen soll.
+- Zusatzoptionen wie „Anrufaufzeichnung“, „Branding entfernen“ oder „Priorisierter Support“ (falls Ihre Konfiguration sie enthält)
+
+#### Nutzungslimit (limit)
+
+Feste Menge pro Abrechnungszeitraum erlauben.
 
 Beispiel:
+
 - Funktion: **Minuten pro Monat**
-  - Plan Basis: **400**
-  - Plan Pro: **1.000**
+  - Basis-Plan: **400**
+  - Pro-Plan: **1.000**
 
-Geeignet für:
-- Minuten, Plätze, Anzahl Agenten oder jede Regel „X pro Monat“ (abhängig von den Möglichkeiten Ihres Kontos).
+Ideal für:
 
-#### Zugriff mit Optionen (Auswahl)
+- Minuten, Nutzer, Anzahl der Agenten, Anzahl der Telefonnummern oder jede Regel der Art „X pro Monat“ (je nachdem, was Ihr Konto unterstützt)
 
-Verwenden Sie das, wenn der Plan eine Auswahl aus mehreren Optionen freischalten soll.
+#### Zugang mit Optionen (capability)
+
+Zugang mit auswählbaren Optionen aktivieren. In jedem Plan schreiben Sie die Option als Text.
 
 Beispiel:
-- Funktion: **Sprachauswahl**
-  - Plan Basis: **Standardstimmen**
-  - Plan Pro: **Premiumstimmen**
 
-Geeignet für:
-- Pakete oder wählbare Stufen (zum Beispiel „Standard“ vs. „Premium“).
+- Funktion: **Stufe des Stimmenpakets**
+  - Basis-Plan: **Standardstimmen**
+  - Pro-Plan: **Premium-Stimmen**
 
-> **Häufiger Fehler:** Einen Schalter wählen, obwohl eine Zahl nötig wäre (wie bei Minuten). Wenn es je Plan unterschiedlich sein soll, ist es in der Regel ein **Limit**.
+Ideal für:
+
+- Berechtigungen der Art „Wählen Sie eines dieser Pakete“ oder „Wählen Sie eine Stufe“
+
+> **Häufiger Fehler:** **toggle** für etwas wählen, das eine Zahl sein sollte (wie Minuten). Wenn es je nach Plan variieren kann, ist es meist ein **limit**.
 
 ### Kategorie
 
-Kategorien helfen dabei, Elemente zu gruppieren und die Plankonfiguration übersichtlich zu halten.
+Pflichtfeld. Kategorien gruppieren Ihre Funktionen in der Liste und halten die Plan-Konfiguration übersichtlich.
+
+- Wählen Sie unter **Kategorie auswählen** eine vorhandene Kategorie.
+- Oder klicken Sie auf **+**, um eine neue zu erstellen, und geben Sie sie unter **Neuen Kategorienamen eingeben** ein. Mit **×** kehren Sie zur Liste zurück.
 
 Praktische Kategorien:
-- **Limits** (Minuten, Nutzungsobergrenzen)
-- **Extras** (zusätzliche Optionen)
-- **Fähigkeiten** (Pakete oder Auswahlen)
 
-> **Tipp:** Halten Sie Kategorien konsistent. Wenn Sie „Limit“ und „Limits“ mischen, entstehen doppelte Gruppen.
+- **Limits** (Minuten, Nutzer, Nutzungsobergrenzen)
+- **Zusatzoptionen** (Aufzeichnung, Portal mit Ihrer Marke usw.)
+- **Fähigkeiten** (Stimmenpakete, Routing-Modi, Integrationen – je nach Angebot)
+
+> **Tipp:** Halten Sie Kategorien über alle Funktionen hinweg einheitlich. Wenn Sie „Limit“ und „Limits“ anlegen, wird die Gruppierung unübersichtlich.
 
 ## Praxisbeispiel (realistische Einrichtung)
 
-Stellen Sie sich zwei Stufen vor:
+Angenommen, Sie verkaufen Ihren Unterkonten zwei Stufen:
 
-- **Basis**: 400 Minuten pro Monat
+- **Basis**: 400 Minuten pro Monat zum Festpreis
 - **Pro**: 1.000 Minuten pro Monat + Anrufaufzeichnung
 
-Erstellen Sie diese Elemente in **Funktionen und Fähigkeiten**:
+Erstellen Sie diese Funktionen unter **Funktionen und Fähigkeiten**:
 
-1) **Minuten pro Monat** → **Nutzungslimit**  
-   Beschreibung: „Monatlich im Plan enthaltene Minuten.“
+1. **Minuten pro Monat** → **Nutzungslimit (limit)**, Kategorie **Limits**\
+   Beschreibung: „Im Plan enthaltene Anrufminuten pro Monat.“
+2. **Zusatzoption Anrufaufzeichnung** → **Ein / Aus (toggle)**, Kategorie **Zusatzoptionen**\
+   Beschreibung: „Zeichnet die von den Agenten geführten Anrufe auf.“
 
-2) **Anrufaufzeichnung** → **Aktivieren / deaktivieren**  
-   Beschreibung: „Aktiviert die Aufzeichnung von Anrufen, die vom Assistenten bearbeitet werden.“
+Dann unter **Abonnementpläne**:
 
-Dann in Ihren Plänen:
-
-- Plan Basis:
+- Basis-Plan:
   - Minuten pro Monat = **400**
-  - Anrufaufzeichnung = **Deaktiviert**
-
-- Plan Pro:
+  - Zusatzoption Anrufaufzeichnung = **Aus**
+- Pro-Plan:
   - Minuten pro Monat = **1.000**
-  - Anrufaufzeichnung = **Aktiviert**
+  - Zusatzoption Anrufaufzeichnung = **Ein**
 
-So verstehen Unterkonten sofort, was sich zwischen den Stufen unterscheidet.
+So verstehen Unterkonten sofort, was sich zwischen den Stufen ändert, und Ihre Preise lassen sich leichter begründen.
 
 ## Eine bestehende Funktion oder Fähigkeit bearbeiten
 
-Öffnen Sie in der Liste das Element, um Folgendes zu ändern:
-- **Name** und **Beschreibung**
-- Den Typ (Schalter / Limit / Optionen)
-- Die **Kategorie**
+Klicken Sie in der Liste in der Zeile der Funktion auf **⋮**:
 
-> **Wichtig:** Wenn Sie den Typ eines Elements ändern, nachdem es bereits in Plänen verwendet wird, kann das beeinflussen, wie Werte gespeichert oder angezeigt werden. Wenn Sie unsicher sind, erstellen Sie ein neues Element und stellen Sie die Pläne darauf um.
+- **Bearbeiten** öffnet **Funktion/Fähigkeit bearbeiten** mit denselben Feldern: **Name**, **Beschreibung**, Übersetzungen, Typ und **Kategorie**. Klicken Sie auf **Aktualisieren**, um zu speichern.
+- **Entfernen** löscht die Funktion. Diese Aktion kann nicht rückgängig gemacht werden.
+
+> **Wichtig:** Wenn Sie den Typ einer Funktion ändern, die bereits in Plänen verwendet wird, kann sich ändern, wie Pläne diesen Wert speichern oder anzeigen. Im Zweifel erstellen Sie eine neue Funktion und stellen Ihre Pläne darauf um.
