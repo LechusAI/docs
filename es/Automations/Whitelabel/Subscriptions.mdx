@@ -1,45 +1,57 @@
 ---
 title: "Suscripciones"
-description: "Revisa qué suscripción tiene cada cliente, incluyendo plan, precio, minutos, estado y fechas."
+description: "Revisa qué suscripción tiene cada cliente: plan, precio, minutos, estado y fechas."
 icon: "repeat"
 ---
 
 ## Para qué sirve esta página
 
-La página de **Suscripciones** te da una **vista de solo lectura** de las suscripciones que tienen tus clientes.
+La página **Suscripciones** te da una vista general de las suscripciones de todos tus clientes. La encontrarás en la Plataforma white label, dentro de **Planes y facturación** ([ábrela aquí](https://app.callin.io/cms/subscriptions)).
 
-Está pensada para revisar (no para editar), y así responder rápido a preguntas como:
+Está pensada para consultar, así que te ayuda a responder rápido preguntas como:
 
 - “¿Qué plan tiene este cliente?”
-- “¿La suscripción está activa, con pago pendiente o cancelada?”
-- “¿Cuántos minutos incluye y cuántos se han usado?”
-- “¿Cuándo empezó y cuándo termina la suscripción?”
+- “¿Su suscripción está activa, en prueba, vencida o cancelada?”
+- “¿Cuántos minutos incluye y cuántos ha usado?”
+- “¿Cuándo empezó la suscripción y cuándo termina?”
 
-> **Consejo:** Las etiquetas exactas y las opciones disponibles pueden variar según tu cuenta, tu plan y el idioma configurado.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subscriptions.png" alt="Página Suscripciones con el buscador y el mensaje No hay suscripciones" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la página Suscripciones antes de que se suscriba ningún cliente. Cuando tus clientes se suscriban a un plan, aparecerán aquí.
+</p>
+
+> **Consejo:** Las suscripciones aparecen aquí cuando tus clientes se suscriben a uno de tus [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans) y pagan con Stripe. Hasta entonces, verás **No hay suscripciones**.
 
 ## Cómo usar la lista
 
 ### Buscar suscripciones
 
-Arriba tienes el campo **Search subscriptions…** para encontrar un cliente rápido (por ejemplo, por email o nombre).
+Arriba, usa el campo **Buscar suscripciones…** para encontrar rápido a un cliente (por ejemplo, por correo o por nombre). Si no hay coincidencias, verás **No se encontraron suscripciones**: prueba otra búsqueda.
 
 ### Entender las columnas
 
-En la tabla normalmente verás:
+Cada fila es una suscripción:
 
-- **User**: el identificador del cliente (muchas veces el email, a veces el nombre)
-- **Plan**: el nombre del plan (por ejemplo, mensual o pago por uso)
-- **Price**: el precio del plan (si aplica y se muestra para ese plan)
-- **Minutes**: minutos incluidos y uso (por ejemplo, “Used”)
-- **Status**: estado actual de la suscripción
-- **Start Date** y **End Date**: el periodo de la suscripción
+- **Usuario**: el cliente (correo o nombre).
+- **Plan**: el nombre del plan y su tipo: **Mensual**, **Anual**, **Una vez** o **Pago por uso**. Los planes en prueba gratuita llevan la etiqueta **Prueba**.
+- **Precio**: el coste del plan.
+- **Minutos**: los minutos incluidos y los que se han **Usado**.
+- **Estado**: el estado actual de la suscripción (ver más abajo).
+- **Fecha de inicio** y **Fecha de fin**: el periodo de la suscripción.
+
+Desde cada fila también puedes **Copiar ID de suscripción**, por ejemplo para buscar el pago en Stripe o para pasárselo al soporte de Callin.
 
 ## Ejemplos de estados de suscripción
 
-En la lista pueden aparecer estados como:
+La lista puede mostrar estos estados:
 
-- **Active**: la suscripción está en curso
-- **Past Due**: hay un pago pendiente
-- **Canceled**: la suscripción se canceló
+- **Activo**: la suscripción está en marcha y pagada.
+- **En período de prueba**: el cliente está en la prueba gratuita.
+- **Vencido**: el último pago falló y Stripe lo está reintentando.
+- **No pagado**: no se pudo cobrar después de los reintentos.
+- **Cancelado**: la suscripción se canceló.
 
-> **Importante:** Si un cliente dice “he pagado” pero el estado no es **Active**, lo más habitual es comprobar: que sea el usuario/email correcto y el estado actual de su suscripción en esta página.
+> **Importante:** Si un cliente dice “He pagado” pero su estado no es **Activo**, comprueba primero que usa el correo y la cuenta correctos. Después mira aquí su estado y su facturación en [Usuarios](/es/Automations/Whitelabel/Clients) → **Suscripciones** → **Ver detalles de facturación**.
