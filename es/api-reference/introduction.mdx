@@ -1,0 +1,61 @@
+---
+title: Introducción
+description: Crea, gestiona y supervisa agentes de voz con IA con la API pública de Callin
+---
+
+La API de Callin te permite integrar agentes de voz con IA en tu producto mediante programación. Úsala para crear y configurar agentes, gestionar sus bases de conocimiento, lanzar campañas de llamadas, gestionar contactos y consultar registros y transcripciones de llamadas, todo mediante una interfaz REST sencilla.
+
+**URL base**
+
+```
+https://api.callin.io/api
+```
+
+Todos los endpoints cuelgan de `/public`, por ejemplo:
+
+```
+https://api.callin.io/api/public/v1/agents
+```
+
+## Autenticación
+
+Todos los endpoints (salvo la comprobación de estado) necesitan una clave de API. Para obtener la tuya, haz clic en tu nombre, abajo en la barra lateral izquierda, para abrir los **Ajustes de perfil**, y abre la pestaña **Claves de API**.
+
+Puedes enviarla de dos formas:
+
+**Cabecera**
+```http
+x-api-key: <your-api-key>
+```
+
+**Token Bearer**
+```http
+Authorization: Bearer <your-api-key>
+```
+
+> **Importante:** Puedes regenerar tu clave desde la misma pestaña **Claves de API**. Al regenerarla, la clave anterior deja de funcionar al instante, así que actualízala antes en todos los sitios donde la uses.
+
+> **Consejo:** El endpoint de comprobación de estado `GET /public/health` no necesita clave de API. Úsalo para comprobar tu conexión.
+
+## Formato de respuesta
+
+Todas las respuestas son JSON y siguen la misma estructura:
+
+| Campo | Descripción |
+|---|---|
+| `success` | `true` o `false` |
+| `data` | El recurso o resultado devuelto |
+| `error` | El mensaje de error si `success` es `false` |
+| `pagination` | Aparece en los endpoints que devuelven listas |
+
+## Pruébala en directo
+
+Cada página de endpoint incluye un entorno de pruebas de la API. Elige un servidor, añade tu clave de API y lanza peticiones reales desde la documentación, sin necesidad de otra herramienta.
+
+## Qué puedes crear
+
+- **Agentes de voz con IA**: crea, actualiza y gestiona agentes y su comportamiento
+- **Bases de conocimiento**: sube y gestiona el contenido que usan tus agentes en las llamadas
+- **Campañas**: crea, programa, lanza y detén campañas de llamadas salientes
+- **Contactos**: crea, importa y gestiona los contactos a los que llaman tus agentes
+- **Registros y transcripciones**: consulta los registros, las transcripciones y las grabaciones de cada llamada

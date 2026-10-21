@@ -1,0 +1,61 @@
+---
+title: Introduction
+description: Créez, gérez et suivez des agents vocaux IA avec l'API publique de Callin
+---
+
+L'API de Callin vous permet d'intégrer des agents vocaux IA à votre produit par programmation. Utilisez-la pour créer et configurer des agents, gérer leurs bases de connaissances, lancer des campagnes d'appels, gérer les contacts et récupérer les journaux et transcriptions d'appels, le tout via une interface REST simple.
+
+**URL de base**
+
+```
+https://api.callin.io/api
+```
+
+Tous les endpoints se trouvent sous `/public`, par exemple :
+
+```
+https://api.callin.io/api/public/v1/agents
+```
+
+## Authentification
+
+Tous les endpoints (sauf le contrôle de santé) nécessitent une clé API. Pour obtenir la vôtre, cliquez sur votre nom en bas de la barre latérale gauche pour ouvrir les **Paramètres du profil**, puis ouvrez l'onglet **Clés API**.
+
+Vous pouvez l'envoyer de deux façons :
+
+**En-tête**
+```http
+x-api-key: <your-api-key>
+```
+
+**Jeton Bearer**
+```http
+Authorization: Bearer <your-api-key>
+```
+
+> **Important :** Vous pouvez régénérer votre clé depuis le même onglet **Clés API**. La régénération invalide immédiatement l'ancienne clé, alors mettez-la d'abord à jour partout où vous l'utilisez.
+
+> **Astuce :** L'endpoint de contrôle de santé `GET /public/health` ne nécessite pas de clé API. Utilisez-le pour vérifier votre connexion.
+
+## Format des réponses
+
+Toutes les réponses sont en JSON et suivent la même structure :
+
+| Champ | Description |
+|---|---|
+| `success` | `true` ou `false` |
+| `data` | La ressource ou le résultat renvoyé |
+| `error` | Le message d'erreur si `success` vaut `false` |
+| `pagination` | Présent sur les endpoints qui renvoient des listes |
+
+## Essayez-la en direct
+
+Chaque page d'endpoint inclut un espace de test de l'API. Choisissez un serveur, ajoutez votre clé API et envoyez de vraies requêtes directement depuis la documentation, sans autre outil.
+
+## Ce que vous pouvez créer
+
+- **Agents vocaux IA** : créez, modifiez et gérez les agents et leur comportement
+- **Bases de connaissances** : importez et gérez le contenu que vos agents utilisent pendant les appels
+- **Campagnes** : créez, planifiez, lancez et arrêtez des campagnes d'appels sortants
+- **Contacts** : créez, importez et gérez les contacts que vos agents appellent
+- **Journaux et transcriptions** : récupérez les journaux, transcriptions et enregistrements de chaque appel

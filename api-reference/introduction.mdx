@@ -3,7 +3,7 @@ title: Introduction
 description: Build, manage, and monitor AI voice agents using the Callin public API
 ---
 
-The Callin API lets you programmatically integrate AI voice agents into your product. Use it to create and configure agents, manage their knowledge bases, trigger calls, and retrieve call logs and transcripts — all over a simple REST interface.
+The Callin API lets you programmatically integrate AI voice agents into your product. Use it to create and configure agents, manage their knowledge bases, run call campaigns, manage contacts, and retrieve call logs and transcripts — all over a simple REST interface.
 
 **Base URL**
 
@@ -19,7 +19,7 @@ https://api.callin.io/api/public/v1/agents
 
 ## Authentication
 
-All endpoints (except the health check) require an API key. You can find yours in **Profile → API Key** on the Callin dashboard.
+All endpoints (except the health check) require an API key. To get yours, click your name at the bottom of the left sidebar to open your **Profile**, then open the **API Keys** tab.
 
 Pass it in either of these ways:
 
@@ -33,9 +33,9 @@ x-api-key: <your-api-key>
 Authorization: Bearer <your-api-key>
 ```
 
-> **Regenerating your API key** — You can regenerate your key from the same Profile → API Key section. Note that regenerating immediately invalidates your previous key, so make sure to update it everywhere it's in use before regenerating.
+> **Important:** You can regenerate your key from the same **API Keys** tab. Regenerating immediately invalidates your previous key, so update it everywhere it's in use first.
 
-> The health check endpoint `GET /public/health` is unauthenticated and can be used to verify connectivity.
+> **Tip:** The health check endpoint `GET /public/health` doesn't need an API key. Use it to check your connection.
 
 ## Response format
 
@@ -56,4 +56,6 @@ Every endpoint page includes an API playground. Select a server, add your API ke
 
 - **AI voice agents** — create, update, and manage agents and their behavior
 - **Knowledge bases** — upload and manage the content your agents use during calls
-- **Call logs & transcripts** — retrieve records and transcripts for every call
+- **Campaigns** — create, schedule, launch, and stop outbound call campaigns
+- **Contacts** — create, import, and manage the contacts your agents call
+- **Call logs & transcripts** — retrieve records, transcripts, and recordings for every call

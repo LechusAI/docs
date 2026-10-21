@@ -1,0 +1,61 @@
+---
+title: Einführung
+description: Erstellen, verwalten und überwachen Sie KI-Sprachagenten mit der öffentlichen API von Callin
+---
+
+Mit der API von Callin binden Sie KI-Sprachagenten programmatisch in Ihr Produkt ein. Damit erstellen und konfigurieren Sie Agenten, verwalten ihre Wissensdatenbanken, starten Anrufkampagnen, verwalten Kontakte und rufen Anrufprotokolle und Transkripte ab – alles über eine einfache REST-Schnittstelle.
+
+**Basis-URL**
+
+```
+https://api.callin.io/api
+```
+
+Alle Endpunkte liegen unter `/public`, zum Beispiel:
+
+```
+https://api.callin.io/api/public/v1/agents
+```
+
+## Authentifizierung
+
+Alle Endpunkte (außer dem Statuscheck) benötigen einen API-Schlüssel. Um Ihren zu finden, klicken Sie unten in der linken Seitenleiste auf Ihren Namen, um die **Profileinstellungen** zu öffnen, und öffnen Sie den Tab **API-Schlüssel**.
+
+Sie können ihn auf zwei Arten senden:
+
+**Header**
+```http
+x-api-key: <your-api-key>
+```
+
+**Bearer-Token**
+```http
+Authorization: Bearer <your-api-key>
+```
+
+> **Wichtig:** Im selben Tab **API-Schlüssel** können Sie Ihren Schlüssel neu erzeugen. Dadurch wird der alte Schlüssel sofort ungültig, aktualisieren Sie ihn also vorher überall, wo er verwendet wird.
+
+> **Tipp:** Der Statuscheck-Endpunkt `GET /public/health` benötigt keinen API-Schlüssel. Nutzen Sie ihn, um Ihre Verbindung zu prüfen.
+
+## Antwortformat
+
+Alle Antworten sind JSON und haben dieselbe Struktur:
+
+| Feld | Beschreibung |
+|---|---|
+| `success` | `true` oder `false` |
+| `data` | Die zurückgegebene Ressource oder das Ergebnis |
+| `error` | Die Fehlermeldung, wenn `success` `false` ist |
+| `pagination` | Bei Endpunkten, die Listen zurückgeben |
+
+## Live ausprobieren
+
+Jede Endpunktseite enthält eine API-Testumgebung. Wählen Sie einen Server, fügen Sie Ihren API-Schlüssel hinzu und senden Sie echte Anfragen direkt aus der Dokumentation, ohne weiteres Tool.
+
+## Was Sie damit bauen können
+
+- **KI-Sprachagenten**: Agenten und ihr Verhalten erstellen, ändern und verwalten
+- **Wissensdatenbanken**: die Inhalte hochladen und verwalten, die Ihre Agenten in Anrufen nutzen
+- **Kampagnen**: ausgehende Anrufkampagnen erstellen, planen, starten und stoppen
+- **Kontakte**: die Kontakte erstellen, importieren und verwalten, die Ihre Agenten anrufen
+- **Anrufprotokolle und Transkripte**: Protokolle, Transkripte und Aufnahmen jedes Anrufs abrufen
