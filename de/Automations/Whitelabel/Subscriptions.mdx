@@ -1,45 +1,57 @@
 ---
 title: "Abonnements"
-description: "Prüfen Sie, welches Abonnement jeder Kunde hat – inklusive Plan, Preis, Minuten, Status und Daten."
+description: "Prüfen Sie, welches Abonnement jeder Kunde hat: Plan, Preis, Minuten, Status und Daten."
 icon: "repeat"
 ---
 
 ## Wofür diese Seite da ist
 
-Die Seite **Abonnements** zeigt Ihnen eine **Nur-Lese-Übersicht** über die Abonnements Ihrer Kunden.
+Die Seite **Abonnements** gibt Ihnen einen Überblick über die Abonnements aller Ihrer Kunden. Sie finden sie in der White-Label-Plattform unter **Pläne und Abrechnung** ([hier öffnen](https://app.callin.io/cms/subscriptions)).
 
-Sie ist zum Prüfen gedacht (nicht zum Bearbeiten), damit Sie schnell Fragen beantworten können wie:
+Sie dient zum Nachschlagen, damit Sie schnell Fragen beantworten können wie:
 
 - „Welchen Plan hat dieser Kunde?“
-- „Ist das Abonnement aktiv, überfällig oder gekündigt?“
+- „Ist sein Abonnement aktiv, in der Testphase, überfällig oder storniert?“
 - „Wie viele Minuten sind enthalten und wie viele wurden genutzt?“
 - „Wann hat das Abonnement begonnen und wann endet es?“
 
-> **Tipp:** Exakte Bezeichnungen und verfügbare Optionen können je nach Konto, Plan und Spracheinstellung variieren.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subscriptions.png" alt="Seite Abonnements mit der Suche und der Meldung Keine Abonnements" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Seite Abonnements, bevor ein Kunde ein Abonnement abgeschlossen hat. Sobald Ihre Kunden einen Plan abonnieren, erscheinen sie hier.
+</p>
+
+> **Tipp:** Abonnements erscheinen hier, wenn Ihre Kunden einen Ihrer [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans) abonnieren und über Stripe bezahlen. Bis dahin sehen Sie **Keine Abonnements**.
 
 ## So nutzen Sie die Liste
 
 ### Abonnements suchen
 
-Oben können Sie über das Feld **Search subscriptions…** einen Kunden schnell finden (zum Beispiel per E-Mail oder Name).
+Oben finden Sie mit dem Feld **Abonnements suchen…** schnell einen Kunden (zum Beispiel per E-Mail oder Name). Gibt es keine Treffer, sehen Sie **Keine Abonnements gefunden**: Versuchen Sie eine andere Suche.
 
 ### Spalten verstehen
 
-In der Tabelle sehen Sie typischerweise:
+Jede Zeile ist ein Abonnement:
 
-- **User**: die Kennung des Kunden (oft die E-Mail, manchmal der Name)
-- **Plan**: der Planname (zum Beispiel monatlich oder pay-as-you-go)
-- **Price**: der Preis des Plans (falls für diesen Plan angezeigt)
-- **Minutes**: enthaltene Minuten und Nutzung (zum Beispiel „Used“)
-- **Status**: der aktuelle Abostatus
-- **Start Date** und **End Date**: der Abrechnungszeitraum
+- **Benutzer**: der Kunde (E-Mail oder Name).
+- **Plan**: der Name des Plans und sein Typ: **Monatlich**, **Jährlich**, **Einmalig** oder **Pay-as-you-go**. Pläne in der kostenlosen Testphase zeigen das Badge **Testversion**.
+- **Preis**: die Kosten des Plans.
+- **Minuten**: die enthaltenen und die **verwendeten** Minuten.
+- **Status**: der aktuelle Status des Abonnements (siehe unten).
+- **Startdatum** und **Enddatum**: der Zeitraum des Abonnements.
+
+In jeder Zeile können Sie außerdem die **Abonnement-ID kopieren**, etwa um die Zahlung in Stripe zu finden oder sie an den Callin-Support weiterzugeben.
 
 ## Beispiele für Abostatus
 
-In der Liste können Status wie diese erscheinen:
+Die Liste kann diese Status anzeigen:
 
-- **Active**: das Abonnement läuft aktuell
-- **Past Due**: eine Zahlung ist überfällig
-- **Canceled**: das Abonnement wurde gekündigt
+- **Aktiv**: Das Abonnement läuft und ist bezahlt.
+- **Testphase**: Der Kunde ist in der kostenlosen Testphase.
+- **Überfällig**: Die letzte Zahlung ist fehlgeschlagen und Stripe versucht es erneut.
+- **Unbezahlt**: Die Zahlung konnte nach den Wiederholungen nicht eingezogen werden.
+- **Storniert**: Das Abonnement wurde storniert.
 
-> **Wichtig:** Wenn ein Kunde sagt „ich habe bezahlt“, der Status aber nicht **Active** ist, sind die häufigsten Checks: die richtige Nutzer/E-Mail und der aktuelle Abostatus auf dieser Seite.
+> **Wichtig:** Wenn ein Kunde sagt „Ich habe bezahlt“, sein Status aber nicht **Aktiv** ist, prüfen Sie zuerst, ob er die richtige E-Mail und das richtige Konto verwendet. Sehen Sie sich dann hier seinen Status und seine Abrechnung unter [Benutzer](/de/Automations/Whitelabel/Clients) → **Abonnements** → **Rechnungsdetails anzeigen** an.

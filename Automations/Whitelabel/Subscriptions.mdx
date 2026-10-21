@@ -6,40 +6,52 @@ icon: "repeat"
 
 ## What this page is for
 
-The **Subscriptions** page gives you a **read-only overview** of the subscriptions your customers have.
+The **Subscriptions** page gives you an overview of all your customers’ subscriptions. You’ll find it in the White Label Platform, under **Plans & Billing** ([open it here](https://app.callin.io/cms/subscriptions)).
 
-It’s designed for reviewing—not for editing—so you can quickly answer questions like:
+It’s designed for reviewing, so you can quickly answer questions like:
 
 - “Which plan is this customer on?”
-- “Is their subscription active, past due, or canceled?”
+- “Is their subscription active, in trial, past due, or canceled?”
 - “How many minutes are included and how many have been used?”
 - “When did the subscription start and when does it end?”
 
-> **Tip:** The exact labels and available options can vary depending on your account, plan, and language settings.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subscriptions.png" alt="Subscriptions page with the Search subscriptions box and the No subscriptions message" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Subscriptions page before any customer has subscribed. When your customers subscribe to a plan, they appear here.
+</p>
+
+> **Tip:** Subscriptions appear here when your customers subscribe to one of your [Subscription Plans](/Automations/Whitelabel/SubscriptionsPlans) and pay through Stripe. Until then, you’ll see **No subscriptions**.
 
 ## How to use the list
 
 ### Search subscriptions
 
-At the top, use the **Search subscriptions…** field to find a customer quickly (for example, by email or name).
+At the top, use the **Search subscriptions…** field to find a customer quickly (for example, by email or name). If nothing matches, you’ll see **No subscriptions found**: try a different search.
 
 ### Understand the columns
 
-In the table you’ll typically see:
+Each row is one subscription:
 
-- **User**: the customer’s identifier (often email, sometimes name)
-- **Plan**: the plan name (for example, a monthly plan or pay-as-you-go)
-- **Price**: the cost of the plan (if shown for that plan)
-- **Minutes**: included minutes and usage (for example, “Used”)
-- **Status**: the current state of the subscription
-- **Start Date** and **End Date**: the subscription period
+- **User**: the customer (email or name).
+- **Plan**: the plan name and its type: **Monthly**, **Annual**, **One Time** or **Pay-as-you-go**. Plans in a free trial show a **Trial** badge.
+- **Price**: the cost of the plan.
+- **Minutes**: the minutes included and how many have been **Used**.
+- **Status**: the current state of the subscription (see below).
+- **Start Date** and **End Date**: the subscription period.
+
+From each row you can also **Copy Subscription ID**, for example to find the payment in Stripe or to share it with Callin support.
 
 ## Subscription status examples
 
-The list may show statuses like:
+The list can show these statuses:
 
-- **Active**: the subscription is currently running
-- **Past Due**: payment is overdue
-- **Canceled**: the subscription was canceled
+- **Active**: the subscription is running and paid.
+- **Trialing**: the customer is in the free trial period.
+- **Past Due**: the last payment failed and Stripe is retrying it.
+- **Unpaid**: the payment wasn’t collected after the retries.
+- **Canceled**: the subscription was canceled.
 
-> **Important:** If a customer says “I paid” but their status is not **Active**, the most common checks are: the correct user/email and the current subscription status on this page.
+> **Important:** If a customer says “I paid” but their status isn’t **Active**, first check that they’re using the right email and account. Then look at their status here and at their billing in [Users](/Automations/Whitelabel/Clients) → **Subscriptions** → **View Billing Details**.
