@@ -14,19 +14,43 @@ After you set up plans here, you typically use them to:
 - Decide whether customers can buy extra minutes after they consume their included minutes.
 - Mark one plan as **Popular** so it stands out on your pricing page (if shown in your setup).
 
-[Click here to open Subscription Plans](https://app.callin.io/cms/subscription-plans)
+You’ll find it in the White Label Platform, under **Plans & Billing** ([open it here](https://app.callin.io/cms/subscription-plans)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/subscriptionsplans1.png" alt="Subscription Plans page showing the Create Plan button, a search bar, a plans table, and a three-dot actions menu with Copy Plan ID, Edit Plan, and Deactivate Plan." style={{ width:"100%", display:"block" }} />
+  <img src="/images/subscriptionsplans1.png" alt="Subscription Plans page with the Recharge rate and Create Plan buttons, the Connect Stripe to create plans notice with the Connect Stripe button, the Search subscription plans box and the No subscription plans found message" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Subscription Plans list, where you can search plans, create a new one, and manage existing plans from the actions menu.
+  Screenshot: the Subscription Plans page before Stripe is connected. Create Plan stays disabled until you connect it.
 </p>
+
+### Connect Stripe first
+
+To create plans, your White Label needs Stripe connected. Until it is, you’ll see **Connect Stripe to create plans** and **Create Plan** stays disabled: without Stripe, your customers can’t subscribe.
+
+Click **Connect Stripe** in the notice, or connect it from [Integrations](/Automations/Whitelabel/Stripe).
+
+### Recharge rate
+
+Besides plans, your customers can buy minutes of credit from their billing page. **Recharge rate** sets the price per minute they pay when they recharge.
+
+1. Click **Recharge rate**. The **Set recharge rate** window opens.
+2. In **Rate per minute**, enter the price per minute in your currency (for example, `0.16`).
+3. Click **Update**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-plans-recharge.png" alt="Set recharge rate window with the Rate per minute field and the Cancel and Update buttons" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Set recharge rate window.
+</p>
+
+> **Tip:** Set the recharge rate above your own cost per minute, so recharges keep your margin. See [Billing and Fees](/Billing).
 
 ## Create a new subscription plan
 
-From **Plans & Billing → Subscription Plans**, click **Create Plan**. A guided flow will walk you through the setup step by step.
+Once Stripe is connected, go to **Plans & Billing → Subscription Plans** and click **Create Plan**. A guided flow walks you through the setup step by step.
 
 > **Tip:** Before creating plans, decide your tiers and pricing on paper first (e.g., “Starter: 400 minutes/month for \$300”). It makes the setup faster and avoids later changes.
 
@@ -143,10 +167,10 @@ Inside the editor you typically see tabs such as:
 
 ## Manage plan lifecycle (Copy ID, deactivate, and search)
 
-From the plan list actions menu, you can typically:
+From the plan list you can:
 
 - **Copy Plan ID**: Useful for support, troubleshooting, or matching the plan inside other areas of the platform.
 - **Deactivate Plan**: Stops offering the plan to new users.
-- **Search**: Use the search bar to quickly find a plan by name.
+- **Search**: use **Search subscription plans…** to find a plan by name.
 
 > **Common mistake:** Deactivating a plan without first creating a replacement. If you need to retire a plan, create the new plan first, then deactivate the old one so new customers don’t get stuck without options.
