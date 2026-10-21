@@ -13,19 +13,43 @@ En la práctica, esta sección te ayuda a:
 - Controlar si se permiten **minutos adicionales** una vez se consumen los incluidos.
 - Destacar un plan como “recomendado” (si esa opción está disponible en tu cuenta).
 
-[Haz clic aquí para ir a Planes de suscripción](https://app.callin.io/cms/subscription-plans)
+Lo encontrarás en la Plataforma white label, dentro de **Planes y facturación** ([ábrelo aquí](https://app.callin.io/cms/subscription-plans)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/subscriptionsplans1.png"
-    alt="Pantalla de Planes de suscripción con un botón para crear un plan, una barra de búsqueda, una tabla con planes y un menú de acciones de tres puntos con opciones para copiar el ID del plan, editarlo o desactivarlo."
+    alt="Página Planes de suscripción con los botones Tarifa de recarga y Crear plan, el aviso Conecta Stripe para crear planes con el botón Conectar Stripe, el buscador y el mensaje de que no hay planes"
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: listado de planes, con búsqueda, creación de planes y un menú de acciones para gestionar cada plan.
+  Captura: la página Planes de suscripción antes de conectar Stripe. Crear plan sigue desactivado hasta que lo conectes.
 </p>
+
+### Conecta Stripe primero
+
+Para crear planes, tu White Label necesita tener Stripe conectado. Mientras no lo esté, verás **Conecta Stripe para crear planes** y el botón **Crear plan** estará desactivado: sin Stripe, tus clientes no pueden suscribirse.
+
+Haz clic en **Conectar Stripe** en el aviso, o conéctalo desde [Integraciones](/es/Automations/Whitelabel/Stripe).
+
+### Tarifa de recarga
+
+Además de los planes, tus clientes pueden comprar minutos de crédito desde su página de facturación. La **Tarifa de recarga** es el precio por minuto que pagan cuando recargan.
+
+1. Haz clic en **Tarifa de recarga**. Se abre la ventana **Configurar tarifa de recarga**.
+2. En **Tarifa por minuto**, escribe el precio por minuto en tu moneda (por ejemplo, `0.16`).
+3. Haz clic en **Actualizar**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-plans-recharge.png" alt="Ventana Configurar tarifa de recarga con el campo Tarifa por minuto y los botones Cancelar y Actualizar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la ventana Configurar tarifa de recarga.
+</p>
+
+> **Consejo:** Pon una tarifa de recarga por encima de tu propio coste por minuto, para que las recargas mantengan tu margen. Consulta [Facturación y comisiones](/es/Billing).
 
 ## Crear un nuevo plan de suscripción
 

@@ -13,19 +13,43 @@ In pratica, questa sezione ti aiuta a:
 - Decidere se consentire **minuti aggiuntivi** una volta consumati quelli inclusi.
 - Mettere in evidenza un piano come “consigliato” (se l’opzione è disponibile nel tuo account).
 
-[Fai clic qui per aprire i Piani di abbonamento](https://app.callin.io/cms/subscription-plans)
+La trovi nella Piattaforma white label, in **Piani e fatturazione** ([aprila qui](https://app.callin.io/cms/subscription-plans)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
   <img
     src="/images/subscriptionsplans1.png"
-    alt="Schermata dei piani di abbonamento con un pulsante per creare un piano, una barra di ricerca, una tabella dei piani e un menu azioni a tre puntini con opzioni per copiare l’ID del piano, modificarlo o disattivarlo."
+    alt="Pagina Piani di abbonamento con i pulsanti Tariffa di ricarica e Crea piano, l'avviso Collega Stripe per creare i piani con il pulsante Collega Stripe, la ricerca e il messaggio che non ci sono piani"
     style={{ width:"100%", display:"block" }}
   />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: elenco dei piani con ricerca, creazione e menu azioni per gestire ogni piano.
+  Schermata: la pagina Piani di abbonamento prima di collegare Stripe. Crea piano resta disattivato finché non lo colleghi.
 </p>
+
+### Collega prima Stripe
+
+Per creare piani, il tuo White Label deve avere Stripe collegato. Finché non lo è, vedrai **Collega Stripe per creare i piani** e il pulsante **Crea piano** resta disattivato: senza Stripe i tuoi clienti non possono abbonarsi.
+
+Clicca su **Collega Stripe** nell’avviso, oppure collegalo da [Integrazioni](/it/Automations/Whitelabel/Stripe).
+
+### Tariffa di ricarica
+
+Oltre ai piani, i tuoi clienti possono acquistare minuti di credito dalla loro pagina di fatturazione. La **Tariffa di ricarica** è il prezzo al minuto che pagano quando ricaricano.
+
+1. Clicca su **Tariffa di ricarica**. Si apre la finestra **Imposta tariffa di ricarica**.
+2. In **Tariffa al minuto**, inserisci il prezzo al minuto nella tua valuta (ad esempio `0.16`).
+3. Clicca su **Aggiorna**.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-plans-recharge.png" alt="Finestra Imposta tariffa di ricarica con il campo Tariffa al minuto e i pulsanti Annulla e Aggiorna" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: la finestra Imposta tariffa di ricarica.
+</p>
+
+> **Suggerimento:** Imposta una tariffa di ricarica superiore al tuo costo al minuto, così le ricariche mantengono il tuo margine. Vedi [Fatturazione e commissioni](/it/Billing).
 
 ## Creare un nuovo piano di abbonamento
 
