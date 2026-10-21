@@ -1,0 +1,61 @@
+---
+title: Introduzione
+description: Crea, gestisci e monitora agenti vocali IA con l'API pubblica di Callin
+---
+
+L'API di Callin ti permette di integrare agenti vocali IA nel tuo prodotto in modo programmatico. Usala per creare e configurare agenti, gestire le loro basi di conoscenza, avviare campagne di chiamate, gestire i contatti e recuperare registri e trascrizioni delle chiamate, tutto tramite una semplice interfaccia REST.
+
+**URL di base**
+
+```
+https://api.callin.io/api
+```
+
+Tutti gli endpoint partono da `/public`, ad esempio:
+
+```
+https://api.callin.io/api/public/v1/agents
+```
+
+## Autenticazione
+
+Tutti gli endpoint (tranne il controllo di stato) richiedono una chiave API. Per ottenere la tua, clicca sul tuo nome in fondo alla barra laterale sinistra per aprire le **Impostazioni profilo**, poi apri la scheda **Chiavi API**.
+
+Puoi inviarla in due modi:
+
+**Intestazione**
+```http
+x-api-key: <your-api-key>
+```
+
+**Token Bearer**
+```http
+Authorization: Bearer <your-api-key>
+```
+
+> **Importante:** Puoi rigenerare la chiave dalla stessa scheda **Chiavi API**. La rigenerazione rende subito non valida la chiave precedente, quindi aggiornala prima ovunque la usi.
+
+> **Suggerimento:** L'endpoint di controllo dello stato `GET /public/health` non richiede una chiave API. Usalo per verificare la connessione.
+
+## Formato delle risposte
+
+Tutte le risposte sono in JSON e seguono la stessa struttura:
+
+| Campo | Descrizione |
+|---|---|
+| `success` | `true` o `false` |
+| `data` | La risorsa o il risultato restituito |
+| `error` | Il messaggio di errore se `success` è `false` |
+| `pagination` | Presente negli endpoint che restituiscono elenchi |
+
+## Provala dal vivo
+
+Ogni pagina di endpoint include un ambiente di prova dell'API. Scegli un server, aggiungi la tua chiave API e invia richieste reali direttamente dalla documentazione, senza altri strumenti.
+
+## Cosa puoi creare
+
+- **Agenti vocali IA**: crea, aggiorna e gestisci gli agenti e il loro comportamento
+- **Basi di conoscenza**: carica e gestisci i contenuti che i tuoi agenti usano durante le chiamate
+- **Campagne**: crea, pianifica, avvia e interrompi campagne di chiamate in uscita
+- **Contatti**: crea, importa e gestisci i contatti che i tuoi agenti chiamano
+- **Registri e trascrizioni**: recupera i registri, le trascrizioni e le registrazioni di ogni chiamata
