@@ -1,0 +1,86 @@
+---
+title: "Subkonto-Management"
+description: "Prüfen Sie die KI-Agenten und Anrufe der Kunden Ihres White Labels und legen Sie für jeden Agenten ein Anrufminuten-Limit fest."
+icon: "users-gear"
+---
+
+## Was ist das Subkonto-Management
+
+Jeder Kunde, den Sie zu Ihrem White Label hinzufügen, hat ein eigenes Konto: ein **Subkonto**. Im **Subkonto-Management** sehen Sie an einem Ort die KI-Agenten, die Ihre Kunden erstellt haben, und die Anrufe, die sie führen und empfangen.
+
+Sie finden es am Ende des Menüs der White-Label-Plattform ([hier öffnen](https://app.callin.io/cms/subaccount-management)). Es hat zwei Tabs: **KI-Agenten** und **Anrufliste**.
+
+> **Tipp:** Nutzen Sie es, wenn ein Kunde Sie um Hilfe bittet: Sie sehen die Einrichtung seines Agenten und seine Anrufe, ohne sich in sein Konto einzuloggen.
+
+## KI-Agenten
+
+Der Tab **KI-Agenten** listet die Agenten aller Ihrer Subkonten.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-agents.png" alt="Subkonto-Management im Tab KI-Agenten mit den Filtern Alle, Eingehend und Ausgehend, der Agentensuche und der Schaltfläche Aktualisieren" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab KI-Agenten. Sobald Ihre Kunden Agenten erstellen, erscheinen sie hier.
+</p>
+
+- Filtern Sie mit **Alle**, **Eingehend** und **Ausgehend** nach Agententyp.
+- Finden Sie einen Agenten über die Suche.
+- Klicken Sie auf **Aktualisieren**, um die neuesten Änderungen zu laden.
+
+### Agentendetails
+
+Öffnen Sie einen Agenten, um seine **Agentendetails** schreibgeschützt zu sehen:
+
+- **Agenten-Metadaten**: Kategorie, Vorlage, Ziel, Website, Modus, Tags und **Zugewiesene Nummer**.
+- Die **Begrüßungsnachricht** und den **Prompt**.
+- **Funktionen & Einstellungen**: zum Beispiel **Anrufweiterleitung**, **Maximale Anrufdauer**, **Anrufe aufzeichnen**, **Voicemail-Erkennung** und **Benutzer spricht zuerst**.
+- **KI-Konfiguration**: **LLM**, **Temperatur**, **Stimme**, **Sprachen** und **Wissensdatenbank**.
+- Die Aktionen des Agenten, etwa **Auf Google planen**, **Anruf weiterleiten**, **E-Mail senden** und **Anrufe abmelden**, sowie seine **Datenextraktion**, den Webhook nach dem Anruf und die **Wiederholkonfiguration**.
+
+### Anrufminuten-Limit
+
+Mit dem **Nutzungslimit** begrenzen Sie, wie viele Anrufminuten ein Agent nutzen darf. Die Abonnementabrechnung des Kunden ändert sich dadurch nicht: Es ist ein zusätzliches Limit.
+
+Das Fenster **Anrufminuten-Limit** hat vier Tabs:
+
+- **Einstellungen**: Schalten Sie **Anrufminuten dieses Agents begrenzen** ein und wählen Sie **Wie soll das Limit funktionieren?**:
+  - **Setzt sich jeden Monat zurück**: Die Minuten beginnen jeden Monat neu. Wählen Sie **Wann beginnt jeder Monat?**.
+  - **Festes Kontingent bis zum Ablauf**: eine feste Minutenzahl bis zu einem Datum. Wählen Sie **Wann soll dieses Limit enden?**.
+
+  Geben Sie dann die **Maximal erlaubte Minuten** ein und klicken Sie auf **Einstellungen speichern**.
+- **Minuten hinzufügen**: fügt Minuten hinzu, ohne die bereits gezählte Nutzung zu löschen. Waren Anrufe blockiert, funktionieren sie nach dem Speichern wieder.
+- **Nutzung zurücksetzen**: setzt die Nutzung auf null und legt ein neues Kontingent fest, etwa zu Beginn eines neuen Zeitraums.
+- **Verlauf**: jede Änderung mit den hinzugefügten oder abgezogenen Minuten und dem eingetragenen **Grund**.
+
+Oben sehen Sie die **Nutzung in dieser Periode**: verbleibende Minuten, Minuten laufender Anrufe, Limittyp und Daten.
+
+Ist ein Agent fast am Limit, sehen Sie **Fast aufgebraucht**. Hat er alle Minuten verbraucht, sehen Sie **Anrufe blockiert**: Die Anrufe pausieren, bis Sie Minuten hinzufügen oder das Limit zurücksetzen.
+
+> **Wichtig:** Bei **Festes Kontingent bis zum Ablauf** stoppen die Anrufe auch, wenn das Enddatum vorbei ist. Legen Sie ein neues Datum fest oder wechseln Sie zu **Setzt sich jeden Monat zurück**.
+
+## Anrufliste
+
+Der Tab **Anrufliste** zeigt die Anrufe aller Ihrer Subkonten, mit denselben Filtern wie die [Anrufliste](/de/Create-AI-Agent/Call-Actions) der Agenten.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-calls.png" alt="Subkonto-Management im Tab Anrufliste mit der Schaltfläche CSV exportieren, der Transkriptsuche und den Filtern Telefonnummer, Anruf-ID, Agent, Squad, Status, Richtung und weiteren" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: der Tab Anrufliste und seine Filter.
+</p>
+
+- Die Transkriptsuche findet Anrufe anhand des Gesagten.
+- Filtern Sie nach Telefonnummer, Anruf-ID, Agent, Squad, Status, Richtung, Termin, Anrufweiterleitung, Voicemail, Zeitraum, Dauer, Herkunft, Kampagnen-ID, Stimmung oder Ticket-ID.
+- Klicken Sie auf **CSV exportieren**, um die angezeigten Anrufe herunterzuladen.
+
+## Fehlerbehebung
+
+**Problem:** Die Liste zeigt **Keine Subkonto-Agenten gefunden**.\
+**Ursache:** Ihre Kunden haben noch keine Agenten erstellt, oder Suche oder Filter blenden sie aus.\
+**Lösung:** Leeren Sie die Suche, wählen Sie **Alle** und klicken Sie auf **Aktualisieren**.
+
+**Problem:** Ein Kunde sagt, sein Agent ruft nicht mehr an.\
+**Ursache:** Der Agent hat vielleicht sein Minutenlimit (**Anrufe blockiert**) oder sein Enddatum erreicht.\
+**Lösung:** Öffnen Sie das **Nutzungslimit** des Agenten und nutzen Sie **Minuten hinzufügen**, **Nutzung zurücksetzen** oder legen Sie ein neues Enddatum fest.

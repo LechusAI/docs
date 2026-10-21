@@ -1,0 +1,86 @@
+---
+title: "Gestión de subcuentas"
+description: "Revisa los agentes de IA y las llamadas de los clientes de tu White Label y pon un límite de minutos de llamada a cada agente."
+icon: "users-gear"
+---
+
+## Qué es la Gestión de subcuentas
+
+Cada cliente que añades a tu White Label tiene su propia cuenta: una **subcuenta**. La **Gestión de subcuentas** te permite revisar desde un solo sitio los agentes de IA que han creado tus clientes y las llamadas que hacen y reciben.
+
+La encontrarás al final del menú de la Plataforma white label ([ábrela aquí](https://app.callin.io/cms/subaccount-management)). Tiene dos pestañas: **Agentes de IA** e **Historial de llamadas**.
+
+> **Consejo:** Úsala cuando un cliente te pida ayuda: puedes ver la configuración de su agente y sus llamadas sin entrar en su cuenta.
+
+## Agentes de IA
+
+La pestaña **Agentes de IA** muestra los agentes de todas tus subcuentas.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-agents.png" alt="Gestión de subcuentas en la pestaña Agentes de IA con los filtros Todos, Entrante y Saliente, el buscador de agentes y el botón Actualizar" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Agentes de IA. Cuando tus clientes crean agentes, aparecen aquí.
+</p>
+
+- Usa **Todos**, **Entrante** y **Saliente** para filtrar por tipo de agente.
+- Usa el buscador para encontrar un agente.
+- Haz clic en **Actualizar** para cargar los últimos cambios.
+
+### Detalles del agente
+
+Abre un agente para ver sus **Detalles del agente**, en modo solo lectura:
+
+- **Metadatos del agente**: categoría, plantilla, objetivo, web, modo, etiquetas y **Número asignado**.
+- El **Mensaje de saludo** y el **Prompt**.
+- **Funciones y configuración**: por ejemplo **Transferencia de llamada**, **Duración máxima de llamada**, **Grabar llamadas**, **Detección de buzón de voz** y **El usuario habla primero**.
+- **Configuración de IA**: **LLM**, **Temperatura**, **Voz**, **Idiomas** y **Base de conocimientos**.
+- Las acciones del agente, como **Programar en Google**, **Transferir llamada**, **Enviar un correo** y **Excluir llamadas**, y su **Extracción de datos**, su **Webhook posterior a la llamada** y su **Configuración de reintento**.
+
+### Límite de minutos de llamada
+
+Con **Límite de uso** puedes limitar cuántos minutos de llamada puede usar un agente. No cambia la facturación de la suscripción del cliente: es un límite adicional.
+
+La ventana **Límite de minutos de llamada** tiene cuatro pestañas:
+
+- **Configuración**: activa **Limitar los minutos de llamada de este agente** y elige **¿Cómo debe funcionar el límite?**:
+  - **Se reinicia cada mes**: los minutos vuelven a empezar cada mes. Elige **¿Cuándo empieza cada mes?**.
+  - **Cupo fijo hasta el vencimiento**: un número de minutos hasta una fecha. Elige **¿Cuándo debe terminar este límite?**.
+
+  Después indica el **Máximo de minutos permitidos** y haz clic en **Guardar ajustes**.
+- **Añadir minutos**: suma minutos sin borrar el uso ya contado. Si las llamadas estaban bloqueadas, vuelven a funcionar al guardar.
+- **Restablecer uso**: pone el uso a cero y fija un nuevo cupo, por ejemplo al empezar un periodo nuevo.
+- **Historial**: cada cambio, con los minutos añadidos o quitados y el **Motivo** que escribiste.
+
+Arriba verás el **Uso en este período**: los minutos que quedan, los minutos de las llamadas en curso, el tipo de límite y sus fechas.
+
+Cuando un agente está cerca de su límite, verás **Casi agotado**. Cuando gasta todos sus minutos, verás **Llamadas bloqueadas**: las llamadas se pausan hasta que añadas minutos o restablezcas el límite.
+
+> **Importante:** Con **Cupo fijo hasta el vencimiento**, las llamadas también se paran al pasar la fecha de fin. Pon una fecha nueva o cambia a **Se reinicia cada mes**.
+
+## Historial de llamadas
+
+La pestaña **Historial de llamadas** muestra las llamadas de todas tus subcuentas, con los mismos filtros que el [Historial de llamadas](/es/Create-AI-Agent/Call-Actions) de los agentes.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-calls.png" alt="Gestión de subcuentas en la pestaña Historial de llamadas con el botón Exportar CSV, el buscador de transcripciones y los filtros Número de teléfono, ID de llamada, Agente, Squad, Estado, Dirección y más" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Captura: la pestaña Historial de llamadas y sus filtros.
+</p>
+
+- El buscador de transcripciones encuentra llamadas por lo que se dijo.
+- Filtra por número de teléfono, ID de llamada, agente, Squad, estado, dirección, cita, transferencia de llamada, buzón de voz, rango de fechas, duración, origen, ID de campaña, sentimiento o ID del ticket.
+- Haz clic en **Exportar CSV** para descargar las llamadas que estás viendo.
+
+## Solución de problemas
+
+**Problema:** La lista dice **No se encontraron agentes de subcuenta**.\
+**Causa:** Tus clientes todavía no han creado agentes, o el buscador o el filtro los ocultan.\
+**Solución:** Borra la búsqueda, elige **Todos** y haz clic en **Actualizar**.
+
+**Problema:** Un cliente dice que su agente ha dejado de llamar.\
+**Causa:** El agente puede haber llegado a su límite de minutos (**Llamadas bloqueadas**) o a su fecha de fin.\
+**Solución:** Abre el **Límite de uso** del agente y usa **Añadir minutos**, **Restablecer uso** o pon una fecha de fin nueva.

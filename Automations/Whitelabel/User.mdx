@@ -1,25 +1,35 @@
 ---
 title: "White Label Configuration"
-description: "Set up your branded app: name, custom domain and DNS, billing defaults, and your customer-facing appearance (colors, logos, favicon, and theme)."
+description: "Set up your branded app: name, custom domain and DNS, currency, language, server location, legal pages, the minutes warning email, and your appearance (colors, logos, favicon and theme)."
 icon: "palette"
 ---
 
 ## What you’ll find on this page
 
-**White Label Configuration** is the control center for your branded app. At the top, you’ll see two tabs:
+**White Label Configuration** is the control center for your branded app. It’s the first section of the White Label Platform, under **App Configuration**. At the top, you’ll see two tabs:
 
-- **Configuration**: core settings that affect how your app works (especially the domain and DNS).
-- **Appearance**: the visual identity your customers will see (colors, logos, favicon, and default theme).
+- **Configuration**: core settings that affect how your app works (name, domain, billing defaults, legal pages and the minutes warning email).
+- **Appearance**: the visual identity your customers will see (colors, email language, logos, favicon and default theme).
 
 Open it here: [Open White Label Configuration](https://app.callin.io/cms/white-label-configuration)
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel01.png" alt="White Label Configuration page on the Configuration tab with fields such as App Name, Custom Domain (with a DNS Configuration button), Currency, App Language, and more." style={{ width:"100%", display:"block" }} />
+  <img src="/images/whitelabel01.png" alt="White Label Configuration page on the Configuration tab with App Name, Custom Domain with the DNS Configuration button, Currency and App Language" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the “Configuration” tab where you define your app name, custom domain, and default settings like currency and language.
+  Screenshot: the Configuration tab, with an example app name and domain.
 </p>
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: app name and domain → DNS Configuration (Provider and Manual) → currency, language and server location → minutes warning email and its preview → Appearance tab.
+</p>
+
+When you change anything, a bar appears at the bottom with **Clear** (undo your changes) and **Save**. Click **Save** before leaving the page.
 
 > **Important:** Some settings can vary depending on your plan and permissions.
 
@@ -27,14 +37,14 @@ Open it here: [Open White Label Configuration](https://app.callin.io/cms/white-l
 
 ### App Name
 
-**App Name** is what customers will recognize across the experience—like the label in the app navigation and page titles.
+**App Name** is shown in the sidebar, page titles, and emails. It’s the name your customers will recognize.
 
 A good rule: use the same name you use in your sales materials.\
 Example: if you sell “Northwind Reception,” set the App Name to **Northwind Reception**.
 
 ### Custom Domain (recommended: use a subdomain)
 
-In **Custom Domain**, enter the domain customers will use to access the app.
+In **Custom Domain**, enter the domain customers will use to access the app, without `http://` or `https://`.
 
 Callin recommends using a **subdomain you control**, for example:
 
@@ -49,32 +59,34 @@ Why a subdomain matters:
 
 ### DNS Configuration
 
-After you enter your custom domain, click **DNS Configuration**. This opens a modal with two ways to set up DNS:
+After you enter your custom domain, click **Save**, then click **DNS Configuration**. Until the domain is saved, you’ll see the message **Please save your domain first before installing SSL or configuring DNS**.
+
+**DNS Configuration** opens a side panel with two ways to set up DNS:
 
 - **Provider** (automatic-assisted)
 - **Manual** (you add the records yourself)
 
 #### Provider (automatic-assisted setup)
 
-Use **Provider** when your DNS provider is supported. The idea is: you select your provider and Callin helps you discover what’s needed for your domain setup.
+Use **Provider** when your domain is managed by **Cloudflare**, **GoDaddy** or **Namecheap**. You select your provider and Callin helps you set up the domain automatically.
 
 What you do:
 
 1. Open the **Provider** tab.
-2. In **DNS Provider**, select your provider (examples you may see include **Cloudflare**, **GoDaddy**, and **Namecheap**).
+2. In **DNS Provider**, select your provider: **Cloudflare**, **GoDaddy** or **Namecheap**.
 3. Click **Discover**.
 
 What to expect:
 
-- Callin will attempt to guide you through the DNS setup for the domain you entered.
-- If something fails, you may see an error banner like “Something went wrong…”—that usually means the domain configuration or DNS records don’t match what’s expected yet.
+- Callin will try to guide you through the DNS setup for the domain you entered.
+- If something fails, you’ll see **Something went wrong. Please check your configuration and DNS records and try after some time.** That usually means the DNS records don’t match what’s expected yet. Wait a little, or use **Manual**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel2.png" alt="DNS Configuration modal on the Provider tab showing a DNS Provider selector (with a searchable list) and a Discover button. An error banner is visible at the top." style={{ width:"100%", display:"block" }} />
+  <img src="/images/whitelabel2.png" alt="DNS Configuration panel on the Provider tab with the DNS Provider list open (Cloudflare, GoDaddy, Namecheap) and the Something went wrong message at the top" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Provider-based DNS setup where you pick a DNS provider (e.g., Cloudflare/GoDaddy/Namecheap) and run Discover.
+  Screenshot: the Provider tab, where you pick Cloudflare, GoDaddy or Namecheap and click Discover.
 </p>
 
 > **Common mistake:** DNS changes don’t apply instantly. If you just edited records, wait a bit and try again.
@@ -87,7 +99,14 @@ Use **Manual** if:
 - Provider setup fails, or
 - You prefer to manage DNS yourself.
 
-On the **Manual** tab, Callin shows a small table of DNS records to create at your registrar/DNS provider. The table includes:
+On the **Manual** tab, Callin shows **Add these DNS records at your registrar** and a table with the records for your domain. For example, for `app.northwindreception.com`:
+
+| Type | Name | Value | TTL |
+| --- | --- | --- | --- |
+| A | `@` | the IP address shown in your panel | 300 or auto |
+| CNAME | `app` | `northwindreception.com` | 300 or auto |
+
+The table includes:
 
 - **Type** (for example, A or CNAME)
 - **Name** (for example, `@` or `app`)
@@ -98,91 +117,121 @@ Your workflow looks like this:
 
 1. Open **Manual**.
 2. Add each DNS record exactly as shown in the table.
-3. When the records are in place, click **Install SSL** to complete the setup.
+3. When the records are in place, click **Install SSL** to finish.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel3.png" alt="DNS Configuration modal on the Manual tab showing a DNS records table with columns Type, Name, Value, TTL, and an Install SSL button below." style={{ width:"100%", display:"block" }} />
+  <img src="/images/whitelabel3.png" alt="DNS Configuration panel on the Manual tab with the message Add these DNS records at your registrar, a table with an A record and a CNAME record, and the Install SSL button" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Manual DNS setup with the exact records to add and the “Install SSL” button to finalize.
+  Screenshot: the Manual tab with the records to add for an example domain, and the Install SSL button.
 </p>
 
 > **Important:** Only click **Install SSL** after the DNS records are added and have propagated. Propagation time depends on your DNS provider.
 
-> **Tip:** If you’re unsure where to add records, search your DNS provider docs for “add A record” and “add CNAME record.” The field names in their UI can vary.
+> **Tip:** If you’re unsure where to add records, search your DNS provider’s help for “add A record” and “add CNAME record.” The field names in their interface can vary.
 
 ### Currency
 
-**Currency** is used for plan prices and billing display. Set it to match how you plan to charge customers (for example, EUR or USD).
+**Currency** is used for plan prices and billing. You can choose **USD - US Dollar**, **AUD - Australian Dollar**, **CAD - Canadian Dollar**, **EUR - Euro**, **GBP - British Pound Sterling** or **BRL - Brazilian Real**. Type in the search box to find one quickly.
 
-This is especially important if you will create **subscription plans** and charge through a payment provider (like Stripe), because customers expect consistency between pricing and billing.
+Set it to match how you plan to charge customers. This is especially important if you will create **subscription plans** and charge through Stripe, because customers expect consistency between pricing and billing.
 
 ### App Language
 
-**App Language** sets the default language your customers will see in the app interface.
+**App Language** sets the default language of the app for your customers. You can choose English, Español, Italiano, Português, हिन्दी (Hindi), Deutsch, Nederlands, Français or Português (Brasil).
 
-If you serve customers in multiple countries, choose the language that fits your primary audience. (Customers may still have different preferences depending on your setup and available languages.)
+If you serve customers in several countries, choose the language of your main audience.
 
 ### Server location
 
-**Server location** lets you choose the geographic region where data is hosted to meet data residency and compliance requirements.
+**Server location** lets you choose the geographic region where your data is hosted, to meet data residency and compliance requirements. You can choose **USA – Ashburn (Virginia)** or **Germany – Frankfurt**.
 
 If you work with customers that have strict requirements (healthcare, finance, public sector), align this setting with what you promised contractually.
 
 ### Privacy Policy and Terms of Use
 
-These fields let you link to your legal pages:
+These fields link to your legal pages:
 
 - **Privacy Policy**: where you explain how you handle personal data.
 - **Terms of Use**: the rules customers agree to when using your service.
 
+Paste the full URL of each page, for example `https://yourdomain.com/privacy`.
+
 > **Tip:** Even if you’re an agency, treat this like a product: publish these pages on your main website (root domain) and link them here.
 
-## Appearance
+### Minutes exhausted warning email
 
-When your domain and core settings are ready, move to the **Appearance** tab to match the UI to your brand.
+**Minutes exhausted warning email** warns your customers by email when their included minutes have been fully used.
+
+1. Turn on **Enable warning email**. The email editor opens.
+2. Write the **Subject**.
+3. Choose the **Body type**: **Normal text** (plain text; line breaks are kept) or **HTML** (raw HTML).
+4. Write the **Body**. By default it includes your app name and your domain.
+5. Click **Preview email** to see the final email your customers will receive, then **Close**.
+
+To edit it later, click **Configure email**. Remember to click **Save**.
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel4.png" alt="White Label Configuration page on the Appearance tab showing color settings, logo uploads (Logo and Dark Logo), a favicon upload, and a Default Theme selector (System/Light/Dark)." style={{ width:"100%", display:"block" }} />
+  <img src="/images/wl-config-warning-email.png" alt="Minutes exhausted warning email editor with the Subject, the Normal text and HTML body types, the Body, and the Preview email and Close buttons" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Appearance tab where you customize colors, upload logos and favicon, and choose a default theme.
+  Screenshot: the warning email editor, with an example app name and domain.
+</p>
+
+> **Tip:** Tell your customers what to do next, for example: “Upgrade your plan or contact us to add more minutes.”
+
+## Appearance
+
+When your domain and core settings are ready, move to the **Appearance** tab to match the app to your brand.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/whitelabel4.png" alt="White Label Configuration page on the Appearance tab with Primary Color, Secondary Color, Email Primary Color, Email CTA Button Color, Email Language and the Logo and Dark Logo uploads" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the Appearance tab, where you set your colors, email language, logos, favicon and default theme.
 </p>
 
 ### Colors
 
-You’ll typically see color controls such as:
+Click a color square to pick a color:
 
-- **Primary Color**: used for buttons and key highlights in the app.
-- **Secondary Color**: used for accents and UI states.
-- **Email Primary Color**: the main accent color in transactional emails.
-- **Email CTA Button Color**: the color used for primary buttons and links inside emails.
+- **Primary Color**: used for buttons and highlights in the app.
+- **Secondary Color**: used for accents and states.
+- **Email Primary Color**: the main accent color in your transactional emails.
+- **Email CTA Button Color**: the color of primary buttons and links inside your emails.
 
-> **Tip:** If your brand already has a style guide, start with your primary brand color, then pick a secondary color that still looks good on both light and dark backgrounds.
+> **Tip:** If your brand already has a style guide, start with your primary brand color, then pick a secondary color that looks good on both light and dark backgrounds.
+
+### Email Language
+
+**Email Language** is the default language of the emails your customers receive. It uses the same languages as **App Language**.
 
 ### Logos (light and dark)
 
-You’ll usually upload:
+Upload two versions of your logo:
 
-- **Logo**: for light backgrounds
-- **Dark Logo**: for dark backgrounds
+- **Logo** (**Select logo**): for light backgrounds.
+- **Dark Logo** (**Select dark logo**): for dark backgrounds.
 
-This matters because the same logo won’t always be readable across themes.
+Use PNG or SVG, up to 2 MB, ideally with a transparent background. The same logo isn’t always readable on both themes.
 
-> **Important:** Use **PNG** (ideally with transparent background) or SVG if available. If your logo appears tiny, it’s often because the image you uploaded includes a large white margin/border around the logo—Callin scales the full image down to fit. A tight, transparent PNG usually solves it.
+> **Important:** If your logo appears tiny, the image usually has a large white margin around it: Callin scales the whole image down to fit. A tightly cropped, transparent PNG usually solves it.
 
 ### Favicon
 
-The **Favicon** is the small icon shown in the browser tab and bookmarks. Use an ICO or PNG sized for favicons (common sizes include 32×32 or 48×48).
+The **Favicon** is the small icon shown in the browser tab and bookmarks. Click **Select favicon** and upload an ICO or PNG of 32×32 or 48×48 pixels, up to 1 MB.
 
 ### Default Theme
 
 **Default Theme** controls how the app looks by default:
 
-- **System**: follows the user’s device theme
-- **Light**: forces light mode
-- **Dark**: forces dark mode
+- **System**: follows each user’s device theme.
+- **Light**: light mode.
+- **Dark**: dark mode.
 
 A practical approach: choose **System** if you want the app to feel native to each user’s preferences.
+
+When you’re done, click **Save**.

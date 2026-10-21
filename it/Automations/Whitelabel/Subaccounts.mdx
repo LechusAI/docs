@@ -1,0 +1,86 @@
+---
+title: "Gestione del sottoconto"
+description: "Controlla gli agenti IA e le chiamate dei clienti del tuo White Label e imposta un limite di minuti di chiamata per ogni agente."
+icon: "users-gear"
+---
+
+## Cos’è la Gestione del sottoconto
+
+Ogni cliente che aggiungi al tuo White Label ha un proprio account: un **sottoconto**. La **Gestione del sottoconto** ti permette di controllare da un unico posto gli agenti IA creati dai tuoi clienti e le chiamate che fanno e ricevono.
+
+La trovi in fondo al menu della Piattaforma white label ([aprila qui](https://app.callin.io/cms/subaccount-management)). Ha due schede: **Agenti AI** e **Storico chiamate**.
+
+> **Suggerimento:** Usala quando un cliente ti chiede aiuto: puoi vedere la configurazione del suo agente e le sue chiamate senza entrare nel suo account.
+
+## Agenti AI
+
+La scheda **Agenti AI** elenca gli agenti di tutti i tuoi sottoconti.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-agents.png" alt="Gestione del sottoconto nella scheda Agenti AI con i filtri Tutti, In entrata e In uscita, la ricerca degli agenti e il pulsante Aggiorna" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: la scheda Agenti AI. Quando i tuoi clienti creano agenti, compaiono qui.
+</p>
+
+- Usa **Tutti**, **In entrata** e **In uscita** per filtrare per tipo di agente.
+- Usa la ricerca per trovare un agente.
+- Clicca su **Aggiorna** per caricare le ultime modifiche.
+
+### Dettagli agente
+
+Apri un agente per vedere i suoi **Dettagli agente**, in sola lettura:
+
+- **Metadati agente**: categoria, modello, obiettivo, sito web, modalità, tag e **Numero assegnato**.
+- Il **Messaggio di saluto** e il **Prompt**.
+- **Funzionalità e impostazioni**: ad esempio **Trasferimento chiamata**, **Durata massima chiamata**, **Registra chiamate**, **Rilevamento segreteria** e **Utente parla per primo**.
+- **Configurazione IA**: **LLM**, **Temperatura**, **Voce**, **Lingue** e **Base di conoscenza**.
+- Le azioni dell’agente, come **Pianifica su Google**, **Trasferisci chiamata**, **Invia email** ed **Escludi chiamate**, e la sua **Estrazione dati**, il **Webhook post-chiamata** e la **Configurazione tentativi**.
+
+### Limite minuti di chiamata
+
+Con **Limite di utilizzo** puoi limitare quanti minuti di chiamata può usare un agente. Non cambia la fatturazione dell’abbonamento del cliente: è un limite in più.
+
+La finestra **Limite minuti di chiamata** ha quattro schede:
+
+- **Impostazioni**: attiva **Limita i minuti di chiamata di questo agente** e scegli **Come deve funzionare il limite?**:
+  - **Si azzera ogni mese**: i minuti ripartono ogni mese. Scegli **Quando inizia ogni mese?**.
+  - **Monte fisso fino alla scadenza**: un numero di minuti fino a una data. Scegli **Quando deve terminare questo limite?**.
+
+  Poi indica il **Massimo di minuti consentiti** e clicca su **Salva impostazioni**.
+- **Aggiungi minuti**: aggiunge minuti senza cancellare l’utilizzo già contato. Se le chiamate erano bloccate, tornano a funzionare dopo il salvataggio.
+- **Reimposta utilizzo**: azzera l’utilizzo e fissa una nuova quota, ad esempio all’inizio di un nuovo periodo.
+- **Cronologia**: ogni modifica, con i minuti aggiunti o tolti e il **Motivo** che hai scritto.
+
+In alto vedrai l’**Utilizzo in questo periodo**: minuti rimasti, minuti delle chiamate in corso, tipo di limite e relative date.
+
+Quando un agente è vicino al limite vedrai **Quasi esaurito**. Quando usa tutti i minuti vedrai **Chiamate bloccate**: le chiamate sono in pausa finché non aggiungi minuti o reimposti il limite.
+
+> **Importante:** Con **Monte fisso fino alla scadenza**, le chiamate si fermano anche quando passa la data di fine. Imposta una nuova data o passa a **Si azzera ogni mese**.
+
+## Storico chiamate
+
+La scheda **Storico chiamate** mostra le chiamate di tutti i tuoi sottoconti, con gli stessi filtri dello [Storico chiamate](/it/Create-AI-Agent/Call-Actions) degli agenti.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-subaccounts-calls.png" alt="Gestione del sottoconto nella scheda Storico chiamate con il pulsante Esporta CSV, la ricerca nelle trascrizioni e i filtri Numero di telefono, ID chiamata, Agente, Squad, Stato, Direzione e altri" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: la scheda Storico chiamate e i suoi filtri.
+</p>
+
+- La ricerca nelle trascrizioni trova le chiamate in base a ciò che è stato detto.
+- Filtra per numero di telefono, ID chiamata, agente, Squad, stato, direzione, appuntamento, trasferimento chiamata, segreteria, intervallo di date, durata, origine, ID campagna, sentiment o ID ticket.
+- Clicca su **Esporta CSV** per scaricare le chiamate che stai vedendo.
+
+## Risoluzione dei problemi
+
+**Problema:** L’elenco dice **Nessun agente del sottoconto trovato**.\
+**Causa:** I tuoi clienti non hanno ancora creato agenti, oppure la ricerca o il filtro li nascondono.\
+**Soluzione:** Cancella la ricerca, scegli **Tutti** e clicca su **Aggiorna**.
+
+**Problema:** Un cliente dice che il suo agente ha smesso di chiamare.\
+**Causa:** L’agente può aver raggiunto il limite di minuti (**Chiamate bloccate**) o la data di fine.\
+**Soluzione:** Apri il **Limite di utilizzo** dell’agente e usa **Aggiungi minuti**, **Reimposta utilizzo** o imposta una nuova data di fine.
