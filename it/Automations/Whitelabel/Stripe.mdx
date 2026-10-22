@@ -16,23 +16,19 @@ La pagina **Integrazioni** è dove colleghi la tua app White Label ai servizi ch
 
 La trovi nella Piattaforma white label, in **Configurazione dell'app** ([aprila qui](https://app.callin.io/cms/api-keys)). Usa **Cerca integrazioni...** per trovarne una in fretta.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations1.png" alt="Pagina Integrazioni con una ricerca e le schede di Stripe, Twilio e SendGrid (contrassegnate come Obbligatorio), Intercom, Brevo Chat e Chiavi API Analytics e Tracking" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: la panoramica di Integrazioni. Ogni scheda apre un pannello laterale con ciò che serve per collegarla.">
+  <img src="/images/integrations1.png" alt="Pagina Integrazioni con una ricerca e le schede di Stripe, Twilio e SendGrid (contrassegnate come Obbligatorio), Intercom, Brevo Chat e Chiavi API Analytics e Tracking" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la panoramica di Integrazioni. Ogni scheda apre un pannello laterale con ciò che serve per collegarla.
-</p>
+Ecco il pannello di ogni integrazione, una alla volta:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: il pannello di ogni integrazione: Stripe, Twilio, SendGrid, Intercom, Brevo Chat e Chiavi API Analytics e Tracking.">
+  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: il pannello di ogni integrazione: Stripe, Twilio, SendGrid, Intercom, Brevo Chat e Chiavi API Analytics e Tracking.
-</p>
-
-> **Importante:** **Stripe**, **Twilio** e **SendGrid** sono contrassegnate come **Obbligatorio**: il tuo White Label ne ha bisogno per incassare, chiamare e inviare email. Intercom, Brevo Chat e il tracciamento sono facoltativi.
+<Warning>
+  **Stripe**, **Twilio** e **SendGrid** sono contrassegnate come **Obbligatorio**: il tuo White Label ne ha bisogno per incassare, chiamare e inviare email. Intercom, Brevo Chat e il tracciamento sono facoltativi.
+</Warning>
 
 ## Prima di collegare qualsiasi cosa
 
@@ -42,14 +38,26 @@ Alcune buone abitudini rendono le integrazioni più semplici (e più sicure):
 - **Conserva le chiavi in modo sicuro** (trattale come password).
 - **Limita l’accesso** a chi ne ha bisogno. Non incollare chiavi in documenti o chat condivisi.
 
-> **Suggerimento:** Se un’integrazione non funziona subito, controlla che la chiave non abbia spazi all’inizio o alla fine prima di provare altro.
+<Tip>
+  Se un’integrazione non funziona subito, controlla che la chiave non abbia spazi all’inizio o alla fine prima di provare altro.
+</Tip>
 
 ## Come si collega un’integrazione
 
-1. Clicca sulla scheda di un’integrazione. Si apre un pannello laterale.
-2. Leggi il riquadro blu in alto: spiega dove trovare ogni dato.
-3. Per **Stripe**, clicca su **Connetti** e accedi a Stripe. Per le altre, copia i dati dalla dashboard del provider e incollali nei campi (quelli con `*` sono obbligatori).
-4. Clicca su **Salva**.
+<Steps>
+  <Step>
+    Clicca sulla scheda di un’integrazione. Si apre un pannello laterale.
+  </Step>
+  <Step>
+    Leggi il riquadro blu in alto: spiega dove trovare ogni dato.
+  </Step>
+  <Step>
+    Per **Stripe**, clicca su **Connetti** e accedi a Stripe. Per le altre, copia i dati dalla dashboard del provider e incollali nei campi (quelli con `*` sono obbligatori).
+  </Step>
+  <Step>
+    Clicca su **Salva**.
+  </Step>
+</Steps>
 
 Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 
@@ -59,22 +67,30 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 
 **Quando ti serve:** Se creerai piani a pagamento e farai pagare i clienti, Stripe è una delle prime integrazioni da configurare.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations2.png" alt="Pannello Connetti con Stripe con i passaggi per collegare il tuo account e il pulsante Connetti" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: il pannello Connetti con Stripe. Non incolli nessuna chiave: accedi a Stripe.
-</p>
+<Frame caption="Screenshot: il pannello Connetti con Stripe. Non incolli nessuna chiave: accedi a Stripe.">
+  <img src="/images/integrations2.png" alt="Pannello Connetti con Stripe con i passaggi per collegare il tuo account e il pulsante Connetti" />
+</Frame>
 
 ### Come collegare Stripe
 
-1. Apri la scheda **Stripe**. Si apre il pannello **Connetti con Stripe**.
-2. Clicca su **Connetti**.
-3. Accedi al tuo account Stripe, oppure creane uno nuovo quando richiesto.
-4. Al termine torni su Callin e il tuo account viene collegato automaticamente.
+<Steps>
+  <Step>
+    Apri la scheda **Stripe**. Si apre il pannello **Connetti con Stripe**.
+  </Step>
+  <Step>
+    Clicca su **Connetti**.
+  </Step>
+  <Step>
+    Accedi al tuo account Stripe, oppure creane uno nuovo quando richiesto.
+  </Step>
+  <Step>
+    Al termine torni su Callin e il tuo account viene collegato automaticamente.
+  </Step>
+</Steps>
 
-> **Importante:** Collega l’account Stripe su cui vuoi ricevere i pagamenti dei tuoi clienti. Se in seguito usi un altro account, collegalo di nuovo da questa scheda.
+<Warning>
+  Collega l’account Stripe su cui vuoi ricevere i pagamenti dei tuoi clienti. Se in seguito usi un altro account, collegalo di nuovo da questa scheda.
+</Warning>
 
 ## Twilio
 
@@ -87,22 +103,30 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 - **Account SID**\*
 - **Auth Token**\*
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations33.png" alt="Pannello Aggiungi chiavi API Twilio con i campi Account SID e Auth Token e il pulsante Salva" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: per configurare Twilio servono un Account SID e un Auth Token.
-</p>
+<Frame caption="Screenshot: per configurare Twilio servono un Account SID e un Auth Token.">
+  <img src="/images/integrations33.png" alt="Pannello Aggiungi chiavi API Twilio con i campi Account SID e Auth Token e il pulsante Salva" />
+</Frame>
 
 ### Come collegare Twilio
 
-1. Apri la scheda **Twilio**. Si apre il pannello **Aggiungi chiavi API Twilio**.
-2. Dalla dashboard di Twilio, copia **Account SID** e **Auth Token**.
-3. Incollali nei rispettivi campi. Clicca sull’icona dell’occhio per controllare il token incollato.
-4. Clicca su **Salva**.
+<Steps>
+  <Step>
+    Apri la scheda **Twilio**. Si apre il pannello **Aggiungi chiavi API Twilio**.
+  </Step>
+  <Step>
+    Dalla dashboard di Twilio, copia **Account SID** e **Auth Token**.
+  </Step>
+  <Step>
+    Incollali nei rispettivi campi. Clicca sull’icona dell’occhio per controllare il token incollato.
+  </Step>
+  <Step>
+    Clicca su **Salva**.
+  </Step>
+</Steps>
 
-> **Suggerimento:** Se in seguito chiamate o SMS smettono di funzionare, Twilio è la prima integrazione da ricontrollare.
+<Tip>
+  Se in seguito chiamate o SMS smettono di funzionare, Twilio è la prima integrazione da ricontrollare.
+</Tip>
 
 ## SendGrid
 
@@ -115,22 +139,30 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 - **API Key**\*
 - **Sender Email**\* (un’email mittente verificata in SendGrid)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations4.png" alt="Pannello Aggiungi chiavi API SendGrid con i campi API Key e Sender Email e il pulsante Salva" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: per configurare SendGrid servono una chiave API e un’email mittente verificata.
-</p>
+<Frame caption="Screenshot: per configurare SendGrid servono una chiave API e un’email mittente verificata.">
+  <img src="/images/integrations4.png" alt="Pannello Aggiungi chiavi API SendGrid con i campi API Key e Sender Email e il pulsante Salva" />
+</Frame>
 
 ### Come collegare SendGrid
 
-1. Apri la scheda **SendGrid**. Si apre il pannello **Aggiungi chiavi API SendGrid**.
-2. Copia la tua **API Key** da SendGrid.
-3. In **Sender Email** inserisci un’email verificata in SendGrid.
-4. Clicca su **Salva**.
+<Steps>
+  <Step>
+    Apri la scheda **SendGrid**. Si apre il pannello **Aggiungi chiavi API SendGrid**.
+  </Step>
+  <Step>
+    Copia la tua **API Key** da SendGrid.
+  </Step>
+  <Step>
+    In **Sender Email** inserisci un’email verificata in SendGrid.
+  </Step>
+  <Step>
+    Clicca su **Salva**.
+  </Step>
+</Steps>
 
-> **Errore comune:** Usare un’email mittente non verificata in SendGrid. Se le email non partono, verifica prima il mittente.
+<Warning>
+  **Errore comune:** Usare un’email mittente non verificata in SendGrid. Se le email non partono, verifica prima il mittente.
+</Warning>
 
 ## Intercom
 
@@ -142,21 +174,27 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 
 - **App ID**\* (dalle impostazioni del tuo workspace Intercom)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations5.png" alt="Pannello Aggiungi chiavi API Intercom con il campo App ID e il pulsante Salva" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: per configurare Intercom serve un App ID.
-</p>
+<Frame caption="Screenshot: per configurare Intercom serve un App ID.">
+  <img src="/images/integrations5.png" alt="Pannello Aggiungi chiavi API Intercom con il campo App ID e il pulsante Salva" />
+</Frame>
 
 ### Come collegare Intercom
 
-1. Apri la scheda **Intercom**. Si apre il pannello **Aggiungi chiavi API Intercom**.
-2. Trova il tuo **App ID** nelle impostazioni del workspace Intercom.
-3. Incollalo e clicca su **Salva**. La chat di Intercom compare nella dashboard dei tuoi clienti.
+<Steps>
+  <Step>
+    Apri la scheda **Intercom**. Si apre il pannello **Aggiungi chiavi API Intercom**.
+  </Step>
+  <Step>
+    Trova il tuo **App ID** nelle impostazioni del workspace Intercom.
+  </Step>
+  <Step>
+    Incollalo e clicca su **Salva**. La chat di Intercom compare nella dashboard dei tuoi clienti.
+  </Step>
+</Steps>
 
-> **Suggerimento:** Usa il workspace Intercom del tuo team di assistenza, così i messaggi arrivano nel posto giusto.
+<Tip>
+  Usa il workspace Intercom del tuo team di assistenza, così i messaggi arrivano nel posto giusto.
+</Tip>
 
 ## Brevo Chat
 
@@ -168,21 +206,27 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 
 - **Chat Widget Key**\* (la chiave del widget di chat o la chiave API dalla dashboard di Brevo)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations6.png" alt="Pannello Integrazione chat Brevo con il campo obbligatorio Chat Widget Key e il pulsante Salva" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: per configurare Brevo Chat serve la chiave del widget di chat.
-</p>
+<Frame caption="Screenshot: per configurare Brevo Chat serve la chiave del widget di chat.">
+  <img src="/images/integrations6.png" alt="Pannello Integrazione chat Brevo con il campo obbligatorio Chat Widget Key e il pulsante Salva" />
+</Frame>
 
 ### Come collegare Brevo Chat
 
-1. Apri la scheda **Brevo Chat**. Si apre il pannello **Integrazione chat Brevo**.
-2. Dalla dashboard di Brevo, copia la chiave del widget di chat.
-3. Incollala in **Chat Widget Key** e clicca su **Salva**.
+<Steps>
+  <Step>
+    Apri la scheda **Brevo Chat**. Si apre il pannello **Integrazione chat Brevo**.
+  </Step>
+  <Step>
+    Dalla dashboard di Brevo, copia la chiave del widget di chat.
+  </Step>
+  <Step>
+    Incollala in **Chat Widget Key** e clicca su **Salva**.
+  </Step>
+</Steps>
 
-> **Importante:** Non condividere la chiave del widget. Chi la possiede potrebbe usarla altrove.
+<Warning>
+  Non condividere la chiave del widget. Chi la possiede potrebbe usarla altrove.
+</Warning>
 
 ## Chiavi API Analytics e Tracking
 
@@ -198,20 +242,26 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 - **ID pixel di Google Ads** (formato: `AW-123456789`)
 - **Google Analytics Measurement ID (GA4)** (formato: `G-XXXXXXXXXX`)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations7.png" alt="Pannello Chiavi API Analytics e Tracking con le istruzioni Come configurare e i campi ID pixel di Google Ads e ID di misurazione di Google Analytics (GA4)" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: il pannello di tracciamento, con i passaggi e i due ID.
-</p>
+<Frame caption="Screenshot: il pannello di tracciamento, con i passaggi e i due ID.">
+  <img src="/images/integrations7.png" alt="Pannello Chiavi API Analytics e Tracking con le istruzioni Come configurare e i campi ID pixel di Google Ads e ID di misurazione di Google Analytics (GA4)" />
+</Frame>
 
 ### Come collegare il tracking
 
-1. Apri **Chiavi API Analytics e Tracking**.
-2. In Google Ads, vai su **Strumenti e impostazioni → Conversioni**, crea o apri un’azione di conversione del sito web e copia l’ID conversione (formato `AW-123456789`). Incollalo in **ID pixel di Google Ads**.
-3. In Google Analytics (GA4), vai su **Amministrazione → Stream di dati → Web**, scegli lo stream del tuo sito e copia l’ID di misurazione (formato `G-XXXXXXXXXX`). Incollalo nel campo GA4.
-4. Clicca su **Salva**.
+<Steps>
+  <Step>
+    Apri **Chiavi API Analytics e Tracking**.
+  </Step>
+  <Step>
+    In Google Ads, vai su **Strumenti e impostazioni → Conversioni**, crea o apri un’azione di conversione del sito web e copia l’ID conversione (formato `AW-123456789`). Incollalo in **ID pixel di Google Ads**.
+  </Step>
+  <Step>
+    In Google Analytics (GA4), vai su **Amministrazione → Stream di dati → Web**, scegli lo stream del tuo sito e copia l’ID di misurazione (formato `G-XXXXXXXXXX`). Incollalo nel campo GA4.
+  </Step>
+  <Step>
+    Clicca su **Salva**.
+  </Step>
+</Steps>
 
 ### Cosa succede dopo il salvataggio (come descritto nel pannello)
 
@@ -220,4 +270,6 @@ Per chiudere un pannello senza salvare, clicca sulla **X** in alto a destra.
 - Se lasci un campo vuoto, lo script di quel provider non viene caricato per il tuo marchio.
 - Solo gli amministratori e i proprietari del marchio con accesso alla Piattaforma white label possono vedere o modificare questi ID.
 
-> **Suggerimento:** Collega il tracciamento prima delle prime campagne, per non perdere dati di attribuzione.
+<Tip>
+  Collega il tracciamento prima delle prime campagne, per non perdere dati di attribuzione.
+</Tip>

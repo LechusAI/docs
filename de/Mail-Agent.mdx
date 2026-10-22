@@ -15,7 +15,9 @@ Ein **Mail-Agent** ist ein Assistent, der ein Postfach für Sie im Blick behält
 
 Die Einrichtung Ihres ersten Agenten dauert etwa zehn Minuten und erfordert keine technischen Vorkenntnisse.
 
-> **Hinweis:** Der KI-E-Mail-Manager ist als **Beta** gekennzeichnet. Er entwickelt sich noch weiter, daher können einige Bildschirme in Ihrem Konto etwas anders aussehen.
+<Note>
+  Der KI-E-Mail-Manager ist als **Beta** gekennzeichnet. Er entwickelt sich noch weiter, daher können einige Bildschirme in Ihrem Konto etwas anders aussehen.
+</Note>
 
 ## Was Sie vor dem Start brauchen
 
@@ -30,33 +32,39 @@ Das Postfach muss jetzt noch nicht bereit sein. Sie können zuerst den Agenten e
 
 Öffnen Sie **Mail-Agenten**. Das ist die Liste aller Agenten, die Sie erstellt haben. Klicken Sie oben rechts auf **Agent erstellen**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents1.png" alt="Liste Mail-Agenten mit vier Agenten, jeweils mit dem Hinweis Keine E-Mail zugewiesen, einem Suchfeld und der Schaltfläche Agent erstellen" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Die Liste Mail-Agenten. Jeder Agent zeigt seinen Namen, sein Erstellungsdatum und einen orangefarbenen Hinweis, solange kein Postfach verbunden ist.
-</p>
+<Frame caption="Die Liste Mail-Agenten. Jeder Agent zeigt seinen Namen, sein Erstellungsdatum und einen orangefarbenen Hinweis, solange kein Postfach verbunden ist.">
+  <img src="/images/mailagents1.png" alt="Liste Mail-Agenten mit vier Agenten, jeweils mit dem Hinweis Keine E-Mail zugewiesen, einem Suchfeld und der Schaltfläche Agent erstellen" />
+</Frame>
 
 Ein kurzer Assistent mit fünf Schritten öffnet sich:
 
-1. **Mail-Agent benennen**: ein Name, den Ihr Team wiedererkennt, etwa „Bestellsupport" oder „Vertriebspostfach". Bis zu 50 Zeichen.
-2. **System-Prompt**: wie der Agent E-Mails bearbeiten soll. Optional.
-3. **E-Mail-Kategorien**: Etiketten zum Sortieren eingehender E-Mails. Optional.
-4. **Automatisierungsregeln**: welche Absender automatische Antworten erhalten und wer eine Kopie bekommt.
-5. **E-Mail verbinden**: das Postfach, um das sich der Agent kümmert.
+<Steps>
+  <Step>
+    **Mail-Agent benennen**: ein Name, den Ihr Team wiedererkennt, etwa „Bestellsupport" oder „Vertriebspostfach". Bis zu 50 Zeichen.
+  </Step>
+  <Step>
+    **System-Prompt**: wie der Agent E-Mails bearbeiten soll. Optional.
+  </Step>
+  <Step>
+    **E-Mail-Kategorien**: Etiketten zum Sortieren eingehender E-Mails. Optional.
+  </Step>
+  <Step>
+    **Automatisierungsregeln**: welche Absender automatische Antworten erhalten und wer eine Kopie bekommt.
+  </Step>
+  <Step>
+    **E-Mail verbinden**: das Postfach, um das sich der Agent kümmert.
+  </Step>
+</Steps>
 
 Jeder Schritt nach dem Namen hat **Überspringen**, und Sie können später alles in den Tabs des Agenten ändern.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: die fünf Schritte des Assistenten, vom Namen bis zum Verbinden des Postfachs.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: die fünf Schritte des Assistenten, vom Namen bis zum Verbinden des Postfachs.
-</p>
-
-> **Wichtig:** Der Agent wird erstellt, sobald Sie den Schritt **E-Mail-Kategorien** verlassen. Wenn Sie den Assistenten danach schließen, bleibt der Agent in der Liste. Von dort aus können Sie ihn fertig einrichten oder löschen.
+<Warning>
+  Der Agent wird erstellt, sobald Sie den Schritt **E-Mail-Kategorien** verlassen. Wenn Sie den Assistenten danach schließen, bleibt der Agent in der Liste. Von dort aus können Sie ihn fertig einrichten oder löschen.
+</Warning>
 
 Unter dem Namen sehen Sie in der Liste **Keine E-Mail zugewiesen** in Orange. Das ist normal: Es ist noch kein Postfach verbunden. Das erledigen Sie in Schritt 4.
 
@@ -68,13 +76,9 @@ Jede Zeile hat ein Menü **⋮** mit drei Aktionen:
 
 Die Konfiguration des Agenten hat vier Tabs: **Agent**, **Kategorien**, **Postfach** und **Erweitert**. Die nächsten Schritte folgen ihnen der Reihe nach. Den Namen des Agenten ändern Sie im Textfeld oben.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Agent bearbeiten → Konversations-Prompt schreiben → Modell wählen → Kategorie hinzufügen → Tab Erweitert ansehen.
-</p>
+<Frame caption="Video: Agent bearbeiten → Konversations-Prompt schreiben → Modell wählen → Kategorie hinzufügen → Tab Erweitert ansehen.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" />
+</Frame>
 
 ## Schritt 2 — Dem Agenten sagen, wie er sich verhalten soll
 
@@ -92,7 +96,9 @@ Je genauer Sie sind, desto vorhersehbarer sind die Ergebnisse. Eine nützlichere
 
 Der Zähler unten rechts zeigt, wie viel Sie von den 4000 Zeichen genutzt haben. Gespeicherte Änderungen gelten für neu eingehende E-Mails.
 
-> **Tipp:** Schreiben Sie auf, was der Agent **nicht** tun soll, nicht nur, was er tun soll. Sätze wie „bestätige nie Termine", „versprich nie Erstattungen" oder „sprich nie per E-Mail über Preise" verhindern die meisten Überraschungen.
+<Tip>
+  Schreiben Sie auf, was der Agent **nicht** tun soll, nicht nur, was er tun soll. Sätze wie „bestätige nie Termine", „versprich nie Erstattungen" oder „sprich nie per E-Mail über Preise" verhindern die meisten Überraschungen.
+</Tip>
 
 ### KI-Intelligenz (LLM)
 
@@ -111,7 +117,9 @@ Neue Agenten starten mit **GPT 4.1 Mini**.
 
 Im selben Panel finden Sie **Temperatur**, einen Schieberegler von 0 bis 1, der bei 0,7 beginnt. Niedrige Werte halten die Formulierungen gleichmäßig und wiederholbar. Hohe Werte machen sie abwechslungsreicher und natürlicher, aber weniger vorhersehbar.
 
-> **Für Einsteiger:** Sie müssen hier nichts ändern. Wenn die Antworten roboterhaft klingen, probieren Sie Claude Sonnet oder erhöhen Sie die Temperatur etwas. Wenn sie zu sehr schwanken, senken Sie sie.
+<Info>
+  **Für Einsteiger:** Sie müssen hier nichts ändern. Wenn die Antworten roboterhaft klingen, probieren Sie Claude Sonnet oder erhöhen Sie die Temperatur etwas. Wenn sie zu sehr schwanken, senken Sie sie.
+</Info>
 
 ## Schritt 3 — E-Mails mit Kategorien ordnen
 
@@ -129,13 +137,9 @@ Klicken Sie auf **Kategorie hinzufügen**. Ein Fenster mit diesen Feldern öffne
 
 Sie können eine der vorgegebenen Farben wählen oder mit dem Feld **\+** eine eigene erstellen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-categories.png" alt="Fenster Kategorie hinzufügen mit einem Namen, einer Beschreibung, der Farbe Grün und beiden eingeschalteten Antwortschaltern" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Das Fenster Kategorie hinzufügen. Das Badge rechts zeigt, wie das Etikett aussehen wird.
-</p>
+<Frame caption="Das Fenster Kategorie hinzufügen. Das Badge rechts zeigt, wie das Etikett aussehen wird.">
+  <img src="/images/mail-agent-categories.png" alt="Fenster Kategorie hinzufügen mit einem Namen, einer Beschreibung, der Farbe Grün und beiden eingeschalteten Antwortschaltern" />
+</Frame>
 
 Unter den Farben gibt es zwei Schalter:
 
@@ -146,9 +150,13 @@ Wenn Sie beide ausschalten, versieht der Agent die Nachricht nur mit dem Etikett
 
 Klicken Sie auf **Kategorie hinzufügen**, um sie hinzuzufügen. Jede Kategorie braucht einen Namen und eine Beschreibung.
 
-> **Häufiger Fehler:** Eine vage Beschreibung wie „wichtige Sachen". Der Agent entscheidet anhand dieses Textes, welche E-Mails hierher gehören, also beschreiben Sie den echten Inhalt: „Nachrichten, die nach einer Rechnung, einer Erstattung oder einer Änderung der Zahlungsart fragen". Landen E-Mails in der falschen Kategorie, hilft meist am schnellsten eine genauere Beschreibung.
+<Warning>
+  **Häufiger Fehler:** Eine vage Beschreibung wie „wichtige Sachen". Der Agent entscheidet anhand dieses Textes, welche E-Mails hierher gehören, also beschreiben Sie den echten Inhalt: „Nachrichten, die nach einer Rechnung, einer Erstattung oder einer Änderung der Zahlungsart fragen". Landen E-Mails in der falschen Kategorie, hilft meist am schnellsten eine genauere Beschreibung.
+</Warning>
 
-> **Wichtig:** Beginnen Sie mit **Entwurfsantwort** an und **Auto-Antwort** aus. Lesen Sie die Entwürfe ein paar Tage lang. Wenn der Agent Ton und Fakten trifft, schalten Sie automatische Antworten dort ein, wo ein Fehler keine Folgen hätte.
+<Warning>
+  Beginnen Sie mit **Entwurfsantwort** an und **Auto-Antwort** aus. Lesen Sie die Entwürfe ein paar Tage lang. Wenn der Agent Ton und Fakten trifft, schalten Sie automatische Antworten dort ein, wo ein Fehler keine Folgen hätte.
+</Warning>
 
 ## Schritt 4 — Das Postfach verbinden
 
@@ -174,7 +182,9 @@ Wenn Sie **Andere E-Mail (IMAP & SMTP)** wählen, fragt das Formular **IMAP / SM
 
 Klicken Sie auf **Postfach verbinden**. Ihre Zugangsdaten werden verschlüsselt und sicher gespeichert. Danach importiert Callin.io die Nachrichten aus dem gewählten Zeitraum (**Postfach wird synchronisiert**). Bis die Synchronisierung abgeschlossen ist, kann es einen Moment dauern, bis neue Nachrichten erscheinen.
 
-> **Hinweis:** Sie können diesen Schritt überspringen und das Postfach später verbinden. Alles andere bleibt gespeichert, aber der Agent bearbeitet nichts, bis ein Postfach verknüpft ist.
+<Note>
+  Sie können diesen Schritt überspringen und das Postfach später verbinden. Alles andere bleibt gespeichert, aber der Agent bearbeitet nichts, bis ein Postfach verknüpft ist.
+</Note>
 
 ## Schritt 5 — Das Verhalten feinabstimmen (optional)
 
@@ -191,9 +201,13 @@ Klicken Sie auf **Postfach verbinden**. Ihre Zugangsdaten werden verschlüsselt 
 
 Das ist praktisch, wenn eine Führungskraft im Blick behalten möchte, was der Agent sendet.
 
-> **Tipp:** Wenn Sie in einer Kategorie automatische Antworten einschalten, schalten Sie auch die Kopie ein, zumindest solange Sie dem Agenten noch nicht ganz vertrauen.
+<Tip>
+  Wenn Sie in einer Kategorie automatische Antworten einschalten, schalten Sie auch die Kopie ein, zumindest solange Sie dem Agenten noch nicht ganz vertrauen.
+</Tip>
 
-> **Warnung:** Wenn die Kopie an einen Kollegen geht, wählen Sie **BCC (verborgen)**. Mit **CC (sichtbar)** sieht Ihr Kunde die Adresse Ihres Kollegen in jeder Nachricht.
+<Warning>
+  Wenn die Kopie an einen Kollegen geht, wählen Sie **BCC (verborgen)**. Mit **CC (sichtbar)** sieht Ihr Kunde die Adresse Ihres Kollegen in jeder Nachricht.
+</Warning>
 
 ### Agentenpriorität
 
@@ -207,7 +221,9 @@ Die Reihenfolge können Sie erst ändern, wenn ein Postfach verbunden ist. Bis d
 
 Wenn Sie ungespeicherte Änderungen haben, erscheint unten eine Leiste mit zwei Schaltflächen: **Verwerfen**, um die Änderungen rückgängig zu machen, und **Speichern**, um sie zu speichern.
 
-> **Wichtig:** Verlassen Sie den Bildschirm nicht, solange diese Leiste sichtbar ist. Wenn Sie ohne Klick auf **Speichern** weggehen, gehen Ihre Änderungen verloren.
+<Warning>
+  Verlassen Sie den Bildschirm nicht, solange diese Leiste sichtbar ist. Wenn Sie ohne Klick auf **Speichern** weggehen, gehen Ihre Änderungen verloren.
+</Warning>
 
 ## Der Bereich E-Mail: an einem Ort lesen und antworten
 
@@ -221,9 +237,17 @@ Unter **Tools** verbinden Sie externe Dienste, die Ihren Agenten Echtzeitdaten l
 
 Drei schnelle Zeichen, dass alles bereit ist:
 
-1. In der Liste **Mail-Agenten** zeigt Ihr Agent unter seinem Namen nicht mehr **Keine E-Mail zugewiesen**.
-2. Senden Sie von einer anderen eigenen Adresse eine Test-E-Mail an das verbundene Postfach, mit Formulierungen, die zu einer Ihrer Kategorien passen.
-3. Warten Sie ein paar Minuten und öffnen Sie [E-Mail](/de/Mail-Agent-Email). Je nach Kategorie finden Sie einen Entwurf zur Prüfung oder eine bereits gesendete Antwort.
+<Steps>
+  <Step>
+    In der Liste **Mail-Agenten** zeigt Ihr Agent unter seinem Namen nicht mehr **Keine E-Mail zugewiesen**.
+  </Step>
+  <Step>
+    Senden Sie von einer anderen eigenen Adresse eine Test-E-Mail an das verbundene Postfach, mit Formulierungen, die zu einer Ihrer Kategorien passen.
+  </Step>
+  <Step>
+    Warten Sie ein paar Minuten und öffnen Sie [E-Mail](/de/Mail-Agent-Email). Je nach Kategorie finden Sie einen Entwurf zur Prüfung oder eine bereits gesendete Antwort.
+  </Step>
+</Steps>
 
 Wenn nichts passiert, prüfen Sie der Reihe nach:
 

@@ -9,32 +9,46 @@ icon: "calendar"
 
 La reserva de citas con Google Calendar en Callin.io está pensada para ser fiable y coherente. Para lograrlo, la configuración se divide en dos partes:
 
-1. **Configuración de la integración de Google Calendar**\
-   Conectas tu cuenta de Google y creas una **plantilla de evento**. En esa plantilla defines las reglas de reserva (días disponibles, duración de la cita, recordatorios y reglas de conflicto).
-2. **Configuración del agente de IA (Acción de llamada)**\
-   Activas **Programación de citas** en el agente y seleccionas la plantilla que creaste.
+<Steps>
+  <Step>
+    **Configuración de la integración de Google Calendar**\
+    Conectas tu cuenta de Google y creas una **plantilla de evento**. En esa plantilla defines las reglas de reserva (días disponibles, duración de la cita, recordatorios y reglas de conflicto).
+  </Step>
+  <Step>
+    **Configuración del agente de IA (Acción de llamada)**\
+    Activas **Programación de citas** en el agente y seleccionas la plantilla que creaste.
+  </Step>
+</Steps>
 
-> **Importante:** Las reglas de reserva deben estar en la **plantilla de evento**, no en el prompt del agente. Evita instrucciones como “Solo de lunes a viernes” o “Solo entre las 9:00 y las 17:00” en el prompt: esas reglas pueden chocar con la lógica de agenda que ya trae la plataforma al conectar Google Calendar.
+<Warning>
+  Las reglas de reserva deben estar en la **plantilla de evento**, no en el prompt del agente. Evita instrucciones como “Solo de lunes a viernes” o “Solo entre las 9:00 y las 17:00” en el prompt: esas reglas pueden chocar con la lógica de agenda que ya trae la plataforma al conectar Google Calendar.
+</Warning>
 
 ## Abrir la integración de Google Calendar
 
 Usa este enlace directo para abrir la página de la integración de Google Calendar: [**haz clic aquí**](https://app.callin.io/actions/google-calendar). También puedes llegar desde **Integraciones → Acciones**: haz clic en **Conectar** (o en **Gestionar**, si ya está conectada) en la tarjeta de **Google Calendar**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/google-calendar-page.png" alt="Página de la integración de Google Calendar con los botones Sincronizar y Conectar cuenta de Google, el buscador de calendarios, la cuenta conectada con sus calendarios y Desconectar cuenta, y la sección Plantillas de eventos" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la zona de la integración de Google Calendar, donde conectas tu cuenta, eliges un calendario y gestionas las plantillas de eventos.">
+  <img src="/images/google-calendar-page.png" alt="Página de la integración de Google Calendar con los botones Sincronizar y Conectar cuenta de Google, el buscador de calendarios, la cuenta conectada con sus calendarios y Desconectar cuenta, y la sección Plantillas de eventos" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la zona de la integración de Google Calendar, donde conectas tu cuenta, eliges un calendario y gestionas las plantillas de eventos.
-</p>
-
-> **Consejo:** Puedes crear **varias plantillas de evento por calendario** y asignar plantillas de calendarios distintos a agentes de IA distintos.
+<Tip>
+  Puedes crear **varias plantillas de evento por calendario** y asignar plantillas de calendarios distintos a agentes de IA distintos.
+</Tip>
 
 ## Paso 1: Conectar tu cuenta de Google
 
-1. En la página de la integración de Google Calendar, haz clic en **Conectar cuenta de Google**.
-2. Se abre una ventana de inicio de sesión de Google. Elige la cuenta de Google que quieres usar para las reservas.
-3. Acepta la pantalla de permisos para que Callin.io pueda crear eventos y consultar la disponibilidad.
+<Steps>
+  <Step>
+    En la página de la integración de Google Calendar, haz clic en **Conectar cuenta de Google**.
+  </Step>
+  <Step>
+    Se abre una ventana de inicio de sesión de Google. Elige la cuenta de Google que quieres usar para las reservas.
+  </Step>
+  <Step>
+    Acepta la pantalla de permisos para que Callin.io pueda crear eventos y consultar la disponibilidad.
+  </Step>
+</Steps>
 
 Una vez conectada, verás:
 
@@ -44,7 +58,9 @@ Una vez conectada, verás:
 
 Usa **Buscar calendarios...** para encontrar un calendario rápido y **Sincronizar** para actualizar la lista si acabas de crear un calendario nuevo en Google.
 
-> **Importante:** Usa un calendario que refleje tu disponibilidad real. Si tu Google Calendar está siempre “ocupado” (o siempre “libre”), las reservas no coincidirán con la realidad.
+<Warning>
+  Usa un calendario que refleje tu disponibilidad real. Si tu Google Calendar está siempre “ocupado” (o siempre “libre”), las reservas no coincidirán con la realidad.
+</Warning>
 
 ## Paso 2: Elegir el calendario donde se crearán las citas
 
@@ -61,7 +77,9 @@ Por qué importa esta selección:
 - Tu plantilla se crea **para un calendario concreto**
 - El agente reservará en el calendario y la plantilla que le asignes después
 
-> **Consejo:** Si tienes varios calendarios (para distintos equipos o servicios), puedes crear plantillas diferentes para cada calendario y asignar la adecuada a cada agente de IA.
+<Tip>
+  Si tienes varios calendarios (para distintos equipos o servicios), puedes crear plantillas diferentes para cada calendario y asignar la adecuada a cada agente de IA.
+</Tip>
 
 ## Paso 3: Crear una plantilla de evento (aquí van las reglas de agenda)
 
@@ -77,25 +95,27 @@ La plantilla define:
 
 Para crear una:
 
-1. En la sección **Plantillas de eventos**, haz clic en **Crear plantilla de evento**. Se abre un panel a la derecha.
-2. Rellena los campos (detalles más abajo).
-3. Haz clic en **Guardar**. Para descartarla, haz clic en **Cancelar**.
+<Steps>
+  <Step>
+    En la sección **Plantillas de eventos**, haz clic en **Crear plantilla de evento**. Se abre un panel a la derecha.
+  </Step>
+  <Step>
+    Rellena los campos (detalles más abajo).
+  </Step>
+  <Step>
+    Haz clic en **Guardar**. Para descartarla, haz clic en **Cancelar**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: Crear plantilla de evento → nombre y descripción → recordatorio y superposición → manejo de conflictos → horario laboral de lunes a viernes.">
+  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: Crear plantilla de evento → nombre y descripción → recordatorio y superposición → manejo de conflictos → horario laboral de lunes a viernes.
-</p>
+Este es el editor de la plantilla, donde defines las reglas de la agenda:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions2.png" alt="Panel Crear plantilla de evento con los campos Nombre y Descripción, Duración del intervalo, Minutos de recordatorio, Tipo de recordatorio, Permitir superposición de eventos en No, Manejo de conflictos y el inicio del Horario laboral" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el editor de la plantilla de evento, donde defines la duración, los recordatorios y las reglas de conflicto.
-</p>
+<Frame caption="Captura: el editor de la plantilla de evento, donde defines la duración, los recordatorios y las reglas de conflicto.">
+  <img src="/images/actions2.png" alt="Panel Crear plantilla de evento con los campos Nombre y Descripción, Duración del intervalo, Minutos de recordatorio, Tipo de recordatorio, Permitir superposición de eventos en No, Manejo de conflictos y el inicio del Horario laboral" />
+</Frame>
 
 ### Explicación campo por campo (con ejemplos prácticos)
 
@@ -110,15 +130,13 @@ Para crear una:
 | **Manejo de conflictos**                | Solo aparece si **Permitir superposición de eventos** está en **No**: **Bloquear todos los eventos superpuestos** o **Solo bloquear eventos con el mismo nombre** | Bloquear todos los eventos superpuestos             |
 | **Horario laboral**                     | Qué días están disponibles, con una hora de inicio y de fin para cada uno (al marcar un día: 09:00–17:00 por defecto)                                | Lunes a viernes, 09:00–17:00                        |
 
-> **Error común:** Dejar el **Horario laboral** sin ningún día marcado. La plantilla no se puede guardar hasta que haya al menos un día disponible (“Al menos un día debe estar disponible en su horario”).
+<Warning>
+  **Error común:** Dejar el **Horario laboral** sin ningún día marcado. La plantilla no se puede guardar hasta que haya al menos un día disponible (“Al menos un día debe estar disponible en su horario”).
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/google-calendar-hours.png" alt="Sección Horario laboral de la plantilla de evento con lunes a viernes marcados de 09:00 a 17:00 y sábado y domingo no disponibles" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el horario laboral con lunes a viernes disponibles de 09:00 a 17:00.
-</p>
+<Frame caption="Captura: el horario laboral con lunes a viernes disponibles de 09:00 a 17:00.">
+  <img src="/images/google-calendar-hours.png" alt="Sección Horario laboral de la plantilla de evento con lunes a viernes marcados de 09:00 a 17:00 y sábado y domingo no disponibles" />
+</Frame>
 
 ### Ejemplo de plantilla completa (recomendación inicial)
 
@@ -144,53 +162,75 @@ Cuando ya hayas:
 
 ya puedes activar la reserva de citas en un agente de IA.
 
-1. Ve a **Agentes de IA** en el menú de la izquierda.
-2. Abre el agente que quieres configurar.
-3. Ve a la pestaña **Acción de llamada**.
-4. Activa **Programación de citas**. Se abre el panel **Configuración de citas**.
-5. En **Proveedor de citas**, elige **Google Calendar** (“Usar Google Calendar para programar”).
-6. Selecciona la plantilla de evento que creaste. La lista muestra cada calendario con sus plantillas, y cada plantilla indica su duración, su recordatorio y el número de días disponibles.
-7. Cierra el panel y haz clic en **Guardar**.
+<Steps>
+  <Step>
+    Ve a **Agentes de IA** en el menú de la izquierda.
+  </Step>
+  <Step>
+    Abre el agente que quieres configurar.
+  </Step>
+  <Step>
+    Ve a la pestaña **Acción de llamada**.
+  </Step>
+  <Step>
+    Activa **Programación de citas**. Se abre el panel **Configuración de citas**.
+  </Step>
+  <Step>
+    En **Proveedor de citas**, elige **Google Calendar** (“Usar Google Calendar para programar”).
+  </Step>
+  <Step>
+    Selecciona la plantilla de evento que creaste. La lista muestra cada calendario con sus plantillas, y cada plantilla indica su duración, su recordatorio y el número de días disponibles.
+  </Step>
+  <Step>
+    Cierra el panel y haz clic en **Guardar**.
+  </Step>
+</Steps>
 
 Para cambiar la plantilla más adelante, haz clic en el **icono de ajustes** (engranaje) junto a **Programación de citas**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: pestaña Acción de llamada → Programación de citas → Google Calendar → seleccionar la plantilla.">
+  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: pestaña Acción de llamada → Programación de citas → Google Calendar → seleccionar la plantilla.
-</p>
+En el agente, el resultado queda así:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions3.png" alt="Pestaña Acción de llamada del agente con el panel Configuración de citas abierto: Google Calendar elegido como proveedor de citas y una plantilla de evento seleccionada en el calendario conectado" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: en la Acción de llamada del agente, elige Google Calendar como proveedor de reservas y selecciona tu plantilla.">
+  <img src="/images/actions3.png" alt="Pestaña Acción de llamada del agente con el panel Configuración de citas abierto: Google Calendar elegido como proveedor de citas y una plantilla de evento seleccionada en el calendario conectado" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: en la Acción de llamada del agente, elige Google Calendar como proveedor de reservas y selecciona tu plantilla.
-</p>
-
-> **Importante:** Para mayor precisión, la zona horaria del agente debe coincidir con la del calendario. Si no coinciden, el agente puede proponer horas equivocadas.
+<Warning>
+  Para mayor precisión, la zona horaria del agente debe coincidir con la del calendario. Si no coinciden, el agente puede proponer horas equivocadas.
+</Warning>
 
 ## Cómo debería funcionar la reserva durante la llamada (flujo recomendado)
 
 Cuando todo está conectado, la mejor experiencia es que el agente siga un flujo sencillo y natural:
 
-1. **Confirmar la intención**\
-   “Claro, ¿quieres reservar una cita ahora?”
-2. **Recoger los datos mínimos**\
-   Pide:
-   - Nombre completo
-   - Número de teléfono\
-     (Opcional: un motivo breve de la cita, si tiene sentido.)
-3. **Ofrecer disponibilidad y confirmar**\
-   El agente propone horas que puede reservar (según tu plantilla y la disponibilidad del calendario) y confirma la que se elija.
-4. **Reservar y confirmar los detalles**\
-   El agente reserva el evento y repite:
-   - Fecha
-   - Hora
-   - Duración
-   - Para qué es la cita
+<Steps>
+  <Step>
+    **Confirmar la intención**\
+    “Claro, ¿quieres reservar una cita ahora?”
+  </Step>
+  <Step>
+    **Recoger los datos mínimos**\
+    Pide:
+    - Nombre completo
+    - Número de teléfono\
+      (Opcional: un motivo breve de la cita, si tiene sentido.)
+  </Step>
+  <Step>
+    **Ofrecer disponibilidad y confirmar**\
+    El agente propone horas que puede reservar (según tu plantilla y la disponibilidad del calendario) y confirma la que se elija.
+  </Step>
+  <Step>
+    **Reservar y confirmar los detalles**\
+    El agente reserva el evento y repite:
+    - Fecha
+    - Hora
+    - Duración
+    - Para qué es la cita
+  </Step>
+</Steps>
 
 ### Ejemplo (cómo suena una “buena” reserva)
 
@@ -203,7 +243,9 @@ Cuando todo está conectado, la mejor experiencia es que el agente siga un flujo
 - Persona que llama: “Sí.”
 - Agente: “Listo. Tienes la cita el jueves a las 16:00, de 30 minutos. Además, recibirás un recordatorio antes de la cita.”
 
-> **Consejo:** Centra el prompt en **recoger datos y confirmar**. Deja que la plantilla se encargue de las reglas de agenda.
+<Tip>
+  Centra el prompt en **recoger datos y confirmar**. Deja que la plantilla se encargue de las reglas de agenda.
+</Tip>
 
 ## Reglas del prompt: qué incluir (y qué evitar)
 
@@ -231,15 +273,19 @@ Evita instrucciones que repitan o anulen la plantilla de evento, como:
 
 Esas reglas deben configurarse en la **plantilla de evento** (horario laboral, reglas de conflicto y de superposición). Mantener el prompt limpio evita choques y mejora la precisión de las reservas.
 
-> **Importante:** Piénsalo así:\
-> **Plantilla = reglas y disponibilidad**\
-> **Prompt = conversación y recogida de datos**
+<Warning>
+  Piénsalo así:\
+  **Plantilla = reglas y disponibilidad**\
+  **Prompt = conversación y recogida de datos**
+</Warning>
 
 ## Mejor LLM para reservas: Gemini 2.5 Flash (recomendado)
 
 Para reservar con precisión, Callin.io funciona mejor con **Gemini 2.5 Flash**.
 
-> **Consejo:** Si la reserva falla (horas equivocadas, disponibilidad que no aparece, confusión), cambia el LLM del agente a **Gemini 2.5 Flash**, guarda y vuelve a probar.
+<Tip>
+  Si la reserva falla (horas equivocadas, disponibilidad que no aparece, confusión), cambia el LLM del agente a **Gemini 2.5 Flash**, guarda y vuelve a probar.
+</Tip>
 
 ## Solución de problemas (arreglos rápidos)
 

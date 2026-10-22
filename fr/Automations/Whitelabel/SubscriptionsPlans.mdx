@@ -15,17 +15,11 @@ Concrètement, cette section vous aide à :
 
 Vous la trouverez dans la Plateforme white label, dans **Plans et facturation** ([ouvrez-la ici](https://app.callin.io/cms/subscription-plans)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture d’écran : la page Forfaits d’abonnement avant la connexion de Stripe. La création de forfaits reste désactivée tant que Stripe n’est pas connecté.">
   <img
     src="/images/subscriptionsplans1.png"
-    alt="Page Forfaits d'abonnement avec les boutons Tarif de recharge et Créer un forfait, l'avertissement Connectez Stripe pour créer des formules avec le bouton Connecter Stripe, la recherche et le message indiquant qu'il n'y a aucun forfait"
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la page Forfaits d’abonnement avant la connexion de Stripe. La création de forfaits reste désactivée tant que Stripe n’est pas connecté.
-</p>
+    alt="Page Forfaits d'abonnement avec les boutons Tarif de recharge et Créer un forfait, l'avertissement Connectez Stripe pour créer des formules avec le bouton Connecter Stripe, la recherche et le message indiquant qu'il n'y a aucun forfait" />
+</Frame>
 
 ### Connectez d’abord Stripe
 
@@ -37,37 +31,39 @@ Cliquez sur **Connecter Stripe** dans l’avertissement, ou connectez-le depuis 
 
 En plus des forfaits, vos clients peuvent acheter des minutes de crédit depuis leur page de facturation. Le **Tarif de recharge** est le prix par minute qu’ils paient quand ils rechargent.
 
-1. Cliquez sur **Tarif de recharge**. La fenêtre **Définir le tarif de recharge** s’ouvre.
-2. Dans **Tarif par minute**, saisissez le prix par minute dans votre devise (par exemple `0.16`).
-3. Cliquez sur **Mettre à jour**.
+<Steps>
+  <Step>
+    Cliquez sur **Tarif de recharge**. La fenêtre **Définir le tarif de recharge** s’ouvre.
+  </Step>
+  <Step>
+    Dans **Tarif par minute**, saisissez le prix par minute dans votre devise (par exemple `0.16`).
+  </Step>
+  <Step>
+    Cliquez sur **Mettre à jour**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-plans-recharge.png" alt="Fenêtre Définir le tarif de recharge avec le champ Tarif par minute et les boutons Annuler et Mettre à jour" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la fenêtre Définir le tarif de recharge.">
+  <img src="/images/wl-plans-recharge.png" alt="Fenêtre Définir le tarif de recharge avec le champ Tarif par minute et les boutons Annuler et Mettre à jour" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Définir le tarif de recharge.
-</p>
-
-> **Astuce :** Fixez un tarif de recharge supérieur à votre propre coût par minute, pour que les recharges préservent votre marge. Voir [Facturation et commissions](/fr/Billing).
+<Tip>
+  Fixez un tarif de recharge supérieur à votre propre coût par minute, pour que les recharges préservent votre marge. Voir [Facturation et commissions](/fr/Billing).
+</Tip>
 
 ## Créer un nouveau forfait d’abonnement
 
 Depuis **Facturation et abonnements → Forfaits d’abonnement**, cliquez sur le bouton pour **créer un forfait**. Un assistant guidé s’ouvre avec plusieurs étapes.
 
-> **Astuce :** Avant de créer vos forfaits, définissez vos niveaux et vos prix sur un brouillon (par exemple : “Basique : 400 minutes/mois pour 300”). Cela évite les ajustements de dernière minute.
+<Tip>
+  Avant de créer vos forfaits, définissez vos niveaux et vos prix sur un brouillon (par exemple : “Basique : 400 minutes/mois pour 300”). Cela évite les ajustements de dernière minute.
+</Tip>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture : première étape de l’assistant, où vous nommez le forfait, décrivez ce qu’il inclut et définissez sa disponibilité.">
   <img
     src="/images/subscriptionsplans2.png"
-    alt="Assistant de création de forfait à l’étape des informations de base, avec des champs pour le nom du forfait et la description, et des options pour le rendre actif ou le mettre en avant."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : première étape de l’assistant, où vous nommez le forfait, décrivez ce qu’il inclut et définissez sa disponibilité.
-</p>
+    alt="Assistant de création de forfait à l’étape des informations de base, avec des champs pour le nom du forfait et la description, et des options pour le rendre actif ou le mettre en avant." />
+</Frame>
 
 ### Étape 1 : Informations de base
 
@@ -84,7 +80,9 @@ Renseignez l’essentiel :
 - Actif : **Activé**
 - Mis en avant : **Activé** (uniquement pour le forfait que vous souhaitez mettre en avant)
 
-> **Erreur fréquente :** Laisser la description vide. Une description claire réduit les questions et les demandes au support.
+<Warning>
+  **Erreur fréquente :** Laisser la description vide. Une description claire réduit les questions et les demandes au support.
+</Warning>
 
 ### Étape 2 : Type de forfait
 
@@ -93,7 +91,9 @@ Choisissez le modèle de facturation. Vous verrez généralement des options com
 - **Achat unique** : Paiement unique pour une quantité fixe de minutes.
 - **Paiement à l’usage** : Facturation à la minute avec usage flexible.
 
-> **Important :** Les options disponibles peuvent varier selon votre compte ou votre formule.
+<Warning>
+  Les options disponibles peuvent varier selon votre compte ou votre formule.
+</Warning>
 
 ### Étape 3 : Prix et minutes
 
@@ -142,7 +142,9 @@ Avant de finaliser, un récapitulatif affiche :
 
 Si quelque chose ne convient pas, utilisez l’option **modifier** dans la section concernée, puis vérifiez à nouveau. Quand tout est correct, créez le forfait.
 
-> **Astuce :** Vérifiez toujours “minutes incluses” et “prix” ensemble. Les erreurs les plus fréquentes viennent d’un mauvais alignement entre niveaux.
+<Tip>
+  Vérifiez toujours “minutes incluses” et “prix” ensemble. Les erreurs les plus fréquentes viennent d’un mauvais alignement entre niveaux.
+</Tip>
 
 ## Modifier un forfait existant
 
@@ -153,19 +155,15 @@ Dans l’éditeur, vous verrez généralement des onglets comme :
 - **Fonctionnalités** : Ajuster les valeurs incluses dans le forfait.
 - **Prix et minutes** : Modifier les minutes incluses, le prix et les minutes supplémentaires.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture : modification du prix et des minutes, y compris les minutes supplémentaires et un avertissement lié à la création d’un nouveau prix dans Stripe.">
   <img
     src="/images/subscriptionsplans3.png"
-    alt="Écran de modification du forfait dans la section prix et minutes, avec un avertissement sur les changements de prix, des champs pour les minutes incluses et le prix, et une option pour activer des minutes supplémentaires avec leur tarif par minute."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Écran de modification du forfait dans la section prix et minutes, avec un avertissement sur les changements de prix, des champs pour les minutes incluses et le prix, et une option pour activer des minutes supplémentaires avec leur tarif par minute." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture : modification du prix et des minutes, y compris les minutes supplémentaires et un avertissement lié à la création d’un nouveau prix dans Stripe.
-</p>
-
-> **Important :** En changeant le prix, la plateforme peut créer un **nouveau prix dans Stripe**. Les abonnés existants peuvent conserver leur prix actuel et ne pas être affectés (cela peut varier selon votre configuration).
+<Warning>
+  En changeant le prix, la plateforme peut créer un **nouveau prix dans Stripe**. Les abonnés existants peuvent conserver leur prix actuel et ne pas être affectés (cela peut varier selon votre configuration).
+</Warning>
 
 ## Gestion de base (rechercher, copier l’identifiant, désactiver)
 
@@ -174,4 +172,6 @@ Depuis la liste, vous pouvez généralement :
 - **Copier l’identifiant du forfait** pour le support ou des vérifications internes.
 - **Désactiver** un forfait pour qu’il ne soit plus proposé aux nouveaux utilisateurs.
 
-> **Erreur fréquente :** Désactiver un forfait sans en créer un de remplacement. Si vous devez le retirer, créez d’abord le nouveau forfait, puis désactivez l’ancien.
+<Warning>
+  **Erreur fréquente :** Désactiver un forfait sans en créer un de remplacement. Si vous devez le retirer, créez d’abord le nouveau forfait, puis désactivez l’ancien.
+</Warning>

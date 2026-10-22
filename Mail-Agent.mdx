@@ -15,7 +15,9 @@ A **Mail Agent** is an assistant that watches an inbox for you. It reads each ne
 
 Setting up your first agent takes about ten minutes, and you don't need any technical background.
 
-> **Note:** AI Email Manager is marked as **Beta**. It's still growing, so some screens may look slightly different in your account.
+<Note>
+  AI Email Manager is marked as **Beta**. It's still growing, so some screens may look slightly different in your account.
+</Note>
 
 ## What you need before you start
 
@@ -30,33 +32,39 @@ You don't need the inbox ready right now. You can build the agent first and conn
 
 Open **Mail Agents**. This is the list of every agent you've built. Click **Create Agent** in the top right.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents1.png" alt="Mail Agents list with four agents, each with the warning No email assigned, a search box and the Create Agent button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  The Mail Agents list. Each agent shows its name, its creation date, and an orange warning while it has no inbox connected.
-</p>
+<Frame caption="The Mail Agents list. Each agent shows its name, its creation date, and an orange warning while it has no inbox connected.">
+  <img src="/images/mailagents1.png" alt="Mail Agents list with four agents, each with the warning No email assigned, a search box and the Create Agent button" />
+</Frame>
 
 A short wizard opens with five steps:
 
-1. **Name your mail agent**: a name your team will recognize, such as "Order Support" or "Sales Inbox". Up to 50 characters.
-2. **System prompt**: how the agent should handle email. Optional.
-3. **Email categories**: labels to sort incoming mail. Optional.
-4. **Automation rules**: which senders get automatic replies and who receives a copy.
-5. **Connect email**: the inbox the agent will look after.
+<Steps>
+  <Step>
+    **Name your mail agent**: a name your team will recognize, such as "Order Support" or "Sales Inbox". Up to 50 characters.
+  </Step>
+  <Step>
+    **System prompt**: how the agent should handle email. Optional.
+  </Step>
+  <Step>
+    **Email categories**: labels to sort incoming mail. Optional.
+  </Step>
+  <Step>
+    **Automation rules**: which senders get automatic replies and who receives a copy.
+  </Step>
+  <Step>
+    **Connect email**: the inbox the agent will look after.
+  </Step>
+</Steps>
 
 Every step after the name has **Skip**, and you can change everything later from the agent's tabs.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: the five steps of the wizard, from the name to connecting the inbox.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the five steps of the wizard, from the name to connecting the inbox.
-</p>
-
-> **Important:** The agent is created when you move past **Email categories**. If you close the wizard after that step, the agent stays in the list. You can finish it or delete it from there.
+<Warning>
+  The agent is created when you move past **Email categories**. If you close the wizard after that step, the agent stays in the list. You can finish it or delete it from there.
+</Warning>
 
 Under the name in the list you'll see **No email assigned** in orange. That's normal: no inbox is connected yet. You'll fix that in step 4.
 
@@ -68,13 +76,9 @@ Each row has a **⋮** menu with three actions:
 
 The agent's configuration has four tabs: **Agent**, **Categories**, **Mailbox** and **Advanced**. The next steps follow them in order. You can rename the agent from the text field at the top of the screen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Edit an agent → write the Conversation Prompt → choose the model → add a category → review the Advanced tab.
-</p>
+<Frame caption="Video: Edit an agent → write the Conversation Prompt → choose the model → add a category → review the Advanced tab.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" />
+</Frame>
 
 ## Step 2 — Tell the agent how to behave
 
@@ -92,7 +96,9 @@ The more precise you are, the more predictable the results. A more useful versio
 
 The counter in the bottom right shows how much you've used of the 4000 characters. Saved changes apply to new incoming mail.
 
-> **Tip:** Write down what the agent must **not** do, not just what it should do. Sentences like "never confirm appointments", "never promise refunds" or "never discuss prices over email" prevent most surprises.
+<Tip>
+  Write down what the agent must **not** do, not just what it should do. Sentences like "never confirm appointments", "never promise refunds" or "never discuss prices over email" prevent most surprises.
+</Tip>
 
 ### AI Intelligence (LLM)
 
@@ -111,7 +117,9 @@ New agents start with **GPT 4.1 Mini**.
 
 In the same panel you'll find **Temperature**, a slider from 0 to 1 that starts at 0.7. Lower values keep the wording consistent and repeatable. Higher values make it more varied and natural, but less predictable.
 
-> **For beginners:** You don't have to touch any of this. If replies feel robotic, try Claude Sonnet or raise the temperature a little. If they vary too much, lower it.
+<Info>
+  **For beginners:** You don't have to touch any of this. If replies feel robotic, try Claude Sonnet or raise the temperature a little. If they vary too much, lower it.
+</Info>
 
 ## Step 3 — Organise your mail with categories
 
@@ -129,13 +137,9 @@ Click **Add category**. A window opens with these fields:
 
 You can pick one of the preset colours or create your own with the **\+** swatch.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-categories.png" alt="Add category window with the name Order status, a description, the green badge color and both reply switches turned on" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  The Add category window. The badge on the right previews how the label will look.
-</p>
+<Frame caption="The Add category window. The badge on the right previews how the label will look.">
+  <img src="/images/mail-agent-categories.png" alt="Add category window with the name Order status, a description, the green badge color and both reply switches turned on" />
+</Frame>
 
 Below the colours there are two switches:
 
@@ -146,9 +150,13 @@ If you switch both off, the agent only labels the message (**Categorize only**) 
 
 Click **Add category** to add it. Each category needs both a name and a description.
 
-> **Common mistake:** Writing a vague description, like "important stuff". The agent uses this text to decide which emails belong here, so describe the actual content: "messages asking for an invoice, a refund, or a change of payment method". If emails land in the wrong category, tightening the description is usually the fastest fix.
+<Warning>
+  **Common mistake:** Writing a vague description, like "important stuff". The agent uses this text to decide which emails belong here, so describe the actual content: "messages asking for an invoice, a refund, or a change of payment method". If emails land in the wrong category, tightening the description is usually the fastest fix.
+</Warning>
 
-> **Important:** Start with **Generate draft reply** on and **Auto-reply** off. Read the drafts for a few days. Once the agent gets the tone and the facts right, turn on automatic replies where mistakes would be harmless.
+<Warning>
+  Start with **Generate draft reply** on and **Auto-reply** off. Read the drafts for a few days. Once the agent gets the tone and the facts right, turn on automatic replies where mistakes would be harmless.
+</Warning>
 
 ## Step 4 — Connect the inbox
 
@@ -174,7 +182,9 @@ If you choose **Other email (IMAP & SMTP)**, the **IMAP / SMTP setup** form asks
 
 Click **Connect mailbox**. Your credentials are encrypted and stored securely. Callin.io then imports the messages from the chosen period (**Syncing your inbox**). Until the sync finishes, new messages may take a moment to appear.
 
-> **Note:** You can skip this step and connect the inbox later. Everything else stays saved, but the agent won't process anything until an inbox is linked.
+<Note>
+  You can skip this step and connect the inbox later. Everything else stays saved, but the agent won't process anything until an inbox is linked.
+</Note>
 
 ## Step 5 — Fine-tune the behaviour (optional)
 
@@ -191,9 +201,13 @@ Open the **Advanced** tab. Everything here is optional, and both rules start swi
 
 This is handy when a manager wants to keep an eye on what the agent sends.
 
-> **Tip:** If you enable automatic replies in any category, enable the copy as well, at least while you're building trust in the agent.
+<Tip>
+  If you enable automatic replies in any category, enable the copy as well, at least while you're building trust in the agent.
+</Tip>
 
-> **Warning:** If the copy goes to a colleague, choose **BCC (hidden)**. With **CC (visible)**, your customer sees your colleague's address in every message.
+<Warning>
+  If the copy goes to a colleague, choose **BCC (hidden)**. With **CC (visible)**, your customer sees your colleague's address in every message.
+</Warning>
 
 ### Agent priority
 
@@ -207,7 +221,9 @@ You can only change the order once an inbox is connected. Until then, the screen
 
 When you have unsaved changes, a bar appears at the bottom of the screen with two buttons: **Discard**, which undoes your changes, and **Save**, which stores them.
 
-> **Important:** Don't leave the screen while that bar is visible. If you navigate away without clicking **Save**, your changes are lost.
+<Warning>
+  Don't leave the screen while that bar is visible. If you navigate away without clicking **Save**, your changes are lost.
+</Warning>
 
 ## The Email section: read and reply in one place
 
@@ -221,9 +237,17 @@ When you have unsaved changes, a bar appears at the bottom of the screen with tw
 
 Three quick signs that everything is in place:
 
-1. In the **Mail Agents** list, your agent no longer shows **No email assigned** under its name.
-2. Send a test email to the connected inbox from another address of yours, using wording that matches one of your categories.
-3. Wait a few minutes and open [Email](/Mail-Agent-Email). Depending on the category, you should find a draft ready to review or a reply already sent.
+<Steps>
+  <Step>
+    In the **Mail Agents** list, your agent no longer shows **No email assigned** under its name.
+  </Step>
+  <Step>
+    Send a test email to the connected inbox from another address of yours, using wording that matches one of your categories.
+  </Step>
+  <Step>
+    Wait a few minutes and open [Email](/Mail-Agent-Email). Depending on the category, you should find a draft ready to review or a reply already sent.
+  </Step>
+</Steps>
 
 If nothing happens, check in order:
 

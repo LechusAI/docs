@@ -16,7 +16,9 @@ Usa estos accesos directos para ir a la app:
 - Ir a **Números**: [Abrir Números](https://app.callin.io/numbers)
 - Ir a **BYOC (troncal SIP)**: [Abrir BYOC](https://app.callin.io/byoc)
 
-> **Consejo:** Si quieres empezar rápido, compra un número de **Estados Unidos o Canadá** (es instantáneo). Si necesitas un número internacional, prepárate para enviar documentación (las reglas cambian según el país).
+<Tip>
+  Si quieres empezar rápido, compra un número de **Estados Unidos o Canadá** (es instantáneo). Si necesitas un número internacional, prepárate para enviar documentación (las reglas cambian según el país).
+</Tip>
 
 ---
 
@@ -24,13 +26,9 @@ Usa estos accesos directos para ir a la app:
 
 La página **Números** muestra todos los números conectados a tu espacio de trabajo (comprados, importados, personales, de Telnyx o de BYOC). Desde aquí puedes añadir números nuevos y comprobar el estado de cada uno.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers1.png" alt="Página Números con las pestañas Números y Solicitudes de Números, los filtros por tipo, la lista de números y el menú + Agregar número abierto con Comprar número, Importar desde Twilio, Agregar número personal y Agregar número de Telnyx." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página Números, donde puedes filtrar por tipo y pulsar + Agregar número para comprar o importar números.
-</p>
+<Frame caption="Captura: la página Números, donde puedes filtrar por tipo y pulsar + Agregar número para comprar o importar números.">
+  <img src="/images/numbers1.png" alt="Página Números con las pestañas Números y Solicitudes de Números, los filtros por tipo, la lista de números y el menú + Agregar número abierto con Comprar número, Importar desde Twilio, Agregar número personal y Agregar número de Telnyx." />
+</Frame>
 
 ### Qué puedes hacer desde Números
 
@@ -58,47 +56,73 @@ Comprar números a través de Callin.io es la forma más sencilla de empezar.
 
 Para **Estados Unidos** y **Canadá**, la compra es instantánea:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/numbers-purchase.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: + Agregar número → Comprar número → Buscar números → seleccionar un número.">
+  <video autoPlay muted loop playsInline src="/images/numbers-purchase.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: + Agregar número → Comprar número → Buscar números → seleccionar un número.
-</p>
+<Steps>
+  <Step>
+    Ve a [Abrir Números](https://app.callin.io/numbers).
+  </Step>
+  <Step>
+    Pulsa **+ Agregar número** → **Comprar número**.
+  </Step>
+  <Step>
+    Elige el **País**. Puedes buscar en la lista por nombre, código ISO o prefijo.
+  </Step>
+  <Step>
+    Elige el tipo:
+    - **Local**: código de área local estándar.
+    - **Gratuito**: prefijos como 800 u 888.
+  </Step>
+  <Step>
+    (Opcional) Usa **Buscar por código de área** (ejemplo: `415`).
+  </Step>
+  <Step>
+    Pulsa **Buscar números**.
+  </Step>
+  <Step>
+    Selecciona un número de la lista. Cada uno muestra su estado o provincia (por ejemplo, `NV`).
+  </Step>
+  <Step>
+    Pulsa **Comprar número seleccionado**.
+  </Step>
+</Steps>
 
-1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Agregar número** → **Comprar número**.
-3. Elige el **País**. Puedes buscar en la lista por nombre, código ISO o prefijo.
-4. Elige el tipo:
-   - **Local**: código de área local estándar.
-   - **Gratuito**: prefijos como 800 u 888.
-5. (Opcional) Usa **Buscar por código de área** (ejemplo: `415`).
-6. Pulsa **Buscar números**.
-7. Selecciona un número de la lista. Cada uno muestra su estado o provincia (por ejemplo, `NV`).
-8. Pulsa **Comprar número seleccionado**.
-
-> **Importante:** Después de la compra, el número debería aparecer en tu lista. Si ves el aviso **Este número no está asignado a ningún agente**, todavía tienes que asignarlo a un agente antes de usarlo.
+<Warning>
+  Después de la compra, el número debería aparecer en tu lista. Si ves el aviso **Este número no está asignado a ningún agente**, todavía tienes que asignarlo a un agente antes de usarlo.
+</Warning>
 
 #### Otros países: solicitud + documentación
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers13.png" alt="Ventana Comprar un número nuevo para España, con las opciones de Tipo de solicitud Nuevo número y Portabilidad, la lista de números disponibles, el aviso de Requisitos de documentos y el botón Iniciar solicitud." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: en los países fuera de Estados Unidos y Canadá, eliges el tipo de solicitud y un número, y pulsas Iniciar solicitud para cargar los documentos del país.
-</p>
+<Frame caption="Captura: en los países fuera de Estados Unidos y Canadá, eliges el tipo de solicitud y un número, y pulsas Iniciar solicitud para cargar los documentos del país.">
+  <img src="/images/numbers13.png" alt="Ventana Comprar un número nuevo para España, con las opciones de Tipo de solicitud Nuevo número y Portabilidad, la lista de números disponibles, el aviso de Requisitos de documentos y el botón Iniciar solicitud." />
+</Frame>
 
 En los países **fuera de Estados Unidos y Canadá**, la compra sigue un flujo **basado en solicitud** en lugar de una compra instantánea:
 
-1. Pulsa **+ Agregar número** → **Comprar número** y elige el **País**.
-2. Elige el **Tipo de solicitud**:
-   - **Nuevo número**: conseguir un número nuevo.
-   - **Portabilidad**: conservar tu número actual (ver más abajo).
-3. Elige uno de los **números** disponibles. Cada uno muestra el operador que lo proporciona (por ejemplo, **telnyx**). Según el país, también puedes elegir el tipo de número (por ejemplo, **Local** o **Móvil**).
-4. Pulsa **Iniciar solicitud**. La plataforma carga entonces la información y los **Requisitos de documentos** específicos del país.
-5. Completa los campos obligatorios, sube los documentos y guarda cada elemento.
-6. Envía la solicitud y paga las tarifas necesarias. Después, un operador revisa la solicitud.
+<Steps>
+  <Step>
+    Pulsa **+ Agregar número** → **Comprar número** y elige el **País**.
+  </Step>
+  <Step>
+    Elige el **Tipo de solicitud**:
+    - **Nuevo número**: conseguir un número nuevo.
+    - **Portabilidad**: conservar tu número actual (ver más abajo).
+  </Step>
+  <Step>
+    Elige uno de los **números** disponibles. Cada uno muestra el operador que lo proporciona (por ejemplo, **telnyx**). Según el país, también puedes elegir el tipo de número (por ejemplo, **Local** o **Móvil**).
+  </Step>
+  <Step>
+    Pulsa **Iniciar solicitud**. La plataforma carga entonces la información y los **Requisitos de documentos** específicos del país.
+  </Step>
+  <Step>
+    Completa los campos obligatorios, sube los documentos y guarda cada elemento.
+  </Step>
+  <Step>
+    Envía la solicitud y paga las tarifas necesarias. Después, un operador revisa la solicitud.
+  </Step>
+</Steps>
 
 Puedes seguir todas tus solicitudes en la pestaña **Solicitudes de Números**.
 
@@ -106,11 +130,21 @@ Puedes seguir todas tus solicitudes en la pestaña **Solicitudes de Números**.
 
 La **Portabilidad** te permite traer un número que ya tienes con otro proveedor, para que tus clientes sigan llamando al mismo número.
 
-1. En **Comprar un número nuevo**, elige el **País** y selecciona **Portabilidad** como **Tipo de solicitud**.
-2. Escribe tu número en **Número a portar** y pulsa **Verificar portabilidad**.
-3. Si el número se puede portar, pulsa **Iniciar solicitud** y completa los **Requisitos de documentos**, igual que con un número nuevo.
+<Steps>
+  <Step>
+    En **Comprar un número nuevo**, elige el **País** y selecciona **Portabilidad** como **Tipo de solicitud**.
+  </Step>
+  <Step>
+    Escribe tu número en **Número a portar** y pulsa **Verificar portabilidad**.
+  </Step>
+  <Step>
+    Si el número se puede portar, pulsa **Iniciar solicitud** y completa los **Requisitos de documentos**, igual que con un número nuevo.
+  </Step>
+</Steps>
 
-> **Consejo:** La portabilidad suele tardar más que comprar un número nuevo, porque tu proveedor actual tiene que liberarlo. No des de baja tu línea actual hasta que el número aparezca en tu lista de **Números**.
+<Tip>
+  La portabilidad suele tardar más que comprar un número nuevo, porque tu proveedor actual tiene que liberarlo. No des de baja tu línea actual hasta que el número aparezca en tu lista de **Números**.
+</Tip>
 
 Esta parte del proceso es importante porque los requisitos no siempre son los mismos. Pueden cambiar según el **país**, el **tipo de número** y si la solicitud la hace un **particular**, un **autónomo** o una **empresa**.
 
@@ -150,7 +184,9 @@ Algunas etiquetas también aclaran quién debe aportar cada elemento, por ejempl
 
 Así que, aunque dos clientes soliciten números en el mismo país, la documentación necesaria puede variar según el tipo de empresa y la categoría exacta del número.
 
-> **Consejo:** En el formulario de solicitud, algunos campos tienen su propio botón **Guardar**. Escribir un valor no siempre es suficiente: el elemento puede seguir mostrando **Pendiente** hasta que pulses **Guardar** correctamente.
+<Tip>
+  En el formulario de solicitud, algunos campos tienen su propio botón **Guardar**. Escribir un valor no siempre es suficiente: el elemento puede seguir mostrando **Pendiente** hasta que pulses **Guardar** correctamente.
+</Tip>
 
 ##### Requisitos documentales habituales (ejemplos)
 
@@ -190,7 +226,9 @@ Eso normalmente significa subir un documento reciente como:
 
 Los documentos más antiguos pueden rechazarse aunque la dirección sea correcta.
 
-> **Importante:** Cuando subas una factura o un extracto bancario como comprobante de domicilio, asegúrate de que tenga **menos de 3 meses**. Si es más antiguo, la solicitud puede quedarse pendiente o ser rechazada en la revisión.
+<Warning>
+  Cuando subas una factura o un extracto bancario como comprobante de domicilio, asegúrate de que tenga **menos de 3 meses**. Si es más antiguo, la solicitud puede quedarse pendiente o ser rechazada en la revisión.
+</Warning>
 
 ##### Cómo preparar los documentos antes de subirlos
 
@@ -215,7 +253,9 @@ Problemas habituales que retrasan la aprobación:
 - Un campo está completado, pero no se pulsó **Guardar**
 - Se subió un documento, pero su estado sigue mostrando **Pendiente**
 
-> **Error común:** Subir el archivo correcto no siempre basta. Después de cada subida o texto, comprueba que el requisito ya no muestra **Pendiente**.
+<Warning>
+  **Error común:** Subir el archivo correcto no siempre basta. Después de cada subida o texto, comprueba que el requisito ya no muestra **Pendiente**.
+</Warning>
 
 ##### Tarifas + revisión
 
@@ -234,19 +274,17 @@ Después de enviar y pagar:
 
 La revisión suele ser manual, por eso la aprobación no siempre es inmediata.
 
-> **Importante:** El tiempo de aprobación varía según el país, las reglas del proveedor y la calidad de los documentos. Si necesitas el número para un lanzamiento o una campaña, envía la solicitud lo antes posible con documentos recientes y bien legibles.
+<Warning>
+  El tiempo de aprobación varía según el país, las reglas del proveedor y la calidad de los documentos. Si necesitas el número para un lanzamiento o una campaña, envía la solicitud lo antes posible con documentos recientes y bien legibles.
+</Warning>
 
 ### Seguir tus solicitudes (Solicitudes de Números)
 
 La pestaña **Solicitudes de Números** muestra tus solicitudes de compra y de portabilidad para países fuera de Estados Unidos y Canadá.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers-requests.png" alt="Pestaña Solicitudes de Números con los filtros Estado, Flujo y Estado del pago, el botón Actualizar y una tarjeta por solicitud con el país, el estado, el tipo de número, el flujo, el número elegido, la fecha y el estado del pago." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: cada tarjeta es una solicitud. Usa los filtros para encontrar las que necesitan tu atención.
-</p>
+<Frame caption="Captura: cada tarjeta es una solicitud. Usa los filtros para encontrar las que necesitan tu atención.">
+  <img src="/images/numbers-requests.png" alt="Pestaña Solicitudes de Números con los filtros Estado, Flujo y Estado del pago, el botón Actualizar y una tarjeta por solicitud con el país, el estado, el tipo de número, el flujo, el número elegido, la fecha y el estado del pago." />
+</Frame>
 
 Cada tarjeta muestra el **país**, el **estado** de la solicitud, el **Tipo de Número**, el **Flujo**, el **Número Elegido**, la fecha y el estado del pago.
 
@@ -260,7 +298,9 @@ Usa los filtros para acotar la lista:
 
 Pulsa **Actualizar** para ver el estado más reciente.
 
-> **Consejo:** Revisa esta pestaña con frecuencia mientras tengas una solicitud abierta. Una solicitud en **Necesita Info** espera que corrijas o añadas algo, y **Pago Pendiente** significa que no avanzará hasta que pagues.
+<Tip>
+  Revisa esta pestaña con frecuencia mientras tengas una solicitud abierta. Una solicitud en **Necesita Info** espera que corrijas o añadas algo, y **Pago Pendiente** significa que no avanzará hasta que pagues.
+</Tip>
 
 ---
 
@@ -268,13 +308,27 @@ Pulsa **Actualizar** para ver el estado más reciente.
 
 Si ya tienes números en Twilio, puedes importarlos a Callin.io:
 
-1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Agregar número** → **Importar desde Twilio**.
-3. Introduce tu **Twilio Account SID** y tu **Twilio Auth Token**.
-4. Pulsa **Buscar números de Twilio** y selecciona los números que quieres importar.
-5. Asigna los números importados a un agente de IA cuando quieras usarlos.
+<Steps>
+  <Step>
+    Ve a [Abrir Números](https://app.callin.io/numbers).
+  </Step>
+  <Step>
+    Pulsa **+ Agregar número** → **Importar desde Twilio**.
+  </Step>
+  <Step>
+    Introduce tu **Twilio Account SID** y tu **Twilio Auth Token**.
+  </Step>
+  <Step>
+    Pulsa **Buscar números de Twilio** y selecciona los números que quieres importar.
+  </Step>
+  <Step>
+    Asigna los números importados a un agente de IA cuando quieras usarlos.
+  </Step>
+</Steps>
 
-> **Error común:** Copiar las credenciales de Twilio equivocadas (por ejemplo, unas de prueba en lugar de las reales). Si no aparece ningún número, revisa tu proyecto de Twilio y sus permisos.
+<Warning>
+  **Error común:** Copiar las credenciales de Twilio equivocadas (por ejemplo, unas de prueba en lugar de las reales). Si no aparece ningún número, revisa tu proyecto de Twilio y sus permisos.
+</Warning>
 
 ---
 
@@ -282,25 +336,39 @@ Si ya tienes números en Twilio, puedes importarlos a Callin.io:
 
 Un **número personal** es útil cuando quieres hacer llamadas salientes desde tu propio número, pero no puede recibir llamadas entrantes en Callin.io.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers2.png" alt="Ventana Agregar número personal con el selector de país, el campo de teléfono, el mensaje de número no válido y los pasos del proceso de verificación." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Agregar número personal, con el campo del teléfono y el proceso de verificación (recibes una llamada e introduces el código).
-</p>
+<Frame caption="Captura: la ventana Agregar número personal, con el campo del teléfono y el proceso de verificación (recibes una llamada e introduces el código).">
+  <img src="/images/numbers2.png" alt="Ventana Agregar número personal con el selector de país, el campo de teléfono, el mensaje de número no válido y los pasos del proceso de verificación." />
+</Frame>
 
 #### Cómo verificar tu número personal
 
-1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Agregar número** → **Agregar número personal**.
-3. Elige el país e introduce tu número de teléfono.
-4. Pulsa **Verificar número**.
-5. Recibirás una **llamada de verificación** de Twilio.
-6. Introduce el código de verificación cuando se te pida.
-7. Tras la verificación, el número se añade a tu cuenta.
+<Steps>
+  <Step>
+    Ve a [Abrir Números](https://app.callin.io/numbers).
+  </Step>
+  <Step>
+    Pulsa **+ Agregar número** → **Agregar número personal**.
+  </Step>
+  <Step>
+    Elige el país e introduce tu número de teléfono.
+  </Step>
+  <Step>
+    Pulsa **Verificar número**.
+  </Step>
+  <Step>
+    Recibirás una **llamada de verificación** de Twilio.
+  </Step>
+  <Step>
+    Introduce el código de verificación cuando se te pida.
+  </Step>
+  <Step>
+    Tras la verificación, el número se añade a tu cuenta.
+  </Step>
+</Steps>
 
-> **Importante:** Los números personales son **solo para llamadas salientes**. Si necesitas recibir llamadas, usa un número comprado o importado, o BYOC.
+<Warning>
+  Los números personales son **solo para llamadas salientes**. Si necesitas recibir llamadas, usa un número comprado o importado, o BYOC.
+</Warning>
 
 ---
 
@@ -308,12 +376,24 @@ Un **número personal** es útil cuando quieres hacer llamadas salientes desde t
 
 Si tu cuenta de Telnyx está conectada (desde BYOC), puedes importar tus números activos de Telnyx a Callin.io:
 
-1. Ve a [Abrir Números](https://app.callin.io/numbers).
-2. Pulsa **+ Agregar número** → **Agregar número de Telnyx**.
-3. Usa **Buscar números...** para encontrarlos y marca la casilla **Seleccionar** de cada número que quieras. **Seleccionar visibles** marca todos los números de la lista.
-4. Pulsa **Importar** y después asígnalos a tus agentes cuando lo necesites.
+<Steps>
+  <Step>
+    Ve a [Abrir Números](https://app.callin.io/numbers).
+  </Step>
+  <Step>
+    Pulsa **+ Agregar número** → **Agregar número de Telnyx**.
+  </Step>
+  <Step>
+    Usa **Buscar números...** para encontrarlos y marca la casilla **Seleccionar** de cada número que quieras. **Seleccionar visibles** marca todos los números de la lista.
+  </Step>
+  <Step>
+    Pulsa **Importar** y después asígnalos a tus agentes cuando lo necesites.
+  </Step>
+</Steps>
 
-> **Importante:** Si todavía no has conectado Telnyx, la ventana muestra un error por falta de la clave API de Telnyx y ningún número. Conecta Telnyx primero en [BYOC (troncal SIP)](#byoc-troncal-sip).
+<Warning>
+  Si todavía no has conectado Telnyx, la ventana muestra un error por falta de la clave API de Telnyx y ningún número. Conecta Telnyx primero en [BYOC (troncal SIP)](#byoc-troncal-sip).
+</Warning>
 
 ---
 
@@ -325,7 +405,9 @@ En la lista de **Números**, pulsa el menú **⋮** de un número para gestionar
 - **Cancelar suscripción** (números comprados): deja de renovar un número que compraste a través de Callin.io.
 - **Eliminar** (números personales): borra un número personal de tu cuenta.
 
-> **Importante:** Antes de cancelar o eliminar un número, asigna otro número a los agentes que lo usan, para que puedan seguir haciendo y recibiendo llamadas.
+<Warning>
+  Antes de cancelar o eliminar un número, asigna otro número a los agentes que lo usan, para que puedan seguir haciendo y recibiendo llamadas.
+</Warning>
 
 ---
 
@@ -333,23 +415,31 @@ En la lista de **Números**, pulsa el menú **⋮** de un número para gestionar
 
 Comprar o importar un número es solo el primer paso: tu agente todavía tiene que usarlo. Si la lista de **Números** muestra **Este número no está asignado a ningún agente**, asígnalo antes de empezar a llamar:
 
-1. Ve a **Agentes de IA**.
-2. Pulsa el menú **⋮** del agente y elige **Asignar número**.
-3. En la ventana de asignación, busca el número (puedes buscar por número, etiqueta u operador) y pulsa **Asignar**.
+<Steps>
+  <Step>
+    Ve a **Agentes de IA**.
+  </Step>
+  <Step>
+    Pulsa el menú **⋮** del agente y elige **Asignar número**.
+  </Step>
+  <Step>
+    En la ventana de asignación, busca el número (puedes buscar por número, etiqueta u operador) y pulsa **Asignar**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/numbers-assign.png" alt="Ventana Asignar número de un agente, con la lista de números, su estado (asignado a otro agente o no asignado), el operador y un botón Asignar, además del enlace Comprar números nuevos." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Asignar número muestra qué números están libres y cuáles usa ya otro agente.
-</p>
+<Frame caption="Captura: la ventana Asignar número muestra qué números están libres y cuáles usa ya otro agente.">
+  <img src="/images/numbers-assign.png" alt="Ventana Asignar número de un agente, con la lista de números, su estado (asignado a otro agente o no asignado), el operador y un botón Asignar, además del enlace Comprar números nuevos." />
+</Frame>
 
 La columna **Estado** indica si cada número está **No asignado** o ya está asignado a otro agente. Si no tienes un número adecuado, pulsa **Comprar números nuevos**.
 
-> **Error común:** Asignar un número que está usando otro agente. Como avisa la ventana, si lo asignas aquí **se desvinculará del otro agente**, que dejará de usar ese número.
+<Warning>
+  **Error común:** Asignar un número que está usando otro agente. Como avisa la ventana, si lo asignas aquí **se desvinculará del otro agente**, que dejará de usar ese número.
+</Warning>
 
-> **Consejo:** Mantén un número “de pruebas” separado del de producción mientras ajustas las instrucciones y los flujos de llamada.
+<Tip>
+  Mantén un número “de pruebas” separado del de producción mientras ajustas las instrucciones y los flujos de llamada.
+</Tip>
 
 ---
 
@@ -365,13 +455,9 @@ Motivos habituales para usar BYOC:
 
 Configúralo aquí: [Abrir BYOC](https://app.callin.io/byoc)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/byoc1.png" alt="Página BYOC en la pestaña Telnyx, con el campo Clave de Telnyx, el botón Comenzar y los pasos de la configuración: guardar la clave, obtener los números, guardarlos, aprovisionar la troncal SIP y crear los números de teléfono." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la configuración de BYOC, donde puedes conectar Telnyx y sincronizar tus números con Callin.io.
-</p>
+<Frame caption="Captura: la configuración de BYOC, donde puedes conectar Telnyx y sincronizar tus números con Callin.io.">
+  <img src="/images/byoc1.png" alt="Página BYOC en la pestaña Telnyx, con el campo Clave de Telnyx, el botón Comenzar y los pasos de la configuración: guardar la clave, obtener los números, guardarlos, aprovisionar la troncal SIP y crear los números de teléfono." />
+</Frame>
 
 ### Qué es una troncal SIP (en sencillo)
 
@@ -383,10 +469,20 @@ Una **troncal SIP** es una conexión entre un operador telefónico y tu sistema 
 
 Si usas **Telnyx**, Callin.io te guía en la configuración con una clave API:
 
-1. Ve a [Abrir BYOC](https://app.callin.io/byoc).
-2. Abre la pestaña **Telnyx**.
-3. Pega tu **Clave de Telnyx**.
-4. Pulsa **Comenzar**.
+<Steps>
+  <Step>
+    Ve a [Abrir BYOC](https://app.callin.io/byoc).
+  </Step>
+  <Step>
+    Abre la pestaña **Telnyx**.
+  </Step>
+  <Step>
+    Pega tu **Clave de Telnyx**.
+  </Step>
+  <Step>
+    Pulsa **Comenzar**.
+  </Step>
+</Steps>
 
 Durante la configuración verás pasos como:
 
@@ -398,7 +494,9 @@ Durante la configuración verás pasos como:
 
 Cuando termine, tus números de Telnyx deberían aparecer en **Números**.
 
-> **Importante:** Si tu clave de Telnyx no tiene permiso para leer los números (DID), Callin.io no podrá obtenerlos.
+<Warning>
+  Si tu clave de Telnyx no tiene permiso para leer los números (DID), Callin.io no podrá obtenerlos.
+</Warning>
 
 ---
 
@@ -406,13 +504,9 @@ Cuando termine, tus números de Telnyx deberían aparecer en **Números**.
 
 Si tu proveedor no es Telnyx, usa la pestaña **Otro proveedor SIP** (**Troncal SIP genérica / Extensión PBX (cualquier proveedor)**). Sirve para un número de troncal SIP (DID) y también para una **extensión de tu centralita** (PBX). Configurarás tres pestañas: **Básico**, **Entrante** y **Saliente**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/byoc-sip.png" alt="Pestaña Otro proveedor SIP en BYOC, con las pestañas Básico, Entrante y Saliente, los campos Etiqueta y Número de teléfono / Extensión, las casillas de llamadas entrantes y salientes, y los botones Guardar e importar y Restablecer." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el formulario de troncal SIP genérica / extensión PBX. Completa Básico, Entrante y Saliente, y pulsa Guardar e importar.
-</p>
+<Frame caption="Captura: el formulario de troncal SIP genérica / extensión PBX. Completa Básico, Entrante y Saliente, y pulsa Guardar e importar.">
+  <img src="/images/byoc-sip.png" alt="Pestaña Otro proveedor SIP en BYOC, con las pestañas Básico, Entrante y Saliente, los campos Etiqueta y Número de teléfono / Extensión, las casillas de llamadas entrantes y salientes, y los botones Guardar e importar y Restablecer." />
+</Frame>
 
 #### Básico
 
@@ -428,7 +522,9 @@ Las llamadas entrantes van del operador a tu sistema.
 - **Transporte**: **TLS**, **TCP** o **UDP**
 - **Cifrado de medios**: **Permitido**, **Requerido** o **Deshabilitado**
 
-> **Consejo:** Las llamadas entrantes a menudo **no** necesitan credenciales. Muchos operadores las autentican por lista de IP permitidas o por la configuración de la troncal.
+<Tip>
+  Las llamadas entrantes a menudo **no** necesitan credenciales. Muchos operadores las autentican por lista de IP permitidas o por la configuración de la troncal.
+</Tip>
 
 #### Saliente
 
@@ -443,7 +539,9 @@ Cuando termines, pulsa **Guardar e importar**. Para empezar de cero, pulsa **Res
 
 Después de guardar, Callin.io comprueba que el número se puede usar para llamar. Si tu configuración SIP necesita algún ajuste, verás indicaciones en esta página. Mientras lo corriges, el número puede seguir apareciendo en tu lista de **Números**.
 
-> **Error común:** Usar un SBC/FQDN o unas credenciales incorrectas. Si fallan las llamadas salientes, revisa tu usuario y contraseña SIP y si tu proveedor exige un puerto o un transporte concreto.
+<Warning>
+  **Error común:** Usar un SBC/FQDN o unas credenciales incorrectas. Si fallan las llamadas salientes, revisa tu usuario y contraseña SIP y si tu proveedor exige un puerto o un transporte concreto.
+</Warning>
 
 ---
 
@@ -466,7 +564,9 @@ Cuando haces llamadas con la **telefonía gestionada por Callin** (por ejemplo, 
   - **Numeración propia importada** (Telnyx o Twilio)
   - **Troncal SIP externa (BYOC)**
 
-> **Importante:** El comportamiento exacto puede variar según tu configuración y el enrutamiento del proveedor. Si quieres evitar las reglas de la telefonía gestionada por Callin, importa tus propios números o usa BYOC.
+<Warning>
+  El comportamiento exacto puede variar según tu configuración y el enrutamiento del proveedor. Si quieres evitar las reglas de la telefonía gestionada por Callin, importa tus propios números o usa BYOC.
+</Warning>
 
 ### Recordatorio: facturación con número personal
 

@@ -5,9 +5,9 @@ sidebarTitle: "Before You Build"
 icon: "rocket"
 ---
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" />
+</Frame>
 
 This page covers the basics in a few minutes: what an AI Call Agent is, how it gets a phone number, how calls are charged, and how it connects to your tools. Then you're ready to build your first agent.
 
@@ -55,7 +55,9 @@ You can also bring your own carrier with **BYOC (SIP Trunk)**.
 
 Once your number is active, your agent uses it like a real phone line, with caller ID, voicemail detection, and call history.
 
-> **Tip:** Learn every option step by step in [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers).
+<Tip>
+  Learn every option step by step in [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers).
+</Tip>
 
 ---
 
@@ -63,8 +65,14 @@ Once your number is active, your agent uses it like a real phone line, with call
 
 Each call uses two types of minutes:
 
-1. **Carrier minutes**: charged by the phone provider (Twilio, Telnyx, or your own carrier) for the phone connection.
-2. **Callin AI minutes**: cover the AI that listens, thinks, and responds during the call.
+<Steps>
+  <Step>
+    **Carrier minutes**: charged by the phone provider (Twilio, Telnyx, or your own carrier) for the phone connection.
+  </Step>
+  <Step>
+    **Callin AI minutes**: cover the AI that listens, thinks, and responds during the call.
+  </Step>
+</Steps>
 
 <Note>
 **Example:** a 5-minute call = 5 carrier minutes + 5 Callin AI minutes.
@@ -72,7 +80,9 @@ Each call uses two types of minutes:
 
 When you buy a number through Callin.io, there is **no extra platform fee** for the number itself.
 
-> **Important:** Calls made with numbers bought through Callin.io and our carrier have a **1-minute minimum charge**. A 20-second call is billed as 1 minute. After the first minute, you pay the actual duration. This rule does not apply to browser test calls, imported numbers (Twilio or Telnyx), or your own SIP trunk.
+<Warning>
+  Calls made with numbers bought through Callin.io and our carrier have a **1-minute minimum charge**. A 20-second call is billed as 1 minute. After the first minute, you pay the actual duration. This rule does not apply to browser test calls, imported numbers (Twilio or Telnyx), or your own SIP trunk.
+</Warning>
 
 You can check your total minutes on **Home** (**Total Usage**). To see your plan or add credits, open **Upgrade Plan**.
 

@@ -21,14 +21,22 @@ La pagina ha due schede, in alto a destra:
 - **File**: documenti che carichi (PDF, DOC, DOCX, TXT), organizzati in gruppi.
 - **Web**: pagine web (URL) da cui l’agente impara, che puoi organizzare in cartelle.
 
-> **Suggerimento:** Pensa alla base di conoscenza come a “materiale di riferimento approvato” che l’agente può consultare quando qualcuno fa domande dettagliate.
+<Tip>
+  Pensa alla base di conoscenza come a “materiale di riferimento approvato” che l’agente può consultare quando qualcuno fa domande dettagliate.
+</Tip>
 
 ## Come si collega agli agenti IA
 
 Non aggiungi i contenuti direttamente dentro un agente. Invece:
 
-1. Crei i contenuti qui, nella base di conoscenza (file o URL web).
-2. Poi, nell’editor dell’agente, apri la scheda **Base di conoscenza** e **aggiungi i documenti** che vuoi far usare a quell’agente.
+<Steps>
+  <Step>
+    Crei i contenuti qui, nella base di conoscenza (file o URL web).
+  </Step>
+  <Step>
+    Poi, nell’editor dell’agente, apri la scheda **Base di conoscenza** e **aggiungi i documenti** che vuoi far usare a quell’agente.
+  </Step>
+</Steps>
 
 Lo stesso documento può essere usato da più agenti.
 
@@ -38,38 +46,44 @@ La scheda **File** serve a caricare i documenti da cui il tuo agente deve impara
 
 Accanto a **Crea base di conoscenza** puoi passare da una vista all’altra: un **elenco** di tutti i tuoi file oppure i tuoi **gruppi** mostrati come cartelle. Usa **Cerca file...** per trovare un documento.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: scheda File → Crea base di conoscenza → nome del gruppo, e poi la scheda Base di conoscenza dell’agente → Aggiungi documento.
-</p>
+<Frame caption="Video: scheda File → Crea base di conoscenza → nome del gruppo, e poi la scheda Base di conoscenza dell’agente → Aggiungi documento.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" />
+</Frame>
 
 ### Creare un gruppo di file e caricare documenti
 
-1. Apri la scheda **File**.
-2. Clicca su **Crea base di conoscenza**.
-3. Nella finestra **Carica file**, inserisci un **Nome gruppo** (obbligatorio). I file che carichi verranno raggruppati con questo nome.
-4. Aggiungi i tuoi documenti:
-   - Trascina e rilascia i file nell’area di caricamento, oppure
-   - Clicca su **Seleziona file** per sfogliarli.
-5. Clicca su **Carica file** per terminare.
+<Steps>
+  <Step>
+    Apri la scheda **File**.
+  </Step>
+  <Step>
+    Clicca su **Crea base di conoscenza**.
+  </Step>
+  <Step>
+    Nella finestra **Carica file**, inserisci un **Nome gruppo** (obbligatorio). I file che carichi verranno raggruppati con questo nome.
+  </Step>
+  <Step>
+    Aggiungi i tuoi documenti:
+    - Trascina e rilascia i file nell’area di caricamento, oppure
+    - Clicca su **Seleziona file** per sfogliarli.
+  </Step>
+  <Step>
+    Clicca su **Carica file** per terminare.
+  </Step>
+</Steps>
 
 Formati e limiti supportati (come indicato nel caricatore):
 
 - PDF, DOC, DOCX, TXT
 - Massimo 5MB per file
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase1.png" alt="La finestra Carica file con il campo Nome gruppo, l'area di trascinamento con il pulsante Seleziona file, i formati supportati (PDF, DOC, DOCX, TXT, massimo 5MB per file) e il pulsante Carica file." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: la finestra Carica file, dove dai un nome al gruppo e aggiungi i documenti.">
+  <img src="/images/knowledgebase1.png" alt="La finestra Carica file con il campo Nome gruppo, l'area di trascinamento con il pulsante Seleziona file, i formati supportati (PDF, DOC, DOCX, TXT, massimo 5MB per file) e il pulsante Carica file." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la finestra Carica file, dove dai un nome al gruppo e aggiungi i documenti.
-</p>
-
-> **Errore comune:** Caricare più documenti non correlati nello stesso gruppo. Se hai casi d’uso diversi (Vendite vs Supporto), crea gruppi separati per assegnare la conoscenza corretta a ogni agente.
+<Warning>
+  **Errore comune:** Caricare più documenti non correlati nello stesso gruppo. Se hai casi d’uso diversi (Vendite vs Supporto), crea gruppi separati per assegnare la conoscenza corretta a ogni agente.
+</Warning>
 
 ### Gestire e aggiornare i file di un gruppo
 
@@ -79,7 +93,9 @@ Quando un gruppo esiste, puoi aprirlo per gestirne il contenuto:
 - Vedere l’elenco dei **File correnti** già inclusi.
 - Rimuovere i file che non vuoi più far consultare all’agente.
 
-> **Suggerimento:** Usa nomi di gruppo chiari come **“Policy di supporto”**, **“Prezzi e piani”** o **“Script di accoglienza clinica”** per ritrovare facilmente i documenti giusti in seguito.
+<Tip>
+  Usa nomi di gruppo chiari come **“Policy di supporto”**, **“Prezzi e piani”** o **“Script di accoglienza clinica”** per ritrovare facilmente i documenti giusti in seguito.
+</Tip>
 
 ## Base di conoscenza con URL web
 
@@ -87,55 +103,71 @@ La scheda **Web** serve a far imparare il tuo agente da pagine web. È utile qua
 
 L’elenco mostra ogni URL con il **Nome**, l’indirizzo e l’**Ultimo aggiornamento**. Usa **Cerca nella base di conoscenza...** per trovarne uno.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/kanowledgebase2.png" alt="La base di conoscenza con la scheda Web selezionata: i pulsanti Aggiungi URL e Crea cartella, la ricerca e l'elenco degli URL con la data dell'ultimo aggiornamento e un menu di azioni." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la base di conoscenza in modalità Web, con Aggiungi URL, Crea cartella e l’elenco degli URL.
-</p>
+<Frame caption="Screenshot: la base di conoscenza in modalità Web, con Aggiungi URL, Crea cartella e l’elenco degli URL.">
+  <img src="/images/kanowledgebase2.png" alt="La base di conoscenza con la scheda Web selezionata: i pulsanti Aggiungi URL e Crea cartella, la ricerca e l'elenco degli URL con la data dell'ultimo aggiornamento e un menu di azioni." />
+</Frame>
 
 ### Aggiungere un URL
 
-1. Apri la scheda **Web**.
-2. Clicca su **Aggiungi URL**.
-3. Compila:
-   - **Cartella padre**: dove salvarlo. Per impostazione predefinita, **Knowledge base (livello principale)**.
-   - **Titolo** (obbligatorio): un nome chiaro per questa pagina (ad esempio “Pagina prezzi”).
-   - **URL** (obbligatorio): il link alla pagina web.
-4. (Facoltativo) Attiva l’**Aggiornamento automatico** perché Callin rilegga la pagina regolarmente. Poi scegli l’**Intervallo** e l’**Unità di intervallo** (**Giorni** o **Ore**). Per impostazione predefinita, ogni **7 giorni**.
-5. Clicca su **Aggiungi URL** per salvarlo.
+<Steps>
+  <Step>
+    Apri la scheda **Web**.
+  </Step>
+  <Step>
+    Clicca su **Aggiungi URL**.
+  </Step>
+  <Step>
+    Compila:
+    - **Cartella padre**: dove salvarlo. Per impostazione predefinita, **Knowledge base (livello principale)**.
+    - **Titolo** (obbligatorio): un nome chiaro per questa pagina (ad esempio “Pagina prezzi”).
+    - **URL** (obbligatorio): il link alla pagina web.
+  </Step>
+  <Step>
+    (Facoltativo) Attiva l’**Aggiornamento automatico** perché Callin rilegga la pagina regolarmente. Poi scegli l’**Intervallo** e l’**Unità di intervallo** (**Giorni** o **Ore**). Per impostazione predefinita, ogni **7 giorni**.
+  </Step>
+  <Step>
+    Clicca su **Aggiungi URL** per salvarlo.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Aggiungi URL → titolo e URL → aggiornamento automatico con il suo intervallo → Crea cartella → Vedi dettagli di un URL.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Aggiungi URL → titolo e URL → aggiornamento automatico con il suo intervallo → Crea cartella → Vedi dettagli di un URL.
-</p>
+Con l’aggiornamento automatico attivo, la finestra appare così:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-url.png" alt="La finestra Aggiungi URL con Cartella padre, Titolo, URL, l'aggiornamento automatico attivo, l'intervallo a 7 e l'unità in giorni." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: la finestra Aggiungi URL con l’aggiornamento automatico attivo.">
+  <img src="/images/knowledge-base-url.png" alt="La finestra Aggiungi URL con Cartella padre, Titolo, URL, l'aggiornamento automatico attivo, l'intervallo a 7 e l'unità in giorni." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la finestra Aggiungi URL con l’aggiornamento automatico attivo.
-</p>
-
-> **Suggerimento:** Attiva l’**Aggiornamento automatico** per le pagine che cambiano spesso, come prezzi o orari, così il tuo agente risponde sempre con le informazioni più recenti.
+<Tip>
+  Attiva l’**Aggiornamento automatico** per le pagine che cambiano spesso, come prezzi o orari, così il tuo agente risponde sempre con le informazioni più recenti.
+</Tip>
 
 ### Organizzare gli URL in cartelle
 
 Per tenere insieme pagine correlate (ad esempio tutte le pagine del tuo sito), clicca su **Crea cartella**:
 
-1. Scegli la **Cartella padre** (oppure lascia **Knowledge base (livello principale)**).
-2. Inserisci il **Nome cartella** (obbligatorio).
-3. (Facoltativo) Attiva l’**Aggiornamento automatico** per aggiornare tutti gli URL della cartella con l’intervallo che scegli.
-4. Clicca su **Crea cartella**.
+<Steps>
+  <Step>
+    Scegli la **Cartella padre** (oppure lascia **Knowledge base (livello principale)**).
+  </Step>
+  <Step>
+    Inserisci il **Nome cartella** (obbligatorio).
+  </Step>
+  <Step>
+    (Facoltativo) Attiva l’**Aggiornamento automatico** per aggiornare tutti gli URL della cartella con l’intervallo che scegli.
+  </Step>
+  <Step>
+    Clicca su **Crea cartella**.
+  </Step>
+</Steps>
 
 Poi, quando aggiungi un URL, scegli quella cartella in **Cartella padre**.
 
-> **Suggerimento:** Mantieni le cartelle focalizzate. Ad esempio, una cartella per le pagine **“Prezzi e fatturazione”** e un’altra per le pagine **“Policy di rimborso”**.
+<Tip>
+  Mantieni le cartelle focalizzate. Ad esempio, una cartella per le pagine **“Prezzi e fatturazione”** e un’altra per le pagine **“Policy di rimborso”**.
+</Tip>
 
 ### Vedere, aggiornare o eliminare un URL
 
@@ -145,39 +177,47 @@ Clicca su **⋯** a destra di un URL per aprire il suo menu:
 - **Copia ID**: copia l’ID del documento.
 - **Elimina**: rimuove l’URL dalla base di conoscenza.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-details.png" alt="Il pannello dei dettagli di un URL con ID documento, ultimo aggiornamento, dimensione documento, URL di origine e aggiornamento automatico a sinistra, e il contenuto URL con il pulsante Aggiorna contenuto a destra." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: Vedi dettagli mostra il testo che l’agente legge dalla pagina.">
+  <img src="/images/knowledge-base-details.png" alt="Il pannello dei dettagli di un URL con ID documento, ultimo aggiornamento, dimensione documento, URL di origine e aggiornamento automatico a sinistra, e il contenuto URL con il pulsante Aggiorna contenuto a destra." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Vedi dettagli mostra il testo che l’agente legge dalla pagina.
-</p>
-
-> **Importante:** Controlla il **Contenuto URL** dopo aver aggiunto una pagina. Se è vuoto o mostra un testo sbagliato (ad esempio un banner dei cookie), l’agente non potrà usare quella pagina. Prova un altro URL con le stesse informazioni.
+<Warning>
+  Controlla il **Contenuto URL** dopo aver aggiunto una pagina. Se è vuoto o mostra un testo sbagliato (ad esempio un banner dei cookie), l’agente non potrà usare quella pagina. Prova un altro URL con le stesse informazioni.
+</Warning>
 
 ## Selezionare una base di conoscenza per un agente
 
 Dopo aver aggiunto i tuoi documenti (file o URL web), li colleghi a un agente nell’editor dell’agente.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase3.png" alt="La scheda Base di conoscenza dell'agente con l'elenco Aggiungi documento aperto: una ricerca, i documenti della base di conoscenza e un pulsante Aggiungi documento in basso." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: aggiungere un documento della base di conoscenza mentre modifichi un agente IA.
-</p>
+<Frame caption="Screenshot: aggiungere un documento della base di conoscenza mentre modifichi un agente IA.">
+  <img src="/images/knowledgebase3.png" alt="La scheda Base di conoscenza dell'agente con l'elenco Aggiungi documento aperto: una ricerca, i documenti della base di conoscenza e un pulsante Aggiungi documento in basso." />
+</Frame>
 
 ### Assegnare un gruppo a un agente
 
-1. Vai su **Agenti AI** e apri un agente da modificare.
-2. Apri la scheda **Base di conoscenza**.
-3. Clicca su **Aggiungi documento**.
-4. Usa **Cerca documenti...** per trovare il documento che ti serve e cliccaci sopra per aggiungerlo all’agente.
-5. Ripeti per ogni documento di cui l’agente ha bisogno.
+<Steps>
+  <Step>
+    Vai su **Agenti AI** e apri un agente da modificare.
+  </Step>
+  <Step>
+    Apri la scheda **Base di conoscenza**.
+  </Step>
+  <Step>
+    Clicca su **Aggiungi documento**.
+  </Step>
+  <Step>
+    Usa **Cerca documenti...** per trovare il documento che ti serve e cliccaci sopra per aggiungerlo all’agente.
+  </Step>
+  <Step>
+    Ripeti per ogni documento di cui l’agente ha bisogno.
+  </Step>
+</Steps>
 
 Se il documento che ti serve non esiste ancora, clicca su **Aggiungi documento** in fondo all’elenco. Ti porta alla pagina **Base di conoscenza** per crearlo.
 
-> **Suggerimento:** Se hai più agenti con ruoli diversi, dai a ciascuno solo i documenti di cui ha bisogno, così restano focalizzati e non rispondono fuori ambito.
+<Tip>
+  Se hai più agenti con ruoli diversi, dai a ciascuno solo i documenti di cui ha bisogno, così restano focalizzati e non rispondono fuori ambito.
+</Tip>
 
 ## Esempio pratico
 

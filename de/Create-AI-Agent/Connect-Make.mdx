@@ -22,21 +22,27 @@ Damit kannst du:
 - Anrufdaten in Tabellen oder Datenbanken speichern.
 - Dein Team benachrichtigen, wenn ein Anruf endet.
 
-> **Hinweis:** Die Seite der Callin.io-App auf Make ist auf Englisch. In dieser Anleitung sind die Namen der Module und Schaltflächen übersetzt, auf dem Bildschirm siehst du sie also eventuell auf Englisch.
+<Note>
+  Die Seite der Callin.io-App auf Make ist auf Englisch. In dieser Anleitung sind die Namen der Module und Schaltflächen übersetzt, auf dem Bildschirm siehst du sie also eventuell auf Englisch.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/make-connect.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Integrationen → Make.com → die Callin.io-App auf Make mit ihrem Auslöser und ihrer Aktion → dein API-Schlüssel unter Profil → API-Schlüssel.
-</p>
+<Frame caption="Video: Integrationen → Make.com → die Callin.io-App auf Make mit ihrem Auslöser und ihrer Aktion → dein API-Schlüssel unter Profil → API-Schlüssel.">
+  <video autoPlay muted loop playsInline src="/images/make-connect.mp4" />
+</Frame>
 
 ## Schritt 1. Das Integrations-Panel in Callin.io öffnen
 
-1. Melde dich in deinem [Callin.io-Konto](https://app.callin.io) an.
-2. Öffne im linken Menü **Integrationen → Aktionen** ([hier öffnen](https://app.callin.io/actions)).
-3. Nutze den Filter **Automatisierung** (oder suche unter **Alle**), suche **Make.com** und klicke auf **Verbinden**.
+<Steps>
+  <Step>
+    Melde dich in deinem [Callin.io-Konto](https://app.callin.io) an.
+  </Step>
+  <Step>
+    Öffne im linken Menü **Integrationen → Aktionen** ([hier öffnen](https://app.callin.io/actions)).
+  </Step>
+  <Step>
+    Nutze den Filter **Automatisierung** (oder suche unter **Alle**), suche **Make.com** und klicke auf **Verbinden**.
+  </Step>
+</Steps>
 
 Ein neuer Tab mit Make öffnet sich, um die Einrichtung abzuschließen.
 
@@ -47,51 +53,73 @@ Wenn nicht, kannst du auf [make.com](https://www.make.com) kostenlos eines erste
 
 Danach siehst du die Seite der App **Callin.io**, die das Callin.io-Team geteilt hat. Sie zeigt den Auslöser und die Aktion der App. Klicke auf **Installieren**, um die App zu deiner Make-Organisation hinzuzufügen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/make-invite.png" alt="Die Seite der Callin.io-App auf Make mit dem Callin.io-Logo, einer kurzen Beschreibung und der Schaltfläche Installieren" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: Die Seite der Callin.io-App auf Make mit der Schaltfläche Installieren.">
+  <img src="/images/make-invite.png" alt="Die Seite der Callin.io-App auf Make mit dem Callin.io-Logo, einer kurzen Beschreibung und der Schaltfläche Installieren" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Seite der Callin.io-App auf Make mit der Schaltfläche Installieren.
-</p>
-
-> **Hinweis:** Die Callin.io-App wird per Einladung geteilt. Du installierst sie deshalb über diese Seite, statt sie im App-Verzeichnis von Make zu suchen.
+<Note>
+  Die Callin.io-App wird per Einladung geteilt. Du installierst sie deshalb über diese Seite, statt sie im App-Verzeichnis von Make zu suchen.
+</Note>
 
 ## Schritt 3. Deinen API-Schlüssel in Callin.io abrufen
 
 Make braucht deinen API-Schlüssel, um dein Callin.io-Konto zu authentifizieren.
 
-1. Öffne dein [Callin.io-Profil](https://app.callin.io/profile?subSection=api) und gehe zum Tab **API-Schlüssel**.
-2. Wenn du noch keinen Schlüssel hast („Kein API-Schlüssel gefunden“), klicke auf **Schlüssel erneuern**, um einen zu erstellen.
-3. Kopiere den Schlüssel über das Kopier-Symbol.
+<Steps>
+  <Step>
+    Öffne dein [Callin.io-Profil](https://app.callin.io/profile?subSection=api) und gehe zum Tab **API-Schlüssel**.
+  </Step>
+  <Step>
+    Wenn du noch keinen Schlüssel hast („Kein API-Schlüssel gefunden“), klicke auf **Schlüssel erneuern**, um einen zu erstellen.
+  </Step>
+  <Step>
+    Kopiere den Schlüssel über das Kopier-Symbol.
+  </Step>
+</Steps>
 
 Bewahre deinen API-Schlüssel sicher auf. Wenn er in falsche Hände gerät, erneuere ihn sofort. Beim Erneuern funktioniert der alte Schlüssel nicht mehr, du musst die Verbindung in Make also aktualisieren.
 
 ## Schritt 4. Callin.io mit Make verbinden
 
-1. Klicke in deinem Make-Szenario auf das **+**-Symbol und suche nach **Callin.io**.
-2. Wähle ein Modul: **Transkript überwachen** oder **Agent aktivieren**.
-3. Wenn Make nach einer Verbindung fragt, klicke auf **Hinzufügen**, füge deinen API-Schlüssel ein und klicke auf **Speichern**.
+<Steps>
+  <Step>
+    Klicke in deinem Make-Szenario auf das **+**-Symbol und suche nach **Callin.io**.
+  </Step>
+  <Step>
+    Wähle ein Modul: **Transkript überwachen** oder **Agent aktivieren**.
+  </Step>
+  <Step>
+    Wenn Make nach einer Verbindung fragt, klicke auf **Hinzufügen**, füge deinen API-Schlüssel ein und klicke auf **Speichern**.
+  </Step>
+</Steps>
 
 Dein Callin.io-Konto erscheint jetzt als verbunden, und du kannst diese Verbindung in jedem Callin.io-Modul wiederverwenden.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/make-modules.png" alt="Die Callin.io-App auf Make: der Auslöser Transkript überwachen (Erhalte die Ergebnisse deiner Aufgaben) und die Aktion Agent aktivieren (Aktiviert einen Agenten für Anrufe)" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Callin.io-Module auf Make: der Auslöser Transkript überwachen und die Aktion Agent aktivieren.
-</p>
+<Frame caption="Screenshot: Die Callin.io-Module auf Make: der Auslöser Transkript überwachen und die Aktion Agent aktivieren.">
+  <img src="/images/make-modules.png" alt="Die Callin.io-App auf Make: der Auslöser Transkript überwachen (Erhalte die Ergebnisse deiner Aufgaben) und die Aktion Agent aktivieren (Aktiviert einen Agenten für Anrufe)" />
+</Frame>
 
 ## Schritt 5. Dein erstes Szenario erstellen
 
 Lass uns ein einfaches Beispiel bauen: das Transkript jedes Anrufs in Google Sheets speichern.
 
-1. Klicke in Make auf **Neues Szenario erstellen**.
-2. Füge **Callin.io – Transkript überwachen** als erstes Modul (den Auslöser) hinzu.
-3. Füge ein zweites Modul hinzu: **Google Sheets – Zeile hinzufügen**.
-4. Wähle deine Tabelle und ordne die Callin.io-Felder den Spalten zu.
-5. Speichere das Szenario und schalte es ein.
+<Steps>
+  <Step>
+    Klicke in Make auf **Neues Szenario erstellen**.
+  </Step>
+  <Step>
+    Füge **Callin.io – Transkript überwachen** als erstes Modul (den Auslöser) hinzu.
+  </Step>
+  <Step>
+    Füge ein zweites Modul hinzu: **Google Sheets – Zeile hinzufügen**.
+  </Step>
+  <Step>
+    Wähle deine Tabelle und ordne die Callin.io-Felder den Spalten zu.
+  </Step>
+  <Step>
+    Speichere das Szenario und schalte es ein.
+  </Step>
+</Steps>
 
 Ab jetzt sendet jeder beendete Anruf sein Transkript automatisch an deine Tabelle.
 

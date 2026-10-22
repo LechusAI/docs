@@ -10,25 +10,17 @@ The **AI Agents** page is where you create and manage the agents that handle you
 
 Each agent's editor is organized in nine tabs at the top: **Agent**, **Workflow**, **Knowledge Base**, **Conversation**, **Analytics**, **Tools**, **Call Action**, **Website widget**, and **Advanced**. This page explains how to create an agent and what you can do in each tab.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: a quick tour of the nine tabs of the agent editor.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: a quick tour of the nine tabs of the agent editor.
-</p>
+Everything starts on the AI Agents page, where each row is one of your agents:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the AI Agents page. Each row is one agent, with quick actions on the right.">
   <img
     src="/images/agentesia1.png"
-    alt="The AI Agents page in Callin.io with the Create Agent button, the search bar, the Direction and Sort filters, and the list of agents."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the AI Agents page. Each row is one agent, with quick actions on the right.
-</p>
+    alt="The AI Agents page in Callin.io with the Create Agent button, the search bar, the Direction and Sort filters, and the list of agents." />
+</Frame>
 
 ### The agents list
 
@@ -44,43 +36,45 @@ On the right of each row you have three quick actions:
 - **Test AI agent** — talk to the agent from your browser.
 - **More options** (⋮) — **Copy ID**, **Clone**, **Edit**, **Assign Number**, **View events calendar**, and **Delete**.
 
-> **Tip:** Use **Clone** to try changes on a copy before touching an agent that's already taking real calls.
+<Tip>
+  Use **Clone** to try changes on a copy before touching an agent that's already taking real calls.
+</Tip>
 
 ### Create a new agent
 
 Click **Create Agent** at the top right. Callin.io asks how you want to start.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: choose how to start your new agent.">
   <img
     src="/images/ai-agents-new-agent.png"
-    alt="The New Agent screen with three options: Start from Scratch, Browse our Templates, and Predefined Templates."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: choose how to start your new agent.
-</p>
+    alt="The New Agent screen with three options: Start from Scratch, Browse our Templates, and Predefined Templates." />
+</Frame>
 
 **Start from Scratch** builds an agent with a basic prompt and greeting that you then shape in the editor. Choose it when you already know what the agent should do. You only need to enter the **Agent Name** (up to 50 characters) and choose the **Agent stack**.
 
 **Browse our Templates** starts from a ready-made agent designed for a specific business and use case. It's the fastest way to get a working first version:
 
-1. **Industry** — pick the one that best describes your business: Retail & E-commerce, Healthcare & Medical, Finance & Banking, Real Estate, Education & Training, Hospitality & Travel, Automotive, Professional Services, Technology & Software, Government & Public, Food & Beverage, Manufacturing, Fitness & Wellness, Legal Services, Non-Profit, or Media & Entertainment.
-2. **Use case** — choose what the agent will help with. The options depend on the industry. For example, Healthcare & Medical offers Customer Support, Appointment Scheduling, Patient Intake, Insurance Verification, Prescription Reminders, and more.
-3. **Complete your agent** — enter the **Agent Name**, choose the **Agent stack**, and fill in:
-   - **Website** *(optional)* — your website address. Callin.io only reads publicly available information from it to personalize the agent.
-   - **Main Goal** — in up to 300 characters, what the agent should achieve on each call.
+<Steps>
+  <Step>
+    **Industry** — pick the one that best describes your business: Retail & E-commerce, Healthcare & Medical, Finance & Banking, Real Estate, Education & Training, Hospitality & Travel, Automotive, Professional Services, Technology & Software, Government & Public, Food & Beverage, Manufacturing, Fitness & Wellness, Legal Services, Non-Profit, or Media & Entertainment.
+  </Step>
+  <Step>
+    **Use case** — choose what the agent will help with. The options depend on the industry. For example, Healthcare & Medical offers Customer Support, Appointment Scheduling, Patient Intake, Insurance Verification, Prescription Reminders, and more.
+  </Step>
+  <Step>
+    **Complete your agent** — enter the **Agent Name**, choose the **Agent stack**, and fill in:
+    - **Website** *(optional)* — your website address. Callin.io only reads publicly available information from it to personalize the agent.
+    - **Main Goal** — in up to 300 characters, what the agent should achieve on each call.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Browse our Templates → industry → use case → Complete your agent.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Browse our Templates → industry → use case → Complete your agent.
-</p>
-
-> **Tip:** Write the **Main Goal** as one clear outcome, for example "Book, confirm, or reschedule patient appointments and answer questions about opening hours." The clearer the goal, the better the first version of the prompt.
+<Tip>
+  Write the **Main Goal** as one clear outcome, for example "Book, confirm, or reschedule patient appointments and answer questions about opening hours." The clearer the goal, the better the first version of the prompt.
+</Tip>
 
 **Predefined Templates** *(Beta)* uses templates created by your own organization, so every new agent starts with your company's standard setup. Each card shows the template's name, a short description, and how many fields it pre-fills (for example *Agent Name*, *Prompt*, *Greeting Message*, *Direction*). Select one, review the **Agent Name**, choose the **Agent stack**, and click **Create Agent**. If your organization hasn't created any templates yet, this list is empty.
 
@@ -94,7 +88,9 @@ The **Agent stack** decides which voice and AI technology powers the agent:
 
 Click **Create Agent** to finish. The agent opens directly in its editor, on the **Agent** tab.
 
-> **Important:** The sections below describe an agent created with the **Premium Voice** stack. Agents on other stacks may show different options.
+<Warning>
+  The sections below describe an agent created with the **Premium Voice** stack. Agents on other stacks may show different options.
+</Warning>
 
 ### Saving your changes
 
@@ -105,17 +101,11 @@ When you change anything in the editor, a bar appears at the bottom with the mes
 
 While there are unsaved changes, **Test Call** is disabled. If something needs fixing before saving (for example, an incomplete workflow), the bar tells you what's missing or shows a **View Errors** button.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the unsaved changes bar. Save to keep your changes, or Clear to discard them.">
   <img
     src="/images/ai-agents-unsaved-changes.png"
-    alt="The agent editor with the You have unsaved changes bar and the Clear and Save buttons at the bottom."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the unsaved changes bar. Save to keep your changes, or Clear to discard them.
-</p>
+    alt="The agent editor with the You have unsaved changes bar and the Clear and Save buttons at the bottom." />
+</Frame>
 
 ### Testing your agent
 
@@ -125,23 +115,19 @@ Use the buttons at the top right of the editor to test without leaving the page:
 - **Test AI agent** — lets you talk to the agent from your browser.
 - **Console** — opens the developer console.
 
-> **Tip:** Walk through the tabs in order the first time, and test after every important change. A good setup must sound right on a real call, not just look right in the editor.
+<Tip>
+  Walk through the tabs in order the first time, and test after every important change. A good setup must sound right on a real call, not just look right in the editor.
+</Tip>
 
 ## Section 1: Agent
 
 The **Agent** tab is where you define the core identity and behavior of your assistant: what it says, which voice and language it uses, which AI model powers it, and whether it answers incoming calls, makes outgoing ones, or both.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Agent tab, where you set the prompt, voice, language, model, and call direction.">
   <img
     src="/images/agentesia2.png"
-    alt="The Agent tab showing the Conversation Prompt editor on the left and the Voice, Language, AI Intelligence (LLM), and Call Direction panels on the right."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Agent tab, where you set the prompt, voice, language, model, and call direction.
-</p>
+    alt="The Agent tab showing the Conversation Prompt editor on the left and the Voice, Language, AI Intelligence (LLM), and Call Direction panels on the right." />
+</Frame>
 
 ### Conversation Prompt
 
@@ -161,7 +147,9 @@ After those three, add operational rules that guide the agent's decisions during
 - Keep responses short unless the user asks for detail.
 - Don't invent answers. If the information is unclear, say so.
 
-> **Tip:** Write the prompt as if you were briefing a new employee on their first day. Operational and clear, not decorative.
+<Tip>
+  Write the prompt as if you were briefing a new employee on their first day. Operational and clear, not decorative.
+</Tip>
 
 ### Add Variables and Dynamic Variables
 
@@ -200,7 +188,9 @@ A few examples:
 
 **Allow Interruptions**, next to the greeting, lets callers interrupt the agent while it's delivering the first message. It's on by default, which feels natural for most support, reception, and customer service flows.
 
-> **Common mistake:** Leaving interruptions on when your greeting includes information the caller must hear in full, such as a legal notice or a recording disclaimer. In that case, turn it off.
+<Warning>
+  **Common mistake:** Leaving interruptions on when your greeting includes information the caller must hear in full, such as a legal notice or a recording disclaimer. In that case, turn it off.
+</Warning>
 
 ### Voice
 
@@ -278,17 +268,11 @@ The **Workflow** tab is where you decide how the conversation moves. While the *
 
 You build it on a visual canvas by placing nodes and connecting them. Use the buttons at the top left to zoom in, zoom out, and fit the whole flow on screen, and the buttons at the top right to go full screen or delete the workflow.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: a workflow with two routes from Start. The panel on the right shows what's still missing and the settings of the selected node.">
   <img
     src="/images/agentesia3.png"
-    alt="The Workflow tab with a Start node connected to a Subagent and a phone number Transfer node, an End node, the Complete your workflow setup panel, and the Subagent settings on the right."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a workflow with two routes from Start. The panel on the right shows what's still missing and the settings of the selected node.
-</p>
+    alt="The Workflow tab with a Start node connected to a Subagent and a phone number Transfer node, an End node, the Complete your workflow setup panel, and the Subagent settings on the right." />
+</Frame>
 
 ### What you can build here
 
@@ -308,13 +292,9 @@ To add a node, drag a connection from an existing node (for example, from the bo
 
 The new node appears connected to the previous one, and its settings open in the panel on the right.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: build a workflow with two routes from Start: a Subagent that books appointments and then ends the call, and a transfer to a phone number.
-</p>
+<Frame caption="Video: build a workflow with two routes from Start: a Subagent that books appointments and then ends the call, and a transfer to a phone number.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" />
+</Frame>
 
 ### Start
 
@@ -408,23 +388,19 @@ When no node is selected, the right panel shows **Global settings**. **Prevent i
 
 To disable a workflow without deleting it, disconnect the **Start** node. Without a connected start, the flow has no entry point and won't run.
 
-> **Common mistake:** A workflow that looks complete on the canvas can still fail in practice. Test every route with a real conversation before publishing.
+<Warning>
+  **Common mistake:** A workflow that looks complete on the canvas can still fail in practice. Test every route with a real conversation before publishing.
+</Warning>
 
 ## Section 3: Knowledge Base
 
 The **Knowledge Base** tab gives your agent extra background information to answer questions. It's best for large or detailed content — like manuals, FAQs, or policies — that doesn't fit in the main prompt.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Knowledge Base tab. Add the documents this agent can use to answer questions.">
   <img
     src="/images/agentesia4.png"
-    alt="The Knowledge Base tab of an agent with the Add Document button and the list of documents the agent can use."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Knowledge Base tab. Add the documents this agent can use to answer questions.
-</p>
+    alt="The Knowledge Base tab of an agent with the Add Document button and the list of documents the agent can use." />
+</Frame>
 
 ### What this tab is for
 
@@ -476,26 +452,28 @@ In the Knowledge Base manager you can switch between **Files** and **Web**, sear
 
 The cleanest way to work is to keep creation and selection separate:
 
-1. Create and organize your documents in the Knowledge Base manager.
-2. Come back to this tab and add the documents the agent needs.
+<Steps>
+  <Step>
+    Create and organize your documents in the Knowledge Base manager.
+  </Step>
+  <Step>
+    Come back to this tab and add the documents the agent needs.
+  </Step>
+</Steps>
 
-> **Tip:** Keep behavior rules in the prompt and reference content in the Knowledge Base. That separation makes updates much easier later.
+<Tip>
+  Keep behavior rules in the prompt and reference content in the Knowledge Base. That separation makes updates much easier later.
+</Tip>
 
 ## Section 4: Conversation
 
 The **Conversation** tab lists every call handled by this agent, incoming and outgoing. It's where you review what happened on each call. It has two sub-tabs: **Conversations** (phone and web calls) and **Google Meet Sessions**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Conversation tab. Search transcripts and filter the agent's calls.">
   <img
     src="/images/ai-agents-conversation.png"
-    alt="The Conversation tab with the Conversations and Google Meet Sessions sub-tabs, the transcript search bar, and the filters: Phone Number, Call ID, Squad, Status, Direction, Appointment, Call Transfer, Voicemail, Date Range, Call Duration, Origin, Campaign ID, Sentiment, and Ticket ID."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Conversation tab. Search transcripts and filter the agent's calls.
-</p>
+    alt="The Conversation tab with the Conversations and Google Meet Sessions sub-tabs, the transcript search bar, and the filters: Phone Number, Call ID, Squad, Status, Direction, Appointment, Call Transfer, Voicemail, Date Range, Call Duration, Origin, Campaign ID, Sentiment, and Ticket ID." />
+</Frame>
 
 ### Search and filters
 
@@ -508,23 +486,19 @@ Until the agent makes or receives its first call, the tab shows *No incoming or 
 
 This sub-tab lists the Google Meet meetings the agent has joined (with the **Join Meet** button at the top of the editor). Search by the meeting URL or join code, and filter the list by **Status**. If the agent hasn't joined any meeting, you'll see *No Google Meet sessions found*.
 
-> **Tip:** After changing the prompt or the workflow, place a few test calls and review them here. Reading the transcripts is the fastest way to spot where the agent goes off track.
+<Tip>
+  After changing the prompt or the workflow, place a few test calls and review them here. Reading the transcripts is the fastest way to spot where the agent goes off track.
+</Tip>
 
 ## Section 5: Analytics
 
 The **Analytics** tab shows how this agent is performing, compared with the previous period of the same length.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Analytics tab. Choose the time range and how to group the data.">
   <img
     src="/images/ai-agents-analytics.png"
-    alt="The Analytics tab titled How this agent is doing, with the Time range and Group by selectors."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Analytics tab. Choose the time range and how to group the data.
-</p>
+    alt="The Analytics tab titled How this agent is doing, with the Time range and Group by selectors." />
+</Frame>
 
 ### Time range and grouping
 
@@ -539,17 +513,11 @@ The **Tools** tab decides what your agent can actually *do* during a call beyond
 
 The tab has two sub-tabs: **Tools**, for your custom tools and the built-in **System Tools**, and **MCP**, for MCP servers.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Tools tab. Attach custom tools on the left and turn system tools on or off on the right.">
   <img
     src="/images/agentesia5.png"
-    alt="The Tools tab with the Add Tool button on the left and the System Tools list on the right: Smart Hang-up, Language Switching, Intelligent Listening, Transfer to agent, Transfer to number, Voicemail Intelligence, and Access Property Data."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Tools tab. Attach custom tools on the left and turn system tools on or off on the right.
-</p>
+    alt="The Tools tab with the Add Tool button on the left and the System Tools list on the right: Smart Hang-up, Language Switching, Intelligent Listening, Transfer to agent, Transfer to number, Voicemail Intelligence, and Access Property Data." />
+</Frame>
 
 Quick access:
 
@@ -573,17 +541,11 @@ The **Add Tool** button opens a picker where you can search your tools and selec
 
 The **MCP** sub-tab lets you connect MCP (Model Context Protocol) servers to give your agent additional tools and integrations without building them one by one.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the MCP sub-tab. Connect MCP servers to the agent.">
   <img
     src="/images/ai-agents-mcp.png"
-    alt="The MCP sub-tab of the Tools tab with the Add MCP button."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the MCP sub-tab. Connect MCP servers to the agent.
-</p>
+    alt="The MCP sub-tab of the Tools tab with the Add MCP button." />
+</Frame>
 
 Click **Add MCP** to search the MCP servers available in your account and connect one to the agent. If there are none yet, click **Manage MCPs** to set them up.
 
@@ -659,23 +621,19 @@ Don't enable everything. Pick what fits your use case:
 - An agent that escalates to humans uses **Transfer to number** with clear transfer rules.
 - An outbound agent often uses **Voicemail Intelligence**, **Smart Hang-up**, and **Language Switching**.
 
-> **Common mistake:** Enabling too many tools at once. It makes behavior harder to predict, harder to test, and harder to maintain.
+<Warning>
+  **Common mistake:** Enabling too many tools at once. It makes behavior harder to predict, harder to test, and harder to maintain.
+</Warning>
 
 ## Section 7: Call Action
 
 The **Call Action** tab is where the agent stops being just a voice and starts producing useful outcomes: bookings, follow-up emails, tickets, structured data, and synced records — during and after the call.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Call Action tab. Turn on the actions your team will actually use.">
   <img
     src="/images/agentesia6.png"
-    alt="The Call Action tab with toggles for Appointment Scheduling, Post-Call Summary Email, Smart Opt-Out, and Issue & Complaint Tracking, the Data Sync webhook field, and the Summary Language selector."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Call Action tab. Turn on the actions your team will actually use.
-</p>
+    alt="The Call Action tab with toggles for Appointment Scheduling, Post-Call Summary Email, Smart Opt-Out, and Issue & Complaint Tracking, the Data Sync webhook field, and the Summary Language selector." />
+</Frame>
 
 Quick access:
 
@@ -693,7 +651,9 @@ When you turn it on, the **Scheduling Configuration** panel asks for a **Schedul
 
 Then select the calendar and the booking template the agent should use. You can create several booking templates per calendar and assign templates from different calendars to different agents.
 
-> **Important:** The agent's time zone and the calendar's time zone must match. If they don't, the agent will offer or confirm wrong times.
+<Warning>
+  The agent's time zone and the calendar's time zone must match. If they don't, the agent will offer or confirm wrong times.
+</Warning>
 
 ### Post-Call Summary Email
 
@@ -756,7 +716,9 @@ You can configure:
 - **Retry Attempts (Retry Count)** — how many times the system should try again before stopping (default **0**, no retries).
 - **Wait Time Between Tries (Retry Delay)** — how many minutes to wait between attempts (default **30**).
 
-> **Tip:** Only enable the actions that your team will actually use. Each automation you turn on is a small commitment to maintain. Fewer, well-chosen actions beat a long list of half-used ones.
+<Tip>
+  Only enable the actions that your team will actually use. Each automation you turn on is a small commitment to maintain. Fewer, well-chosen actions beat a long list of half-used ones.
+</Tip>
 
 ## Section 8: Website widget
 
@@ -764,17 +726,11 @@ The **Website widget** tab lets you publish your agent on a web page. Visitors c
 
 This tab combines two things: the technical embed snippet, and the visual and textual customization of the experience.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Website widget tab. Copy the snippet and customize how the widget looks and behaves.">
   <img
     src="/images/agentesia7.png"
-    alt="The Website widget tab showing the Embed snippet with the Copy button and the Layout & behavior options: Widget mode, Embed widget theme, and Conversation mode."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Website widget tab. Copy the snippet and customize how the widget looks and behaves.
-</p>
+    alt="The Website widget tab showing the Embed snippet with the Copy button and the Layout & behavior options: Widget mode, Embed widget theme, and Conversation mode." />
+</Frame>
 
 ### Embed snippet
 
@@ -877,7 +833,9 @@ A few combinations that work well:
 - **Website support** — Floating launcher, **Chat only** or **Voice + Chat**, **Compact** variant, help-oriented text.
 - **Voice-first experience** — Inline embed, **Voice only**, larger dial, visible mute button, short and direct labels.
 
-> **Tip:** Always preview the widget on the real page before publishing. Sizes, colors, and labels often feel different outside the editor.
+<Tip>
+  Always preview the widget on the real page before publishing. Sizes, colors, and labels often feel different outside the editor.
+</Tip>
 
 ## Section 9: Advanced
 
@@ -885,17 +843,11 @@ The **Advanced** tab is where you fine-tune the agent: how it captures audio, ho
 
 Most agents work fine without touching anything here. Open this tab when you want more precision, or when something specific isn't quite working.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: the Advanced tab. Most agents work well with the default values.">
   <img
     src="/images/agentesia8.png"
-    alt="The Advanced tab showing the Memory block with Remember callers, the Voice & Understanding block with Speech Capture Quality and Priority Keywords, and the Conversation Flow block with Eagerness and Spelling patience."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Advanced tab. Most agents work well with the default values.
-</p>
+    alt="The Advanced tab showing the Memory block with Remember callers, the Voice & Understanding block with Speech Capture Quality and Priority Keywords, and the Conversation Flow block with Eagerness and Spelling patience." />
+</Frame>
 
 The tab is split into seven blocks: **Memory**, **Voice & Understanding**, **Conversation Flow**, **Background sound**, **Soft timeout**, **Privacy & Data**, and **Telephony Extras**.
 
@@ -903,7 +855,9 @@ The tab is split into seven blocks: **Memory**, **Voice & Understanding**, **Con
 
 **Remember callers** saves useful details after each call and uses them the next time the agent recognizes the same person. By default, each person is recognized by the phone number they called from. It's off by default.
 
-> **Tip:** Turn it on for agents that talk to the same customers often, such as support or appointment agents, so callers don't have to repeat themselves.
+<Tip>
+  Turn it on for agents that talk to the same customers often, such as support or appointment agents, so callers don't have to repeat themselves.
+</Tip>
 
 ### Voice & Understanding
 
@@ -952,7 +906,9 @@ How many seconds of silence before the call ends automatically when the caller s
 
 The maximum length of a single call, in minutes (default **10**). A safety net to keep calls concise and prevent them from running indefinitely.
 
-> **Tip:** If you're not sure what to set in the silence and duration fields, leave them at their default and only adjust them after testing real calls.
+<Tip>
+  If you're not sure what to set in the silence and duration fields, leave them at their default and only adjust them after testing real calls.
+</Tip>
 
 ### Background sound
 
@@ -996,4 +952,6 @@ When **Number Rotation** is on and your account has numbers, you choose:
 
 Increases answer rates by making the agent dial each contact with a phone number from their own state. Currently it supports US local numbers only — confirm your account has compatible local numbering before enabling it.
 
-> **Important:** Only change Advanced settings when you have a clear reason and can test the result with real calls. Random tweaks here usually create new problems instead of solving the old one.
+<Warning>
+  Only change Advanced settings when you have a clear reason and can test the result with real calls. Random tweaks here usually create new problems instead of solving the old one.
+</Warning>

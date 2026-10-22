@@ -18,15 +18,13 @@ Da qui puoi:
 - **Avviare una campagna** con i contatti selezionati.
 - **Eliminare** i contatti selezionati (in modo definitivo).
 
-> **Nota:** La pagina **Contatti** dell’app è in inglese. In questa guida i nomi dei pulsanti e delle opzioni sono tradotti, quindi sullo schermo li vedrai in inglese.
+<Note>
+  La pagina **Contatti** dell’app è in inglese. In questa guida i nomi dei pulsanti e delle opzioni sono tradotti, quindi sullo schermo li vedrai in inglese.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts1.png" alt="Lista contatti con due contatti di esempio selezionati e i pulsanti Elimina selezionati, Inizia campagna, Aggiungi contatto ed Esporta in CSV, più la ricerca e i filtri" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la lista contatti. Quando selezioni dei contatti compaiono i pulsanti Elimina selezionati, Inizia campagna ed Esporta in CSV.
-</p>
+<Frame caption="Screenshot: la lista contatti. Quando selezioni dei contatti compaiono i pulsanti Elimina selezionati, Inizia campagna ed Esporta in CSV.">
+  <img src="/images/contacts1.png" alt="Lista contatti con due contatti di esempio selezionati e i pulsanti Elimina selezionati, Inizia campagna, Aggiungi contatto ed Esporta in CSV, più la ricerca e i filtri" />
+</Frame>
 
 Se non hai ancora contatti, la pagina mostra **Nessun contatto trovato** con i pulsanti **Aggiungi contatto** e **Carica CSV**.
 
@@ -34,25 +32,33 @@ Se non hai ancora contatti, la pagina mostra **Nessun contatto trovato** con i p
 
 L’inserimento manuale è comodo quando aggiungi pochi contatti, o quando li incolli da un foglio di calcolo.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Aggiungi contatto → compila due contatti di esempio → Aggiungi colonna → Salva contatti.
-</p>
+<Frame caption="Video: Aggiungi contatto → compila due contatti di esempio → Aggiungi colonna → Salva contatti.">
+  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" />
+</Frame>
 
 ### Passaggi
 
-1. Clicca su **\+ Aggiungi contatto**. Si apre la finestra **Aggiungi contatti** con una tabella.
-2. Compila ogni riga:
-   - **Nome**
-   - **Numero di telefono** (obbligatorio)
-   - **Email** (facoltativa)
-3. Clicca su **Aggiungi riga** (o premi **Invio**) per aggiungere altre persone.
-4. Clicca su **Salva contatti**.
+<Steps>
+  <Step>
+    Clicca su **\+ Aggiungi contatto**. Si apre la finestra **Aggiungi contatti** con una tabella.
+  </Step>
+  <Step>
+    Compila ogni riga:
+    - **Nome**
+    - **Numero di telefono** (obbligatorio)
+    - **Email** (facoltativa)
+  </Step>
+  <Step>
+    Clicca su **Aggiungi riga** (o premi **Invio**) per aggiungere altre persone.
+  </Step>
+  <Step>
+    Clicca su **Salva contatti**.
+  </Step>
+</Steps>
 
-> **Importante:** Il **numero di telefono è obbligatorio** per ogni contatto. Se manca, la finestra mostra **Il numero di telefono è obbligatorio**.
+<Warning>
+  Il **numero di telefono è obbligatorio** per ogni contatto. Se manca, la finestra mostra **Il numero di telefono è obbligatorio**.
+</Warning>
 
 ### Suggerimenti di modifica (come in un foglio di calcolo)
 
@@ -65,7 +71,9 @@ La finestra mostra questi **suggerimenti rapidi**:
 - Fai doppio clic su una cella per modificarne il contenuto.
 - Premi **Invio** per aggiungere una nuova riga.
 
-> **Suggerimento:** Se i tuoi contatti sono già in Google Sheets o Excel, copia le celle e incollale direttamente nella tabella.
+<Tip>
+  Se i tuoi contatti sono già in Google Sheets o Excel, copia le celle e incollale direttamente nella tabella.
+</Tip>
 
 ### Colonne facoltative
 
@@ -77,13 +85,9 @@ Poi puoi usare queste colonne nei filtri dei contatti.
 
 L’importazione da CSV è ideale per liste più grandi.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Carica CSV → Associa colonne → controlla i contatti in Aggiungi contatti.
-</p>
+<Frame caption="Video: Carica CSV → Associa colonne → controlla i contatti in Aggiungi contatti.">
+  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" />
+</Frame>
 
 ### Requisiti del file
 
@@ -91,21 +95,27 @@ L’importazione da CSV è ideale per liste più grandi.
 - **Dimensione massima:** 10 MB.
 - Puoi cliccare per scegliere il file oppure trascinarlo e rilasciarlo.
 
-> **Errore comune:** Caricare un file .xlsx. Esportalo prima in **CSV**.
+<Warning>
+  **Errore comune:** Caricare un file .xlsx. Esportalo prima in **CSV**.
+</Warning>
 
 ### Caricare un CSV
 
-1. Clicca su **Carica CSV**. Si apre la finestra **Carica file CSV**.
-2. (Facoltativo) Clicca su **Scarica modello** per partire dal formato consigliato.
-3. Clicca su **Seleziona file**, oppure trascina il file nell’area di caricamento.
+<Steps>
+  <Step>
+    Clicca su **Carica CSV**. Si apre la finestra **Carica file CSV**.
+  </Step>
+  <Step>
+    (Facoltativo) Clicca su **Scarica modello** per partire dal formato consigliato.
+  </Step>
+  <Step>
+    Clicca su **Seleziona file**, oppure trascina il file nell’area di caricamento.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts2.png" alt="Finestra Carica file CSV con il pulsante Scarica modello, l'area di trascinamento, solo file CSV (max. 10 MB) e il pulsante Seleziona file" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la finestra Carica file CSV, con il requisito solo CSV e il limite di 10 MB.
-</p>
+<Frame caption="Screenshot: la finestra Carica file CSV, con il requisito solo CSV e il limite di 10 MB.">
+  <img src="/images/contacts2.png" alt="Finestra Carica file CSV con il pulsante Scarica modello, l'area di trascinamento, solo file CSV (max. 10 MB) e il pulsante Seleziona file" />
+</Frame>
 
 ### Associa le colonne
 
@@ -119,7 +129,9 @@ Se i tuoi numeri non includono il **\+**, scegli il loro paese in **I numeri non
 
 Sotto vedrai un’anteprima dei contatti. Clicca su **Continua**: i contatti si aprono nella tabella di **Aggiungi contatti**, dove puoi controllarli o correggerli prima di cliccare su **Salva contatti**.
 
-> **Importante:** Se non associ il **Telefono**, l’importazione non può proseguire.
+<Warning>
+  Se non associ il **Telefono**, l’importazione non può proseguire.
+</Warning>
 
 ### Regole di validazione (manuale e CSV)
 
@@ -130,17 +142,15 @@ Sotto vedrai un’anteprima dei contatti. Clicca su **Continua**: i contatti si 
 - I campi con errori vengono evidenziati con un **bordo rosso**.
 - I campi vuoti vengono evidenziati con un **bordo rosso**.
 
-> **Suggerimento:** Se il tuo CSV ha numeri senza prefisso, scegli il paese quando associ le colonne o aggiungi il prefisso prima di importare.
+<Tip>
+  Se il tuo CSV ha numeri senza prefisso, scegli il paese quando associ le colonne o aggiungi il prefisso prima di importare.
+</Tip>
 
 ## Gestire la lista contatti
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: vedi e modifica un contatto → seleziona i contatti → Filtri → Inizia campagna → Elimina selezionati.
-</p>
+<Frame caption="Video: vedi e modifica un contatto → seleziona i contatti → Filtri → Inizia campagna → Elimina selezionati.">
+  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" />
+</Frame>
 
 ### Ricerca e filtri
 
@@ -149,13 +159,9 @@ Sotto vedrai un’anteprima dei contatti. Clicca su **Continua**: i contatti si 
 
 Il pannello mostra quanti contatti corrispondono. Clicca su **Seleziona tutti i filtrati** per selezionarli tutti (ad esempio, per avviare una campagna), oppure su **Pulisci tutto** per togliere i filtri.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-filters.png" alt="Filtri avanzati con un filtro name Contiene Emma, 1 contatto corrispondente e il pulsante Seleziona tutti i filtrati" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: un filtro che trova i contatti il cui nome contiene «Emma».
-</p>
+<Frame caption="Screenshot: un filtro che trova i contatti il cui nome contiene «Emma».">
+  <img src="/images/contacts-filters.png" alt="Filtri avanzati con un filtro name Contiene Emma, 1 contatto corrispondente e il pulsante Seleziona tutti i filtrati" />
+</Frame>
 
 ### Vedere e modificare
 
@@ -170,11 +176,23 @@ Seleziona i contatti con le caselle e clicca su **Esporta in CSV** per scaricarl
 
 ## Avviare una campagna dai Contatti
 
-1. Seleziona uno o più contatti con le caselle.
-2. Clicca su **Inizia campagna**.
-3. Scrivi un nome per la campagna e scegli un agente in **Seleziona agente**.
-4. (Facoltativo) Attiva **Chiamate di follow-up**.
-5. Clicca su **Inizia campagna**.
+<Steps>
+  <Step>
+    Seleziona uno o più contatti con le caselle.
+  </Step>
+  <Step>
+    Clicca su **Inizia campagna**.
+  </Step>
+  <Step>
+    Scrivi un nome per la campagna e scegli un agente in **Seleziona agente**.
+  </Step>
+  <Step>
+    (Facoltativo) Attiva **Chiamate di follow-up**.
+  </Step>
+  <Step>
+    Clicca su **Inizia campagna**.
+  </Step>
+</Steps>
 
 Con **Chiamate di follow-up** attivo, per ogni contatto con una chiamata **senza risposta** o **occupata** vengono programmati nuovi tentativi:
 
@@ -182,28 +200,32 @@ Con **Chiamate di follow-up** attivo, per ogni contatto con una chiamata **senza
 - Dopo **1 giorno**
 - Dopo **3 giorni**
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-campaign.png" alt="Finestra Inizia campagna con un nome di campagna di esempio, un agente scelto e Chiamate di follow-up attivo" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: avviare una campagna con i contatti selezionati.">
+  <img src="/images/contacts-campaign.png" alt="Finestra Inizia campagna con un nome di campagna di esempio, un agente scelto e Chiamate di follow-up attivo" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: avviare una campagna con i contatti selezionati.
-</p>
-
-> **Suggerimento:** Se stai facendo delle prove, inizia con pochi contatti (5–10) per verificare che agente e script funzionino come previsto.
+<Tip>
+  Se stai facendo delle prove, inizia con pochi contatti (5–10) per verificare che agente e script funzionino come previsto.
+</Tip>
 
 ## Eliminare i contatti selezionati (definitivo)
 
-1. Seleziona i contatti da rimuovere.
-2. Clicca su **Elimina selezionati**.
-3. In **Elimina contatti**, scrivi **DELETE** per confermare e clicca su **Elimina**.
+<Steps>
+  <Step>
+    Seleziona i contatti da rimuovere.
+  </Step>
+  <Step>
+    Clicca su **Elimina selezionati**.
+  </Step>
+  <Step>
+    In **Elimina contatti**, scrivi **DELETE** per confermare e clicca su **Elimina**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-delete.png" alt="Finestra Elimina contatti con l'avviso che è un'azione definitiva, DELETE scritto nel campo di conferma e il pulsante Elimina" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: l’eliminazione avviene solo dopo aver scritto DELETE.">
+  <img src="/images/contacts-delete.png" alt="Finestra Elimina contatti con l'avviso che è un'azione definitiva, DELETE scritto nel campo di conferma e il pulsante Elimina" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: l’eliminazione avviene solo dopo aver scritto DELETE.
-</p>
-
-> **Importante:** È un’**azione definitiva** e non si può annullare. Se potresti aver bisogno dei contatti in futuro, esportali prima in CSV.
+<Warning>
+  È un’**azione definitiva** e non si può annullare. Se potresti aver bisogno dei contatti in futuro, esportali prima in CSV.
+</Warning>

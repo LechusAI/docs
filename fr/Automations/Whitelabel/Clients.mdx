@@ -16,23 +16,15 @@ Depuis cette page, vous pouvez :
 - Consulter les connexions, les abonnements, la facturation des appels, l’attribution marketing et la limite de dépense Twilio de chaque client
 - Ouvrir directement l’application du client
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : la liste des Utilisateurs → Créer un utilisateur → Modifier l’utilisateur → les détails du client : Informations, Abonnements, Facturation 1-Min, UTM et limite Twilio.
-</p>
+<Frame caption="Vidéo : la liste des Utilisateurs → Créer un utilisateur → Modifier l’utilisateur → les détails du client : Informations, Abonnements, Facturation 1-Min, UTM et limite Twilio.">
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" />
+</Frame>
 
 ## Comment fonctionne la liste des Utilisateurs
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-list.png" alt="Page Gestion des utilisateurs avec le bouton Créer un utilisateur, la recherche, les filtres Statut et Abonnements, et la ligne d’un client avec le statut Actif, la date d’inscription et quatre icônes d’action" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la liste des Utilisateurs, avec un client d’exemple.
-</p>
+<Frame caption="Capture d’écran : la liste des Utilisateurs, avec un client d’exemple.">
+  <img src="/images/wl-users-list.png" alt="Page Gestion des utilisateurs avec le bouton Créer un utilisateur, la recherche, les filtres Statut et Abonnements, et la ligne d’un client avec le statut Actif, la date d’inscription et quatre icônes d’action" />
+</Frame>
 
 En haut de la page, vous verrez :
 
@@ -59,13 +51,9 @@ Quand vous cliquez sur **Créer un utilisateur**, la fenêtre **Créer un nouvel
 - **Nom complet** (facultatif)
 - **Entreprise** (facultatif)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-create.png" alt="Fenêtre Créer un nouvel utilisateur avec les champs E-mail, Mot de passe, Nom complet et Entreprise et les boutons Annuler et Créer un utilisateur" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Créer un nouvel utilisateur, avec des données d’exemple.
-</p>
+<Frame caption="Capture d’écran : la fenêtre Créer un nouvel utilisateur, avec des données d’exemple.">
+  <img src="/images/wl-users-create.png" alt="Fenêtre Créer un nouvel utilisateur avec les champs E-mail, Mot de passe, Nom complet et Entreprise et les boutons Annuler et Créer un utilisateur" />
+</Frame>
 
 Un exemple réaliste :
 
@@ -76,7 +64,9 @@ Un exemple réaliste :
 
 Cliquez sur **Créer un utilisateur**. Le client apparaît dans la liste et peut se connecter à votre application avec cet e-mail et ce mot de passe.
 
-> **Astuce :** Si vous gérez beaucoup de comptes, renseigner **Nom complet** et **Entreprise** facilite beaucoup la recherche et le support.
+<Tip>
+  Si vous gérez beaucoup de comptes, renseigner **Nom complet** et **Entreprise** facilite beaucoup la recherche et le support.
+</Tip>
 
 ## Modifier les informations de base d’un client
 
@@ -104,23 +94,29 @@ Utilisez-la quand vous devez :
 
 Exemple de support :
 
-1. Le client dit : « Je ne trouve pas mes abonnements. »
-2. Vous le cherchez dans **Utilisateurs**.
-3. Vous cliquez sur l’**icône verte** pour ouvrir son application et le guider en toute confiance.
+<Steps>
+  <Step>
+    Le client dit : « Je ne trouve pas mes abonnements. »
+  </Step>
+  <Step>
+    Vous le cherchez dans **Utilisateurs**.
+  </Step>
+  <Step>
+    Vous cliquez sur l’**icône verte** pour ouvrir son application et le guider en toute confiance.
+  </Step>
+</Steps>
 
-> **Important :** Tant que vous êtes dans l’application du client, toute modification s’applique à son compte. Regardez, aidez et laissez tout tel quel, sauf si le client vous a demandé de changer quelque chose.
+<Warning>
+  Tant que vous êtes dans l’application du client, toute modification s’applique à son compte. Regardez, aidez et laissez tout tel quel, sauf si le client vous a demandé de changer quelque chose.
+</Warning>
 
 ## Ce que vous pouvez consulter dans le profil d’un client
 
 Cliquez sur l’icône de personne orange (**Plus de détails utilisateur**) pour ouvrir le panneau des détails du client. En haut, vous voyez son nom, son e-mail et son statut. En dessous, cinq onglets :
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-details.png" alt="Panneau des détails du client sur l’onglet Informations avec Inscription (Entreprise), Détails de la dernière connexion (Appareil, Adresse IP, Emplacement, Heure), Historique des sessions et Sécurité avec Supprimer le compte utilisateur" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le panneau des détails du client, onglet Informations.
-</p>
+<Frame caption="Capture d’écran : le panneau des détails du client, onglet Informations.">
+  <img src="/images/wl-users-details.png" alt="Panneau des détails du client sur l’onglet Informations avec Inscription (Entreprise), Détails de la dernière connexion (Appareil, Adresse IP, Emplacement, Heure), Historique des sessions et Sécurité avec Supprimer le compte utilisateur" />
+</Frame>
 
 ### Informations
 
@@ -129,7 +125,9 @@ Cliquez sur l’icône de personne orange (**Plus de détails utilisateur**) pou
 - **Historique des sessions** : ses sessions récentes.
 - **Sécurité** : **Supprimer le compte utilisateur** supprime définitivement le compte du client et toutes ses données, après confirmation.
 
-> **Important :** La suppression d’un client est irréversible. Si vous voulez seulement couper son accès, vérifiez d’abord son abonnement.
+<Warning>
+  La suppression d’un client est irréversible. Si vous voulez seulement couper son accès, vérifiez d’abord son abonnement.
+</Warning>
 
 ### Abonnements
 
@@ -145,15 +143,13 @@ Cliquez sur l’icône de personne orange (**Plus de détails utilisateur**) pou
 - **Facturation minimale d’1 minute** : un interrupteur pour appliquer le minimum d’1 minute à ce client même s’il ne remplit pas la règle (choix de l’administrateur).
 - **Appels sortants récents (100 derniers)** : chaque appel avec son statut, sa durée et les minutes facturées si la règle s’applique.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-billing.png" alt="Onglet Facturation 1-Min avec l’explication de la règle d’1 minute, les encadrés Règle éligible, Règle appliquée maintenant, durée moyenne et taux de réussite, et l’interrupteur Facturation minimale d’1 minute" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’onglet Facturation 1-Min. Cliquez sur Actualiser pour mettre à jour les données.">
+  <img src="/images/wl-users-billing.png" alt="Onglet Facturation 1-Min avec l’explication de la règle d’1 minute, les encadrés Règle éligible, Règle appliquée maintenant, durée moyenne et taux de réussite, et l’interrupteur Facturation minimale d’1 minute" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Facturation 1-Min. Cliquez sur Actualiser pour mettre à jour les données.
-</p>
-
-> **Astuce :** C’est ici qu’il faut regarder quand un client demande pourquoi un appel sortant court lui a été facturé une minute entière. Voir aussi [Téléphonie](/fr/Automations/Whitelabel/telefhony).
+<Tip>
+  C’est ici qu’il faut regarder quand un client demande pourquoi un appel sortant court lui a été facturé une minute entière. Voir aussi [Téléphonie](/fr/Automations/Whitelabel/telefhony).
+</Tip>
 
 ### UTM
 
@@ -170,4 +166,6 @@ Vous pouvez ainsi répondre rapidement à des questions comme :
 - « Pourquoi un appel sortant court a-t-il été facturé ainsi ? »
 - « Est-il arrivé par une campagne avec des paramètres UTM ? »
 
-> **Astuce :** Si un client dit « J’ai payé mais ce n’est pas actif », la première vérification consiste généralement à confirmer qu’il utilise le bon e-mail et le bon compte.
+<Tip>
+  Si un client dit « J’ai payé mais ce n’est pas actif », la première vérification consiste généralement à confirmer qu’il utilise le bon e-mail et le bon compte.
+</Tip>

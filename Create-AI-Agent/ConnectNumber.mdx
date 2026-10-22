@@ -31,13 +31,23 @@ Your main number stays with your current phone provider. You get a number in Cal
 
 ### How it works
 
-1. In **Numbers**, buy a number or add one you already have (see [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers)).
-2. Assign that number to your agent (see [Assign the number to the agent](#assign-the-number-to-the-agent)).
-3. With your phone carrier, forward your business number to the agent’s number.
+<Steps>
+  <Step>
+    In **Numbers**, buy a number or add one you already have (see [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers)).
+  </Step>
+  <Step>
+    Assign that number to your agent (see [Assign the number to the agent](#assign-the-number-to-the-agent)).
+  </Step>
+  <Step>
+    With your phone carrier, forward your business number to the agent’s number.
+  </Step>
+</Steps>
 
 From then on, your customers keep calling the number they already know, and the agent handles the call.
 
-> **Important:** Call forwarding is set up with your phone carrier, your phone, or your PBX, not inside Callin.io. Some carriers let you do it from their customer portal; others need a request, and forwarded calls may have a cost depending on your plan.
+<Warning>
+  Call forwarding is set up with your phone carrier, your phone, or your PBX, not inside Callin.io. Some carriers let you do it from their customer portal; others need a request, and forwarded calls may have a cost depending on your plan.
+</Warning>
 
 ### When this option makes sense
 
@@ -53,31 +63,37 @@ A clinic has used the same landline for years. It appears on its website and on 
 
 Porting moves your current number to Callin.io (“Keep your existing number”). Your customers keep calling the same number, without depending on forwarding.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/connect-number-porting.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Numbers → Add Number → Purchase Number → choose the country → Porting → enter the number → Check Portability.
-</p>
+<Frame caption="Video: Numbers → Add Number → Purchase Number → choose the country → Porting → enter the number → Check Portability.">
+  <video autoPlay muted loop playsInline src="/images/connect-number-porting.mp4" />
+</Frame>
 
 ### Start a porting request
 
-1. Go to [Numbers](https://app.callin.io/numbers) and click **\+ Add Number** → **Purchase Number**.
-2. In **Country**, choose the country of your number.
-3. In **Request Type**, select **Porting**.
-4. Enter your number in **Porting Number** in international format (example: `+34910000000`) and click **Check Portability**.
-5. If the number can be ported, click **Start request** and complete the **Document Requirements** for that country.
+<Steps>
+  <Step>
+    Go to [Numbers](https://app.callin.io/numbers) and click **\+ Add Number** → **Purchase Number**.
+  </Step>
+  <Step>
+    In **Country**, choose the country of your number.
+  </Step>
+  <Step>
+    In **Request Type**, select **Porting**.
+  </Step>
+  <Step>
+    Enter your number in **Porting Number** in international format (example: `+34910000000`) and click **Check Portability**.
+  </Step>
+  <Step>
+    If the number can be ported, click **Start request** and complete the **Document Requirements** for that country.
+  </Step>
+</Steps>
 
-> **Note:** **Porting** only appears for countries that use requests (outside the US and Canada). For the US and Canada, the window shows the instant purchase instead.
+<Note>
+  **Porting** only appears for countries that use requests (outside the US and Canada). For the US and Canada, the window shows the instant purchase instead.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/porting1.png" alt="Purchase a New Number window for Spain with Porting selected, an example number in Porting Number, the message This number is eligible for porting with the Carrier Name, Phone Number and Type, and the Start request button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the portability check. When the number can be ported, you see its carrier, number, and type, and you can click Start request.
-</p>
+<Frame caption="Screenshot: the portability check. When the number can be ported, you see its carrier, number, and type, and you can click Start request.">
+  <img src="/images/porting1.png" alt="Purchase a New Number window for Spain with Porting selected, an example number in Porting Number, the message This number is eligible for porting with the Carrier Name, Phone Number and Type, and the Start request button" />
+</Frame>
 
 ### What the check tells you
 
@@ -86,7 +102,9 @@ Porting moves your current number to Callin.io (“Keep your existing number”)
 
 After you click **Start request**, the process is the same as for a new number: documents, fees, and review. You can follow it in the **Number Requests** tab. See [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers) for details.
 
-> **Tip:** Porting takes longer than buying a number, because your current provider must release it. Don’t cancel your current line until the number appears in your **Numbers** list. If your number can’t be ported, call forwarding is still the fastest way to start.
+<Tip>
+  Porting takes longer than buying a number, because your current provider must release it. Don’t cancel your current line until the number appears in your **Numbers** list. If your number can’t be ported, call forwarding is still the fastest way to start.
+</Tip>
 
 ### Practical example
 
@@ -98,20 +116,22 @@ BYOC means **Bring Your Own Carrier**. You connect your own telephony provider t
 
 It is the most advanced option, for businesses that already use VoIP, a PBX, or their own SIP provider.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/connect-number-byoc.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: BYOC → Telnyx tab → Other SIP Provider tab with its Basic, Inbound, and Outbound tabs.
-</p>
+<Frame caption="Video: BYOC → Telnyx tab → Other SIP Provider tab with its Basic, Inbound, and Outbound tabs.">
+  <video autoPlay muted loop playsInline src="/images/connect-number-byoc.mp4" />
+</Frame>
 
 ### BYOC with Telnyx
 
 If you already use Telnyx:
 
-1. Go to [BYOC](https://app.callin.io/byoc) and open the **Telnyx** tab.
-2. Paste your **Telnyx API Key** and click **Start**.
+<Steps>
+  <Step>
+    Go to [BYOC](https://app.callin.io/byoc) and open the **Telnyx** tab.
+  </Step>
+  <Step>
+    Paste your **Telnyx API Key** and click **Start**.
+  </Step>
+</Steps>
 
 Callin.io saves the key, fetches your active Telnyx numbers, stores them in your account, provisions the SIP trunk, and creates the phone numbers for inbound and outbound calls. Your Telnyx numbers then appear in **Numbers**.
 
@@ -125,7 +145,9 @@ If your provider is not Telnyx, open the **Other SIP Provider** tab (**Generic S
 
 Click **Save & Import** when you finish. Callin.io then checks that the number can be used for calling.
 
-> **Important:** BYOC is recommended for businesses that already have a telephony team, a SIP provider, or a PBX. For every field, see [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers#byoc-sip-trunk).
+<Warning>
+  BYOC is recommended for businesses that already have a telephony team, a SIP provider, or a PBX. For every field, see [Numbers And BYOC](/Create-AI-Agent/Configure-Numbers#byoc-sip-trunk).
+</Warning>
 
 ### Practical example
 
@@ -135,19 +157,25 @@ A company already uses Telnyx for its business lines. Instead of buying new numb
 
 Having the number in your account is not the last step. The agent only uses a number that is assigned to it. In **Numbers**, an unassigned number shows **This number is not assigned to any agent**, and in **AI Agents** an agent without a number shows **No phone number assigned**.
 
-1. Go to **AI Agents**.
-2. Click the **⋮** menu of the agent and select **Assign Number**.
-3. In the **Assign Number to** window, find the number (you can search by number, label, or carrier) and click **Assign**.
+<Steps>
+  <Step>
+    Go to **AI Agents**.
+  </Step>
+  <Step>
+    Click the **⋮** menu of the agent and select **Assign Number**.
+  </Step>
+  <Step>
+    In the **Assign Number to** window, find the number (you can search by number, label, or carrier) and click **Assign**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/connect-number-assign.png" alt="Assign Number window for an agent, with the search box, the Filters and Refresh buttons, and the list of numbers with their status, carrier and Assign button" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Assign Number window. The Status column shows whether each number is free or already assigned to another agent.">
+  <img src="/images/connect-number-assign.png" alt="Assign Number window for an agent, with the search box, the Filters and Refresh buttons, and the list of numbers with their status, carrier and Assign button" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Assign Number window. The Status column shows whether each number is free or already assigned to another agent.
-</p>
-
-> **Common mistake:** Assigning a number that another agent is using. As the window warns, **assigning it here will detach it from the other agent**. If you have one agent for support and another for sales, check that each line is assigned to the right one.
+<Warning>
+  **Common mistake:** Assigning a number that another agent is using. As the window warns, **assigning it here will detach it from the other agent**. If you have one agent for support and another for sales, check that each line is assigned to the right one.
+</Warning>
 
 ## Which option should you choose
 

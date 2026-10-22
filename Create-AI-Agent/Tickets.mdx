@@ -13,13 +13,9 @@ Tickets are created by agents that have **Issue & Complaint Tracking** turned on
 
 You’ll find them in the left menu, under **Telephony** ([open it here](https://app.callin.io/tickets)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/tickets-list.png" alt="Tickets page with the Callback configuration and Refresh buttons, the All, In Progress, Resolved and Archived filters, the Search tickets box and the No tickets found message" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Tickets page. When your agents log issues, they appear here.
-</p>
+<Frame caption="Screenshot: the Tickets page. When your agents log issues, they appear here.">
+  <img src="/images/tickets-list.png" alt="Tickets page with the Callback configuration and Refresh buttons, the All, In Progress, Resolved and Archived filters, the Search tickets box and the No tickets found message" />
+</Frame>
 
 ## Find your tickets
 
@@ -29,7 +25,9 @@ You’ll find them in the left menu, under **Telephony** ([open it here](https:/
 
 For each ticket you can see its **Ticket ID**, **Contact name**, **Phone number**, **Email**, **Opening date**, **Subject**, **Status**, **Operator comment**, and when it was **Last updated**.
 
-> **Tip:** You can also find the calls linked to a ticket in [Call History](/Create-AI-Agent/Call-Actions), with the **Ticket ID** filter.
+<Tip>
+  You can also find the calls linked to a ticket in [Call History](/Create-AI-Agent/Call-Actions), with the **Ticket ID** filter.
+</Tip>
 
 ## Work on a ticket
 
@@ -65,9 +63,13 @@ A **callback** is a call the agent makes to the customer to tell them how their 
 
 Click **Save configuration**. You’ll see **Configuration saved**.
 
-> **Example:** _“Hello `{{contact_name}}`, we’re calling about the issue you reported on `{{ticket_date}}`: `{{ticket_subject}}`. `{{operator_comment}}` Is there anything else we can help you with?”_
+<Info>
+  **Example:** _“Hello `{{contact_name}}`, we’re calling about the issue you reported on `{{ticket_date}}`: `{{ticket_subject}}`. `{{operator_comment}}` Is there anything else we can help you with?”_
+</Info>
 
-> **Important:** Write a clear **Operator comment** when you resolve a ticket. With `{{operator_comment}}` in the script, that comment is what the customer hears.
+<Warning>
+  Write a clear **Operator comment** when you resolve a ticket. With `{{operator_comment}}` in the script, that comment is what the customer hears.
+</Warning>
 
 ## Troubleshooting
 

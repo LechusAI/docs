@@ -17,12 +17,20 @@ El **Historial de llamadas** es donde revisas todas las llamadas anteriores de t
 Usa este enlace directo para abrir la página:
 [Abrir el Historial de llamadas](https://app.callin.io/call-history)
 
-> **Consejo:** Guarda el enlace anterior en favoritos si revisas llamadas todos los días.
+<Tip>
+  Guarda el enlace anterior en favoritos si revisas llamadas todos los días.
+</Tip>
 
 ## Abrir el Historial de llamadas
 
-1. En la barra lateral izquierda, ve a **Evaluar**.
-2. Haz clic en **Historial de llamadas**.
+<Steps>
+  <Step>
+    En la barra lateral izquierda, ve a **Evaluar**.
+  </Step>
+  <Step>
+    Haz clic en **Historial de llamadas**.
+  </Step>
+</Steps>
 
 La tabla muestra una fila por llamada, de la más reciente a la más antigua:
 
@@ -61,19 +69,15 @@ En la parte superior de la página encontrarás:
 | **Sentimiento** | Encontrar llamadas según el estado de ánimo general de quien llama | **Positivo**, **Neutral**, **Negativo** |
 | **ID del ticket** | Encontrar la llamada asociada a un ticket | Pega el ID del ticket |
 
-> **Error común:** Aplicar demasiados filtros a la vez puede devolver cero resultados. Si la tabla aparece vacía, quita un filtro y prueba de nuevo.
+<Warning>
+  **Error común:** Aplicar demasiados filtros a la vez puede devolver cero resultados. Si la tabla aparece vacía, quita un filtro y prueba de nuevo.
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: busca en las transcripciones o usa los botones de filtro para acotar las llamadas antes de exportarlas o abrir sus detalles.">
   <img
     src="/images/callhistory1.png"
-    alt="Página del Historial de llamadas con el buscador de transcripciones, los botones de filtro (Número de teléfono, ID de llamada, Agente, Squad, Estado y más), el botón Exportar CSV y la lista de llamadas."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: busca en las transcripciones o usa los botones de filtro para acotar las llamadas antes de exportarlas o abrir sus detalles.
-</p>
+    alt="Página del Historial de llamadas con el buscador de transcripciones, los botones de filtro (Número de teléfono, ID de llamada, Agente, Squad, Estado y más), el botón Exportar CSV y la lista de llamadas." />
+</Frame>
 
 ## Entender los resultados de la llamada (iconos)
 
@@ -85,16 +89,26 @@ La columna **Resultados de la llamada** muestra tres iconos por llamada. Un icon
 
 Los iconos en gris indican que ese resultado no ocurrió en esa llamada.
 
-> **Consejo:** Para encontrar las llamadas en las que se programó una cita, usa el filtro **Cita**.
+<Tip>
+  Para encontrar las llamadas en las que se programó una cita, usa el filtro **Cita**.
+</Tip>
 
 ## Exportar el Historial de llamadas a CSV
 
 Puedes exportar las llamadas que estás viendo, incluidos los filtros que hayas aplicado.
 
-1. Haz clic en **Exportar CSV**.
-2. En la ventana **Exportar historial de llamadas**, selecciona las columnas que quieres incluir. Las 27 columnas vienen seleccionadas por defecto.
-   - Usa **Seleccionar todo** o **Deseleccionar todo** para ir más rápido.
-3. Haz clic en **Exportar CSV** para descargar el archivo.
+<Steps>
+  <Step>
+    Haz clic en **Exportar CSV**.
+  </Step>
+  <Step>
+    En la ventana **Exportar historial de llamadas**, selecciona las columnas que quieres incluir. Las 27 columnas vienen seleccionadas por defecto.
+    - Usa **Seleccionar todo** o **Deseleccionar todo** para ir más rápido.
+  </Step>
+  <Step>
+    Haz clic en **Exportar CSV** para descargar el archivo.
+  </Step>
+</Steps>
 
 Las columnas disponibles son:
 
@@ -104,19 +118,15 @@ Las columnas disponibles son:
 - **Transferencia de llamada**: Duración de llamada transferida, Estado de llamada transferida, URL de grabación transferida, Transcripción de llamada transferida, Número de transferencia, Nombre del agente de transferencia.
 - **Contenido**: URL de grabación, Transcripción.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: elige las columnas de tu archivo CSV y haz clic en Exportar CSV.">
   <img
     src="/images/call-history-export.png"
-    alt="Ventana Exportar historial de llamadas con Seleccionar todo, Deseleccionar todo, las casillas de las columnas y el botón Exportar CSV."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Ventana Exportar historial de llamadas con Seleccionar todo, Deseleccionar todo, las casillas de las columnas y el botón Exportar CSV." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: elige las columnas de tu archivo CSV y haz clic en Exportar CSV.
-</p>
-
-> **Consejo:** Si necesitas “todas las llamadas”, limpia los filtros antes de exportar.
+<Tip>
+  Si necesitas “todas las llamadas”, limpia los filtros antes de exportar.
+</Tip>
 
 ## Abrir los detalles de una llamada para analizarla
 
@@ -143,33 +153,27 @@ A la derecha tienes estas pestañas:
 | **Objetivos** | Si se cumplió cada objetivo del agente en esta llamada. Si el agente no tiene objetivos, verás **No se evaluaron objetivos para esta llamada**. |
 | **Momentos clave** | Los momentos más importantes de la llamada. Cada uno muestra quién lo dijo (**Usuario** o **Asistente**), su tipo (por ejemplo **Pregunta**, **Compromiso**, **Objeción**, **Señal de compra** o **Frustración**) y las palabras exactas. |
 
-> **Importante:** El resumen, el sentimiento, los objetivos y los momentos clave los genera la IA. Como indica el panel, son un **análisis asistido por IA: úsalo como orientación**.
+<Warning>
+  El resumen, el sentimiento, los objetivos y los momentos clave los genera la IA. Como indica el panel, son un **análisis asistido por IA: úsalo como orientación**.
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: el panel Detalles de la llamada muestra la transcripción, las pestañas de análisis y el reproductor de la grabación.">
   <img
     src="/images/callhistory2.png"
-    alt="Panel Detalles de la llamada con la transcripción a la izquierda, la pestaña Resumen con el resumen y los metadatos a la derecha, y el reproductor de la grabación abajo."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Panel Detalles de la llamada con la transcripción a la izquierda, la pestaña Resumen con el resumen y los metadatos a la derecha, y el reproductor de la grabación abajo." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el panel Detalles de la llamada muestra la transcripción, las pestañas de análisis y el reproductor de la grabación.
-</p>
+En la pestaña **Momentos clave** encontrarás los momentos más importantes de la llamada:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: Momentos clave muestra quién dijo qué y qué tipo de momento fue.">
   <img
     src="/images/call-history-key-moments.png"
-    alt="Pestaña Momentos clave en los detalles de la llamada, con momentos etiquetados como Pregunta, Pequeña conversación, Compromiso y Frustración."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Pestaña Momentos clave en los detalles de la llamada, con momentos etiquetados como Pregunta, Pequeña conversación, Compromiso y Frustración." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Momentos clave muestra quién dijo qué y qué tipo de momento fue.
-</p>
-
-> **Consejo:** Usa **Buscar en la transcripción...** para encontrar rápidamente una frase o momento concreto de la llamada.
+<Tip>
+  Usa **Buscar en la transcripción...** para encontrar rápidamente una frase o momento concreto de la llamada.
+</Tip>
 
 ## Descargar el audio de la llamada (grabación)
 
@@ -179,4 +183,6 @@ El reproductor de la grabación está en la parte inferior del panel **Detalles 
 - Hacer clic en el botón de velocidad (**1.0x**) para cambiar la velocidad de reproducción: 0.5x, 0.75x, 1x, 1.25x, 1.5x o 2x.
 - Hacer clic en el icono de **descarga** de la izquierda para **Descargar grabación**.
 
-> **Importante:** Si no ves el reproductor o el icono de descarga, esa llamada no tiene grabación. La grabación se puede desactivar en los ajustes del agente.
+<Warning>
+  Si no ves el reproductor o el icono de descarga, esa llamada no tiene grabación. La grabación se puede desactivar en los ajustes del agente.
+</Warning>

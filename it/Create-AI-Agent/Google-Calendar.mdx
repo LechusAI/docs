@@ -9,32 +9,46 @@ icon: "calendar"
 
 La prenotazione con Google Calendar in Callin.io è pensata per essere affidabile e coerente. Per questo la configurazione è divisa in due parti:
 
-1. **Configurazione dell’integrazione Google Calendar**\
-   Colleghi il tuo account Google e crei un **modello evento**. È nel modello che imposti le regole di prenotazione (giorni disponibili, durata dell’appuntamento, promemoria e regole sui conflitti).
-2. **Configurazione dell’agente IA (Azione chiamata)**\
-   Attivi **Pianificazione appuntamenti** nell’agente e selezioni il modello che hai creato.
+<Steps>
+  <Step>
+    **Configurazione dell’integrazione Google Calendar**\
+    Colleghi il tuo account Google e crei un **modello evento**. È nel modello che imposti le regole di prenotazione (giorni disponibili, durata dell’appuntamento, promemoria e regole sui conflitti).
+  </Step>
+  <Step>
+    **Configurazione dell’agente IA (Azione chiamata)**\
+    Attivi **Pianificazione appuntamenti** nell’agente e selezioni il modello che hai creato.
+  </Step>
+</Steps>
 
-> **Importante:** Le regole di prenotazione devono stare nel **modello evento**, non nel prompt dell’agente. Evita istruzioni come “solo dal lunedì al venerdì” o “solo tra le 9:00 e le 17:00” nel prompt: una volta collegato Google Calendar possono entrare in conflitto con la logica di pianificazione già integrata nella piattaforma.
+<Warning>
+  Le regole di prenotazione devono stare nel **modello evento**, non nel prompt dell’agente. Evita istruzioni come “solo dal lunedì al venerdì” o “solo tra le 9:00 e le 17:00” nel prompt: una volta collegato Google Calendar possono entrare in conflitto con la logica di pianificazione già integrata nella piattaforma.
+</Warning>
 
 ## Apri l’integrazione Google Calendar
 
 Usa questo link diretto per aprire la pagina dell’integrazione Google Calendar: [**clicca qui**](https://app.callin.io/actions/google-calendar). Puoi arrivarci anche da **Integrazioni → Azioni**: clicca su **Connetti** (o su **Gestisci**, se è già collegata) nella scheda **Google Calendar**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/google-calendar-page.png" alt="Pagina dell'integrazione Google Calendar con i pulsanti Sincronizza e Collega account Google, la ricerca dei calendari, l'account collegato con i suoi calendari e Disconnetti account, e la sezione Modelli di evento" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: l’area dell’integrazione Google Calendar dove colleghi il tuo account, scegli un calendario e gestisci i modelli di evento.">
+  <img src="/images/google-calendar-page.png" alt="Pagina dell'integrazione Google Calendar con i pulsanti Sincronizza e Collega account Google, la ricerca dei calendari, l'account collegato con i suoi calendari e Disconnetti account, e la sezione Modelli di evento" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: l’area dell’integrazione Google Calendar dove colleghi il tuo account, scegli un calendario e gestisci i modelli di evento.
-</p>
-
-> **Suggerimento:** Puoi creare **più modelli di evento per calendario** e assegnare modelli di calendari diversi ad agenti IA diversi.
+<Tip>
+  Puoi creare **più modelli di evento per calendario** e assegnare modelli di calendari diversi ad agenti IA diversi.
+</Tip>
 
 ## Step 1: Collega il tuo account Google
 
-1. Nella pagina dell’integrazione Google Calendar, clicca su **Collega account Google**.
-2. Si apre una finestra di accesso di Google. Scegli l’account Google da usare per le prenotazioni.
-3. Approva la schermata dei permessi, così Callin.io può creare eventi e controllare la disponibilità.
+<Steps>
+  <Step>
+    Nella pagina dell’integrazione Google Calendar, clicca su **Collega account Google**.
+  </Step>
+  <Step>
+    Si apre una finestra di accesso di Google. Scegli l’account Google da usare per le prenotazioni.
+  </Step>
+  <Step>
+    Approva la schermata dei permessi, così Callin.io può creare eventi e controllare la disponibilità.
+  </Step>
+</Steps>
 
 Una volta collegato, vedrai:
 
@@ -44,7 +58,9 @@ Una volta collegato, vedrai:
 
 Usa **Cerca calendari...** per trovare velocemente un calendario e **Sincronizza** per aggiornare l’elenco se hai appena creato un nuovo calendario in Google.
 
-> **Importante:** Usa un calendario che rifletta la tua disponibilità reale. Se il tuo Google Calendar è sempre “occupato” (o sempre “libero”), le prenotazioni non corrisponderanno alla realtà.
+<Warning>
+  Usa un calendario che rifletta la tua disponibilità reale. Se il tuo Google Calendar è sempre “occupato” (o sempre “libero”), le prenotazioni non corrisponderanno alla realtà.
+</Warning>
 
 ## Step 2: Scegli il calendario in cui verranno creati gli appuntamenti
 
@@ -61,7 +77,9 @@ Perché questa scelta è importante:
 - Il modello viene creato **per un calendario specifico**
 - L’agente prenoterà nel calendario e con il modello che gli assegnerai dopo
 
-> **Suggerimento:** Se hai più calendari (per team o servizi diversi), puoi creare modelli diversi per ogni calendario e assegnare quello giusto a ogni agente IA.
+<Tip>
+  Se hai più calendari (per team o servizi diversi), puoi creare modelli diversi per ogni calendario e assegnare quello giusto a ogni agente IA.
+</Tip>
 
 ## Step 3: Crea un modello evento (qui vivono le regole di pianificazione)
 
@@ -77,25 +95,27 @@ Il modello definisce:
 
 Per crearne uno:
 
-1. Nella sezione **Modelli di evento**, clicca su **Crea modello evento**. Si apre un pannello a destra.
-2. Compila i campi (dettagli più sotto).
-3. Clicca su **Salva**. Per scartarlo, clicca su **Annulla**.
+<Steps>
+  <Step>
+    Nella sezione **Modelli di evento**, clicca su **Crea modello evento**. Si apre un pannello a destra.
+  </Step>
+  <Step>
+    Compila i campi (dettagli più sotto).
+  </Step>
+  <Step>
+    Clicca su **Salva**. Per scartarlo, clicca su **Annulla**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Crea modello evento → nome e descrizione → promemoria e sovrapposizione → gestione conflitti → orari di lavoro dal lunedì al venerdì.">
+  <video autoPlay muted loop playsInline src="/images/google-calendar-template.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Crea modello evento → nome e descrizione → promemoria e sovrapposizione → gestione conflitti → orari di lavoro dal lunedì al venerdì.
-</p>
+Questo è l’editor del modello, dove imposti le regole di pianificazione:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions2.png" alt="Pannello Crea modello evento con i campi Nome e Descrizione, Durata slot, Minuti promemoria, Tipo di promemoria, Consenti sovrapposizione eventi su No, Gestione conflitti e l'inizio degli Orari di lavoro" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: l’editor del modello evento, dove definisci durata, promemoria e regole sui conflitti.
-</p>
+<Frame caption="Screenshot: l’editor del modello evento, dove definisci durata, promemoria e regole sui conflitti.">
+  <img src="/images/actions2.png" alt="Pannello Crea modello evento con i campi Nome e Descrizione, Durata slot, Minuti promemoria, Tipo di promemoria, Consenti sovrapposizione eventi su No, Gestione conflitti e l'inizio degli Orari di lavoro" />
+</Frame>
 
 ### Spiegazione campo per campo (con esempi pratici)
 
@@ -110,15 +130,13 @@ Per crearne uno:
 | **Gestione conflitti**                 | Compare solo se **Consenti sovrapposizione eventi** è su **No**: **Blocca tutti gli eventi sovrapposti** o **Blocca solo gli eventi con lo stesso nome** | Blocca tutti gli eventi sovrapposti             |
 | **Orari di lavoro**                    | Quali giorni sono disponibili, con un orario di inizio e di fine per ciascuno (quando selezioni un giorno: 09:00–17:00 di default)          | Dal lunedì al venerdì, 09:00–17:00              |
 
-> **Errore comune:** Lasciare gli **Orari di lavoro** senza alcun giorno selezionato. Il modello non si può salvare finché almeno un giorno non è disponibile (“Almeno un giorno deve essere disponibile nella tua pianificazione”).
+<Warning>
+  **Errore comune:** Lasciare gli **Orari di lavoro** senza alcun giorno selezionato. Il modello non si può salvare finché almeno un giorno non è disponibile (“Almeno un giorno deve essere disponibile nella tua pianificazione”).
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/google-calendar-hours.png" alt="Sezione Orari di lavoro del modello evento con lunedì-venerdì selezionati dalle 09:00 alle 17:00 e sabato e domenica non disponibili" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: orari di lavoro con lunedì-venerdì disponibili dalle 09:00 alle 17:00.
-</p>
+<Frame caption="Screenshot: orari di lavoro con lunedì-venerdì disponibili dalle 09:00 alle 17:00.">
+  <img src="/images/google-calendar-hours.png" alt="Sezione Orari di lavoro del modello evento con lunedì-venerdì selezionati dalle 09:00 alle 17:00 e sabato e domenica non disponibili" />
+</Frame>
 
 ### Un esempio di modello completo (consigliato per iniziare)
 
@@ -144,53 +162,75 @@ Dopo aver:
 
 puoi attivare la prenotazione in un agente IA.
 
-1. Vai su **Agenti AI** nel menu a sinistra.
-2. Apri l’agente che vuoi configurare.
-3. Vai alla scheda **Azione chiamata**.
-4. Attiva **Pianificazione appuntamenti**. Si apre il pannello **Configurazione pianificazione**.
-5. In **Fornitore di pianificazione**, scegli **Google Calendar** (“Usa Google Calendar per la pianificazione”).
-6. Seleziona il modello evento che hai creato. L’elenco mostra ogni calendario con i suoi modelli, e ogni modello indica durata, promemoria e numero di giorni disponibili.
-7. Chiudi il pannello e clicca su **Salva**.
+<Steps>
+  <Step>
+    Vai su **Agenti AI** nel menu a sinistra.
+  </Step>
+  <Step>
+    Apri l’agente che vuoi configurare.
+  </Step>
+  <Step>
+    Vai alla scheda **Azione chiamata**.
+  </Step>
+  <Step>
+    Attiva **Pianificazione appuntamenti**. Si apre il pannello **Configurazione pianificazione**.
+  </Step>
+  <Step>
+    In **Fornitore di pianificazione**, scegli **Google Calendar** (“Usa Google Calendar per la pianificazione”).
+  </Step>
+  <Step>
+    Seleziona il modello evento che hai creato. L’elenco mostra ogni calendario con i suoi modelli, e ogni modello indica durata, promemoria e numero di giorni disponibili.
+  </Step>
+  <Step>
+    Chiudi il pannello e clicca su **Salva**.
+  </Step>
+</Steps>
 
 Per cambiare modello in seguito, clicca sull’**icona delle impostazioni** (ingranaggio) accanto a **Pianificazione appuntamenti**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: scheda Azione chiamata → Pianificazione appuntamenti → Google Calendar → selezione del modello.">
+  <video autoPlay muted loop playsInline src="/images/google-calendar-agent.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: scheda Azione chiamata → Pianificazione appuntamenti → Google Calendar → selezione del modello.
-</p>
+Nell’agente, il risultato è questo:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions3.png" alt="Scheda Azione chiamata dell'agente con il pannello Configurazione pianificazione aperto: Google Calendar scelto come fornitore e un modello evento selezionato nel calendario collegato" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: nell’Azione chiamata dell’agente, scegli Google Calendar come fornitore di prenotazione e seleziona il tuo modello.">
+  <img src="/images/actions3.png" alt="Scheda Azione chiamata dell'agente con il pannello Configurazione pianificazione aperto: Google Calendar scelto come fornitore e un modello evento selezionato nel calendario collegato" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: nell’Azione chiamata dell’agente, scegli Google Calendar come fornitore di prenotazione e seleziona il tuo modello.
-</p>
-
-> **Importante:** Per la massima precisione, il fuso orario dell’agente deve coincidere con quello del calendario. Se non coincidono, l’agente può proporre orari sbagliati.
+<Warning>
+  Per la massima precisione, il fuso orario dell’agente deve coincidere con quello del calendario. Se non coincidono, l’agente può proporre orari sbagliati.
+</Warning>
 
 ## Come dovrebbe avvenire la prenotazione durante la chiamata (flusso consigliato)
 
 Quando tutto è collegato, l’esperienza migliore è che l’agente segua un flusso semplice e naturale:
 
-1. **Confermare l’intenzione**\
-   “Certo, vuoi prenotare un appuntamento adesso?”
-2. **Raccogliere i dati minimi**\
-   Chiedi:
-   - Nome e cognome
-   - Numero di telefono\
-     (Facoltativo: un breve motivo dell’appuntamento, se utile.)
-3. **Proporre la disponibilità e confermare**\
-   L’agente propone gli orari prenotabili (in base al modello e alla disponibilità del calendario) e conferma quello scelto.
-4. **Prenotare e confermare i dettagli**\
-   L’agente prenota l’evento e ripete:
-   - Data
-   - Ora
-   - Durata
-   - Motivo dell’appuntamento
+<Steps>
+  <Step>
+    **Confermare l’intenzione**\
+    “Certo, vuoi prenotare un appuntamento adesso?”
+  </Step>
+  <Step>
+    **Raccogliere i dati minimi**\
+    Chiedi:
+    - Nome e cognome
+    - Numero di telefono\
+      (Facoltativo: un breve motivo dell’appuntamento, se utile.)
+  </Step>
+  <Step>
+    **Proporre la disponibilità e confermare**\
+    L’agente propone gli orari prenotabili (in base al modello e alla disponibilità del calendario) e conferma quello scelto.
+  </Step>
+  <Step>
+    **Prenotare e confermare i dettagli**\
+    L’agente prenota l’evento e ripete:
+    - Data
+    - Ora
+    - Durata
+    - Motivo dell’appuntamento
+  </Step>
+</Steps>
 
 ### Esempio (come suona una “buona” prenotazione)
 
@@ -203,7 +243,9 @@ Quando tutto è collegato, l’esperienza migliore è che l’agente segua un fl
 - Chi chiama: “Sì.”
 - Agente: “Fatto. Hai l’appuntamento giovedì alle 16:00, per 30 minuti. Riceverai anche un promemoria prima dell’appuntamento.”
 
-> **Suggerimento:** Concentra il prompt sulla **raccolta dei dati e sulla conferma**. Lascia che sia il modello a gestire le regole di pianificazione.
+<Tip>
+  Concentra il prompt sulla **raccolta dei dati e sulla conferma**. Lascia che sia il modello a gestire le regole di pianificazione.
+</Tip>
 
 ## Regole per il prompt: cosa includere (e cosa evitare)
 
@@ -231,15 +273,19 @@ Evita istruzioni che ripetono o sovrascrivono il modello evento, come:
 
 Queste regole vanno configurate nel **modello evento** (orari di lavoro, regole sui conflitti e sulla sovrapposizione). Tenere il prompt pulito evita contraddizioni e migliora la precisione delle prenotazioni.
 
-> **Importante:** Pensala così:\
-> **Modello = regole e disponibilità**\
-> **Prompt = conversazione e raccolta dati**
+<Warning>
+  Pensala così:\
+  **Modello = regole e disponibilità**\
+  **Prompt = conversazione e raccolta dati**
+</Warning>
 
 ## Miglior LLM per la pianificazione: Gemini 2.5 Flash (consigliato)
 
 Per prenotazioni precise, Callin.io funziona meglio con **Gemini 2.5 Flash**.
 
-> **Suggerimento:** Se la prenotazione non funziona (orari sbagliati, disponibilità mancante, confusione), imposta l’LLM dell’agente su **Gemini 2.5 Flash**, salva e prova di nuovo.
+<Tip>
+  Se la prenotazione non funziona (orari sbagliati, disponibilità mancante, confusione), imposta l’LLM dell’agente su **Gemini 2.5 Flash**, salva e prova di nuovo.
+</Tip>
 
 ## Risoluzione dei problemi (soluzioni rapide)
 

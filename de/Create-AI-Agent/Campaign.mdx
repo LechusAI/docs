@@ -17,27 +17,21 @@ Hier können Sie:
 - Fortschritt und Ergebnisse für jeden Kontakt verfolgen.
 - Die Leistung in der **Kampagnenanalyse** auswerten.
 
-> **Hinweis:** Ein Teil dieses Bereichs ist in der App auf Englisch. In dieser Anleitung sind alle Schaltflächen und Optionen übersetzt, einige sehen Sie auf dem Bildschirm also auf Englisch.
+<Note>
+  Ein Teil dieses Bereichs ist in der App auf Englisch. In dieser Anleitung sind alle Schaltflächen und Optionen übersetzt, einige sehen Sie auf dem Bildschirm also auf Englisch.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns1.png" alt="Tab Kampagnen mit geöffnetem Filterbereich (Kampagnen-ID oder Name, Status, Datumsbereich, Gelöschte anzeigen), der Schaltfläche Kampagne erstellen und einer Beispielkampagne mit Status Wartend, ihrem Agenten, 2 Kontakten, Geplant sowie den Schaltflächen Ansehen und Jetzt starten" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Ihre Kampagnenliste mit geöffneten Filtern und einer geplanten Kampagne.
-</p>
+<Frame caption="Screenshot: Ihre Kampagnenliste mit geöffneten Filtern und einer geplanten Kampagne.">
+  <img src="/images/campaigns1.png" alt="Tab Kampagnen mit geöffnetem Filterbereich (Kampagnen-ID oder Name, Status, Datumsbereich, Gelöschte anzeigen), der Schaltfläche Kampagne erstellen und einer Beispielkampagne mit Status Wartend, ihrem Agenten, 2 Kontakten, Geplant sowie den Schaltflächen Ansehen und Jetzt starten" />
+</Frame>
 
 Wenn Sie noch keine Kampagnen haben, zeigt die Seite **Keine Kampagnen** und eine Schaltfläche **\+ Kampagne erstellen**.
 
 ## Eine Kampagne erstellen
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Kampagne erstellen → Name, Agent und Kontakte → Später planen → Folgeanrufe → die geplante Kampagne in der Liste.
-</p>
+<Frame caption="Video: Kampagne erstellen → Name, Agent und Kontakte → Später planen → Folgeanrufe → die geplante Kampagne in der Liste.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-create.mp4" />
+</Frame>
 
 Klicken Sie auf **\+ Kampagne erstellen**, um das Fenster **Kampagne erstellen** zu öffnen.
 
@@ -48,7 +42,9 @@ Füllen Sie aus:
 - **Kampagnenname** (Pflichtfeld).
 - **KI-Agent** (Pflichtfeld). Sie können tippen, um Ihre Agenten zu durchsuchen.
 
-> **Wichtig:** Wie das Fenster warnt, muss dem Agenten während der Kampagne immer eine Nummer zugewiesen sein. Sonst funktioniert sie nicht richtig. Hat er keine Nummer, sehen Sie **Diesem Agenten ist keine Nummer zugewiesen**, und die Kampagne wird nicht erstellt. Siehe [Nummer verbinden](/de/Create-AI-Agent/ConnectNumber).
+<Warning>
+  Wie das Fenster warnt, muss dem Agenten während der Kampagne immer eine Nummer zugewiesen sein. Sonst funktioniert sie nicht richtig. Hat er keine Nummer, sehen Sie **Diesem Agenten ist keine Nummer zugewiesen**, und die Kampagne wird nicht erstellt. Siehe [Nummer verbinden](/de/Create-AI-Agent/ConnectNumber).
+</Warning>
 
 ### 2) Kontakte auswählen
 
@@ -61,15 +57,13 @@ Unter **Kontakte auswählen** können Sie:
 
 Unten im Fenster sehen Sie, wie viele ausgewählt sind (zum Beispiel **2 Kontakte ausgewählt**).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-create.png" alt="Fenster Kampagne erstellen mit Kampagnenname, KI-Agent, dem Hinweis zur Nummer des Agenten, Kontakte auswählen mit zwei ausgewählten Beispielkontakten und den Optionen Jetzt starten und Später planen" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: das Fenster Kampagne erstellen mit Name, Agent und ausgewählten Kontakten.">
+  <img src="/images/campaigns-create.png" alt="Fenster Kampagne erstellen mit Kampagnenname, KI-Agent, dem Hinweis zur Nummer des Agenten, Kontakte auswählen mit zwei ausgewählten Beispielkontakten und den Optionen Jetzt starten und Später planen" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: das Fenster Kampagne erstellen mit Name, Agent und ausgewählten Kontakten.
-</p>
-
-> **Tipp:** Wenn Ihre Kontakte schon in einer Tabelle stehen, exportieren Sie sie vor dem Hochladen als **.csv**-Datei.
+<Tip>
+  Wenn Ihre Kontakte schon in einer Tabelle stehen, exportieren Sie sie vor dem Hochladen als **.csv**-Datei.
+</Tip>
 
 ### 3) Spalten zuordnen (bei CSV-Upload)
 
@@ -79,7 +73,9 @@ Wenn Sie eine CSV hochladen, ordnen Sie ihre Spalten vor dem Fortfahren zu, wie 
 - **Name**
 - **E-Mail**
 
-> **Häufiger Fehler:** Das **Telefon** nicht zuordnen. Ohne Telefonnummer kann die Kampagne keine Kontakte hinzufügen.
+<Warning>
+  **Häufiger Fehler:** Das **Telefon** nicht zuordnen. Ohne Telefonnummer kann die Kampagne keine Kontakte hinzufügen.
+</Warning>
 
 ### 4) Startoptionen
 
@@ -102,25 +98,19 @@ Schalten Sie **Folgeanrufe** ein, um Kontakte, die nicht abgenommen haben oder b
 
 Die **Zusammenfassung** zeigt das Ergebnis in Worten (zum Beispiel nach 2 Stunden, dann nach 1 Tag, dann nach 3 Tagen).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-followup.png" alt="Eingeschaltete Folgeanrufe mit Anzahl 3, Intervallen von 120, 1440 und 4320 Minuten, der Zusammenfassung und den Schaltflächen Abbrechen und Planen" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: Folgeanrufe mit drei Versuchen.">
+  <img src="/images/campaigns-followup.png" alt="Eingeschaltete Folgeanrufe mit Anzahl 3, Intervallen von 120, 1440 und 4320 Minuten, der Zusammenfassung und den Schaltflächen Abbrechen und Planen" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Folgeanrufe mit drei Versuchen.
-</p>
-
-> **Tipp:** Starten Sie zuerst eine kleine Testkampagne (5–10 Kontakte), um zu prüfen, ob Agent, Skript und Folgeanrufe wie erwartet funktionieren.
+<Tip>
+  Starten Sie zuerst eine kleine Testkampagne (5–10 Kontakte), um zu prüfen, ob Agent, Skript und Folgeanrufe wie erwartet funktionieren.
+</Tip>
 
 ## Kampagnen verwalten
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-manage.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Filter → Ansehen → Kampagnendetails → das ⋮-Menü mit Bearbeiten und Löschen.
-</p>
+<Frame caption="Video: Filter → Ansehen → Kampagnendetails → das ⋮-Menü mit Bearbeiten und Löschen.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-manage.mp4" />
+</Frame>
 
 Jede Kampagnenkarte zeigt den Namen, den Status (zum Beispiel **Wartend**), den Agenten, die Anzahl der Kontakte und ob sie **Geplant** ist. Sie hat eine Schaltfläche **Ansehen** und, solange sie nicht begonnen hat, eine Schaltfläche **Jetzt starten**, um sie sofort zu starten.
 
@@ -142,13 +132,9 @@ Klicken Sie auf einer Karte auf **Ansehen**, um die **Kampagnendetails** zu öff
 - Eine Tabelle mit **Name**, **E-Mail**, **Telefon**, **Status** (zum Beispiel **Nicht gestartet**) und **Ergebnis** jedes Kontakts.
 - Ob die Kampagne **Geplant** ist und **Folgeanrufe** nutzt, sowie die **Zeitplan-Details** (Startzeit, Endzeit und Zeitzone).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-details.png" alt="Fenster Kampagnendetails mit Name und Agent, Aktualisieren, Kampagnenfortschritt bei 0 % mit den Zählern, der Kontakttabelle mit Status Nicht gestartet und den Kennzeichnungen Geplant und Folgeanrufe" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: die Details einer geplanten Kampagne, die noch nicht begonnen hat.
-</p>
+<Frame caption="Screenshot: die Details einer geplanten Kampagne, die noch nicht begonnen hat.">
+  <img src="/images/campaigns-details.png" alt="Fenster Kampagnendetails mit Name und Agent, Aktualisieren, Kampagnenfortschritt bei 0 % mit den Zählern, der Kontakttabelle mit Status Nicht gestartet und den Kennzeichnungen Geplant und Folgeanrufe" />
+</Frame>
 
 ### Eine Kampagne bearbeiten
 
@@ -156,24 +142,28 @@ Klicken Sie auf das **⋮**-Menü der Karte und wählen Sie **Bearbeiten**. Das 
 
 ### Eine Kampagne löschen (endgültig)
 
-1. Klicken Sie auf das **⋮**-Menü der Karte und wählen Sie **Löschen**.
-2. Geben Sie in **Kampagne löschen** zur Bestätigung **DELETE** ein und klicken Sie auf **Löschen**.
+<Steps>
+  <Step>
+    Klicken Sie auf das **⋮**-Menü der Karte und wählen Sie **Löschen**.
+  </Step>
+  <Step>
+    Geben Sie in **Kampagne löschen** zur Bestätigung **DELETE** ein und klicken Sie auf **Löschen**.
+  </Step>
+</Steps>
 
 Ist die Kampagne geplant, führt sie die geplanten Anrufe nicht mehr aus.
 
-> **Wichtig:** Das Löschen einer Kampagne ist **endgültig** und kann nicht rückgängig gemacht werden.
+<Warning>
+  Das Löschen einer Kampagne ist **endgültig** und kann nicht rückgängig gemacht werden.
+</Warning>
 
 ## Kampagnenanalyse
 
 Wechseln Sie zum Tab **Kampagnenanalyse**, um zu sehen, wie Ihre Kampagnen gelaufen sind. Mit der Auswahl oben rechts sehen Sie **Alle** oder eine einzelne Kampagne, mit der Aktualisieren-Schaltfläche laden Sie die Daten neu.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-analytics.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: die Analyseübersicht von den Übersichtskarten bis zu den Diagrammen.
-</p>
+<Frame caption="Video: die Analyseübersicht von den Übersichtskarten bis zu den Diagrammen.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-analytics.mp4" />
+</Frame>
 
 ### Was Sie auswerten können
 
@@ -184,10 +174,6 @@ Die **Analyseübersicht** enthält:
 - **Termine pro Stunde**: geplante Termine und die Stunde mit den meisten Terminen.
 - **Anrufresultate** und **Wichtige Kennzahlen** für den gewählten Zeitraum.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns2.png" alt="Kampagnenanalyse mit der Analyseübersicht, der Kampagnenauswahl auf Alle und den Karten Gesamtanzahl der Anrufe, Durchschnittliche Anrufdauer, Gesamte Nutzung, Ereignisse gesamt, AMD-Erkennungsrate und Erfolgsquote" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: die Übersicht der Kampagnenanalyse, in der Sie Kennzahlen und Trends prüfen.
-</p>
+<Frame caption="Screenshot: die Übersicht der Kampagnenanalyse, in der Sie Kennzahlen und Trends prüfen.">
+  <img src="/images/campaigns2.png" alt="Kampagnenanalyse mit der Analyseübersicht, der Kampagnenauswahl auf Alle und den Karten Gesamtanzahl der Anrufe, Durchschnittliche Anrufdauer, Gesamte Nutzung, Ereignisse gesamt, AMD-Erkennungsrate und Erfolgsquote" />
+</Frame>

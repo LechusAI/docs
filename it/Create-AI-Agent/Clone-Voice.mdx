@@ -15,17 +15,11 @@ La sezione **Voci** è il luogo in cui gestisci come suonano i tuoi agenti. Da q
 
 Vai alla sezione **Voci** da qui: [Voci](https://app.callin.io/voices)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: la Libreria Voci nella scheda Prova Voci, con la barra di ricerca e i filtri per genere e lingua.">
   <img
     src="/images/voices1.png"
-    alt="La pagina Voci con le schede Prova Voci e Clona Voce, la barra di ricerca, i filtri per genere e lingua e l'elenco della Libreria Voci con un pulsante Assegna su ogni voce."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la Libreria Voci nella scheda Prova Voci, con la barra di ricerca e i filtri per genere e lingua.
-</p>
+    alt="La pagina Voci con le schede Prova Voci e Clona Voce, la barra di ricerca, i filtri per genere e lingua e l'elenco della Libreria Voci con un pulsante Assegna su ogni voce." />
+</Frame>
 
 ## Sfogliare e ascoltare le voci
 
@@ -42,80 +36,92 @@ Usa i controlli sopra l’elenco per restringerlo:
 - **Genere**: **Tutti i Generi**, **Maschile**, **Femminile** o **Altro**.
 - **Lingua**: scegli una lingua dall’elenco. Puoi cercarla per nome o per codice (ad esempio “Italiano” o “it”). Scegli **Tutti** per vedere di nuovo tutte le lingue.
 
-> **Suggerimento:** per confrontare le voci in modo oggettivo, usa sempre lo stesso mini copione.
->
-> Esempio: “Ciao! Sono Maya di NovaDent. Ti chiamo per confermare l’appuntamento di giovedì alle 15:00.”
+<Tip>
+  per confrontare le voci in modo oggettivo, usa sempre lo stesso mini copione.
+
+  Esempio: “Ciao! Sono Maya di NovaDent. Ti chiamo per confermare l’appuntamento di giovedì alle 15:00.”
+</Tip>
 
 ## Assegnare una voce a un agente
 
 Per far parlare un agente con una voce specifica:
 
-1. In **Prova Voci**, trova la voce che vuoi. Usa i filtri per fare prima.
-2. Fai clic su **Assegna**, a destra di quella voce.
-3. Si apre la finestra **Assegna Voce all’Agente**. In alto vedi la scheda della voce: il nome, una descrizione completa ed etichette come genere, lingua, accento, età e utilizzo.
-4. In **Seleziona un agente per assegnare questa voce**, trova l’agente da aggiornare e fai clic sul pulsante **Assegna** accanto.
+<Steps>
+  <Step>
+    In **Prova Voci**, trova la voce che vuoi. Usa i filtri per fare prima.
+  </Step>
+  <Step>
+    Fai clic su **Assegna**, a destra di quella voce.
+  </Step>
+  <Step>
+    Si apre la finestra **Assegna Voce all’Agente**. In alto vedi la scheda della voce: il nome, una descrizione completa ed etichette come genere, lingua, accento, età e utilizzo.
+  </Step>
+  <Step>
+    In **Seleziona un agente per assegnare questa voce**, trova l’agente da aggiornare e fai clic sul pulsante **Assegna** accanto.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/voices-assign.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: filtra la libreria per genere e lingua, poi fai clic su Assegna e scegli l’agente.">
+  <video autoPlay muted loop playsInline src="/images/voices-assign.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: filtra la libreria per genere e lingua, poi fai clic su Assegna e scegli l’agente.
-</p>
+Quando assegni una voce, si apre questa finestra con l’elenco dei tuoi agenti:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: la finestra Assegna Voce all’Agente. Ogni agente dell’elenco ha il proprio pulsante Assegna.">
   <img
     src="/images/voices-assign.png"
-    alt="La finestra Assegna Voce all'Agente con la scheda della voce in alto e l'elenco degli agenti, ognuno con il proprio pulsante Assegna."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la finestra Assegna Voce all’Agente. Ogni agente dell’elenco ha il proprio pulsante Assegna.
-</p>
+    alt="La finestra Assegna Voce all'Agente con la scheda della voce in alto e l'elenco degli agenti, ognuno con il proprio pulsante Assegna." />
+</Frame>
 
 Dopo l’assegnazione, l’agente userà quella voce quando parla durante le chiamate.
 
-> **Importante:** la voce si imposta per singolo agente (non a livello globale). Per cambiare in seguito la voce di un agente, assegnane un’altra da qui oppure apri l’agente e cambiala nella scheda **Agente** → **Voce**. Vedi [Agenti IA](/it/Create-AI-Agent/Create-Agent-Enchanced).
+<Warning>
+  la voce si imposta per singolo agente (non a livello globale). Per cambiare in seguito la voce di un agente, assegnane un’altra da qui oppure apri l’agente e cambiala nella scheda **Agente** → **Voce**. Vedi [Agenti IA](/it/Create-AI-Agent/Create-Agent-Enchanced).
+</Warning>
 
 ## Clonare una voce
 
 Se vuoi un suono più personalizzato (per la voce del tuo brand o un personaggio specifico), usa **Clona Voce**.
 
-1. Apri la scheda **Clona Voce**.
-2. Fai clic su **Clona Voce**.
-3. Nella finestra **Anteprima Voce**, compila:
-   - **Nome Voce** (obbligatorio)
-   - **Descrizione** (facoltativa)
-   - **Lingua** (obbligatoria): inglese, italiano, francese, tedesco, portoghese, spagnolo, olandese, hindi o arabo
-   - **Genere** (obbligatorio): Maschile, Femminile o Altro
-4. Aggiungi un **Campione Vocale** (obbligatorio) con una delle opzioni:
-   - **Carica Audio**: fai clic su **Seleziona File** oppure trascina un file audio (max. 4MB)
-   - **Registra Voce**: registra il campione direttamente dal browser
-5. Fai clic su **Clona** per inviare il campione. Quando la voce clonata è pronta, compare nella scheda **Clona Voce** e puoi assegnarla come qualsiasi altra voce.
+<Steps>
+  <Step>
+    Apri la scheda **Clona Voce**.
+  </Step>
+  <Step>
+    Fai clic su **Clona Voce**.
+  </Step>
+  <Step>
+    Nella finestra **Anteprima Voce**, compila:
+    - **Nome Voce** (obbligatorio)
+    - **Descrizione** (facoltativa)
+    - **Lingua** (obbligatoria): inglese, italiano, francese, tedesco, portoghese, spagnolo, olandese, hindi o arabo
+    - **Genere** (obbligatorio): Maschile, Femminile o Altro
+  </Step>
+  <Step>
+    Aggiungi un **Campione Vocale** (obbligatorio) con una delle opzioni:
+    - **Carica Audio**: fai clic su **Seleziona File** oppure trascina un file audio (max. 4MB)
+    - **Registra Voce**: registra il campione direttamente dal browser
+  </Step>
+  <Step>
+    Fai clic su **Clona** per inviare il campione. Quando la voce clonata è pronta, compare nella scheda **Clona Voce** e puoi assegnarla come qualsiasi altra voce.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/voices-clone.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: apri Clona Voce, compila nome, descrizione, lingua e genere, poi aggiungi il campione vocale.">
+  <video autoPlay muted loop playsInline src="/images/voices-clone.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: apri Clona Voce, compila nome, descrizione, lingua e genere, poi aggiungi il campione vocale.
-</p>
+Compilato il modulo, la finestra di anteprima è pronta per il tuo campione vocale:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: la finestra Anteprima Voce, pronta per il campione vocale.">
   <img
     src="/images/voices-clone.png"
-    alt="La finestra Anteprima Voce con i campi Nome Voce, Descrizione, Lingua e Genere, le opzioni Carica Audio e Registra Voce e l'area per caricare il Campione Vocale."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="La finestra Anteprima Voce con i campi Nome Voce, Descrizione, Lingua e Genere, le opzioni Carica Audio e Registra Voce e l'area per caricare il Campione Vocale." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la finestra Anteprima Voce, pronta per il campione vocale.
-</p>
-
-> **Errore comune:** usare un campione troppo corto o con rumore di fondo. Una registrazione pulita migliora molto il risultato finale.
+<Warning>
+  **Errore comune:** usare un campione troppo corto o con rumore di fondo. Una registrazione pulita migliora molto il risultato finale.
+</Warning>
 
 ## Linee guida e buone pratiche per la clonazione
 
@@ -127,4 +133,6 @@ Quando registri o carichi il campione, segui queste linee guida (sono anche in f
 - La dimensione massima del file è **4MB**
 - Lingue supportate: **inglese, italiano, francese, tedesco, portoghese, spagnolo, olandese, hindi e arabo**
 
-> **Importante:** carica solo audio che hai il diritto di utilizzare (ad esempio la tua voce o una voce per cui possiedi una licenza).
+<Warning>
+  carica solo audio che hai il diritto di utilizzare (ad esempio la tua voce o una voce per cui possiedi una licenza).
+</Warning>

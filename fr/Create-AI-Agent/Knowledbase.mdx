@@ -21,14 +21,22 @@ La page comporte deux onglets, en haut à droite :
 - **Fichiers** : les documents que vous importez (PDF, DOC, DOCX, TXT), organisés en groupes.
 - **Web** : des pages Web (URL) dont l’agent s’inspire, que vous pouvez organiser en dossiers.
 
-> **Astuce :** Considérez la base de connaissances comme un « matériel de référence validé » que l’agent peut consulter quand un appelant pose des questions détaillées.
+<Tip>
+  Considérez la base de connaissances comme un « matériel de référence validé » que l’agent peut consulter quand un appelant pose des questions détaillées.
+</Tip>
 
 ## Comment cela se relie aux agents IA
 
 Vous n’ajoutez pas le contenu directement dans un agent. À la place :
 
-1. Vous créez le contenu ici, dans la base de connaissances (fichiers ou URL Web).
-2. Ensuite, dans l’éditeur de l’agent, vous ouvrez l’onglet **Base de connaissances** et **ajoutez les documents** que cet agent doit utiliser.
+<Steps>
+  <Step>
+    Vous créez le contenu ici, dans la base de connaissances (fichiers ou URL Web).
+  </Step>
+  <Step>
+    Ensuite, dans l’éditeur de l’agent, vous ouvrez l’onglet **Base de connaissances** et **ajoutez les documents** que cet agent doit utiliser.
+  </Step>
+</Steps>
 
 Un même document peut être utilisé par plusieurs agents.
 
@@ -38,38 +46,44 @@ L’onglet **Fichiers** sert à importer les documents dont votre agent doit s�
 
 À côté de **Créer une base de connaissances**, vous pouvez passer d’une vue à l’autre : une **liste** de tous vos fichiers, ou vos **groupes** affichés comme des dossiers. Utilisez **Rechercher des fichiers…** pour trouver un document.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : onglet Fichiers → Créer une base de connaissances → nom du groupe, puis l’onglet Base de connaissances de l’agent → Ajouter un document.
-</p>
+<Frame caption="Vidéo : onglet Fichiers → Créer une base de connaissances → nom du groupe, puis l’onglet Base de connaissances de l’agent → Ajouter un document.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" />
+</Frame>
 
 ### Créer un groupe de fichiers et importer des documents
 
-1. Ouvrez l’onglet **Fichiers**.
-2. Cliquez sur **Créer une base de connaissances**.
-3. Dans la fenêtre **Téléverser des fichiers**, saisissez un **Nom du groupe** (obligatoire). Les fichiers importés seront regroupés sous ce nom.
-4. Ajoutez vos documents :
-   - Glissez-déposez les fichiers dans la zone d’import, ou
-   - Cliquez sur **Sélectionner des fichiers** pour les parcourir.
-5. Cliquez sur **Téléverser des fichiers** pour terminer.
+<Steps>
+  <Step>
+    Ouvrez l’onglet **Fichiers**.
+  </Step>
+  <Step>
+    Cliquez sur **Créer une base de connaissances**.
+  </Step>
+  <Step>
+    Dans la fenêtre **Téléverser des fichiers**, saisissez un **Nom du groupe** (obligatoire). Les fichiers importés seront regroupés sous ce nom.
+  </Step>
+  <Step>
+    Ajoutez vos documents :
+    - Glissez-déposez les fichiers dans la zone d’import, ou
+    - Cliquez sur **Sélectionner des fichiers** pour les parcourir.
+  </Step>
+  <Step>
+    Cliquez sur **Téléverser des fichiers** pour terminer.
+  </Step>
+</Steps>
 
 Formats et limites pris en charge (tels qu’indiqués dans l’outil d’import) :
 
 - PDF, DOC, DOCX, TXT
 - 5MB maximum par fichier
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase1.png" alt="La fenêtre Téléverser des fichiers avec le champ Nom du groupe, la zone de glisser-déposer avec le bouton Sélectionner des fichiers, les formats pris en charge (PDF, DOC, DOCX, TXT, 5MB maximum par fichier) et le bouton Téléverser des fichiers." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la fenêtre Téléverser des fichiers, où vous nommez le groupe et ajoutez vos documents.">
+  <img src="/images/knowledgebase1.png" alt="La fenêtre Téléverser des fichiers avec le champ Nom du groupe, la zone de glisser-déposer avec le bouton Sélectionner des fichiers, les formats pris en charge (PDF, DOC, DOCX, TXT, 5MB maximum par fichier) et le bouton Téléverser des fichiers." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Téléverser des fichiers, où vous nommez le groupe et ajoutez vos documents.
-</p>
-
-> **Erreur fréquente :** Mettre plusieurs documents sans lien dans un seul groupe. Si vous avez des usages différents (Ventes vs Support), créez des groupes séparés afin d’associer la bonne connaissance à chaque agent.
+<Warning>
+  **Erreur fréquente :** Mettre plusieurs documents sans lien dans un seul groupe. Si vous avez des usages différents (Ventes vs Support), créez des groupes séparés afin d’associer la bonne connaissance à chaque agent.
+</Warning>
 
 ### Gérer et mettre à jour les fichiers d’un groupe
 
@@ -79,7 +93,9 @@ Une fois un groupe créé, vous pouvez l’ouvrir pour gérer son contenu :
 - Voir la liste des **Fichiers actuels** déjà inclus.
 - Retirer les fichiers que l’agent ne doit plus consulter.
 
-> **Astuce :** Utilisez des noms de groupe clairs comme **« Politiques de support »**, **« Tarifs et forfaits »** ou **« Script d’accueil de la clinique »** pour retrouver facilement les bons documents plus tard.
+<Tip>
+  Utilisez des noms de groupe clairs comme **« Politiques de support »**, **« Tarifs et forfaits »** ou **« Script d’accueil de la clinique »** pour retrouver facilement les bons documents plus tard.
+</Tip>
 
 ## Base de connaissances avec des URL Web
 
@@ -87,55 +103,71 @@ L’onglet **Web** sert à faire apprendre votre agent à partir de pages Web. C
 
 La liste affiche chaque URL avec son **Nom**, son adresse et sa **Dernière mise à jour**. Utilisez **Rechercher dans la base de connaissances...** pour en trouver une.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/kanowledgebase2.png" alt="La base de connaissances avec l'onglet Web sélectionné : les boutons Ajouter une URL et Créer un dossier, la recherche et la liste des URL avec leur date de dernière mise à jour et un menu d'actions." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la base de connaissances en mode Web, avec Ajouter une URL, Créer un dossier et la liste des URL.
-</p>
+<Frame caption="Capture d’écran : la base de connaissances en mode Web, avec Ajouter une URL, Créer un dossier et la liste des URL.">
+  <img src="/images/kanowledgebase2.png" alt="La base de connaissances avec l'onglet Web sélectionné : les boutons Ajouter une URL et Créer un dossier, la recherche et la liste des URL avec leur date de dernière mise à jour et un menu d'actions." />
+</Frame>
 
 ### Ajouter une URL
 
-1. Ouvrez l’onglet **Web**.
-2. Cliquez sur **Ajouter une URL**.
-3. Remplissez :
-   - **Dossier parent** : où l’enregistrer. Par défaut, **Base de connaissances (niveau racine)**.
-   - **Titre** (obligatoire) : un nom clair pour cette page (par exemple « Page des tarifs »).
-   - **URL** (obligatoire) : le lien vers la page Web.
-4. (Facultatif) Activez l’**Actualisation automatique** pour que Callin relise la page régulièrement. Choisissez ensuite l’**Intervalle** et l’**Unité d’intervalle** (**Jours** ou **Heures**). Par défaut, tous les **7 jours**.
-5. Cliquez sur **Ajouter l’URL** pour l’enregistrer.
+<Steps>
+  <Step>
+    Ouvrez l’onglet **Web**.
+  </Step>
+  <Step>
+    Cliquez sur **Ajouter une URL**.
+  </Step>
+  <Step>
+    Remplissez :
+    - **Dossier parent** : où l’enregistrer. Par défaut, **Base de connaissances (niveau racine)**.
+    - **Titre** (obligatoire) : un nom clair pour cette page (par exemple « Page des tarifs »).
+    - **URL** (obligatoire) : le lien vers la page Web.
+  </Step>
+  <Step>
+    (Facultatif) Activez l’**Actualisation automatique** pour que Callin relise la page régulièrement. Choisissez ensuite l’**Intervalle** et l’**Unité d’intervalle** (**Jours** ou **Heures**). Par défaut, tous les **7 jours**.
+  </Step>
+  <Step>
+    Cliquez sur **Ajouter l’URL** pour l’enregistrer.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vidéo : Ajouter une URL → titre et URL → actualisation automatique avec son intervalle → Créer un dossier → Voir les détails d’une URL.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Ajouter une URL → titre et URL → actualisation automatique avec son intervalle → Créer un dossier → Voir les détails d’une URL.
-</p>
+Avec l’actualisation automatique activée, la fenêtre se présente ainsi :
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-url.png" alt="La fenêtre Ajouter une URL avec Dossier parent, Titre, URL, l'actualisation automatique activée, l'intervalle à 7 et l'unité en jours." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la fenêtre Ajouter une URL avec l’actualisation automatique activée.">
+  <img src="/images/knowledge-base-url.png" alt="La fenêtre Ajouter une URL avec Dossier parent, Titre, URL, l'actualisation automatique activée, l'intervalle à 7 et l'unité en jours." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Ajouter une URL avec l’actualisation automatique activée.
-</p>
-
-> **Astuce :** Activez l’**Actualisation automatique** pour les pages qui changent souvent, comme les tarifs ou les horaires, afin que votre agent réponde toujours avec les informations les plus récentes.
+<Tip>
+  Activez l’**Actualisation automatique** pour les pages qui changent souvent, comme les tarifs ou les horaires, afin que votre agent réponde toujours avec les informations les plus récentes.
+</Tip>
 
 ### Organiser les URL en dossiers
 
 Pour regrouper des pages liées (par exemple toutes les pages de votre site), cliquez sur **Créer un dossier** :
 
-1. Choisissez le **Dossier parent** (ou laissez **Base de connaissances (niveau racine)**).
-2. Saisissez le **Nom du dossier** (obligatoire).
-3. (Facultatif) Activez l’**Actualisation automatique** pour actualiser toutes les URL du dossier à l’intervalle choisi.
-4. Cliquez sur **Créer un dossier**.
+<Steps>
+  <Step>
+    Choisissez le **Dossier parent** (ou laissez **Base de connaissances (niveau racine)**).
+  </Step>
+  <Step>
+    Saisissez le **Nom du dossier** (obligatoire).
+  </Step>
+  <Step>
+    (Facultatif) Activez l’**Actualisation automatique** pour actualiser toutes les URL du dossier à l’intervalle choisi.
+  </Step>
+  <Step>
+    Cliquez sur **Créer un dossier**.
+  </Step>
+</Steps>
 
 Ensuite, quand vous ajoutez une URL, choisissez ce dossier dans **Dossier parent**.
 
-> **Astuce :** Gardez des dossiers ciblés. Par exemple, un dossier pour les pages **« Tarifs et facturation »** et un autre pour les pages **« Politique de remboursement »**.
+<Tip>
+  Gardez des dossiers ciblés. Par exemple, un dossier pour les pages **« Tarifs et facturation »** et un autre pour les pages **« Politique de remboursement »**.
+</Tip>
 
 ### Voir, actualiser ou supprimer une URL
 
@@ -145,39 +177,47 @@ Cliquez sur **⋯** à droite d’une URL pour ouvrir son menu :
 - **Copier l’ID** : copie l’ID du document.
 - **Supprimer** : retire l’URL de la base de connaissances.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-details.png" alt="Le panneau de détails d'une URL avec l'ID du document, la dernière mise à jour, la taille du document, l'URL source et l'actualisation automatique à gauche, et le contenu de l'URL avec le bouton Actualiser le contenu à droite." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : Voir les détails affiche le texte que l’agent lit sur la page.">
+  <img src="/images/knowledge-base-details.png" alt="Le panneau de détails d'une URL avec l'ID du document, la dernière mise à jour, la taille du document, l'URL source et l'actualisation automatique à gauche, et le contenu de l'URL avec le bouton Actualiser le contenu à droite." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : Voir les détails affiche le texte que l’agent lit sur la page.
-</p>
-
-> **Important :** Vérifiez le **Contenu de l’URL** après avoir ajouté une page. S’il est vide ou affiche un mauvais texte (par exemple un bandeau de cookies), l’agent ne pourra pas utiliser cette page. Essayez une autre URL avec les mêmes informations.
+<Warning>
+  Vérifiez le **Contenu de l’URL** après avoir ajouté une page. S’il est vide ou affiche un mauvais texte (par exemple un bandeau de cookies), l’agent ne pourra pas utiliser cette page. Essayez une autre URL avec les mêmes informations.
+</Warning>
 
 ## Sélectionner une base de connaissances pour un agent
 
 Une fois vos documents ajoutés (fichiers ou URL Web), vous les associez à un agent dans l’éditeur de l’agent.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase3.png" alt="L'onglet Base de connaissances de l'agent avec la liste Ajouter un document ouverte : une recherche, les documents de la base de connaissances et un bouton Ajouter un document en bas." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : ajouter un document de la base de connaissances pendant la modification d’un agent IA.
-</p>
+<Frame caption="Capture d’écran : ajouter un document de la base de connaissances pendant la modification d’un agent IA.">
+  <img src="/images/knowledgebase3.png" alt="L'onglet Base de connaissances de l'agent avec la liste Ajouter un document ouverte : une recherche, les documents de la base de connaissances et un bouton Ajouter un document en bas." />
+</Frame>
 
 ### Associer un groupe à un agent
 
-1. Allez dans **Agents IA** et ouvrez un agent à modifier.
-2. Ouvrez l’onglet **Base de connaissances**.
-3. Cliquez sur **Ajouter un document**.
-4. Utilisez **Rechercher des documents...** pour trouver le document voulu, puis cliquez dessus pour l’ajouter à l’agent.
-5. Répétez pour chaque document dont l’agent a besoin.
+<Steps>
+  <Step>
+    Allez dans **Agents IA** et ouvrez un agent à modifier.
+  </Step>
+  <Step>
+    Ouvrez l’onglet **Base de connaissances**.
+  </Step>
+  <Step>
+    Cliquez sur **Ajouter un document**.
+  </Step>
+  <Step>
+    Utilisez **Rechercher des documents...** pour trouver le document voulu, puis cliquez dessus pour l’ajouter à l’agent.
+  </Step>
+  <Step>
+    Répétez pour chaque document dont l’agent a besoin.
+  </Step>
+</Steps>
 
 Si le document dont vous avez besoin n’existe pas encore, cliquez sur **Ajouter un document** en bas de la liste. Vous arrivez sur la page **Base de connaissances** pour le créer.
 
-> **Astuce :** Si vous avez plusieurs agents avec des rôles différents, donnez à chacun uniquement les documents dont il a besoin, pour qu’ils restent ciblés et ne répondent pas hors de leur périmètre.
+<Tip>
+  Si vous avez plusieurs agents avec des rôles différents, donnez à chacun uniquement les documents dont il a besoin, pour qu’ils restent ciblés et ne répondent pas hors de leur périmètre.
+</Tip>
 
 ## Exemple concret
 

@@ -17,23 +17,15 @@ Wenn Sie hier nicht zuerst Funktionen erstellen, zeigt der Plan-Assistent **Kein
 
 Sie finden sie in der White-Label-Plattform unter **Pläne und Abrechnung** ([hier öffnen](https://app.callin.io/cms/features-capabilities)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: die leere Seite → Funktion/Fähigkeit erstellen → eine spanische Übersetzung → eine zweite Funktion in einer neuen Kategorie → die nach Kategorie gruppierte Liste → Bearbeiten.
-</p>
+<Frame caption="Video: die leere Seite → Funktion/Fähigkeit erstellen → eine spanische Übersetzung → eine zweite Funktion in einer neuen Kategorie → die nach Kategorie gruppierte Liste → Bearbeiten.">
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" />
+</Frame>
 
 Die Liste gruppiert Ihre Funktionen nach **Kategorie**. Jede Zeile zeigt **Name** und **Typ**. Mit **Funktionen und Fähigkeiten suchen…** finden Sie eine Funktion schnell.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/features1.png" alt="Seite Funktionen und Fähigkeiten mit der Suche, der Schaltfläche Funktion/Fähigkeit erstellen und drei Funktionen in den Kategorien Limits, Zusatzoptionen und Fähigkeiten" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: drei Beispielfunktionen, eine pro Typ, nach Kategorie gruppiert.
-</p>
+<Frame caption="Screenshot: drei Beispielfunktionen, eine pro Typ, nach Kategorie gruppiert.">
+  <img src="/images/features1.png" alt="Seite Funktionen und Fähigkeiten mit der Suche, der Schaltfläche Funktion/Fähigkeit erstellen und drei Funktionen in den Kategorien Limits, Zusatzoptionen und Fähigkeiten" />
+</Frame>
 
 ## Wie Funktionen in Abonnementplänen verwendet werden
 
@@ -45,23 +37,29 @@ Wenn Sie einen Plan erstellen, enthält der Schritt **Überprüfen & Bestätigen
 
 Der Ablauf ist also:
 
-1. Funktion erstellen (hier)
-2. Dieser Funktion in jedem Plan einen Wert zuweisen (unter [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans))
-3. Der Wert des Plans ist das, was Unterkonten mit diesem Plan erhalten
+<Steps>
+  <Step>
+    Funktion erstellen (hier)
+  </Step>
+  <Step>
+    Dieser Funktion in jedem Plan einen Wert zuweisen (unter [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans))
+  </Step>
+  <Step>
+    Der Wert des Plans ist das, was Unterkonten mit diesem Plan erhalten
+  </Step>
+</Steps>
 
-> **Wichtig:** Um Pläne zu erstellen, muss Ihr White Label mit Stripe verbunden sein. Funktionen können Sie jederzeit erstellen, auch bevor Stripe verbunden ist.
+<Warning>
+  Um Pläne zu erstellen, muss Ihr White Label mit Stripe verbunden sein. Funktionen können Sie jederzeit erstellen, auch bevor Stripe verbunden ist.
+</Warning>
 
 ## Eine Funktion oder Fähigkeit erstellen
 
 Klicken Sie auf **Funktion/Fähigkeit erstellen** und füllen Sie diese Felder aus. Mit **\*** markierte Felder sind Pflichtfelder. Klicken Sie anschließend auf **Erstellen**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-create.png" alt="Fenster Funktion/Fähigkeit erstellen mit den Übersetzungs-Tabs, den Feldern Name und Beschreibung, den drei Arten, wie Pläne die Funktion gewähren, einer neuen Kategorie und den Schaltflächen Abbrechen und Erstellen" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: das Fenster Funktion/Fähigkeit erstellen, ausgefüllt für „Minuten pro Monat“.
-</p>
+<Frame caption="Screenshot: das Fenster Funktion/Fähigkeit erstellen, ausgefüllt für „Minuten pro Monat“.">
+  <img src="/images/wl-features-create.png" alt="Fenster Funktion/Fähigkeit erstellen mit den Übersetzungs-Tabs, den Feldern Name und Beschreibung, den drei Arten, wie Pläne die Funktion gewähren, einer neuen Kategorie und den Schaltflächen Abbrechen und Erstellen" />
+</Frame>
 
 ### Name
 
@@ -79,9 +77,13 @@ Schlechte Beispiele (zu vage):
 - **Funktion 1**
 - **Zugang**
 
-> **Tipp:** Verwenden Sie Namen, die sich wie ein Vorteil oder eine klare Regel lesen. „Minuten pro Monat“ ist klarer als „Minuten“.
+<Tip>
+  Verwenden Sie Namen, die sich wie ein Vorteil oder eine klare Regel lesen. „Minuten pro Monat“ ist klarer als „Minuten“.
+</Tip>
 
-> **Häufiger Fehler:** Wenn **Erstellen** einen Fehler mit `duplicate key value` anzeigt, ist dieser Name bereits vergeben. Wählen Sie einen genaueren Namen (zum Beispiel „Zusatzoption Anrufaufzeichnung“ statt „Anrufaufzeichnung“).
+<Warning>
+  **Häufiger Fehler:** Wenn **Erstellen** einen Fehler mit `duplicate key value` anzeigt, ist dieser Name bereits vergeben. Wählen Sie einen genaueren Namen (zum Beispiel „Zusatzoption Anrufaufzeichnung“ statt „Anrufaufzeichnung“).
+</Warning>
 
 ### Beschreibung
 
@@ -99,13 +101,9 @@ Mit den Tabs oben übersetzen Sie **Name** und **Beschreibung** in jede Sprache 
 - Die Sprach-Tabs sind optional. Leere Felder zeigen den Text aus **Standard** in Grau.
 - Typ und Kategorie gelten für alle Sprachen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-translations.png" alt="Fenster Funktion/Fähigkeit erstellen im Tab Español, mit dem spanischen Namen und der spanischen Beschreibung" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Español mit dem spanischen Namen und der spanischen Beschreibung derselben Funktion.
-</p>
+<Frame caption="Screenshot: der Tab Español mit dem spanischen Namen und der spanischen Beschreibung derselben Funktion.">
+  <img src="/images/wl-features-translations.png" alt="Fenster Funktion/Fähigkeit erstellen im Tab Español, mit dem spanischen Namen und der spanischen Beschreibung" />
+</Frame>
 
 ### Wie gewähren Pläne diese Funktion?
 
@@ -153,7 +151,9 @@ Ideal für:
 
 - Berechtigungen der Art „Wählen Sie eines dieser Pakete“ oder „Wählen Sie eine Stufe“
 
-> **Häufiger Fehler:** **toggle** für etwas wählen, das eine Zahl sein sollte (wie Minuten). Wenn es je nach Plan variieren kann, ist es meist ein **limit**.
+<Warning>
+  **Häufiger Fehler:** **toggle** für etwas wählen, das eine Zahl sein sollte (wie Minuten). Wenn es je nach Plan variieren kann, ist es meist ein **limit**.
+</Warning>
 
 ### Kategorie
 
@@ -168,7 +168,9 @@ Praktische Kategorien:
 - **Zusatzoptionen** (Aufzeichnung, Portal mit Ihrer Marke usw.)
 - **Fähigkeiten** (Stimmenpakete, Routing-Modi, Integrationen – je nach Angebot)
 
-> **Tipp:** Halten Sie Kategorien über alle Funktionen hinweg einheitlich. Wenn Sie „Limit“ und „Limits“ anlegen, wird die Gruppierung unübersichtlich.
+<Tip>
+  Halten Sie Kategorien über alle Funktionen hinweg einheitlich. Wenn Sie „Limit“ und „Limits“ anlegen, wird die Gruppierung unübersichtlich.
+</Tip>
 
 ## Praxisbeispiel (realistische Einrichtung)
 
@@ -179,10 +181,16 @@ Angenommen, Sie verkaufen Ihren Unterkonten zwei Stufen:
 
 Erstellen Sie diese Funktionen unter **Funktionen und Fähigkeiten**:
 
-1. **Minuten pro Monat** → **Nutzungslimit (limit)**, Kategorie **Limits**\
-   Beschreibung: „Im Plan enthaltene Anrufminuten pro Monat.“
-2. **Zusatzoption Anrufaufzeichnung** → **Ein / Aus (toggle)**, Kategorie **Zusatzoptionen**\
-   Beschreibung: „Zeichnet die von den Agenten geführten Anrufe auf.“
+<Steps>
+  <Step>
+    **Minuten pro Monat** → **Nutzungslimit (limit)**, Kategorie **Limits**\
+    Beschreibung: „Im Plan enthaltene Anrufminuten pro Monat.“
+  </Step>
+  <Step>
+    **Zusatzoption Anrufaufzeichnung** → **Ein / Aus (toggle)**, Kategorie **Zusatzoptionen**\
+    Beschreibung: „Zeichnet die von den Agenten geführten Anrufe auf.“
+  </Step>
+</Steps>
 
 Dann unter **Abonnementpläne**:
 
@@ -202,4 +210,6 @@ Klicken Sie in der Liste in der Zeile der Funktion auf **⋮**:
 - **Bearbeiten** öffnet **Funktion/Fähigkeit bearbeiten** mit denselben Feldern: **Name**, **Beschreibung**, Übersetzungen, Typ und **Kategorie**. Klicken Sie auf **Aktualisieren**, um zu speichern.
 - **Entfernen** löscht die Funktion. Diese Aktion kann nicht rückgängig gemacht werden.
 
-> **Wichtig:** Wenn Sie den Typ einer Funktion ändern, die bereits in Plänen verwendet wird, kann sich ändern, wie Pläne diesen Wert speichern oder anzeigen. Im Zweifel erstellen Sie eine neue Funktion und stellen Ihre Pläne darauf um.
+<Warning>
+  Wenn Sie den Typ einer Funktion ändern, die bereits in Plänen verwendet wird, kann sich ändern, wie Pläne diesen Wert speichern oder anzeigen. Im Zweifel erstellen Sie eine neue Funktion und stellen Ihre Pläne darauf um.
+</Warning>

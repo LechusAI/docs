@@ -19,12 +19,20 @@ The automation begins in GoHighLevel using a **Workflow**. This workflow should 
 
 In Make.com, you will build a scenario with the following logic:
 
-1. **Webhook Module**\
-   This is the entry point of the scenario. It receives the data sent by GoHighLevel and parses the necessary contact details.
-2. **(Optional) Number Validation**\
-   You can add a module to format or validate the phone number before passing it to Callin.io.
-3. **Callin.io – Activate Task**\
-   This module starts the AI phone call by triggering a predefined task in Callin.io. The AI agent will handle the call based on the configuration defined in that task. Once the call is completed, Callin.io will send the transcription to a second webhook.
+<Steps>
+  <Step>
+    **Webhook Module**\
+    This is the entry point of the scenario. It receives the data sent by GoHighLevel and parses the necessary contact details.
+  </Step>
+  <Step>
+    **(Optional) Number Validation**\
+    You can add a module to format or validate the phone number before passing it to Callin.io.
+  </Step>
+  <Step>
+    **Callin.io – Activate Task**\
+    This module starts the AI phone call by triggering a predefined task in Callin.io. The AI agent will handle the call based on the configuration defined in that task. Once the call is completed, Callin.io will send the transcription to a second webhook.
+  </Step>
+</Steps>
 
 ## Step 3: Configuring the Task in Callin.io
 
@@ -43,12 +51,20 @@ These options help ensure that calls are delivered effectively and reliably.
 
 The second half of the Make.com scenario is triggered by the webhook that Callin.io calls after completing the call. This part includes:
 
-1. **Receiving the Transcription**\
-   The webhook captures the transcribed text and related data.
-2. **Searching the Contact in GHL**\
-   Use the `Search Contact` module to locate the original contact in GHL, typically using the phone number or email as an identifier.
-3. **Updating the Contact**\
-   Use the `Update Contact` module to insert the transcription into the contact’s record. You can store the transcription in a custom field, as a note, or log it as an activity.
+<Steps>
+  <Step>
+    **Receiving the Transcription**\
+    The webhook captures the transcribed text and related data.
+  </Step>
+  <Step>
+    **Searching the Contact in GHL**\
+    Use the `Search Contact` module to locate the original contact in GHL, typically using the phone number or email as an identifier.
+  </Step>
+  <Step>
+    **Updating the Contact**\
+    Use the `Update Contact` module to insert the transcription into the contact’s record. You can store the transcription in a custom field, as a note, or log it as an activity.
+  </Step>
+</Steps>
 
 ## Final Result
 

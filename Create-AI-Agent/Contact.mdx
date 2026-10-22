@@ -18,13 +18,9 @@ From here you can:
 - **Start a campaign** with the contacts you select.
 - **Delete** selected contacts (permanent).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts1.png" alt="Contact List with two example contacts selected and the Delete Selected, Start Campaign, Add Contact and Export to CSV buttons, plus search and Filters" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Contact List. When you select contacts, the Delete Selected, Start Campaign and Export to CSV buttons appear.
-</p>
+<Frame caption="Screenshot: the Contact List. When you select contacts, the Delete Selected, Start Campaign and Export to CSV buttons appear.">
+  <img src="/images/contacts1.png" alt="Contact List with two example contacts selected and the Delete Selected, Start Campaign, Add Contact and Export to CSV buttons, plus search and Filters" />
+</Frame>
 
 If you don’t have any contacts yet, the page shows **No contacts found** with the **Add Contact** and **Upload CSV** buttons.
 
@@ -32,25 +28,33 @@ If you don’t have any contacts yet, the page shows **No contacts found** with 
 
 Manual entry is best when you’re adding a few contacts quickly, or pasting them from a spreadsheet.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Add Contact → fill in two example contacts → Add Column → Save Contacts.
-</p>
+<Frame caption="Video: Add Contact → fill in two example contacts → Add Column → Save Contacts.">
+  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" />
+</Frame>
 
 ### Steps
 
-1. Click **\+ Add Contact**. The **Add Contacts** window opens with a grid.
-2. Fill in each row:
-   - **Name**
-   - **Phone Number** (required)
-   - **Email** (optional)
-3. Click **Add Row** (or press **Enter**) to add more people.
-4. Click **Save Contacts**.
+<Steps>
+  <Step>
+    Click **\+ Add Contact**. The **Add Contacts** window opens with a grid.
+  </Step>
+  <Step>
+    Fill in each row:
+    - **Name**
+    - **Phone Number** (required)
+    - **Email** (optional)
+  </Step>
+  <Step>
+    Click **Add Row** (or press **Enter**) to add more people.
+  </Step>
+  <Step>
+    Click **Save Contacts**.
+  </Step>
+</Steps>
 
-> **Important:** **Phone Number is required** for every contact. If it’s missing, the window shows **Phone number is required**.
+<Warning>
+  **Phone Number is required** for every contact. If it’s missing, the window shows **Phone number is required**.
+</Warning>
 
 ### Editing tips (like a spreadsheet)
 
@@ -63,7 +67,9 @@ The window lists these **Quick Tips**:
 - Double-click a cell to edit its content.
 - Press **Enter** to add a new row.
 
-> **Tip:** If your contacts are already in Google Sheets or Excel, copy the cells and paste them directly into the grid.
+<Tip>
+  If your contacts are already in Google Sheets or Excel, copy the cells and paste them directly into the grid.
+</Tip>
 
 ### Optional columns
 
@@ -75,13 +81,9 @@ You can later use these columns in the contact filters.
 
 CSV import is best for larger lists.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Upload CSV → Map Columns → review the contacts in Add Contacts.
-</p>
+<Frame caption="Video: Upload CSV → Map Columns → review the contacts in Add Contacts.">
+  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" />
+</Frame>
 
 ### Upload requirements
 
@@ -89,21 +91,27 @@ CSV import is best for larger lists.
 - **Max size:** 10MB.
 - You can click to select the file or drag and drop it.
 
-> **Common mistake:** Uploading an .xlsx file. Export it as **CSV** first.
+<Warning>
+  **Common mistake:** Uploading an .xlsx file. Export it as **CSV** first.
+</Warning>
 
 ### Upload a CSV
 
-1. Click **Upload CSV**. The **Upload CSV File** window opens.
-2. (Optional) Click **Download Template** to start from the recommended format.
-3. Click **Select File**, or drag the file into the upload area.
+<Steps>
+  <Step>
+    Click **Upload CSV**. The **Upload CSV File** window opens.
+  </Step>
+  <Step>
+    (Optional) Click **Download Template** to start from the recommended format.
+  </Step>
+  <Step>
+    Click **Select File**, or drag the file into the upload area.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts2.png" alt="Upload CSV File window with the Download Template button, the drag and drop area, CSV files only (max. 10MB) and the Select File button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Upload CSV File window, with the CSV-only requirement and the 10MB limit.
-</p>
+<Frame caption="Screenshot: the Upload CSV File window, with the CSV-only requirement and the 10MB limit.">
+  <img src="/images/contacts2.png" alt="Upload CSV File window with the Download Template button, the drag and drop area, CSV files only (max. 10MB) and the Select File button" />
+</Frame>
 
 ### Map your columns
 
@@ -117,7 +125,9 @@ If your numbers don’t include **\+**, choose their country in **Numbers don’
 
 Below, you’ll see a preview of your contacts. Click **Continue**: the contacts open in the **Add Contacts** grid, where you can review or fix them before clicking **Save Contacts**.
 
-> **Important:** If **Phone** is not mapped, the import can’t continue.
+<Warning>
+  If **Phone** is not mapped, the import can’t continue.
+</Warning>
 
 ### Validation rules (applies to manual + CSV)
 
@@ -128,17 +138,15 @@ Below, you’ll see a preview of your contacts. Click **Continue**: the contacts
 - Fields with validation errors are highlighted with a **red border**.
 - Empty fields are highlighted with a **red border**.
 
-> **Tip:** If your CSV has phone numbers without country codes, choose the country when you map the columns, or add the code before importing.
+<Tip>
+  If your CSV has phone numbers without country codes, choose the country when you map the columns, or add the code before importing.
+</Tip>
 
 ## Manage your contact list
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: view and edit a contact → select contacts → Filters → Start Campaign → Delete Selected.
-</p>
+<Frame caption="Video: view and edit a contact → select contacts → Filters → Start Campaign → Delete Selected.">
+  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" />
+</Frame>
 
 ### Search and filters
 
@@ -147,13 +155,9 @@ Below, you’ll see a preview of your contacts. Click **Continue**: the contacts
 
 The panel shows how many contacts match. Click **Select All Filtered** to select them all (for example, to start a campaign), or **Clear All** to remove the filters.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-filters.png" alt="Advanced Filters with a filter name Contains Emma, 1 contact match and the Select All Filtered button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a filter that finds the contacts whose name contains “Emma”.
-</p>
+<Frame caption="Screenshot: a filter that finds the contacts whose name contains “Emma”.">
+  <img src="/images/contacts-filters.png" alt="Advanced Filters with a filter name Contains Emma, 1 contact match and the Select All Filtered button" />
+</Frame>
 
 ### View and edit
 
@@ -168,11 +172,23 @@ Select contacts with the checkboxes and click **Export to CSV** to download them
 
 ## Start a campaign from Contacts
 
-1. Select one or more contacts using the checkboxes.
-2. Click **Start Campaign**.
-3. Enter a campaign name and choose an agent in **Select agent**.
-4. (Optional) Turn on **Follow-up Calls**.
-5. Click **Start Campaign**.
+<Steps>
+  <Step>
+    Select one or more contacts using the checkboxes.
+  </Step>
+  <Step>
+    Click **Start Campaign**.
+  </Step>
+  <Step>
+    Enter a campaign name and choose an agent in **Select agent**.
+  </Step>
+  <Step>
+    (Optional) Turn on **Follow-up Calls**.
+  </Step>
+  <Step>
+    Click **Start Campaign**.
+  </Step>
+</Steps>
 
 When **Follow-up Calls** is on, for each contact with an **unanswered** or **busy** call, follow-up attempts are scheduled:
 
@@ -180,28 +196,32 @@ When **Follow-up Calls** is on, for each contact with an **unanswered** or **bus
 - After **1 day**
 - After **3 days**
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-campaign.png" alt="Start Campaign window with an example campaign name, a selected agent and Follow-up Calls turned on" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: starting a campaign with the selected contacts.">
+  <img src="/images/contacts-campaign.png" alt="Start Campaign window with an example campaign name, a selected agent and Follow-up Calls turned on" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: starting a campaign with the selected contacts.
-</p>
-
-> **Tip:** If you’re testing, start with a small selection (5–10 contacts) to check that your agent and script behave as expected.
+<Tip>
+  If you’re testing, start with a small selection (5–10 contacts) to check that your agent and script behave as expected.
+</Tip>
 
 ## Delete selected contacts (permanent)
 
-1. Select the contacts you want to remove.
-2. Click **Delete Selected**.
-3. In **Delete Contacts**, type **DELETE** to confirm and click **Delete**.
+<Steps>
+  <Step>
+    Select the contacts you want to remove.
+  </Step>
+  <Step>
+    Click **Delete Selected**.
+  </Step>
+  <Step>
+    In **Delete Contacts**, type **DELETE** to confirm and click **Delete**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-delete.png" alt="Delete Contacts window warning that this is a permanent action, with DELETE typed in the confirmation field and the Delete button" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the deletion only goes ahead after you type DELETE.">
+  <img src="/images/contacts-delete.png" alt="Delete Contacts window warning that this is a permanent action, with DELETE typed in the confirmation field and the Delete button" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the deletion only goes ahead after you type DELETE.
-</p>
-
-> **Important:** This is a **permanent action** and cannot be undone. If you might need the contacts later, export them to CSV first.
+<Warning>
+  This is a **permanent action** and cannot be undone. If you might need the contacts later, export them to CSV first.
+</Warning>

@@ -1,0 +1,61 @@
+/* callin.io look: violet gradient buttons, rounded frames, tighter headings */
+#topbar-cta-button a,
+#topbar-cta-button button {
+  background: linear-gradient(180deg, #5235EF 0%, #8771FF 100%) !important;
+  border-radius: 9999px !important;
+  border: none !important;
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+/* Screenshots and videos (<Frame>): violet border in the callin.io colour */
+div.not-prose.rounded-2xl:has(> div.rounded-xl img),
+div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
+  border: 1px solid #8771FF;
+  background-color: rgba(135, 113, 255, 0.05);
+  box-shadow: 0 4px 16px rgba(82, 53, 239, 0.08);
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+.dark div.not-prose.rounded-2xl:has(> div.rounded-xl img),
+.dark div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
+  border-color: #5235EF;
+  background-color: rgba(82, 53, 239, 0.10);
+}
+
+/* Videos open enlarged on click (zoom-videos.js) */
+div.not-prose video {
+  cursor: zoom-in;
+}
+#video-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(16, 16, 17, 0.85);
+  cursor: zoom-out;
+}
+#video-zoom video {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 12px;
+  border: 1px solid #8771FF;
+  box-shadow: 0 12px 40px rgba(82, 53, 239, 0.35);
+}
+
+#banner {
+  background: linear-gradient(90deg, #5235EF 0%, #8771FF 100%);
+}
+
+/* Steps without a title: hide the empty title row and align the text with the number */
+[role="listitem"] > div > p.font-semibold:empty {
+  display: none;
+}
+[role="listitem"] > div > p.font-semibold:empty + div > :first-child {
+  margin-top: 0.6rem;
+}

@@ -19,29 +19,31 @@ Se configura en dos sitios:
 
 En la app, las configuraciones de transferencia se llaman **reglas de transferencia de llamadas**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: Transferencia de llamadas → Crear regla → rellenar Título, Número y Condición.">
+  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: Transferencia de llamadas → Crear regla → rellenar Título, Número y Condición.
-</p>
+<Steps>
+  <Step>
+    En el menú de la izquierda, abre **Transferencia de llamadas** ([ábrelo aquí](https://app.callin.io/call-transfer)). Si todavía no tienes reglas, verás **No se encontraron reglas de transferencia de llamadas**.
+  </Step>
+  <Step>
+    Haz clic en **\+ Crear regla**.
+  </Step>
+  <Step>
+    Rellena los tres campos. Todos son obligatorios:
+    - **Título**: un nombre para esta regla (por ejemplo, _Equipo de ventas_ o _Soporte_).
+    - **Número**: el número al que se transferirá la llamada, en formato E.164, con **\+** y el prefijo del país (por ejemplo, `+15550100200`).
+    - **Condición**: cuándo debe transferir la llamada el agente. Así el LLM sabe cuándo transferir la llamada a este número (por ejemplo, _«Transfiere la llamada cuando el cliente pida hablar con ventas, quiera un presupuesto o esté listo para comprar.»_).
+  </Step>
+  <Step>
+    Haz clic en **Guardar**.
+  </Step>
+</Steps>
 
-1. En el menú de la izquierda, abre **Transferencia de llamadas** ([ábrelo aquí](https://app.callin.io/call-transfer)). Si todavía no tienes reglas, verás **No se encontraron reglas de transferencia de llamadas**.
-2. Haz clic en **\+ Crear regla**.
-3. Rellena los tres campos. Todos son obligatorios:
-   - **Título**: un nombre para esta regla (por ejemplo, _Equipo de ventas_ o _Soporte_).
-   - **Número**: el número al que se transferirá la llamada, en formato E.164, con **\+** y el prefijo del país (por ejemplo, `+15550100200`).
-   - **Condición**: cuándo debe transferir la llamada el agente. Así el LLM sabe cuándo transferir la llamada a este número (por ejemplo, _«Transfiere la llamada cuando el cliente pida hablar con ventas, quiera un presupuesto o esté listo para comprar.»_).
-4. Haz clic en **Guardar**.
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-rule.png" alt="Ventana Crear regla con los campos Título, Número y Condición rellenados con una regla de ventas de ejemplo, y los botones Borrar, Cancelar y Guardar" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: una regla que pasa las llamadas de ventas al equipo de ventas.
-</p>
+<Frame caption="Captura: una regla que pasa las llamadas de ventas al equipo de ventas.">
+  <img src="/images/call-transfer-rule.png" alt="Ventana Crear regla con los campos Título, Número y Condición rellenados con una regla de ventas de ejemplo, y los botones Borrar, Cancelar y Guardar" />
+</Frame>
 
 Si un campo está vacío o es incorrecto, la ventana te avisa: **El título es obligatorio**, **El número debe estar en formato E.164 (p. ej. \+1234567890)** o **¡La condición de transferencia es obligatoria!**. Usa **Borrar** para vaciar el formulario, o **Cancelar** para cerrarlo sin guardar.
 
@@ -53,37 +55,43 @@ Tus reglas aparecen en la lista de **reglas de transferencia de llamadas**, dond
 
 Las transferencias se activan en cada agente, en las **Herramientas del sistema** de la pestaña **Herramientas**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: pestaña Herramientas → Transferir a número → Añadir regla → Tipo de destino → Número de teléfono y Condición.">
+  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: pestaña Herramientas → Transferir a número → Añadir regla → Tipo de destino → Número de teléfono y Condición.
-</p>
+<Steps>
+  <Step>
+    Ve a **Agentes de IA** y abre el agente.
+  </Step>
+  <Step>
+    Abre la pestaña **Herramientas**. A la derecha, en **Herramientas del sistema**, activa **Transferir a número** («Conecta con una persona del equipo cuando hace falta un trato humano o el cliente lo pide»).
+  </Step>
+  <Step>
+    Se abre el panel **Editar herramienta Transferir a número**. En **Reglas de transferencia humana**, haz clic en **Añadir regla** y rellena:
+    - **Tipo de destino**: **Número de teléfono** (siempre el mismo número) o **Número como variable dinámica** (un número que viene de una variable, por ejemplo uno por contacto o por oficina).
+    - **Número de teléfono** (o **Número como variable dinámica**): a dónde va la llamada.
+    - **Condición**: cuándo transferir a este número.
+  </Step>
+  <Step>
+    Añade una regla por cada destino. Usa **Quitar regla** para eliminar una.
+  </Step>
+  <Step>
+    Haz clic en **Guardar** en el panel.
+  </Step>
+</Steps>
 
-1. Ve a **Agentes de IA** y abre el agente.
-2. Abre la pestaña **Herramientas**. A la derecha, en **Herramientas del sistema**, activa **Transferir a número** («Conecta con una persona del equipo cuando hace falta un trato humano o el cliente lo pide»).
-3. Se abre el panel **Editar herramienta Transferir a número**. En **Reglas de transferencia humana**, haz clic en **Añadir regla** y rellena:
-   - **Tipo de destino**: **Número de teléfono** (siempre el mismo número) o **Número como variable dinámica** (un número que viene de una variable, por ejemplo uno por contacto o por oficina).
-   - **Número de teléfono** (o **Número como variable dinámica**): a dónde va la llamada.
-   - **Condición**: cuándo transferir a este número.
-4. Añade una regla por cada destino. Usa **Quitar regla** para eliminar una.
-5. Haz clic en **Guardar** en el panel.
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-number.png" alt="Panel Editar herramienta Transferir a número con Descripción (opcional), Desactivar interrupciones y una regla de transferencia humana con el tipo de destino Número de teléfono, un número de ejemplo y una condición" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: una regla de transferencia humana en la herramienta Transferir a número.
-</p>
+<Frame caption="Captura: una regla de transferencia humana en la herramienta Transferir a número.">
+  <img src="/images/call-transfer-number.png" alt="Panel Editar herramienta Transferir a número con Descripción (opcional), Desactivar interrupciones y una regla de transferencia humana con el tipo de destino Número de teléfono, un número de ejemplo y una condición" />
+</Frame>
 
 El panel tiene también dos ajustes opcionales:
 
 - **Descripción (opcional)**: indica al LLM cómo y cuándo usar la herramienta. Déjala en blanco para usar las instrucciones optimizadas por defecto.
 - **Desactivar interrupciones**: el cliente no puede interrumpir mientras se hace la transferencia.
 
-> **Consejo:** Usa el mismo número y la misma condición que escribiste en tus **reglas de transferencia de llamadas**, para que tu lista de **Transferencia de llamadas** y tus agentes coincidan.
+<Tip>
+  Usa el mismo número y la misma condición que escribiste en tus **reglas de transferencia de llamadas**, para que tu lista de **Transferencia de llamadas** y tus agentes coincidan.
+</Tip>
 
 ### Transferir a otro agente de IA
 
@@ -95,13 +103,9 @@ Para pasar la llamada a un agente de IA más especializado en lugar de a una per
 - **Mensaje de transferencia**: la frase exacta que dice el agente antes de transferir.
 - **Activar primer mensaje**: si el nuevo agente reproduce su saludo después de la transferencia.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-agent.png" alt="Panel Editar herramienta Transferir a agente con una regla de transferencia: Agente, Condición, Retraso antes de transferir, Mensaje de transferencia y Activar primer mensaje" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: una regla de transferencia en la herramienta Transferir a agente.
-</p>
+<Frame caption="Captura: una regla de transferencia en la herramienta Transferir a agente.">
+  <img src="/images/call-transfer-agent.png" alt="Panel Editar herramienta Transferir a agente con una regla de transferencia: Agente, Condición, Retraso antes de transferir, Mensaje de transferencia y Activar primer mensaje" />
+</Frame>
 
 Para saber más sobre todas las herramientas del sistema, consulta [Agentes de IA](/es/Create-AI-Agent/Create-Agent-Enchanced).
 
@@ -113,9 +117,17 @@ Cuando cambias el agente, aparece abajo una barra con **Tienes cambios sin guard
 
 ### Prueba tu configuración
 
-1. En el agente, haz clic en **Probar agente de IA** para hablar con él desde el navegador, o en **Probar llamada** para recibir una llamada real.
-2. Di algo que encaje con una de tus condiciones (por ejemplo, _«Quiero un presupuesto»_).
-3. Comprueba que el agente transfiere la llamada al número o al agente correctos.
+<Steps>
+  <Step>
+    En el agente, haz clic en **Probar agente de IA** para hablar con él desde el navegador, o en **Probar llamada** para recibir una llamada real.
+  </Step>
+  <Step>
+    Di algo que encaje con una de tus condiciones (por ejemplo, _«Quiero un presupuesto»_).
+  </Step>
+  <Step>
+    Comprueba que el agente transfiere la llamada al número o al agente correctos.
+  </Step>
+</Steps>
 
 Después de la llamada, abre el **Historial de llamadas** y usa el filtro **Transferencia de llamada** para encontrar las llamadas transferidas. Consulta [Historial de llamadas](/es/Create-AI-Agent/Call-Actions).
 

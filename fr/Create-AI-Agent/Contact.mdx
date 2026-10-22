@@ -18,15 +18,13 @@ Depuis cette page, vous pouvez :
 - **Démarrer une campagne** avec les contacts sélectionnés.
 - **Supprimer** les contacts sélectionnés (définitivement).
 
-> **Remarque :** La page **Contacts** de l’application est en anglais. Dans ce guide, les noms des boutons et des options sont traduits : à l’écran, vous les verrez en anglais.
+<Note>
+  La page **Contacts** de l’application est en anglais. Dans ce guide, les noms des boutons et des options sont traduits : à l’écran, vous les verrez en anglais.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts1.png" alt="Liste de contacts avec deux contacts d'exemple sélectionnés et les boutons Supprimer la sélection, Démarrer la campagne, Ajouter un contact et Exporter en CSV, ainsi que la recherche et les filtres" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la liste de contacts. Quand vous sélectionnez des contacts, les boutons Supprimer la sélection, Démarrer la campagne et Exporter en CSV apparaissent.
-</p>
+<Frame caption="Capture d’écran : la liste de contacts. Quand vous sélectionnez des contacts, les boutons Supprimer la sélection, Démarrer la campagne et Exporter en CSV apparaissent.">
+  <img src="/images/contacts1.png" alt="Liste de contacts avec deux contacts d'exemple sélectionnés et les boutons Supprimer la sélection, Démarrer la campagne, Ajouter un contact et Exporter en CSV, ainsi que la recherche et les filtres" />
+</Frame>
 
 Si vous n’avez encore aucun contact, la page affiche **Aucun contact trouvé** avec les boutons **Ajouter un contact** et **Importer un CSV**.
 
@@ -34,25 +32,33 @@ Si vous n’avez encore aucun contact, la page affiche **Aucun contact trouvé**
 
 La saisie manuelle convient quand vous ajoutez quelques contacts, ou que vous les collez depuis un tableur.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Ajouter un contact → remplir deux contacts d’exemple → Ajouter une colonne → Enregistrer les contacts.
-</p>
+<Frame caption="Vidéo : Ajouter un contact → remplir deux contacts d’exemple → Ajouter une colonne → Enregistrer les contacts.">
+  <video autoPlay muted loop playsInline src="/images/contacts-add.mp4" />
+</Frame>
 
 ### Étapes
 
-1. Cliquez sur **\+ Ajouter un contact**. La fenêtre **Ajouter des contacts** s’ouvre avec un tableau.
-2. Remplissez chaque ligne :
-   - **Nom**
-   - **Numéro de téléphone** (obligatoire)
-   - **E-mail** (facultatif)
-3. Cliquez sur **Ajouter une ligne** (ou appuyez sur **Entrée**) pour ajouter d’autres personnes.
-4. Cliquez sur **Enregistrer les contacts**.
+<Steps>
+  <Step>
+    Cliquez sur **\+ Ajouter un contact**. La fenêtre **Ajouter des contacts** s’ouvre avec un tableau.
+  </Step>
+  <Step>
+    Remplissez chaque ligne :
+    - **Nom**
+    - **Numéro de téléphone** (obligatoire)
+    - **E-mail** (facultatif)
+  </Step>
+  <Step>
+    Cliquez sur **Ajouter une ligne** (ou appuyez sur **Entrée**) pour ajouter d’autres personnes.
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer les contacts**.
+  </Step>
+</Steps>
 
-> **Important :** Le **numéro de téléphone est obligatoire** pour chaque contact. S’il manque, la fenêtre affiche **Le numéro de téléphone est requis**.
+<Warning>
+  Le **numéro de téléphone est obligatoire** pour chaque contact. S’il manque, la fenêtre affiche **Le numéro de téléphone est requis**.
+</Warning>
 
 ### Astuces d’édition (comme dans un tableur)
 
@@ -65,7 +71,9 @@ La fenêtre affiche ces **astuces rapides** :
 - Double-cliquez sur une cellule pour modifier son contenu.
 - Appuyez sur **Entrée** pour ajouter une nouvelle ligne.
 
-> **Astuce :** Si vos contacts sont déjà dans Google Sheets ou Excel, copiez les cellules et collez-les directement dans le tableau.
+<Tip>
+  Si vos contacts sont déjà dans Google Sheets ou Excel, copiez les cellules et collez-les directement dans le tableau.
+</Tip>
 
 ### Colonnes facultatives
 
@@ -77,13 +85,9 @@ Vous pourrez ensuite utiliser ces colonnes dans les filtres de contacts.
 
 L’import CSV est idéal pour les listes plus longues.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Importer un CSV → Associer les colonnes → vérifier les contacts dans Ajouter des contacts.
-</p>
+<Frame caption="Vidéo : Importer un CSV → Associer les colonnes → vérifier les contacts dans Ajouter des contacts.">
+  <video autoPlay muted loop playsInline src="/images/contacts-csv.mp4" />
+</Frame>
 
 ### Exigences du fichier
 
@@ -91,21 +95,27 @@ L’import CSV est idéal pour les listes plus longues.
 - **Taille maximale :** 10 Mo.
 - Vous pouvez cliquer pour choisir le fichier ou le glisser-déposer.
 
-> **Erreur fréquente :** Importer un fichier .xlsx. Exportez-le d’abord en **CSV**.
+<Warning>
+  **Erreur fréquente :** Importer un fichier .xlsx. Exportez-le d’abord en **CSV**.
+</Warning>
 
 ### Importer un CSV
 
-1. Cliquez sur **Importer un CSV**. La fenêtre **Importer un fichier CSV** s’ouvre.
-2. (Facultatif) Cliquez sur **Télécharger le modèle** pour partir du format recommandé.
-3. Cliquez sur **Sélectionner un fichier**, ou faites glisser le fichier dans la zone d’import.
+<Steps>
+  <Step>
+    Cliquez sur **Importer un CSV**. La fenêtre **Importer un fichier CSV** s’ouvre.
+  </Step>
+  <Step>
+    (Facultatif) Cliquez sur **Télécharger le modèle** pour partir du format recommandé.
+  </Step>
+  <Step>
+    Cliquez sur **Sélectionner un fichier**, ou faites glisser le fichier dans la zone d’import.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts2.png" alt="Fenêtre Importer un fichier CSV avec le bouton Télécharger le modèle, la zone de glisser-déposer, fichiers CSV uniquement (max. 10 Mo) et le bouton Sélectionner un fichier" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Importer un fichier CSV, avec l’exigence CSV uniquement et la limite de 10 Mo.
-</p>
+<Frame caption="Capture d’écran : la fenêtre Importer un fichier CSV, avec l’exigence CSV uniquement et la limite de 10 Mo.">
+  <img src="/images/contacts2.png" alt="Fenêtre Importer un fichier CSV avec le bouton Télécharger le modèle, la zone de glisser-déposer, fichiers CSV uniquement (max. 10 Mo) et le bouton Sélectionner un fichier" />
+</Frame>
 
 ### Associer vos colonnes
 
@@ -119,7 +129,9 @@ Si vos numéros ne contiennent pas de **\+**, choisissez leur pays dans **Les nu
 
 En dessous, vous voyez un aperçu de vos contacts. Cliquez sur **Continuer** : les contacts s’ouvrent dans le tableau **Ajouter des contacts**, où vous pouvez les vérifier ou les corriger avant de cliquer sur **Enregistrer les contacts**.
 
-> **Important :** Si le **Téléphone** n’est pas associé, l’import ne peut pas continuer.
+<Warning>
+  Si le **Téléphone** n’est pas associé, l’import ne peut pas continuer.
+</Warning>
 
 ### Règles de validation (manuel + CSV)
 
@@ -130,17 +142,15 @@ En dessous, vous voyez un aperçu de vos contacts. Cliquez sur **Continuer** : l
 - Les champs en erreur sont signalés par une **bordure rouge**.
 - Les champs vides sont signalés par une **bordure rouge**.
 
-> **Astuce :** Si votre CSV contient des numéros sans indicatif, choisissez le pays au moment d’associer les colonnes, ou ajoutez l’indicatif avant l’import.
+<Tip>
+  Si votre CSV contient des numéros sans indicatif, choisissez le pays au moment d’associer les colonnes, ou ajoutez l’indicatif avant l’import.
+</Tip>
 
 ## Gérer votre liste de contacts
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : voir et modifier un contact → sélectionner des contacts → Filtres → Démarrer la campagne → Supprimer la sélection.
-</p>
+<Frame caption="Vidéo : voir et modifier un contact → sélectionner des contacts → Filtres → Démarrer la campagne → Supprimer la sélection.">
+  <video autoPlay muted loop playsInline src="/images/contacts-manage.mp4" />
+</Frame>
 
 ### Recherche et filtres
 
@@ -149,13 +159,9 @@ En dessous, vous voyez un aperçu de vos contacts. Cliquez sur **Continuer** : l
 
 Le panneau indique combien de contacts correspondent. Cliquez sur **Sélectionner tous les résultats** pour tous les sélectionner (par exemple pour démarrer une campagne), ou sur **Tout effacer** pour retirer les filtres.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-filters.png" alt="Filtres avancés avec un filtre name Contient Emma, 1 contact correspondant et le bouton Sélectionner tous les résultats" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : un filtre qui trouve les contacts dont le nom contient « Emma ».
-</p>
+<Frame caption="Capture d’écran : un filtre qui trouve les contacts dont le nom contient « Emma ».">
+  <img src="/images/contacts-filters.png" alt="Filtres avancés avec un filtre name Contient Emma, 1 contact correspondant et le bouton Sélectionner tous les résultats" />
+</Frame>
 
 ### Voir et modifier
 
@@ -170,11 +176,23 @@ Sélectionnez des contacts avec les cases à cocher et cliquez sur **Exporter en
 
 ## Démarrer une campagne depuis les contacts
 
-1. Sélectionnez un ou plusieurs contacts avec les cases à cocher.
-2. Cliquez sur **Démarrer la campagne**.
-3. Saisissez un nom de campagne et choisissez un agent dans **Sélectionner un agent**.
-4. (Facultatif) Activez **Appels de relance**.
-5. Cliquez sur **Démarrer la campagne**.
+<Steps>
+  <Step>
+    Sélectionnez un ou plusieurs contacts avec les cases à cocher.
+  </Step>
+  <Step>
+    Cliquez sur **Démarrer la campagne**.
+  </Step>
+  <Step>
+    Saisissez un nom de campagne et choisissez un agent dans **Sélectionner un agent**.
+  </Step>
+  <Step>
+    (Facultatif) Activez **Appels de relance**.
+  </Step>
+  <Step>
+    Cliquez sur **Démarrer la campagne**.
+  </Step>
+</Steps>
 
 Quand **Appels de relance** est activé, pour chaque contact dont l’appel est resté **sans réponse** ou **occupé**, de nouvelles tentatives sont programmées :
 
@@ -182,28 +200,32 @@ Quand **Appels de relance** est activé, pour chaque contact dont l’appel est 
 - Après **1 jour**
 - Après **3 jours**
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-campaign.png" alt="Fenêtre Démarrer la campagne avec un nom de campagne d'exemple, un agent choisi et Appels de relance activé" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : démarrer une campagne avec les contacts sélectionnés.">
+  <img src="/images/contacts-campaign.png" alt="Fenêtre Démarrer la campagne avec un nom de campagne d'exemple, un agent choisi et Appels de relance activé" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : démarrer une campagne avec les contacts sélectionnés.
-</p>
-
-> **Astuce :** Si vous faites des tests, commencez avec peu de contacts (5 à 10) pour vérifier que votre agent et votre script se comportent comme prévu.
+<Tip>
+  Si vous faites des tests, commencez avec peu de contacts (5 à 10) pour vérifier que votre agent et votre script se comportent comme prévu.
+</Tip>
 
 ## Supprimer des contacts sélectionnés (définitif)
 
-1. Sélectionnez les contacts à retirer.
-2. Cliquez sur **Supprimer la sélection**.
-3. Dans **Supprimer des contacts**, saisissez **DELETE** pour confirmer et cliquez sur **Supprimer**.
+<Steps>
+  <Step>
+    Sélectionnez les contacts à retirer.
+  </Step>
+  <Step>
+    Cliquez sur **Supprimer la sélection**.
+  </Step>
+  <Step>
+    Dans **Supprimer des contacts**, saisissez **DELETE** pour confirmer et cliquez sur **Supprimer**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/contacts-delete.png" alt="Fenêtre Supprimer des contacts avertissant qu'il s'agit d'une action définitive, avec DELETE saisi dans le champ de confirmation et le bouton Supprimer" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la suppression n’a lieu qu’après avoir saisi DELETE.">
+  <img src="/images/contacts-delete.png" alt="Fenêtre Supprimer des contacts avertissant qu'il s'agit d'une action définitive, avec DELETE saisi dans le champ de confirmation et le bouton Supprimer" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la suppression n’a lieu qu’après avoir saisi DELETE.
-</p>
-
-> **Important :** C’est une **action définitive** qui ne peut pas être annulée. Si vous risquez d’avoir besoin de ces contacts plus tard, exportez-les d’abord en CSV.
+<Warning>
+  C’est une **action définitive** qui ne peut pas être annulée. Si vous risquez d’avoir besoin de ces contacts plus tard, exportez-les d’abord en CSV.
+</Warning>

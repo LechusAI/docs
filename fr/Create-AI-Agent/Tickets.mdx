@@ -13,13 +13,9 @@ Les tickets sont créés par les agents qui ont activé **Suivi des incidents et
 
 Vous les trouverez dans le menu de gauche, sous **Téléphonie** ([ouvrir ici](https://app.callin.io/tickets)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/tickets-list.png" alt="Page Tickets avec les boutons Configuration du callback et Actualiser, les filtres Tous, En cours, Résolu et Archivé, la recherche et le message Aucun ticket trouvé" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la page Tickets. Quand vos agents enregistrent des incidents, ils apparaissent ici.
-</p>
+<Frame caption="Capture d’écran : la page Tickets. Quand vos agents enregistrent des incidents, ils apparaissent ici.">
+  <img src="/images/tickets-list.png" alt="Page Tickets avec les boutons Configuration du callback et Actualiser, les filtres Tous, En cours, Résolu et Archivé, la recherche et le message Aucun ticket trouvé" />
+</Frame>
 
 ## Retrouver vos tickets
 
@@ -29,7 +25,9 @@ Vous les trouverez dans le menu de gauche, sous **Téléphonie** ([ouvrir ici](h
 
 Pour chaque ticket, vous voyez l’**ID du ticket**, le **Nom du contact**, le **Numéro de téléphone**, l’**E-mail**, la **Date d’ouverture**, le **Sujet**, le **Statut**, le **Commentaire de l’opérateur** et la **Dernière mise à jour**.
 
-> **Astuce :** Vous pouvez aussi retrouver les appels liés à un ticket dans l’[Historique des appels](/fr/Create-AI-Agent/Call-Actions), avec le filtre **ID du ticket**.
+<Tip>
+  Vous pouvez aussi retrouver les appels liés à un ticket dans l’[Historique des appels](/fr/Create-AI-Agent/Call-Actions), avec le filtre **ID du ticket**.
+</Tip>
 
 ## Traiter un ticket
 
@@ -65,9 +63,13 @@ Un **callback** est un appel que l’agent passe au client pour lui expliquer co
 
 Cliquez sur **Enregistrer la configuration**. Vous verrez **Configuration enregistrée**.
 
-> **Exemple :** _« Bonjour `{{contact_name}}`, nous vous appelons au sujet de l’incident signalé le `{{ticket_date}}` : `{{ticket_subject}}`. `{{operator_comment}}` Pouvons-nous vous aider pour autre chose ? »_
+<Info>
+  **Exemple :** _« Bonjour `{{contact_name}}`, nous vous appelons au sujet de l’incident signalé le `{{ticket_date}}` : `{{ticket_subject}}`. `{{operator_comment}}` Pouvons-nous vous aider pour autre chose ? »_
+</Info>
 
-> **Important :** Rédigez un **Commentaire de l’opérateur** clair quand vous résolvez un ticket. Si le script utilise `{{operator_comment}}`, c’est ce commentaire que le client entend.
+<Warning>
+  Rédigez un **Commentaire de l’opérateur** clair quand vous résolvez un ticket. Si le script utilise `{{operator_comment}}`, c’est ce commentaire que le client entend.
+</Warning>
 
 ## Dépannage
 

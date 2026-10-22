@@ -5,9 +5,9 @@ sidebarTitle: "Avant de commencer"
 icon: "rocket"
 ---
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" />
+</Frame>
 
 En quelques minutes, cette page vous explique l’essentiel : ce qu’est un agent d’appel IA, comment il obtient un numéro de téléphone, comment les appels sont facturés et comment il se connecte à vos outils. Vous serez ensuite prêt à créer votre premier agent.
 
@@ -55,7 +55,9 @@ Vous pouvez aussi utiliser votre propre opérateur avec **BYOC (Tronc SIP)**.
 
 Une fois votre numéro actif, votre agent l’utilise comme une vraie ligne téléphonique, avec l’identification de l’appelant, la détection de messagerie vocale et l’historique des appels.
 
-> **Astuce :** Découvrez chaque option étape par étape dans [Numéros et BYOC](/fr/Create-AI-Agent/Configure-Numbers).
+<Tip>
+  Découvrez chaque option étape par étape dans [Numéros et BYOC](/fr/Create-AI-Agent/Configure-Numbers).
+</Tip>
 
 ---
 
@@ -63,8 +65,14 @@ Une fois votre numéro actif, votre agent l’utilise comme une vraie ligne tél
 
 Chaque appel utilise deux types de minutes :
 
-1. **Minutes opérateur** : facturées par le fournisseur téléphonique (Twilio, Telnyx ou votre propre opérateur) pour la connexion téléphonique.
-2. **Minutes IA Callin** : couvrent l’IA qui écoute, réfléchit et répond pendant l’appel.
+<Steps>
+  <Step>
+    **Minutes opérateur** : facturées par le fournisseur téléphonique (Twilio, Telnyx ou votre propre opérateur) pour la connexion téléphonique.
+  </Step>
+  <Step>
+    **Minutes IA Callin** : couvrent l’IA qui écoute, réfléchit et répond pendant l’appel.
+  </Step>
+</Steps>
 
 <Note>
 **Exemple :** un appel de 5 minutes = 5 minutes opérateur + 5 minutes IA Callin.
@@ -72,7 +80,9 @@ Chaque appel utilise deux types de minutes :
 
 Lorsque vous achetez un numéro via Callin.io, **aucuns frais de plateforme supplémentaires** ne s’appliquent au numéro lui-même.
 
-> **Important :** Les appels passés avec des numéros achetés sur Callin.io et notre opérateur sont facturés **1 minute minimum**. Un appel de 20 secondes est facturé 1 minute. Au-delà de la première minute, vous payez la durée réelle. Cette règle ne s’applique pas aux appels de test dans le navigateur, aux numéros importés (Twilio ou Telnyx) ni à votre propre tronc SIP.
+<Warning>
+  Les appels passés avec des numéros achetés sur Callin.io et notre opérateur sont facturés **1 minute minimum**. Un appel de 20 secondes est facturé 1 minute. Au-delà de la première minute, vous payez la durée réelle. Cette règle ne s’applique pas aux appels de test dans le navigateur, aux numéros importés (Twilio ou Telnyx) ni à votre propre tronc SIP.
+</Warning>
 
 Vous pouvez consulter le total de vos minutes dans **Accueil** (**Total de usage**). Pour voir votre forfait ou ajouter des crédits, ouvrez **Mettre à niveau le forfait**.
 

@@ -12,13 +12,9 @@ Qui colleghi servizi esterni che danno ai tuoi agenti dati in tempo reale quando
 
 Con questa integrazione, quando l'email di un cliente contiene un numero d'ordine Amazon, l'agente consulta l'ordine automaticamente. Può usare quei dati nella risposta invece di chiederli al cliente.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents3.png" alt="Sezione Strumenti con la scheda Amazon Seller API in stato Connesso, i dati dell'account e i pulsanti Prova connessione e Disconnetti" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La scheda Amazon Seller API, collegata.
-</p>
+<Frame caption="La scheda Amazon Seller API, collegata.">
+  <img src="/images/mailagents3.png" alt="Sezione Strumenti con la scheda Amazon Seller API in stato Connesso, i dati dell'account e i pulsanti Prova connessione e Disconnetti" />
+</Frame>
 
 Quando l'integrazione è attiva, la scheda mostra il badge verde **Connesso** e i dati della connessione: **Nome account venditore**, **ID partner venditore**, **Regione**, **ID marketplace** e **Connesso il**. Dalla scheda puoi:
 
@@ -35,13 +31,9 @@ Prompt di esempio:
 
 > Quando il cliente chiede della spedizione o della consegna, indica l'ultimo stato della spedizione da `{{amazon_shipment_status}}` (e `{{amazon_tracking_updates}}` quando disponibile), poi includi questo link di tracking: `{{amazon_tracking_url}}`. Se l'ordine ha più di un mese o non è l'ultimo ordine dell'acquirente, chiedigli prima di confermare il numero d'ordine.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-tracking.png" alt="Pannello Collegamenti di tracking in bozze e risposte automatiche con un prompt di esempio, l'elenco delle variabili disponibili e i requisiti" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Clicca su Collegamenti di tracking in bozze e risposte automatiche, sotto la scheda, per vedere le variabili nell'app.
-</p>
+<Frame caption="Clicca su Collegamenti di tracking in bozze e risposte automatiche, sotto la scheda, per vedere le variabili nell'app.">
+  <img src="/images/mail-agent-tracking.png" alt="Pannello Collegamenti di tracking in bozze e risposte automatiche con un prompt di esempio, l'elenco delle variabili disponibili e i requisiti" />
+</Frame>
 
 Queste sono le variabili disponibili:
 
@@ -66,6 +58,8 @@ Queste sono le variabili disponibili:
 
 Il sistema rileva anche le foto che il cliente ha già inviato nel thread, e chiede conferma quando l'ordine è molto vecchio o non è l'ultimo del cliente.
 
-> **Nota:** Perché i dati di tracking vengano compilati, l'integrazione deve essere collegata, il thread deve contenere un numero d'ordine Amazon, l'ordine deve essere già spedito e il tuo prompt deve citare il tracking o lo stato della spedizione, oppure usare `{{amazon_tracking_url}}`.
+<Note>
+  Perché i dati di tracking vengano compilati, l'integrazione deve essere collegata, il thread deve contenere un numero d'ordine Amazon, l'ordine deve essere già spedito e il tuo prompt deve citare il tracking o lo stato della spedizione, oppure usare `{{amazon_tracking_url}}`.
+</Note>
 
 Altri strumenti arriveranno in questa sezione man mano che il Gestore email IA uscirà dalla fase Beta.

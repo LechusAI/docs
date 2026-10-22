@@ -5,9 +5,9 @@ sidebarTitle: "Bevor du startest"
 icon: "rocket"
 ---
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" />
+</Frame>
 
 Auf dieser Seite lernst du in wenigen Minuten die Grundlagen: was ein KI-Telefonagent ist, wie er eine Telefonnummer bekommt, wie Anrufe abgerechnet werden und wie er sich mit deinen Tools verbindet. Danach bist du bereit, deinen ersten Agenten zu erstellen.
 
@@ -55,7 +55,9 @@ Du kannst auch deinen eigenen Anbieter mit **BYOC (SIP-Trunk)** nutzen.
 
 Sobald deine Nummer aktiv ist, nutzt dein Agent sie wie eine echte Telefonleitung, mit Anrufer-ID, Mailbox-Erkennung und Anrufverlauf.
 
-> **Tipp:** Alle Optionen findest du Schritt für Schritt unter [Nummern und BYOC](/de/Create-AI-Agent/Configure-Numbers).
+<Tip>
+  Alle Optionen findest du Schritt für Schritt unter [Nummern und BYOC](/de/Create-AI-Agent/Configure-Numbers).
+</Tip>
 
 ---
 
@@ -63,8 +65,14 @@ Sobald deine Nummer aktiv ist, nutzt dein Agent sie wie eine echte Telefonleitun
 
 Jeder Anruf verbraucht zwei Arten von Minuten:
 
-1. **Anbieter-Minuten**: werden vom Telefonanbieter (Twilio, Telnyx oder dein eigener Anbieter) für die Telefonverbindung berechnet.
-2. **Callin-KI-Minuten**: decken die KI ab, die während des Anrufs zuhört, nachdenkt und antwortet.
+<Steps>
+  <Step>
+    **Anbieter-Minuten**: werden vom Telefonanbieter (Twilio, Telnyx oder dein eigener Anbieter) für die Telefonverbindung berechnet.
+  </Step>
+  <Step>
+    **Callin-KI-Minuten**: decken die KI ab, die während des Anrufs zuhört, nachdenkt und antwortet.
+  </Step>
+</Steps>
 
 <Note>
 **Beispiel:** ein 5-minütiger Anruf = 5 Anbieter-Minuten + 5 Callin-KI-Minuten.
@@ -72,7 +80,9 @@ Jeder Anruf verbraucht zwei Arten von Minuten:
 
 Wenn du eine Nummer über Callin.io kaufst, fällt **keine zusätzliche Plattformgebühr** für die Nummer selbst an.
 
-> **Wichtig:** Anrufe mit Nummern, die über Callin.io gekauft wurden, und über unseren Anbieter werden mit **mindestens 1 Minute** abgerechnet. Ein 20-Sekunden-Anruf wird als 1 Minute berechnet. Nach der ersten Minute zahlst du die tatsächliche Dauer. Diese Regel gilt nicht für Testanrufe im Browser, importierte Nummern (Twilio oder Telnyx) oder deinen eigenen SIP-Trunk.
+<Warning>
+  Anrufe mit Nummern, die über Callin.io gekauft wurden, und über unseren Anbieter werden mit **mindestens 1 Minute** abgerechnet. Ein 20-Sekunden-Anruf wird als 1 Minute berechnet. Nach der ersten Minute zahlst du die tatsächliche Dauer. Diese Regel gilt nicht für Testanrufe im Browser, importierte Nummern (Twilio oder Telnyx) oder deinen eigenen SIP-Trunk.
+</Warning>
 
 Deine Minuten insgesamt siehst du auf der **Startseite** (**Gesamte Verwendung**). Um deinen Tarif zu sehen oder Guthaben hinzuzufügen, öffne **Tarif upgraden**.
 

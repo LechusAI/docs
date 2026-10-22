@@ -15,17 +15,15 @@ C’est utile si vous voulez que vos sous-comptes ouvrent des ressources d’aid
 - Un centre d’aide sur votre site
 - Un document Google ou un wiki interne
 
-> **Important :** Les sous-comptes ne verront pas ici la documentation officielle de Callin. Elle porte la marque Callin : en White Label, publiez **votre propre** documentation et ajoutez son lien dans cette section.
+<Warning>
+  Les sous-comptes ne verront pas ici la documentation officielle de Callin. Elle porte la marque Callin : en White Label, publiez **votre propre** documentation et ajoutez son lien dans cette section.
+</Warning>
 
 Vous la trouverez dans la Plateforme white label, dans **Gestion du contenu** ([ouvrez-la ici](https://app.callin.io/cms/guides)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : la page Guides vide → Ajouter nouveau → le guide dans la liste → le menu de la ligne avec Modifier et Supprimer.
-</p>
+<Frame caption="Vidéo : la page Guides vide → Ajouter nouveau → le guide dans la liste → le menu de la ligne avec Modifier et Supprimer.">
+  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" />
+</Frame>
 
 ## Comment ça fonctionne
 
@@ -38,33 +36,37 @@ Un guide comprend :
 - Une **URL** : la page où l’utilisateur est envoyé
 - Un interrupteur **Actif** : pour l’afficher ou le masquer
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/guide1.png" alt="Page Guides avec la recherche, le bouton Ajouter nouveau et un guide dans la liste avec son Titre, sa Description, son URL et le statut Actif" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la liste des Guides avec un guide d’exemple.">
+  <img src="/images/guide1.png" alt="Page Guides avec la recherche, le bouton Ajouter nouveau et un guide dans la liste avec son Titre, sa Description, son URL et le statut Actif" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la liste des Guides avec un guide d’exemple.
-</p>
-
-> **Astuce :** Utilisez des titres clairs comme « Tutoriels vidéo », « Premiers pas », « FAQ » ou « Dépannage ».
+<Tip>
+  Utilisez des titres clairs comme « Tutoriels vidéo », « Premiers pas », « FAQ » ou « Dépannage ».
+</Tip>
 
 ## Ajouter un nouveau lien de guide
 
-1. Cliquez sur **Ajouter nouveau**.
-2. Remplissez les champs (les trois sont obligatoires) :
-   - **Titre** : le nom que les utilisateurs reconnaîtront (par exemple « Centre d’aide »). 50 caractères maximum.
-   - **Description** : une courte explication (par exemple « Tutoriels pas à pas et FAQ »).
-   - **URL** : le lien complet que les utilisateurs doivent ouvrir (par exemple votre site Mintlify ou votre propre site d’assistance).
-3. Laissez **Actif** activé si vous voulez que les sous-comptes le voient tout de suite. Il est activé par défaut.
-4. Cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Cliquez sur **Ajouter nouveau**.
+  </Step>
+  <Step>
+    Remplissez les champs (les trois sont obligatoires) :
+    - **Titre** : le nom que les utilisateurs reconnaîtront (par exemple « Centre d’aide »). 50 caractères maximum.
+    - **Description** : une courte explication (par exemple « Tutoriels pas à pas et FAQ »).
+    - **URL** : le lien complet que les utilisateurs doivent ouvrir (par exemple votre site Mintlify ou votre propre site d’assistance).
+  </Step>
+  <Step>
+    Laissez **Actif** activé si vous voulez que les sous-comptes le voient tout de suite. Il est activé par défaut.
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-guides-add.png" alt="Fenêtre Ajouter nouveau avec les champs Titre, Description et URL remplis, l’interrupteur Actif activé et les boutons Annuler et Enregistrer" style={{ width:"100%", maxWidth:"420px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Ajouter nouveau remplie pour un centre d’aide d’exemple.
-</p>
+<Frame caption="Capture d’écran : la fenêtre Ajouter nouveau remplie pour un centre d’aide d’exemple.">
+  <img src="/images/wl-guides-add.png" alt="Fenêtre Ajouter nouveau avec les champs Titre, Description et URL remplis, l’interrupteur Actif activé et les boutons Annuler et Enregistrer" />
+</Frame>
 
 ### Exemple pratique
 
@@ -85,4 +87,6 @@ La liste affiche le **Titre**, la **Description**, l’**URL** et le **Statut** 
 - Cliquer sur **⋮** → **Modifier** pour changer le titre, la description ou l’URL, ou désactiver **Actif** pour le masquer.
 - Cliquer sur **⋮** → **Supprimer** pour le retirer.
 
-> **Erreur fréquente :** Mettre le lien d’une page privée. Vérifiez que vos clients peuvent ouvrir l’URL (ou indiquez clairement s’ils doivent se connecter).
+<Warning>
+  **Erreur fréquente :** Mettre le lien d’une page privée. Vérifiez que vos clients peuvent ouvrir l’URL (ou indiquez clairement s’ils doivent se connecter).
+</Warning>

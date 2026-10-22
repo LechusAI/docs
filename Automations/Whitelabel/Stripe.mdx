@@ -16,23 +16,19 @@ The **Integrations** page is where you connect your White Label app to the servi
 
 You’ll find it in the White Label Platform, under **App Configuration** ([open it here](https://app.callin.io/cms/api-keys)). Use **Search integrations…** to find one quickly.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations1.png" alt="Integrations page with a search box and cards for Stripe, Twilio and SendGrid (all marked Required), Intercom, Brevo Chat, and Analytics & Tracking API Keys" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Integrations overview. Each card opens a side panel with what you need to connect it.">
+  <img src="/images/integrations1.png" alt="Integrations page with a search box and cards for Stripe, Twilio and SendGrid (all marked Required), Intercom, Brevo Chat, and Analytics & Tracking API Keys" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Integrations overview. Each card opens a side panel with what you need to connect it.
-</p>
+Here is what each panel asks for, one integration at a time:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: the panel of each integration — Stripe, Twilio, SendGrid, Intercom, Brevo Chat, and Analytics & Tracking API Keys.">
+  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the panel of each integration — Stripe, Twilio, SendGrid, Intercom, Brevo Chat, and Analytics & Tracking API Keys.
-</p>
-
-> **Important:** **Stripe**, **Twilio** and **SendGrid** are marked **Required**: your White Label needs them to charge customers, make calls and send emails. Intercom, Brevo Chat and tracking are optional.
+<Warning>
+  **Stripe**, **Twilio** and **SendGrid** are marked **Required**: your White Label needs them to charge customers, make calls and send emails. Intercom, Brevo Chat and tracking are optional.
+</Warning>
 
 ## Before you connect anything
 
@@ -42,14 +38,26 @@ A few habits make integrations smoother (and safer):
 - **Store keys securely** (treat them like passwords).
 - **Limit access** to people who need it. Don’t paste keys into shared docs or chats.
 
-> **Tip:** If an integration doesn’t work immediately, double-check for extra spaces at the beginning or end of a key before trying anything else.
+<Tip>
+  If an integration doesn’t work immediately, double-check for extra spaces at the beginning or end of a key before trying anything else.
+</Tip>
 
 ## How connecting an integration works
 
-1. Click an integration card. A side panel opens.
-2. Read the blue box at the top: it explains where to find each value.
-3. For **Stripe**, click **Connect** and sign in to Stripe. For the others, copy the values from the provider’s dashboard and paste them into the fields (the ones marked with `*` are required).
-4. Click **Save**.
+<Steps>
+  <Step>
+    Click an integration card. A side panel opens.
+  </Step>
+  <Step>
+    Read the blue box at the top: it explains where to find each value.
+  </Step>
+  <Step>
+    For **Stripe**, click **Connect** and sign in to Stripe. For the others, copy the values from the provider’s dashboard and paste them into the fields (the ones marked with `*` are required).
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
 To close a panel without saving, click the **X** in the top-right corner.
 
@@ -59,22 +67,30 @@ To close a panel without saving, click the **X** in the top-right corner.
 
 **When you need it:** If you plan to create paid plans and charge customers, Stripe is one of the first integrations to set up.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations2.png" alt="Connect with Stripe panel with the steps to link your account and the Connect button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Connect with Stripe panel. You don’t paste any keys: you sign in to Stripe.
-</p>
+<Frame caption="Screenshot: the Connect with Stripe panel. You don’t paste any keys: you sign in to Stripe.">
+  <img src="/images/integrations2.png" alt="Connect with Stripe panel with the steps to link your account and the Connect button" />
+</Frame>
 
 ### How to connect Stripe
 
-1. Open the **Stripe** card. The **Connect with Stripe** panel opens.
-2. Click **Connect**.
-3. Sign in to your Stripe account, or create a new one when prompted.
-4. When you finish, you’re redirected back to Callin and your account is linked automatically.
+<Steps>
+  <Step>
+    Open the **Stripe** card. The **Connect with Stripe** panel opens.
+  </Step>
+  <Step>
+    Click **Connect**.
+  </Step>
+  <Step>
+    Sign in to your Stripe account, or create a new one when prompted.
+  </Step>
+  <Step>
+    When you finish, you’re redirected back to Callin and your account is linked automatically.
+  </Step>
+</Steps>
 
-> **Important:** Connect the Stripe account where you want to receive your customers’ payments. If you use a different Stripe account later, connect it again from this card.
+<Warning>
+  Connect the Stripe account where you want to receive your customers’ payments. If you use a different Stripe account later, connect it again from this card.
+</Warning>
 
 ## Twilio
 
@@ -87,22 +103,30 @@ To close a panel without saving, click the **X** in the top-right corner.
 - **Account SID**\*
 - **Auth Token**\*
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations33.png" alt="Add Twilio API Keys panel with fields for Account SID and Auth Token and a Save button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Twilio setup requires an Account SID and an Auth Token.
-</p>
+<Frame caption="Screenshot: Twilio setup requires an Account SID and an Auth Token.">
+  <img src="/images/integrations33.png" alt="Add Twilio API Keys panel with fields for Account SID and Auth Token and a Save button" />
+</Frame>
 
 ### How to connect Twilio
 
-1. Open the **Twilio** card. The **Add Twilio API Keys** panel opens.
-2. From your Twilio dashboard, copy your **Account SID** and **Auth Token**.
-3. Paste them into the matching fields. Click the eye icon to check the token you pasted.
-4. Click **Save**.
+<Steps>
+  <Step>
+    Open the **Twilio** card. The **Add Twilio API Keys** panel opens.
+  </Step>
+  <Step>
+    From your Twilio dashboard, copy your **Account SID** and **Auth Token**.
+  </Step>
+  <Step>
+    Paste them into the matching fields. Click the eye icon to check the token you pasted.
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
-> **Tip:** If calls or SMS stop working later, Twilio is the first integration to re-check.
+<Tip>
+  If calls or SMS stop working later, Twilio is the first integration to re-check.
+</Tip>
 
 ## SendGrid
 
@@ -115,22 +139,30 @@ To close a panel without saving, click the **X** in the top-right corner.
 - **API Key**\*
 - **Sender Email**\* (a sender email verified in SendGrid)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations4.png" alt="Add SendGrid API Keys panel with fields for API Key and Sender Email and a Save button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: SendGrid setup requires an API Key and a verified Sender Email.
-</p>
+<Frame caption="Screenshot: SendGrid setup requires an API Key and a verified Sender Email.">
+  <img src="/images/integrations4.png" alt="Add SendGrid API Keys panel with fields for API Key and Sender Email and a Save button" />
+</Frame>
 
 ### How to connect SendGrid
 
-1. Open the **SendGrid** card. The **Add SendGrid API Keys** panel opens.
-2. Copy your **API Key** from SendGrid.
-3. Enter a **Sender Email** that is verified in SendGrid.
-4. Click **Save**.
+<Steps>
+  <Step>
+    Open the **SendGrid** card. The **Add SendGrid API Keys** panel opens.
+  </Step>
+  <Step>
+    Copy your **API Key** from SendGrid.
+  </Step>
+  <Step>
+    Enter a **Sender Email** that is verified in SendGrid.
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
-> **Common mistake:** Using a sender email that isn’t verified in SendGrid. If emails don’t send, verify the sender first.
+<Warning>
+  **Common mistake:** Using a sender email that isn’t verified in SendGrid. If emails don’t send, verify the sender first.
+</Warning>
 
 ## Intercom
 
@@ -142,21 +174,27 @@ To close a panel without saving, click the **X** in the top-right corner.
 
 - **App ID**\* (from your Intercom workspace settings)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations5.png" alt="Add Intercom API Keys panel with an App ID field and a Save button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Intercom setup requires an App ID.
-</p>
+<Frame caption="Screenshot: Intercom setup requires an App ID.">
+  <img src="/images/integrations5.png" alt="Add Intercom API Keys panel with an App ID field and a Save button" />
+</Frame>
 
 ### How to connect Intercom
 
-1. Open the **Intercom** card. The **Add Intercom API Keys** panel opens.
-2. Find your **App ID** in your Intercom workspace settings.
-3. Paste it and click **Save**. The Intercom chat widget appears on your customers’ dashboard.
+<Steps>
+  <Step>
+    Open the **Intercom** card. The **Add Intercom API Keys** panel opens.
+  </Step>
+  <Step>
+    Find your **App ID** in your Intercom workspace settings.
+  </Step>
+  <Step>
+    Paste it and click **Save**. The Intercom chat widget appears on your customers’ dashboard.
+  </Step>
+</Steps>
 
-> **Tip:** Use the Intercom workspace of your support team, so customer messages go to the right place.
+<Tip>
+  Use the Intercom workspace of your support team, so customer messages go to the right place.
+</Tip>
 
 ## Brevo Chat
 
@@ -168,21 +206,27 @@ To close a panel without saving, click the **X** in the top-right corner.
 
 - **Chat Widget Key**\* (the Chat Widget Key or API Key from your Brevo dashboard)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations6.png" alt="Brevo Chat Integration panel with a required Chat Widget Key field and a Save button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Brevo Chat setup requires a Chat Widget Key.
-</p>
+<Frame caption="Screenshot: Brevo Chat setup requires a Chat Widget Key.">
+  <img src="/images/integrations6.png" alt="Brevo Chat Integration panel with a required Chat Widget Key field and a Save button" />
+</Frame>
 
 ### How to connect Brevo Chat
 
-1. Open the **Brevo Chat** card. The **Brevo Chat Integration** panel opens.
-2. In your Brevo dashboard, copy your **Chat Widget Key**.
-3. Paste it and click **Save**.
+<Steps>
+  <Step>
+    Open the **Brevo Chat** card. The **Brevo Chat Integration** panel opens.
+  </Step>
+  <Step>
+    In your Brevo dashboard, copy your **Chat Widget Key**.
+  </Step>
+  <Step>
+    Paste it and click **Save**.
+  </Step>
+</Steps>
 
-> **Important:** Keep the widget key private. Anyone with it could use it in another environment.
+<Warning>
+  Keep the widget key private. Anyone with it could use it in another environment.
+</Warning>
 
 ## Analytics & Tracking API Keys
 
@@ -198,20 +242,26 @@ To close a panel without saving, click the **X** in the top-right corner.
 - **Google Ads Pixel ID** (format: `AW-123456789`)
 - **Google Analytics Measurement ID (GA4)** (format: `G-XXXXXXXXXX`)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations7.png" alt="Analytics & Tracking API Keys panel with the How to set this up instructions and the Google Ads Pixel ID and Google Analytics Measurement ID (GA4) fields" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the tracking panel, with the setup steps and the two IDs.
-</p>
+<Frame caption="Screenshot: the tracking panel, with the setup steps and the two IDs.">
+  <img src="/images/integrations7.png" alt="Analytics & Tracking API Keys panel with the How to set this up instructions and the Google Ads Pixel ID and Google Analytics Measurement ID (GA4) fields" />
+</Frame>
 
 ### How to connect tracking
 
-1. Open **Analytics & Tracking API Keys**.
-2. In Google Ads, go to **Tools & Settings → Conversions**, create or open a website conversion action and copy the Conversion ID (it looks like `AW-123456789`). Paste it into **Google Ads Pixel ID**.
-3. In Google Analytics (GA4), go to **Admin → Data Streams → Web**, select your website stream and copy the Measurement ID (it looks like `G-XXXXXXXXXX`). Paste it into **Google Analytics Measurement ID (GA4)**.
-4. Click **Save**.
+<Steps>
+  <Step>
+    Open **Analytics & Tracking API Keys**.
+  </Step>
+  <Step>
+    In Google Ads, go to **Tools & Settings → Conversions**, create or open a website conversion action and copy the Conversion ID (it looks like `AW-123456789`). Paste it into **Google Ads Pixel ID**.
+  </Step>
+  <Step>
+    In Google Analytics (GA4), go to **Admin → Data Streams → Web**, select your website stream and copy the Measurement ID (it looks like `G-XXXXXXXXXX`). Paste it into **Google Analytics Measurement ID (GA4)**.
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
 ### What happens after you save (as described in the panel)
 
@@ -220,4 +270,6 @@ To close a panel without saving, click the **X** in the top-right corner.
 - If a field is left empty, that provider’s script isn’t loaded for your brand.
 - Only admins and brand owners with access to the White Label Platform can view or change these IDs.
 
-> **Tip:** Connect tracking before your first campaigns, so you don’t lose attribution data.
+<Tip>
+  Connect tracking before your first campaigns, so you don’t lose attribution data.
+</Tip>

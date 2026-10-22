@@ -21,14 +21,22 @@ The page has two tabs, at the top right:
 - **Files**: documents you upload (PDF, DOC, DOCX, TXT), organized into groups.
 - **Web**: web pages (URLs) the agent learns from, which you can organize into folders.
 
-> **Tip:** Think of the Knowledge Base as “approved reference material” your agent can pull from when a caller asks detailed questions.
+<Tip>
+  Think of the Knowledge Base as “approved reference material” your agent can pull from when a caller asks detailed questions.
+</Tip>
 
 ## How it connects to AI agents
 
 You don’t add the content directly inside an agent. Instead, you:
 
-1. Build your Knowledge Base content here (Files or Web URLs).
-2. Then, in the agent editor, open the **Knowledge Base** tab and **add the documents** you want that agent to use.
+<Steps>
+  <Step>
+    Build your Knowledge Base content here (Files or Web URLs).
+  </Step>
+  <Step>
+    Then, in the agent editor, open the **Knowledge Base** tab and **add the documents** you want that agent to use.
+  </Step>
+</Steps>
 
 The same document can be used by several agents.
 
@@ -38,38 +46,44 @@ The **Files** tab is for uploading documents your agent should learn from (for e
 
 Next to **Create Knowledge base** you can switch between two views: a **list** of all your files, or your **groups** shown as folders. Use **Search files...** to find a document.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Files tab → Create Knowledge base → group name, and then the agent’s Knowledge Base tab → Add Document.
-</p>
+<Frame caption="Video: Files tab → Create Knowledge base → group name, and then the agent’s Knowledge Base tab → Add Document.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-files.mp4" />
+</Frame>
 
 ### Create a file group and upload documents
 
-1. Open the **Files** tab.
-2. Click **Create Knowledge base**.
-3. In the **Upload Files** window, enter a **Group Name** (required). The files you upload will be grouped together under this name.
-4. Add your documents:
-   - Drag and drop files into the upload area, or
-   - Click **Select Files** to browse.
-5. Click **Upload Files** to finish.
+<Steps>
+  <Step>
+    Open the **Files** tab.
+  </Step>
+  <Step>
+    Click **Create Knowledge base**.
+  </Step>
+  <Step>
+    In the **Upload Files** window, enter a **Group Name** (required). The files you upload will be grouped together under this name.
+  </Step>
+  <Step>
+    Add your documents:
+    - Drag and drop files into the upload area, or
+    - Click **Select Files** to browse.
+  </Step>
+  <Step>
+    Click **Upload Files** to finish.
+  </Step>
+</Steps>
 
 Supported formats and limits (as shown in the uploader):
 
 - PDF, DOC, DOCX, TXT
 - Max 5MB per file
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase1.png" alt="The Upload Files window with the Group Name field, the drag-and-drop area with the Select Files button, the supported formats (PDF, DOC, DOCX, TXT, max 5MB per file) and the Upload Files button." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: The Upload Files window, where you name the group and add your documents.">
+  <img src="/images/knowledgebase1.png" alt="The Upload Files window with the Group Name field, the drag-and-drop area with the Select Files button, the supported formats (PDF, DOC, DOCX, TXT, max 5MB per file) and the Upload Files button." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Upload Files window, where you name the group and add your documents.
-</p>
-
-> **Common mistake:** Uploading multiple unrelated documents into one group. If you have different use cases (Sales vs. Support), create separate groups so you can attach the right knowledge to each agent.
+<Warning>
+  **Common mistake:** Uploading multiple unrelated documents into one group. If you have different use cases (Sales vs. Support), create separate groups so you can attach the right knowledge to each agent.
+</Warning>
 
 ### Manage and update files in a group
 
@@ -79,7 +93,9 @@ After a group exists, you can open it to manage what’s inside:
 - See a list of **Current Files** already included.
 - Remove files you no longer want the agent to reference.
 
-> **Tip:** Use clear group names like **“Support Policies”**, **“Pricing & Plans”**, or **“Clinic Intake Script”** so it’s easy to find the correct documents later.
+<Tip>
+  Use clear group names like **“Support Policies”**, **“Pricing & Plans”**, or **“Clinic Intake Script”** so it’s easy to find the correct documents later.
+</Tip>
 
 ## Web URLs Knowledge Base
 
@@ -87,55 +103,71 @@ The **Web** tab is for teaching your agent from web pages. This is useful when y
 
 The list shows every URL with its **Name**, its address and when it was **Last Updated**. Use **Search Knowledge Base...** to find one.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/kanowledgebase2.png" alt="The Knowledge Base page with the Web tab selected, showing the Add URL and Create Folder buttons, the search bar and the list of URLs with their Last Updated date and an actions menu." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Knowledge Base in Web mode, with Add URL, Create Folder and the list of URLs.
-</p>
+<Frame caption="Screenshot: The Knowledge Base in Web mode, with Add URL, Create Folder and the list of URLs.">
+  <img src="/images/kanowledgebase2.png" alt="The Knowledge Base page with the Web tab selected, showing the Add URL and Create Folder buttons, the search bar and the list of URLs with their Last Updated date and an actions menu." />
+</Frame>
 
 ### Add a URL
 
-1. Open the **Web** tab.
-2. Click **Add URL**.
-3. Fill in:
-   - **Parent Folder**: where to save it. By default, **Knowledge Base (top level)**.
-   - **Title** (required): a clear name for this page (for example, “Pricing page”).
-   - **URL** (required): the link to the web page.
-4. (Optional) Turn on **Auto Refresh** so Callin reads the page again regularly. Then choose the **Interval** and the **Interval Unit** (**Days** or **Hours**). By default, every **7 days**.
-5. Click **Add URL** to save it.
+<Steps>
+  <Step>
+    Open the **Web** tab.
+  </Step>
+  <Step>
+    Click **Add URL**.
+  </Step>
+  <Step>
+    Fill in:
+    - **Parent Folder**: where to save it. By default, **Knowledge Base (top level)**.
+    - **Title** (required): a clear name for this page (for example, “Pricing page”).
+    - **URL** (required): the link to the web page.
+  </Step>
+  <Step>
+    (Optional) Turn on **Auto Refresh** so Callin reads the page again regularly. Then choose the **Interval** and the **Interval Unit** (**Days** or **Hours**). By default, every **7 days**.
+  </Step>
+  <Step>
+    Click **Add URL** to save it.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Add URL → title and URL → Auto Refresh with its interval → Create Folder → View Details of a URL.">
+  <video autoPlay muted loop playsInline src="/images/knowledge-base-web.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Add URL → title and URL → Auto Refresh with its interval → Create Folder → View Details of a URL.
-</p>
+With Auto Refresh turned on, the window looks like this:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-url.png" alt="The Add URL window with Parent Folder, Title, URL, Auto Refresh turned on, Interval set to 7 and Interval Unit set to Days." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: The Add URL window with Auto Refresh turned on.">
+  <img src="/images/knowledge-base-url.png" alt="The Add URL window with Parent Folder, Title, URL, Auto Refresh turned on, Interval set to 7 and Interval Unit set to Days." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Add URL window with Auto Refresh turned on.
-</p>
-
-> **Tip:** Turn on **Auto Refresh** for pages that change often, like pricing or opening hours, so your agent always answers with the latest information.
+<Tip>
+  Turn on **Auto Refresh** for pages that change often, like pricing or opening hours, so your agent always answers with the latest information.
+</Tip>
 
 ### Organize URLs in folders
 
 To keep related pages together (for example, all the pages of your website), click **Create Folder**:
 
-1. Choose the **Parent Folder** (or leave **Knowledge Base (top level)**).
-2. Enter the **Folder Name** (required).
-3. (Optional) Turn on **Auto Refresh** to refresh all the URLs in this folder at your chosen interval.
-4. Click **Create Folder**.
+<Steps>
+  <Step>
+    Choose the **Parent Folder** (or leave **Knowledge Base (top level)**).
+  </Step>
+  <Step>
+    Enter the **Folder Name** (required).
+  </Step>
+  <Step>
+    (Optional) Turn on **Auto Refresh** to refresh all the URLs in this folder at your chosen interval.
+  </Step>
+  <Step>
+    Click **Create Folder**.
+  </Step>
+</Steps>
 
 Then, when you add a URL, choose that folder in **Parent Folder**.
 
-> **Tip:** Keep folders focused. For example, make one folder for **“Pricing & Billing”** pages and a different one for **“Refund Policy”** pages.
+<Tip>
+  Keep folders focused. For example, make one folder for **“Pricing & Billing”** pages and a different one for **“Refund Policy”** pages.
+</Tip>
 
 ### View, refresh or delete a URL
 
@@ -145,39 +177,47 @@ Click **⋯** on the right of a URL to open its menu:
 - **Copy ID**: copies the document ID.
 - **Delete**: removes the URL from the Knowledge Base.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledge-base-details.png" alt="The details panel of a URL with Document ID, Last updated, Document size, Source URL and Auto Refresh on the left, and the URL Content with the Refresh Content button on the right." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: View Details shows the text the agent reads from the page.">
+  <img src="/images/knowledge-base-details.png" alt="The details panel of a URL with Document ID, Last updated, Document size, Source URL and Auto Refresh on the left, and the URL Content with the Refresh Content button on the right." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: View Details shows the text the agent reads from the page.
-</p>
-
-> **Important:** Check the **URL Content** after adding a page. If it’s empty or shows the wrong text (for example, a cookie banner), the agent won’t be able to use that page. Try a different URL for the same information.
+<Warning>
+  Check the **URL Content** after adding a page. If it’s empty or shows the wrong text (for example, a cookie banner), the agent won’t be able to use that page. Try a different URL for the same information.
+</Warning>
 
 ## Select a Knowledge Base for an agent
 
 After you’ve added your documents (Files or Web URLs), you attach them to an agent in the agent editor.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/knowledgebase3.png" alt="The agent's Knowledge Base tab with the Add Document list open: a search box, the documents from the Knowledge Base and an Add Document button at the bottom." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Adding a document from the Knowledge Base while editing an AI agent.
-</p>
+<Frame caption="Screenshot: Adding a document from the Knowledge Base while editing an AI agent.">
+  <img src="/images/knowledgebase3.png" alt="The agent's Knowledge Base tab with the Add Document list open: a search box, the documents from the Knowledge Base and an Add Document button at the bottom." />
+</Frame>
 
 ### Attach a group to an agent
 
-1. Go to **AI Agents** and open an agent to edit.
-2. Open the **Knowledge Base** tab.
-3. Click **Add Document**.
-4. Use **Search documents...** to find the document you want, and click it to add it to the agent.
-5. Repeat for each document the agent needs.
+<Steps>
+  <Step>
+    Go to **AI Agents** and open an agent to edit.
+  </Step>
+  <Step>
+    Open the **Knowledge Base** tab.
+  </Step>
+  <Step>
+    Click **Add Document**.
+  </Step>
+  <Step>
+    Use **Search documents...** to find the document you want, and click it to add it to the agent.
+  </Step>
+  <Step>
+    Repeat for each document the agent needs.
+  </Step>
+</Steps>
 
 If the document you need doesn’t exist yet, click **Add Document** at the bottom of the list. It takes you to the **Knowledge Base** page to add it.
 
-> **Tip:** If you have multiple agents with different roles, give each agent only the documents it needs so they stay focused and don’t answer outside their scope.
+<Tip>
+  If you have multiple agents with different roles, give each agent only the documents it needs so they stay focused and don’t answer outside their scope.
+</Tip>
 
 ## Practical example
 

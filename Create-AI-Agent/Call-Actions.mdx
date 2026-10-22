@@ -17,12 +17,20 @@ icon: "clock-rotate-left"
 Use this direct link to open the page:
 [Open Call History](https://app.callin.io/call-history)
 
-> **Tip:** Bookmark the link above if you review calls every day.
+<Tip>
+  Bookmark the link above if you review calls every day.
+</Tip>
 
 ## Open Call History
 
-1. In the left sidebar, go to **Evaluate**.
-2. Click **Call History**.
+<Steps>
+  <Step>
+    In the left sidebar, go to **Evaluate**.
+  </Step>
+  <Step>
+    Click **Call History**.
+  </Step>
+</Steps>
 
 The table shows one row per call, newest first:
 
@@ -61,19 +69,15 @@ At the top of the page you'll find:
 | **Sentiment** | Find calls by the caller's overall mood | **Positive**, **Neutral**, **Negative** |
 | **Ticket ID** | Find the call linked to a ticket | Paste the ticket ID |
 
-> **Common mistake:** Applying too many filters at once can return no results. If the table looks empty, remove one filter and try again.
+<Warning>
+  **Common mistake:** Applying too many filters at once can return no results. If the table looks empty, remove one filter and try again.
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Search transcripts or use the filter buttons to narrow down calls before exporting or opening call details.">
   <img
     src="/images/callhistory1.png"
-    alt="Call History page with the Search transcripts box, the filter buttons (Phone Number, Call ID, Agent, Squad, Status, and more), the Export CSV button, and the list of calls."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Search transcripts or use the filter buttons to narrow down calls before exporting or opening call details.
-</p>
+    alt="Call History page with the Search transcripts box, the filter buttons (Phone Number, Call ID, Agent, Squad, Status, and more), the Export CSV button, and the list of calls." />
+</Frame>
 
 ## Understand call outcomes (icons)
 
@@ -85,16 +89,26 @@ The **Call Outcomes** column shows three icons for each call. An icon lights up 
 
 Gray icons mean that outcome didn't happen on that call.
 
-> **Tip:** To find calls where an appointment was scheduled, use the **Appointment** filter.
+<Tip>
+  To find calls where an appointment was scheduled, use the **Appointment** filter.
+</Tip>
 
 ## Export Call History to CSV
 
 You can export the calls you're currently seeing, including any filters you applied.
 
-1. Click **Export CSV**.
-2. In the **Export Call History** window, select the columns you want to include. All 27 columns are selected by default.
-   - Use **Select All** or **Deselect All** to speed things up.
-3. Click **Export CSV** to download the file.
+<Steps>
+  <Step>
+    Click **Export CSV**.
+  </Step>
+  <Step>
+    In the **Export Call History** window, select the columns you want to include. All 27 columns are selected by default.
+    - Use **Select All** or **Deselect All** to speed things up.
+  </Step>
+  <Step>
+    Click **Export CSV** to download the file.
+  </Step>
+</Steps>
 
 The available columns are:
 
@@ -104,19 +118,15 @@ The available columns are:
 - **Call transfer**: Call Transfer Duration, Call Transfer Status, Call Transfer Recording URL, Call Transfer Transcription, Call Transfer Number, Call Transfer Agent Name.
 - **Content**: Recording URL, Transcription.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Choose the columns for your CSV file, then click Export CSV.">
   <img
     src="/images/call-history-export.png"
-    alt="Export Call History window with Select All, Deselect All, the column checkboxes, and the Export CSV button."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Export Call History window with Select All, Deselect All, the column checkboxes, and the Export CSV button." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Choose the columns for your CSV file, then click Export CSV.
-</p>
-
-> **Tip:** If you want "all calls," clear filters before exporting.
+<Tip>
+  If you want "all calls," clear filters before exporting.
+</Tip>
 
 ## Open call details to analyze a call
 
@@ -143,33 +153,27 @@ The right side has these tabs:
 | **Goals** | Whether each goal of the agent was met on this call. If the agent has no goals, you'll see **No goals were evaluated for this call**. |
 | **Key Moments** | The most important moments of the call. Each one shows who said it (**User** or **Assistant**), its type (for example **Question**, **Commitment**, **Objection**, **Buying signal**, or **Frustration**), and the exact words. |
 
-> **Important:** The summary, sentiment, goals, and key moments are generated by AI. As the panel says, they are an **AI-assisted analysis — use as a guide**.
+<Warning>
+  The summary, sentiment, goals, and key moments are generated by AI. As the panel says, they are an **AI-assisted analysis — use as a guide**.
+</Warning>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: The Call Details panel shows the transcript, the analysis tabs, and the recording player.">
   <img
     src="/images/callhistory2.png"
-    alt="Call Details panel with the transcript on the left, the Overview tab with the Summary and Metadata on the right, and the recording player at the bottom."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Call Details panel with the transcript on the left, the Overview tab with the Summary and Metadata on the right, and the recording player at the bottom." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Call Details panel shows the transcript, the analysis tabs, and the recording player.
-</p>
+In the **Key Moments** tab you’ll find the most important moments of the call:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Key Moments shows who said what, and what kind of moment it was.">
   <img
     src="/images/call-history-key-moments.png"
-    alt="Key Moments tab in Call Details, listing moments labeled Question, Small Talk, Commitment, and Frustration."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Key Moments tab in Call Details, listing moments labeled Question, Small Talk, Commitment, and Frustration." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Key Moments shows who said what, and what kind of moment it was.
-</p>
-
-> **Tip:** Use **Search in transcript...** to quickly find a specific phrase or moment in the call.
+<Tip>
+  Use **Search in transcript...** to quickly find a specific phrase or moment in the call.
+</Tip>
 
 ## Download call audio (recording)
 
@@ -179,4 +183,6 @@ The recording player is at the bottom of the **Call Details** panel. From there 
 - Click the speed button (**1.0x**) to change the playback speed: 0.5x, 0.75x, 1x, 1.25x, 1.5x, or 2x.
 - Click the **download** icon on the left to **Download Recording**.
 
-> **Important:** If you don't see the player or the download icon, there's no recording for that call. Recording can be turned off in the agent's settings.
+<Warning>
+  If you don't see the player or the download icon, there's no recording for that call. Recording can be turned off in the agent's settings.
+</Warning>

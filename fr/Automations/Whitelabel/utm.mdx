@@ -16,25 +16,19 @@ Elle est utile pour répondre à des questions comme :
 
 Vous la trouverez dans la Plateforme white label, dans **Analytique et Marketing** ([ouvrez-la ici](https://app.callin.io/cms/utm)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vidéo : la page Analytique UTM → Filtres par Source, Campagne et Support → Effacer.">
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : la page Analytique UTM → Filtres par Source, Campagne et Support → Effacer.
-</p>
-
-> **Astuce :** Si vous voyez **Aucun résultat correspondant** et « Aucune donnée UTM disponible pour cette requête », les utilisateurs se sont inscrits sans paramètres UTM dans le lien, ou la campagne n’a pas encore généré d’inscriptions.
+<Tip>
+  Si vous voyez **Aucun résultat correspondant** et « Aucune donnée UTM disponible pour cette requête », les utilisateurs se sont inscrits sans paramètres UTM dans le lien, ou la campagne n’a pas encore généré d’inscriptions.
+</Tip>
 
 ## Comment lire le tableau de bord
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/utm1.png" alt="Page Analytique UTM avec les boutons Rafraîchir et Exporter CSV, la carte Aperçu (Total, Avec UTM, Couverture), les cartes Source et Campagne, la recherche et les filtres de date, et le tableau avec les colonnes Utilisateur, A rejoint, Source, Campagne, URL de destination et Actions" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : Analytique UTM avant qu’un utilisateur ne s’inscrive avec un lien UTM.
-</p>
+<Frame caption="Capture d’écran : Analytique UTM avant qu’un utilisateur ne s’inscrive avec un lien UTM.">
+  <img src="/images/utm1.png" alt="Page Analytique UTM avec les boutons Rafraîchir et Exporter CSV, la carte Aperçu (Total, Avec UTM, Couverture), les cartes Source et Campagne, la recherche et les filtres de date, et le tableau avec les colonnes Utilisateur, A rejoint, Source, Campagne, URL de destination et Actions" />
+</Frame>
 
 ### Aperçu
 
@@ -64,7 +58,9 @@ Chaque ligne est un utilisateur avec des données UTM :
 
 Choisissez le nombre de lignes par page (**10**, **20** ou **50**) dans le sélecteur à droite. Au-dessus du tableau, vous voyez quels enregistrements sont affichés.
 
-> **Astuce :** Vous pouvez aussi voir les données UTM d’un client depuis [Utilisateurs](/fr/Automations/Whitelabel/Clients), dans l’onglet **UTM** de ses détails.
+<Tip>
+  Vous pouvez aussi voir les données UTM d’un client depuis [Utilisateurs](/fr/Automations/Whitelabel/Clients), dans l’onglet **UTM** de ses détails.
+</Tip>
 
 ## Comment rechercher et filtrer
 
@@ -82,13 +78,9 @@ Cliquez sur **Filtres** pour afficher trois champs de plus : **Source**, **Campa
 
 Le nombre à côté de **Filtres** indique combien de filtres sont actifs, et chacun apparaît comme une étiquette sous les champs (par exemple, **Source : newsletter**). Cliquez sur le **×** d’une étiquette pour retirer ce filtre.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-utm-filters.png" alt="Filtres ouverts avec les champs Source, Campagne et Support remplis avec newsletter, spring_offer et email, les étiquettes des trois filtres actifs et le bouton Effacer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : trois filtres actifs, chacun sous forme d’étiquette que vous pouvez retirer.
-</p>
+<Frame caption="Capture d’écran : trois filtres actifs, chacun sous forme d’étiquette que vous pouvez retirer.">
+  <img src="/images/wl-utm-filters.png" alt="Filtres ouverts avec les champs Source, Campagne et Support remplis avec newsletter, spring_offer et email, les étiquettes des trois filtres actifs et le bouton Effacer" />
+</Frame>
 
 ### Effacer
 
@@ -114,7 +106,9 @@ Les paramètres UTM sont des étiquettes ajoutées à un lien pour savoir d’o�
 | ID de clic Google (gclid) | Ajouté automatiquement par Google Ads                 | —                                  |
 | ID de clic Facebook (fbclid) | Ajouté automatiquement par Facebook et Instagram   | —                                  |
 
-> **Erreur fréquente :** Utiliser des noms différents pour la même chose (par exemple `Facebook`, `facebook`, `fb`). Choisissez un style et gardez-le pour des rapports propres.
+<Warning>
+  **Erreur fréquente :** Utiliser des noms différents pour la même chose (par exemple `Facebook`, `facebook`, `fb`). Choisissez un style et gardez-le pour des rapports propres.
+</Warning>
 
 ## Exemples pratiques
 
@@ -139,8 +133,18 @@ Au bout d’une semaine, utilisez les dates **De** et **à** et comparez la cart
 
 Une petite liste de vérification :
 
-1. Recherchez l’utilisateur dans **Analytique UTM**
-2. Regardez sa **Source** et sa **Campagne**, ou cliquez sur **Actions** pour voir tous les champs
-3. Si c’est vide, vérifiez qu’il a utilisé le bon lien (avec paramètres UTM)
+<Steps>
+  <Step>
+    Recherchez l’utilisateur dans **Analytique UTM**
+  </Step>
+  <Step>
+    Regardez sa **Source** et sa **Campagne**, ou cliquez sur **Actions** pour voir tous les champs
+  </Step>
+  <Step>
+    Si c’est vide, vérifiez qu’il a utilisé le bon lien (avec paramètres UTM)
+  </Step>
+</Steps>
 
-> **Astuce :** Pour des rapports cohérents, créez une « règle de nommage des liens » pour votre équipe (par exemple : source en minuscules, campagnes avec des tirets bas et sans espaces).
+<Tip>
+  Pour des rapports cohérents, créez une « règle de nommage des liens » pour votre équipe (par exemple : source en minuscules, campagnes avec des tirets bas et sans espaces).
+</Tip>

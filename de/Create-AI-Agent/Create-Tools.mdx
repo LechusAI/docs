@@ -23,9 +23,17 @@ Die Seite **Werkzeuge** hat zwei Tabs:
 
 In Callin funktioniert es immer in dieser Reihenfolge:
 
-1. **Tool erstellen** im Bereich **Werkzeuge**.
-2. **Tool dem Agenten zuweisen** unter **KI-Agenten**.
-3. **Im Feld Konversations-Prompt festlegen**, wann es ausgeführt wird und was der Agent mit dem Ergebnis macht.
+<Steps>
+  <Step>
+    **Tool erstellen** im Bereich **Werkzeuge**.
+  </Step>
+  <Step>
+    **Tool dem Agenten zuweisen** unter **KI-Agenten**.
+  </Step>
+  <Step>
+    **Im Feld Konversations-Prompt festlegen**, wann es ausgeführt wird und was der Agent mit dem Ergebnis macht.
+  </Step>
+</Steps>
 
 Fehlt einer dieser 3 Schritte, funktioniert das Tool nicht wie erwartet.
 
@@ -48,9 +56,17 @@ Fehlt einer dieser 3 Schritte, funktioniert das Tool nicht wie erwartet.
 
 So erstellst du ein Tool in Callin:
 
-1. Öffne **Werkzeuge** im Callin-Dashboard ([Werkzeuge öffnen](https://app.callin.io/tools)).
-2. Klicke auf **\+ Werkzeug hinzufügen**. Rechts öffnet sich das Fenster **Werkzeug erstellen**.
-3. Fülle die Hauptfelder aus:
+<Steps>
+  <Step>
+    Öffne **Werkzeuge** im Callin-Dashboard ([Werkzeuge öffnen](https://app.callin.io/tools)).
+  </Step>
+  <Step>
+    Klicke auf **\+ Werkzeug hinzufügen**. Rechts öffnet sich das Fenster **Werkzeug erstellen**.
+  </Step>
+  <Step>
+    Fülle die Hauptfelder aus:
+  </Step>
+</Steps>
 
 - **Name**\
   Wähle einen kurzen, klaren und dauerhaften Namen. Empfehlung: **Verb + Ziel**. Er darf 1–64 Zeichen haben: nur Buchstaben, Zahlen, Unterstriche (`_`) oder Bindestriche (`-`), ohne Leerzeichen.\
@@ -67,13 +83,9 @@ So erstellst du ein Tool in Callin:
 
 > Achte darauf, dass die URL **HTTPS** nutzt und öffentlich erreichbar ist. Ist der Endpoint nicht erreichbar, funktioniert das Tool nicht.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Werkzeug hinzufügen → Name, Beschreibung, Methode und URL → Sprach- und Sound-Einstellungen → ein Header → ein Body-Parameter.
-</p>
+<Frame caption="Video: Werkzeug hinzufügen → Name, Beschreibung, Methode und URL → Sprach- und Sound-Einstellungen → ein Header → ein Body-Parameter.">
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
+</Frame>
 
 ### Zeit- und Spracheinstellungen
 
@@ -88,28 +100,34 @@ Unter der URL legst du fest, wie sich das Tool im Gespräch verhält:
   - **Asynchron**: Es läuft im Hintergrund, sodass das Gespräch weitergehen kann.
 - **Werkzeug-Sound**: ein optionaler Sound, während das Tool läuft: **Keiner**, **Tippgeräusch** oder **Fahrstuhlmusik 1–4**. Mit der Wiedergabe-Schaltfläche daneben hörst du ihn dir an.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Das Fenster Werkzeug erstellen mit den Zeit- und Spracheinstellungen.">
   <img
     src="/images/tools-create.png"
-    alt="Das Fenster Werkzeug erstellen mit der Methode POST und einer Beispiel-URL, darunter Antwort-Timeout, Unterbrechungen deaktivieren, Vor-Werkzeug-Sprache, Ausführungsmodus und Werkzeug-Sound sowie die Bereiche Headers und Body-Parameter."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Das Fenster Werkzeug erstellen mit der Methode POST und einer Beispiel-URL, darunter Antwort-Timeout, Unterbrechungen deaktivieren, Vor-Werkzeug-Sprache, Ausführungsmodus und Werkzeug-Sound sowie die Bereiche Headers und Body-Parameter." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Das Fenster Werkzeug erstellen mit den Zeit- und Spracheinstellungen.
-</p>
-
-> **Tipp:** Braucht dein Endpoint ein paar Sekunden, stelle **Vor-Werkzeug-Sprache** auf **Erzwingen** oder füge einen **Werkzeug-Sound** hinzu, damit der Anrufer keine Stille hört.
+<Tip>
+  Braucht dein Endpoint ein paar Sekunden, stelle **Vor-Werkzeug-Sprache** auf **Erzwingen** oder füge einen **Werkzeug-Sound** hinzu, damit der Anrufer keine Stille hört.
+</Tip>
 
 ### „Body-Parameter“ konfigurieren (bei POST)
 
 Wenn dein Tool Informationen sendet (POST), lege genau fest, welche Daten es sendet. Der Agent (das LLM) sammelt diese Parameter im Anruf und sendet sie als Inhalt der Anfrage.
 
-1. Gehe zu **Body-Parameter**.
-2. Füge bei Bedarf eine allgemeine **Beschreibung** der gesendeten Daten hinzu.
-3. Klicke auf **Eigenschaft hinzufügen**.
-4. Konfiguriere jedes Feld:
+<Steps>
+  <Step>
+    Gehe zu **Body-Parameter**.
+  </Step>
+  <Step>
+    Füge bei Bedarf eine allgemeine **Beschreibung** der gesendeten Daten hinzu.
+  </Step>
+  <Step>
+    Klicke auf **Eigenschaft hinzufügen**.
+  </Step>
+  <Step>
+    Konfiguriere jedes Feld:
+  </Step>
+</Steps>
 
 - **Datentyp**: **String** (Text), **Zahl**, **Boolean** (wahr/falsch) oder **Ganzzahl**.
 - **Bezeichner**: der genaue Feldname, den dein Endpoint erwartet (zum Beispiel: `email`, `phone`, `full_name`).
@@ -121,17 +139,11 @@ Wenn dein Tool Informationen sendet (POST), lege genau fest, welche Daten es sen
 
 Für weitere Felder klickst du erneut auf **Eigenschaft hinzufügen**. Zum Entfernen klickst du auf **Löschen**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Ein Body-Parameter, den der Agent aus dem Gespräch ausfüllt (LLM Prompt).">
   <img
     src="/images/tools-body.png"
-    alt="Der Bereich Body-Parameter mit einer Eigenschaft: Datentyp String, Bezeichner email, Erforderlich aktiviert, Werttyp LLM Prompt, eine Beschreibung und das optionale Feld Enum-Werte."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Ein Body-Parameter, den der Agent aus dem Gespräch ausfüllt (LLM Prompt).
-</p>
+    alt="Der Bereich Body-Parameter mit einer Eigenschaft: Datentyp String, Bezeichner email, Erforderlich aktiviert, Werttyp LLM Prompt, eine Beschreibung und das optionale Feld Enum-Werte." />
+</Frame>
 
 > Praxistipp: Wenn du ein Feld als **Erforderlich** markierst, musst du den Agenten (über den Konversations-Prompt) verpflichten, es **zu erfragen und zu bestätigen**, bevor er das Tool ausführt. Sonst erhält der Webhook unvollständige Daten oder der Ablauf schlägt fehl.
 
@@ -139,8 +151,14 @@ Für weitere Felder klickst du erneut auf **Eigenschaft hinzufügen**. Zum Entfe
 
 Wenn dein Endpoint eine Authentifizierung verlangt (zum Beispiel einen Token oder Schlüssel), füge sie unter **Headers** hinzu:
 
-1. Klicke auf **Header hinzufügen**.
-2. Trage den **Name** (zum Beispiel `Authorization`) und den **Wert** (zum Beispiel `Bearer` gefolgt von deinem Schlüssel) genau so ein, wie deine API es verlangt.
+<Steps>
+  <Step>
+    Klicke auf **Header hinzufügen**.
+  </Step>
+  <Step>
+    Trage den **Name** (zum Beispiel `Authorization`) und den **Wert** (zum Beispiel `Bearer` gefolgt von deinem Schlüssel) genau so ein, wie deine API es verlangt.
+  </Step>
+</Steps>
 
 Jeder Header braucht einen Namen und einen Wert. Entferne leere Header über das Papierkorb-Symbol, sonst lässt sich das Tool nicht speichern.
 
@@ -150,25 +168,37 @@ Jeder Header braucht einen Namen und einen Wert. Entferne leere Header über das
 
 Ein **MCP-Server** gibt deinem Agenten auf einen Schlag eine ganze Reihe von Tools (zum Beispiel alle Aktionen deines CRM), ohne dass du sie einzeln anlegen musst. So fügst du einen hinzu:
 
-1. Öffne unter **Werkzeuge** den Tab **MCPs** und klicke auf **\+ MCP hinzufügen**.
-2. Trage unter **Grundinformationen** den **Namen** (zum Beispiel „CRM MCP“) und eine **Beschreibung** ein, was der Server bietet.
-3. Wähle unter **Serverkonfiguration** den **Servertyp** (**SSE** oder **Streamable HTTP**) und füge die **Server-URL** ein.
-4. Braucht der Server eine Authentifizierung, füge sie unter **HTTP-Header** mit **Header hinzufügen** hinzu.
-5. Wähle den **Freigabemodus für Tools**:
-   - **Immer fragen**: maximale Sicherheit. Der Agent fragt vor jeder Tool-Nutzung um Erlaubnis.
-   - **Detaillierte Tool-Freigabe** (standardmäßig ausgewählt): Du legst fest, welche Tools deaktiviert sind und welche automatisch laufen dürfen.
-   - **Keine Freigabe**: Der Agent darf jedes Tool ohne Freigabe nutzen.
-6. Klicke auf **Erstellen**.
+<Steps>
+  <Step>
+    Öffne unter **Werkzeuge** den Tab **MCPs** und klicke auf **\+ MCP hinzufügen**.
+  </Step>
+  <Step>
+    Trage unter **Grundinformationen** den **Namen** (zum Beispiel „CRM MCP“) und eine **Beschreibung** ein, was der Server bietet.
+  </Step>
+  <Step>
+    Wähle unter **Serverkonfiguration** den **Servertyp** (**SSE** oder **Streamable HTTP**) und füge die **Server-URL** ein.
+  </Step>
+  <Step>
+    Braucht der Server eine Authentifizierung, füge sie unter **HTTP-Header** mit **Header hinzufügen** hinzu.
+  </Step>
+  <Step>
+    Wähle den **Freigabemodus für Tools**:
+    - **Immer fragen**: maximale Sicherheit. Der Agent fragt vor jeder Tool-Nutzung um Erlaubnis.
+    - **Detaillierte Tool-Freigabe** (standardmäßig ausgewählt): Du legst fest, welche Tools deaktiviert sind und welche automatisch laufen dürfen.
+    - **Keine Freigabe**: Der Agent darf jedes Tool ohne Freigabe nutzen.
+  </Step>
+  <Step>
+    Klicke auf **Erstellen**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: MCP hinzufügen → Name, Beschreibung und Server-URL → Freigabemodus, danach der Tab Tools des Agenten, in dem du dem Agenten Tools und MCPs hinzufügst.">
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: MCP hinzufügen → Name, Beschreibung und Server-URL → Freigabemodus, danach der Tab Tools des Agenten, in dem du dem Agenten Tools und MCPs hinzufügst.
-</p>
-
-> **Wichtig:** Verbinde nur MCP-Server, denen du vertraust. Mit **Keine Freigabe** kann der Agent alle Tools dieses Servers ohne Rückfrage nutzen.
+<Warning>
+  Verbinde nur MCP-Server, denen du vertraust. Mit **Keine Freigabe** kann der Agent alle Tools dieses Servers ohne Rückfrage nutzen.
+</Warning>
 
 ---
 
@@ -176,31 +206,41 @@ Ein **MCP-Server** gibt deinem Agenten auf einen Schlag eine ganze Reihe von Too
 
 Das Tool zu erstellen reicht nicht. Du musst es dem Agenten zuweisen:
 
-1. Gehe zu **KI-Agenten**.
-2. Wähle den Agenten, den du konfigurieren möchtest.
-3. Öffne im Agenten-Editor den Tab **Tools**.
-4. Klicke im Untertab **Tools** auf **Werkzeug hinzufügen**.
-5. Suche dein Tool und wähle es aus. Du kannst auch auf **Webhook-Tool hinzufügen** klicken, um dort direkt ein neues anzulegen.
-6. Speichere den Agenten.
+<Steps>
+  <Step>
+    Gehe zu **KI-Agenten**.
+  </Step>
+  <Step>
+    Wähle den Agenten, den du konfigurieren möchtest.
+  </Step>
+  <Step>
+    Öffne im Agenten-Editor den Tab **Tools**.
+  </Step>
+  <Step>
+    Klicke im Untertab **Tools** auf **Werkzeug hinzufügen**.
+  </Step>
+  <Step>
+    Suche dein Tool und wähle es aus. Du kannst auch auf **Webhook-Tool hinzufügen** klicken, um dort direkt ein neues anzulegen.
+  </Step>
+  <Step>
+    Speichere den Agenten.
+  </Step>
+</Steps>
 
 Um dem Agenten einen MCP-Server hinzuzufügen, öffne den Untertab **MCP** und klicke auf **MCP hinzufügen**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Der Tab Tools des Agenten. Werkzeug hinzufügen zeigt die Tools, die du im Bereich Werkzeuge erstellt hast.">
   <img
     src="/images/tools-agent.png"
-    alt="Der Tab Tools des Agenten mit den Untertabs Tools und MCP, der Liste Werkzeug hinzufügen mit Suchfeld und der Schaltfläche Webhook-Tool hinzufügen sowie den System-Tools rechts."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Der Tab Tools des Agenten. Werkzeug hinzufügen zeigt die Tools, die du im Bereich Werkzeuge erstellt hast.
-</p>
+    alt="Der Tab Tools des Agenten mit den Untertabs Tools und MCP, der Liste Werkzeug hinzufügen mit Suchfeld und der Schaltfläche Webhook-Tool hinzufügen sowie den System-Tools rechts." />
+</Frame>
 
 **Kurzer Check:**\
 Erscheint das Tool in der Liste des Agenten, ist es richtig zugewiesen. Erscheint es nicht, kann der Agent es nicht ausführen.
 
-> **Tipp:** Rechts im selben Tab findest du die **System-Tools** (Smartes Auflegen, Sprachwechsel, An Nummer übergeben…). Sie sind integriert und müssen nur eingeschaltet werden. Siehe [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
+<Tip>
+  Rechts im selben Tab findest du die **System-Tools** (Smartes Auflegen, Sprachwechsel, An Nummer übergeben…). Sie sind integriert und müssen nur eingeschaltet werden. Siehe [KI-Agenten](/de/Create-AI-Agent/Create-Agent-Enchanced).
+</Tip>
 
 ---
 
@@ -323,13 +363,29 @@ Hier ein vollständiges (erfundenes) Beispiel mit zwei Tools: ein Hauptlink wäh
 
 **Link A enthält (im Link selbst):**
 
-1. Erstregistrierung (Pflichtangaben)
-2. Prüfung/Bestätigung der Angaben
-3. Auswahl des Tarifs oder der Option
-4. Einrichtung der Zahlung (falls zutreffend)
-5. Annahme der Bedingungen oder Unterschrift (falls zutreffend)
-6. Hochladen von Dokumenten (falls zutreffend)
-7. Abschließende Bestätigung
+<Steps>
+  <Step>
+    Erstregistrierung (Pflichtangaben)
+  </Step>
+  <Step>
+    Prüfung/Bestätigung der Angaben
+  </Step>
+  <Step>
+    Auswahl des Tarifs oder der Option
+  </Step>
+  <Step>
+    Einrichtung der Zahlung (falls zutreffend)
+  </Step>
+  <Step>
+    Annahme der Bedingungen oder Unterschrift (falls zutreffend)
+  </Step>
+  <Step>
+    Hochladen von Dokumenten (falls zutreffend)
+  </Step>
+  <Step>
+    Abschließende Bestätigung
+  </Step>
+</Steps>
 
 **Bedingungen für „Send_Registration_Link“:**
 

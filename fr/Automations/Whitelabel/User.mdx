@@ -13,25 +13,21 @@ icon: "palette"
 
 Ouvrez-la ici : [Ouvrir Configuration White Label](https://app.callin.io/cms/white-label-configuration)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel01.png" alt="Page Configuration White Label sur l’onglet Configuration avec Nom de l’app, Domaine personnalisé et le bouton Configuration DNS, Devise et Langue de l'Application" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’onglet Configuration, avec un nom d’application et un domaine d’exemple.">
+  <img src="/images/whitelabel01.png" alt="Page Configuration White Label sur l’onglet Configuration avec Nom de l’app, Domaine personnalisé et le bouton Configuration DNS, Devise et Langue de l'Application" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Configuration, avec un nom d’application et un domaine d’exemple.
-</p>
+La vidéo montre toute la configuration, étape par étape :
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : nom de l’application et domaine → Configuration DNS (Fournisseur et Manuel) → devise, langue et emplacement du serveur → e-mail d’alerte de minutes épuisées et son aperçu → onglet Apparence.
-</p>
+<Frame caption="Vidéo : nom de l’application et domaine → Configuration DNS (Fournisseur et Manuel) → devise, langue et emplacement du serveur → e-mail d’alerte de minutes épuisées et son aperçu → onglet Apparence.">
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" />
+</Frame>
 
 Dès que vous modifiez quelque chose, une barre apparaît en bas avec **Effacer** (annule vos modifications) et **Enregistrer**. Cliquez sur **Enregistrer** avant de quitter la page.
 
-> **Important :** Certains réglages peuvent varier selon votre plan et vos autorisations.
+<Warning>
+  Certains réglages peuvent varier selon votre plan et vos autorisations.
+</Warning>
 
 ## Configuration
 
@@ -55,7 +51,9 @@ Pourquoi un sous-domaine compte :
 - Votre **domaine racine** (comme `votredomaine.com`) héberge généralement votre site, vos pages d’atterrissage, votre blog et vos scripts de suivi.
 - Garder le produit sur `app.votredomaine.com` évite les conflits et laisse votre site indépendant.
 
-> **Astuce :** Choisissez un sous-domaine facile à retenir : `app`, `portal` ou `dashboard`.
+<Tip>
+  Choisissez un sous-domaine facile à retenir : `app`, `portal` ou `dashboard`.
+</Tip>
 
 ### Configuration DNS
 
@@ -72,24 +70,30 @@ Utilisez **Fournisseur** si votre domaine est chez **Cloudflare**, **GoDaddy** o
 
 Ce que vous faites :
 
-1. Ouvrez l’onglet **Fournisseur**.
-2. Dans **Fournisseur DNS**, choisissez le vôtre : **Cloudflare**, **GoDaddy** ou **Namecheap**.
-3. Cliquez sur **Découvrir**.
+<Steps>
+  <Step>
+    Ouvrez l’onglet **Fournisseur**.
+  </Step>
+  <Step>
+    Dans **Fournisseur DNS**, choisissez le vôtre : **Cloudflare**, **GoDaddy** ou **Namecheap**.
+  </Step>
+  <Step>
+    Cliquez sur **Découvrir**.
+  </Step>
+</Steps>
 
 À quoi vous attendre :
 
 - Callin essaiera de vous guider dans la configuration DNS du domaine saisi.
 - En cas de problème, un message d’erreur vous demande de vérifier la configuration et les enregistrements DNS, puis de réessayer plus tard. Cela signifie en général que les enregistrements DNS ne correspondent pas encore. Patientez un peu ou utilisez **Manuel**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel2.png" alt="Panneau Configuration DNS sur l’onglet Fournisseur avec la liste Fournisseur DNS ouverte (Cloudflare, GoDaddy, Namecheap) et un message d’erreur en haut" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’onglet Fournisseur, où vous choisissez Cloudflare, GoDaddy ou Namecheap et cliquez sur Découvrir.">
+  <img src="/images/whitelabel2.png" alt="Panneau Configuration DNS sur l’onglet Fournisseur avec la liste Fournisseur DNS ouverte (Cloudflare, GoDaddy, Namecheap) et un message d’erreur en haut" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Fournisseur, où vous choisissez Cloudflare, GoDaddy ou Namecheap et cliquez sur Découvrir.
-</p>
-
-> **Erreur fréquente :** Les modifications DNS ne s’appliquent pas instantanément. Si vous venez de modifier les enregistrements, patientez un peu et réessayez.
+<Warning>
+  **Erreur fréquente :** Les modifications DNS ne s’appliquent pas instantanément. Si vous venez de modifier les enregistrements, patientez un peu et réessayez.
+</Warning>
 
 #### Manuel (ajouter vous-même les enregistrements DNS)
 
@@ -115,21 +119,29 @@ Le tableau comprend :
 
 Les étapes :
 
-1. Ouvrez **Manuel**.
-2. Ajoutez chaque enregistrement DNS exactement comme dans le tableau.
-3. Une fois les enregistrements en place, cliquez sur **Installer le SSL** pour terminer.
+<Steps>
+  <Step>
+    Ouvrez **Manuel**.
+  </Step>
+  <Step>
+    Ajoutez chaque enregistrement DNS exactement comme dans le tableau.
+  </Step>
+  <Step>
+    Une fois les enregistrements en place, cliquez sur **Installer le SSL** pour terminer.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel3.png" alt="Panneau Configuration DNS sur l’onglet Manuel avec le message Ajoutez ces enregistrements DNS chez votre registrar, un tableau avec un enregistrement A et un enregistrement CNAME, et le bouton Installer le SSL" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’onglet Manuel avec les enregistrements d’un domaine d’exemple et le bouton Installer le SSL.">
+  <img src="/images/whitelabel3.png" alt="Panneau Configuration DNS sur l’onglet Manuel avec le message Ajoutez ces enregistrements DNS chez votre registrar, un tableau avec un enregistrement A et un enregistrement CNAME, et le bouton Installer le SSL" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Manuel avec les enregistrements d’un domaine d’exemple et le bouton Installer le SSL.
-</p>
+<Warning>
+  Ne cliquez sur **Installer le SSL** qu’une fois les enregistrements DNS ajoutés et propagés. Le délai de propagation dépend de votre fournisseur DNS.
+</Warning>
 
-> **Important :** Ne cliquez sur **Installer le SSL** qu’une fois les enregistrements DNS ajoutés et propagés. Le délai de propagation dépend de votre fournisseur DNS.
-
-> **Astuce :** Si vous ne savez pas où ajouter les enregistrements, cherchez « ajouter un enregistrement A » et « ajouter un enregistrement CNAME » dans l’aide de votre fournisseur DNS. Les noms des champs peuvent varier.
+<Tip>
+  Si vous ne savez pas où ajouter les enregistrements, cherchez « ajouter un enregistrement A » et « ajouter un enregistrement CNAME » dans l’aide de votre fournisseur DNS. Les noms des champs peuvent varier.
+</Tip>
 
 ### Devise
 
@@ -158,41 +170,49 @@ Ces champs renvoient vers vos pages légales :
 
 Collez l’URL complète de chaque page, par exemple `https://votredomaine.com/confidentialite`.
 
-> **Astuce :** Même si vous êtes une agence, traitez cela comme un produit : publiez ces pages sur votre site (domaine racine) et ajoutez les liens ici.
+<Tip>
+  Même si vous êtes une agence, traitez cela comme un produit : publiez ces pages sur votre site (domaine racine) et ajoutez les liens ici.
+</Tip>
 
 ### E-mail d’alerte de minutes épuisées
 
 L’**E-mail d'alerte lorsque les minutes sont épuisées** prévient vos clients par e-mail quand ils ont utilisé toutes leurs minutes incluses.
 
-1. Activez **Activer l'e-mail d'alerte**. L’éditeur de l’e-mail s’ouvre.
-2. Saisissez l’**Objet**.
-3. Choisissez le **Type de contenu** : **Texte normal** (texte brut ; les retours à la ligne sont conservés) ou **HTML** (HTML brut).
-4. Rédigez le **Contenu**. Par défaut, il comprend le nom de votre application et votre domaine.
-5. Cliquez sur **Aperçu de l'e-mail** pour voir l’e-mail final que recevront vos clients, puis sur **Fermer**.
+<Steps>
+  <Step>
+    Activez **Activer l'e-mail d'alerte**. L’éditeur de l’e-mail s’ouvre.
+  </Step>
+  <Step>
+    Saisissez l’**Objet**.
+  </Step>
+  <Step>
+    Choisissez le **Type de contenu** : **Texte normal** (texte brut ; les retours à la ligne sont conservés) ou **HTML** (HTML brut).
+  </Step>
+  <Step>
+    Rédigez le **Contenu**. Par défaut, il comprend le nom de votre application et votre domaine.
+  </Step>
+  <Step>
+    Cliquez sur **Aperçu de l'e-mail** pour voir l’e-mail final que recevront vos clients, puis sur **Fermer**.
+  </Step>
+</Steps>
 
 Pour le modifier plus tard, cliquez sur **Configurer l'e-mail**. N’oubliez pas de cliquer sur **Enregistrer**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-config-warning-email.png" alt="Éditeur de l’e-mail d’alerte de minutes épuisées avec l’Objet, les types Texte normal et HTML, le Contenu et les boutons Aperçu de l'e-mail et Fermer" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’éditeur de l’e-mail d’alerte, avec un nom d’application et un domaine d’exemple.">
+  <img src="/images/wl-config-warning-email.png" alt="Éditeur de l’e-mail d’alerte de minutes épuisées avec l’Objet, les types Texte normal et HTML, le Contenu et les boutons Aperçu de l'e-mail et Fermer" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’éditeur de l’e-mail d’alerte, avec un nom d’application et un domaine d’exemple.
-</p>
-
-> **Astuce :** Indiquez au client quoi faire ensuite, par exemple : « Passez à un forfait supérieur ou contactez-nous pour ajouter des minutes ».
+<Tip>
+  Indiquez au client quoi faire ensuite, par exemple : « Passez à un forfait supérieur ou contactez-nous pour ajouter des minutes ».
+</Tip>
 
 ## Apparence
 
 Une fois le domaine et les réglages de base prêts, passez à l’onglet **Apparence** pour adapter l’application à votre marque.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel4.png" alt="Page Configuration White Label sur l’onglet Apparence avec Couleur primaire, Couleur secondaire, Couleur Principale des Emails, Couleur du Bouton CTA, Langue des e-mails et l’import du Logo et du Logo Sombre" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Apparence, où vous choisissez vos couleurs, la langue des e-mails, les logos, le favicon et le thème par défaut.
-</p>
+<Frame caption="Capture d’écran : l’onglet Apparence, où vous choisissez vos couleurs, la langue des e-mails, les logos, le favicon et le thème par défaut.">
+  <img src="/images/whitelabel4.png" alt="Page Configuration White Label sur l’onglet Apparence avec Couleur primaire, Couleur secondaire, Couleur Principale des Emails, Couleur du Bouton CTA, Langue des e-mails et l’import du Logo et du Logo Sombre" />
+</Frame>
 
 ### Couleurs
 
@@ -203,7 +223,9 @@ Cliquez sur un carré de couleur pour choisir la couleur :
 - **Couleur Principale des Emails** : la couleur principale de vos e-mails transactionnels.
 - **Couleur du Bouton CTA** : la couleur des boutons et liens principaux de vos e-mails.
 
-> **Astuce :** Si votre marque a déjà une charte graphique, partez de votre couleur principale et choisissez une couleur secondaire lisible sur fond clair comme sur fond sombre.
+<Tip>
+  Si votre marque a déjà une charte graphique, partez de votre couleur principale et choisissez une couleur secondaire lisible sur fond clair comme sur fond sombre.
+</Tip>
 
 ### Langue des e-mails
 
@@ -218,7 +240,9 @@ Importez deux versions de votre logo :
 
 Utilisez du PNG ou du SVG, jusqu’à 2 Mo, idéalement avec un fond transparent. Le même logo n’est pas toujours lisible sur les deux thèmes.
 
-> **Important :** Si votre logo apparaît minuscule, l’image a souvent une grande marge blanche autour : Callin réduit l’image entière pour qu’elle tienne. Un PNG transparent bien recadré règle généralement le problème.
+<Warning>
+  Si votre logo apparaît minuscule, l’image a souvent une grande marge blanche autour : Callin réduit l’image entière pour qu’elle tienne. Un PNG transparent bien recadré règle généralement le problème.
+</Warning>
 
 ### Favicon
 

@@ -23,21 +23,27 @@ Vous pouvez ainsi :
 - Déclencher des appels sortants depuis votre CRM ou vos formulaires.
 - Relier Callin.io à des milliers d’applications compatibles.
 
-> **Remarque :** L’interface de Zapier est en anglais. Dans ce guide, les noms des boutons et options sont traduits : à l’écran, vous les verrez en anglais.
+<Note>
+  L’interface de Zapier est en anglais. Dans ce guide, les noms des boutons et options sont traduits : à l’écran, vous les verrez en anglais.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/zapier-connect.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Intégrations → Zapier → invitation → le déclencheur Obtenir la transcription et l’action Activer l’agent dans l’éditeur de Zaps → votre clé API dans Profil → Clés API.
-</p>
+<Frame caption="Vidéo : Intégrations → Zapier → invitation → le déclencheur Obtenir la transcription et l’action Activer l’agent dans l’éditeur de Zaps → votre clé API dans Profil → Clés API.">
+  <video autoPlay muted loop playsInline src="/images/zapier-connect.mp4" />
+</Frame>
 
 ## Étape 1. Ouvrir le panneau des intégrations dans Callin.io
 
-1. Connectez-vous à votre [compte Callin.io](https://app.callin.io).
-2. Dans le menu de gauche, ouvrez **Intégrations → Actions** ([ouvrir ici](https://app.callin.io/actions)).
-3. Utilisez le filtre **Automatisation** (ou parcourez **Toutes**), trouvez **Zapier** et cliquez sur **Connecter**.
+<Steps>
+  <Step>
+    Connectez-vous à votre [compte Callin.io](https://app.callin.io).
+  </Step>
+  <Step>
+    Dans le menu de gauche, ouvrez **Intégrations → Actions** ([ouvrir ici](https://app.callin.io/actions)).
+  </Step>
+  <Step>
+    Utilisez le filtre **Automatisation** (ou parcourez **Toutes**), trouvez **Zapier** et cliquez sur **Connecter**.
+  </Step>
+</Steps>
 
 Un nouvel onglet s’ouvre sur Zapier pour terminer la configuration.
 
@@ -48,30 +54,42 @@ Sinon, vous pouvez en créer un gratuitement sur [zapier.com](https://zapier.com
 
 Une fois connecté, vous voyez la page **« Vous avez été invité à utiliser Callin.io sur Zapier ! »**, envoyée par l’équipe Callin.io. Cliquez sur **Accepter l’invitation et créer un Zap** pour activer l’intégration. Zapier ouvre l’éditeur de Zaps.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-invite.png" alt="La page d'invitation de Zapier : vous avez été invité à utiliser Callin.io sur Zapier, avec les logos de Callin.io et de Zapier, une courte description de Callin.io et le bouton Accepter l'invitation et créer un Zap" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : l’invitation à utiliser Callin.io sur Zapier.">
+  <img src="/images/zapier-invite.png" alt="La page d'invitation de Zapier : vous avez été invité à utiliser Callin.io sur Zapier, avec les logos de Callin.io et de Zapier, une courte description de Callin.io et le bouton Accepter l'invitation et créer un Zap" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’invitation à utiliser Callin.io sur Zapier.
-</p>
-
-> **Remarque :** L’application Callin.io est partagée sur invitation et Zapier l’affiche comme **Brouillon**. Elle fonctionne normalement.
+<Note>
+  L’application Callin.io est partagée sur invitation et Zapier l’affiche comme **Brouillon**. Elle fonctionne normalement.
+</Note>
 
 ## Étape 3. Récupérer votre clé API dans Callin.io
 
 Zapier doit vérifier votre compte de façon sécurisée avec une clé API.
 
-1. Ouvrez votre [profil Callin.io](https://app.callin.io/profile) et allez dans l’onglet **Clés API**.
-2. Si vous n’avez pas encore de clé (« Aucune clé API trouvée »), cliquez sur **Régénérer la clé** pour en créer une.
-3. Utilisez l’icône de copie pour copier la clé.
+<Steps>
+  <Step>
+    Ouvrez votre [profil Callin.io](https://app.callin.io/profile) et allez dans l’onglet **Clés API**.
+  </Step>
+  <Step>
+    Si vous n’avez pas encore de clé (« Aucune clé API trouvée »), cliquez sur **Régénérer la clé** pour en créer une.
+  </Step>
+  <Step>
+    Utilisez l’icône de copie pour copier la clé.
+  </Step>
+</Steps>
 
 Gardez votre clé API en sécurité. Si elle est compromise, régénérez-la immédiatement. En la régénérant, l’ancienne clé cesse de fonctionner : vous devrez donc reconnecter votre compte dans Zapier.
 
 ## Étape 4. Autoriser la connexion dans Zapier
 
-1. Dans une étape Callin.io de votre Zap, allez dans **Compte** et cliquez sur **Se connecter** (ou sur **Modifier** → **Connecter un nouveau compte**).
-2. Une fenêtre de Zapier demande l’accès à votre compte Callin.io. Collez votre clé API et confirmez.
+<Steps>
+  <Step>
+    Dans une étape Callin.io de votre Zap, allez dans **Compte** et cliquez sur **Se connecter** (ou sur **Modifier** → **Connecter un nouveau compte**).
+  </Step>
+  <Step>
+    Une fenêtre de Zapier demande l’accès à votre compte Callin.io. Collez votre clé API et confirmez.
+  </Step>
+</Steps>
 
 Votre compte Callin.io apparaît alors comme connecté dans **Compte**.
 
@@ -81,18 +99,24 @@ Si vous voyez **« La connexion de ce compte a expiré »**, cliquez sur **Recon
 
 Créons votre première automatisation : recevoir automatiquement les transcriptions des appels.
 
-1. Dans Zapier, cliquez sur **Créer** → **Zaps**.
-2. Cliquez sur **Déclencheur**, cherchez **callin** et choisissez **Callin.io (1.0.1)**.
-3. Dans **Événement déclencheur**, choisissez **Obtenir la transcription** (« Se déclenche à la réception des données de transcription d’un service externe »).
-4. Sélectionnez votre compte Callin.io et cliquez sur **Continuer**.
+<Steps>
+  <Step>
+    Dans Zapier, cliquez sur **Créer** → **Zaps**.
+  </Step>
+  <Step>
+    Cliquez sur **Déclencheur**, cherchez **callin** et choisissez **Callin.io (1.0.1)**.
+  </Step>
+  <Step>
+    Dans **Événement déclencheur**, choisissez **Obtenir la transcription** (« Se déclenche à la réception des données de transcription d’un service externe »).
+  </Step>
+  <Step>
+    Sélectionnez votre compte Callin.io et cliquez sur **Continuer**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-trigger.png" alt="Éditeur de Zaps avec Callin.io comme application du déclencheur et la liste des événements ouverte, avec Obtenir la transcription (instantané), et la section Compte" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le déclencheur Obtenir la transcription de Callin.io dans l’éditeur de Zaps.
-</p>
+<Frame caption="Capture d’écran : le déclencheur Obtenir la transcription de Callin.io dans l’éditeur de Zaps.">
+  <img src="/images/zapier-trigger.png" alt="Éditeur de Zaps avec Callin.io comme application du déclencheur et la liste des événements ouverte, avec Obtenir la transcription (instantané), et la section Compte" />
+</Frame>
 
 Choisissez maintenant ce qui se passe ensuite. Par exemple :
 
@@ -102,7 +126,9 @@ Choisissez maintenant ce qui se passe ensuite. Par exemple :
 
 À la fin de chaque appel, Zapier exécutera automatiquement l’action choisie.
 
-> **Astuce :** En cherchant **callin**, vous pouvez voir deux versions : **Callin.io (1.0.1)** et **Callin.io (1.0.2)**, qui apparaît comme **Callin** avec l’étiquette **Ancienne version**. Utilisez **Callin.io (1.0.1)** : elle propose le déclencheur **Obtenir la transcription** et l’action **Activer l’agent**.
+<Tip>
+  En cherchant **callin**, vous pouvez voir deux versions : **Callin.io (1.0.1)** et **Callin.io (1.0.2)**, qui apparaît comme **Callin** avec l’étiquette **Ancienne version**. Utilisez **Callin.io (1.0.1)** : elle propose le déclencheur **Obtenir la transcription** et l’action **Activer l’agent**.
+</Tip>
 
 ## Configuration avancée
 
@@ -112,13 +138,9 @@ Cette intégration permet bien plus :
 - Synchroniser les données d’appels avec Airtable, Notion ou des outils d’analyse.
 - Envoyer des événements à vos outils marketing pour le reporting ou le suivi.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-action.png" alt="Éditeur de Zaps avec Callin.io comme application de l'action et la liste des événements ouverte, avec Activer l'agent : active un agent sur Callin.io" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’action Activer l’agent de Callin.io dans l’éditeur de Zaps.
-</p>
+<Frame caption="Capture d’écran : l’action Activer l’agent de Callin.io dans l’éditeur de Zaps.">
+  <img src="/images/zapier-action.png" alt="Éditeur de Zaps avec Callin.io comme application de l'action et la liste des événements ouverte, avec Activer l'agent : active un agent sur Callin.io" />
+</Frame>
 
 La connexion se lance depuis [Intégrations → Actions → Zapier](https://app.callin.io/actions) dans votre tableau de bord Callin.io, et les Zaps se gèrent dans Zapier.
 

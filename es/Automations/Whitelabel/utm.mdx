@@ -16,25 +16,19 @@ Te sirve para responder preguntas como:
 
 La encontrarás en la Plataforma white label, dentro de **Analítica y Marketing** ([ábrela aquí](https://app.callin.io/cms/utm)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: la página Analítica UTM → Filtros por Fuente, Campaña y Medio → Borrar.">
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la página Analítica UTM → Filtros por Fuente, Campaña y Medio → Borrar.
-</p>
-
-> **Consejo:** Si ves **No hay registros coincidentes** y “No hay datos UTM disponibles para esta consulta”, los usuarios se registraron sin parámetros UTM en el enlace, o la campaña aún no ha generado registros.
+<Tip>
+  Si ves **No hay registros coincidentes** y “No hay datos UTM disponibles para esta consulta”, los usuarios se registraron sin parámetros UTM en el enlace, o la campaña aún no ha generado registros.
+</Tip>
 
 ## Cómo leer el panel
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/utm1.png" alt="Página Analítica UTM con los botones Actualizar y Exportar CSV, la tarjeta Resumen (Total, Con UTM, Cobertura), las tarjetas Fuente y Campaña, el buscador y los filtros de fecha, y la tabla con las columnas Usuario, Se unió, Fuente, Campaña, URL de destino y Acciones" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: Analítica UTM antes de que ningún usuario se registre con un enlace UTM.
-</p>
+<Frame caption="Captura: Analítica UTM antes de que ningún usuario se registre con un enlace UTM.">
+  <img src="/images/utm1.png" alt="Página Analítica UTM con los botones Actualizar y Exportar CSV, la tarjeta Resumen (Total, Con UTM, Cobertura), las tarjetas Fuente y Campaña, el buscador y los filtros de fecha, y la tabla con las columnas Usuario, Se unió, Fuente, Campaña, URL de destino y Acciones" />
+</Frame>
 
 ### Resumen
 
@@ -64,7 +58,9 @@ Cada fila es un usuario con datos UTM:
 
 Elige cuántas filas ver por página (**10**, **20** o **50**) en el selector de la derecha. Encima de la tabla verás qué registros estás viendo.
 
-> **Consejo:** También puedes ver los datos UTM de un cliente desde [Usuarios](/es/Automations/Whitelabel/Clients), en la pestaña **UTM** de sus detalles.
+<Tip>
+  También puedes ver los datos UTM de un cliente desde [Usuarios](/es/Automations/Whitelabel/Clients), en la pestaña **UTM** de sus detalles.
+</Tip>
 
 ## Cómo buscar y filtrar
 
@@ -82,13 +78,9 @@ Haz clic en **Filtros** para mostrar tres campos más: **Fuente**, **Campaña** 
 
 El número junto a **Filtros** indica cuántos filtros están activos, y cada uno aparece como una etiqueta bajo los campos (por ejemplo, **Fuente: newsletter**). Haz clic en la **×** de una etiqueta para quitar ese filtro.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-utm-filters.png" alt="Filtros abiertos con los campos Fuente, Campaña y Medio rellenados con newsletter, spring_offer y email, las etiquetas de los tres filtros activos y el botón Borrar" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: tres filtros activos, cada uno como una etiqueta que puedes quitar.
-</p>
+<Frame caption="Captura: tres filtros activos, cada uno como una etiqueta que puedes quitar.">
+  <img src="/images/wl-utm-filters.png" alt="Filtros abiertos con los campos Fuente, Campaña y Medio rellenados con newsletter, spring_offer y email, las etiquetas de los tres filtros activos y el botón Borrar" />
+</Frame>
 
 ### Borrar
 
@@ -114,7 +106,9 @@ Los parámetros UTM son etiquetas que se añaden a un enlace para saber de dónd
 | ID de clic de Google (gclid)   | Lo añade Google Ads automáticamente               | —                                  |
 | ID de clic de Facebook (fbclid)| Lo añaden Facebook e Instagram automáticamente    | —                                  |
 
-> **Error común:** Usar nombres distintos para lo mismo (por ejemplo, `Facebook`, `facebook`, `fb`). Elige un estilo y mantenlo para que los informes queden limpios.
+<Warning>
+  **Error común:** Usar nombres distintos para lo mismo (por ejemplo, `Facebook`, `facebook`, `fb`). Elige un estilo y mantenlo para que los informes queden limpios.
+</Warning>
 
 ## Ejemplos prácticos
 
@@ -139,8 +133,18 @@ Al cabo de una semana, usa las fechas **Desde** y **a** y compara la tarjeta **C
 
 Una lista rápida:
 
-1. Busca al usuario en **Analítica UTM**
-2. Mira su **Fuente** y su **Campaña**, o haz clic en **Acciones** para ver todos los campos
-3. Si está vacío, comprueba que usó el enlace correcto (con parámetros UTM)
+<Steps>
+  <Step>
+    Busca al usuario en **Analítica UTM**
+  </Step>
+  <Step>
+    Mira su **Fuente** y su **Campaña**, o haz clic en **Acciones** para ver todos los campos
+  </Step>
+  <Step>
+    Si está vacío, comprueba que usó el enlace correcto (con parámetros UTM)
+  </Step>
+</Steps>
 
-> **Consejo:** Para que los informes sean coherentes, crea una “regla de nombres de enlaces” para tu equipo (por ejemplo: fuente en minúsculas, campañas con guiones bajos y sin espacios).
+<Tip>
+  Para que los informes sean coherentes, crea una “regla de nombres de enlaces” para tu equipo (por ejemplo: fuente en minúsculas, campañas con guiones bajos y sin espacios).
+</Tip>

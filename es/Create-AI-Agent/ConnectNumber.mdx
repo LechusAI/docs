@@ -31,13 +31,23 @@ Tu número principal se queda con tu operador actual. Consigues un número en Ca
 
 ### Cómo funciona
 
-1. En **Números**, compra un número o añade uno que ya tengas (consulta [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers)).
-2. Asigna ese número a tu agente (consulta **Asigna el número al agente**, más abajo).
-3. Con tu operador, desvía tu número de empresa al número del agente.
+<Steps>
+  <Step>
+    En **Números**, compra un número o añade uno que ya tengas (consulta [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers)).
+  </Step>
+  <Step>
+    Asigna ese número a tu agente (consulta **Asigna el número al agente**, más abajo).
+  </Step>
+  <Step>
+    Con tu operador, desvía tu número de empresa al número del agente.
+  </Step>
+</Steps>
 
 A partir de ese momento, tus clientes siguen llamando al número que ya conocen y el agente atiende la llamada.
 
-> **Importante:** El desvío de llamadas se configura con tu operador, en tu teléfono o en tu centralita, no dentro de Callin.io. Algunos operadores lo permiten desde su área de clientes; otros piden una solicitud, y las llamadas desviadas pueden tener coste según tu tarifa.
+<Warning>
+  El desvío de llamadas se configura con tu operador, en tu teléfono o en tu centralita, no dentro de Callin.io. Algunos operadores lo permiten desde su área de clientes; otros piden una solicitud, y las llamadas desviadas pueden tener coste según tu tarifa.
+</Warning>
 
 ### Cuándo tiene sentido esta opción
 
@@ -53,31 +63,37 @@ Una clínica lleva años con el mismo fijo. Aparece en su web y en Google. La cl
 
 La portabilidad traslada tu número actual a Callin.io («Conserve su número existente»). Tus clientes siguen llamando al mismo número, sin depender del desvío.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/connect-number-porting.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: Números → Agregar número → Comprar número → elegir el país → Portabilidad → escribir el número → Verificar portabilidad.
-</p>
+<Frame caption="Vídeo: Números → Agregar número → Comprar número → elegir el país → Portabilidad → escribir el número → Verificar portabilidad.">
+  <video autoPlay muted loop playsInline src="/images/connect-number-porting.mp4" />
+</Frame>
 
 ### Inicia una solicitud de portabilidad
 
-1. Ve a [Números](https://app.callin.io/numbers) y haz clic en **\+ Agregar número** → **Comprar número**.
-2. En **País**, elige el país de tu número.
-3. En **Tipo de solicitud**, selecciona **Portabilidad**.
-4. Escribe tu número en **Número a portar** en formato internacional (ejemplo: `+34910000000`) y haz clic en **Verificar portabilidad**.
-5. Si el número se puede portar, haz clic en **Iniciar solicitud** y completa los **Requisitos de documentos** de ese país.
+<Steps>
+  <Step>
+    Ve a [Números](https://app.callin.io/numbers) y haz clic en **\+ Agregar número** → **Comprar número**.
+  </Step>
+  <Step>
+    En **País**, elige el país de tu número.
+  </Step>
+  <Step>
+    En **Tipo de solicitud**, selecciona **Portabilidad**.
+  </Step>
+  <Step>
+    Escribe tu número en **Número a portar** en formato internacional (ejemplo: `+34910000000`) y haz clic en **Verificar portabilidad**.
+  </Step>
+  <Step>
+    Si el número se puede portar, haz clic en **Iniciar solicitud** y completa los **Requisitos de documentos** de ese país.
+  </Step>
+</Steps>
 
-> **Nota:** **Portabilidad** solo aparece en los países que funcionan por solicitud (fuera de Estados Unidos y Canadá). En Estados Unidos y Canadá, la ventana muestra la compra instantánea.
+<Note>
+  **Portabilidad** solo aparece en los países que funcionan por solicitud (fuera de Estados Unidos y Canadá). En Estados Unidos y Canadá, la ventana muestra la compra instantánea.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/porting1.png" alt="Ventana Comprar un nuevo número para España con Portabilidad seleccionada, un número de ejemplo en Número a portar, el mensaje Este número es elegible para portabilidad con el Nombre del operador, el Número de teléfono y el Tipo, y el botón Iniciar solicitud" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la verificación de portabilidad. Si el número se puede portar, ves su operador, el número y el tipo, y puedes hacer clic en Iniciar solicitud.
-</p>
+<Frame caption="Captura: la verificación de portabilidad. Si el número se puede portar, ves su operador, el número y el tipo, y puedes hacer clic en Iniciar solicitud.">
+  <img src="/images/porting1.png" alt="Ventana Comprar un nuevo número para España con Portabilidad seleccionada, un número de ejemplo en Número a portar, el mensaje Este número es elegible para portabilidad con el Nombre del operador, el Número de teléfono y el Tipo, y el botón Iniciar solicitud" />
+</Frame>
 
 ### Qué te dice la verificación
 
@@ -86,7 +102,9 @@ La portabilidad traslada tu número actual a Callin.io («Conserve su número ex
 
 Después de hacer clic en **Iniciar solicitud**, el proceso es el mismo que para un número nuevo: documentos, tasas y revisión. Puedes seguirlo en la pestaña **Solicitudes de Números**. Consulta [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers) para más detalles.
 
-> **Consejo:** La portabilidad tarda más que comprar un número, porque tu operador actual tiene que liberarlo. No des de baja tu línea actual hasta que el número aparezca en tu lista de **Números**. Si tu número no se puede portar, el desvío de llamadas sigue siendo la forma más rápida de empezar.
+<Tip>
+  La portabilidad tarda más que comprar un número, porque tu operador actual tiene que liberarlo. No des de baja tu línea actual hasta que el número aparezca en tu lista de **Números**. Si tu número no se puede portar, el desvío de llamadas sigue siendo la forma más rápida de empezar.
+</Tip>
 
 ### Ejemplo práctico
 
@@ -98,20 +116,22 @@ BYOC significa **Bring Your Own Carrier** («trae tu propio operador»). Conecta
 
 Es la opción más avanzada, pensada para empresas que ya usan VoIP, una centralita (PBX) o su propio proveedor SIP.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/connect-number-byoc.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: BYOC → pestaña Telnyx → pestaña Otro proveedor SIP con sus pestañas Básico, Entrante y Saliente.
-</p>
+<Frame caption="Vídeo: BYOC → pestaña Telnyx → pestaña Otro proveedor SIP con sus pestañas Básico, Entrante y Saliente.">
+  <video autoPlay muted loop playsInline src="/images/connect-number-byoc.mp4" />
+</Frame>
 
 ### BYOC con Telnyx
 
 Si ya usas Telnyx:
 
-1. Ve a [BYOC](https://app.callin.io/byoc) y abre la pestaña **Telnyx**.
-2. Pega tu **Clave de Telnyx** y haz clic en **Comenzar**.
+<Steps>
+  <Step>
+    Ve a [BYOC](https://app.callin.io/byoc) y abre la pestaña **Telnyx**.
+  </Step>
+  <Step>
+    Pega tu **Clave de Telnyx** y haz clic en **Comenzar**.
+  </Step>
+</Steps>
 
 Callin.io guarda la clave, obtiene tus números activos de Telnyx, los guarda en tu cuenta, aprovisiona la troncal SIP y crea los números de teléfono para llamadas entrantes y salientes. Después, tus números de Telnyx aparecen en **Números**.
 
@@ -125,7 +145,9 @@ Si tu proveedor no es Telnyx, abre la pestaña **Otro proveedor SIP** (**Troncal
 
 Cuando termines, haz clic en **Guardar e importar**. Callin.io comprueba entonces que el número se puede usar para llamar.
 
-> **Importante:** BYOC se recomienda para empresas que ya tienen un equipo de telefonía, un proveedor SIP o una centralita. Para el detalle de cada campo, consulta [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers#byoc-troncal-sip).
+<Warning>
+  BYOC se recomienda para empresas que ya tienen un equipo de telefonía, un proveedor SIP o una centralita. Para el detalle de cada campo, consulta [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers#byoc-troncal-sip).
+</Warning>
 
 ### Ejemplo práctico
 
@@ -135,19 +157,25 @@ Una empresa ya usa Telnyx para sus líneas. En lugar de comprar números nuevos,
 
 Tener el número en tu cuenta no es el último paso. El agente solo usa un número que tenga asignado. En **Números**, un número sin asignar muestra **Este número no está asignado a ningún agente**, y en **Agentes de IA** un agente sin número muestra **Sin número telefónico asignado**.
 
-1. Ve a **Agentes de IA**.
-2. Haz clic en el menú **⋮** del agente y selecciona **Asignar número**.
-3. En la ventana **Asignar número a**, busca el número (puedes buscar por número, etiqueta u operador) y haz clic en **Asignar**.
+<Steps>
+  <Step>
+    Ve a **Agentes de IA**.
+  </Step>
+  <Step>
+    Haz clic en el menú **⋮** del agente y selecciona **Asignar número**.
+  </Step>
+  <Step>
+    En la ventana **Asignar número a**, busca el número (puedes buscar por número, etiqueta u operador) y haz clic en **Asignar**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/connect-number-assign.png" alt="Ventana Asignar número de un agente, con el buscador, los botones Filtros y Actualizar, y la lista de números con su estado, operador y botón Asignar" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la ventana Asignar número. La columna Estado indica si cada número está libre o ya asignado a otro agente.">
+  <img src="/images/connect-number-assign.png" alt="Ventana Asignar número de un agente, con el buscador, los botones Filtros y Actualizar, y la lista de números con su estado, operador y botón Asignar" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Asignar número. La columna Estado indica si cada número está libre o ya asignado a otro agente.
-</p>
-
-> **Error común:** Asignar un número que está usando otro agente. Como avisa la ventana, **asignarlo aquí lo desvinculará del otro agente**. Si tienes un agente para soporte y otro para ventas, comprueba que cada línea está asignada al correcto.
+<Warning>
+  **Error común:** Asignar un número que está usando otro agente. Como avisa la ventana, **asignarlo aquí lo desvinculará del otro agente**. Si tienes un agente para soporte y otro para ventas, comprueba que cada línea está asignada al correcto.
+</Warning>
 
 ## Qué opción deberías elegir
 

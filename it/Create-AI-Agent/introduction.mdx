@@ -5,9 +5,9 @@ sidebarTitle: "Prima di creare"
 icon: "rocket"
 ---
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" />
+</Frame>
 
 In pochi minuti, questa pagina ti spiega le basi: cos'è un agente di chiamata IA, come ottiene un numero di telefono, come vengono addebitate le chiamate e come si collega ai tuoi strumenti. Poi sarai pronto a creare il tuo primo agente.
 
@@ -55,7 +55,9 @@ Puoi anche usare il tuo operatore con **BYOC (Tronco SIP)**.
 
 Una volta attivo il numero, il tuo agente lo usa come una vera linea telefonica, con ID chiamante, rilevamento della segreteria e cronologia delle chiamate.
 
-> **Suggerimento:** Scopri ogni opzione passo dopo passo in [Numeri e BYOC](/it/Create-AI-Agent/Configure-Numbers).
+<Tip>
+  Scopri ogni opzione passo dopo passo in [Numeri e BYOC](/it/Create-AI-Agent/Configure-Numbers).
+</Tip>
 
 ---
 
@@ -63,8 +65,14 @@ Una volta attivo il numero, il tuo agente lo usa come una vera linea telefonica,
 
 Ogni chiamata usa due tipi di minuti:
 
-1. **Minuti dell'operatore**: addebitati dal fornitore telefonico (Twilio, Telnyx o il tuo operatore) per la connessione telefonica.
-2. **Minuti IA di Callin**: coprono l'IA che ascolta, ragiona e risponde durante la chiamata.
+<Steps>
+  <Step>
+    **Minuti dell'operatore**: addebitati dal fornitore telefonico (Twilio, Telnyx o il tuo operatore) per la connessione telefonica.
+  </Step>
+  <Step>
+    **Minuti IA di Callin**: coprono l'IA che ascolta, ragiona e risponde durante la chiamata.
+  </Step>
+</Steps>
 
 <Note>
 **Esempio:** una chiamata di 5 minuti = 5 minuti dell'operatore + 5 minuti IA di Callin.
@@ -72,7 +80,9 @@ Ogni chiamata usa due tipi di minuti:
 
 Quando acquisti un numero tramite Callin.io, **non c'è alcun costo aggiuntivo della piattaforma** per il numero stesso.
 
-> **Importante:** Le chiamate effettuate con numeri acquistati su Callin.io e con il nostro operatore hanno un **addebito minimo di 1 minuto**. Una chiamata di 20 secondi viene addebitata come 1 minuto. Dopo il primo minuto, paghi la durata effettiva. Questa regola non si applica alle chiamate di prova dal browser, ai numeri importati (Twilio o Telnyx) né al tuo tronco SIP.
+<Warning>
+  Le chiamate effettuate con numeri acquistati su Callin.io e con il nostro operatore hanno un **addebito minimo di 1 minuto**. Una chiamata di 20 secondi viene addebitata come 1 minuto. Dopo il primo minuto, paghi la durata effettiva. Questa regola non si applica alle chiamate di prova dal browser, ai numeri importati (Twilio o Telnyx) né al tuo tronco SIP.
+</Warning>
 
 Puoi controllare i minuti totali in **Home** (**Totale utilizzo**). Per vedere il tuo piano o aggiungere credito, apri **Aggiorna piano**.
 

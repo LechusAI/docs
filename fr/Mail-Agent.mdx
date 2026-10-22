@@ -15,7 +15,9 @@ Un **agent mail** est un assistant qui surveille une boîte de réception pour v
 
 Configurer votre premier agent prend une dizaine de minutes et ne demande aucune compétence technique.
 
-> **Remarque :** Le Gestionnaire d'e-mails IA est marqué **Bêta**. Il évolue encore, certains écrans peuvent donc être un peu différents dans votre compte.
+<Note>
+  Le Gestionnaire d'e-mails IA est marqué **Bêta**. Il évolue encore, certains écrans peuvent donc être un peu différents dans votre compte.
+</Note>
 
 ## Ce qu'il vous faut avant de commencer
 
@@ -30,33 +32,39 @@ La boîte n'a pas besoin d'être prête tout de suite. Vous pouvez créer l'agen
 
 Ouvrez **Agents mail**. C'est la liste de tous les agents que vous avez créés. Cliquez sur **Créer un agent** en haut à droite.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents1.png" alt="Liste Agents mail avec quatre agents, chacun avec l'avertissement Aucun e-mail assigné, une barre de recherche et le bouton Créer un agent" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La liste Agents mail. Chaque agent affiche son nom, sa date de création et un avertissement orange tant qu'aucune boîte n'est connectée.
-</p>
+<Frame caption="La liste Agents mail. Chaque agent affiche son nom, sa date de création et un avertissement orange tant qu'aucune boîte n'est connectée.">
+  <img src="/images/mailagents1.png" alt="Liste Agents mail avec quatre agents, chacun avec l'avertissement Aucun e-mail assigné, une barre de recherche et le bouton Créer un agent" />
+</Frame>
 
 Un court assistant s'ouvre, en cinq étapes :
 
-1. **Nommez votre agent mail** : un nom que votre équipe reconnaîtra, comme « Suivi des commandes » ou « Boîte ventes ». Jusqu'à 50 caractères.
-2. **Prompt système** : comment l'agent doit traiter les e-mails. Facultatif.
-3. **Catégories d'e-mail** : des étiquettes pour classer le courrier entrant. Facultatif.
-4. **Règles d'automatisation** : quels expéditeurs reçoivent des réponses automatiques et qui reçoit une copie.
-5. **Connecter l'e-mail** : la boîte dont l'agent va s'occuper.
+<Steps>
+  <Step>
+    **Nommez votre agent mail** : un nom que votre équipe reconnaîtra, comme « Suivi des commandes » ou « Boîte ventes ». Jusqu'à 50 caractères.
+  </Step>
+  <Step>
+    **Prompt système** : comment l'agent doit traiter les e-mails. Facultatif.
+  </Step>
+  <Step>
+    **Catégories d'e-mail** : des étiquettes pour classer le courrier entrant. Facultatif.
+  </Step>
+  <Step>
+    **Règles d'automatisation** : quels expéditeurs reçoivent des réponses automatiques et qui reçoit une copie.
+  </Step>
+  <Step>
+    **Connecter l'e-mail** : la boîte dont l'agent va s'occuper.
+  </Step>
+</Steps>
 
 Chaque étape après le nom propose **Ignorer**, et vous pouvez tout modifier plus tard depuis les onglets de l'agent.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vidéo : les cinq étapes de l'assistant, du nom à la connexion de la boîte.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : les cinq étapes de l'assistant, du nom à la connexion de la boîte.
-</p>
-
-> **Important :** L'agent est créé quand vous passez l'étape **Catégories d'e-mail**. Si vous fermez l'assistant après cette étape, l'agent reste dans la liste. Vous pouvez le terminer ou le supprimer depuis là.
+<Warning>
+  L'agent est créé quand vous passez l'étape **Catégories d'e-mail**. Si vous fermez l'assistant après cette étape, l'agent reste dans la liste. Vous pouvez le terminer ou le supprimer depuis là.
+</Warning>
 
 Sous le nom, dans la liste, vous verrez **Aucun e-mail assigné** en orange. C'est normal : aucune boîte n'est encore connectée. Vous réglerez cela à l'étape 4.
 
@@ -68,13 +76,9 @@ Chaque ligne a un menu **⋮** avec trois actions :
 
 La configuration de l'agent a quatre onglets : **Agent**, **Catégories**, **Boîte mail** et **Avancé**. Les étapes suivantes les parcourent dans l'ordre. Vous pouvez renommer l'agent depuis le champ de texte en haut de l'écran.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Modifier un agent → écrire l'invite de conversation → choisir le modèle → ajouter une catégorie → parcourir l'onglet Avancé.
-</p>
+<Frame caption="Vidéo : Modifier un agent → écrire l'invite de conversation → choisir le modèle → ajouter une catégorie → parcourir l'onglet Avancé.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" />
+</Frame>
 
 ## Étape 2 — Dire à l'agent comment se comporter
 
@@ -92,7 +96,9 @@ Plus vous êtes précis, plus les résultats sont prévisibles. Une version plus
 
 Le compteur en bas à droite indique combien vous avez utilisé sur les 4000 caractères. Les modifications enregistrées s'appliquent aux nouveaux e-mails reçus.
 
-> **Astuce :** Écrivez ce que l'agent ne doit **pas** faire, pas seulement ce qu'il doit faire. Des phrases comme « ne confirme jamais de rendez-vous », « ne promets jamais de remboursement » ou « ne parle jamais de prix par e-mail » évitent la plupart des surprises.
+<Tip>
+  Écrivez ce que l'agent ne doit **pas** faire, pas seulement ce qu'il doit faire. Des phrases comme « ne confirme jamais de rendez-vous », « ne promets jamais de remboursement » ou « ne parle jamais de prix par e-mail » évitent la plupart des surprises.
+</Tip>
 
 ### Intelligence IA (LLM)
 
@@ -111,7 +117,9 @@ Les nouveaux agents commencent avec **GPT 4.1 Mini**.
 
 Dans le même panneau se trouve **Température**, un curseur de 0 à 1 qui démarre à 0,7. Les valeurs basses gardent une formulation constante et reproductible. Les valeurs hautes la rendent plus variée et naturelle, mais moins prévisible.
 
-> **Pour les débutants :** Vous n'avez pas besoin de toucher à tout cela. Si les réponses semblent robotiques, essayez Claude Sonnet ou augmentez un peu la température. Si elles varient trop, baissez-la.
+<Info>
+  **Pour les débutants :** Vous n'avez pas besoin de toucher à tout cela. Si les réponses semblent robotiques, essayez Claude Sonnet ou augmentez un peu la température. Si elles varient trop, baissez-la.
+</Info>
 
 ## Étape 3 — Organiser vos e-mails avec des catégories
 
@@ -129,13 +137,9 @@ Cliquez sur **Ajouter une catégorie**. Une fenêtre s'ouvre avec ces champs :
 
 Vous pouvez choisir une couleur prédéfinie ou créer la vôtre avec la pastille **\+**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-categories.png" alt="Fenêtre Ajouter une catégorie avec un nom, une description, la couleur verte et les deux interrupteurs de réponse activés" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La fenêtre Ajouter une catégorie. Le badge à droite montre l'aspect de l'étiquette.
-</p>
+<Frame caption="La fenêtre Ajouter une catégorie. Le badge à droite montre l'aspect de l'étiquette.">
+  <img src="/images/mail-agent-categories.png" alt="Fenêtre Ajouter une catégorie avec un nom, une description, la couleur verte et les deux interrupteurs de réponse activés" />
+</Frame>
 
 Sous les couleurs, il y a deux interrupteurs :
 
@@ -146,9 +150,13 @@ Si vous désactivez les deux, l'agent se contente d'étiqueter le message (**Cat
 
 Cliquez sur **Ajouter une catégorie** pour l'ajouter. Chaque catégorie doit avoir un nom et une description.
 
-> **Erreur fréquente :** Écrire une description vague, comme « trucs importants ». L'agent utilise ce texte pour décider quels e-mails vont ici, alors décrivez le contenu réel : « messages qui demandent une facture, un remboursement ou un changement de moyen de paiement ». Si des e-mails tombent dans la mauvaise catégorie, préciser la description est généralement le plus rapide.
+<Warning>
+  **Erreur fréquente :** Écrire une description vague, comme « trucs importants ». L'agent utilise ce texte pour décider quels e-mails vont ici, alors décrivez le contenu réel : « messages qui demandent une facture, un remboursement ou un changement de moyen de paiement ». Si des e-mails tombent dans la mauvaise catégorie, préciser la description est généralement le plus rapide.
+</Warning>
 
-> **Important :** Commencez avec **Générer un brouillon de réponse** activé et **Réponse auto** désactivé. Lisez les brouillons pendant quelques jours. Quand l'agent maîtrise le ton et les faits, activez les réponses automatiques là où une erreur serait sans conséquence.
+<Warning>
+  Commencez avec **Générer un brouillon de réponse** activé et **Réponse auto** désactivé. Lisez les brouillons pendant quelques jours. Quand l'agent maîtrise le ton et les faits, activez les réponses automatiques là où une erreur serait sans conséquence.
+</Warning>
 
 ## Étape 4 — Connecter la boîte
 
@@ -174,7 +182,9 @@ Si vous choisissez **Autre e-mail (IMAP et SMTP)**, le formulaire **Configuratio
 
 Cliquez sur **Connecter la boîte**. Vos identifiants sont chiffrés et stockés en toute sécurité. Callin.io importe ensuite les messages de la période choisie (**Synchronisation de la boîte mail**). Tant que la synchronisation n'est pas terminée, les nouveaux messages peuvent mettre un moment à apparaître.
 
-> **Remarque :** Vous pouvez passer cette étape et connecter la boîte plus tard. Tout le reste reste enregistré, mais l'agent ne traitera rien tant qu'aucune boîte n'est liée.
+<Note>
+  Vous pouvez passer cette étape et connecter la boîte plus tard. Tout le reste reste enregistré, mais l'agent ne traitera rien tant qu'aucune boîte n'est liée.
+</Note>
 
 ## Étape 5 — Affiner le comportement (facultatif)
 
@@ -191,9 +201,13 @@ Ouvrez l'onglet **Avancé**. Tout ici est facultatif, et les deux règles sont d
 
 C'est pratique quand un responsable veut garder un œil sur ce que l'agent envoie.
 
-> **Astuce :** Si vous activez les réponses automatiques dans une catégorie, activez aussi la copie, au moins le temps de faire confiance à l'agent.
+<Tip>
+  Si vous activez les réponses automatiques dans une catégorie, activez aussi la copie, au moins le temps de faire confiance à l'agent.
+</Tip>
 
-> **Avertissement :** Si la copie va à un collègue, choisissez **CCI (masqué)**. Avec **CC (visible)**, votre client voit l'adresse de votre collègue dans chaque message.
+<Info>
+  **Avertissement :** Si la copie va à un collègue, choisissez **CCI (masqué)**. Avec **CC (visible)**, votre client voit l'adresse de votre collègue dans chaque message.
+</Info>
 
 ### Priorité de l'agent
 
@@ -207,7 +221,9 @@ Vous ne pouvez changer l'ordre qu'une fois une boîte connectée. D'ici là, l'�
 
 Quand vous avez des modifications non enregistrées, une barre apparaît en bas de l'écran avec deux boutons : **Annuler les modifications**, qui les annule, et **Sauvegarder**, qui les enregistre.
 
-> **Important :** Ne quittez pas l'écran tant que cette barre est visible. Si vous partez sans cliquer sur **Sauvegarder**, vos modifications sont perdues.
+<Warning>
+  Ne quittez pas l'écran tant que cette barre est visible. Si vous partez sans cliquer sur **Sauvegarder**, vos modifications sont perdues.
+</Warning>
 
 ## La section E-mail : lire et répondre au même endroit
 
@@ -221,9 +237,17 @@ Quand vous avez des modifications non enregistrées, une barre apparaît en bas 
 
 Trois signes rapides que tout est en place :
 
-1. Dans la liste **Agents mail**, votre agent n'affiche plus **Aucun e-mail assigné** sous son nom.
-2. Envoyez un e-mail de test à la boîte connectée depuis une autre de vos adresses, avec des mots qui correspondent à l'une de vos catégories.
-3. Attendez quelques minutes et ouvrez [E-mail](/fr/Mail-Agent-Email). Selon la catégorie, vous trouverez un brouillon prêt à relire ou une réponse déjà envoyée.
+<Steps>
+  <Step>
+    Dans la liste **Agents mail**, votre agent n'affiche plus **Aucun e-mail assigné** sous son nom.
+  </Step>
+  <Step>
+    Envoyez un e-mail de test à la boîte connectée depuis une autre de vos adresses, avec des mots qui correspondent à l'une de vos catégories.
+  </Step>
+  <Step>
+    Attendez quelques minutes et ouvrez [E-mail](/fr/Mail-Agent-Email). Selon la catégorie, vous trouverez un brouillon prêt à relire ou une réponse déjà envoyée.
+  </Step>
+</Steps>
 
 Si rien ne se passe, vérifiez dans cet ordre :
 

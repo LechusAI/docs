@@ -13,13 +13,9 @@ I ticket vengono creati dagli agenti che hanno attivato **Registrazione segnalaz
 
 Li trovi nel menu a sinistra, in **Telefonia** ([aprili qui](https://app.callin.io/tickets)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/tickets-list.png" alt="Pagina Ticket con i pulsanti Configurazione callback e Aggiorna, i filtri Tutti, In corso, Risolto e Archiviato, la casella di ricerca e il messaggio Nessun ticket trovato" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la pagina Ticket. Quando i tuoi agenti registrano segnalazioni, compaiono qui.
-</p>
+<Frame caption="Screenshot: la pagina Ticket. Quando i tuoi agenti registrano segnalazioni, compaiono qui.">
+  <img src="/images/tickets-list.png" alt="Pagina Ticket con i pulsanti Configurazione callback e Aggiorna, i filtri Tutti, In corso, Risolto e Archiviato, la casella di ricerca e il messaggio Nessun ticket trovato" />
+</Frame>
 
 ## Trovare i ticket
 
@@ -29,7 +25,9 @@ Li trovi nel menu a sinistra, in **Telefonia** ([aprili qui](https://app.callin.
 
 Per ogni ticket vedi l’**ID ticket**, il **Nome contatto**, il **Numero di telefono**, l’**Email**, la **Data di apertura**, l’**Oggetto**, lo **Stato**, il **Commento operatore** e l’**Ultimo aggiornamento**.
 
-> **Suggerimento:** Puoi trovare le chiamate di un ticket anche nello [Storico chiamate](/it/Create-AI-Agent/Call-Actions), con il filtro **ID ticket**.
+<Tip>
+  Puoi trovare le chiamate di un ticket anche nello [Storico chiamate](/it/Create-AI-Agent/Call-Actions), con il filtro **ID ticket**.
+</Tip>
 
 ## Lavorare su un ticket
 
@@ -65,9 +63,13 @@ Un **callback** è una chiamata che l’agente fa al cliente per dirgli come è 
 
 Clicca su **Salva configurazione**. Vedrai **Configurazione salvata**.
 
-> **Esempio:** _«Buongiorno `{{contact_name}}`, la chiamiamo per la segnalazione del `{{ticket_date}}`: `{{ticket_subject}}`. `{{operator_comment}}` Possiamo aiutarla in altro?»_
+<Info>
+  **Esempio:** _«Buongiorno `{{contact_name}}`, la chiamiamo per la segnalazione del `{{ticket_date}}`: `{{ticket_subject}}`. `{{operator_comment}}` Possiamo aiutarla in altro?»_
+</Info>
 
-> **Importante:** Scrivi un **Commento operatore** chiaro quando risolvi un ticket. Se lo script usa `{{operator_comment}}`, è quel commento che sente il cliente.
+<Warning>
+  Scrivi un **Commento operatore** chiaro quando risolvi un ticket. Se lo script usa `{{operator_comment}}`, è quel commento che sente il cliente.
+</Warning>
 
 ## Risoluzione dei problemi
 

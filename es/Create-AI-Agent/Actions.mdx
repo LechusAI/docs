@@ -10,20 +10,24 @@ Acciones es el lugar donde conectas Callin con otras plataformas para que tus ag
 
 [Abrir Acciones en la consola](https://app.callin.io/actions)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions1.png" alt="La página Integraciones de Callin, con el buscador, los filtros por categoría (Todas, Calendario, CRM, Automatización, Comunicación, IA, Personalizada) y tarjetas de integraciones como Claude, Google Calendar, Cal.com, GoHighLevel, Zoho, N8N, Zapier, Make.com y WhatsApp." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la página Integraciones, donde conectas plataformas externas con Callin. Cada tarjeta muestra su categoría, si está conectada y el botón que debes usar.">
+  <img src="/images/actions1.png" alt="La página Integraciones de Callin, con el buscador, los filtros por categoría (Todas, Calendario, CRM, Automatización, Comunicación, IA, Personalizada) y tarjetas de integraciones como Claude, Google Calendar, Cal.com, GoHighLevel, Zoho, N8N, Zapier, Make.com y WhatsApp." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página Integraciones, donde conectas plataformas externas con Callin. Cada tarjeta muestra su categoría, si está conectada y el botón que debes usar.
-</p>
-
-> **Consejo:** Si no sabes por dónde empezar, empieza por **Calendario** (para agendar citas) o **Automatización** (para flujos como seguimientos y actualizaciones del CRM).
+<Tip>
+  Si no sabes por dónde empezar, empieza por **Calendario** (para agendar citas) o **Automatización** (para flujos como seguimientos y actualizaciones del CRM).
+</Tip>
 
 ## Dónde encontrarlo
 
-1. Abre la consola de Callin.
-2. En el menú de la izquierda, ve a **Integraciones → Acciones**.
+<Steps>
+  <Step>
+    Abre la consola de Callin.
+  </Step>
+  <Step>
+    En el menú de la izquierda, ve a **Integraciones → Acciones**.
+  </Step>
+</Steps>
 
 En la parte superior de la página encontrarás:
 
@@ -31,13 +35,9 @@ En la parte superior de la página encontrarás:
 - **Filtros por categoría**: **Todas**, **Calendario**, **CRM**, **Automatización**, **Comunicación**, **IA** y **Personalizada**.
 - **Solicitar integración**: pide una plataforma que todavía no esté en la lista.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/actions-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la página Integraciones, los detalles de una integración conectada y los filtros Calendario, CRM, Automatización y Comunicación.
-</p>
+<Frame caption="Vídeo: la página Integraciones, los detalles de una integración conectada y los filtros Calendario, CRM, Automatización y Comunicación.">
+  <video autoPlay muted loop playsInline src="/images/actions-tour.mp4" />
+</Frame>
 
 ## Cómo funciona la conexión
 
@@ -51,35 +51,39 @@ Cada tarjeta muestra su categoría, una breve descripción y un estado o un bot�
 
 Haz clic en una tarjeta conectada para ver sus detalles: qué hace, sus funciones y los botones **Ver** y **Desconectar**. También tienes **Desconectar** en el menú **⋮**, arriba a la derecha de la tarjeta.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions-details.png" alt="La ventana de detalles de la integración Google Calendar con su descripción, la lista de funciones, el estado Conectado y los botones Ver y Desconectar." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: los detalles de una integración conectada.
-</p>
+<Frame caption="Captura: los detalles de una integración conectada.">
+  <img src="/images/actions-details.png" alt="La ventana de detalles de la integración Google Calendar con su descripción, la lista de funciones, el estado Conectado y los botones Ver y Desconectar." />
+</Frame>
 
 Flujo general:
 
-1. Haz clic en el botón de la tarjeta (**Conectar**, **Gestionar** o **Ir a n8n**).
-2. Sigue los pasos de configuración. Según la plataforma, Callin abre la página de inicio de sesión de la plataforma en una pestaña nueva (por ejemplo, GoHighLevel o Zapier) o una página de configuración dentro de Callin (por ejemplo, Claude, Cal.com o Integración personalizada).
-3. Vuelve a Callin y comprueba que el estado de la tarjeta se ha actualizado.
+<Steps>
+  <Step>
+    Haz clic en el botón de la tarjeta (**Conectar**, **Gestionar** o **Ir a n8n**).
+  </Step>
+  <Step>
+    Sigue los pasos de configuración. Según la plataforma, Callin abre la página de inicio de sesión de la plataforma en una pestaña nueva (por ejemplo, GoHighLevel o Zapier) o una página de configuración dentro de Callin (por ejemplo, Claude, Cal.com o Integración personalizada).
+  </Step>
+  <Step>
+    Vuelve a Callin y comprueba que el estado de la tarjeta se ha actualizado.
+  </Step>
+</Steps>
 
-> **Importante:** Las pantallas de autorización pueden variar según tu cuenta, tu plan o cómo gestione los permisos tu organización.
+<Warning>
+  Las pantallas de autorización pueden variar según tu cuenta, tu plan o cómo gestione los permisos tu organización.
+</Warning>
 
-> **Error común:** Conectar la cuenta equivocada (por ejemplo, la cuenta de Google que no es) y después no entender por qué los eventos o los datos aparecen en otro sitio.
+<Warning>
+  **Error común:** Conectar la cuenta equivocada (por ejemplo, la cuenta de Google que no es) y después no entender por qué los eventos o los datos aparecen en otro sitio.
+</Warning>
 
 ## Integraciones disponibles
 
 A continuación verás para qué se suele usar cada plataforma y cómo se conecta desde la página Acciones.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/actions-connect.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: las páginas de configuración de Claude, Cal.com e Integración personalizada.
-</p>
+<Frame caption="Vídeo: las páginas de configuración de Claude, Cal.com e Integración personalizada.">
+  <video autoPlay muted loop playsInline src="/images/actions-connect.mp4" />
+</Frame>
 
 ### Claude (Nuevo)
 
@@ -95,11 +99,23 @@ A continuación verás para qué se suele usar cada plataforma y cómo se conect
 
 **Cómo conectarlo en Callin**
 
-1. En la tarjeta **Claude**, haz clic en **Conectar**. Se abre la página **Claude × Callin**.
-2. Haz clic en **Conectar Claude** para abrir Claude.
-3. En la configuración de Claude, abre **Conectores** y añade un conector personalizado.
-4. Pega la **URL del conector** que aparece en la página (usa **Copiar URL**).
-5. Inicia sesión en Callin si te lo pide y haz clic en **Permitir acceso** en la pantalla de consentimiento.
+<Steps>
+  <Step>
+    En la tarjeta **Claude**, haz clic en **Conectar**. Se abre la página **Claude × Callin**.
+  </Step>
+  <Step>
+    Haz clic en **Conectar Claude** para abrir Claude.
+  </Step>
+  <Step>
+    En la configuración de Claude, abre **Conectores** y añade un conector personalizado.
+  </Step>
+  <Step>
+    Pega la **URL del conector** que aparece en la página (usa **Copiar URL**).
+  </Step>
+  <Step>
+    Inicia sesión en Callin si te lo pide y haz clic en **Permitir acceso** en la pantalla de consentimiento.
+  </Step>
+</Steps>
 
 No hace falta pegar ninguna clave de API: la autorización se hace de forma segura en Callin.
 
@@ -109,15 +125,13 @@ No hace falta pegar ninguna clave de API: la autorización se hace de forma segu
 - “Resume mi última llamada con un cliente.”
 - “Busca las llamadas que ha atendido mi agente de ventas esta semana.”
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions-claude.png" alt="La página Claude × Callin con el estado No conectado, la lista de lo que puedes hacer, los botones Conectar Claude y Más información y los pasos para conectarlo." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la página Claude × Callin.">
+  <img src="/images/actions-claude.png" alt="La página Claude × Callin con el estado No conectado, la lista de lo que puedes hacer, los botones Conectar Claude y Más información y los pasos para conectarlo." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página Claude × Callin.
-</p>
-
-> **Importante:** Esta primera versión es de solo lectura: Claude no puede hacer llamadas, cambiar agentes ni modificar la facturación.
+<Warning>
+  Esta primera versión es de solo lectura: Claude no puede hacer llamadas, cambiar agentes ni modificar la facturación.
+</Warning>
 
 ### Google Calendar
 
@@ -143,9 +157,17 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. Busca **Cal.com** y haz clic en **Conectar**.
-2. En la página de Cal.com, pega tu clave de API en **Conectar con API Key**. La encontrarás en la configuración de Cal.com (hay un enlace en la página).
-3. Haz clic en **Conectar**, vuelve a Acciones y comprueba que la tarjeta muestra **Conectado**.
+<Steps>
+  <Step>
+    Busca **Cal.com** y haz clic en **Conectar**.
+  </Step>
+  <Step>
+    En la página de Cal.com, pega tu clave de API en **Conectar con API Key**. La encontrarás en la configuración de Cal.com (hay un enlace en la página).
+  </Step>
+  <Step>
+    Haz clic en **Conectar**, vuelve a Acciones y comprueba que la tarjeta muestra **Conectado**.
+  </Step>
+</Steps>
 
 **Ejemplos de uso con agentes de IA**
 
@@ -158,9 +180,17 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. En la tarjeta **GoHighLevel**, haz clic en **Conectar**.
-2. Se abre una pestaña nueva en GoHighLevel: elige tu ubicación y completa los pasos de autorización.
-3. Vuelve a Callin y comprueba que el estado de la integración se ha actualizado.
+<Steps>
+  <Step>
+    En la tarjeta **GoHighLevel**, haz clic en **Conectar**.
+  </Step>
+  <Step>
+    Se abre una pestaña nueva en GoHighLevel: elige tu ubicación y completa los pasos de autorización.
+  </Step>
+  <Step>
+    Vuelve a Callin y comprueba que el estado de la integración se ha actualizado.
+  </Step>
+</Steps>
 
 **Ejemplos de uso con agentes de IA**
 
@@ -173,9 +203,17 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. En la tarjeta **Zoho**, haz clic en **Conectar**.
-2. Sigue los pasos de autorización.
-3. Comprueba que la tarjeta muestra **Conectado**.
+<Steps>
+  <Step>
+    En la tarjeta **Zoho**, haz clic en **Conectar**.
+  </Step>
+  <Step>
+    Sigue los pasos de autorización.
+  </Step>
+  <Step>
+    Comprueba que la tarjeta muestra **Conectado**.
+  </Step>
+</Steps>
 
 **Ejemplos de uso con agentes de IA**
 
@@ -202,9 +240,17 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. En la tarjeta **Zapier**, haz clic en **Conectar**. Se abre una pestaña nueva en Zapier.
-2. Inicia sesión en Zapier y completa los pasos de conexión.
-3. Crea en Zapier los flujos “si pasa esto, haz aquello” que necesites. Consulta [Zapier](/es/Create-AI-Agent/Connect-Zapier).
+<Steps>
+  <Step>
+    En la tarjeta **Zapier**, haz clic en **Conectar**. Se abre una pestaña nueva en Zapier.
+  </Step>
+  <Step>
+    Inicia sesión en Zapier y completa los pasos de conexión.
+  </Step>
+  <Step>
+    Crea en Zapier los flujos “si pasa esto, haz aquello” que necesites. Consulta [Zapier](/es/Create-AI-Agent/Connect-Zapier).
+  </Step>
+</Steps>
 
 **Ejemplos de uso con agentes de IA**
 
@@ -217,9 +263,17 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. En la tarjeta **Make.com**, haz clic en **Conectar**.
-2. Sigue los pasos de conexión.
-3. Crea en Make los escenarios que necesites. Consulta [Make](/es/Create-AI-Agent/Connect-Make).
+<Steps>
+  <Step>
+    En la tarjeta **Make.com**, haz clic en **Conectar**.
+  </Step>
+  <Step>
+    Sigue los pasos de conexión.
+  </Step>
+  <Step>
+    Crea en Make los escenarios que necesites. Consulta [Make](/es/Create-AI-Agent/Connect-Make).
+  </Step>
+</Steps>
 
 **Ejemplos de uso con agentes de IA**
 
@@ -249,28 +303,36 @@ Para la configuración completa, consulta [Google Calendar](/es/Create-AI-Agent/
 
 **Cómo conectarlo en Callin**
 
-1. Haz clic en **Conectar** en la tarjeta **Integración personalizada**. Se abre la página **Recibir Datos (Realizar Llamada)**, con dos pestañas: **Flujos de trabajo de IA** y **Logs**.
-2. Haz clic en **Crear flujo de trabajo** y rellena:
-   - **Nombre del flujo de trabajo**
-   - **Agente de IA**: el agente que hará la llamada.
-   - **Campos obligatorios**: los datos que debe incluir tu solicitud. Por defecto: **name**, **phone** y **email**, cada uno con su definición. Usa **Agregar entidad** para añadir más (por ejemplo, `firstName`, `appointmentDate` o `isInterested`).
-3. Haz clic en **Guardar**. Cada flujo tiene su propia **URL de webhook**: cópiala y úsala para enviar datos desde tus servicios externos. Asegúrate de incluir los campos obligatorios en tu solicitud.
-4. Revisa la pestaña **Logs** para ver las solicitudes recibidas.
+<Steps>
+  <Step>
+    Haz clic en **Conectar** en la tarjeta **Integración personalizada**. Se abre la página **Recibir Datos (Realizar Llamada)**, con dos pestañas: **Flujos de trabajo de IA** y **Logs**.
+  </Step>
+  <Step>
+    Haz clic en **Crear flujo de trabajo** y rellena:
+    - **Nombre del flujo de trabajo**
+    - **Agente de IA**: el agente que hará la llamada.
+    - **Campos obligatorios**: los datos que debe incluir tu solicitud. Por defecto: **name**, **phone** y **email**, cada uno con su definición. Usa **Agregar entidad** para añadir más (por ejemplo, `firstName`, `appointmentDate` o `isInterested`).
+  </Step>
+  <Step>
+    Haz clic en **Guardar**. Cada flujo tiene su propia **URL de webhook**: cópiala y úsala para enviar datos desde tus servicios externos. Asegúrate de incluir los campos obligatorios en tu solicitud.
+  </Step>
+  <Step>
+    Revisa la pestaña **Logs** para ver las solicitudes recibidas.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/actions-custom.png" alt="La ventana Crear flujo de trabajo con el nombre del flujo, el agente de IA, la tabla de campos obligatorios (name, phone, email) con sus definiciones y el botón Agregar entidad." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: crear un flujo de trabajo en Integración personalizada.
-</p>
+<Frame caption="Captura: crear un flujo de trabajo en Integración personalizada.">
+  <img src="/images/actions-custom.png" alt="La ventana Crear flujo de trabajo con el nombre del flujo, el agente de IA, la tabla de campos obligatorios (name, phone, email) con sus definiciones y el botón Agregar entidad." />
+</Frame>
 
 **Ejemplos de uso con agentes de IA**
 
 - Cuando un lead nuevo rellena un formulario en tu web, envíalo a la URL de webhook del flujo para que el agente lo llame enseguida.
 - Lanza llamadas desde tu propio backend o CRM cada vez que un contacto llegue a una fase concreta.
 
-> **Consejo:** La integración personalizada es buena opción cuando ya tienes una herramienta interna y quieres que lance llamadas de Callin automáticamente.
+<Tip>
+  La integración personalizada es buena opción cuando ya tienes una herramienta interna y quieres que lance llamadas de Callin automáticamente.
+</Tip>
 
 ## Solución de problemas
 

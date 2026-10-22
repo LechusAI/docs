@@ -16,23 +16,15 @@ From here you can:
 - Review each customer’s login activity, subscriptions, call billing, marketing attribution and Twilio spend cap
 - Open the customer’s app directly
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the Users list → Create User → Edit User → the customer details: Info, Subscriptions, 1-Min Billing, UTM and Twilio Cap.
-</p>
+<Frame caption="Video: the Users list → Create User → Edit User → the customer details: Info, Subscriptions, 1-Min Billing, UTM and Twilio Cap.">
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" />
+</Frame>
 
 ## How the Users list works
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-list.png" alt="User Management page with the Create User button, the Search users box, the Status and Subscriptions filters, and a customer row with the Active status, the join date and four action icons" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Users list, with an example customer.
-</p>
+<Frame caption="Screenshot: the Users list, with an example customer.">
+  <img src="/images/wl-users-list.png" alt="User Management page with the Create User button, the Search users box, the Status and Subscriptions filters, and a customer row with the Active status, the join date and four action icons" />
+</Frame>
 
 At the top of the page you’ll see:
 
@@ -59,13 +51,9 @@ When you click **Create User**, the **Create New User** window opens:
 - **Full Name** (optional)
 - **Company** (optional)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-create.png" alt="Create New User window with the Email, Password, Full Name and Company fields and the Cancel and Create User buttons" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Create New User window, with example data.
-</p>
+<Frame caption="Screenshot: the Create New User window, with example data.">
+  <img src="/images/wl-users-create.png" alt="Create New User window with the Email, Password, Full Name and Company fields and the Cancel and Create User buttons" />
+</Frame>
 
 Realistic example:
 
@@ -76,7 +64,9 @@ Realistic example:
 
 Click **Create User**. The customer appears in the list and can sign in to your app with that email and password.
 
-> **Tip:** If you manage many accounts, keeping **Full Name** and **Company** filled in makes search and support much easier.
+<Tip>
+  If you manage many accounts, keeping **Full Name** and **Company** filled in makes search and support much easier.
+</Tip>
 
 ## Edit basic customer details
 
@@ -104,23 +94,29 @@ Use it when you need to:
 
 Support example:
 
-1. The customer says: “I can’t find my subscriptions.”
-2. You find them in **Users**.
-3. You click the **green icon** to open their app and guide them with certainty.
+<Steps>
+  <Step>
+    The customer says: “I can’t find my subscriptions.”
+  </Step>
+  <Step>
+    You find them in **Users**.
+  </Step>
+  <Step>
+    You click the **green icon** to open their app and guide them with certainty.
+  </Step>
+</Steps>
 
-> **Important:** While you’re inside the customer’s app, any change you make applies to their account. Look, help, and leave things as they were unless the customer asked you to change something.
+<Warning>
+  While you’re inside the customer’s app, any change you make applies to their account. Look, help, and leave things as they were unless the customer asked you to change something.
+</Warning>
 
 ## What you can review inside a customer profile
 
 Click the orange person icon (**More User Details**) to open the customer details panel. At the top you’ll see the customer’s name, email and status. Below, five tabs:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-details.png" alt="Customer details panel on the Info tab with Onboarding (Company), Last Login Details (Device, IP Address, Location, Time), Session history and Security with Delete User Account" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the customer details panel, Info tab.
-</p>
+<Frame caption="Screenshot: the customer details panel, Info tab.">
+  <img src="/images/wl-users-details.png" alt="Customer details panel on the Info tab with Onboarding (Company), Last Login Details (Device, IP Address, Location, Time), Session history and Security with Delete User Account" />
+</Frame>
 
 ### Info
 
@@ -129,7 +125,9 @@ Click the orange person icon (**More User Details**) to open the customer detail
 - **Session history**: their recent sessions.
 - **Security**: **Delete User Account** permanently deletes the customer’s account and all its data, after a confirmation.
 
-> **Important:** Deleting a customer can’t be undone. If you only want to stop their access, check their subscription first.
+<Warning>
+  Deleting a customer can’t be undone. If you only want to stop their access, check their subscription first.
+</Warning>
 
 ### Subscriptions
 
@@ -145,15 +143,13 @@ Click the orange person icon (**More User Details**) to open the customer detail
 - **Minimum 1-minute billing**: a switch to apply the 1-minute minimum to this customer even if they don’t meet the rule (**Admin override**).
 - **Recent outbound calls (last 100)**: each call with its status, duration and the minutes billed if the rule applies.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-billing.png" alt="1-Min Billing tab with the Outbound billing (1-minute rule) explanation, the Rule eligible, Rule applies now, Avg duration and Success rate boxes, and the Minimum 1-minute billing switch" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the 1-Min Billing tab. Click Refresh to update the figures.">
+  <img src="/images/wl-users-billing.png" alt="1-Min Billing tab with the Outbound billing (1-minute rule) explanation, the Rule eligible, Rule applies now, Avg duration and Success rate boxes, and the Minimum 1-minute billing switch" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the 1-Min Billing tab. Click Refresh to update the figures.
-</p>
-
-> **Tip:** This is where to look when a customer asks why a short outbound call was billed as a full minute. See also [Telephony](/Automations/Whitelabel/telefhony).
+<Tip>
+  This is where to look when a customer asks why a short outbound call was billed as a full minute. See also [Telephony](/Automations/Whitelabel/telefhony).
+</Tip>
 
 ### UTM
 
@@ -170,4 +166,6 @@ This helps you quickly answer questions like:
 - “Why was a short outbound call billed a certain way?”
 - “Did they come from a campaign with UTM parameters?”
 
-> **Tip:** If a customer says “I paid but it’s not active,” the first check is usually confirming they’re using the correct email and account.
+<Tip>
+  If a customer says “I paid but it’s not active,” the first check is usually confirming they’re using the correct email and account.
+</Tip>
