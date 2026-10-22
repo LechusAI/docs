@@ -37,7 +37,7 @@ Wenn du einen Tarif anlegst, legst du den Preis fest, den deine Endnutzer zahlen
 
 Das ist das ganze Geschäftsmodell. Callin verkauft dir die Minuten zum Einkaufspreis, du verkaufst sie zum Endkundenpreis.
 
-Angenommen, du entscheidest dich für \*\*0,32 $$pro Minute**, also das Doppelte deiner Kosten. Ein Tarif mit 1.000 Minuten kostet dann 320$$, und die Rechnung sieht so aus:
+Angenommen, du entscheidest dich für **0,32 \$ pro Minute**, also das Doppelte deiner Kosten. Ein Tarif mit 1.000 Minuten kostet dann 320 \$, und die Rechnung sieht so aus:
 
 |  | Betrag |
 | --- | --- |
@@ -45,9 +45,9 @@ Angenommen, du entscheidest dich für \*\*0,32 $$pro Minute**, also das Doppelte
 | Plattformgebühr (1.000 × 0,16 \$) | −160 \$ |
 | **Deine Bruttomarge** | **160 \$** |
 
-Bei 0,30 $$liegt deine Marge bei 140$$. Bei 0,25 $$sind es 90$$. Bei 0,16 \$ arbeitest du umsonst.
+Bei 0,30 \$ liegt deine Marge bei 140 \$. Bei 0,25 \$ sind es 90 \$. Bei 0,16 \$ arbeitest du umsonst.
 
-> **Wichtig:** Setze den Preis jedes Tarifs über 0,16 \$ pro Minute. Die Plattform hindert dich nicht daran, zum Einkaufspreis oder darunter zu verkaufen — diese Prüfung liegt bei dir.
+> **Wichtig:** Setze den Preis jedes Tarifs über 0,16 \$ pro Minute. Wenn du unter [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans) einen Plan erstellst, warnt dich der Assistent, falls der Preis nach der Plattformgebühr nicht rentabel ist. Prüfe deine Zahlen trotzdem, bevor du ihn veröffentlichst.
 
 ## Warum der Verbrauch nichts an deinen Kosten ändert
 
@@ -84,7 +84,7 @@ Die Bearbeitungsgebühr ist Stripes eigene Gebühr: üblicherweise ein kleiner P
 
 ## Ein vollständiges Beispiel
 
-Du verkaufst der Demo Zahnklinik einen Tarif mit \*\*1.000 Minuten zu 0,32 $$pro Minute**. Der Tarif kostet 320$$ im Monat.
+Du verkaufst der Demo Zahnklinik einen Tarif mit **1.000 Minuten zu 0,32 \$ pro Minute**. Der Tarif kostet 320 \$ im Monat.
 
 | Position | Betrag |
 | --- | --- |
@@ -93,7 +93,7 @@ Du verkaufst der Demo Zahnklinik einen Tarif mit \*\*1.000 Minuten zu 0,32 $$pro
 | Bearbeitungsgebühr | −9,58 \$ |
 | **Nettobetrag für dich** | **150,42 \$** |
 
-Jeden Monat, in dem sich dieses Abonnement verlängert, bekommst du rund 150 $$. Die Plattformgebühr von 160 $$ ist fest und planbar. Die Bearbeitungsgebühr schwankt je nachdem, wie dein Kunde bezahlt, betrachte diese Zahl also als Schätzung und nicht als exakten Betrag.
+Jeden Monat, in dem sich dieses Abonnement verlängert, bekommst du rund 150 \$. Die Plattformgebühr von 160 \$ ist fest und planbar. Die Bearbeitungsgebühr schwankt je nachdem, wie dein Kunde bezahlt, betrachte diese Zahl also als Schätzung und nicht als exakten Betrag.
 
 Wenn die Demo Zahnklinik in diesem Monat 120 Minuten verbraucht hat, ändert sich an der Tabelle nichts. Bei 990 Minuten ebenso wenig.
 
@@ -112,10 +112,16 @@ Die beiden Modelle folgen entgegengesetzten Prinzipien:
 
 Da die Abrechnung nach Verbrauch zum Einkaufspreis erfolgt, bleibt dir dabei keine Marge. Sie ist für den Zugang zur Plattform und zum Testen gedacht, nicht zum Weiterverkauf. Wenn du mit Marge verkaufen willst, lege einen Festtarif an und setze seinen Preis über 0,16 \$ pro Minute.
 
+### Minuten nach Verbrauch an deine Kunden verkaufen
+
+Du kannst unter [Abonnementpläne](/de/Automations/Whitelabel/SubscriptionsPlans) auch einen **Pay-as-you-go**-Plan für deine eigenen Kunden erstellen. Dort legst du die Rate pro Minute fest, die sie zahlen, und sie muss mindestens der Plattformgebühr entsprechen: Ist sie niedriger, fordert dich der Assistent auf, sie zu erhöhen.
+
+Deine Kunden können auf ihrer Abrechnungsseite auch zusätzliche Minuten kaufen. Der Preis pro Minute dieser Aufladungen ist deine **Aufladerate**, die du unter **Abonnementpläne** → **Aufladerate** festlegst. Setze sie über 0,16 \$, damit Aufladungen deine Marge sichern.
+
 ## Wenn eine Zahlung fehlschlägt
 
 Wenn die Karte deines Endnutzers nicht belastet werden kann, findet keine Aufteilung statt, weil nichts eingenommen wurde. Für eine Zahlung, die nie stattgefunden hat, wird dir auch keine Plattformgebühr berechnet.
 
 Das Abonnement wechselt in den Status **Abgelaufen** und die verfügbaren Minuten des Nutzers fallen auf null, sodass seine Agenten keine Anrufe mehr annehmen, bis die Sache geklärt ist. Sobald die Zahlung durchgeht, wird das Abonnement wieder aktiv, die Minuten werden wiederhergestellt und die Aufteilung läuft bei dieser Zahlung ganz normal ab.
 
-Den Status aller Abonnements siehst du unter **Abonnements** in deinem White-Label-Panel, wo jede Zeile den Nutzer, seinen Tarif, den Preis, die verbleibenden Minuten und den aktuellen Status anzeigt. Es lohnt sich, dort regelmäßig hineinzuschauen: ein abgelaufenes Abonnement bedeutet einen Kunden mit unterbrochenem Service, und am schnellsten geht es meist, ihn direkt anzusprechen, damit er seine Karte aktualisiert.
+Den Status aller Abonnements siehst du unter [Abonnements](/de/Automations/Whitelabel/Subscriptions) in deinem White-Label-Panel, wo jede Zeile den Nutzer, seinen Tarif, den Preis, die Minuten und den aktuellen Status anzeigt. Es lohnt sich, dort regelmäßig hineinzuschauen: ein abgelaufenes Abonnement bedeutet einen Kunden mit unterbrochenem Service, und am schnellsten geht es meist, ihn direkt anzusprechen, damit er seine Karte aktualisiert.

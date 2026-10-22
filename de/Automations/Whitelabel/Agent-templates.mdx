@@ -6,37 +6,65 @@ icon: "copy"
 
 ## Überblick
 
-Mit **Agentenvorlagen** können Sie eine „einsatzbereite“ Agent-Konfiguration vorab erstellen, die Ihre **Unterkonten** beim Erstellen neuer Agents verwenden. Statt jedes Mal alles von Grund auf einzurichten, legen Sie fest, welche Einstellungen zur Vorlage gehören, und Ihre Nutzer füllen nur das aus, was nötig ist.
+Mit **Benutzerdefinierten Agentenvorlagen** legen Sie eine „einsatzbereite“ Agenten-Konfiguration an, die Ihre **Unterkonten** beim Erstellen neuer Agenten verwenden können. Statt jedes Mal alles neu einzurichten, bestimmen Sie, welche Einstellungen die Vorlage enthält, füllen deren Werte vor, und Ihre Nutzer ergänzen nur, was nötig ist.
 
-Nutzen Sie diesen Bereich, wenn Sie:
-- **Konsistentes Agent-Verhalten** über mehrere Unterkonten hinweg sicherstellen möchten.
-- Neues Onboarding beschleunigen wollen.
-- Eine kuratierte Auswahl „freigegebener“ Agent-Konfigurationen bereitstellen möchten.
+Nutzen Sie diesen Bereich, wenn Sie Folgendes möchten:
+- **Einheitliches Agentenverhalten** über mehrere Unterkonten hinweg.
+- Einen schnelleren Einstieg für neue Nutzer.
+- Eine Auswahl „freigegebener“ Agenten-Konfigurationen.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: die leere Seite → Vorlage erstellen → Felder auswählen → Standardwerte festlegen → Vorinstalliert und Vorlagenstatus → die Vorlage in der Liste → das Zeilenmenü.
+</p>
 
 ## Agentenvorlagen öffnen
 
-Sie finden die Seite hier: [Agentenvorlagen](https://app.callin.io/cms/agent-templates)
+Sie finden sie in der White-Label-Plattform unter **Inhaltsverwaltung** ([hier öffnen](https://app.callin.io/cms/agent-templates)).
+
+Die Liste zeigt für jede Vorlage den **Vorlagenname** (mit Beschreibung), die Anzahl der **Felder**, den **Status** und das Erstellungsdatum. Mit **Vorlagen suchen...** finden Sie eine Vorlage.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-list.png" alt="Seite Benutzerdefinierte Agentenvorlagen mit der Schaltfläche Vorlage erstellen, der Suche und einer Vorlage in der Liste mit 6 Feldern, dem Status Aktiv, dem Erstellungsdatum und dem Aktionsmenü" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Liste mit einer Beispielvorlage.
+</p>
 
 ## Eine Vorlage erstellen
 
-1. Öffnen Sie **Agentenvorlagen**.
-2. Klicken Sie auf **Vorlage erstellen**.
-3. Tragen Sie die Vorlagen-Details ein:
-   - **Vorlagenname**: ein klarer Name, den Unterkonten wiedererkennen.
+1. Öffnen Sie **Benutzerdefinierte Agentenvorlagen**.
+2. Klicken Sie auf **Vorlage erstellen**. Rechts öffnet sich ein Bereich.
+3. Füllen Sie die Angaben zur Vorlage aus (beide Pflichtfelder):
+   - **Vorlagenname**: ein klarer Name, den Ihre Unterkonten wiedererkennen.
    - **Beschreibung**: eine kurze Erklärung, wofür die Vorlage gedacht ist.
+4. Wählen Sie die Felder aus und legen Sie ihre Standardwerte fest (siehe unten).
+5. Klicken Sie unten im Bereich auf **Vorlage erstellen**.
 
-> **Tipp:** Benennen Sie Vorlagen nach dem Zweck, nicht nach dem Team. Beispiel: **„Eingehender Kundensupport“** statt **„Support – Team A“**.
+> **Tipp:** Verwenden Sie Namen, die die Aufgabe beschreiben, nicht das Team. Beispiel: **„Eingehender Kundensupport“** statt **„Support - Team A“**.
 
 ## Festlegen, was Unterkonten konfigurieren dürfen
 
-Beim Erstellen einer Vorlage sehen Sie eine Liste von Checkboxen unter **Felder auswählen, die enthalten sein sollen**.  
-**Aktiviert = im Vorlagen-Flow für Unterkonten enthalten.**  
-Nicht aktivierte Felder sind nicht Teil der Einrichtung über die Vorlage.
+Unter **1. Felder auswählen** sehen Sie eine Liste mit Kontrollkästchen.\
+**Angehakt = im Vorlagen-Ablauf für Unterkonten enthalten.**\
+Nicht angehakte Felder gehören nicht zur Vorlage.
 
-### Basisinformationen
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-fields.png" alt="Bereich Vorlage erstellen mit ausgefülltem Vorlagenname und Beschreibung und sechs angehakten Feldern unter Felder auswählen" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
 
-Sie können Felder aufnehmen wie:
-- **Agent-Name**
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: eine Beispielvorlage mit sechs angehakten Feldern.
+</p>
+
+### Grundinformationen
+
+Sie können zum Beispiel diese Felder einbeziehen:
+- **Agentenname**
 - **Begrüßungsnachricht**
 - **System-Prompt**
 - **Anrufrichtung**
@@ -46,76 +74,106 @@ Sie können Felder aufnehmen wie:
 - **KI-Modell**
 - **Anrufe aufzeichnen**
 - **Mailbox-Erkennung**
-- **Nutzer spricht zuerst**
+- **Benutzer spricht zuerst**
 
-> **Wichtig:** Nehmen Sie nur Felder auf, die Unterkonten wirklich bearbeiten sollen. Weniger Felder bedeuten in der Regel weniger Fehler.
+> **Wichtig:** Nehmen Sie nur Felder auf, die Unterkonten wirklich ändern sollen. Weniger Felder bedeuten meist weniger Fehler.
 
 ### Stimme & Sprache
 
-Sie können Felder aufnehmen wie:
+Sie können zum Beispiel diese Felder einbeziehen:
 - **Primäre Sprache**
 - **Sekundäre Sprachen**
 - **Stimme**
 - **Sprechgeschwindigkeit**
 - **Temperatur**
 
-> **Tipp:** Wenn Sie mehrere Regionen unterstützen, nehmen Sie **Primäre Sprache** und **Zeitzone** auf, damit Unterkonten schnell anpassen können, ohne die Absicht der Vorlage zu verändern.
+> **Tipp:** Wenn Sie mehrere Regionen bedienen, nehmen Sie **Primäre Sprache** und **Zeitzone** auf, damit sich Unterkonten schnell anpassen können, ohne den Zweck der Vorlage zu verändern.
 
 ### Anrufaktion
 
-Sie können Felder aufnehmen wie:
+Sie können zum Beispiel diese Felder einbeziehen:
 - **Termin planen**
-- **Planungsanbieter**
+- **Kalenderanbieter**
 - **Anruf weiterleiten**
 - **E-Mail senden**
-- **Opt-out (Abmeldung)**
+- **Abmelden**
 - **Datenextraktion**
-- **Entitäten für Datenextraktion**
-- **Webhook nach dem Anruf**
+- **Extraktionsentitäten**
+- **Webhook nach Anruf**
 - **Webhook-URL**
-- **Anzahl der Wiederholungen**
-- **Wiederholungsverzögerung (Minuten)**
+- **Anzahl Wiederholungen**
+- **Wartezeit (Minuten)**
 
-> **Häufiger Fehler:** Die **Webhook-URL** für Unterkonten freizugeben, obwohl sie von Ihrer Organisation kontrolliert werden soll. Wenn Sie zentrales Tracking benötigen, beschränken Sie webhookbezogene Felder.
+> **Häufiger Fehler:** **Webhook-URL** für Unterkonten freizugeben, obwohl Ihre Organisation sie kontrollieren soll. Wenn Sie ein zentrales Tracking brauchen, geben Sie Webhook-Felder nicht frei.
+
+### Standardwerte
+
+Sobald Sie ein Feld anhaken, erscheint es unter **2. Standardwerte festlegen**. Dort füllen Sie seinen Wert vor: Unterkonten starten damit, wenn sie mit dieser Vorlage einen Agenten erstellen.
+
+Jedes Feld zeigt einen kurzen Hilfetext. Zum Beispiel:
+
+- **Agentenname**: der Name des Agenten (das Unterkonto kann ihn ändern).
+- **Begrüßungsnachricht**: die erste Nachricht, die der Agent zu Beginn des Anrufs sagt.
+- **System-Prompt**: die Anweisungen, die das Verhalten des Agenten festlegen.
+- **Zeitzone**: beeinflusst zeitbezogene Antworten. Sie steht anfangs auf **UTC**.
+- **Primäre Sprache**: die Hauptsprache des Agenten.
+- **Stimme**: die Stimme des Agenten, ausgewählt aus der ElevenLabs-Liste.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-defaults.png" alt="Bereich Standardwerte festlegen mit Beispielwerten für Agentenname, Begrüßungsnachricht, System-Prompt, Zeitzone und Primäre Sprache" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: die Standardwerte der Beispielvorlage.
+</p>
 
 ## Vorab bereitgestellte Vorlagen
 
-Möglicherweise sehen Sie eine Option namens **Vorab bereitgestellt**.
+Unten im Bereich sehen Sie **Vorinstalliert**.
 
-Wenn sie aktiviert ist, kann automatisch ein Agent **auf Basis dieser Vorlage** für neu registrierte Nutzerkonten erstellt werden (das Verhalten kann je nach Konto/Plan variieren).
+Ist die Option aktiv, wird in neu registrierten Benutzerkonten **automatisch ein Agent mit dieser Vorlage erstellt**.
 
-> **Wichtig:** Aktivieren Sie dies nur für Ihre Standard-„Starter“-Vorlage. Andernfalls erhalten neue Nutzer möglicherweise Agents, die sie nicht erstellen wollten.
+> **Wichtig:** Aktivieren Sie das nur für Ihre „Standard-Startvorlage“. Sonst erhalten neue Nutzer womöglich Agenten, die sie gar nicht anlegen wollten.
 
 ## Vorlagenstatus
 
-Sie sehen außerdem den **Vorlagenstatus**.  
+Außerdem sehen Sie **Vorlagenstatus**. Er ist standardmäßig an.\
 Nur **aktive** Vorlagen sind für Unterkonten sichtbar.
 
-Das ist hilfreich, wenn Sie:
-- Ältere Vorlagen vorübergehend ausblenden möchten, ohne sie zu löschen.
-- Nur empfohlene Vorlagen verfügbar machen möchten.
+Nutzen Sie das, um:
+- Ältere Vorlagen vorübergehend auszublenden, ohne sie zu löschen.
+- Nur Ihre empfohlenen Vorlagen verfügbar zu halten.
+
+Um eine Vorlage später zu ändern, klicken Sie in der Spalte **Aktionen** auf **⋮**:
+
+- **Vorlage bearbeiten** öffnet denselben Bereich, um Felder, Standardwerte, **Vorinstalliert** oder **Vorlagenstatus** zu ändern.
+- **Vorlage löschen** entfernt sie.
 
 ## Beispiel: eine praxisnahe Vorlagenkonfiguration
 
-So könnte eine sinnvolle Vorlage für einen eingehenden Support-Agent aussehen:
+So könnten Sie eine Vorlage für einen Agenten im eingehenden Support aufbauen:
 
-**Vorlagenname:** Eingehender Kundensupport  
-**Beschreibung:** Beantwortet eingehende Fragen, sammelt Basisdaten und leitet dringende Fälle weiter.
+**Vorlagenname:** Eingehender Kundensupport\
+**Beschreibung:** Beantwortet eingehende Fragen, erfasst Basisdaten und leitet dringende Fälle weiter.
 
-**Empfohlene Felder (aufnehmen):**
+**Empfohlene Felder:**
+- Agentenname
 - Begrüßungsnachricht
 - System-Prompt
-- Anrufrichtung
 - Zeitzone
 - Primäre Sprache
 - Stimme
-- Anruf weiterleiten (nur wenn Ihr Workflow eine Eskalation vorsieht)
+- Anruf weiterleiten (nur wenn Ihr Ablauf eine Eskalation vorsieht)
 
-> **Tipp:** Wenn Unterkonten das Kernverhalten nicht verändern sollen, nehmen Sie den **System-Prompt** auf, aber vermeiden Sie es, zu viele fortgeschrittene Schalter gleichzeitig freizugeben.
+**Standardwerte (Beispiel):**
+- Agentenname: „Empfang“
+- Begrüßungsnachricht: „Guten Tag, danke für Ihren Anruf. Wie kann ich Ihnen helfen?“
+
+> **Tipp:** Wenn Unterkonten das Kernverhalten nicht ändern sollen, nehmen Sie den **System-Prompt** auf, geben aber nicht zu viele erweiterte Einstellungen auf einmal frei.
 
 ## Hinweise und Einschränkungen
 
-- Was Unterkonten sehen, kann von Rollenberechtigungen und Ihrem Plan abhängen.
-- Einige Optionen und Bezeichnungen können je nach Konto leicht variieren.
+- Was Unterkonten sehen, kann von Rollenrechten und Plan abhängen.
+- Manche Optionen und Bezeichnungen können je nach Konto leicht abweichen.
 
-Wenn Sie möchten, können Sie mehrere Vorlagen nach Anwendungsfall erstellen (z. B. **Sales-Qualifizierung**, **Terminplanung**, **Support-Triage**), damit Unterkonten immer mit der passendsten Option starten.
+Sie können mehrere Vorlagen nach Anwendungsfall anlegen (zum Beispiel **Vertriebsqualifizierung**, **Terminplanung**, **Support-Triage**), damit Unterkonten immer mit der passendsten starten.

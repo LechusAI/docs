@@ -6,32 +6,60 @@ icon: "copy"
 
 ## Overview
 
-**Agent Templates** let you pre-create a “ready-to-use” agent setup that your **subaccounts** can apply when creating new agents. Instead of configuring everything from scratch each time, you decide which settings are included in the template, and your users fill in only what’s needed.
+**Custom Agent Templates** let you pre-create a “ready-to-use” agent setup that your **subaccounts** can apply when creating new agents. Instead of configuring everything from scratch each time, you decide which settings are included in the template, pre-fill their values, and your users fill in only what’s needed.
 
 Use this section when you want:
 - **Consistent agent behavior** across multiple subaccounts.
 - Faster onboarding for new users.
 - A curated set of “approved” agent configurations.
 
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Video: the empty page → Create Template → Select Fields to Include → Set Default Values → Pre Deployed and Template Status → the template in the list → the row menu.
+</p>
+
 ## Open Agent Templates
 
-You can access the page here: [Agent Templates](https://app.callin.io/cms/agent-templates)
+You’ll find it in the White Label Platform, under **Content Management** ([open it here](https://app.callin.io/cms/agent-templates)).
+
+The list shows each template’s **Template Name** (with its description), the number of **Fields** it includes, its **Status** and the **Created At** date. Use **Search templates…** to find one.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-list.png" alt="Custom Agent Templates page with the Create Template button, the search bar and one template in the list with 6 Fields, the Active status, its creation date and the Actions menu" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: the list with an example template.
+</p>
 
 ## Create a template
 
-1. Open **Agent Templates**.
-2. Click **Create Template**.
-3. Fill out the template details:
+1. Open **Custom Agent Templates**.
+2. Click **Create Template**. A panel opens on the right.
+3. Fill out the template details (both required):
    - **Template Name**: A clear name your subaccounts will recognize.
    - **Description**: A short explanation of what the template is for.
+4. Choose the fields to include and set their default values (see below).
+5. Click **Create Template** at the bottom of the panel.
 
 > **Tip:** Use names that describe the job, not the team. Example: **“Inbound Customer Support”** instead of **“Support - Team A”**.
 
 ## Choose what subaccounts can configure
 
-When building a template, you’ll see a list of checkboxes under **Select Fields to Include**.  
-**Checked = included in the template flow for subaccounts.**  
+Under **1. Select Fields to Include**, you’ll see a list of checkboxes.\
+**Checked = included in the template flow for subaccounts.**\
 Unchecked fields won’t be part of the template setup.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-fields.png" alt="Create Template panel with the Template Name and Description filled in and six fields checked under Select Fields to Include" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: an example template with six fields checked.
+</p>
 
 ### Basic information
 
@@ -78,38 +106,68 @@ You can include fields such as:
 
 > **Common mistake:** Including **Webhook URL** for subaccounts when you want that to remain controlled by your organization. If you need centralized tracking, keep webhook-related fields restricted.
 
+### Set default values
+
+As soon as you check a field, it appears under **2. Set Default Values**. There you pre-fill its value: subaccounts start from it when they create an agent with this template.
+
+Each field shows a short help text. For example:
+
+- **Agent Name**: the name of the agent (the subaccount can override it).
+- **Greeting Message**: the first message the agent says when a call starts.
+- **System Prompt**: the instructions that define the agent’s behavior.
+- **Timezone**: affects time-related responses. It starts at **UTC**.
+- **Primary Language**: the main language the agent will use.
+- **Voice**: the voice the agent uses, chosen from the ElevenLabs list.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-defaults.png" alt="Set Default Values section with example values for Agent Name, Greeting Message, System Prompt, Timezone and Primary Language" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: default values for the example template.
+</p>
+
 ## Pre-deployed templates
 
-You may see an option called **Pre Deployed**.
+At the bottom of the panel you’ll see **Pre Deployed**.
 
-When enabled, an agent can be **automatically created using this template** for newly registered user accounts (behavior can vary by account/plan).
+When enabled, an agent will be **automatically created using this template** in newly registered user accounts.
 
 > **Important:** Turn this on only for your “default starter” template. Otherwise, new users may get agents they didn’t intend to create.
 
 ## Template status
 
-You’ll also see **Template Status**.  
+You’ll also see **Template Status**. It’s on by default.\
 Only **active** templates are visible to subaccounts.
 
 Use this when you want to:
 - Temporarily hide older templates without deleting them.
 - Keep only your recommended templates available.
 
+To change a template later, click **⋮** in the **Actions** column:
+
+- **Edit Template** opens the same panel, so you can change fields, default values, **Pre Deployed** or **Template Status**.
+- **Delete Template** removes it.
+
 ## Example: a practical template setup
 
 Here’s a realistic way to structure a template for an inbound support agent:
 
-**Template Name:** Inbound Customer Support  
-**Description:** Handles inbound questions, collects basic details, and routes urgent cases.
+**Template Name:** Inbound Customer Support\
+**Description:** Answers inbound questions, collects basic details and transfers urgent cases.
 
 **Fields to include (recommended):**
+- Agent Name
 - Greeting Message
 - System Prompt
-- Call Direction
 - Timezone
 - Primary Language
 - Voice
 - Transfer Call (only if your workflow includes escalation)
+
+**Default values (example):**
+- Agent Name: “Front Desk”
+- Greeting Message: “Hello, thanks for calling. How can I help you today?”
 
 > **Tip:** If your subaccounts shouldn’t change core behavior, include the **System Prompt** but avoid exposing too many advanced toggles at the same time.
 

@@ -6,32 +6,60 @@ icon: "copy"
 
 ## Présentation
 
-Les **modèles d’agents** vous permettent de préconfigurer un agent « prêt à l’emploi » que vos **sous-comptes** peuvent utiliser lors de la création de nouveaux agents. Au lieu de tout configurer depuis zéro à chaque fois, vous choisissez quels paramètres font partie du modèle, et vos utilisateurs ne complètent que ce qui est nécessaire.
+Les **Modèles d’agent personnalisés** vous permettent de préparer une configuration d’agent « prête à l’emploi » que vos **sous-comptes** peuvent appliquer quand ils créent de nouveaux agents. Au lieu de tout configurer à chaque fois, vous choisissez les paramètres inclus dans le modèle, vous préremplissez leurs valeurs, et vos utilisateurs complètent seulement ce qui est nécessaire.
 
-Utilisez cette section si vous voulez :
-- Un **comportement cohérent** des agents sur plusieurs sous-comptes.
-- Un onboarding plus rapide pour les nouveaux utilisateurs.
-- Un ensemble de configurations d’agents « approuvées » et prêtes à l’emploi.
+Utilisez cette section quand vous voulez :
+- **Un comportement cohérent** des agents sur plusieurs sous-comptes.
+- Une prise en main plus rapide pour les nouveaux utilisateurs.
+- Une sélection de configurations d’agent « approuvées ».
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Vidéo : la page vide → Créer un modèle → Sélectionner les champs → Définir les valeurs par défaut → Pré-déployé et Statut du modèle → le modèle dans la liste → le menu de la ligne.
+</p>
 
 ## Ouvrir Modèles d’agents
 
-Vous pouvez accéder à la page ici : [Modèles d’agents](https://app.callin.io/cms/agent-templates)
+Vous les trouverez dans la Plateforme white label, dans **Gestion du contenu** ([ouvrez-les ici](https://app.callin.io/cms/agent-templates)).
+
+La liste affiche le **Nom du modèle** (avec sa description), le nombre de **Champs** inclus, le **Statut** et la date de création. Utilisez **Rechercher des modèles...** pour en trouver un.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-list.png" alt="Page Modèles d’agent personnalisés avec le bouton Créer un modèle, la recherche et un modèle dans la liste avec 6 champs, le statut Actif, sa date de création et le menu des actions" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : la liste avec un modèle d’exemple.
+</p>
 
 ## Créer un modèle
 
-1. Ouvrez **Modèles d’agents**.
-2. Cliquez sur **Créer un modèle**.
-3. Renseignez les informations du modèle :
+1. Ouvrez **Modèles d’agent personnalisés**.
+2. Cliquez sur **Créer un modèle**. Un panneau s’ouvre à droite.
+3. Remplissez les informations du modèle (les deux sont obligatoires) :
    - **Nom du modèle** : un nom clair que vos sous-comptes reconnaîtront.
-   - **Description** : une courte phrase expliquant l’objectif du modèle.
+   - **Description** : une courte explication de l’usage du modèle.
+4. Choisissez les champs à inclure et définissez leurs valeurs par défaut (voir ci-dessous).
+5. Cliquez sur **Créer un modèle** en bas du panneau.
 
-> **Conseil :** Utilisez des noms qui décrivent le cas d’usage, pas l’équipe. Exemple : **« Support client entrant »** plutôt que **« Support – Équipe A »**.
+> **Astuce :** Utilisez des noms qui décrivent la tâche, pas l’équipe. Exemple : **« Support client entrant »** plutôt que **« Support - Équipe A »**.
 
 ## Choisir ce que les sous-comptes peuvent configurer
 
-Lors de la création d’un modèle, vous verrez une liste de cases à cocher dans **Sélectionner les champs à inclure**.  
-**Coché = inclus dans le parcours du modèle pour les sous-comptes.**  
-Les champs non cochés ne feront pas partie de la configuration via le modèle.
+Dans **1. Sélectionner les champs**, vous verrez une liste de cases à cocher.\
+**Cochée = incluse dans le parcours du modèle pour les sous-comptes.**\
+Les champs non cochés ne font pas partie du modèle.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-fields.png" alt="Panneau Créer un modèle avec le Nom du modèle et la Description remplis et six champs cochés dans Sélectionner les champs" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : un modèle d’exemple avec six champs cochés.
+</p>
 
 ### Informations de base
 
@@ -39,16 +67,16 @@ Vous pouvez inclure des champs comme :
 - **Nom de l’agent**
 - **Message d’accueil**
 - **Prompt système**
-- **Sens de l’appel**
-- **Durée maximale d’appel (minutes)**
+- **Direction d’appel**
+- **Durée max de l’appel (minutes)**
 - **Variables dynamiques**
 - **Fuseau horaire**
 - **Modèle IA**
 - **Enregistrer les appels**
 - **Détection de messagerie vocale**
-- **L’utilisateur parle en premier**
+- **L’utilisateur parle d’abord**
 
-> **Important :** N’incluez que les champs que vous voulez réellement laisser aux sous-comptes. Moins il y a de champs, moins il y a d’erreurs.
+> **Important :** N’incluez que les champs que vous voulez vraiment laisser modifier aux sous-comptes. Moins de champs signifie généralement moins d’erreurs.
 
 ### Voix et langue
 
@@ -56,66 +84,96 @@ Vous pouvez inclure des champs comme :
 - **Langue principale**
 - **Langues secondaires**
 - **Voix**
-- **Vitesse d’élocution**
+- **Vitesse de parole**
 - **Température**
 
-> **Conseil :** Si vous couvrez plusieurs régions, incluez **Langue principale** et **Fuseau horaire** afin que les sous-comptes puissent s’adapter rapidement sans dénaturer l’objectif du modèle.
+> **Astuce :** Si vous travaillez dans plusieurs régions, incluez **Langue principale** et **Fuseau horaire** pour que les sous-comptes s’adaptent vite sans dénaturer le modèle.
 
 ### Action d’appel
 
 Vous pouvez inclure des champs comme :
 - **Planifier un rendez-vous**
-- **Fournisseur de planification**
+- **Fournisseur de calendrier**
 - **Transférer l’appel**
 - **Envoyer un e-mail**
-- **Désinscription (opt-out)**
+- **Désinscription**
 - **Extraction de données**
-- **Entités d’extraction de données**
-- **Webhook après appel**
+- **Entités d’extraction**
+- **Webhook post-appel**
 - **URL du webhook**
 - **Nombre de tentatives**
-- **Délai de nouvelle tentative (minutes)**
+- **Délai de tentative (minutes)**
 
-> **Erreur courante :** Inclure **URL du webhook** pour les sous-comptes alors que vous souhaitez garder ce réglage sous contrôle de votre organisation. Si vous avez besoin d’un suivi centralisé, limitez l’accès aux champs liés aux webhooks.
+> **Erreur fréquente :** Inclure **URL du webhook** pour les sous-comptes alors que vous voulez garder ce réglage sous le contrôle de votre organisation. Si vous avez besoin d’un suivi centralisé, n’exposez pas les champs de webhook.
+
+### Valeurs par défaut
+
+Dès que vous cochez un champ, il apparaît dans **2. Définir les valeurs par défaut**. Vous y préremplissez sa valeur : les sous-comptes partent de celle-ci quand ils créent un agent avec ce modèle.
+
+Chaque champ affiche un court texte d’aide. Par exemple :
+
+- **Nom de l’agent** : le nom de l’agent (le sous-compte peut le modifier).
+- **Message d’accueil** : le premier message que dit l’agent au début de l’appel.
+- **Prompt système** : les instructions qui définissent le comportement de l’agent.
+- **Fuseau horaire** : il influence les réponses liées à l’heure. Il commence à **UTC**.
+- **Langue principale** : la langue principale que l’agent utilisera.
+- **Voix** : la voix de l’agent, choisie dans la liste ElevenLabs.
+
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-templates-defaults.png" alt="Section Définir les valeurs par défaut avec des valeurs d’exemple pour Nom de l’agent, Message d’accueil, Prompt système, Fuseau horaire et Langue principale" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Capture d’écran : les valeurs par défaut du modèle d’exemple.
+</p>
 
 ## Modèles pré-déployés
 
-Vous pouvez voir une option appelée **Pré-déployé**.
+En bas du panneau, vous verrez **Pré-déployé**.
 
-Lorsqu’elle est activée, un agent peut être **créé automatiquement à partir de ce modèle** pour les nouveaux comptes utilisateur (le comportement peut varier selon votre compte/forfait).
+Si vous l’activez, un agent sera **automatiquement créé avec ce modèle** dans les comptes utilisateurs nouvellement inscrits.
 
-> **Important :** Activez ceci uniquement pour votre modèle « starter » par défaut. Sinon, les nouveaux utilisateurs peuvent se retrouver avec des agents qu’ils n’avaient pas l’intention de créer.
+> **Important :** Activez-le uniquement pour votre modèle « de démarrage par défaut ». Sinon, les nouveaux utilisateurs pourraient recevoir des agents qu’ils ne voulaient pas créer.
 
 ## Statut du modèle
 
-Vous verrez aussi un **statut du modèle**.  
-Seuls les modèles **actifs** sont visibles pour les sous-comptes.
+Vous verrez aussi **Statut du modèle**. Il est activé par défaut.\
+Seuls les modèles **actifs** sont visibles par les sous-comptes.
 
-Utilisez cela pour :
+Utilisez-le pour :
 - Masquer temporairement d’anciens modèles sans les supprimer.
-- Ne laisser visibles que vos modèles recommandés.
+- Ne laisser disponibles que vos modèles recommandés.
+
+Pour modifier un modèle plus tard, cliquez sur **⋮** dans la colonne **Actions** :
+
+- **Modifier le modèle** ouvre le même panneau, pour changer les champs, les valeurs par défaut, **Pré-déployé** ou **Statut du modèle**.
+- **Supprimer le modèle** le retire.
 
 ## Exemple : une configuration de modèle réaliste
 
-Voici une approche réaliste pour structurer un modèle d’agent de support entrant :
+Voici une façon réaliste de structurer un modèle pour un agent de support entrant :
 
-**Nom du modèle :** Support client entrant  
-**Description :** Gère les questions entrantes, collecte les informations essentielles et oriente les cas urgents.
+**Nom du modèle :** Support client entrant\
+**Description :** Répond aux questions entrantes, recueille les informations de base et transfère les cas urgents.
 
-**Champs à inclure (recommandé) :**
+**Champs à inclure (recommandés) :**
+- Nom de l’agent
 - Message d’accueil
 - Prompt système
-- Sens de l’appel
 - Fuseau horaire
 - Langue principale
 - Voix
-- Transférer l’appel (uniquement si votre workflow prévoit une escalade)
+- Transférer l’appel (seulement si votre processus prévoit une escalade)
 
-> **Conseil :** Si vos sous-comptes ne doivent pas modifier le comportement de base, incluez le **Prompt système** mais évitez d’exposer trop d’options avancées en même temps.
+**Valeurs par défaut (exemple) :**
+- Nom de l’agent : « Accueil »
+- Message d’accueil : « Bonjour, merci de votre appel. Comment puis-je vous aider ? »
+
+> **Astuce :** Si vos sous-comptes ne doivent pas changer le comportement principal, incluez le **Prompt système** mais évitez d’exposer trop de réglages avancés à la fois.
 
 ## Notes et limites
 
-- Ce que voient les sous-comptes peut dépendre de vos permissions de rôle et de votre forfait.
-- Certaines options et libellés peuvent légèrement varier selon les comptes.
+- Ce que voient les sous-comptes peut dépendre des permissions de leur rôle et de leur forfait.
+- Certaines options et libellés peuvent varier légèrement selon les comptes.
 
-Si vous le souhaitez, vous pouvez créer plusieurs modèles par cas d’usage (par exemple **Qualification commerciale**, **Planification de rendez-vous**, **Triage support**) afin que les sous-comptes démarrent toujours avec l’option la plus pertinente.
+Vous pouvez créer plusieurs modèles par cas d’usage (par exemple **Qualification commerciale**, **Prise de rendez-vous**, **Tri du support**) pour que les sous-comptes partent toujours du plus proche.
