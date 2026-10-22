@@ -15,15 +15,13 @@ It’s designed for reviewing, so you can quickly answer questions like:
 - “How many minutes are included and how many have been used?”
 - “When did the subscription start and when does it end?”
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-subscriptions.png" alt="Subscriptions page with the Search subscriptions box and the No subscriptions message" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Subscriptions page before any customer has subscribed. When your customers subscribe to a plan, they appear here.">
+  <img src="/images/wl-subscriptions.png" alt="Subscriptions page with the Search subscriptions box and the No subscriptions message" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Subscriptions page before any customer has subscribed. When your customers subscribe to a plan, they appear here.
-</p>
-
-> **Tip:** Subscriptions appear here when your customers subscribe to one of your [Subscription Plans](/Automations/Whitelabel/SubscriptionsPlans) and pay through Stripe. Until then, you’ll see **No subscriptions**.
+<Tip>
+  Subscriptions appear here when your customers subscribe to one of your [Subscription Plans](/Automations/Whitelabel/SubscriptionsPlans) and pay through Stripe. Until then, you’ll see **No subscriptions**.
+</Tip>
 
 ## How to use the list
 
@@ -54,4 +52,6 @@ The list can show these statuses:
 - **Unpaid**: the payment wasn’t collected after the retries.
 - **Canceled**: the subscription was canceled.
 
-> **Important:** If a customer says “I paid” but their status isn’t **Active**, first check that they’re using the right email and account. Then look at their status here and at their billing in [Users](/Automations/Whitelabel/Clients) → **Subscriptions** → **View Billing Details**.
+<Warning>
+  If a customer says “I paid” but their status isn’t **Active**, first check that they’re using the right email and account. Then look at their status here and at their billing in [Users](/Automations/Whitelabel/Clients) → **Subscriptions** → **View Billing Details**.
+</Warning>

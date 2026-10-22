@@ -20,29 +20,31 @@ You set it up in two places:
 
 In the app, transfer configurations are called **Call Transfer Rules**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Call Transfer → Create Rule → fill in Title, Number, and Condition.">
+  <video autoPlay muted loop playsInline src="/images/call-transfer-rule.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Call Transfer → Create Rule → fill in Title, Number, and Condition.
-</p>
+<Steps>
+  <Step>
+    In the left menu, open **Call Transfer** ([open it here](https://app.callin.io/call-transfer)). If you don’t have any rules yet, you’ll see **No Call Transfer Rules found**.
+  </Step>
+  <Step>
+    Click **\+ Create Rule**.
+  </Step>
+  <Step>
+    Fill in the three fields. All of them are required:
+    - **Title**: a name for this rule (for example, _Sales team_ or _Support_).
+    - **Number**: the number where the call will be transferred, in E.164 format, with **\+** and the country code (for example, `+15550100200`).
+    - **Condition**: when the agent should transfer the call. This lets the LLM know when to transfer the call to this number (for example, _“Transfer the call when the caller asks to speak with sales, wants a price quote or is ready to buy.”_).
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
-1. In the left menu, open **Call Transfer** ([open it here](https://app.callin.io/call-transfer)). If you don’t have any rules yet, you’ll see **No Call Transfer Rules found**.
-2. Click **\+ Create Rule**.
-3. Fill in the three fields. All of them are required:
-   - **Title**: a name for this rule (for example, _Sales team_ or _Support_).
-   - **Number**: the number where the call will be transferred, in E.164 format, with **\+** and the country code (for example, `+15550100200`).
-   - **Condition**: when the agent should transfer the call. This lets the LLM know when to transfer the call to this number (for example, _“Transfer the call when the caller asks to speak with sales, wants a price quote or is ready to buy.”_).
-4. Click **Save**.
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-rule.png" alt="Create Rule window with the Title, Number and Condition fields filled in with an example sales rule, and the Clear, Cancel and Save buttons" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a rule that sends sales calls to the sales team.
-</p>
+<Frame caption="Screenshot: a rule that sends sales calls to the sales team.">
+  <img src="/images/call-transfer-rule.png" alt="Create Rule window with the Title, Number and Condition fields filled in with an example sales rule, and the Clear, Cancel and Save buttons" />
+</Frame>
 
 If a field is empty or wrong, the window tells you: **Title is required**, **Number must be in E.164 format (e.g., \+1234567890)**, or **Transfer condition is required!**. Use **Clear** to empty the form, or **Cancel** to close it without saving.
 
@@ -54,37 +56,43 @@ Your rules appear in the **Call Transfer Rules** list, where you can find them w
 
 Transfers are turned on in each agent, in the **System Tools** of the **Tools** tab.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Tools tab → Transfer to number → Add Rule → Destination Type → Phone Number and Condition.">
+  <video autoPlay muted loop playsInline src="/images/call-transfer-agent.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Tools tab → Transfer to number → Add Rule → Destination Type → Phone Number and Condition.
-</p>
+<Steps>
+  <Step>
+    Go to **AI Agents** and open the agent.
+  </Step>
+  <Step>
+    Open the **Tools** tab. On the right, under **System Tools**, turn on **Transfer to number** (“Provides a seamless connection to a live team member when a human touch is needed or requested by the caller”).
+  </Step>
+  <Step>
+    The **Edit Transfer to Number Tool** panel opens. Under **Human Transfer Rules**, click **Add Rule** and fill in:
+    - **Destination Type**: **Phone Number** (always the same number) or **Phone Number as Dynamic Variable** (a number that comes from a variable, for example one per contact or per office).
+    - **Phone Number** (or **Phone Number as Dynamic Variable**): where the call goes.
+    - **Condition**: when to transfer to this number.
+  </Step>
+  <Step>
+    Add one rule for each destination. Use **Remove Rule** to delete one.
+  </Step>
+  <Step>
+    Click **Save** in the panel.
+  </Step>
+</Steps>
 
-1. Go to **AI Agents** and open the agent.
-2. Open the **Tools** tab. On the right, under **System Tools**, turn on **Transfer to number** (“Provides a seamless connection to a live team member when a human touch is needed or requested by the caller”).
-3. The **Edit Transfer to Number Tool** panel opens. Under **Human Transfer Rules**, click **Add Rule** and fill in:
-   - **Destination Type**: **Phone Number** (always the same number) or **Phone Number as Dynamic Variable** (a number that comes from a variable, for example one per contact or per office).
-   - **Phone Number** (or **Phone Number as Dynamic Variable**): where the call goes.
-   - **Condition**: when to transfer to this number.
-4. Add one rule for each destination. Use **Remove Rule** to delete one.
-5. Click **Save** in the panel.
-
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-number.png" alt="Edit Transfer to Number Tool panel with Description (optional), Disable interruption, and a Human Transfer Rule with Destination Type Phone Number, an example phone number and a condition" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a Human Transfer Rule in the Transfer to number tool.
-</p>
+<Frame caption="Screenshot: a Human Transfer Rule in the Transfer to number tool.">
+  <img src="/images/call-transfer-number.png" alt="Edit Transfer to Number Tool panel with Description (optional), Disable interruption, and a Human Transfer Rule with Destination Type Phone Number, an example phone number and a condition" />
+</Frame>
 
 The panel also has two optional settings:
 
 - **Description (optional)**: tells the LLM how and when to use the tool. Leave it blank to use the default optimized prompt.
 - **Disable interruption**: the caller can’t interrupt while the transfer is running.
 
-> **Tip:** Use the same number and condition you wrote in your **Call Transfer Rules**, so your list in **Call Transfer** and your agents stay consistent.
+<Tip>
+  Use the same number and condition you wrote in your **Call Transfer Rules**, so your list in **Call Transfer** and your agents stay consistent.
+</Tip>
 
 ### Transfer to another AI agent
 
@@ -96,13 +104,9 @@ To pass the call to a more specialized AI agent instead of a person, turn on **T
 - **Transfer message**: the exact phrase the agent says before transferring.
 - **Enable First Message**: whether the new agent plays its greeting after the transfer.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/call-transfer-agent.png" alt="Edit Transfer to Agent Tool panel with a Transfer Rule: Agent, Condition, Delay before transfer, Transfer message and Enable First Message" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a Transfer Rule in the Transfer to agent tool.
-</p>
+<Frame caption="Screenshot: a Transfer Rule in the Transfer to agent tool.">
+  <img src="/images/call-transfer-agent.png" alt="Edit Transfer to Agent Tool panel with a Transfer Rule: Agent, Condition, Delay before transfer, Transfer message and Enable First Message" />
+</Frame>
 
 For more about all system tools, see [AI Agents](/Create-AI-Agent/Create-Agent-Enchanced).
 
@@ -114,9 +118,17 @@ When you change the agent, a bar with **You have unsaved changes** appears at th
 
 ### Testing Your Configuration
 
-1. In the agent, click **Test AI agent** to talk to it in your browser, or **Test Call** to receive a real call.
-2. Say something that matches one of your conditions (for example, _“I’d like a price quote”_).
-3. Check that the agent transfers the call to the right number or agent.
+<Steps>
+  <Step>
+    In the agent, click **Test AI agent** to talk to it in your browser, or **Test Call** to receive a real call.
+  </Step>
+  <Step>
+    Say something that matches one of your conditions (for example, _“I’d like a price quote”_).
+  </Step>
+  <Step>
+    Check that the agent transfers the call to the right number or agent.
+  </Step>
+</Steps>
 
 After the call, open **Call History** and use the **Call Transfer** filter to find transferred calls. See [Call History](/Create-AI-Agent/Call-Actions).
 

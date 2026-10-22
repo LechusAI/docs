@@ -23,9 +23,17 @@ La pagina **Strumenti** ha due schede:
 
 In Callin, il funzionamento corretto segue sempre questo ordine:
 
-1. **Creare lo strumento** nella sezione **Strumenti**.
-2. **Assegnare lo strumento** all’agente in **Agenti AI**.
-3. **Indicare nel campo Prompt conversazionale** quando deve essere eseguito e cosa deve fare l’agente con il risultato.
+<Steps>
+  <Step>
+    **Creare lo strumento** nella sezione **Strumenti**.
+  </Step>
+  <Step>
+    **Assegnare lo strumento** all’agente in **Agenti AI**.
+  </Step>
+  <Step>
+    **Indicare nel campo Prompt conversazionale** quando deve essere eseguito e cosa deve fare l’agente con il risultato.
+  </Step>
+</Steps>
 
 Se manca uno di questi 3 passaggi, lo strumento non funzionerà come previsto.
 
@@ -48,9 +56,17 @@ Se manca uno di questi 3 passaggi, lo strumento non funzionerà come previsto.
 
 Per creare uno strumento in Callin:
 
-1. Vai su **Strumenti** nel pannello di Callin ([apri Strumenti](https://app.callin.io/tools)).
-2. Clicca su **\+ Aggiungi strumento**. Il pannello **Crea strumento** si apre a destra.
-3. Compila i campi principali:
+<Steps>
+  <Step>
+    Vai su **Strumenti** nel pannello di Callin ([apri Strumenti](https://app.callin.io/tools)).
+  </Step>
+  <Step>
+    Clicca su **\+ Aggiungi strumento**. Il pannello **Crea strumento** si apre a destra.
+  </Step>
+  <Step>
+    Compila i campi principali:
+  </Step>
+</Steps>
 
 - **Nome**\
   Usa un nome breve, chiaro e stabile. Consiglio: **verbo + obiettivo**. Può avere da 1 a 64 caratteri: solo lettere, numeri, trattini bassi (`_`) o trattini (`-`), senza spazi.\
@@ -67,13 +83,9 @@ Per creare uno strumento in Callin:
 
 > Assicurati che l’URL sia **HTTPS** e accessibile pubblicamente. Se l’endpoint non è accessibile, lo strumento non funzionerà.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Aggiungi strumento → nome, descrizione, metodo e URL → impostazioni di voce e suono → un header → un parametro del corpo.
-</p>
+<Frame caption="Video: Aggiungi strumento → nome, descrizione, metodo e URL → impostazioni di voce e suono → un header → un parametro del corpo.">
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
+</Frame>
 
 ### Impostazioni di tempo e di voce
 
@@ -88,28 +100,34 @@ Sotto l’URL puoi decidere come si comporta lo strumento durante la conversazio
   - **Asincrono**: viene eseguito in background, così la conversazione può continuare mentre lavora.
 - **Suono strumento**: un suono facoltativo mentre lo strumento è in esecuzione: **Nessuno**, **Digitazione** o **Musica d’ascensore 1–4**. Usa il pulsante di riproduzione accanto per ascoltarlo.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: il pannello Crea strumento con le impostazioni di tempo e di voce.">
   <img
     src="/images/tools-create.png"
-    alt="Il pannello Crea strumento con il metodo POST e un URL di esempio, seguito da Timeout di risposta, Disabilita interruzioni, Discorso pre-strumento, Modalità di esecuzione e Suono strumento, e dalle sezioni Headers e Parametri del corpo."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Il pannello Crea strumento con il metodo POST e un URL di esempio, seguito da Timeout di risposta, Disabilita interruzioni, Discorso pre-strumento, Modalità di esecuzione e Suono strumento, e dalle sezioni Headers e Parametri del corpo." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: il pannello Crea strumento con le impostazioni di tempo e di voce.
-</p>
-
-> **Suggerimento:** Se il tuo endpoint impiega qualche secondo, imposta **Discorso pre-strumento** su **Forza** o aggiungi un **Suono strumento**, così chi chiama non sente silenzio.
+<Tip>
+  Se il tuo endpoint impiega qualche secondo, imposta **Discorso pre-strumento** su **Forza** o aggiungi un **Suono strumento**, così chi chiama non sente silenzio.
+</Tip>
 
 ### Configurare i “Parametri del corpo” (se usi POST)
 
 Se il tuo strumento invia informazioni (POST), definisci esattamente quali dati invierà. L’agente (l’LLM) raccoglie questi parametri durante la chiamata e li invia nel corpo della richiesta.
 
-1. Vai su **Parametri del corpo**.
-2. Se vuoi, aggiungi una **Descrizione** generale dei dati che invii.
-3. Clicca su **Aggiungi proprietà**.
-4. Configura ogni campo:
+<Steps>
+  <Step>
+    Vai su **Parametri del corpo**.
+  </Step>
+  <Step>
+    Se vuoi, aggiungi una **Descrizione** generale dei dati che invii.
+  </Step>
+  <Step>
+    Clicca su **Aggiungi proprietà**.
+  </Step>
+  <Step>
+    Configura ogni campo:
+  </Step>
+</Steps>
 
 - **Tipo di dati**: **String** (testo), **Numero**, **Boolean** (vero/falso) o **Integer** (numero intero).
 - **Identificatore**: il nome esatto del campo che si aspetta il tuo endpoint (ad esempio: `email`, `phone`, `full_name`).
@@ -121,17 +139,11 @@ Se il tuo strumento invia informazioni (POST), definisci esattamente quali dati 
 
 Per inviare altri campi, clicca di nuovo su **Aggiungi proprietà**. Per rimuoverne uno, clicca su **Elimina**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: un parametro del corpo che l’agente compila a partire dalla conversazione (Prompt LLM).">
   <img
     src="/images/tools-body.png"
-    alt="La sezione Parametri del corpo con una proprietà: tipo di dati String, identificatore email, Obbligatorio selezionato, tipo di valore Prompt LLM, una descrizione e il campo facoltativo Valori Enum."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: un parametro del corpo che l’agente compila a partire dalla conversazione (Prompt LLM).
-</p>
+    alt="La sezione Parametri del corpo con una proprietà: tipo di dati String, identificatore email, Obbligatorio selezionato, tipo di valore Prompt LLM, una descrizione e il campo facoltativo Valori Enum." />
+</Frame>
 
 > Consiglio pratico: se segni un campo come **Obbligatorio**, devi obbligare l’agente (tramite il Prompt conversazionale) a **chiederlo e confermarlo** prima di eseguire lo strumento. Altrimenti il webhook riceverà dati incompleti o il flusso fallirà.
 
@@ -139,8 +151,14 @@ Per inviare altri campi, clicca di nuovo su **Aggiungi proprietà**. Per rimuove
 
 Se il tuo endpoint richiede un’autenticazione (ad esempio un token o una chiave), aggiungila in **Headers**:
 
-1. Clicca su **Aggiungi header**.
-2. Compila il **Nome** (ad esempio `Authorization`) e il **Valore** (ad esempio `Bearer` seguito dalla tua chiave), esattamente come richiede la tua API.
+<Steps>
+  <Step>
+    Clicca su **Aggiungi header**.
+  </Step>
+  <Step>
+    Compila il **Nome** (ad esempio `Authorization`) e il **Valore** (ad esempio `Bearer` seguito dalla tua chiave), esattamente come richiede la tua API.
+  </Step>
+</Steps>
 
 Ogni header deve avere un nome e un valore. Rimuovi quelli vuoti con l’icona del cestino, altrimenti lo strumento non potrà essere salvato.
 
@@ -150,25 +168,37 @@ Ogni header deve avere un nome e un valore. Rimuovi quelli vuoti con l’icona d
 
 Un **server MCP** dà al tuo agente un intero insieme di strumenti in un colpo solo (ad esempio tutte le azioni del tuo CRM), senza crearli uno per uno. Per aggiungerne uno:
 
-1. In **Strumenti**, apri la scheda **MCP** e clicca su **\+ Aggiungi MCP**.
-2. In **Informazioni di base**, compila il **Nome** (ad esempio “CRM MCP”) e una **Descrizione** di ciò che offre il server.
-3. In **Configurazione del server**, scegli il **Tipo di server** (**SSE** o **Streamable HTTP**) e incolla l’**URL del server**.
-4. Se il server richiede un’autenticazione, aggiungila in **Header HTTP** con **Aggiungi header**.
-5. Scegli la **Modalità di approvazione degli strumenti**:
-   - **Chiedi sempre**: massima sicurezza. L’agente chiede il permesso prima di ogni uso di uno strumento.
-   - **Approvazione dettagliata degli strumenti** (selezionata per impostazione predefinita): scegli tu quali strumenti sono disattivati e quali possono essere eseguiti automaticamente.
-   - **Nessuna approvazione**: l’agente può usare qualsiasi strumento senza chiedere il permesso.
-6. Clicca su **Crea**.
+<Steps>
+  <Step>
+    In **Strumenti**, apri la scheda **MCP** e clicca su **\+ Aggiungi MCP**.
+  </Step>
+  <Step>
+    In **Informazioni di base**, compila il **Nome** (ad esempio “CRM MCP”) e una **Descrizione** di ciò che offre il server.
+  </Step>
+  <Step>
+    In **Configurazione del server**, scegli il **Tipo di server** (**SSE** o **Streamable HTTP**) e incolla l’**URL del server**.
+  </Step>
+  <Step>
+    Se il server richiede un’autenticazione, aggiungila in **Header HTTP** con **Aggiungi header**.
+  </Step>
+  <Step>
+    Scegli la **Modalità di approvazione degli strumenti**:
+    - **Chiedi sempre**: massima sicurezza. L’agente chiede il permesso prima di ogni uso di uno strumento.
+    - **Approvazione dettagliata degli strumenti** (selezionata per impostazione predefinita): scegli tu quali strumenti sono disattivati e quali possono essere eseguiti automaticamente.
+    - **Nessuna approvazione**: l’agente può usare qualsiasi strumento senza chiedere il permesso.
+  </Step>
+  <Step>
+    Clicca su **Crea**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Aggiungi MCP → nome, descrizione e URL del server → modalità di approvazione, e poi la scheda Strumenti dell’agente, dove aggiungi strumenti e MCP all’agente.">
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Aggiungi MCP → nome, descrizione e URL del server → modalità di approvazione, e poi la scheda Strumenti dell’agente, dove aggiungi strumenti e MCP all’agente.
-</p>
-
-> **Importante:** Collega solo server MCP di cui ti fidi. Con **Nessuna approvazione**, l’agente può usare tutti gli strumenti di quel server senza chiedere.
+<Warning>
+  Collega solo server MCP di cui ti fidi. Con **Nessuna approvazione**, l’agente può usare tutti gli strumenti di quel server senza chiedere.
+</Warning>
 
 ---
 
@@ -176,31 +206,41 @@ Un **server MCP** dà al tuo agente un intero insieme di strumenti in un colpo s
 
 Creare lo strumento non basta. Devi assegnarlo all’agente:
 
-1. Vai su **Agenti AI**.
-2. Seleziona l’agente che vuoi configurare.
-3. Nell’editor dell’agente, apri la scheda **Strumenti**.
-4. Nella sottoscheda **Strumenti**, clicca su **Aggiungi strumento**.
-5. Cerca il tuo strumento e selezionalo. Puoi anche cliccare su **Aggiungi strumento webhook** per crearne uno nuovo da lì.
-6. Salva l’agente.
+<Steps>
+  <Step>
+    Vai su **Agenti AI**.
+  </Step>
+  <Step>
+    Seleziona l’agente che vuoi configurare.
+  </Step>
+  <Step>
+    Nell’editor dell’agente, apri la scheda **Strumenti**.
+  </Step>
+  <Step>
+    Nella sottoscheda **Strumenti**, clicca su **Aggiungi strumento**.
+  </Step>
+  <Step>
+    Cerca il tuo strumento e selezionalo. Puoi anche cliccare su **Aggiungi strumento webhook** per crearne uno nuovo da lì.
+  </Step>
+  <Step>
+    Salva l’agente.
+  </Step>
+</Steps>
 
 Per aggiungere un server MCP all’agente, apri la sottoscheda **MCP** e clicca su **Aggiungi MCP**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: la scheda Strumenti dell’agente. Aggiungi strumento mostra gli strumenti creati nella sezione Strumenti.">
   <img
     src="/images/tools-agent.png"
-    alt="La scheda Strumenti dell'agente con le sottoschede Strumenti e MCP, l'elenco Aggiungi strumento con la ricerca e il pulsante Aggiungi strumento webhook, e gli strumenti di sistema a destra."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: la scheda Strumenti dell’agente. Aggiungi strumento mostra gli strumenti creati nella sezione Strumenti.
-</p>
+    alt="La scheda Strumenti dell'agente con le sottoschede Strumenti e MCP, l'elenco Aggiungi strumento con la ricerca e il pulsante Aggiungi strumento webhook, e gli strumenti di sistema a destra." />
+</Frame>
 
 **Verifica rapida:**\
 Se lo strumento compare nell’elenco dell’agente, è assegnato correttamente. Se non compare, l’agente non potrà eseguirlo.
 
-> **Suggerimento:** A destra della stessa scheda trovi gli **Strumenti di sistema** (Riaggancio smart, Cambio lingua, Trasferisci a numero…). Sono integrati e basta attivarli. Vedi [Agenti IA](/it/Create-AI-Agent/Create-Agent-Enchanced).
+<Tip>
+  A destra della stessa scheda trovi gli **Strumenti di sistema** (Riaggancio smart, Cambio lingua, Trasferisci a numero…). Sono integrati e basta attivarli. Vedi [Agenti IA](/it/Create-AI-Agent/Create-Agent-Enchanced).
+</Tip>
 
 ---
 
@@ -323,13 +363,29 @@ Di seguito trovi un esempio completo (inventato) con due strumenti: un link prin
 
 **Il Link A include (dentro il link stesso):**
 
-1. Registrazione iniziale (dati obbligatori)
-2. Verifica/conferma delle informazioni
-3. Selezione del piano o opzione
-4. Configurazione del pagamento (se applicabile)
-5. Accettazione termini o firma (se applicabile)
-6. Caricamento documenti (se applicabile)
-7. Conferma finale
+<Steps>
+  <Step>
+    Registrazione iniziale (dati obbligatori)
+  </Step>
+  <Step>
+    Verifica/conferma delle informazioni
+  </Step>
+  <Step>
+    Selezione del piano o opzione
+  </Step>
+  <Step>
+    Configurazione del pagamento (se applicabile)
+  </Step>
+  <Step>
+    Accettazione termini o firma (se applicabile)
+  </Step>
+  <Step>
+    Caricamento documenti (se applicabile)
+  </Step>
+  <Step>
+    Conferma finale
+  </Step>
+</Steps>
 
 **Condizioni per eseguire “Invia_Link_Registrazione”:**
 

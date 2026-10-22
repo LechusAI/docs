@@ -15,17 +15,15 @@ Es útil si quieres que tus subcuentas abran recursos de ayuda directamente desd
 - Un centro de ayuda en tu web
 - Un documento de Google o una wiki interna
 
-> **Importante:** Las subcuentas no verán aquí la documentación oficial de Callin. La documentación oficial lleva la marca Callin, así que en un White Label debes publicar **tu propia** documentación y enlazarla en esta sección.
+<Warning>
+  Las subcuentas no verán aquí la documentación oficial de Callin. La documentación oficial lleva la marca Callin, así que en un White Label debes publicar **tu propia** documentación y enlazarla en esta sección.
+</Warning>
 
 La encontrarás en la Plataforma white label, dentro de **Gestión de contenido** ([ábrela aquí](https://app.callin.io/cms/guides)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la página Guías vacía → Agregar nuevo → la guía en la lista → el menú de la fila con Editar y Eliminar.
-</p>
+<Frame caption="Vídeo: la página Guías vacía → Agregar nuevo → la guía en la lista → el menú de la fila con Editar y Eliminar.">
+  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" />
+</Frame>
 
 ## Cómo funciona
 
@@ -38,33 +36,37 @@ Una guía incluye:
 - Una **URL**: adónde se envía al usuario
 - Un interruptor **Activo**: para mostrarla u ocultarla
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/guide1.png" alt="Página Guías con el buscador, el botón Agregar nuevo y una guía en la lista con su Título, Descripción, URL y el estado Activo" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la lista de Guías con una guía de ejemplo.">
+  <img src="/images/guide1.png" alt="Página Guías con el buscador, el botón Agregar nuevo y una guía en la lista con su Título, Descripción, URL y el estado Activo" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la lista de Guías con una guía de ejemplo.
-</p>
-
-> **Consejo:** Usa títulos claros como “Videotutoriales”, “Primeros pasos”, “Preguntas frecuentes” o “Solución de problemas”.
+<Tip>
+  Usa títulos claros como “Videotutoriales”, “Primeros pasos”, “Preguntas frecuentes” o “Solución de problemas”.
+</Tip>
 
 ## Añadir una nueva guía
 
-1. Haz clic en **Agregar nuevo**.
-2. Rellena los campos (los tres son obligatorios):
-   - **Título**: el nombre que reconocerán los usuarios (por ejemplo, “Centro de ayuda”). Máximo 50 caracteres.
-   - **Descripción**: una explicación corta (por ejemplo, “Tutoriales paso a paso y preguntas frecuentes”).
-   - **URL**: el enlace completo que deben abrir los usuarios (por ejemplo, tu sitio de Mintlify o tu propia web de soporte).
-3. Deja **Activo** encendido si quieres que las subcuentas la vean ya. Viene encendido por defecto.
-4. Haz clic en **Guardar**.
+<Steps>
+  <Step>
+    Haz clic en **Agregar nuevo**.
+  </Step>
+  <Step>
+    Rellena los campos (los tres son obligatorios):
+    - **Título**: el nombre que reconocerán los usuarios (por ejemplo, “Centro de ayuda”). Máximo 50 caracteres.
+    - **Descripción**: una explicación corta (por ejemplo, “Tutoriales paso a paso y preguntas frecuentes”).
+    - **URL**: el enlace completo que deben abrir los usuarios (por ejemplo, tu sitio de Mintlify o tu propia web de soporte).
+  </Step>
+  <Step>
+    Deja **Activo** encendido si quieres que las subcuentas la vean ya. Viene encendido por defecto.
+  </Step>
+  <Step>
+    Haz clic en **Guardar**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-guides-add.png" alt="Ventana Agregar nuevo con los campos Título, Descripción y URL rellenados, el interruptor Activo encendido y los botones Cancelar y Guardar" style={{ width:"100%", maxWidth:"420px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Agregar nuevo rellenada para un centro de ayuda de ejemplo.
-</p>
+<Frame caption="Captura: la ventana Agregar nuevo rellenada para un centro de ayuda de ejemplo.">
+  <img src="/images/wl-guides-add.png" alt="Ventana Agregar nuevo con los campos Título, Descripción y URL rellenados, el interruptor Activo encendido y los botones Cancelar y Guardar" />
+</Frame>
 
 ### Ejemplo práctico
 
@@ -85,4 +87,6 @@ La lista muestra el **Título**, la **Descripción**, la **URL** y el **Estado**
 - Hacer clic en **⋮** → **Editar** para cambiar el título, la descripción o la URL, o para apagar **Activo** y ocultarla.
 - Hacer clic en **⋮** → **Eliminar** para borrarla.
 
-> **Error común:** Enlazar una página privada. Asegúrate de que tus clientes pueden abrir la URL (o explica claramente si necesitan iniciar sesión).
+<Warning>
+  **Error común:** Enlazar una página privada. Asegúrate de que tus clientes pueden abrir la URL (o explica claramente si necesitan iniciar sesión).
+</Warning>

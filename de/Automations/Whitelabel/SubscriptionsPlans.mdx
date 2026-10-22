@@ -15,17 +15,11 @@ In der Praxis hilft Ihnen dieser Bereich dabei:
 
 Sie finden sie in der White-Label-Plattform unter **Pläne und Abrechnung** ([hier öffnen](https://app.callin.io/cms/subscription-plans)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: die Seite Abonnementpläne, bevor Stripe verbunden ist. Plan erstellen bleibt deaktiviert, bis Sie Stripe verbinden.">
   <img
     src="/images/subscriptionsplans1.png"
-    alt="Seite Abonnementpläne mit den Schaltflächen Aufladerate und Plan erstellen, dem Hinweis Stripe verbinden, um Pläne zu erstellen mit der Schaltfläche Stripe verbinden, der Suche und der Meldung, dass es keine Pläne gibt"
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: die Seite Abonnementpläne, bevor Stripe verbunden ist. Plan erstellen bleibt deaktiviert, bis Sie Stripe verbinden.
-</p>
+    alt="Seite Abonnementpläne mit den Schaltflächen Aufladerate und Plan erstellen, dem Hinweis Stripe verbinden, um Pläne zu erstellen mit der Schaltfläche Stripe verbinden, der Suche und der Meldung, dass es keine Pläne gibt" />
+</Frame>
 
 ### Zuerst Stripe verbinden
 
@@ -37,37 +31,39 @@ Klicken Sie im Hinweis auf **Stripe verbinden** oder verbinden Sie Stripe unter 
 
 Neben den Plänen können Ihre Kunden auf ihrer Abrechnungsseite Guthaben-Minuten kaufen. Die **Aufladerate** ist der Preis pro Minute, den sie beim Aufladen zahlen.
 
-1. Klicken Sie auf **Aufladerate**. Das Fenster **Aufladerate festlegen** öffnet sich.
-2. Geben Sie unter **Rate pro Minute** den Preis pro Minute in Ihrer Währung ein (zum Beispiel `0.16`).
-3. Klicken Sie auf **Aktualisieren**.
+<Steps>
+  <Step>
+    Klicken Sie auf **Aufladerate**. Das Fenster **Aufladerate festlegen** öffnet sich.
+  </Step>
+  <Step>
+    Geben Sie unter **Rate pro Minute** den Preis pro Minute in Ihrer Währung ein (zum Beispiel `0.16`).
+  </Step>
+  <Step>
+    Klicken Sie auf **Aktualisieren**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-plans-recharge.png" alt="Fenster Aufladerate festlegen mit dem Feld Rate pro Minute und den Schaltflächen Abbrechen und Aktualisieren" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: das Fenster Aufladerate festlegen.">
+  <img src="/images/wl-plans-recharge.png" alt="Fenster Aufladerate festlegen mit dem Feld Rate pro Minute und den Schaltflächen Abbrechen und Aktualisieren" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: das Fenster Aufladerate festlegen.
-</p>
-
-> **Tipp:** Legen Sie die Aufladerate über Ihren eigenen Kosten pro Minute fest, damit Aufladungen Ihre Marge sichern. Siehe [Abrechnung und Gebühren](/de/Billing).
+<Tip>
+  Legen Sie die Aufladerate über Ihren eigenen Kosten pro Minute fest, damit Aufladungen Ihre Marge sichern. Siehe [Abrechnung und Gebühren](/de/Billing).
+</Tip>
 
 ## Einen neuen Abonnementplan erstellen
 
 Unter **Abrechnung → Abonnementpläne** klicken Sie auf die Schaltfläche zum **Erstellen eines Plans**. Es öffnet sich ein Assistent mit mehreren Schritten.
 
-> **Tipp:** Definieren Sie Ihre Stufen und Preise vorab in einem Entwurf (z. B. „Basis: 400 Minuten/Monat für 300“). Das spart Zeit und reduziert spätere Korrekturen.
+<Tip>
+  Definieren Sie Ihre Stufen und Preise vorab in einem Entwurf (z. B. „Basis: 400 Minuten/Monat für 300“). Das spart Zeit und reduziert spätere Korrekturen.
+</Tip>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Erster Schritt des Assistenten, in dem Sie den Plan benennen, beschreiben und die Verfügbarkeit festlegen.">
   <img
     src="/images/subscriptionsplans2.png"
-    alt="Assistent zur Planerstellung im Schritt für Basisinformationen mit Feldern für Planname und Beschreibung sowie Optionen, den Plan aktiv zu schalten oder hervorzuheben."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Erster Schritt des Assistenten, in dem Sie den Plan benennen, beschreiben und die Verfügbarkeit festlegen.
-</p>
+    alt="Assistent zur Planerstellung im Schritt für Basisinformationen mit Feldern für Planname und Beschreibung sowie Optionen, den Plan aktiv zu schalten oder hervorzuheben." />
+</Frame>
 
 ### Schritt 1: Basisinformationen
 
@@ -84,7 +80,9 @@ Tragen Sie das Nötigste ein:
 - Aktiv: **Aktiviert**
 - Hervorgehoben: **Aktiviert** (nur für den Plan, den Sie hervorheben möchten)
 
-> **Häufiger Fehler:** Die Beschreibung leer lassen. Eine klare Beschreibung reduziert Rückfragen und Supportanfragen.
+<Warning>
+  **Häufiger Fehler:** Die Beschreibung leer lassen. Eine klare Beschreibung reduziert Rückfragen und Supportanfragen.
+</Warning>
 
 ### Schritt 2: Plant yp
 
@@ -93,7 +91,9 @@ Wählen Sie das Abrechnungsmodell. Üblicherweise gibt es Optionen wie:
 - **Einmalkauf**: Einmalige Zahlung für eine feste Minutenmenge.
 - **Nutzungsbasierte Abrechnung**: Abrechnung pro Minute mit flexibler Nutzung.
 
-> **Wichtig:** Die verfügbaren Optionen können je nach Konto oder Tarif variieren.
+<Warning>
+  Die verfügbaren Optionen können je nach Konto oder Tarif variieren.
+</Warning>
 
 ### Schritt 3: Preis und Minuten
 
@@ -142,7 +142,9 @@ Vor dem Abschluss sehen Sie eine Zusammenfassung mit:
 
 Wenn etwas nicht passt, nutzen Sie die Option **Bearbeiten** in der entsprechenden Sektion und prüfen Sie erneut. Wenn alles stimmt, erstellen Sie den Plan.
 
-> **Tipp:** Prüfen Sie „inkludierte Minuten“ und „Preis“ immer gemeinsam. Die häufigsten Fehler sind falsch zugeordnete Stufen.
+<Tip>
+  Prüfen Sie „inkludierte Minuten“ und „Preis“ immer gemeinsam. Die häufigsten Fehler sind falsch zugeordnete Stufen.
+</Tip>
 
 ## Einen bestehenden Plan bearbeiten
 
@@ -153,19 +155,15 @@ Im Editor sehen Sie typischerweise Reiter wie:
 - **Funktionen**: Werte der enthaltenen Funktionen anpassen.
 - **Preis und Minuten**: Inkludierte Minuten, Preis und zusätzliche Minuten ändern.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Bearbeitung von Preis und Minuten, inklusive zusätzlicher Minuten und einem Hinweis zur Erstellung eines neuen Preises in Stripe.">
   <img
     src="/images/subscriptionsplans3.png"
-    alt="Bearbeitungsansicht im Bereich Preis und Minuten mit Hinweis zu Preisänderungen, Feldern für inkludierte Minuten und Preis sowie einer Option für zusätzliche Minuten inklusive Minutenpreis."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Bearbeitungsansicht im Bereich Preis und Minuten mit Hinweis zu Preisänderungen, Feldern für inkludierte Minuten und Preis sowie einer Option für zusätzliche Minuten inklusive Minutenpreis." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Bearbeitung von Preis und Minuten, inklusive zusätzlicher Minuten und einem Hinweis zur Erstellung eines neuen Preises in Stripe.
-</p>
-
-> **Wichtig:** Wenn Sie den Preis ändern, kann die Plattform einen **neuen Preis in Stripe** anlegen. Bestehende Abonnements können beim bisherigen Preis bleiben und nicht betroffen sein (abhängig von Ihrer Konfiguration).
+<Warning>
+  Wenn Sie den Preis ändern, kann die Plattform einen **neuen Preis in Stripe** anlegen. Bestehende Abonnements können beim bisherigen Preis bleiben und nicht betroffen sein (abhängig von Ihrer Konfiguration).
+</Warning>
 
 ## Grundverwaltung (suchen, ID kopieren, deaktivieren)
 
@@ -174,4 +172,6 @@ In der Liste können Sie typischerweise:
 - Die **Plan-ID kopieren** (z. B. für Support oder interne Prüfungen).
 - Einen Plan **deaktivieren**, damit er neuen Nutzerinnen und Nutzern nicht mehr angeboten wird.
 
-> **Häufiger Fehler:** Einen Plan deaktivieren, ohne vorher einen Ersatz zu erstellen. Erstellen Sie zuerst den neuen Plan und deaktivieren Sie dann den alten.
+<Warning>
+  **Häufiger Fehler:** Einen Plan deaktivieren, ohne vorher einen Ersatz zu erstellen. Erstellen Sie zuerst den neuen Plan und deaktivieren Sie dann den alten.
+</Warning>

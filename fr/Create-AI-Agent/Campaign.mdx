@@ -17,27 +17,21 @@ Depuis cette page, vous pouvez :
 - Suivre la progression et les résultats de chaque contact.
 - Analyser les performances dans **Analyses des campagnes**.
 
-> **Remarque :** Une partie de cette section de l’application est en anglais. Dans ce guide, tous les noms de boutons et d’options sont traduits : certains apparaîtront en anglais à l’écran.
+<Note>
+  Une partie de cette section de l’application est en anglais. Dans ce guide, tous les noms de boutons et d’options sont traduits : certains apparaîtront en anglais à l’écran.
+</Note>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns1.png" alt="Onglet Campagnes avec le panneau de filtres ouvert (ID ou nom de la campagne, Statut, Plage de dates, Afficher les supprimés), le bouton Créer une campagne et une carte de campagne d'exemple au statut En attente, avec son agent, 2 contacts, Planifiée et les boutons Voir et Lancer maintenant" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : votre liste de campagnes, avec les filtres ouverts et une campagne planifiée.
-</p>
+<Frame caption="Capture d’écran : votre liste de campagnes, avec les filtres ouverts et une campagne planifiée.">
+  <img src="/images/campaigns1.png" alt="Onglet Campagnes avec le panneau de filtres ouvert (ID ou nom de la campagne, Statut, Plage de dates, Afficher les supprimés), le bouton Créer une campagne et une carte de campagne d'exemple au statut En attente, avec son agent, 2 contacts, Planifiée et les boutons Voir et Lancer maintenant" />
+</Frame>
 
 Si vous n’avez encore aucune campagne, la page affiche **Aucune campagne** et un bouton **\+ Créer une campagne**.
 
 ## Créer une campagne
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Créer une campagne → nom, agent et contacts → Planifier plus tard → Appels de relance → la campagne planifiée dans la liste.
-</p>
+<Frame caption="Vidéo : Créer une campagne → nom, agent et contacts → Planifier plus tard → Appels de relance → la campagne planifiée dans la liste.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-create.mp4" />
+</Frame>
 
 Cliquez sur **\+ Créer une campagne** pour ouvrir le panneau **Créer une campagne**.
 
@@ -48,7 +42,9 @@ Remplissez :
 - **Nom de la campagne** (obligatoire).
 - **Agent IA** (obligatoire). Vous pouvez saisir du texte pour rechercher parmi vos agents.
 
-> **Important :** Comme l’indique le panneau, assurez-vous que l’agent a toujours un numéro attribué pendant la campagne. Sinon, elle ne fonctionnera pas correctement. S’il n’a pas de numéro, vous verrez **Aucun numéro n’est attribué à cet agent** et la campagne ne sera pas créée. Voir [Connecter votre numéro](/fr/Create-AI-Agent/ConnectNumber).
+<Warning>
+  Comme l’indique le panneau, assurez-vous que l’agent a toujours un numéro attribué pendant la campagne. Sinon, elle ne fonctionnera pas correctement. S’il n’a pas de numéro, vous verrez **Aucun numéro n’est attribué à cet agent** et la campagne ne sera pas créée. Voir [Connecter votre numéro](/fr/Create-AI-Agent/ConnectNumber).
+</Warning>
 
 ### 2) Sélectionner des contacts
 
@@ -61,15 +57,13 @@ Dans **Sélectionner des contacts**, vous pouvez :
 
 En bas du panneau, vous voyez combien de contacts sont sélectionnés (par exemple, **2 contacts sélectionnés**).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-create.png" alt="Panneau Créer une campagne avec Nom de la campagne, Agent IA, l'avertissement sur le numéro de l'agent, Sélectionner des contacts avec deux contacts d'exemple sélectionnés et les options Lancer maintenant et Planifier plus tard" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : le panneau Créer une campagne avec le nom, l’agent et les contacts sélectionnés.">
+  <img src="/images/campaigns-create.png" alt="Panneau Créer une campagne avec Nom de la campagne, Agent IA, l'avertissement sur le numéro de l'agent, Sélectionner des contacts avec deux contacts d'exemple sélectionnés et les options Lancer maintenant et Planifier plus tard" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le panneau Créer une campagne avec le nom, l’agent et les contacts sélectionnés.
-</p>
-
-> **Astuce :** Si vos contacts sont déjà dans un tableur, exportez-les en fichier **.csv** avant de les importer.
+<Tip>
+  Si vos contacts sont déjà dans un tableur, exportez-les en fichier **.csv** avant de les importer.
+</Tip>
 
 ### 3) Mapper les colonnes (lors d’un téléversement CSV)
 
@@ -79,7 +73,9 @@ Si vous importez un CSV, vous associez ses colonnes avant de continuer, comme da
 - **Nom**
 - **E-mail**
 
-> **Erreur fréquente :** Ne pas associer le **Téléphone**. La campagne ne peut pas ajouter de contacts sans numéro de téléphone.
+<Warning>
+  **Erreur fréquente :** Ne pas associer le **Téléphone**. La campagne ne peut pas ajouter de contacts sans numéro de téléphone.
+</Warning>
 
 ### 4) Options de lancement
 
@@ -102,25 +98,19 @@ Activez **Appels de relance** pour rappeler automatiquement les contacts qui n�
 
 Le **Résumé** affiche le résultat en toutes lettres (par exemple, après 2 heures, puis après 1 jour, puis après 3 jours).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-followup.png" alt="Appels de relance activés, avec Nombre d'appels de relance 3, des intervalles de 120, 1440 et 4320 minutes, le Résumé et les boutons Annuler et Planifier" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : des appels de relance avec trois tentatives.">
+  <img src="/images/campaigns-followup.png" alt="Appels de relance activés, avec Nombre d'appels de relance 3, des intervalles de 120, 1440 et 4320 minutes, le Résumé et les boutons Annuler et Planifier" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : des appels de relance avec trois tentatives.
-</p>
-
-> **Astuce :** Faites d’abord une petite campagne de test (5 à 10 contacts) pour vérifier que votre agent, votre script et les relances fonctionnent comme prévu.
+<Tip>
+  Faites d’abord une petite campagne de test (5 à 10 contacts) pour vérifier que votre agent, votre script et les relances fonctionnent comme prévu.
+</Tip>
 
 ## Gérer les campagnes
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-manage.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Filtres → Voir → Détails de la campagne → le menu ⋮ avec Modifier et Supprimer.
-</p>
+<Frame caption="Vidéo : Filtres → Voir → Détails de la campagne → le menu ⋮ avec Modifier et Supprimer.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-manage.mp4" />
+</Frame>
 
 Chaque carte de campagne affiche le nom, le statut (par exemple, **En attente**), l’agent, le nombre de contacts et si elle est **Planifiée**. Elle a un bouton **Voir** et, tant qu’elle n’a pas démarré, un bouton **Lancer maintenant** pour la démarrer tout de suite.
 
@@ -142,13 +132,9 @@ Cliquez sur **Voir** sur une carte pour ouvrir les **détails de la campagne** :
 - Un tableau avec le **nom**, l’**e-mail**, le **téléphone**, le **statut** (par exemple, **Non démarré**) et le **résultat** de chaque contact.
 - Si la campagne est **Planifiée** et utilise les **Appels de relance**, et les **Détails du planning** (heure de début, heure de fin et fuseau horaire).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns-details.png" alt="Panneau des détails de la campagne avec son nom et son agent, Rafraîchir, la progression de la campagne à 0 % avec les compteurs, le tableau des contacts au statut Non démarré et les étiquettes Planifiée et Appels de relance" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : les détails d’une campagne planifiée qui n’a pas encore démarré.
-</p>
+<Frame caption="Capture d’écran : les détails d’une campagne planifiée qui n’a pas encore démarré.">
+  <img src="/images/campaigns-details.png" alt="Panneau des détails de la campagne avec son nom et son agent, Rafraîchir, la progression de la campagne à 0 % avec les compteurs, le tableau des contacts au statut Non démarré et les étiquettes Planifiée et Appels de relance" />
+</Frame>
 
 ### Modifier une campagne
 
@@ -156,24 +142,28 @@ Cliquez sur le menu **⋮** de la carte et choisissez **Modifier**. Le panneau *
 
 ### Supprimer une campagne (permanent)
 
-1. Cliquez sur le menu **⋮** de la carte et choisissez **Supprimer**.
-2. Dans **Supprimer la campagne**, saisissez **DELETE** pour confirmer et cliquez sur **Supprimer**.
+<Steps>
+  <Step>
+    Cliquez sur le menu **⋮** de la carte et choisissez **Supprimer**.
+  </Step>
+  <Step>
+    Dans **Supprimer la campagne**, saisissez **DELETE** pour confirmer et cliquez sur **Supprimer**.
+  </Step>
+</Steps>
 
 Si la campagne est planifiée, elle ne passera plus les appels prévus.
 
-> **Important :** La suppression d’une campagne est une **action définitive** qui ne peut pas être annulée.
+<Warning>
+  La suppression d’une campagne est une **action définitive** qui ne peut pas être annulée.
+</Warning>
 
 ## Analyses des campagnes
 
 Passez à l’onglet **Analyses des campagnes** pour voir les résultats de vos campagnes. Utilisez le sélecteur en haut à droite pour afficher **Tout** ou une seule campagne, et le bouton d’actualisation pour mettre les données à jour.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/campaigns-analytics.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : l’aperçu des analyses, des cartes de synthèse jusqu’aux graphiques.
-</p>
+<Frame caption="Vidéo : l’aperçu des analyses, des cartes de synthèse jusqu’aux graphiques.">
+  <video autoPlay muted loop playsInline src="/images/campaigns-analytics.mp4" />
+</Frame>
 
 ### Ce que vous pouvez analyser
 
@@ -184,10 +174,6 @@ L’**Aperçu des analyses** comprend :
 - **Rendez-vous par heure** : les rendez-vous pris et l’heure qui en compte le plus.
 - **Résultats de l’appel** et **Indicateurs clés** pour la période choisie.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/campaigns2.png" alt="Analyses des campagnes avec l'Aperçu des analyses, le sélecteur de campagne sur Tout et les cartes Total des appels, Durée moyenne, Total d’utilisation, Total des événements, Taux de détection AMD et Taux de réussite" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’aperçu des analyses de campagnes, où vous suivez les indicateurs et les tendances.
-</p>
+<Frame caption="Capture d’écran : l’aperçu des analyses de campagnes, où vous suivez les indicateurs et les tendances.">
+  <img src="/images/campaigns2.png" alt="Analyses des campagnes avec l'Aperçu des analyses, le sélecteur de campagne sur Tout et les cartes Total des appels, Durée moyenne, Total d’utilisation, Total des événements, Taux de détection AMD et Taux de réussite" />
+</Frame>

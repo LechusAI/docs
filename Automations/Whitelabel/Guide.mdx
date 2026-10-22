@@ -15,17 +15,15 @@ This is useful if you want your sub-accounts to open help resources directly fro
 - A help center on your website
 - A Google Doc or internal wiki
 
-> **Important:** Sub-accounts won’t see Callin’s official documentation here. Callin’s official docs include Callin branding, so for white-label setups you should publish **your own** documentation and link it in this section.
+<Warning>
+  Sub-accounts won’t see Callin’s official documentation here. Callin’s official docs include Callin branding, so for white-label setups you should publish **your own** documentation and link it in this section.
+</Warning>
 
 You’ll find it in the White Label Platform, under **Content Management** ([open it here](https://app.callin.io/cms/guides)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the empty Guides page → Add New → the guide in the list → the row menu with Edit and Delete.
-</p>
+<Frame caption="Video: the empty Guides page → Add New → the guide in the list → the row menu with Edit and Delete.">
+  <video autoPlay muted loop playsInline src="/images/wl-guides.mp4" />
+</Frame>
 
 ## How it works
 
@@ -38,33 +36,37 @@ A guide includes:
 - A **URL**: where the user is sent
 - An **Active** toggle: to show or hide it
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/guide1.png" alt="Guides page with the search bar, the Add New button and one guide in the list with its Title, Description, URL and Active status" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Guides list with an example guide.">
+  <img src="/images/guide1.png" alt="Guides page with the search bar, the Add New button and one guide in the list with its Title, Description, URL and Active status" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Guides list with an example guide.
-</p>
-
-> **Tip:** Use clear titles like “Video Tutorials”, “Getting Started”, “FAQs”, or “Troubleshooting”.
+<Tip>
+  Use clear titles like “Video Tutorials”, “Getting Started”, “FAQs”, or “Troubleshooting”.
+</Tip>
 
 ## Add a new guide link
 
-1. Click **Add New**.
-2. Fill in the fields (all three are required):
-   - **Title**: the name users will recognize (for example, “Help Center”). Maximum 50 characters.
-   - **Description**: a short explanation (for example, “Step-by-step tutorials and FAQs”).
-   - **URL**: the full link users should open (for example, your Mintlify site or your own support site).
-3. Leave **Active** on if you want it visible to sub-accounts right away. It’s on by default.
-4. Click **Save**.
+<Steps>
+  <Step>
+    Click **Add New**.
+  </Step>
+  <Step>
+    Fill in the fields (all three are required):
+    - **Title**: the name users will recognize (for example, “Help Center”). Maximum 50 characters.
+    - **Description**: a short explanation (for example, “Step-by-step tutorials and FAQs”).
+    - **URL**: the full link users should open (for example, your Mintlify site or your own support site).
+  </Step>
+  <Step>
+    Leave **Active** on if you want it visible to sub-accounts right away. It’s on by default.
+  </Step>
+  <Step>
+    Click **Save**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-guides-add.png" alt="Add New window with the Title, Description and URL fields filled in, the Active toggle on and the Cancel and Save buttons" style={{ width:"100%", maxWidth:"420px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Add New window filled in for an example help center.
-</p>
+<Frame caption="Screenshot: the Add New window filled in for an example help center.">
+  <img src="/images/wl-guides-add.png" alt="Add New window with the Title, Description and URL fields filled in, the Active toggle on and the Cancel and Save buttons" />
+</Frame>
 
 ### Practical example
 
@@ -85,4 +87,6 @@ The list shows each guide’s **Title**, **Description**, **URL** and **Status**
 - Click **⋮** → **Edit** to update its title, description or URL, or to turn **Active** off and hide it.
 - Click **⋮** → **Delete** to remove it.
 
-> **Common mistake:** Linking to a private page. Make sure the URL is accessible to your customers (or clearly explain if they need a login).
+<Warning>
+  **Common mistake:** Linking to a private page. Make sure the URL is accessible to your customers (or clearly explain if they need a login).
+</Warning>

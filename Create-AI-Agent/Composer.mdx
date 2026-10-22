@@ -13,36 +13,38 @@ It only uses your account’s real data — agents, numbers, knowledge bases, an
 
 Open it from **Composer** in the left menu or the **Composer** button at the top of the dashboard ([open it here](https://app.callin.io/composer)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/composer-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: a new Composer thread with its suggestion cards → What is Composer? → limitations and how it works.
-</p>
+<Frame caption="Video: a new Composer thread with its suggestion cards → What is Composer? → limitations and how it works.">
+  <video autoPlay muted loop playsInline src="/images/composer-tour.mp4" />
+</Frame>
 
 ## Start a conversation
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/composer-home.png" alt="Callin Composer with the Threads list and New Thread on the left, the greeting, the What is Composer? button, the Build, Debug, Fix calls, Analyze and Test cards, and the message box" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: a new Composer thread with the suggestion cards.">
+  <img src="/images/composer-home.png" alt="Callin Composer with the Threads list and New Thread on the left, the greeting, the What is Composer? button, the Build, Debug, Fix calls, Analyze and Test cards, and the message box" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: a new Composer thread with the suggestion cards.
-</p>
-
-1. Click **New Thread**. Each conversation is saved as a thread in the **Threads** list on the left, so you can come back to it later.
-2. Pick one of the suggestion cards, or type your own request in the message box:
-   - **Build**: walk me through building an agent.
-   - **Debug**: diagnose recent call failures.
-   - **Fix calls**: find call issues and apply repairs.
-   - **Analyze**: review call analytics for the week.
-   - **Test**: talk to my agent in the dashboard.
-3. Press **Enter** to send, or **Shift + Enter** for a new line.
+<Steps>
+  <Step>
+    Click **New Thread**. Each conversation is saved as a thread in the **Threads** list on the left, so you can come back to it later.
+  </Step>
+  <Step>
+    Pick one of the suggestion cards, or type your own request in the message box:
+    - **Build**: walk me through building an agent.
+    - **Debug**: diagnose recent call failures.
+    - **Fix calls**: find call issues and apply repairs.
+    - **Analyze**: review call analytics for the week.
+    - **Test**: talk to my agent in the dashboard.
+  </Step>
+  <Step>
+    Press **Enter** to send, or **Shift + Enter** for a new line.
+  </Step>
+</Steps>
 
 You may also see cards such as **Transfer** (create a rule to transfer callers to a human), **Campaign** (create an outbound campaign with all settings), **Keywords** (fix transcription errors with domain keywords), or **Common errors** (diagnose email, booking dates, STT, and latency, then apply the right fix).
 
-> **Tip:** Be specific. _“Analyze the latest call of my receptionist agent and tell me why it hung up early”_ gets a better answer than _“check my agent”_.
+<Tip>
+  Be specific. _“Analyze the latest call of my receptionist agent and tell me why it hung up early”_ gets a better answer than _“check my agent”_.
+</Tip>
 
 ### Attach files
 
@@ -61,13 +63,9 @@ Click **What is Composer?** to see the full list. Composer can help with:
 - **Transfers**: transfer settings so callers can reach a person when needed.
 - **Dashboard setup**: create agents and update configuration across the dashboard.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/composer-about.png" alt="What is Composer? panel with the description and the What it helps with cards: Agent instructions, Root cause & fix, Diagnose calls & fix, Tools & actions, Numbers & calling, Call review, Transfers and Dashboard setup" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the What is Composer? panel.
-</p>
+<Frame caption="Screenshot: the What is Composer? panel.">
+  <img src="/images/composer-about.png" alt="What is Composer? panel with the description and the What it helps with cards: Agent instructions, Root cause & fix, Diagnose calls & fix, Tools & actions, Numbers & calling, Call review, Transfers and Dashboard setup" />
+</Frame>
 
 Some popular requests: _analyze latest call_, _create an inbound receptionist agent_, _update my greeting and prompt_, _review this week’s analytics_.
 
@@ -80,13 +78,23 @@ Composer never changes your setup on its own. When it wants to apply a change, i
 
 You need to approve or deny before the conversation continues. Sometimes Composer asks you a question with options: choose one, type your own answer, or click **Skip** to let it use its best judgment.
 
-> **Important:** Review every suggestion before you approve it, so your agent stays accurate and on-brand.
+<Warning>
+  Review every suggestion before you approve it, so your agent stays accurate and on-brand.
+</Warning>
 
 ### How it works
 
-1. Tell Composer what you want to improve, create, review, or update.
-2. Composer suggests the best dashboard changes or next steps, based on the tools and settings available to you.
-3. Review the suggestion, then keep refining your setup until your agent behaves the way you want.
+<Steps>
+  <Step>
+    Tell Composer what you want to improve, create, review, or update.
+  </Step>
+  <Step>
+    Composer suggests the best dashboard changes or next steps, based on the tools and settings available to you.
+  </Step>
+  <Step>
+    Review the suggestion, then keep refining your setup until your agent behaves the way you want.
+  </Step>
+</Steps>
 
 ## Export a conversation
 

@@ -15,7 +15,9 @@ Un **agente de correo** es un asistente que vigila una bandeja de entrada por ti
 
 Configurar tu primer agente lleva unos diez minutos y no necesitas conocimientos técnicos.
 
-> **Nota:** El Gestor de correo con IA está marcado como **Beta**. Todavía está creciendo, así que algunas pantallas pueden verse un poco distintas en tu cuenta.
+<Note>
+  El Gestor de correo con IA está marcado como **Beta**. Todavía está creciendo, así que algunas pantallas pueden verse un poco distintas en tu cuenta.
+</Note>
 
 ## Qué necesitas antes de empezar
 
@@ -30,33 +32,39 @@ No hace falta tener la bandeja lista ahora. Puedes crear primero el agente y con
 
 Abre **Agentes de correo**. Es la lista de todos los agentes que has creado. Haz clic en **Crear agente**, arriba a la derecha.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents1.png" alt="Lista de Agentes de correo con cuatro agentes, cada uno con el aviso Sin correo asignado, un buscador y el botón Crear agente" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La lista de Agentes de correo. Cada agente muestra su nombre, su fecha de creación y un aviso en naranja mientras no tiene bandeja conectada.
-</p>
+<Frame caption="La lista de Agentes de correo. Cada agente muestra su nombre, su fecha de creación y un aviso en naranja mientras no tiene bandeja conectada.">
+  <img src="/images/mailagents1.png" alt="Lista de Agentes de correo con cuatro agentes, cada uno con el aviso Sin correo asignado, un buscador y el botón Crear agente" />
+</Frame>
 
 Se abre un asistente corto con cinco pasos:
 
-1. **Nombre del agente de correo**: un nombre que tu equipo reconozca, como "Atención de pedidos" o "Bandeja de ventas". Hasta 50 caracteres.
-2. **Prompt del sistema**: cómo debe gestionar el correo el agente. Opcional.
-3. **Categorías de correo**: etiquetas para clasificar el correo entrante. Opcional.
-4. **Reglas de automatización**: qué remitentes reciben respuestas automáticas y quién recibe una copia.
-5. **Conectar correo**: la bandeja de la que se ocupará el agente.
+<Steps>
+  <Step>
+    **Nombre del agente de correo**: un nombre que tu equipo reconozca, como "Atención de pedidos" o "Bandeja de ventas". Hasta 50 caracteres.
+  </Step>
+  <Step>
+    **Prompt del sistema**: cómo debe gestionar el correo el agente. Opcional.
+  </Step>
+  <Step>
+    **Categorías de correo**: etiquetas para clasificar el correo entrante. Opcional.
+  </Step>
+  <Step>
+    **Reglas de automatización**: qué remitentes reciben respuestas automáticas y quién recibe una copia.
+  </Step>
+  <Step>
+    **Conectar correo**: la bandeja de la que se ocupará el agente.
+  </Step>
+</Steps>
 
 Todos los pasos después del nombre tienen **Omitir**, y puedes cambiarlo todo más tarde desde las pestañas del agente.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: los cinco pasos del asistente, desde el nombre hasta conectar la bandeja.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: los cinco pasos del asistente, desde el nombre hasta conectar la bandeja.
-</p>
-
-> **Importante:** El agente se crea al pasar el paso **Categorías de correo**. Si cierras el asistente después de ese paso, el agente se queda en la lista. Desde ahí puedes terminarlo o eliminarlo.
+<Warning>
+  El agente se crea al pasar el paso **Categorías de correo**. Si cierras el asistente después de ese paso, el agente se queda en la lista. Desde ahí puedes terminarlo o eliminarlo.
+</Warning>
 
 Debajo del nombre, en la lista, verás **Sin correo asignado** en naranja. Es normal: todavía no hay bandeja conectada. Lo resolverás en el paso 4.
 
@@ -68,13 +76,9 @@ Cada fila tiene un menú **⋮** con tres acciones:
 
 La configuración del agente tiene cuatro pestañas: **Agente**, **Categorías**, **Buzón** y **Avanzado**. Los pasos siguientes las recorren en orden. Puedes cambiar el nombre del agente desde el campo de texto de arriba.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: Editar un agente → escribir el prompt de conversación → elegir el modelo → añadir una categoría → revisar la pestaña Avanzado.
-</p>
+<Frame caption="Vídeo: Editar un agente → escribir el prompt de conversación → elegir el modelo → añadir una categoría → revisar la pestaña Avanzado.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" />
+</Frame>
 
 ## Paso 2 — Dile al agente cómo comportarse
 
@@ -92,7 +96,9 @@ Cuanto más preciso seas, más previsibles serán los resultados. Una versión m
 
 El contador de abajo a la derecha muestra cuánto has usado de los 4000 caracteres. Los cambios guardados se aplican al correo nuevo que llegue.
 
-> **Consejo:** Escribe lo que el agente **no** debe hacer, no solo lo que debe hacer. Frases como "nunca confirmes citas", "nunca prometas reembolsos" o "nunca hables de precios por correo" evitan la mayoría de sorpresas.
+<Tip>
+  Escribe lo que el agente **no** debe hacer, no solo lo que debe hacer. Frases como "nunca confirmes citas", "nunca prometas reembolsos" o "nunca hables de precios por correo" evitan la mayoría de sorpresas.
+</Tip>
 
 ### Inteligencia de IA (LLM)
 
@@ -111,7 +117,9 @@ Los agentes nuevos empiezan con **GPT 4.1 Mini**.
 
 En el mismo panel está **Temperatura**, un control deslizante de 0 a 1 que empieza en 0,7. Los valores bajos mantienen la redacción constante y repetible. Los altos la hacen más variada y natural, pero menos previsible.
 
-> **Para principiantes:** No hace falta que toques nada de esto. Si las respuestas suenan robóticas, prueba Claude Sonnet o sube un poco la temperatura. Si varían demasiado, bájala.
+<Info>
+  **Para principiantes:** No hace falta que toques nada de esto. Si las respuestas suenan robóticas, prueba Claude Sonnet o sube un poco la temperatura. Si varían demasiado, bájala.
+</Info>
 
 ## Paso 3 — Organiza tu correo con categorías
 
@@ -129,13 +137,9 @@ Haz clic en **Añadir categoría**. Se abre una ventana con estos campos:
 
 Puedes elegir uno de los colores predefinidos o crear el tuyo con la muestra **\+**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-categories.png" alt="Ventana Añadir categoría con un nombre, una descripción, el color verde y los dos interruptores de respuesta activados" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La ventana Añadir categoría. La etiqueta de la derecha muestra cómo se verá.
-</p>
+<Frame caption="La ventana Añadir categoría. La etiqueta de la derecha muestra cómo se verá.">
+  <img src="/images/mail-agent-categories.png" alt="Ventana Añadir categoría con un nombre, una descripción, el color verde y los dos interruptores de respuesta activados" />
+</Frame>
 
 Debajo de los colores hay dos interruptores:
 
@@ -146,9 +150,13 @@ Si desactivas los dos, el agente solo etiqueta el mensaje (**Solo categorizar**)
 
 Haz clic en **Añadir categoría** para añadirla. Cada categoría necesita un nombre y una descripción.
 
-> **Error común:** Escribir una descripción vaga, como "cosas importantes". El agente usa este texto para decidir qué correos van aquí, así que describe el contenido real: "mensajes que piden una factura, un reembolso o un cambio de forma de pago". Si los correos caen en la categoría equivocada, afinar la descripción suele ser lo más rápido.
+<Warning>
+  **Error común:** Escribir una descripción vaga, como "cosas importantes". El agente usa este texto para decidir qué correos van aquí, así que describe el contenido real: "mensajes que piden una factura, un reembolso o un cambio de forma de pago". Si los correos caen en la categoría equivocada, afinar la descripción suele ser lo más rápido.
+</Warning>
 
-> **Importante:** Empieza con **Generar borrador de respuesta** activado y **Respuesta automática** desactivado. Lee los borradores durante unos días. Cuando el agente acierte con el tono y los datos, activa las respuestas automáticas donde un error no tendría consecuencias.
+<Warning>
+  Empieza con **Generar borrador de respuesta** activado y **Respuesta automática** desactivado. Lee los borradores durante unos días. Cuando el agente acierte con el tono y los datos, activa las respuestas automáticas donde un error no tendría consecuencias.
+</Warning>
 
 ## Paso 4 — Conecta la bandeja
 
@@ -174,7 +182,9 @@ Si eliges **Otro correo (IMAP y SMTP)**, el formulario **Configuración IMAP / S
 
 Haz clic en **Conectar buzón**. Tus credenciales se cifran y se guardan de forma segura. Después, Callin.io importa los mensajes del periodo elegido (**Sincronizando tu bandeja**). Hasta que termine la sincronización, los mensajes nuevos pueden tardar un poco en aparecer.
 
-> **Nota:** Puedes saltarte este paso y conectar la bandeja más tarde. Todo lo demás queda guardado, pero el agente no procesará nada hasta que haya una bandeja vinculada.
+<Note>
+  Puedes saltarte este paso y conectar la bandeja más tarde. Todo lo demás queda guardado, pero el agente no procesará nada hasta que haya una bandeja vinculada.
+</Note>
 
 ## Paso 5 — Ajusta el comportamiento (opcional)
 
@@ -191,9 +201,13 @@ Abre la pestaña **Avanzado**. Todo lo de aquí es opcional y las dos reglas emp
 
 Es útil cuando un responsable quiere vigilar lo que envía el agente.
 
-> **Consejo:** Si activas las respuestas automáticas en alguna categoría, activa también la copia, al menos mientras ganas confianza en el agente.
+<Tip>
+  Si activas las respuestas automáticas en alguna categoría, activa también la copia, al menos mientras ganas confianza en el agente.
+</Tip>
 
-> **Advertencia:** Si la copia va a un compañero, elige **CCO (oculto)**. Con **CC (visible)**, tu cliente ve la dirección de tu compañero en cada mensaje.
+<Info>
+  **Advertencia:** Si la copia va a un compañero, elige **CCO (oculto)**. Con **CC (visible)**, tu cliente ve la dirección de tu compañero en cada mensaje.
+</Info>
 
 ### Prioridad del agente
 
@@ -207,7 +221,9 @@ Solo puedes cambiar el orden cuando hay una bandeja conectada. Hasta entonces, l
 
 Cuando tienes cambios sin guardar, aparece una barra abajo con dos botones: **Descartar**, que deshace los cambios, y **Guardar**, que los guarda.
 
-> **Importante:** No salgas de la pantalla mientras se vea esa barra. Si te vas sin hacer clic en **Guardar**, pierdes los cambios.
+<Warning>
+  No salgas de la pantalla mientras se vea esa barra. Si te vas sin hacer clic en **Guardar**, pierdes los cambios.
+</Warning>
 
 ## La sección Correo: lee y responde en un solo sitio
 
@@ -221,9 +237,17 @@ Cuando tienes cambios sin guardar, aparece una barra abajo con dos botones: **De
 
 Tres señales rápidas de que todo está en su sitio:
 
-1. En la lista de **Agentes de correo**, tu agente ya no muestra **Sin correo asignado** debajo del nombre.
-2. Envía un correo de prueba a la bandeja conectada desde otra dirección tuya, con palabras que encajen en una de tus categorías.
-3. Espera unos minutos y abre [Correo](/es/Mail-Agent-Email). Según la categoría, encontrarás un borrador listo para revisar o una respuesta ya enviada.
+<Steps>
+  <Step>
+    En la lista de **Agentes de correo**, tu agente ya no muestra **Sin correo asignado** debajo del nombre.
+  </Step>
+  <Step>
+    Envía un correo de prueba a la bandeja conectada desde otra dirección tuya, con palabras que encajen en una de tus categorías.
+  </Step>
+  <Step>
+    Espera unos minutos y abre [Correo](/es/Mail-Agent-Email). Según la categoría, encontrarás un borrador listo para revisar o una respuesta ya enviada.
+  </Step>
+</Steps>
 
 Si no pasa nada, revisa en este orden:
 

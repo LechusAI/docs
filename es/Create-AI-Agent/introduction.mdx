@@ -5,9 +5,9 @@ sidebarTitle: "Antes de construir"
 icon: "rocket"
 ---
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0, 0, 0, 0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#000", marginBottom:"1.5rem" }}>
-  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame>
+  <video autoPlay muted loop playsInline src="/images/introduction-tour.mp4" />
+</Frame>
 
 En unos minutos, esta página te explica lo básico: qué es un agente de llamadas con IA, cómo consigue un número de teléfono, cómo se cobran las llamadas y cómo se conecta a tus herramientas. Después, estarás listo para crear tu primer agente.
 
@@ -55,7 +55,9 @@ También puedes usar tu propio operador con **BYOC (Troncal SIP)**.
 
 Cuando tu número esté activo, tu agente lo usará como una línea telefónica real, con identificador de llamada, detección de buzón de voz e historial de llamadas.
 
-> **Consejo:** Consulta cada opción paso a paso en [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers).
+<Tip>
+  Consulta cada opción paso a paso en [Números y BYOC](/es/Create-AI-Agent/Configure-Numbers).
+</Tip>
 
 ---
 
@@ -63,8 +65,14 @@ Cuando tu número esté activo, tu agente lo usará como una línea telefónica 
 
 Cada llamada usa dos tipos de minutos:
 
-1. **Minutos del operador**: los cobra el proveedor telefónico (Twilio, Telnyx o tu propio operador) por la conexión telefónica.
-2. **Minutos de IA de Callin**: cubren la IA que escucha, piensa y responde durante la llamada.
+<Steps>
+  <Step>
+    **Minutos del operador**: los cobra el proveedor telefónico (Twilio, Telnyx o tu propio operador) por la conexión telefónica.
+  </Step>
+  <Step>
+    **Minutos de IA de Callin**: cubren la IA que escucha, piensa y responde durante la llamada.
+  </Step>
+</Steps>
 
 <Note>
 **Ejemplo:** una llamada de 5 minutos = 5 minutos del operador + 5 minutos de IA de Callin.
@@ -72,7 +80,9 @@ Cada llamada usa dos tipos de minutos:
 
 Cuando compras un número a través de Callin.io, **no hay ninguna tarifa adicional de plataforma** por el propio número.
 
-> **Importante:** Las llamadas hechas con números comprados en Callin.io y con nuestro operador tienen un **cobro mínimo de 1 minuto**. Una llamada de 20 segundos se cobra como 1 minuto. A partir del primer minuto, pagas la duración real. Esta regla no se aplica a las llamadas de prueba en el navegador, a los números importados (Twilio o Telnyx) ni a tu propia troncal SIP.
+<Warning>
+  Las llamadas hechas con números comprados en Callin.io y con nuestro operador tienen un **cobro mínimo de 1 minuto**. Una llamada de 20 segundos se cobra como 1 minuto. A partir del primer minuto, pagas la duración real. Esta regla no se aplica a las llamadas de prueba en el navegador, a los números importados (Twilio o Telnyx) ni a tu propia troncal SIP.
+</Warning>
 
 Puedes consultar el total de minutos en **Inicio** (**Total de uso**). Para ver tu plan o añadir créditos, abre **Mejorar plan**.
 

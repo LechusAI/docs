@@ -13,25 +13,21 @@ Die **White-Label-Konfiguration** ist die Schaltzentrale Ihrer App unter Ihrer M
 
 Hier öffnen: [White-Label-Konfiguration öffnen](https://app.callin.io/cms/white-label-configuration)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel01.png" alt="Seite White-Label-Konfiguration im Tab Konfiguration mit App-Name, Benutzerdefinierte Domain mit der Schaltfläche DNS-Konfiguration, Währung und App-Sprache" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: der Tab Konfiguration mit einem Beispiel-App-Namen und einer Beispiel-Domain.">
+  <img src="/images/whitelabel01.png" alt="Seite White-Label-Konfiguration im Tab Konfiguration mit App-Name, Benutzerdefinierte Domain mit der Schaltfläche DNS-Konfiguration, Währung und App-Sprache" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Konfiguration mit einem Beispiel-App-Namen und einer Beispiel-Domain.
-</p>
+Im Video sehen Sie die gesamte Konfiguration, Schritt für Schritt:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: App-Name und Domain → DNS-Konfiguration (Anbieter und Manuell) → Währung, Sprache und Server-Standort → Warn-E-Mail bei aufgebrauchten Minuten und Vorschau → Tab Erscheinungsbild.
-</p>
+<Frame caption="Video: App-Name und Domain → DNS-Konfiguration (Anbieter und Manuell) → Währung, Sprache und Server-Standort → Warn-E-Mail bei aufgebrauchten Minuten und Vorschau → Tab Erscheinungsbild.">
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" />
+</Frame>
 
 Sobald Sie etwas ändern, erscheint unten eine Leiste mit **Leeren** (macht Ihre Änderungen rückgängig) und **Speichern**. Klicken Sie auf **Speichern**, bevor Sie die Seite verlassen.
 
-> **Wichtig:** Einige Einstellungen können je nach Plan und Berechtigungen variieren.
+<Warning>
+  Einige Einstellungen können je nach Plan und Berechtigungen variieren.
+</Warning>
 
 ## Konfiguration
 
@@ -55,7 +51,9 @@ Warum eine Subdomain wichtig ist:
 - Ihre **Hauptdomain** (wie `ihredomain.com`) hostet meist Ihre Website, Landingpages, Ihren Blog und Tracking-Skripte.
 - Liegt das Produkt auf `app.ihredomain.com`, vermeiden Sie Konflikte, und Ihre Website bleibt unabhängig.
 
-> **Tipp:** Wählen Sie eine leicht merkbare Subdomain: `app`, `portal` oder `dashboard`.
+<Tip>
+  Wählen Sie eine leicht merkbare Subdomain: `app`, `portal` oder `dashboard`.
+</Tip>
 
 ### DNS-Konfiguration
 
@@ -72,24 +70,30 @@ Nutzen Sie **Anbieter**, wenn Ihre Domain bei **Cloudflare**, **GoDaddy** oder *
 
 So gehen Sie vor:
 
-1. Öffnen Sie den Tab **Anbieter**.
-2. Wählen Sie unter **DNS-Anbieter** Ihren Anbieter: **Cloudflare**, **GoDaddy** oder **Namecheap**.
-3. Klicken Sie auf **Erkennen**.
+<Steps>
+  <Step>
+    Öffnen Sie den Tab **Anbieter**.
+  </Step>
+  <Step>
+    Wählen Sie unter **DNS-Anbieter** Ihren Anbieter: **Cloudflare**, **GoDaddy** oder **Namecheap**.
+  </Step>
+  <Step>
+    Klicken Sie auf **Erkennen**.
+  </Step>
+</Steps>
 
 Was Sie erwartet:
 
 - Callin versucht, Sie durch die DNS-Einrichtung der eingegebenen Domain zu führen.
 - Wenn etwas schiefgeht, sehen Sie eine Fehlermeldung, die Sie bittet, Konfiguration und DNS-Einträge zu prüfen und es später erneut zu versuchen. Meist passen die DNS-Einträge dann noch nicht. Warten Sie etwas oder nutzen Sie **Manuell**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel2.png" alt="Panel DNS-Konfiguration im Tab Anbieter mit geöffneter Liste DNS-Anbieter (Cloudflare, GoDaddy, Namecheap) und einer Fehlermeldung oben" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: der Tab Anbieter, in dem Sie Cloudflare, GoDaddy oder Namecheap wählen und auf Erkennen klicken.">
+  <img src="/images/whitelabel2.png" alt="Panel DNS-Konfiguration im Tab Anbieter mit geöffneter Liste DNS-Anbieter (Cloudflare, GoDaddy, Namecheap) und einer Fehlermeldung oben" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Anbieter, in dem Sie Cloudflare, GoDaddy oder Namecheap wählen und auf Erkennen klicken.
-</p>
-
-> **Häufiger Fehler:** DNS-Änderungen greifen nicht sofort. Wenn Sie die Einträge gerade geändert haben, warten Sie etwas und versuchen Sie es erneut.
+<Warning>
+  **Häufiger Fehler:** DNS-Änderungen greifen nicht sofort. Wenn Sie die Einträge gerade geändert haben, warten Sie etwas und versuchen Sie es erneut.
+</Warning>
 
 #### Manuell (DNS-Einträge selbst anlegen)
 
@@ -115,21 +119,29 @@ Die Tabelle enthält:
 
 So gehen Sie vor:
 
-1. Öffnen Sie **Manuell**.
-2. Legen Sie jeden DNS-Eintrag genau wie in der Tabelle an.
-3. Wenn die Einträge stehen, klicken Sie auf **SSL installieren**, um abzuschließen.
+<Steps>
+  <Step>
+    Öffnen Sie **Manuell**.
+  </Step>
+  <Step>
+    Legen Sie jeden DNS-Eintrag genau wie in der Tabelle an.
+  </Step>
+  <Step>
+    Wenn die Einträge stehen, klicken Sie auf **SSL installieren**, um abzuschließen.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel3.png" alt="Panel DNS-Konfiguration im Tab Manuell mit der Meldung Füge diese DNS-Einträge beim Registrar hinzu, einer Tabelle mit einem A- und einem CNAME-Eintrag und der Schaltfläche SSL installieren" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: der Tab Manuell mit den Einträgen für eine Beispiel-Domain und der Schaltfläche SSL installieren.">
+  <img src="/images/whitelabel3.png" alt="Panel DNS-Konfiguration im Tab Manuell mit der Meldung Füge diese DNS-Einträge beim Registrar hinzu, einer Tabelle mit einem A- und einem CNAME-Eintrag und der Schaltfläche SSL installieren" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Manuell mit den Einträgen für eine Beispiel-Domain und der Schaltfläche SSL installieren.
-</p>
+<Warning>
+  Klicken Sie erst auf **SSL installieren**, wenn die DNS-Einträge angelegt und verbreitet sind. Wie lange das dauert, hängt von Ihrem DNS-Anbieter ab.
+</Warning>
 
-> **Wichtig:** Klicken Sie erst auf **SSL installieren**, wenn die DNS-Einträge angelegt und verbreitet sind. Wie lange das dauert, hängt von Ihrem DNS-Anbieter ab.
-
-> **Tipp:** Wenn Sie nicht wissen, wo Sie die Einträge anlegen, suchen Sie in der Hilfe Ihres DNS-Anbieters nach „A-Eintrag hinzufügen“ und „CNAME-Eintrag hinzufügen“. Die Feldnamen können abweichen.
+<Tip>
+  Wenn Sie nicht wissen, wo Sie die Einträge anlegen, suchen Sie in der Hilfe Ihres DNS-Anbieters nach „A-Eintrag hinzufügen“ und „CNAME-Eintrag hinzufügen“. Die Feldnamen können abweichen.
+</Tip>
 
 ### Währung
 
@@ -158,41 +170,49 @@ Diese Felder verlinken auf Ihre rechtlichen Seiten:
 
 Fügen Sie die vollständige URL jeder Seite ein, zum Beispiel `https://ihredomain.com/datenschutz`.
 
-> **Tipp:** Auch als Agentur sollten Sie das wie ein Produkt behandeln: Veröffentlichen Sie diese Seiten auf Ihrer Website (Hauptdomain) und verlinken Sie sie hier.
+<Tip>
+  Auch als Agentur sollten Sie das wie ein Produkt behandeln: Veröffentlichen Sie diese Seiten auf Ihrer Website (Hauptdomain) und verlinken Sie sie hier.
+</Tip>
 
 ### Warn-E-Mail bei aufgebrauchten Minuten
 
 Die **Warn-E-Mail bei aufgebrauchten Minuten** informiert Ihre Kunden per E-Mail, wenn sie alle enthaltenen Minuten verbraucht haben.
 
-1. Schalten Sie **Warn-E-Mail aktivieren** ein. Der E-Mail-Editor öffnet sich.
-2. Geben Sie den **Betreff** ein.
-3. Wählen Sie den **Inhaltstyp**: **Normaler Text** (reiner Text; Zeilenumbrüche bleiben erhalten) oder **HTML** (reines HTML).
-4. Schreiben Sie den **Inhalt**. Standardmäßig enthält er Ihren App-Namen und Ihre Domain.
-5. Klicken Sie auf **E-Mail-Vorschau**, um die fertige E-Mail zu sehen, die Ihre Kunden erhalten, und dann auf **Schließen**.
+<Steps>
+  <Step>
+    Schalten Sie **Warn-E-Mail aktivieren** ein. Der E-Mail-Editor öffnet sich.
+  </Step>
+  <Step>
+    Geben Sie den **Betreff** ein.
+  </Step>
+  <Step>
+    Wählen Sie den **Inhaltstyp**: **Normaler Text** (reiner Text; Zeilenumbrüche bleiben erhalten) oder **HTML** (reines HTML).
+  </Step>
+  <Step>
+    Schreiben Sie den **Inhalt**. Standardmäßig enthält er Ihren App-Namen und Ihre Domain.
+  </Step>
+  <Step>
+    Klicken Sie auf **E-Mail-Vorschau**, um die fertige E-Mail zu sehen, die Ihre Kunden erhalten, und dann auf **Schließen**.
+  </Step>
+</Steps>
 
 Um sie später zu ändern, klicken Sie auf **E-Mail konfigurieren**. Denken Sie daran, auf **Speichern** zu klicken.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-config-warning-email.png" alt="Editor der Warn-E-Mail bei aufgebrauchten Minuten mit Betreff, den Inhaltstypen Normaler Text und HTML, dem Inhalt und den Schaltflächen E-Mail-Vorschau und Schließen" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: der Editor der Warn-E-Mail mit einem Beispiel-App-Namen und einer Beispiel-Domain.">
+  <img src="/images/wl-config-warning-email.png" alt="Editor der Warn-E-Mail bei aufgebrauchten Minuten mit Betreff, den Inhaltstypen Normaler Text und HTML, dem Inhalt und den Schaltflächen E-Mail-Vorschau und Schließen" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Editor der Warn-E-Mail mit einem Beispiel-App-Namen und einer Beispiel-Domain.
-</p>
-
-> **Tipp:** Sagen Sie Ihrem Kunden, was er tun kann, zum Beispiel: „Wechseln Sie zu einem größeren Plan oder kontaktieren Sie uns für zusätzliche Minuten.“
+<Tip>
+  Sagen Sie Ihrem Kunden, was er tun kann, zum Beispiel: „Wechseln Sie zu einem größeren Plan oder kontaktieren Sie uns für zusätzliche Minuten.“
+</Tip>
 
 ## Erscheinungsbild
 
 Wenn Domain und Grundeinstellungen stehen, wechseln Sie in den Tab **Erscheinungsbild**, um die App an Ihre Marke anzupassen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel4.png" alt="Seite White-Label-Konfiguration im Tab Erscheinungsbild mit Primärfarbe, Sekundärfarbe, Primäre E-Mail-Farbe, CTA-Button-Farbe (E-Mail), E-Mail-Sprache und dem Hochladen von Logo und Dunkles Logo" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Erscheinungsbild, in dem Sie Farben, E-Mail-Sprache, Logos, Favicon und Standard-Theme festlegen.
-</p>
+<Frame caption="Screenshot: der Tab Erscheinungsbild, in dem Sie Farben, E-Mail-Sprache, Logos, Favicon und Standard-Theme festlegen.">
+  <img src="/images/whitelabel4.png" alt="Seite White-Label-Konfiguration im Tab Erscheinungsbild mit Primärfarbe, Sekundärfarbe, Primäre E-Mail-Farbe, CTA-Button-Farbe (E-Mail), E-Mail-Sprache und dem Hochladen von Logo und Dunkles Logo" />
+</Frame>
 
 ### Farben
 
@@ -203,7 +223,9 @@ Klicken Sie auf ein Farbquadrat, um eine Farbe zu wählen:
 - **Primäre E-Mail-Farbe**: die Hauptfarbe Ihrer Transaktions-E-Mails.
 - **CTA-Button-Farbe (E-Mail)**: die Farbe der wichtigsten Schaltflächen und Links in Ihren E-Mails.
 
-> **Tipp:** Wenn Ihre Marke schon einen Styleguide hat, beginnen Sie mit Ihrer Hauptfarbe und wählen Sie eine Sekundärfarbe, die auf hellem und dunklem Hintergrund gut aussieht.
+<Tip>
+  Wenn Ihre Marke schon einen Styleguide hat, beginnen Sie mit Ihrer Hauptfarbe und wählen Sie eine Sekundärfarbe, die auf hellem und dunklem Hintergrund gut aussieht.
+</Tip>
 
 ### E-Mail-Sprache
 
@@ -218,7 +240,9 @@ Laden Sie zwei Versionen Ihres Logos hoch:
 
 Verwenden Sie PNG oder SVG, bis 2 MB, am besten mit transparentem Hintergrund. Dasselbe Logo ist nicht immer in beiden Themes gut lesbar.
 
-> **Wichtig:** Wirkt Ihr Logo winzig, hat das Bild meist einen großen weißen Rand: Callin verkleinert das ganze Bild, damit es passt. Ein eng zugeschnittenes, transparentes PNG löst das meist.
+<Warning>
+  Wirkt Ihr Logo winzig, hat das Bild meist einen großen weißen Rand: Callin verkleinert das ganze Bild, damit es passt. Ein eng zugeschnittenes, transparentes PNG löst das meist.
+</Warning>
 
 ### Favicon
 

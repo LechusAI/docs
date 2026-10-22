@@ -15,17 +15,11 @@ The **Voices** section is where you manage how your agents sound. From here, you
 
 Go to the **Voices** section by clicking here: [Voices](https://app.callin.io/voices)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: The Voice Library in the Try Voices tab, with the search bar and the gender and language filters.">
   <img
     src="/images/voices1.png"
-    alt="The Voices page showing the Try Voices and Clone Voice tabs, the search bar, the gender and language filters, and the Voice Library list with an Assign button on each voice."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Voice Library in the Try Voices tab, with the search bar and the gender and language filters.
-</p>
+    alt="The Voices page showing the Try Voices and Clone Voice tabs, the search bar, the gender and language filters, and the Voice Library list with an Assign button on each voice." />
+</Frame>
 
 ## Browse and preview voices (Try Voices)
 
@@ -42,80 +36,92 @@ Use the controls above the list to narrow it down:
 - **Gender**: **All Genders**, **Male**, **Female** or **Other**.
 - **Language**: pick a language from the list. You can search it by name or by code (for example “Spanish” or “es”). Choose **All** to see every language again.
 
-> **Tip:** When previewing voices, use the same short script each time so it’s easy to compare.
->
-> Example: “Hi! This is Maya from Lakeside Dental. I’m calling to confirm your appointment for Thursday at 3 PM.”
+<Tip>
+  When previewing voices, use the same short script each time so it’s easy to compare.
+
+  Example: “Hi! This is Maya from Lakeside Dental. I’m calling to confirm your appointment for Thursday at 3 PM.”
+</Tip>
 
 ## Assign a voice to an agent
 
 To make an agent speak with a specific voice:
 
-1. In **Try Voices**, find the voice you want. Use the filters to get there faster.
-2. Click **Assign** on the right side of that voice.
-3. The **Assign Voice to Agent** window opens. At the top, you’ll see the voice card: its name, a full description and tags such as gender, language, accent, age and use case.
-4. Under **Select an agent to assign this voice**, find the agent you want to update and click the **Assign** button next to it.
+<Steps>
+  <Step>
+    In **Try Voices**, find the voice you want. Use the filters to get there faster.
+  </Step>
+  <Step>
+    Click **Assign** on the right side of that voice.
+  </Step>
+  <Step>
+    The **Assign Voice to Agent** window opens. At the top, you’ll see the voice card: its name, a full description and tags such as gender, language, accent, age and use case.
+  </Step>
+  <Step>
+    Under **Select an agent to assign this voice**, find the agent you want to update and click the **Assign** button next to it.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/voices-assign.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: filter the library by gender and language, then click Assign and choose the agent.">
+  <video autoPlay muted loop playsInline src="/images/voices-assign.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: filter the library by gender and language, then click Assign and choose the agent.
-</p>
+When you assign a voice, this window opens with the list of your agents:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: The Assign Voice to Agent window. Each agent in the list has its own Assign button.">
   <img
     src="/images/voices-assign.png"
-    alt="The Assign Voice to Agent window with the voice card at the top and the list of agents, each with its own Assign button."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Assign Voice to Agent window. Each agent in the list has its own Assign button.
-</p>
+    alt="The Assign Voice to Agent window with the voice card at the top and the list of agents, each with its own Assign button." />
+</Frame>
 
 After you assign it, that agent will use the selected voice when speaking on calls.
 
-> **Important:** Voices are set per agent (not global). To change an agent’s voice later, assign a different one from here, or open the agent and change it in the **Agent** tab → **Voice**. See [AI Agents](/Create-AI-Agent/Create-Agent-Enchanced).
+<Warning>
+  Voices are set per agent (not global). To change an agent’s voice later, assign a different one from here, or open the agent and change it in the **Agent** tab → **Voice**. See [AI Agents](/Create-AI-Agent/Create-Agent-Enchanced).
+</Warning>
 
 ## Clone a voice (Clone Voice)
 
 If you want a more custom sound (for a brand voice or a specific persona), use **Clone Voice**.
 
-1. Open the **Clone Voice** tab.
-2. Click **Clone Voice**.
-3. In the **Voice Preview** window, fill in:
-   - **Voice Name** (required)
-   - **Description** (optional)
-   - **Language** (required): English, Italian, French, German, Portuguese, Spanish, Dutch, Hindi or Arabic
-   - **Gender** (required): Male, Female or Other
-4. Add a **Voice Sample** (required) using one of the options shown:
-   - **Upload Audio**: click **Select File** or drag and drop an audio file (max. 4MB)
-   - **Record Voice**: record the sample directly in your browser
-5. Click **Clone Voice** to submit your sample. Once your cloned voice is created, it will appear in the **Clone Voice** tab and can be assigned like any other voice.
+<Steps>
+  <Step>
+    Open the **Clone Voice** tab.
+  </Step>
+  <Step>
+    Click **Clone Voice**.
+  </Step>
+  <Step>
+    In the **Voice Preview** window, fill in:
+    - **Voice Name** (required)
+    - **Description** (optional)
+    - **Language** (required): English, Italian, French, German, Portuguese, Spanish, Dutch, Hindi or Arabic
+    - **Gender** (required): Male, Female or Other
+  </Step>
+  <Step>
+    Add a **Voice Sample** (required) using one of the options shown:
+    - **Upload Audio**: click **Select File** or drag and drop an audio file (max. 4MB)
+    - **Record Voice**: record the sample directly in your browser
+  </Step>
+  <Step>
+    Click **Clone Voice** to submit your sample. Once your cloned voice is created, it will appear in the **Clone Voice** tab and can be assigned like any other voice.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/voices-clone.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: open Clone Voice, fill in the name, description, language and gender, then add the voice sample.">
+  <video autoPlay muted loop playsInline src="/images/voices-clone.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: open Clone Voice, fill in the name, description, language and gender, then add the voice sample.
-</p>
+Once the form is filled in, the preview window is ready for your voice sample:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: The Voice Preview window, ready for the voice sample.">
   <img
     src="/images/voices-clone.png"
-    alt="The Voice Preview window with the Voice Name, Description, Language and Gender fields, the Upload Audio and Record Voice options, and the Voice Sample upload area."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="The Voice Preview window with the Voice Name, Description, Language and Gender fields, the Upload Audio and Record Voice options, and the Voice Sample upload area." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Voice Preview window, ready for the voice sample.
-</p>
-
-> **Common mistake:** Uploading a clip that’s too short or has background noise. Your clone will sound noticeably worse if the sample isn’t clean.
+<Warning>
+  **Common mistake:** Uploading a clip that’s too short or has background noise. Your clone will sound noticeably worse if the sample isn’t clean.
+</Warning>
 
 ## Voice cloning guidelines and best practices
 
@@ -127,4 +133,6 @@ When recording or uploading your sample, follow these guidelines (they also appe
 - Maximum file size is **4MB**
 - Supported languages: **English, Italian, French, German, Portuguese, Spanish, Dutch, Hindi and Arabic**
 
-> **Important:** Only upload audio you have permission to use (for example, your own voice or a voice you’re licensed to use).
+<Warning>
+  Only upload audio you have permission to use (for example, your own voice or a voice you’re licensed to use).
+</Warning>

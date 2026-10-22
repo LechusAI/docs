@@ -16,25 +16,19 @@ This is useful when you want to answer questions like:
 
 You’ll find it in the White Label Platform, under **Analytics & Marketing** ([open it here](https://app.callin.io/cms/utm)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: the UTM Analytics page → Filters by Source, Campaign and Medium → Clear.">
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the UTM Analytics page → Filters by Source, Campaign and Medium → Clear.
-</p>
-
-> **Tip:** If you see **No matching records** and “No UTM data available for this query,” users signed up without UTM parameters in the link, or the campaign hasn’t generated signups yet.
+<Tip>
+  If you see **No matching records** and “No UTM data available for this query,” users signed up without UTM parameters in the link, or the campaign hasn’t generated signups yet.
+</Tip>
 
 ## How to read the dashboard
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/utm1.png" alt="UTM Analytics page with the Refresh and Export CSV buttons, the Overview card (Total, With UTM, Coverage), the Source and Campaign cards, the search and date filters, and the table with the columns User, Joined, Source, Campaign, Landing URL and Actions" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: UTM Analytics before any user signs up with a UTM link.
-</p>
+<Frame caption="Screenshot: UTM Analytics before any user signs up with a UTM link.">
+  <img src="/images/utm1.png" alt="UTM Analytics page with the Refresh and Export CSV buttons, the Overview card (Total, With UTM, Coverage), the Source and Campaign cards, the search and date filters, and the table with the columns User, Joined, Source, Campaign, Landing URL and Actions" />
+</Frame>
 
 ### Overview
 
@@ -64,7 +58,9 @@ Each row is a user with UTM data:
 
 Choose how many rows to see per page (**10**, **20** or **50**) in the selector on the right. **Showing** tells you which records you’re looking at.
 
-> **Tip:** You can also see a customer’s UTM data from [Users](/Automations/Whitelabel/Clients), in the **UTM** tab of their details.
+<Tip>
+  You can also see a customer’s UTM data from [Users](/Automations/Whitelabel/Clients), in the **UTM** tab of their details.
+</Tip>
 
 ## How to search and filter
 
@@ -82,13 +78,9 @@ Click **Filters** to show three more fields: **Source**, **Campaign** and **Medi
 
 The number next to **Filters** tells you how many filters are active, and each one appears as a tag under the fields (for example, **Source: newsletter**). Click the **×** on a tag to remove that filter.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-utm-filters.png" alt="Filters open with the Source, Campaign and Medium fields filled in with newsletter, spring_offer and email, the tags of the three active filters and the Clear button" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: three active filters, each one shown as a tag you can remove.
-</p>
+<Frame caption="Screenshot: three active filters, each one shown as a tag you can remove.">
+  <img src="/images/wl-utm-filters.png" alt="Filters open with the Source, Campaign and Medium fields filled in with newsletter, spring_offer and email, the tags of the three active filters and the Clear button" />
+</Frame>
 
 ### Clear
 
@@ -114,7 +106,9 @@ UTM parameters are labels added to a link so you can tell where traffic came fro
 | Google Click ID (gclid)   | Added automatically by Google Ads              | —                                  |
 | Facebook Click ID (fbclid)| Added automatically by Facebook and Instagram  | —                                  |
 
-> **Common mistake:** Using inconsistent names (e.g., `Facebook`, `facebook`, `fb`). Pick one style and stick to it so reports are clean.
+<Warning>
+  **Common mistake:** Using inconsistent names (e.g., `Facebook`, `facebook`, `fb`). Pick one style and stick to it so reports are clean.
+</Warning>
 
 ## Practical examples
 
@@ -139,8 +133,18 @@ After a week, use the **From** and **to** dates and compare the **Campaign** car
 
 A simple checklist:
 
-1. Search the user in **UTM Analytics**
-2. Check the user’s **Source** and **Campaign**, or click **Actions** to see all the fields
-3. If it’s blank, confirm they used the correct link (with UTM parameters)
+<Steps>
+  <Step>
+    Search the user in **UTM Analytics**
+  </Step>
+  <Step>
+    Check the user’s **Source** and **Campaign**, or click **Actions** to see all the fields
+  </Step>
+  <Step>
+    If it’s blank, confirm they used the correct link (with UTM parameters)
+  </Step>
+</Steps>
 
-> **Tip:** For consistent reporting, create a “link naming rule” for your team (for example: source in lowercase, campaigns with underscores, no spaces).
+<Tip>
+  For consistent reporting, create a “link naming rule” for your team (for example: source in lowercase, campaigns with underscores, no spaces).
+</Tip>

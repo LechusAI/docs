@@ -12,13 +12,9 @@ Here you connect third-party services that give your agents live data when they 
 
 With this integration, when a customer email contains an Amazon order number, the agent looks up the order automatically. It can use those details in its reply instead of asking the customer for them.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents3.png" alt="Tools section with the Amazon Seller API card showing the Connected status, the account details, and the Test connection and Disconnect buttons" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  The Amazon Seller API card, connected.
-</p>
+<Frame caption="The Amazon Seller API card, connected.">
+  <img src="/images/mailagents3.png" alt="Tools section with the Amazon Seller API card showing the Connected status, the account details, and the Test connection and Disconnect buttons" />
+</Frame>
 
 When the integration is active, its card shows a green **Connected** badge and the connection details: **Seller account name**, **Selling Partner ID**, **Region**, **Marketplace ID** and **Connected at**. From the card you can:
 
@@ -35,13 +31,9 @@ Example prompt:
 
 > When the customer asks about shipping or delivery, state the latest shipment status from `{{amazon_shipment_status}}` (and `{{amazon_tracking_updates}}` when available), then include this tracking link: `{{amazon_tracking_url}}`. If the order is older than one month or not the buyer's latest order, ask them to confirm the order number first.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-tracking.png" alt="Tracking links in drafts and auto-replies panel with an example prompt, the list of available variables and the requirements" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Click Tracking links in drafts & auto-replies, below the card, to see the variables in the app.
-</p>
+<Frame caption="Click Tracking links in drafts & auto-replies, below the card, to see the variables in the app.">
+  <img src="/images/mail-agent-tracking.png" alt="Tracking links in drafts and auto-replies panel with an example prompt, the list of available variables and the requirements" />
+</Frame>
 
 These are the available variables:
 
@@ -66,6 +58,8 @@ These are the available variables:
 
 The system also detects photos the customer has already sent in the thread, and asks customers to confirm very old orders or orders that aren't their latest.
 
-> **Note:** For tracking details to fill in, the integration must be connected, the email thread must contain an Amazon order number, the order must already be shipped, and your prompt must mention tracking or shipment status, or use `{{amazon_tracking_url}}`.
+<Note>
+  For tracking details to fill in, the integration must be connected, the email thread must contain an Amazon order number, the order must already be shipped, and your prompt must mention tracking or shipment status, or use `{{amazon_tracking_url}}`.
+</Note>
 
 More tools are expected in this section as AI Email Manager grows out of Beta.

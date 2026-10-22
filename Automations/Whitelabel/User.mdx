@@ -13,25 +13,21 @@ icon: "palette"
 
 Open it here: [Open White Label Configuration](https://app.callin.io/cms/white-label-configuration)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel01.png" alt="White Label Configuration page on the Configuration tab with App Name, Custom Domain with the DNS Configuration button, Currency and App Language" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Configuration tab, with an example app name and domain.">
+  <img src="/images/whitelabel01.png" alt="White Label Configuration page on the Configuration tab with App Name, Custom Domain with the DNS Configuration button, Currency and App Language" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Configuration tab, with an example app name and domain.
-</p>
+The video walks you through the whole configuration, step by step:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: app name and domain → DNS Configuration (Provider and Manual) → currency, language and server location → minutes warning email and its preview → Appearance tab.
-</p>
+<Frame caption="Video: app name and domain → DNS Configuration (Provider and Manual) → currency, language and server location → minutes warning email and its preview → Appearance tab.">
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" />
+</Frame>
 
 When you change anything, a bar appears at the bottom with **Clear** (undo your changes) and **Save**. Click **Save** before leaving the page.
 
-> **Important:** Some settings can vary depending on your plan and permissions.
+<Warning>
+  Some settings can vary depending on your plan and permissions.
+</Warning>
 
 ## Configuration
 
@@ -55,7 +51,9 @@ Why a subdomain matters:
 - Your **root domain** (like `yourdomain.com`) typically hosts your marketing website, landing pages, blog, and tracking scripts.
 - Keeping the product on `app.yourdomain.com` helps avoid conflicts and keeps your website setup independent.
 
-> **Tip:** Pick a simple subdomain your customers will remember: `app`, `portal`, or `dashboard`.
+<Tip>
+  Pick a simple subdomain your customers will remember: `app`, `portal`, or `dashboard`.
+</Tip>
 
 ### DNS Configuration
 
@@ -72,24 +70,30 @@ Use **Provider** when your domain is managed by **Cloudflare**, **GoDaddy** or *
 
 What you do:
 
-1. Open the **Provider** tab.
-2. In **DNS Provider**, select your provider: **Cloudflare**, **GoDaddy** or **Namecheap**.
-3. Click **Discover**.
+<Steps>
+  <Step>
+    Open the **Provider** tab.
+  </Step>
+  <Step>
+    In **DNS Provider**, select your provider: **Cloudflare**, **GoDaddy** or **Namecheap**.
+  </Step>
+  <Step>
+    Click **Discover**.
+  </Step>
+</Steps>
 
 What to expect:
 
 - Callin will try to guide you through the DNS setup for the domain you entered.
 - If something fails, you’ll see **Something went wrong. Please check your configuration and DNS records and try after some time.** That usually means the DNS records don’t match what’s expected yet. Wait a little, or use **Manual**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel2.png" alt="DNS Configuration panel on the Provider tab with the DNS Provider list open (Cloudflare, GoDaddy, Namecheap) and the Something went wrong message at the top" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Provider tab, where you pick Cloudflare, GoDaddy or Namecheap and click Discover.">
+  <img src="/images/whitelabel2.png" alt="DNS Configuration panel on the Provider tab with the DNS Provider list open (Cloudflare, GoDaddy, Namecheap) and the Something went wrong message at the top" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Provider tab, where you pick Cloudflare, GoDaddy or Namecheap and click Discover.
-</p>
-
-> **Common mistake:** DNS changes don’t apply instantly. If you just edited records, wait a bit and try again.
+<Warning>
+  **Common mistake:** DNS changes don’t apply instantly. If you just edited records, wait a bit and try again.
+</Warning>
 
 #### Manual (add DNS records yourself)
 
@@ -115,21 +119,29 @@ The table includes:
 
 Your workflow looks like this:
 
-1. Open **Manual**.
-2. Add each DNS record exactly as shown in the table.
-3. When the records are in place, click **Install SSL** to finish.
+<Steps>
+  <Step>
+    Open **Manual**.
+  </Step>
+  <Step>
+    Add each DNS record exactly as shown in the table.
+  </Step>
+  <Step>
+    When the records are in place, click **Install SSL** to finish.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel3.png" alt="DNS Configuration panel on the Manual tab with the message Add these DNS records at your registrar, a table with an A record and a CNAME record, and the Install SSL button" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Manual tab with the records to add for an example domain, and the Install SSL button.">
+  <img src="/images/whitelabel3.png" alt="DNS Configuration panel on the Manual tab with the message Add these DNS records at your registrar, a table with an A record and a CNAME record, and the Install SSL button" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Manual tab with the records to add for an example domain, and the Install SSL button.
-</p>
+<Warning>
+  Only click **Install SSL** after the DNS records are added and have propagated. Propagation time depends on your DNS provider.
+</Warning>
 
-> **Important:** Only click **Install SSL** after the DNS records are added and have propagated. Propagation time depends on your DNS provider.
-
-> **Tip:** If you’re unsure where to add records, search your DNS provider’s help for “add A record” and “add CNAME record.” The field names in their interface can vary.
+<Tip>
+  If you’re unsure where to add records, search your DNS provider’s help for “add A record” and “add CNAME record.” The field names in their interface can vary.
+</Tip>
 
 ### Currency
 
@@ -158,41 +170,49 @@ These fields link to your legal pages:
 
 Paste the full URL of each page, for example `https://yourdomain.com/privacy`.
 
-> **Tip:** Even if you’re an agency, treat this like a product: publish these pages on your main website (root domain) and link them here.
+<Tip>
+  Even if you’re an agency, treat this like a product: publish these pages on your main website (root domain) and link them here.
+</Tip>
 
 ### Minutes exhausted warning email
 
 **Minutes exhausted warning email** warns your customers by email when their included minutes have been fully used.
 
-1. Turn on **Enable warning email**. The email editor opens.
-2. Write the **Subject**.
-3. Choose the **Body type**: **Normal text** (plain text; line breaks are kept) or **HTML** (raw HTML).
-4. Write the **Body**. By default it includes your app name and your domain.
-5. Click **Preview email** to see the final email your customers will receive, then **Close**.
+<Steps>
+  <Step>
+    Turn on **Enable warning email**. The email editor opens.
+  </Step>
+  <Step>
+    Write the **Subject**.
+  </Step>
+  <Step>
+    Choose the **Body type**: **Normal text** (plain text; line breaks are kept) or **HTML** (raw HTML).
+  </Step>
+  <Step>
+    Write the **Body**. By default it includes your app name and your domain.
+  </Step>
+  <Step>
+    Click **Preview email** to see the final email your customers will receive, then **Close**.
+  </Step>
+</Steps>
 
 To edit it later, click **Configure email**. Remember to click **Save**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-config-warning-email.png" alt="Minutes exhausted warning email editor with the Subject, the Normal text and HTML body types, the Body, and the Preview email and Close buttons" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the warning email editor, with an example app name and domain.">
+  <img src="/images/wl-config-warning-email.png" alt="Minutes exhausted warning email editor with the Subject, the Normal text and HTML body types, the Body, and the Preview email and Close buttons" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the warning email editor, with an example app name and domain.
-</p>
-
-> **Tip:** Tell your customers what to do next, for example: “Upgrade your plan or contact us to add more minutes.”
+<Tip>
+  Tell your customers what to do next, for example: “Upgrade your plan or contact us to add more minutes.”
+</Tip>
 
 ## Appearance
 
 When your domain and core settings are ready, move to the **Appearance** tab to match the app to your brand.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel4.png" alt="White Label Configuration page on the Appearance tab with Primary Color, Secondary Color, Email Primary Color, Email CTA Button Color, Email Language and the Logo and Dark Logo uploads" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Appearance tab, where you set your colors, email language, logos, favicon and default theme.
-</p>
+<Frame caption="Screenshot: the Appearance tab, where you set your colors, email language, logos, favicon and default theme.">
+  <img src="/images/whitelabel4.png" alt="White Label Configuration page on the Appearance tab with Primary Color, Secondary Color, Email Primary Color, Email CTA Button Color, Email Language and the Logo and Dark Logo uploads" />
+</Frame>
 
 ### Colors
 
@@ -203,7 +223,9 @@ Click a color square to pick a color:
 - **Email Primary Color**: the main accent color in your transactional emails.
 - **Email CTA Button Color**: the color of primary buttons and links inside your emails.
 
-> **Tip:** If your brand already has a style guide, start with your primary brand color, then pick a secondary color that looks good on both light and dark backgrounds.
+<Tip>
+  If your brand already has a style guide, start with your primary brand color, then pick a secondary color that looks good on both light and dark backgrounds.
+</Tip>
 
 ### Email Language
 
@@ -218,7 +240,9 @@ Upload two versions of your logo:
 
 Use PNG or SVG, up to 2 MB, ideally with a transparent background. The same logo isn’t always readable on both themes.
 
-> **Important:** If your logo appears tiny, the image usually has a large white margin around it: Callin scales the whole image down to fit. A tightly cropped, transparent PNG usually solves it.
+<Warning>
+  If your logo appears tiny, the image usually has a large white margin around it: Callin scales the whole image down to fit. A tightly cropped, transparent PNG usually solves it.
+</Warning>
 
 ### Favicon
 

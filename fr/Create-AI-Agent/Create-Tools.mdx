@@ -23,9 +23,17 @@ La page **Outils** comporte deux onglets :
 
 Dans Callin, le bon fonctionnement suit toujours cet ordre :
 
-1. **Créer l’outil** dans la section **Outils**.
-2. **Assigner l’outil** à l’agent dans **Agents IA**.
-3. **Indiquer dans le champ Invite de conversation** quand il doit s’exécuter et ce que l’agent doit faire du résultat.
+<Steps>
+  <Step>
+    **Créer l’outil** dans la section **Outils**.
+  </Step>
+  <Step>
+    **Assigner l’outil** à l’agent dans **Agents IA**.
+  </Step>
+  <Step>
+    **Indiquer dans le champ Invite de conversation** quand il doit s’exécuter et ce que l’agent doit faire du résultat.
+  </Step>
+</Steps>
 
 S’il manque une de ces 3 étapes, l’outil ne fonctionnera pas comme prévu.
 
@@ -48,9 +56,17 @@ S’il manque une de ces 3 étapes, l’outil ne fonctionnera pas comme prévu.
 
 Pour créer un outil dans Callin :
 
-1. Allez dans **Outils** dans le tableau de bord Callin ([ouvrir Outils](https://app.callin.io/tools)).
-2. Cliquez sur **\+ Ajouter un outil**. Le panneau **Créer un outil** s’ouvre à droite.
-3. Remplissez les champs principaux :
+<Steps>
+  <Step>
+    Allez dans **Outils** dans le tableau de bord Callin ([ouvrir Outils](https://app.callin.io/tools)).
+  </Step>
+  <Step>
+    Cliquez sur **\+ Ajouter un outil**. Le panneau **Créer un outil** s’ouvre à droite.
+  </Step>
+  <Step>
+    Remplissez les champs principaux :
+  </Step>
+</Steps>
 
 - **Nom**\
   Utilisez un nom court, clair et stable. Recommandation : **verbe + objectif**. Il peut contenir de 1 à 64 caractères : uniquement des lettres, des chiffres, des tirets bas (`_`) ou des tirets (`-`), sans espaces.\
@@ -67,13 +83,9 @@ Pour créer un outil dans Callin :
 
 > Vérifiez que l’URL est en **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Ajouter un outil → nom, description, méthode et URL → réglages de voix et de son → un en-tête → un paramètre du corps.
-</p>
+<Frame caption="Vidéo : Ajouter un outil → nom, description, méthode et URL → réglages de voix et de son → un en-tête → un paramètre du corps.">
+  <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
+</Frame>
 
 ### Réglages de délai et de voix
 
@@ -88,28 +100,34 @@ Sous l’URL, vous pouvez choisir comment l’outil se comporte pendant la conve
   - **Asynchrone** : il s’exécute en arrière-plan, la conversation peut donc continuer pendant ce temps.
 - **Son d’outil** : un son facultatif pendant l’exécution de l’outil : **Aucun**, **Frappe au clavier** ou **Musique d’ascenseur 1–4**. Utilisez le bouton de lecture à côté pour l’écouter.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture d’écran : le panneau Créer un outil avec les réglages de délai et de voix.">
   <img
     src="/images/tools-create.png"
-    alt="Le panneau Créer un outil avec la méthode POST et une URL d'exemple, suivi de Délai d'attente de réponse, Désactiver les interruptions, Discours avant outil, Mode d'exécution et Son d'outil, puis des sections En-têtes et Paramètres du corps."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Le panneau Créer un outil avec la méthode POST et une URL d'exemple, suivi de Délai d'attente de réponse, Désactiver les interruptions, Discours avant outil, Mode d'exécution et Son d'outil, puis des sections En-têtes et Paramètres du corps." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le panneau Créer un outil avec les réglages de délai et de voix.
-</p>
-
-> **Astuce :** Si votre endpoint met quelques secondes à répondre, réglez **Discours avant outil** sur **Forcer** ou ajoutez un **Son d’outil**, pour que l’appelant n’entende pas de silence.
+<Tip>
+  Si votre endpoint met quelques secondes à répondre, réglez **Discours avant outil** sur **Forcer** ou ajoutez un **Son d’outil**, pour que l’appelant n’entende pas de silence.
+</Tip>
 
 ### Configurer les « Paramètres du corps » (si vous utilisez POST)
 
 Si votre outil envoie des informations (POST), définissez exactement quelles données il enverra. L’agent (le LLM) collecte ces paramètres pendant l’appel et les envoie dans le corps de la requête.
 
-1. Allez dans **Paramètres du corps**.
-2. Si vous le souhaitez, ajoutez une **Description** générale des données envoyées.
-3. Cliquez sur **Ajouter une propriété**.
-4. Configurez chaque champ :
+<Steps>
+  <Step>
+    Allez dans **Paramètres du corps**.
+  </Step>
+  <Step>
+    Si vous le souhaitez, ajoutez une **Description** générale des données envoyées.
+  </Step>
+  <Step>
+    Cliquez sur **Ajouter une propriété**.
+  </Step>
+  <Step>
+    Configurez chaque champ :
+  </Step>
+</Steps>
 
 - **Type de données** : **String** (texte), **Nombre**, **Boolean** (vrai/faux) ou **Integer** (nombre entier).
 - **Identifiant** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `phone`, `full_name`).
@@ -121,17 +139,11 @@ Si votre outil envoie des informations (POST), définissez exactement quelles do
 
 Pour envoyer d’autres champs, cliquez à nouveau sur **Ajouter une propriété**. Pour en retirer un, cliquez sur **Supprimer**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture d’écran : un paramètre du corps que l’agent remplit à partir de la conversation (Invite LLM).">
   <img
     src="/images/tools-body.png"
-    alt="La section Paramètres du corps avec une propriété : type de données String, identifiant email, Obligatoire coché, type de valeur Invite LLM, une description et le champ facultatif Valeurs Enum."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : un paramètre du corps que l’agent remplit à partir de la conversation (Invite LLM).
-</p>
+    alt="La section Paramètres du corps avec une propriété : type de données String, identifiant email, Obligatoire coché, type de valeur Invite LLM, une description et le champ facultatif Valeurs Enum." />
+</Frame>
 
 > Recommandation pratique : si vous marquez un champ comme **Obligatoire**, votre agent doit être obligé (via l’Invite de conversation) de **le demander et le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
 
@@ -139,8 +151,14 @@ Pour envoyer d’autres champs, cliquez à nouveau sur **Ajouter une propriété
 
 Si votre endpoint exige une authentification (par exemple un token ou une clé), ajoutez-la dans **En-têtes** :
 
-1. Cliquez sur **Ajouter un en-tête**.
-2. Remplissez le **Nom** (par exemple `Authorization`) et la **Valeur** (par exemple `Bearer` suivi de votre clé), exactement comme l’exige votre API.
+<Steps>
+  <Step>
+    Cliquez sur **Ajouter un en-tête**.
+  </Step>
+  <Step>
+    Remplissez le **Nom** (par exemple `Authorization`) et la **Valeur** (par exemple `Bearer` suivi de votre clé), exactement comme l’exige votre API.
+  </Step>
+</Steps>
 
 Chaque en-tête doit avoir un nom et une valeur. Supprimez les en-têtes vides avec l’icône de corbeille, sinon l’outil ne pourra pas être enregistré.
 
@@ -150,25 +168,37 @@ Chaque en-tête doit avoir un nom et une valeur. Supprimez les en-têtes vides a
 
 Un **serveur MCP** donne à votre agent tout un ensemble d’outils d’un coup (par exemple toutes les actions de votre CRM), sans les créer un par un. Pour en ajouter un :
 
-1. Dans **Outils**, ouvrez l’onglet **MCP** et cliquez sur **\+ Ajouter un MCP**.
-2. Dans **Informations de base**, remplissez le **Nom** (par exemple « CRM MCP ») et une **Description** de ce que propose le serveur.
-3. Dans **Configuration du serveur**, choisissez le **Type de serveur** (**SSE** ou **Streamable HTTP**) et collez l’**URL du serveur**.
-4. Si le serveur exige une authentification, ajoutez-la dans **En-têtes HTTP** avec **Ajouter un en-tête**.
-5. Choisissez le **Mode d’approbation des outils** :
-   - **Toujours demander** : sécurité maximale. L’agent demande l’autorisation avant chaque utilisation d’un outil.
-   - **Approbation détaillée des outils** (sélectionné par défaut) : vous choisissez quels outils sont désactivés et lesquels peuvent s’exécuter automatiquement.
-   - **Aucune approbation** : l’agent peut utiliser n’importe quel outil sans autorisation.
-6. Cliquez sur **Créer**.
+<Steps>
+  <Step>
+    Dans **Outils**, ouvrez l’onglet **MCP** et cliquez sur **\+ Ajouter un MCP**.
+  </Step>
+  <Step>
+    Dans **Informations de base**, remplissez le **Nom** (par exemple « CRM MCP ») et une **Description** de ce que propose le serveur.
+  </Step>
+  <Step>
+    Dans **Configuration du serveur**, choisissez le **Type de serveur** (**SSE** ou **Streamable HTTP**) et collez l’**URL du serveur**.
+  </Step>
+  <Step>
+    Si le serveur exige une authentification, ajoutez-la dans **En-têtes HTTP** avec **Ajouter un en-tête**.
+  </Step>
+  <Step>
+    Choisissez le **Mode d’approbation des outils** :
+    - **Toujours demander** : sécurité maximale. L’agent demande l’autorisation avant chaque utilisation d’un outil.
+    - **Approbation détaillée des outils** (sélectionné par défaut) : vous choisissez quels outils sont désactivés et lesquels peuvent s’exécuter automatiquement.
+    - **Aucune approbation** : l’agent peut utiliser n’importe quel outil sans autorisation.
+  </Step>
+  <Step>
+    Cliquez sur **Créer**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vidéo : Ajouter un MCP → nom, description et URL du serveur → mode d’approbation, puis l’onglet Outils de l’agent, où vous ajoutez des outils et des MCP à l’agent.">
+  <video autoPlay muted loop playsInline src="/images/tools-mcp.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : Ajouter un MCP → nom, description et URL du serveur → mode d’approbation, puis l’onglet Outils de l’agent, où vous ajoutez des outils et des MCP à l’agent.
-</p>
-
-> **Important :** Ne connectez que des serveurs MCP de confiance. Avec **Aucune approbation**, l’agent peut utiliser tous les outils de ce serveur sans demander.
+<Warning>
+  Ne connectez que des serveurs MCP de confiance. Avec **Aucune approbation**, l’agent peut utiliser tous les outils de ce serveur sans demander.
+</Warning>
 
 ---
 
@@ -176,31 +206,41 @@ Un **serveur MCP** donne à votre agent tout un ensemble d’outils d’un coup 
 
 Créer l’outil ne suffit pas. Vous devez l’assigner à l’agent :
 
-1. Allez dans **Agents IA**.
-2. Sélectionnez l’agent que vous voulez configurer.
-3. Dans l’éditeur de l’agent, ouvrez l’onglet **Outils**.
-4. Dans le sous-onglet **Outils**, cliquez sur **Ajouter un outil**.
-5. Cherchez votre outil et sélectionnez-le. Vous pouvez aussi cliquer sur **Ajouter un outil webhook** pour en créer un nouveau depuis cet écran.
-6. Enregistrez l’agent.
+<Steps>
+  <Step>
+    Allez dans **Agents IA**.
+  </Step>
+  <Step>
+    Sélectionnez l’agent que vous voulez configurer.
+  </Step>
+  <Step>
+    Dans l’éditeur de l’agent, ouvrez l’onglet **Outils**.
+  </Step>
+  <Step>
+    Dans le sous-onglet **Outils**, cliquez sur **Ajouter un outil**.
+  </Step>
+  <Step>
+    Cherchez votre outil et sélectionnez-le. Vous pouvez aussi cliquer sur **Ajouter un outil webhook** pour en créer un nouveau depuis cet écran.
+  </Step>
+  <Step>
+    Enregistrez l’agent.
+  </Step>
+</Steps>
 
 Pour ajouter un serveur MCP à l’agent, ouvrez le sous-onglet **MCP** et cliquez sur **Ajouter un MCP**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Capture d’écran : l’onglet Outils de l’agent. Ajouter un outil liste les outils créés dans la section Outils.">
   <img
     src="/images/tools-agent.png"
-    alt="L'onglet Outils de l'agent avec les sous-onglets Outils et MCP, la liste Ajouter un outil avec une recherche et le bouton Ajouter un outil webhook, et les outils système à droite."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Outils de l’agent. Ajouter un outil liste les outils créés dans la section Outils.
-</p>
+    alt="L'onglet Outils de l'agent avec les sous-onglets Outils et MCP, la liste Ajouter un outil avec une recherche et le bouton Ajouter un outil webhook, et les outils système à droite." />
+</Frame>
 
 **Vérification rapide :**\
 Si l’outil apparaît dans la liste de l’agent, il est bien assigné. S’il n’apparaît pas, l’agent ne pourra pas l’exécuter.
 
-> **Astuce :** À droite du même onglet se trouvent les **Outils système** (Raccrochage intelligent, Changement de langue, Transfert vers un numéro…). Ils sont intégrés et il suffit de les activer. Voir [Agents IA](/fr/Create-AI-Agent/Create-Agent-Enchanced).
+<Tip>
+  À droite du même onglet se trouvent les **Outils système** (Raccrochage intelligent, Changement de langue, Transfert vers un numéro…). Ils sont intégrés et il suffit de les activer. Voir [Agents IA](/fr/Create-AI-Agent/Create-Agent-Enchanced).
+</Tip>
 
 ---
 
@@ -323,13 +363,29 @@ Voici un exemple complet (inventé) avec deux outils : un lien principal pendant
 
 **Le lien A inclut (dans le lien lui-même) :**
 
-1. Inscription initiale (informations obligatoires)
-2. Vérification/confirmation des informations
-3. Choix d’un plan ou d’une option
-4. Configuration du paiement (si applicable)
-5. Acceptation des conditions ou signature (si applicable)
-6. Téléversement de documents (si applicable)
-7. Confirmation finale
+<Steps>
+  <Step>
+    Inscription initiale (informations obligatoires)
+  </Step>
+  <Step>
+    Vérification/confirmation des informations
+  </Step>
+  <Step>
+    Choix d’un plan ou d’une option
+  </Step>
+  <Step>
+    Configuration du paiement (si applicable)
+  </Step>
+  <Step>
+    Acceptation des conditions ou signature (si applicable)
+  </Step>
+  <Step>
+    Téléversement de documents (si applicable)
+  </Step>
+  <Step>
+    Confirmation finale
+  </Step>
+</Steps>
 
 **Conditions pour exécuter “Envoyer_Lien_Inscription” :**
 

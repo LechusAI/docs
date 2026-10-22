@@ -17,23 +17,15 @@ Si no creas primero las funciones aquí, el asistente de planes muestra **No hay
 
 La encontrarás en la Plataforma white label, dentro de **Planes y facturación** ([ábrela aquí](https://app.callin.io/cms/features-capabilities)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la página vacía → Crear Característica/Capacidad → una traducción al español → una segunda función en una categoría nueva → la lista agrupada por categoría → Editar.
-</p>
+<Frame caption="Vídeo: la página vacía → Crear Característica/Capacidad → una traducción al español → una segunda función en una categoría nueva → la lista agrupada por categoría → Editar.">
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" />
+</Frame>
 
 La lista agrupa tus funciones por **Categoría**. Cada fila muestra el **Nombre** y el **Tipo**. Usa **Buscar características y capacidades…** para encontrar una rápido.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/features1.png" alt="Página Características y Capacidades con el buscador, el botón Crear Característica/Capacidad y tres funciones agrupadas en las categorías Límites, Complementos y Capacidades" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: tres funciones de ejemplo, una de cada tipo, agrupadas por categoría.
-</p>
+<Frame caption="Captura: tres funciones de ejemplo, una de cada tipo, agrupadas por categoría.">
+  <img src="/images/features1.png" alt="Página Características y Capacidades con el buscador, el botón Crear Característica/Capacidad y tres funciones agrupadas en las categorías Límites, Complementos y Capacidades" />
+</Frame>
 
 ## Cómo se usan las funciones en los planes de suscripción
 
@@ -45,23 +37,29 @@ Cuando creas un plan, el paso **Revisar y confirmar** incluye **Configurar funci
 
 El flujo es este:
 
-1. Crea una función (aquí)
-2. Asigna un valor a esa función dentro de cada plan (en [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans))
-3. El valor del plan es lo que reciben las subcuentas que usan ese plan
+<Steps>
+  <Step>
+    Crea una función (aquí)
+  </Step>
+  <Step>
+    Asigna un valor a esa función dentro de cada plan (en [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans))
+  </Step>
+  <Step>
+    El valor del plan es lo que reciben las subcuentas que usan ese plan
+  </Step>
+</Steps>
 
-> **Importante:** Para crear planes, tu White Label necesita tener Stripe conectado. Las funciones puedes crearlas en cualquier momento, incluso antes de conectar Stripe.
+<Warning>
+  Para crear planes, tu White Label necesita tener Stripe conectado. Las funciones puedes crearlas en cualquier momento, incluso antes de conectar Stripe.
+</Warning>
 
 ## Crear una función o capacidad
 
 Haz clic en **Crear Característica/Capacidad** y rellena estos campos. Los campos marcados con **\*** son obligatorios. Cuando termines, haz clic en **Crear**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-create.png" alt="Ventana Crear Característica/Capacidad con las pestañas de Traducciones, los campos Nombre y Descripción, las tres formas en que los planes otorgan la función, una categoría nueva y los botones Cancelar y Crear" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Crear Característica/Capacidad rellenada para “Minutos al mes”.
-</p>
+<Frame caption="Captura: la ventana Crear Característica/Capacidad rellenada para “Minutos al mes”.">
+  <img src="/images/wl-features-create.png" alt="Ventana Crear Característica/Capacidad con las pestañas de Traducciones, los campos Nombre y Descripción, las tres formas en que los planes otorgan la función, una categoría nueva y los botones Cancelar y Crear" />
+</Frame>
 
 ### Nombre
 
@@ -79,9 +77,13 @@ Malos ejemplos (demasiado vagos):
 - **Función 1**
 - **Acceso**
 
-> **Consejo:** Usa nombres que se lean como una ventaja o una regla clara. “Minutos al mes” es más claro que “Minutos”.
+<Tip>
+  Usa nombres que se lean como una ventaja o una regla clara. “Minutos al mes” es más claro que “Minutos”.
+</Tip>
 
-> **Error común:** Si al pulsar **Crear** sale un error con `duplicate key value`, ese nombre ya está ocupado. Usa un nombre más concreto (por ejemplo, “Complemento de grabación de llamadas” en lugar de “Grabación de llamadas”).
+<Warning>
+  **Error común:** Si al pulsar **Crear** sale un error con `duplicate key value`, ese nombre ya está ocupado. Usa un nombre más concreto (por ejemplo, “Complemento de grabación de llamadas” en lugar de “Grabación de llamadas”).
+</Warning>
 
 ### Descripción
 
@@ -99,13 +101,9 @@ Las pestañas de arriba te permiten traducir el **Nombre** y la **Descripción**
 - Las pestañas de idioma son opcionales. Los campos vacíos muestran en gris el texto de **Predeterminado**.
 - El tipo y la categoría son los mismos para todos los idiomas.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-translations.png" alt="Ventana Crear Característica/Capacidad en la pestaña Español, con el nombre Minutos al mes y su descripción en español" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Español con el nombre y la descripción en español de la misma función.
-</p>
+<Frame caption="Captura: la pestaña Español con el nombre y la descripción en español de la misma función.">
+  <img src="/images/wl-features-translations.png" alt="Ventana Crear Característica/Capacidad en la pestaña Español, con el nombre Minutos al mes y su descripción en español" />
+</Frame>
 
 ### ¿Cómo otorgan los planes esta característica?
 
@@ -153,7 +151,9 @@ Ideal para:
 
 - Derechos del tipo “elige uno de estos paquetes” o “elige un nivel”
 
-> **Error común:** Elegir **toggle** para algo que debería ser un número (como los minutos). Si puede variar según el plan, normalmente es un **limit**.
+<Warning>
+  **Error común:** Elegir **toggle** para algo que debería ser un número (como los minutos). Si puede variar según el plan, normalmente es un **limit**.
+</Warning>
 
 ### Categoría
 
@@ -168,7 +168,9 @@ Categorías prácticas:
 - **Complementos** (grabación, portal con tu marca, etc.)
 - **Capacidades** (paquetes de voces, modos de enrutamiento, integraciones… según lo que ofrezcas)
 
-> **Consejo:** Mantén las categorías coherentes entre funciones. Si creas “Límite” y “Límites”, la agrupación quedará desordenada.
+<Tip>
+  Mantén las categorías coherentes entre funciones. Si creas “Límite” y “Límites”, la agrupación quedará desordenada.
+</Tip>
 
 ## Ejemplo práctico (configuración realista)
 
@@ -179,10 +181,16 @@ Imagina que vendes dos niveles a tus subcuentas:
 
 Crea estas funciones en **Características y Capacidades**:
 
-1. **Minutos al mes** → **Límite de uso (limit)**, categoría **Límites**\
-   Descripción: “Minutos de llamada incluidos cada mes en el plan.”
-2. **Complemento de grabación de llamadas** → **Activado / Desactivado (toggle)**, categoría **Complementos**\
-   Descripción: “Graba las llamadas que atienden los agentes.”
+<Steps>
+  <Step>
+    **Minutos al mes** → **Límite de uso (limit)**, categoría **Límites**\
+    Descripción: “Minutos de llamada incluidos cada mes en el plan.”
+  </Step>
+  <Step>
+    **Complemento de grabación de llamadas** → **Activado / Desactivado (toggle)**, categoría **Complementos**\
+    Descripción: “Graba las llamadas que atienden los agentes.”
+  </Step>
+</Steps>
 
 Después, en **Planes de suscripción**:
 
@@ -202,4 +210,6 @@ En la lista, haz clic en **⋮** en la fila de la función:
 - **Editar** abre **Editar Característica/Capacidad**, con los mismos campos: **Nombre**, **Descripción**, traducciones, tipo y **Categoría**. Haz clic en **Actualizar** para guardar.
 - **Eliminar** borra la función. Esta acción no se puede deshacer.
 
-> **Importante:** Cambiar el tipo de una función que ya se usa en planes puede afectar a cómo los planes guardan o muestran ese valor. Si no lo tienes claro, crea una función nueva y pasa tus planes a ella.
+<Warning>
+  Cambiar el tipo de una función que ya se usa en planes puede afectar a cómo los planes guardan o muestran ese valor. Si no lo tienes claro, crea una función nueva y pasa tus planes a ella.
+</Warning>

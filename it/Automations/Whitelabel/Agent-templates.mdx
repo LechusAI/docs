@@ -13,13 +13,9 @@ Usa questa sezione quando vuoi:
 - Un avvio più rapido per i nuovi utenti.
 - Una selezione di configurazioni di agente “approvate”.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: la pagina vuota → Crea modello → Seleziona campi → Imposta valori predefiniti → Pre-distribuito e Stato del modello → il modello nell’elenco → il menu della riga.
-</p>
+<Frame caption="Video: la pagina vuota → Crea modello → Seleziona campi → Imposta valori predefiniti → Pre-distribuito e Stato del modello → il modello nell’elenco → il menu della riga.">
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" />
+</Frame>
 
 ## Aprire i Modelli agente
 
@@ -27,25 +23,35 @@ Li trovi nella Piattaforma white label, in **Gestione del contenuto** ([aprili q
 
 L’elenco mostra il **Nome modello** di ciascuno (con la descrizione), quanti **Campi** include, lo **Stato** e la data di creazione. Usa **Cerca modelli...** per trovarne uno.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-list.png" alt="Pagina Modelli di agente personalizzati con il pulsante Crea modello, la ricerca e un modello nell’elenco con 6 campi, lo stato Attivo, la data di creazione e il menu delle azioni" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: l’elenco con un modello di esempio.
-</p>
+<Frame caption="Schermata: l’elenco con un modello di esempio.">
+  <img src="/images/wl-templates-list.png" alt="Pagina Modelli di agente personalizzati con il pulsante Crea modello, la ricerca e un modello nell’elenco con 6 campi, lo stato Attivo, la data di creazione e il menu delle azioni" />
+</Frame>
 
 ## Creare un modello
 
-1. Apri **Modelli di agente personalizzati**.
-2. Clicca su **Crea modello**. Si apre un pannello a destra.
-3. Compila i dati del modello (entrambi obbligatori):
-   - **Nome modello**: un nome chiaro che i tuoi sottoaccount riconoscano.
-   - **Descrizione**: una breve spiegazione dello scopo del modello.
-4. Scegli i campi da includere e imposta i loro valori predefiniti (vedi sotto).
-5. Clicca su **Crea modello** in fondo al pannello.
+<Steps>
+  <Step>
+    Apri **Modelli di agente personalizzati**.
+  </Step>
+  <Step>
+    Clicca su **Crea modello**. Si apre un pannello a destra.
+  </Step>
+  <Step>
+    Compila i dati del modello (entrambi obbligatori):
+    - **Nome modello**: un nome chiaro che i tuoi sottoaccount riconoscano.
+    - **Descrizione**: una breve spiegazione dello scopo del modello.
+  </Step>
+  <Step>
+    Scegli i campi da includere e imposta i loro valori predefiniti (vedi sotto).
+  </Step>
+  <Step>
+    Clicca su **Crea modello** in fondo al pannello.
+  </Step>
+</Steps>
 
-> **Suggerimento:** Usa nomi che descrivano il compito, non il team. Esempio: **“Assistenza clienti in entrata”** invece di **“Supporto - Team A”**.
+<Tip>
+  Usa nomi che descrivano il compito, non il team. Esempio: **“Assistenza clienti in entrata”** invece di **“Supporto - Team A”**.
+</Tip>
 
 ## Scegliere cosa possono configurare i sottoaccount
 
@@ -53,13 +59,9 @@ In **1. Seleziona campi** vedrai un elenco di caselle.\
 **Selezionata = inclusa nel flusso del modello per i sottoaccount.**\
 I campi non selezionati non fanno parte del modello.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-fields.png" alt="Pannello Crea modello con Nome modello e Descrizione compilati e sei campi selezionati in Seleziona campi" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: un modello di esempio con sei campi selezionati.
-</p>
+<Frame caption="Schermata: un modello di esempio con sei campi selezionati.">
+  <img src="/images/wl-templates-fields.png" alt="Pannello Crea modello con Nome modello e Descrizione compilati e sei campi selezionati in Seleziona campi" />
+</Frame>
 
 ### Informazioni di base
 
@@ -76,7 +78,9 @@ Puoi includere campi come:
 - **Rilevamento segreteria**
 - **Utente parla per primo**
 
-> **Importante:** Includi solo i campi che vuoi davvero far modificare ai sottoaccount. Meno campi di solito significa meno errori.
+<Warning>
+  Includi solo i campi che vuoi davvero far modificare ai sottoaccount. Meno campi di solito significa meno errori.
+</Warning>
 
 ### Voce e lingua
 
@@ -87,7 +91,9 @@ Puoi includere campi come:
 - **Velocità di parola**
 - **Temperatura**
 
-> **Suggerimento:** Se lavori in più regioni, includi **Lingua principale** e **Fuso orario**, così i sottoaccount si adattano rapidamente senza stravolgere lo scopo del modello.
+<Tip>
+  Se lavori in più regioni, includi **Lingua principale** e **Fuso orario**, così i sottoaccount si adattano rapidamente senza stravolgere lo scopo del modello.
+</Tip>
 
 ### Azione chiamata
 
@@ -104,7 +110,9 @@ Puoi includere campi come:
 - **Numero tentativi**
 - **Ritardo tentativi (minuti)**
 
-> **Errore comune:** Includere **URL webhook** per i sottoaccount quando vuoi che resti sotto il controllo della tua organizzazione. Se ti serve un monitoraggio centralizzato, non esporre i campi dei webhook.
+<Warning>
+  **Errore comune:** Includere **URL webhook** per i sottoaccount quando vuoi che resti sotto il controllo della tua organizzazione. Se ti serve un monitoraggio centralizzato, non esporre i campi dei webhook.
+</Warning>
 
 ### Valori predefiniti
 
@@ -119,13 +127,9 @@ Ogni campo mostra un breve testo di aiuto. Ad esempio:
 - **Lingua principale**: la lingua principale che userà l’agente.
 - **Voce**: la voce dell’agente, scelta dall’elenco di ElevenLabs.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-defaults.png" alt="Sezione Imposta valori predefiniti con valori di esempio per Nome agente, Messaggio di benvenuto, Prompt di sistema, Fuso orario e Lingua principale" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: i valori predefiniti del modello di esempio.
-</p>
+<Frame caption="Schermata: i valori predefiniti del modello di esempio.">
+  <img src="/images/wl-templates-defaults.png" alt="Sezione Imposta valori predefiniti con valori di esempio per Nome agente, Messaggio di benvenuto, Prompt di sistema, Fuso orario e Lingua principale" />
+</Frame>
 
 ## Modelli pre-distribuiti
 
@@ -133,7 +137,9 @@ In fondo al pannello vedrai **Pre-distribuito**.
 
 Se lo attivi, verrà **creato automaticamente un agente con questo modello** negli account utente registrati da quel momento.
 
-> **Importante:** Attivalo solo per il tuo modello “iniziale predefinito”. Altrimenti i nuovi utenti potrebbero ritrovarsi agenti che non volevano creare.
+<Warning>
+  Attivalo solo per il tuo modello “iniziale predefinito”. Altrimenti i nuovi utenti potrebbero ritrovarsi agenti che non volevano creare.
+</Warning>
 
 ## Stato del modello
 
@@ -169,7 +175,9 @@ Ecco come potresti strutturare un modello per un agente di supporto in entrata:
 - Nome agente: “Reception”
 - Messaggio di benvenuto: “Buongiorno, grazie per aver chiamato. Come posso aiutarti?”
 
-> **Suggerimento:** Se i tuoi sottoaccount non devono cambiare il comportamento principale, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate insieme.
+<Tip>
+  Se i tuoi sottoaccount non devono cambiare il comportamento principale, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate insieme.
+</Tip>
 
 ## Note e limitazioni
 

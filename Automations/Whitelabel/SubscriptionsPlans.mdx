@@ -16,13 +16,9 @@ After you set up plans here, you typically use them to:
 
 You’ll find it in the White Label Platform, under **Plans & Billing** ([open it here](https://app.callin.io/cms/subscription-plans)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/subscriptionsplans1.png" alt="Subscription Plans page with the Recharge rate and Create Plan buttons, the Connect Stripe to create plans notice with the Connect Stripe button, the Search subscription plans box and the No subscription plans found message" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Subscription Plans page before Stripe is connected. Create Plan stays disabled until you connect it.
-</p>
+<Frame caption="Screenshot: the Subscription Plans page before Stripe is connected. Create Plan stays disabled until you connect it.">
+  <img src="/images/subscriptionsplans1.png" alt="Subscription Plans page with the Recharge rate and Create Plan buttons, the Connect Stripe to create plans notice with the Connect Stripe button, the Search subscription plans box and the No subscription plans found message" />
+</Frame>
 
 ### Connect Stripe first
 
@@ -34,33 +30,37 @@ Click **Connect Stripe** in the notice, or connect it from [Integrations](/Autom
 
 Besides plans, your customers can buy minutes of credit from their billing page. **Recharge rate** sets the price per minute they pay when they recharge.
 
-1. Click **Recharge rate**. The **Set recharge rate** window opens.
-2. In **Rate per minute**, enter the price per minute in your currency (for example, `0.16`).
-3. Click **Update**.
+<Steps>
+  <Step>
+    Click **Recharge rate**. The **Set recharge rate** window opens.
+  </Step>
+  <Step>
+    In **Rate per minute**, enter the price per minute in your currency (for example, `0.16`).
+  </Step>
+  <Step>
+    Click **Update**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-plans-recharge.png" alt="Set recharge rate window with the Rate per minute field and the Cancel and Update buttons" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: the Set recharge rate window.">
+  <img src="/images/wl-plans-recharge.png" alt="Set recharge rate window with the Rate per minute field and the Cancel and Update buttons" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the Set recharge rate window.
-</p>
-
-> **Tip:** Set the recharge rate above your own cost per minute, so recharges keep your margin. See [Billing and Fees](/Billing).
+<Tip>
+  Set the recharge rate above your own cost per minute, so recharges keep your margin. See [Billing and Fees](/Billing).
+</Tip>
 
 ## Create a new subscription plan
 
 Once Stripe is connected, go to **Plans & Billing → Subscription Plans** and click **Create Plan**. A guided flow walks you through the setup step by step.
 
-> **Tip:** Before creating plans, decide your tiers and pricing on paper first (e.g., “Starter: 400 minutes/month for \$300”). It makes the setup faster and avoids later changes.
+<Tip>
+  Before creating plans, decide your tiers and pricing on paper first (e.g., “Starter: 400 minutes/month for \$300”). It makes the setup faster and avoids later changes.
+</Tip>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/subscriptionsplans2.png" alt="Create Subscription Plan wizard on Step 1 (Basic Information) showing required Plan Name, optional Description, and toggles for Active and Popular." style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Step 1 of the plan creation wizard, where you name the plan, add a description, and choose whether it’s Active and/or Popular.
-</p>
+<Frame caption="Screenshot: Step 1 of the plan creation wizard, where you name the plan, add a description, and choose whether it’s Active and/or Popular.">
+  <img src="/images/subscriptionsplans2.png" alt="Create Subscription Plan wizard on Step 1 (Basic Information) showing required Plan Name, optional Description, and toggles for Active and Popular." />
+</Frame>
 
 ### Step 1: Basic information
 
@@ -78,7 +78,9 @@ Fill in the essentials:
 - Active: **On**
 - Popular: **On** (only for the plan you want most people to choose)
 
-> **Common mistake:** Leaving the description empty. A short description reduces confusion and support tickets (“What’s included in this plan?”).
+<Warning>
+  **Common mistake:** Leaving the description empty. A short description reduces confusion and support tickets (“What’s included in this plan?”).
+</Warning>
 
 ### Step 2: Choose a plan type
 
@@ -88,7 +90,9 @@ Select how you want to bill:
 - **One-Time Purchase**: A single payment for a fixed amount of minutes.
 - **Pay as You Go**: Pay per minute with flexible usage.
 
-> **Important:** The available plan types may vary depending on your account setup.
+<Warning>
+  The available plan types may vary depending on your account setup.
+</Warning>
 
 ### Step 3: Pricing & minutes
 
@@ -143,7 +147,9 @@ Before creating the plan, you’ll see a summary of what you configured:
 
 Use **Edit** on any section if something looks off, then click **Create** to finish.
 
-> **Tip:** Double-check the minutes and price together. Most pricing mistakes are just a mismatch (e.g., “400 minutes” but priced like the “1000 minutes” tier).
+<Tip>
+  Double-check the minutes and price together. Most pricing mistakes are just a mismatch (e.g., “400 minutes” but priced like the “1000 minutes” tier).
+</Tip>
 
 ## Edit an existing plan
 
@@ -155,15 +161,13 @@ Inside the editor you typically see tabs such as:
 - **Features**: Adjust feature values for this plan.
 - **Pricing & Minutes**: Update included minutes, price, and additional-minute settings.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/subscriptionsplans3.png" alt="Edit plan page on the Pricing & Minutes tab showing a notice about price changes creating a new Stripe price, plus fields for included minutes, price, and an Additional Minutes toggle with a rate per additional minute." style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: editing a plan’s pricing and minutes, including the notice that price changes create a new Stripe price and won’t affect existing subscribers.">
+  <img src="/images/subscriptionsplans3.png" alt="Edit plan page on the Pricing & Minutes tab showing a notice about price changes creating a new Stripe price, plus fields for included minutes, price, and an Additional Minutes toggle with a rate per additional minute." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: editing a plan’s pricing and minutes, including the notice that price changes create a new Stripe price and won’t affect existing subscribers.
-</p>
-
-> **Important:** When you change a plan’s price, the platform may create a **new price in Stripe**. Existing subscribers can continue on their current price and may not be affected by the change (behavior can vary depending on your billing setup).
+<Warning>
+  When you change a plan’s price, the platform may create a **new price in Stripe**. Existing subscribers can continue on their current price and may not be affected by the change (behavior can vary depending on your billing setup).
+</Warning>
 
 ## Manage plan lifecycle (Copy ID, deactivate, and search)
 
@@ -173,4 +177,6 @@ From the plan list you can:
 - **Deactivate Plan**: Stops offering the plan to new users.
 - **Search**: use **Search subscription plans…** to find a plan by name.
 
-> **Common mistake:** Deactivating a plan without first creating a replacement. If you need to retire a plan, create the new plan first, then deactivate the old one so new customers don’t get stuck without options.
+<Warning>
+  **Common mistake:** Deactivating a plan without first creating a replacement. If you need to retire a plan, create the new plan first, then deactivate the old one so new customers don’t get stuck without options.
+</Warning>

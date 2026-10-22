@@ -10,25 +10,17 @@ La página de **Agentes de IA** es donde creas y gestionas los agentes que atien
 
 El editor de cada agente se organiza en nueve pestañas en la parte superior: **Agente**, **Flujo de trabajo**, **Base de conocimiento**, **Conversación**, **Análisis**, **Herramientas**, **Acción de llamada**, **Widget para sitio web** y **Avanzado**. Esta página te explica cómo crear un agente y qué puedes hacer en cada pestaña.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: un recorrido rápido por las nueve pestañas del editor del agente.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: un recorrido rápido por las nueve pestañas del editor del agente.
-</p>
+Todo empieza en la lista de agentes, donde cada fila es uno de tus agentes:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la página de Agentes de IA. Cada fila es un agente, con acciones rápidas a la derecha.">
   <img
     src="/images/agentesia1.png"
-    alt="La página de Agentes de IA en Callin.io con el botón Crear agente, la barra de búsqueda, los filtros Dirección y Ordenar, y la lista de agentes."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página de Agentes de IA. Cada fila es un agente, con acciones rápidas a la derecha.
-</p>
+    alt="La página de Agentes de IA en Callin.io con el botón Crear agente, la barra de búsqueda, los filtros Dirección y Ordenar, y la lista de agentes." />
+</Frame>
 
 ### La lista de agentes
 
@@ -44,43 +36,45 @@ A la derecha de cada fila tienes tres acciones rápidas:
 - **Probar agente de IA** — te permite hablar con el agente desde el navegador.
 - **Más opciones** (⋮) — **Copiar ID**, **Clonar**, **Editar**, **Asignar número**, **Ver calendario de eventos** y **Eliminar**.
 
-> **Consejo:** Usa **Clonar** para probar cambios en una copia antes de tocar un agente que ya está atendiendo llamadas reales.
+<Tip>
+  Usa **Clonar** para probar cambios en una copia antes de tocar un agente que ya está atendiendo llamadas reales.
+</Tip>
 
 ### Crear un agente nuevo
 
 Haz clic en **Crear agente**, arriba a la derecha. Callin.io te pregunta cómo quieres empezar.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: elige cómo empezar tu agente nuevo.">
   <img
     src="/images/ai-agents-new-agent.png"
-    alt="La pantalla Nuevo agente con tres opciones: Comenzar desde cero, Explorar nuestras plantillas y Plantillas predefinidas."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: elige cómo empezar tu agente nuevo.
-</p>
+    alt="La pantalla Nuevo agente con tres opciones: Comenzar desde cero, Explorar nuestras plantillas y Plantillas predefinidas." />
+</Frame>
 
 **Comenzar desde cero** crea un agente con un prompt y un saludo básicos que luego adaptas en el editor. Elígelo cuando ya sabes lo que debe hacer el agente. Solo tienes que escribir el **Nombre del agente** (hasta 50 caracteres) y elegir el **Stack del agente**.
 
 **Explorar nuestras plantillas** parte de un agente ya preparado para un tipo de negocio y un caso de uso concretos. Es la forma más rápida de tener una primera versión que funcione:
 
-1. **Sector** — elige el que mejor describe tu negocio: Retail y E-commerce, Salud y medicina, Finanzas y banca, Bienes raíces, Educación y formación, Hostelería y viajes, Automotriz, Servicios profesionales, Tecnología y software, Gobierno y sector público, Alimentos y bebidas, Manufactura, Fitness y bienestar, Servicios legales, Sin fines de lucro o Medios y entretenimiento.
-2. **Caso de uso** — elige en qué ayudará el agente. Las opciones dependen del sector. Por ejemplo, Salud y medicina ofrece Atención al cliente, Programación de citas, Admisión de pacientes, Verificación de seguros, Recordatorios de recetas y más.
-3. **Completa tu agente** — escribe el **Nombre del agente**, elige el **Stack del agente** y rellena:
-   - **Sitio web** *(opcional)* — la dirección de tu web. Callin.io solo lee la información pública para personalizar el agente.
-   - **Objetivo principal** — en hasta 300 caracteres, lo que el agente debe conseguir en cada llamada.
+<Steps>
+  <Step>
+    **Sector** — elige el que mejor describe tu negocio: Retail y E-commerce, Salud y medicina, Finanzas y banca, Bienes raíces, Educación y formación, Hostelería y viajes, Automotriz, Servicios profesionales, Tecnología y software, Gobierno y sector público, Alimentos y bebidas, Manufactura, Fitness y bienestar, Servicios legales, Sin fines de lucro o Medios y entretenimiento.
+  </Step>
+  <Step>
+    **Caso de uso** — elige en qué ayudará el agente. Las opciones dependen del sector. Por ejemplo, Salud y medicina ofrece Atención al cliente, Programación de citas, Admisión de pacientes, Verificación de seguros, Recordatorios de recetas y más.
+  </Step>
+  <Step>
+    **Completa tu agente** — escribe el **Nombre del agente**, elige el **Stack del agente** y rellena:
+    - **Sitio web** *(opcional)* — la dirección de tu web. Callin.io solo lee la información pública para personalizar el agente.
+    - **Objetivo principal** — en hasta 300 caracteres, lo que el agente debe conseguir en cada llamada.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vídeo: Explorar nuestras plantillas → sector → caso de uso → completar el agente.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: Explorar nuestras plantillas → sector → caso de uso → completar el agente.
-</p>
-
-> **Consejo:** Escribe el **Objetivo principal** como un único resultado claro, por ejemplo "Reservar, confirmar o cambiar citas de pacientes y responder preguntas sobre el horario". Cuanto más claro sea el objetivo, mejor será la primera versión del prompt.
+<Tip>
+  Escribe el **Objetivo principal** como un único resultado claro, por ejemplo "Reservar, confirmar o cambiar citas de pacientes y responder preguntas sobre el horario". Cuanto más claro sea el objetivo, mejor será la primera versión del prompt.
+</Tip>
 
 **Plantillas predefinidas** *(Beta)* usa plantillas creadas por tu propia organización, para que cada agente nuevo empiece con la configuración estándar de tu empresa. Cada tarjeta muestra el nombre de la plantilla, una breve descripción y cuántos campos rellena (por ejemplo *Nombre del agente*, *Prompt*, *Mensaje de bienvenida*, *Dirección*). Elige una, revisa el **Nombre del agente**, elige el **Stack del agente** y haz clic en **Crear agente**. Si tu organización todavía no ha creado plantillas, la lista aparece vacía.
 
@@ -94,7 +88,9 @@ El **Stack del agente** decide qué voz y qué tecnología de IA utiliza el agen
 
 Haz clic en **Crear agente** para terminar. El agente se abre directamente en su editor, en la pestaña **Agente**.
 
-> **Importante:** Las secciones siguientes describen un agente creado con el stack **Voz premium**. Los agentes con otros stacks pueden mostrar opciones diferentes.
+<Warning>
+  Las secciones siguientes describen un agente creado con el stack **Voz premium**. Los agentes con otros stacks pueden mostrar opciones diferentes.
+</Warning>
 
 ### Guardar los cambios
 
@@ -105,17 +101,11 @@ Cuando cambias cualquier cosa en el editor, aparece abajo una barra con el mensa
 
 Mientras haya cambios sin guardar, **Probar llamada** está desactivado. Si hay algo que corregir antes de guardar (por ejemplo, un flujo incompleto), la barra te dice lo que falta o muestra el botón **Ver errores**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la barra de cambios sin guardar. Guarda para conservar los cambios o descártalos.">
   <img
     src="/images/ai-agents-unsaved-changes.png"
-    alt="El editor del agente con la barra de cambios sin guardar y los botones para descartar y guardar en la parte inferior."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la barra de cambios sin guardar. Guarda para conservar los cambios o descártalos.
-</p>
+    alt="El editor del agente con la barra de cambios sin guardar y los botones para descartar y guardar en la parte inferior." />
+</Frame>
 
 ### Probar tu agente
 
@@ -125,23 +115,19 @@ Usa los botones de arriba a la derecha del editor para probar sin salir de la p�
 - **Probar agente de IA** — te permite hablar con el agente desde el navegador.
 - **Consola** — abre la consola de desarrollador.
 
-> **Consejo:** La primera vez, recorre las pestañas en orden y prueba después de cada cambio importante. Un buen agente tiene que sonar bien en una llamada real, no solo verse bien en el editor.
+<Tip>
+  La primera vez, recorre las pestañas en orden y prueba después de cada cambio importante. Un buen agente tiene que sonar bien en una llamada real, no solo verse bien en el editor.
+</Tip>
 
 ## Sección 1: Agente
 
 La pestaña **Agente** es donde defines la identidad y el comportamiento principal de tu asistente: lo que dice, qué voz e idioma usa, qué modelo de IA lo impulsa y si atiende llamadas entrantes, hace llamadas salientes o ambas.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Agente, donde configuras el prompt, la voz, el idioma, el modelo y la dirección de la llamada.">
   <img
     src="/images/agentesia2.png"
-    alt="La pestaña Agente con el editor del Prompt de conversación a la izquierda y los paneles de Voz, Idioma, Inteligencia de IA (LLM) y Dirección de la llamada a la derecha."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Agente, donde configuras el prompt, la voz, el idioma, el modelo y la dirección de la llamada.
-</p>
+    alt="La pestaña Agente con el editor del Prompt de conversación a la izquierda y los paneles de Voz, Idioma, Inteligencia de IA (LLM) y Dirección de la llamada a la derecha." />
+</Frame>
 
 ### Prompt de conversación
 
@@ -161,7 +147,9 @@ Después de esas tres, añade reglas operativas que guíen las decisiones del ag
 - Responde de forma breve salvo que el usuario pida más detalle.
 - No inventes respuestas. Si la información no está clara, dilo.
 
-> **Consejo:** Escribe el prompt como si estuvieras explicando el trabajo a un empleado nuevo en su primer día. Operativo y claro, no decorativo.
+<Tip>
+  Escribe el prompt como si estuvieras explicando el trabajo a un empleado nuevo en su primer día. Operativo y claro, no decorativo.
+</Tip>
 
 ### Agregar variables y variables dinámicas
 
@@ -200,7 +188,9 @@ Algunos ejemplos:
 
 **Permitir interrupciones**, junto al saludo, permite que el llamante interrumpa al agente mientras dice el primer mensaje. Viene activado, lo que resulta natural en la mayoría de flujos de soporte, recepción y atención al cliente.
 
-> **Error común:** Dejar las interrupciones activadas cuando tu saludo incluye información que el llamante tiene que oír entera, como un aviso legal o el aviso de grabación. En ese caso, desactívalas.
+<Warning>
+  **Error común:** Dejar las interrupciones activadas cuando tu saludo incluye información que el llamante tiene que oír entera, como un aviso legal o el aviso de grabación. En ese caso, desactívalas.
+</Warning>
 
 ### Voz
 
@@ -278,17 +268,11 @@ La pestaña **Flujo de trabajo** es donde decides cómo avanza la conversación.
 
 Lo construyes en un lienzo visual colocando nodos y conectándolos. Usa los botones de arriba a la izquierda para acercar, alejar y ajustar todo el flujo a la pantalla, y los de arriba a la derecha para ver a pantalla completa o eliminar el flujo.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: un flujo con dos rutas desde el inicio. El panel de la derecha muestra lo que falta y los ajustes del nodo seleccionado.">
   <img
     src="/images/agentesia3.png"
-    alt="La pestaña Flujo de trabajo con un nodo Inicio conectado a un Subagente y a un nodo de transferencia a número de teléfono, un nodo Fin, el panel Completa la configuración del flujo y los ajustes del Subagente a la derecha."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: un flujo con dos rutas desde el inicio. El panel de la derecha muestra lo que falta y los ajustes del nodo seleccionado.
-</p>
+    alt="La pestaña Flujo de trabajo con un nodo Inicio conectado a un Subagente y a un nodo de transferencia a número de teléfono, un nodo Fin, el panel Completa la configuración del flujo y los ajustes del Subagente a la derecha." />
+</Frame>
 
 ### Qué puedes construir aquí
 
@@ -308,13 +292,9 @@ Para añadir un nodo, arrastra una conexión desde un nodo existente (por ejempl
 
 El nodo nuevo aparece conectado al anterior y sus ajustes se abren en el panel de la derecha.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: crea un flujo con dos rutas desde Inicio: un Subagente que reserva citas y después termina la llamada, y una transferencia a un número de teléfono.
-</p>
+<Frame caption="Vídeo: crea un flujo con dos rutas desde Inicio: un Subagente que reserva citas y después termina la llamada, y una transferencia a un número de teléfono.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" />
+</Frame>
 
 ### Inicio
 
@@ -408,23 +388,19 @@ Cuando no hay ningún nodo seleccionado, el panel de la derecha muestra los **Aj
 
 Para desactivar un flujo sin borrarlo, desconecta el nodo **Inicio**. Sin un inicio conectado, el flujo no tiene punto de entrada y no se ejecuta.
 
-> **Error común:** Un flujo que parece completo en el lienzo puede fallar en la práctica. Prueba cada ruta con una conversación real antes de publicarlo.
+<Warning>
+  **Error común:** Un flujo que parece completo en el lienzo puede fallar en la práctica. Prueba cada ruta con una conversación real antes de publicarlo.
+</Warning>
 
 ## Sección 3: Base de conocimiento
 
 La pestaña **Base de conocimiento** da a tu agente información adicional para responder preguntas. Es ideal para contenido extenso o detallado —como manuales, preguntas frecuentes o políticas— que no cabe en el prompt principal.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Base de conocimiento. Añade los documentos que este agente puede usar para responder.">
   <img
     src="/images/agentesia4.png"
-    alt="La pestaña Base de conocimiento de un agente con el botón para añadir documentos y la lista de documentos que puede usar el agente."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Base de conocimiento. Añade los documentos que este agente puede usar para responder.
-</p>
+    alt="La pestaña Base de conocimiento de un agente con el botón para añadir documentos y la lista de documentos que puede usar el agente." />
+</Frame>
 
 ### Para qué sirve esta pestaña
 
@@ -476,26 +452,28 @@ En el gestor de la Base de conocimiento puedes cambiar entre **Archivos** y **We
 
 La forma más ordenada de trabajar es separar la creación de la selección:
 
-1. Crea y organiza tus documentos en el gestor de la Base de conocimiento.
-2. Vuelve a esta pestaña y añade los documentos que necesita el agente.
+<Steps>
+  <Step>
+    Crea y organiza tus documentos en el gestor de la Base de conocimiento.
+  </Step>
+  <Step>
+    Vuelve a esta pestaña y añade los documentos que necesita el agente.
+  </Step>
+</Steps>
 
-> **Consejo:** Mantén las reglas de comportamiento en el prompt y el contenido de referencia en la Base de conocimiento. Esa separación hace mucho más fáciles las actualizaciones.
+<Tip>
+  Mantén las reglas de comportamiento en el prompt y el contenido de referencia en la Base de conocimiento. Esa separación hace mucho más fáciles las actualizaciones.
+</Tip>
 
 ## Sección 4: Conversación
 
 La pestaña **Conversación** lista todas las llamadas que ha atendido este agente, entrantes y salientes. Es donde revisas lo que pasó en cada llamada. Tiene dos subpestañas: **Conversaciones** (llamadas telefónicas y web) y **Sesiones de Google Meet**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Conversación. Busca en las transcripciones y filtra las llamadas del agente.">
   <img
     src="/images/ai-agents-conversation.png"
-    alt="La pestaña Conversación con las subpestañas Conversaciones y Sesiones de Google Meet, la barra de búsqueda de transcripciones y los filtros de las llamadas del agente."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Conversación. Busca en las transcripciones y filtra las llamadas del agente.
-</p>
+    alt="La pestaña Conversación con las subpestañas Conversaciones y Sesiones de Google Meet, la barra de búsqueda de transcripciones y los filtros de las llamadas del agente." />
+</Frame>
 
 ### Búsqueda y filtros
 
@@ -508,23 +486,19 @@ Hasta que el agente haga o reciba su primera llamada, la pestaña muestra *Aún 
 
 Esta subpestaña lista las reuniones de Google Meet a las que se ha unido el agente (con el botón **Unirse a Meet**, arriba en el editor). Busca por la URL o el código de acceso de la reunión y filtra la lista por **Estado**. Si el agente no se ha unido a ninguna reunión, verás *No se encontraron sesiones de Google Meet*.
 
-> **Consejo:** Después de cambiar el prompt o el flujo, haz unas cuantas llamadas de prueba y revísalas aquí. Leer las transcripciones es la forma más rápida de ver dónde se desvía el agente.
+<Tip>
+  Después de cambiar el prompt o el flujo, haz unas cuantas llamadas de prueba y revísalas aquí. Leer las transcripciones es la forma más rápida de ver dónde se desvía el agente.
+</Tip>
 
 ## Sección 5: Análisis
 
 La pestaña **Análisis** muestra cómo está funcionando este agente, comparado con el periodo anterior de la misma duración.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Análisis. Elige el periodo y cómo agrupar los datos.">
   <img
     src="/images/ai-agents-analytics.png"
-    alt="La pestaña Análisis con los selectores de periodo y de agrupación."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Análisis. Elige el periodo y cómo agrupar los datos.
-</p>
+    alt="La pestaña Análisis con los selectores de periodo y de agrupación." />
+</Frame>
 
 ### Periodo y agrupación
 
@@ -539,17 +513,11 @@ La pestaña **Herramientas** decide lo que tu agente puede *hacer* durante la ll
 
 La pestaña tiene dos subpestañas: **Herramientas**, para tus herramientas personalizadas y las **Herramientas del sistema**, y **MCP**, para servidores MCP.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Herramientas. Añade herramientas personalizadas a la izquierda y activa o desactiva las del sistema a la derecha.">
   <img
     src="/images/agentesia5.png"
-    alt="La pestaña Herramientas con el botón para agregar herramientas a la izquierda y la lista de herramientas del sistema a la derecha, incluida Acceso a datos inmobiliarios."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Herramientas. Añade herramientas personalizadas a la izquierda y activa o desactiva las del sistema a la derecha.
-</p>
+    alt="La pestaña Herramientas con el botón para agregar herramientas a la izquierda y la lista de herramientas del sistema a la derecha, incluida Acceso a datos inmobiliarios." />
+</Frame>
 
 Acceso rápido:
 
@@ -573,17 +541,11 @@ El botón **Agregar herramienta** abre un selector donde puedes buscar tus herra
 
 La subpestaña **MCP** te permite conectar servidores MCP (Model Context Protocol) para dar a tu agente herramientas e integraciones adicionales sin tener que crearlas una a una.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la subpestaña MCP. Conecta servidores MCP al agente.">
   <img
     src="/images/ai-agents-mcp.png"
-    alt="La subpestaña MCP de la pestaña Herramientas con el botón para agregar un MCP."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la subpestaña MCP. Conecta servidores MCP al agente.
-</p>
+    alt="La subpestaña MCP de la pestaña Herramientas con el botón para agregar un MCP." />
+</Frame>
 
 Haz clic en **Agregar MCP** para buscar los servidores MCP disponibles en tu cuenta y conectar uno al agente. Si todavía no hay ninguno, haz clic en **Gestionar MCP** para configurarlos.
 
@@ -659,23 +621,19 @@ No actives todo. Elige lo que encaja con tu caso:
 - Un agente que deriva a personas usa **Transferir a número** con reglas de transferencia claras.
 - Un agente saliente suele usar **Detección de buzón**, **Colgado inteligente** y **Cambio de idioma**.
 
-> **Error común:** Activar demasiadas herramientas a la vez. El comportamiento se vuelve más difícil de predecir, de probar y de mantener.
+<Warning>
+  **Error común:** Activar demasiadas herramientas a la vez. El comportamiento se vuelve más difícil de predecir, de probar y de mantener.
+</Warning>
 
 ## Sección 7: Acción de llamada
 
 La pestaña **Acción de llamada** es donde el agente deja de ser solo una voz y empieza a producir resultados útiles: reservas, correos de seguimiento, tickets, datos estructurados y registros sincronizados, durante y después de la llamada.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Acción de llamada. Activa solo las acciones que tu equipo vaya a usar.">
   <img
     src="/images/agentesia6.png"
-    alt="La pestaña Acción de llamada con los interruptores de Programación de citas, Correo de resumen tras la llamada, Exclusión inteligente y Seguimiento de incidencias y quejas, el campo del webhook y el selector de Idioma del resumen."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Acción de llamada. Activa solo las acciones que tu equipo vaya a usar.
-</p>
+    alt="La pestaña Acción de llamada con los interruptores de Programación de citas, Correo de resumen tras la llamada, Exclusión inteligente y Seguimiento de incidencias y quejas, el campo del webhook y el selector de Idioma del resumen." />
+</Frame>
 
 Acceso rápido:
 
@@ -693,7 +651,9 @@ Al activarla, el panel **Configuración de citas** te pide un **Proveedor de cit
 
 Después, elige el calendario y la plantilla de reserva que debe usar el agente. Puedes crear varias plantillas de reserva por calendario y asignar plantillas de distintos calendarios a distintos agentes.
 
-> **Importante:** La zona horaria del agente y la del calendario deben coincidir. Si no, el agente ofrecerá o confirmará horas incorrectas.
+<Warning>
+  La zona horaria del agente y la del calendario deben coincidir. Si no, el agente ofrecerá o confirmará horas incorrectas.
+</Warning>
 
 ### Correo resumen tras la llamada
 
@@ -756,7 +716,9 @@ Puedes configurar:
 - **Intentos de reintento (número de reintentos)** — cuántas veces debe volver a intentarlo el sistema antes de parar (por defecto **0**, sin reintentos).
 - **Tiempo de espera entre intentos (retardo de reintento)** — cuántos minutos esperar entre intentos (por defecto **30**).
 
-> **Consejo:** Activa solo las acciones que tu equipo vaya a usar de verdad. Cada automatización que activas es un pequeño compromiso de mantenimiento. Pocas acciones bien elegidas son mejores que una larga lista a medio usar.
+<Tip>
+  Activa solo las acciones que tu equipo vaya a usar de verdad. Cada automatización que activas es un pequeño compromiso de mantenimiento. Pocas acciones bien elegidas son mejores que una larga lista a medio usar.
+</Tip>
 
 ## Sección 8: Widget para sitio web
 
@@ -764,17 +726,11 @@ La pestaña **Widget para sitio web** te permite publicar tu agente en una pági
 
 Esta pestaña combina dos cosas: el fragmento técnico de inserción y la personalización visual y de textos de la experiencia.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Widget para sitio web. Copia el fragmento y personaliza el aspecto y el comportamiento del widget.">
   <img
     src="/images/agentesia7.png"
-    alt="La pestaña Widget para sitio web con el fragmento de inserción, el botón Copiar y las opciones de Diseño y comportamiento: modo del widget, tema y modo de conversación."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Widget para sitio web. Copia el fragmento y personaliza el aspecto y el comportamiento del widget.
-</p>
+    alt="La pestaña Widget para sitio web con el fragmento de inserción, el botón Copiar y las opciones de Diseño y comportamiento: modo del widget, tema y modo de conversación." />
+</Frame>
 
 ### Fragmento de integración
 
@@ -877,7 +833,9 @@ Algunas combinaciones que funcionan bien:
 - **Soporte en la web** — Lanzador flotante, **Solo chat** o **Voz + Chat**, variante **Compacto** y textos orientados a la ayuda.
 - **Experiencia centrada en la voz** — Incrustación en línea, **Solo voz**, dial más grande, botón de silencio visible y etiquetas cortas y directas.
 
-> **Consejo:** Antes de publicar, revisa siempre el widget en la página real. Los tamaños, colores y textos suelen verse distintos fuera del editor.
+<Tip>
+  Antes de publicar, revisa siempre el widget en la página real. Los tamaños, colores y textos suelen verse distintos fuera del editor.
+</Tip>
 
 ## Sección 9: Avanzado
 
@@ -885,17 +843,11 @@ La pestaña **Avanzado** es donde afinas el agente: cómo capta el audio, cómo 
 
 La mayoría de agentes funcionan bien sin tocar nada aquí. Abre esta pestaña cuando quieras más precisión o cuando algo concreto no termine de ir bien.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Captura: la pestaña Avanzado. La mayoría de agentes funcionan bien con los valores por defecto.">
   <img
     src="/images/agentesia8.png"
-    alt="La pestaña Avanzado con el bloque Memoria (Recordar a quien llama), el bloque Voz y comprensión y el bloque Flujo de conversación."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Avanzado. La mayoría de agentes funcionan bien con los valores por defecto.
-</p>
+    alt="La pestaña Avanzado con el bloque Memoria (Recordar a quien llama), el bloque Voz y comprensión y el bloque Flujo de conversación." />
+</Frame>
 
 La pestaña se divide en siete bloques: **Memoria**, **Voz y comprensión**, **Flujo de conversación**, **Sonido de fondo**, **Tiempo de espera suave**, **Privacidad y datos** y **Extras de telefonía**.
 
@@ -903,7 +855,9 @@ La pestaña se divide en siete bloques: **Memoria**, **Voz y comprensión**, **F
 
 **Recordar a quien llama** guarda datos útiles después de cada llamada y los usa la próxima vez que el agente reconoce a la misma persona. Por defecto, cada persona se reconoce por el número desde el que llama. Viene desactivado por defecto.
 
-> **Consejo:** Actívalo en agentes que hablan a menudo con los mismos clientes, como los de soporte o de citas, para que no tengan que repetir sus datos.
+<Tip>
+  Actívalo en agentes que hablan a menudo con los mismos clientes, como los de soporte o de citas, para que no tengan que repetir sus datos.
+</Tip>
 
 ### Voz y comprensión
 
@@ -952,7 +906,9 @@ Cuántos segundos de silencio deben pasar para que la llamada termine automátic
 
 La duración máxima de una llamada, en minutos (por defecto **10**). Es una red de seguridad para que las llamadas sean concisas y no se alarguen indefinidamente.
 
-> **Consejo:** Si no sabes qué poner en los campos de silencio y duración, déjalos con su valor por defecto y ajústalos solo después de probar llamadas reales.
+<Tip>
+  Si no sabes qué poner en los campos de silencio y duración, déjalos con su valor por defecto y ajústalos solo después de probar llamadas reales.
+</Tip>
 
 ### Sonido de fondo
 
@@ -996,4 +952,6 @@ Cuando **Rotación de Números** está activada y tu cuenta tiene números, elig
 
 **Restricción por Estado** aumenta la tasa de respuesta haciendo que el agente llame a cada contacto con un número de su mismo estado. Por ahora solo admite números locales de EE. UU.: confirma que tu cuenta tiene numeración local compatible antes de activarla.
 
-> **Importante:** Cambia los ajustes avanzados solo cuando tengas un motivo claro y puedas probar el resultado con llamadas reales. Los cambios al azar suelen crear problemas nuevos en lugar de resolver el anterior.
+<Warning>
+  Cambia los ajustes avanzados solo cuando tengas un motivo claro y puedas probar el resultado con llamadas reales. Los cambios al azar suelen crear problemas nuevos en lugar de resolver el anterior.
+</Warning>

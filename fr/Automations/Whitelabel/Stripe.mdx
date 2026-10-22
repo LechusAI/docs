@@ -16,23 +16,19 @@ La page **Intégrations** est l’endroit où vous connectez votre application W
 
 Vous la trouverez dans la Plateforme white label, dans **Configuration de l'application** ([ouvrez-la ici](https://app.callin.io/cms/api-keys)). Utilisez **Rechercher des intégrations...** pour en trouver une rapidement.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations1.png" alt="Page Intégrations avec une recherche et les cartes Stripe, Twilio et SendGrid (marquées Obligatoire), Intercom, Brevo Chat et Clés API Analytics & Tracking" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Capture d’écran : la vue d’ensemble des Intégrations. Chaque carte ouvre un panneau latéral avec ce qu’il faut pour la connecter.">
+  <img src="/images/integrations1.png" alt="Page Intégrations avec une recherche et les cartes Stripe, Twilio et SendGrid (marquées Obligatoire), Intercom, Brevo Chat et Clés API Analytics & Tracking" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la vue d’ensemble des Intégrations. Chaque carte ouvre un panneau latéral avec ce qu’il faut pour la connecter.
-</p>
+Voici le panneau de chaque intégration, une par une :
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Vidéo : le panneau de chaque intégration : Stripe, Twilio, SendGrid, Intercom, Brevo Chat et Clés API Analytics & Tracking.">
+  <video autoPlay muted loop playsInline src="/images/wl-integrations.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : le panneau de chaque intégration : Stripe, Twilio, SendGrid, Intercom, Brevo Chat et Clés API Analytics & Tracking.
-</p>
-
-> **Important :** **Stripe**, **Twilio** et **SendGrid** sont marquées **Obligatoire** : votre White Label en a besoin pour facturer, appeler et envoyer des e-mails. Intercom, Brevo Chat et le suivi sont facultatifs.
+<Warning>
+  **Stripe**, **Twilio** et **SendGrid** sont marquées **Obligatoire** : votre White Label en a besoin pour facturer, appeler et envoyer des e-mails. Intercom, Brevo Chat et le suivi sont facultatifs.
+</Warning>
 
 ## Avant de connecter quoi que ce soit
 
@@ -42,14 +38,26 @@ Quelques bonnes habitudes rendent les intégrations plus simples (et plus sûres
 - **Conservez les clés en lieu sûr** (traitez-les comme des mots de passe).
 - **Limitez l’accès** aux personnes qui en ont besoin. Ne collez pas de clés dans des documents ou des chats partagés.
 
-> **Astuce :** Si une intégration ne fonctionne pas tout de suite, vérifiez qu’il n’y a pas d’espace au début ou à la fin de la clé avant d’essayer autre chose.
+<Tip>
+  Si une intégration ne fonctionne pas tout de suite, vérifiez qu’il n’y a pas d’espace au début ou à la fin de la clé avant d’essayer autre chose.
+</Tip>
 
 ## Comment se connecte une intégration
 
-1. Cliquez sur la carte d’une intégration. Un panneau latéral s’ouvre.
-2. Lisez l’encadré bleu en haut : il explique où trouver chaque valeur.
-3. Pour **Stripe**, cliquez sur **Connecter** et connectez-vous à Stripe. Pour les autres, copiez les valeurs depuis le tableau de bord du fournisseur et collez-les dans les champs (ceux marqués `*` sont obligatoires).
-4. Cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Cliquez sur la carte d’une intégration. Un panneau latéral s’ouvre.
+  </Step>
+  <Step>
+    Lisez l’encadré bleu en haut : il explique où trouver chaque valeur.
+  </Step>
+  <Step>
+    Pour **Stripe**, cliquez sur **Connecter** et connectez-vous à Stripe. Pour les autres, copiez les valeurs depuis le tableau de bord du fournisseur et collez-les dans les champs (ceux marqués `*` sont obligatoires).
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
 Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 
@@ -59,22 +67,30 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 
 **Quand en avez-vous besoin :** Si vous créez des forfaits payants et facturez vos clients, Stripe est l’une des premières intégrations à configurer.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations2.png" alt="Panneau Se connecter à Stripe avec les étapes pour lier votre compte et le bouton Connecter" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le panneau Se connecter à Stripe. Vous ne collez aucune clé : vous vous connectez à Stripe.
-</p>
+<Frame caption="Capture d’écran : le panneau Se connecter à Stripe. Vous ne collez aucune clé : vous vous connectez à Stripe.">
+  <img src="/images/integrations2.png" alt="Panneau Se connecter à Stripe avec les étapes pour lier votre compte et le bouton Connecter" />
+</Frame>
 
 ### Comment connecter Stripe
 
-1. Ouvrez la carte **Stripe**. Le panneau **Se connecter à Stripe** s’ouvre.
-2. Cliquez sur **Connecter**.
-3. Connectez-vous à votre compte Stripe, ou créez-en un quand on vous le propose.
-4. À la fin, vous revenez sur Callin et votre compte est lié automatiquement.
+<Steps>
+  <Step>
+    Ouvrez la carte **Stripe**. Le panneau **Se connecter à Stripe** s’ouvre.
+  </Step>
+  <Step>
+    Cliquez sur **Connecter**.
+  </Step>
+  <Step>
+    Connectez-vous à votre compte Stripe, ou créez-en un quand on vous le propose.
+  </Step>
+  <Step>
+    À la fin, vous revenez sur Callin et votre compte est lié automatiquement.
+  </Step>
+</Steps>
 
-> **Important :** Connectez le compte Stripe sur lequel vous voulez recevoir les paiements de vos clients. Si vous utilisez un autre compte plus tard, reconnectez-le depuis cette carte.
+<Warning>
+  Connectez le compte Stripe sur lequel vous voulez recevoir les paiements de vos clients. Si vous utilisez un autre compte plus tard, reconnectez-le depuis cette carte.
+</Warning>
 
 ## Twilio
 
@@ -87,22 +103,30 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 - **Account SID**\*
 - **Auth Token**\*
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations33.png" alt="Panneau Ajouter les clés API Twilio avec les champs Account SID et Auth Token et le bouton Enregistrer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : pour configurer Twilio, il faut un Account SID et un Auth Token.
-</p>
+<Frame caption="Capture d’écran : pour configurer Twilio, il faut un Account SID et un Auth Token.">
+  <img src="/images/integrations33.png" alt="Panneau Ajouter les clés API Twilio avec les champs Account SID et Auth Token et le bouton Enregistrer" />
+</Frame>
 
 ### Comment connecter Twilio
 
-1. Ouvrez la carte **Twilio**. Le panneau **Ajouter les clés API Twilio** s’ouvre.
-2. Depuis votre tableau de bord Twilio, copiez votre **Account SID** et votre **Auth Token**.
-3. Collez-les dans les champs correspondants. Cliquez sur l’icône en forme d’œil pour vérifier le jeton collé.
-4. Cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Ouvrez la carte **Twilio**. Le panneau **Ajouter les clés API Twilio** s’ouvre.
+  </Step>
+  <Step>
+    Depuis votre tableau de bord Twilio, copiez votre **Account SID** et votre **Auth Token**.
+  </Step>
+  <Step>
+    Collez-les dans les champs correspondants. Cliquez sur l’icône en forme d’œil pour vérifier le jeton collé.
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
-> **Astuce :** Si les appels ou les SMS cessent de fonctionner plus tard, Twilio est la première intégration à vérifier.
+<Tip>
+  Si les appels ou les SMS cessent de fonctionner plus tard, Twilio est la première intégration à vérifier.
+</Tip>
 
 ## SendGrid
 
@@ -115,22 +139,30 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 - **Clé API**\*
 - **Sender Email**\* (une adresse d’expéditeur vérifiée dans SendGrid)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations4.png" alt="Panneau Ajouter les clés API SendGrid avec les champs Clé API et Sender Email et le bouton Enregistrer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : pour configurer SendGrid, il faut une clé API et une adresse d’expéditeur vérifiée.
-</p>
+<Frame caption="Capture d’écran : pour configurer SendGrid, il faut une clé API et une adresse d’expéditeur vérifiée.">
+  <img src="/images/integrations4.png" alt="Panneau Ajouter les clés API SendGrid avec les champs Clé API et Sender Email et le bouton Enregistrer" />
+</Frame>
 
 ### Comment connecter SendGrid
 
-1. Ouvrez la carte **SendGrid**. Le panneau **Ajouter les clés API SendGrid** s’ouvre.
-2. Copiez votre **Clé API** depuis SendGrid.
-3. Dans **Sender Email**, saisissez une adresse vérifiée dans SendGrid.
-4. Cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Ouvrez la carte **SendGrid**. Le panneau **Ajouter les clés API SendGrid** s’ouvre.
+  </Step>
+  <Step>
+    Copiez votre **Clé API** depuis SendGrid.
+  </Step>
+  <Step>
+    Dans **Sender Email**, saisissez une adresse vérifiée dans SendGrid.
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
-> **Erreur fréquente :** Utiliser une adresse d’expéditeur non vérifiée dans SendGrid. Si les e-mails ne partent pas, vérifiez d’abord l’expéditeur.
+<Warning>
+  **Erreur fréquente :** Utiliser une adresse d’expéditeur non vérifiée dans SendGrid. Si les e-mails ne partent pas, vérifiez d’abord l’expéditeur.
+</Warning>
 
 ## Intercom
 
@@ -142,21 +174,27 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 
 - **App ID**\* (dans les paramètres de votre espace de travail Intercom)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations5.png" alt="Panneau Ajouter les clés API Intercom avec le champ App ID et le bouton Enregistrer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : pour configurer Intercom, il faut un App ID.
-</p>
+<Frame caption="Capture d’écran : pour configurer Intercom, il faut un App ID.">
+  <img src="/images/integrations5.png" alt="Panneau Ajouter les clés API Intercom avec le champ App ID et le bouton Enregistrer" />
+</Frame>
 
 ### Comment connecter Intercom
 
-1. Ouvrez la carte **Intercom**. Le panneau **Ajouter les clés API Intercom** s’ouvre.
-2. Trouvez votre **App ID** dans les paramètres de votre espace de travail Intercom.
-3. Collez-le et cliquez sur **Enregistrer**. Le chat Intercom apparaît sur le tableau de bord de vos clients.
+<Steps>
+  <Step>
+    Ouvrez la carte **Intercom**. Le panneau **Ajouter les clés API Intercom** s’ouvre.
+  </Step>
+  <Step>
+    Trouvez votre **App ID** dans les paramètres de votre espace de travail Intercom.
+  </Step>
+  <Step>
+    Collez-le et cliquez sur **Enregistrer**. Le chat Intercom apparaît sur le tableau de bord de vos clients.
+  </Step>
+</Steps>
 
-> **Astuce :** Utilisez l’espace de travail Intercom de votre équipe support, pour que les messages arrivent au bon endroit.
+<Tip>
+  Utilisez l’espace de travail Intercom de votre équipe support, pour que les messages arrivent au bon endroit.
+</Tip>
 
 ## Brevo Chat
 
@@ -168,21 +206,27 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 
 - **Chat Widget Key**\* (la clé du widget de chat ou la clé API de votre tableau de bord Brevo)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations6.png" alt="Panneau Intégration Brevo Chat avec le champ obligatoire Chat Widget Key et le bouton Enregistrer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : pour configurer Brevo Chat, il faut la clé du widget de chat.
-</p>
+<Frame caption="Capture d’écran : pour configurer Brevo Chat, il faut la clé du widget de chat.">
+  <img src="/images/integrations6.png" alt="Panneau Intégration Brevo Chat avec le champ obligatoire Chat Widget Key et le bouton Enregistrer" />
+</Frame>
 
 ### Comment connecter Brevo Chat
 
-1. Ouvrez la carte **Brevo Chat**. Le panneau **Intégration Brevo Chat** s’ouvre.
-2. Dans votre tableau de bord Brevo, copiez la clé du widget de chat.
-3. Collez-la dans **Chat Widget Key** et cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Ouvrez la carte **Brevo Chat**. Le panneau **Intégration Brevo Chat** s’ouvre.
+  </Step>
+  <Step>
+    Dans votre tableau de bord Brevo, copiez la clé du widget de chat.
+  </Step>
+  <Step>
+    Collez-la dans **Chat Widget Key** et cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
-> **Important :** Ne partagez pas la clé du widget. Toute personne qui la possède pourrait l’utiliser ailleurs.
+<Warning>
+  Ne partagez pas la clé du widget. Toute personne qui la possède pourrait l’utiliser ailleurs.
+</Warning>
 
 ## Clés API Analytics & Tracking
 
@@ -198,20 +242,26 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 - **ID de pixel Google Ads** (format : `AW-123456789`)
 - **Google Analytics Measurement ID (GA4)** (format : `G-XXXXXXXXXX`)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/integrations7.png" alt="Panneau Clés API Analytics & Tracking avec les instructions Comment le configurer et les champs ID de pixel Google Ads et ID de mesure Google Analytics (GA4)" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : le panneau de suivi, avec les étapes et les deux ID.
-</p>
+<Frame caption="Capture d’écran : le panneau de suivi, avec les étapes et les deux ID.">
+  <img src="/images/integrations7.png" alt="Panneau Clés API Analytics & Tracking avec les instructions Comment le configurer et les champs ID de pixel Google Ads et ID de mesure Google Analytics (GA4)" />
+</Frame>
 
 ### Comment connecter le tracking
 
-1. Ouvrez **Clés API Analytics & Tracking**.
-2. Dans Google Ads, allez dans **Outils et paramètres → Conversions**, créez ou ouvrez une action de conversion de site web et copiez l’ID de conversion (format `AW-123456789`). Collez-le dans **ID de pixel Google Ads**.
-3. Dans Google Analytics (GA4), allez dans **Administration → Flux de données → Web**, choisissez le flux de votre site et copiez l’ID de mesure (format `G-XXXXXXXXXX`). Collez-le dans le champ GA4.
-4. Cliquez sur **Enregistrer**.
+<Steps>
+  <Step>
+    Ouvrez **Clés API Analytics & Tracking**.
+  </Step>
+  <Step>
+    Dans Google Ads, allez dans **Outils et paramètres → Conversions**, créez ou ouvrez une action de conversion de site web et copiez l’ID de conversion (format `AW-123456789`). Collez-le dans **ID de pixel Google Ads**.
+  </Step>
+  <Step>
+    Dans Google Analytics (GA4), allez dans **Administration → Flux de données → Web**, choisissez le flux de votre site et copiez l’ID de mesure (format `G-XXXXXXXXXX`). Collez-le dans le champ GA4.
+  </Step>
+  <Step>
+    Cliquez sur **Enregistrer**.
+  </Step>
+</Steps>
 
 ### Ce qui se passe après l’enregistrement (tel que décrit dans le panneau)
 
@@ -220,4 +270,6 @@ Pour fermer un panneau sans enregistrer, cliquez sur le **X** en haut à droite.
 - Si un champ reste vide, le script de ce fournisseur n’est pas chargé pour votre marque.
 - Seuls les administrateurs et propriétaires de la marque ayant accès à la Plateforme white label peuvent voir ou modifier ces ID.
 
-> **Astuce :** Connectez le suivi avant vos premières campagnes, pour ne pas perdre de données d’attribution.
+<Tip>
+  Connectez le suivi avant vos premières campagnes, pour ne pas perdre de données d’attribution.
+</Tip>

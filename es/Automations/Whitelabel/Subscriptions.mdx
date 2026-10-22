@@ -15,15 +15,13 @@ Está pensada para consultar, así que te ayuda a responder rápido preguntas co
 - “¿Cuántos minutos incluye y cuántos ha usado?”
 - “¿Cuándo empezó la suscripción y cuándo termina?”
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-subscriptions.png" alt="Página Suscripciones con el buscador y el mensaje No hay suscripciones" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la página Suscripciones antes de que se suscriba ningún cliente. Cuando tus clientes se suscriban a un plan, aparecerán aquí.">
+  <img src="/images/wl-subscriptions.png" alt="Página Suscripciones con el buscador y el mensaje No hay suscripciones" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la página Suscripciones antes de que se suscriba ningún cliente. Cuando tus clientes se suscriban a un plan, aparecerán aquí.
-</p>
-
-> **Consejo:** Las suscripciones aparecen aquí cuando tus clientes se suscriben a uno de tus [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans) y pagan con Stripe. Hasta entonces, verás **No hay suscripciones**.
+<Tip>
+  Las suscripciones aparecen aquí cuando tus clientes se suscriben a uno de tus [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans) y pagan con Stripe. Hasta entonces, verás **No hay suscripciones**.
+</Tip>
 
 ## Cómo usar la lista
 
@@ -54,4 +52,6 @@ La lista puede mostrar estos estados:
 - **No pagado**: no se pudo cobrar después de los reintentos.
 - **Cancelado**: la suscripción se canceló.
 
-> **Importante:** Si un cliente dice “He pagado” pero su estado no es **Activo**, comprueba primero que usa el correo y la cuenta correctos. Después mira aquí su estado y su facturación en [Usuarios](/es/Automations/Whitelabel/Clients) → **Suscripciones** → **Ver detalles de facturación**.
+<Warning>
+  Si un cliente dice “He pagado” pero su estado no es **Activo**, comprueba primero que usa el correo y la cuenta correctos. Después mira aquí su estado y su facturación en [Usuarios](/es/Automations/Whitelabel/Clients) → **Suscripciones** → **Ver detalles de facturación**.
+</Warning>

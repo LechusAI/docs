@@ -17,23 +17,15 @@ Se non crei prima le funzionalità qui, la procedura guidata dei piani mostra **
 
 La trovi nella Piattaforma white label, in **Piani e fatturazione** ([aprila qui](https://app.callin.io/cms/features-capabilities)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: la pagina vuota → Crea Funzionalità/Capacità → una traduzione in spagnolo → una seconda funzionalità in una nuova categoria → l’elenco raggruppato per categoria → Modifica.
-</p>
+<Frame caption="Video: la pagina vuota → Crea Funzionalità/Capacità → una traduzione in spagnolo → una seconda funzionalità in una nuova categoria → l’elenco raggruppato per categoria → Modifica.">
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" />
+</Frame>
 
 L’elenco raggruppa le tue funzionalità per **Categoria**. Ogni riga mostra il **Nome** e il **Tipo**. Usa **Cerca funzionalità e capacità…** per trovarne una velocemente.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/features1.png" alt="Pagina Funzionalità e Capacità con la ricerca, il pulsante Crea Funzionalità/Capacità e tre funzionalità raggruppate nelle categorie Limiti, Componenti aggiuntivi e Capacità" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: tre funzionalità di esempio, una per tipo, raggruppate per categoria.
-</p>
+<Frame caption="Schermata: tre funzionalità di esempio, una per tipo, raggruppate per categoria.">
+  <img src="/images/features1.png" alt="Pagina Funzionalità e Capacità con la ricerca, il pulsante Crea Funzionalità/Capacità e tre funzionalità raggruppate nelle categorie Limiti, Componenti aggiuntivi e Capacità" />
+</Frame>
 
 ## Come si usano le funzionalità nei piani di abbonamento
 
@@ -45,23 +37,29 @@ Quando crei un piano, il passaggio **Rivedi e conferma** include **Configura fun
 
 Il flusso è questo:
 
-1. Crea una funzionalità (qui)
-2. Assegna un valore a quella funzionalità in ogni piano (in [Piani di abbonamento](/it/Automations/Whitelabel/SubscriptionsPlans))
-3. Il valore del piano è ciò che ricevono i sotto-account che usano quel piano
+<Steps>
+  <Step>
+    Crea una funzionalità (qui)
+  </Step>
+  <Step>
+    Assegna un valore a quella funzionalità in ogni piano (in [Piani di abbonamento](/it/Automations/Whitelabel/SubscriptionsPlans))
+  </Step>
+  <Step>
+    Il valore del piano è ciò che ricevono i sotto-account che usano quel piano
+  </Step>
+</Steps>
 
-> **Importante:** Per creare piani, il tuo White Label deve avere Stripe collegato. Le funzionalità puoi crearle in qualsiasi momento, anche prima di collegare Stripe.
+<Warning>
+  Per creare piani, il tuo White Label deve avere Stripe collegato. Le funzionalità puoi crearle in qualsiasi momento, anche prima di collegare Stripe.
+</Warning>
 
 ## Creare una funzionalità o capacità
 
 Clicca su **Crea Funzionalità/Capacità** e compila questi campi. I campi contrassegnati con **\*** sono obbligatori. Quando hai finito, clicca su **Crea**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-create.png" alt="Finestra Crea Funzionalità/Capacità con le schede Traduzioni, i campi Nome e Descrizione, i tre modi in cui i piani concedono la funzionalità, una nuova categoria e i pulsanti Annulla e Crea" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la finestra Crea Funzionalità/Capacità compilata per “Minuti al mese”.
-</p>
+<Frame caption="Schermata: la finestra Crea Funzionalità/Capacità compilata per “Minuti al mese”.">
+  <img src="/images/wl-features-create.png" alt="Finestra Crea Funzionalità/Capacità con le schede Traduzioni, i campi Nome e Descrizione, i tre modi in cui i piani concedono la funzionalità, una nuova categoria e i pulsanti Annulla e Crea" />
+</Frame>
 
 ### Nome
 
@@ -79,9 +77,13 @@ Cattivi esempi (troppo vaghi):
 - **Funzionalità 1**
 - **Accesso**
 
-> **Suggerimento:** Usa nomi che si leggano come un vantaggio o una regola chiara. “Minuti al mese” è più chiaro di “Minuti”.
+<Tip>
+  Usa nomi che si leggano come un vantaggio o una regola chiara. “Minuti al mese” è più chiaro di “Minuti”.
+</Tip>
 
-> **Errore comune:** Se cliccando su **Crea** compare un errore con `duplicate key value`, quel nome è già in uso. Usa un nome più specifico (ad esempio, “Componente aggiuntivo registrazione chiamate” invece di “Registrazione chiamate”).
+<Warning>
+  **Errore comune:** Se cliccando su **Crea** compare un errore con `duplicate key value`, quel nome è già in uso. Usa un nome più specifico (ad esempio, “Componente aggiuntivo registrazione chiamate” invece di “Registrazione chiamate”).
+</Warning>
 
 ### Descrizione
 
@@ -99,13 +101,9 @@ Le schede in alto ti permettono di tradurre il **Nome** e la **Descrizione** in 
 - Le schede delle lingue sono facoltative. I campi vuoti mostrano in grigio il testo di **Predefinito**.
 - Il tipo e la categoria sono gli stessi per tutte le lingue.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-translations.png" alt="Finestra Crea Funzionalità/Capacità sulla scheda Español, con il nome e la descrizione in spagnolo" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Español con il nome e la descrizione in spagnolo della stessa funzionalità.
-</p>
+<Frame caption="Schermata: la scheda Español con il nome e la descrizione in spagnolo della stessa funzionalità.">
+  <img src="/images/wl-features-translations.png" alt="Finestra Crea Funzionalità/Capacità sulla scheda Español, con il nome e la descrizione in spagnolo" />
+</Frame>
 
 ### Come i piani concedono questa funzionalità?
 
@@ -153,7 +151,9 @@ Ideale per:
 
 - Diritti del tipo “scegli uno di questi pacchetti” o “scegli un livello”
 
-> **Errore comune:** Scegliere **toggle** per qualcosa che dovrebbe essere un numero (come i minuti). Se può variare in base al piano, di solito è un **limit**.
+<Warning>
+  **Errore comune:** Scegliere **toggle** per qualcosa che dovrebbe essere un numero (come i minuti). Se può variare in base al piano, di solito è un **limit**.
+</Warning>
 
 ### Categoria
 
@@ -168,7 +168,9 @@ Categorie pratiche:
 - **Componenti aggiuntivi** (registrazione, portale con il tuo marchio, ecc.)
 - **Capacità** (pacchetti voci, modalità di instradamento, integrazioni… in base a ciò che offri)
 
-> **Suggerimento:** Mantieni le categorie coerenti tra le funzionalità. Se crei “Limite” e “Limiti”, il raggruppamento risulterà disordinato.
+<Tip>
+  Mantieni le categorie coerenti tra le funzionalità. Se crei “Limite” e “Limiti”, il raggruppamento risulterà disordinato.
+</Tip>
 
 ## Esempio pratico (configurazione realistica)
 
@@ -179,10 +181,16 @@ Immagina di vendere due livelli ai tuoi sotto-account:
 
 Crea queste funzionalità in **Funzionalità e Capacità**:
 
-1. **Minuti al mese** → **Limite di utilizzo (limit)**, categoria **Limiti**\
-   Descrizione: “Minuti di chiamata inclusi ogni mese nel piano.”
-2. **Componente aggiuntivo registrazione chiamate** → **Attivato / Disattivato (toggle)**, categoria **Componenti aggiuntivi**\
-   Descrizione: “Registra le chiamate gestite dagli agenti.”
+<Steps>
+  <Step>
+    **Minuti al mese** → **Limite di utilizzo (limit)**, categoria **Limiti**\
+    Descrizione: “Minuti di chiamata inclusi ogni mese nel piano.”
+  </Step>
+  <Step>
+    **Componente aggiuntivo registrazione chiamate** → **Attivato / Disattivato (toggle)**, categoria **Componenti aggiuntivi**\
+    Descrizione: “Registra le chiamate gestite dagli agenti.”
+  </Step>
+</Steps>
 
 Poi, in **Piani di abbonamento**:
 
@@ -202,4 +210,6 @@ Nell’elenco, clicca su **⋮** nella riga della funzionalità:
 - **Modifica** apre **Modifica Funzionalità/Capacità**, con gli stessi campi: **Nome**, **Descrizione**, traduzioni, tipo e **Categoria**. Clicca su **Aggiorna** per salvare.
 - **Rimuovi** elimina la funzionalità. Questa azione non può essere annullata.
 
-> **Importante:** Cambiare il tipo di una funzionalità già usata nei piani può influire su come i piani salvano o mostrano quel valore. Se non sei sicuro, crea una nuova funzionalità e sposta i tuoi piani su di essa.
+<Warning>
+  Cambiare il tipo di una funzionalità già usata nei piani può influire su come i piani salvano o mostrano quel valore. Se non sei sicuro, crea una nuova funzionalità e sposta i tuoi piani su di essa.
+</Warning>

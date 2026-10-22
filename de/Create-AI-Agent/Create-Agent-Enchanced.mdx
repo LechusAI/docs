@@ -10,25 +10,17 @@ Auf der Seite **KI-Agenten** erstellen und verwalten Sie die Agenten, die Ihre T
 
 Der Editor jedes Agenten ist oben in neun Tabs gegliedert: **Agent**, **Workflow**, **Wissensdatenbank**, **Konversation**, **Analysen**, **Tools**, **Anruf-Aktion**, **Website-Widget** und **Erweitert**. Diese Seite erklärt, wie Sie einen Agenten erstellen und was Sie in jedem Tab tun können.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: ein kurzer Rundgang durch die neun Tabs des Agenten-Editors.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: ein kurzer Rundgang durch die neun Tabs des Agenten-Editors.
-</p>
+Alles beginnt in der Agentenliste, in der jede Zeile einer Ihrer Agenten ist:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: die Seite KI-Agenten. Jede Zeile ist ein Agent, rechts befinden sich die Schnellaktionen.">
   <img
     src="/images/agentesia1.png"
-    alt="Die Seite KI-Agenten in Callin.io mit der Schaltfläche Agent erstellen, der Suchleiste, den Filtern Richtung und Sortieren und der Liste der Agenten."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: die Seite KI-Agenten. Jede Zeile ist ein Agent, rechts befinden sich die Schnellaktionen.
-</p>
+    alt="Die Seite KI-Agenten in Callin.io mit der Schaltfläche Agent erstellen, der Suchleiste, den Filtern Richtung und Sortieren und der Liste der Agenten." />
+</Frame>
 
 ### Die Agentenliste
 
@@ -44,43 +36,45 @@ Rechts in jeder Zeile stehen drei Schnellaktionen zur Verfügung:
 - **KI-Agent testen** — damit sprechen Sie im Browser mit dem Agenten.
 - **Weitere Optionen** (⋮) — **ID kopieren**, **Klonen**, **Bearbeiten**, **Nummer zuweisen**, **Ereigniskalender anzeigen** und **Löschen**.
 
-> **Tipp:** Nutzen Sie **Klonen**, um Änderungen an einer Kopie zu testen, bevor Sie einen Agenten anpassen, der bereits echte Anrufe annimmt.
+<Tip>
+  Nutzen Sie **Klonen**, um Änderungen an einer Kopie zu testen, bevor Sie einen Agenten anpassen, der bereits echte Anrufe annimmt.
+</Tip>
 
 ### Einen neuen Agenten erstellen
 
 Klicken Sie oben rechts auf **Agent erstellen**. Callin.io fragt Sie, wie Sie beginnen möchten.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: Wählen Sie, wie Sie Ihren neuen Agenten beginnen.">
   <img
     src="/images/ai-agents-new-agent.png"
-    alt="Der Bildschirm Neuer Agent mit drei Optionen: Von Grund auf starten, Unsere Vorlagen durchsuchen und Vordefinierte Vorlagen."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Wählen Sie, wie Sie Ihren neuen Agenten beginnen.
-</p>
+    alt="Der Bildschirm Neuer Agent mit drei Optionen: Von Grund auf starten, Unsere Vorlagen durchsuchen und Vordefinierte Vorlagen." />
+</Frame>
 
 **Von Grund auf starten** erstellt einen Agenten mit einem einfachen Prompt und einer einfachen Begrüßung, die Sie anschließend im Editor anpassen. Wählen Sie diese Option, wenn Sie bereits wissen, was der Agent tun soll. Sie müssen nur den **Agentennamen** (bis zu 50 Zeichen) eingeben und den **Agent-Stack** auswählen.
 
 **Unsere Vorlagen durchsuchen** startet mit einem fertigen Agenten für eine bestimmte Branche und einen bestimmten Use-Case. So erhalten Sie am schnellsten eine funktionierende erste Version:
 
-1. **Branche** — wählen Sie die Branche, die Ihr Unternehmen am besten beschreibt: Einzelhandel & E-Commerce, Gesundheitswesen & Medizin, Finanzen & Banken, Immobilien, Bildung & Training, Gastgewerbe & Reisen, Automobil, Professionelle Dienstleistungen, Technologie & Software, Behörden & Öffentlichkeit, Essen & Getränke, Fertigung, Fitness & Wellness, Rechtsdienstleistungen, Gemeinnützig oder Medien & Unterhaltung.
-2. **Use-Case** — wählen Sie, wobei der Agent helfen soll. Die Optionen hängen von der Branche ab. Gesundheitswesen & Medizin bietet zum Beispiel Kundensupport, Terminvereinbarung, Patientenaufnahme, Versicherungsprüfung, Rezept-Erinnerungen und mehr.
-3. **Agent fertigstellen** — geben Sie den **Agentennamen** ein, wählen Sie den **Agent-Stack** und füllen Sie Folgendes aus:
-   - **Website** *(optional)* — die Adresse Ihrer Website. Callin.io liest nur öffentlich verfügbare Informationen, um den Agenten zu personalisieren.
-   - **Hauptziel** — in bis zu 300 Zeichen, was der Agent in jedem Anruf erreichen soll.
+<Steps>
+  <Step>
+    **Branche** — wählen Sie die Branche, die Ihr Unternehmen am besten beschreibt: Einzelhandel & E-Commerce, Gesundheitswesen & Medizin, Finanzen & Banken, Immobilien, Bildung & Training, Gastgewerbe & Reisen, Automobil, Professionelle Dienstleistungen, Technologie & Software, Behörden & Öffentlichkeit, Essen & Getränke, Fertigung, Fitness & Wellness, Rechtsdienstleistungen, Gemeinnützig oder Medien & Unterhaltung.
+  </Step>
+  <Step>
+    **Use-Case** — wählen Sie, wobei der Agent helfen soll. Die Optionen hängen von der Branche ab. Gesundheitswesen & Medizin bietet zum Beispiel Kundensupport, Terminvereinbarung, Patientenaufnahme, Versicherungsprüfung, Rezept-Erinnerungen und mehr.
+  </Step>
+  <Step>
+    **Agent fertigstellen** — geben Sie den **Agentennamen** ein, wählen Sie den **Agent-Stack** und füllen Sie Folgendes aus:
+    - **Website** *(optional)* — die Adresse Ihrer Website. Callin.io liest nur öffentlich verfügbare Informationen, um den Agenten zu personalisieren.
+    - **Hauptziel** — in bis zu 300 Zeichen, was der Agent in jedem Anruf erreichen soll.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Unsere Vorlagen durchsuchen → Branche → Anwendungsfall → Agenten vervollständigen.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Unsere Vorlagen durchsuchen → Branche → Anwendungsfall → Agenten vervollständigen.
-</p>
-
-> **Tipp:** Formulieren Sie das **Hauptziel** als ein einziges, klares Ergebnis, zum Beispiel „Patiententermine buchen, bestätigen oder verschieben und Fragen zu den Öffnungszeiten beantworten“. Je klarer das Ziel, desto besser wird die erste Version des Prompts.
+<Tip>
+  Formulieren Sie das **Hauptziel** als ein einziges, klares Ergebnis, zum Beispiel „Patiententermine buchen, bestätigen oder verschieben und Fragen zu den Öffnungszeiten beantworten“. Je klarer das Ziel, desto besser wird die erste Version des Prompts.
+</Tip>
 
 **Vordefinierte Vorlagen** *(Beta)* verwendet Vorlagen, die Ihre eigene Organisation erstellt hat, sodass jeder neue Agent mit der Standardkonfiguration Ihres Unternehmens startet. Jede Karte zeigt den Namen der Vorlage, eine kurze Beschreibung und wie viele Felder sie vorausfüllt (zum Beispiel *Agentenname*, *Prompt*, *Begrüßungsnachricht*, *Richtung*). Wählen Sie eine Vorlage, prüfen Sie den **Agentennamen**, wählen Sie den **Agent-Stack** und klicken Sie auf **Agent erstellen**. Wenn Ihre Organisation noch keine Vorlagen erstellt hat, ist die Liste leer.
 
@@ -94,7 +88,9 @@ Der **Agent-Stack** legt fest, welche Stimme und welche KI-Technologie den Agent
 
 Klicken Sie auf **Agent erstellen**, um abzuschließen. Der Agent öffnet sich direkt in seinem Editor, im Tab **Agent**.
 
-> **Wichtig:** Die folgenden Abschnitte beschreiben einen Agenten, der mit dem Stack **Premium-Stimme** erstellt wurde. Agenten mit anderen Stacks können andere Optionen anzeigen.
+<Warning>
+  Die folgenden Abschnitte beschreiben einen Agenten, der mit dem Stack **Premium-Stimme** erstellt wurde. Agenten mit anderen Stacks können andere Optionen anzeigen.
+</Warning>
 
 ### Änderungen speichern
 
@@ -105,17 +101,11 @@ Sobald Sie im Editor etwas ändern, erscheint unten eine Leiste mit der Meldung 
 
 Solange ungespeicherte Änderungen vorhanden sind, ist **Testanruf** deaktiviert. Wenn vor dem Speichern noch etwas korrigiert werden muss (zum Beispiel ein unvollständiger Workflow), zeigt die Leiste an, was fehlt, oder bietet die Schaltfläche **Fehler ansehen** an.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: die Leiste für ungespeicherte Änderungen. Speichern Sie, um die Änderungen zu behalten, oder verwerfen Sie sie.">
   <img
     src="/images/ai-agents-unsaved-changes.png"
-    alt="Der Agenten-Editor mit der Leiste für ungespeicherte Änderungen und den Schaltflächen zum Verwerfen und Speichern unten."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: die Leiste für ungespeicherte Änderungen. Speichern Sie, um die Änderungen zu behalten, oder verwerfen Sie sie.
-</p>
+    alt="Der Agenten-Editor mit der Leiste für ungespeicherte Änderungen und den Schaltflächen zum Verwerfen und Speichern unten." />
+</Frame>
 
 ### Ihren Agenten testen
 
@@ -125,23 +115,19 @@ Mit den Schaltflächen oben rechts im Editor testen Sie, ohne die Seite zu verla
 - **KI-Agent testen** — damit sprechen Sie im Browser mit dem Agenten.
 - **Konsole** — öffnet die Entwicklerkonsole.
 
-> **Tipp:** Gehen Sie die Tabs beim ersten Mal der Reihe nach durch und testen Sie nach jeder wichtigen Änderung. Ein guter Agent muss in einem echten Anruf gut klingen, nicht nur im Editor gut aussehen.
+<Tip>
+  Gehen Sie die Tabs beim ersten Mal der Reihe nach durch und testen Sie nach jeder wichtigen Änderung. Ein guter Agent muss in einem echten Anruf gut klingen, nicht nur im Editor gut aussehen.
+</Tip>
 
 ## Abschnitt 1: Agent
 
 Im Tab **Agent** legen Sie die Identität und das grundlegende Verhalten Ihres Assistenten fest: was er sagt, welche Stimme und Sprache er verwendet, welches KI-Modell ihn antreibt und ob er eingehende Anrufe annimmt, ausgehende Anrufe tätigt oder beides.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Agent, in dem Sie Prompt, Stimme, Sprache, Modell und Anrufrichtung festlegen.">
   <img
     src="/images/agentesia2.png"
-    alt="Der Tab Agent mit dem Editor für den Konversations-Prompt links und den Bereichen Stimme, Sprache, KI-Intelligenz (LLM) und Anrufrichtung rechts."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Agent, in dem Sie Prompt, Stimme, Sprache, Modell und Anrufrichtung festlegen.
-</p>
+    alt="Der Tab Agent mit dem Editor für den Konversations-Prompt links und den Bereichen Stimme, Sprache, KI-Intelligenz (LLM) und Anrufrichtung rechts." />
+</Frame>
 
 ### Gesprächs-Prompt
 
@@ -161,7 +147,9 @@ Ergänzen Sie danach operative Regeln, die die Entscheidungen des Agenten währe
 - Antworten Sie kurz, außer der Nutzer bittet um mehr Details.
 - Erfinden Sie keine Antworten. Wenn die Information unklar ist, sagen Sie es.
 
-> **Tipp:** Schreiben Sie den Prompt so, als würden Sie eine neue Mitarbeiterin oder einen neuen Mitarbeiter am ersten Tag einweisen. Operativ und klar, nicht dekorativ.
+<Tip>
+  Schreiben Sie den Prompt so, als würden Sie eine neue Mitarbeiterin oder einen neuen Mitarbeiter am ersten Tag einweisen. Operativ und klar, nicht dekorativ.
+</Tip>
 
 ### Dynamische Variablen im Prompt
 
@@ -200,7 +188,9 @@ Einige Beispiele:
 
 **Unterbrechungen erlauben** neben der Begrüßung ermöglicht es dem Anrufer, den Agenten zu unterbrechen, während er die erste Nachricht spricht. Die Option ist standardmäßig aktiviert, was sich bei den meisten Support-, Empfangs- und Kundenservice-Abläufen natürlich anfühlt.
 
-> **Häufiger Fehler:** Unterbrechungen aktiviert lassen, wenn Ihre Begrüßung Informationen enthält, die der Anrufer vollständig hören muss, etwa einen rechtlichen Hinweis oder einen Hinweis auf die Aufzeichnung. In diesem Fall deaktivieren Sie sie.
+<Warning>
+  **Häufiger Fehler:** Unterbrechungen aktiviert lassen, wenn Ihre Begrüßung Informationen enthält, die der Anrufer vollständig hören muss, etwa einen rechtlichen Hinweis oder einen Hinweis auf die Aufzeichnung. In diesem Fall deaktivieren Sie sie.
+</Warning>
 
 ### Stimme
 
@@ -278,17 +268,11 @@ Im Tab **Workflow** entscheiden Sie, wie das Gespräch verläuft. Während der T
 
 Sie bauen ihn auf einer visuellen Arbeitsfläche, indem Sie Knoten platzieren und verbinden. Mit den Schaltflächen oben links zoomen Sie hinein, heraus und passen den gesamten Ablauf an den Bildschirm an; mit den Schaltflächen oben rechts wechseln Sie in den Vollbildmodus oder löschen den Workflow.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: ein Workflow mit zwei Pfaden ab dem Start. Der Bereich rechts zeigt, was noch fehlt, und die Einstellungen des ausgewählten Knotens.">
   <img
     src="/images/agentesia3.png"
-    alt="Der Tab Workflow mit einem Start-Knoten, der mit einem Subagent und einem Knoten zur Weiterleitung an eine Telefonnummer verbunden ist, einem Ende-Knoten, dem Bereich Workflow-Einrichtung abschließen und den Subagent-Einstellungen rechts."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: ein Workflow mit zwei Pfaden ab dem Start. Der Bereich rechts zeigt, was noch fehlt, und die Einstellungen des ausgewählten Knotens.
-</p>
+    alt="Der Tab Workflow mit einem Start-Knoten, der mit einem Subagent und einem Knoten zur Weiterleitung an eine Telefonnummer verbunden ist, einem Ende-Knoten, dem Bereich Workflow-Einrichtung abschließen und den Subagent-Einstellungen rechts." />
+</Frame>
 
 ### Was Sie im Arbeitsablauf tun können
 
@@ -308,13 +292,9 @@ Um einen Knoten hinzuzufügen, ziehen Sie eine Verbindung von einem vorhandenen 
 
 Der neue Knoten erscheint mit dem vorherigen verbunden, und seine Einstellungen öffnen sich im Bereich rechts.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Erstellen Sie einen Ablauf mit zwei Routen ab Start: einem Subagenten, der Termine bucht und dann den Anruf beendet, und einer Weiterleitung an eine Telefonnummer.
-</p>
+<Frame caption="Video: Erstellen Sie einen Ablauf mit zwei Routen ab Start: einem Subagenten, der Termine bucht und dann den Anruf beendet, und einer Weiterleitung an eine Telefonnummer.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" />
+</Frame>
 
 ### Start
 
@@ -408,23 +388,19 @@ Wenn kein Knoten ausgewählt ist, zeigt der Bereich rechts die **Globalen Einste
 
 Um einen Workflow zu deaktivieren, ohne ihn zu löschen, trennen Sie den Knoten **Start**. Ohne verbundenen Start hat der Ablauf keinen Einstiegspunkt und wird nicht ausgeführt.
 
-> **Häufiger Fehler:** Ein Workflow, der auf der Arbeitsfläche vollständig aussieht, kann in der Praxis trotzdem scheitern. Testen Sie jeden Pfad mit einem echten Gespräch, bevor Sie ihn veröffentlichen.
+<Warning>
+  **Häufiger Fehler:** Ein Workflow, der auf der Arbeitsfläche vollständig aussieht, kann in der Praxis trotzdem scheitern. Testen Sie jeden Pfad mit einem echten Gespräch, bevor Sie ihn veröffentlichen.
+</Warning>
 
 ## Abschnitt 3: Wissensdatenbank
 
 Der Tab **Wissensdatenbank** gibt Ihrem Agenten zusätzliche Hintergrundinformationen, um Fragen zu beantworten. Er eignet sich besonders für umfangreiche oder detaillierte Inhalte — wie Handbücher, FAQs oder Richtlinien —, die nicht in den Haupt-Prompt passen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Wissensdatenbank. Fügen Sie die Dokumente hinzu, die dieser Agent für Antworten verwenden kann.">
   <img
     src="/images/agentesia4.png"
-    alt="Der Tab Wissensdatenbank eines Agenten mit der Schaltfläche zum Hinzufügen von Dokumenten und der Liste der Dokumente, die der Agent verwenden kann."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Wissensdatenbank. Fügen Sie die Dokumente hinzu, die dieser Agent für Antworten verwenden kann.
-</p>
+    alt="Der Tab Wissensdatenbank eines Agenten mit der Schaltfläche zum Hinzufügen von Dokumenten und der Liste der Dokumente, die der Agent verwenden kann." />
+</Frame>
 
 ### Was dieser Tab macht
 
@@ -476,26 +452,28 @@ Im Wissensdatenbank-Manager können Sie zwischen **Dateien** und **Web** wechsel
 
 Am saubersten arbeiten Sie, wenn Sie Erstellung und Auswahl trennen:
 
-1. Erstellen und organisieren Sie Ihre Dokumente im Wissensdatenbank-Manager.
-2. Kehren Sie zu diesem Tab zurück und fügen Sie die Dokumente hinzu, die der Agent braucht.
+<Steps>
+  <Step>
+    Erstellen und organisieren Sie Ihre Dokumente im Wissensdatenbank-Manager.
+  </Step>
+  <Step>
+    Kehren Sie zu diesem Tab zurück und fügen Sie die Dokumente hinzu, die der Agent braucht.
+  </Step>
+</Steps>
 
-> **Tipp:** Halten Sie Verhaltensregeln im Prompt und Referenzinhalte in der Wissensdatenbank. Diese Trennung macht spätere Aktualisierungen deutlich einfacher.
+<Tip>
+  Halten Sie Verhaltensregeln im Prompt und Referenzinhalte in der Wissensdatenbank. Diese Trennung macht spätere Aktualisierungen deutlich einfacher.
+</Tip>
 
 ## Abschnitt 4: Konversation
 
 Der Tab **Konversation** listet alle Anrufe auf, die dieser Agent bearbeitet hat, eingehend und ausgehend. Hier prüfen Sie, was in jedem Anruf passiert ist. Er hat zwei Untertabs: **Unterhaltungen** (Telefon- und Webanrufe) und **Google-Meet-Sitzungen**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Konversation. Durchsuchen Sie Transkripte und filtern Sie die Anrufe des Agenten.">
   <img
     src="/images/ai-agents-conversation.png"
-    alt="Der Tab Konversation mit den Untertabs Unterhaltungen und Google-Meet-Sitzungen, der Transkriptsuche und den Filtern für die Anrufe des Agenten."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Konversation. Durchsuchen Sie Transkripte und filtern Sie die Anrufe des Agenten.
-</p>
+    alt="Der Tab Konversation mit den Untertabs Unterhaltungen und Google-Meet-Sitzungen, der Transkriptsuche und den Filtern für die Anrufe des Agenten." />
+</Frame>
 
 ### Suche und Filter
 
@@ -508,23 +486,19 @@ Bis der Agent seinen ersten Anruf tätigt oder erhält, zeigt der Tab *Noch kein
 
 Dieser Untertab listet die Google-Meet-Besprechungen auf, an denen der Agent teilgenommen hat (über die Schaltfläche **Meet beitreten** oben im Editor). Suchen Sie nach der URL oder dem Beitrittscode der Besprechung und filtern Sie die Liste nach **Status**. Hat der Agent an keiner Besprechung teilgenommen, sehen Sie *Keine Google-Meet-Sitzungen gefunden*.
 
-> **Tipp:** Führen Sie nach Änderungen am Prompt oder am Workflow einige Testanrufe durch und prüfen Sie sie hier. Das Lesen der Transkripte ist der schnellste Weg, um zu erkennen, wo der Agent vom Kurs abkommt.
+<Tip>
+  Führen Sie nach Änderungen am Prompt oder am Workflow einige Testanrufe durch und prüfen Sie sie hier. Das Lesen der Transkripte ist der schnellste Weg, um zu erkennen, wo der Agent vom Kurs abkommt.
+</Tip>
 
 ## Abschnitt 5: Analysen
 
 Der Tab **Analysen** zeigt, wie dieser Agent abschneidet, im Vergleich zum vorherigen Zeitraum gleicher Länge.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Analysen. Wählen Sie den Zeitraum und die Gruppierung der Daten.">
   <img
     src="/images/ai-agents-analytics.png"
-    alt="Der Tab Analysen mit der Auswahl für Zeitraum und Gruppierung."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Analysen. Wählen Sie den Zeitraum und die Gruppierung der Daten.
-</p>
+    alt="Der Tab Analysen mit der Auswahl für Zeitraum und Gruppierung." />
+</Frame>
 
 ### Zeitraum und Gruppierung
 
@@ -539,17 +513,11 @@ Der Tab **Tools** legt fest, was Ihr Agent während eines Anrufs über das Gespr
 
 Der Tab hat zwei Untertabs: **Tools** für Ihre benutzerdefinierten Tools und die integrierten **System-Tools**, und **MCP** für MCP-Server.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Tools. Fügen Sie links benutzerdefinierte Tools hinzu und schalten Sie rechts System-Tools ein oder aus.">
   <img
     src="/images/agentesia5.png"
-    alt="Der Tab Tools mit der Schaltfläche zum Hinzufügen von Werkzeugen links und der Liste der System-Tools rechts, einschließlich Immobiliendaten abrufen."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Tools. Fügen Sie links benutzerdefinierte Tools hinzu und schalten Sie rechts System-Tools ein oder aus.
-</p>
+    alt="Der Tab Tools mit der Schaltfläche zum Hinzufügen von Werkzeugen links und der Liste der System-Tools rechts, einschließlich Immobiliendaten abrufen." />
+</Frame>
 
 ### Schnellzugriff
 
@@ -573,17 +541,11 @@ Die Schaltfläche **Werkzeug hinzufügen** öffnet eine Auswahl, in der Sie Ihre
 
 Mit dem Untertab **MCP** verbinden Sie MCP-Server (Model Context Protocol), um Ihrem Agenten zusätzliche Tools und Integrationen zu geben, ohne sie einzeln zu erstellen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Untertab MCP. Verbinden Sie MCP-Server mit dem Agenten.">
   <img
     src="/images/ai-agents-mcp.png"
-    alt="Der Untertab MCP im Tab Tools mit der Schaltfläche zum Hinzufügen eines MCP."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Untertab MCP. Verbinden Sie MCP-Server mit dem Agenten.
-</p>
+    alt="Der Untertab MCP im Tab Tools mit der Schaltfläche zum Hinzufügen eines MCP." />
+</Frame>
 
 Klicken Sie auf **MCP hinzufügen**, um die in Ihrem Konto verfügbaren MCP-Server zu durchsuchen und einen mit dem Agenten zu verbinden. Wenn noch keine vorhanden sind, klicken Sie auf **MCPs verwalten**, um sie einzurichten.
 
@@ -659,23 +621,19 @@ Aktivieren Sie nicht alles. Wählen Sie, was zu Ihrem Anwendungsfall passt:
 - Ein Agent, der an Menschen weiterleitet, verwendet **An Nummer übergeben** mit klaren Übergaberegeln.
 - Ein ausgehender Agent verwendet oft **Voicemail-Erkennung**, **Smartes Auflegen** und **Sprachwechsel**.
 
-> **Häufiger Fehler:** Zu viele Tools gleichzeitig aktivieren. Das Verhalten wird schwerer vorherzusagen, zu testen und zu pflegen.
+<Warning>
+  **Häufiger Fehler:** Zu viele Tools gleichzeitig aktivieren. Das Verhalten wird schwerer vorherzusagen, zu testen und zu pflegen.
+</Warning>
 
 ## Abschnitt 7: Anrufaktion
 
 Im Tab **Anruf-Aktion** wird der Agent mehr als nur eine Stimme und liefert nützliche Ergebnisse: Buchungen, Folge-E-Mails, Tickets, strukturierte Daten und synchronisierte Datensätze — während und nach dem Anruf.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Anruf-Aktion. Aktivieren Sie nur die Aktionen, die Ihr Team tatsächlich nutzt.">
   <img
     src="/images/agentesia6.png"
-    alt="Der Tab Anruf-Aktion mit den Schaltern für Terminplanung, E-Mail-Zusammenfassung nach dem Anruf, Intelligenter Opt-Out und Problem- und Beschwerdeverfolgung, dem Webhook-Feld und der Auswahl der Zusammenfassungssprache."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Anruf-Aktion. Aktivieren Sie nur die Aktionen, die Ihr Team tatsächlich nutzt.
-</p>
+    alt="Der Tab Anruf-Aktion mit den Schaltern für Terminplanung, E-Mail-Zusammenfassung nach dem Anruf, Intelligenter Opt-Out und Problem- und Beschwerdeverfolgung, dem Webhook-Feld und der Auswahl der Zusammenfassungssprache." />
+</Frame>
 
 ### Schnellzugriff
 
@@ -693,7 +651,9 @@ Wenn Sie sie aktivieren, fragt der Bereich **Terminplanungs-Konfiguration** nach
 
 Wählen Sie dann den Kalender und die Buchungsvorlage, die der Agent verwenden soll. Sie können mehrere Buchungsvorlagen pro Kalender erstellen und verschiedenen Agenten Vorlagen aus unterschiedlichen Kalendern zuweisen.
 
-> **Wichtig:** Die Zeitzone des Agenten und die des Kalenders müssen übereinstimmen. Andernfalls bietet oder bestätigt der Agent falsche Uhrzeiten.
+<Warning>
+  Die Zeitzone des Agenten und die des Kalenders müssen übereinstimmen. Andernfalls bietet oder bestätigt der Agent falsche Uhrzeiten.
+</Warning>
 
 ### Zusammenfassungs-E-Mail nach dem Anruf
 
@@ -756,7 +716,9 @@ Sie können konfigurieren:
 - **Wiederholungsversuche (Anzahl)** — wie oft das System es erneut versuchen soll, bevor es aufhört (Standard **0**, keine Wiederholung).
 - **Wartezeit zwischen Versuchen (Wiederholungsverzögerung)** — wie viele Minuten zwischen den Versuchen gewartet wird (Standard **30**).
 
-> **Tipp:** Aktivieren Sie nur die Aktionen, die Ihr Team tatsächlich nutzt. Jede aktivierte Automatisierung ist ein kleiner Pflegeaufwand. Wenige, gut gewählte Aktionen sind besser als eine lange Liste halb genutzter.
+<Tip>
+  Aktivieren Sie nur die Aktionen, die Ihr Team tatsächlich nutzt. Jede aktivierte Automatisierung ist ein kleiner Pflegeaufwand. Wenige, gut gewählte Aktionen sind besser als eine lange Liste halb genutzter.
+</Tip>
 
 ## Abschnitt 8: Website-Widget
 
@@ -764,17 +726,11 @@ Mit dem Tab **Website-Widget** veröffentlichen Sie Ihren Agenten auf einer Webs
 
 Dieser Tab vereint zwei Dinge: den technischen Einbettungscode und die visuelle und textliche Anpassung des Erlebnisses.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Website-Widget. Kopieren Sie den Code und passen Sie Aussehen und Verhalten des Widgets an.">
   <img
     src="/images/agentesia7.png"
-    alt="Der Tab Website-Widget mit dem Einbettungscode, der Schaltfläche Kopieren und den Optionen unter Layout & Verhalten: Widget-Modus, Theme und Konversationsmodus."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Website-Widget. Kopieren Sie den Code und passen Sie Aussehen und Verhalten des Widgets an.
-</p>
+    alt="Der Tab Website-Widget mit dem Einbettungscode, der Schaltfläche Kopieren und den Optionen unter Layout & Verhalten: Widget-Modus, Theme und Konversationsmodus." />
+</Frame>
 
 ### Einbettungscode
 
@@ -877,7 +833,9 @@ Einige Kombinationen, die gut funktionieren:
 - **Website-Support** — Schwebender Launcher, **Nur Chat** oder **Sprache + Chat**, Variante **Kompakt** und hilfeorientierte Texte.
 - **Sprachorientiertes Erlebnis** — Inline-Einbettung, **Nur Sprache**, größeres Dial, sichtbarer Stummschalt-Button und kurze, direkte Beschriftungen.
 
-> **Tipp:** Prüfen Sie das Widget vor der Veröffentlichung immer auf der echten Seite. Größen, Farben und Beschriftungen wirken außerhalb des Editors oft anders.
+<Tip>
+  Prüfen Sie das Widget vor der Veröffentlichung immer auf der echten Seite. Größen, Farben und Beschriftungen wirken außerhalb des Editors oft anders.
+</Tip>
 
 ## Abschnitt 9: Erweitert
 
@@ -885,17 +843,11 @@ Im Tab **Erweitert** stimmen Sie den Agenten fein ab: wie er Audio erfasst, wie 
 
 Die meisten Agenten funktionieren gut, ohne dass Sie hier etwas ändern. Öffnen Sie diesen Tab, wenn Sie mehr Präzision wünschen oder wenn etwas Bestimmtes nicht ganz richtig funktioniert.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Screenshot: der Tab Erweitert. Die meisten Agenten funktionieren mit den Standardwerten gut.">
   <img
     src="/images/agentesia8.png"
-    alt="Der Tab Erweitert mit dem Block Gedächtnis (Anrufer merken), dem Block Stimme & Verständnis und dem Block Gesprächsfluss."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: der Tab Erweitert. Die meisten Agenten funktionieren mit den Standardwerten gut.
-</p>
+    alt="Der Tab Erweitert mit dem Block Gedächtnis (Anrufer merken), dem Block Stimme & Verständnis und dem Block Gesprächsfluss." />
+</Frame>
 
 Der Tab ist in sieben Blöcke gegliedert: **Gedächtnis**, **Stimme & Verständnis**, **Gesprächsfluss**, **Hintergrundsound**, **Soft-Timeout**, **Datenschutz & Daten** und **Telefonie-Extras**.
 
@@ -903,7 +855,9 @@ Der Tab ist in sieben Blöcke gegliedert: **Gedächtnis**, **Stimme & Verständn
 
 **Anrufer merken** speichert nach jedem Anruf nützliche Details und nutzt sie, wenn der Agent dieselbe Person das nächste Mal erkennt. Standardmäßig wird jede Person an der Nummer erkannt, von der sie anruft. Standardmäßig deaktiviert.
 
-> **Tipp:** Aktivieren Sie es für Agenten, die oft mit denselben Kunden sprechen, etwa im Support oder bei Terminen, damit Anrufer ihre Angaben nicht wiederholen müssen.
+<Tip>
+  Aktivieren Sie es für Agenten, die oft mit denselben Kunden sprechen, etwa im Support oder bei Terminen, damit Anrufer ihre Angaben nicht wiederholen müssen.
+</Tip>
 
 ### Stimme & Verständnis
 
@@ -952,7 +906,9 @@ Nach wie vielen Sekunden Stille der Anruf automatisch endet, wenn der Anrufer ni
 
 Die maximale Dauer eines einzelnen Anrufs in Minuten (Standard **10**). Ein Sicherheitsnetz, damit Anrufe prägnant bleiben und nicht endlos laufen.
 
-> **Tipp:** Wenn Sie nicht sicher sind, was Sie bei Stille und Dauer einstellen sollen, lassen Sie die Standardwerte stehen und passen Sie sie erst nach echten Testanrufen an.
+<Tip>
+  Wenn Sie nicht sicher sind, was Sie bei Stille und Dauer einstellen sollen, lassen Sie die Standardwerte stehen und passen Sie sie erst nach echten Testanrufen an.
+</Tip>
 
 ### Hintergrundsound
 
@@ -996,4 +952,6 @@ Wenn **Nummernrotation** aktiviert ist und Ihr Konto Nummern hat, wählen Sie:
 
 **Bundesstaatenbasierte Einschränkung** erhöht die Annahmequote, indem der Agent jeden Kontakt mit einer Telefonnummer aus dessen eigenem Bundesstaat anruft. Derzeit werden nur lokale US-Nummern unterstützt — prüfen Sie vor der Aktivierung, ob Ihr Konto über kompatible lokale Nummern verfügt.
 
-> **Wichtig:** Ändern Sie erweiterte Einstellungen nur, wenn Sie einen klaren Grund haben und das Ergebnis mit echten Anrufen testen können. Zufällige Änderungen schaffen meist neue Probleme, statt das alte zu lösen.
+<Warning>
+  Ändern Sie erweiterte Einstellungen nur, wenn Sie einen klaren Grund haben und das Ergebnis mit echten Anrufen testen können. Zufällige Änderungen schaffen meist neue Probleme, statt das alte zu lösen.
+</Warning>

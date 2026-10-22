@@ -16,23 +16,15 @@ Desde aquí puedes:
 - Revisar la actividad de inicio de sesión, las suscripciones, la facturación de llamadas, la atribución de marketing y el límite de gasto de Twilio de cada cliente
 - Abrir directamente la app del cliente
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la lista de Usuarios → Crear usuario → Editar usuario → los detalles del cliente: Información, Suscripciones, Facturación 1-Min, UTM y límite de Twilio.
-</p>
+<Frame caption="Vídeo: la lista de Usuarios → Crear usuario → Editar usuario → los detalles del cliente: Información, Suscripciones, Facturación 1-Min, UTM y límite de Twilio.">
+  <video autoPlay muted loop playsInline src="/images/wl-users.mp4" />
+</Frame>
 
 ## Cómo funciona la lista de Usuarios
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-list.png" alt="Página Gestión de usuarios con el botón Crear usuario, el buscador, los filtros Estado y Suscripciones y la fila de un cliente con el estado Activo, la fecha de alta y cuatro iconos de acción" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la lista de Usuarios, con un cliente de ejemplo.
-</p>
+<Frame caption="Captura: la lista de Usuarios, con un cliente de ejemplo.">
+  <img src="/images/wl-users-list.png" alt="Página Gestión de usuarios con el botón Crear usuario, el buscador, los filtros Estado y Suscripciones y la fila de un cliente con el estado Activo, la fecha de alta y cuatro iconos de acción" />
+</Frame>
 
 Arriba verás:
 
@@ -59,13 +51,9 @@ Al hacer clic en **Crear usuario**, se abre la ventana **Crear nuevo usuario**:
 - **Nombre completo** (opcional)
 - **Empresa** (opcional)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-create.png" alt="Ventana Crear nuevo usuario con los campos Correo electrónico, Contraseña, Nombre completo y Empresa y los botones Cancelar y Crear usuario" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la ventana Crear nuevo usuario, con datos de ejemplo.
-</p>
+<Frame caption="Captura: la ventana Crear nuevo usuario, con datos de ejemplo.">
+  <img src="/images/wl-users-create.png" alt="Ventana Crear nuevo usuario con los campos Correo electrónico, Contraseña, Nombre completo y Empresa y los botones Cancelar y Crear usuario" />
+</Frame>
 
 Un ejemplo real:
 
@@ -76,7 +64,9 @@ Un ejemplo real:
 
 Haz clic en **Crear usuario**. El cliente aparece en la lista y puede entrar en tu app con ese correo y esa contraseña.
 
-> **Consejo:** Si gestionas muchas cuentas, rellenar **Nombre completo** y **Empresa** hace mucho más fácil buscar y dar soporte.
+<Tip>
+  Si gestionas muchas cuentas, rellenar **Nombre completo** y **Empresa** hace mucho más fácil buscar y dar soporte.
+</Tip>
 
 ## Editar datos básicos del cliente
 
@@ -104,23 +94,29 @@ El último icono de cada fila es un **icono de enlace verde**: **Iniciar sesión
 
 Ejemplo de soporte:
 
-1. El cliente te dice: “No encuentro mis suscripciones”.
-2. Lo buscas en **Usuarios**.
-3. Haces clic en el **icono verde** para abrir su app y guiarle con seguridad.
+<Steps>
+  <Step>
+    El cliente te dice: “No encuentro mis suscripciones”.
+  </Step>
+  <Step>
+    Lo buscas en **Usuarios**.
+  </Step>
+  <Step>
+    Haces clic en el **icono verde** para abrir su app y guiarle con seguridad.
+  </Step>
+</Steps>
 
-> **Importante:** Mientras estás dentro de la app del cliente, cualquier cambio que hagas se aplica a su cuenta. Mira, ayuda y deja todo como estaba, salvo que el cliente te haya pedido cambiar algo.
+<Warning>
+  Mientras estás dentro de la app del cliente, cualquier cambio que hagas se aplica a su cuenta. Mira, ayuda y deja todo como estaba, salvo que el cliente te haya pedido cambiar algo.
+</Warning>
 
 ## Qué puedes revisar dentro del perfil de un cliente
 
 Haz clic en el icono de la persona naranja (**Más detalles del usuario**) para abrir el panel de detalles del cliente. Arriba verás su nombre, su correo y su estado. Debajo, cinco pestañas:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-details.png" alt="Panel de detalles del cliente en la pestaña Información con Alta (Empresa), Detalles del último inicio de sesión (Dispositivo, Dirección IP, Ubicación, Hora), Historial de sesiones y Seguridad con Eliminar cuenta de usuario" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el panel de detalles del cliente, pestaña Información.
-</p>
+<Frame caption="Captura: el panel de detalles del cliente, pestaña Información.">
+  <img src="/images/wl-users-details.png" alt="Panel de detalles del cliente en la pestaña Información con Alta (Empresa), Detalles del último inicio de sesión (Dispositivo, Dirección IP, Ubicación, Hora), Historial de sesiones y Seguridad con Eliminar cuenta de usuario" />
+</Frame>
 
 ### Información
 
@@ -129,7 +125,9 @@ Haz clic en el icono de la persona naranja (**Más detalles del usuario**) para 
 - **Historial de sesiones**: sus sesiones recientes.
 - **Seguridad**: **Eliminar cuenta de usuario** borra para siempre la cuenta del cliente y todos sus datos, tras una confirmación.
 
-> **Importante:** Eliminar un cliente no se puede deshacer. Si solo quieres cortarle el acceso, revisa antes su suscripción.
+<Warning>
+  Eliminar un cliente no se puede deshacer. Si solo quieres cortarle el acceso, revisa antes su suscripción.
+</Warning>
 
 ### Suscripciones
 
@@ -145,15 +143,13 @@ Haz clic en el icono de la persona naranja (**Más detalles del usuario**) para 
 - **Facturación mínima de 1 minuto**: un interruptor para aplicar el mínimo de 1 minuto a este cliente aunque no cumpla la regla (decisión del administrador).
 - **Llamadas salientes recientes (últimas 100)**: cada llamada con su estado, su duración y los minutos facturados si se aplica la regla.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-users-billing.png" alt="Pestaña Facturación 1-Min con la explicación de la regla de 1 minuto, los recuadros Regla elegible, La regla aplica ahora, duración media y tasa de éxito, y el interruptor Facturación mínima de 1 minuto" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la pestaña Facturación 1-Min. Haz clic en Actualizar para refrescar los datos.">
+  <img src="/images/wl-users-billing.png" alt="Pestaña Facturación 1-Min con la explicación de la regla de 1 minuto, los recuadros Regla elegible, La regla aplica ahora, duración media y tasa de éxito, y el interruptor Facturación mínima de 1 minuto" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Facturación 1-Min. Haz clic en Actualizar para refrescar los datos.
-</p>
-
-> **Consejo:** Aquí es donde mirar cuando un cliente pregunta por qué una llamada saliente corta se le cobró como un minuto entero. Consulta también [Telefonía](/es/Automations/Whitelabel/telefhony).
+<Tip>
+  Aquí es donde mirar cuando un cliente pregunta por qué una llamada saliente corta se le cobró como un minuto entero. Consulta también [Telefonía](/es/Automations/Whitelabel/telefhony).
+</Tip>
 
 ### UTM
 
@@ -170,4 +166,6 @@ Así puedes responder rápido a preguntas como:
 - “¿Por qué se cobró así una llamada saliente corta?”
 - “¿Llegó desde una campaña con parámetros UTM?”
 
-> **Consejo:** Si un cliente dice “He pagado pero no está activo”, lo primero suele ser comprobar que usa el correo y la cuenta correctos.
+<Tip>
+  Si un cliente dice “He pagado pero no está activo”, lo primero suele ser comprobar que usa el correo y la cuenta correctos.
+</Tip>

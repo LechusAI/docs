@@ -16,25 +16,19 @@ icon: "chart-line"
 
 La trovi nella Piattaforma white label, in **Analisi e Marketing** ([aprila qui](https://app.callin.io/cms/utm)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: la pagina Analisi UTM → Filtri per Sorgente, Campagna e Mezzo → Pulisci.">
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: la pagina Analisi UTM → Filtri per Sorgente, Campagna e Mezzo → Pulisci.
-</p>
-
-> **Suggerimento:** Se vedi **Nessun record corrispondente** e “Nessun dato UTM disponibile per questa query”, gli utenti si sono registrati senza parametri UTM nel link, oppure la campagna non ha ancora generato registrazioni.
+<Tip>
+  Se vedi **Nessun record corrispondente** e “Nessun dato UTM disponibile per questa query”, gli utenti si sono registrati senza parametri UTM nel link, oppure la campagna non ha ancora generato registrazioni.
+</Tip>
 
 ## Come leggere la dashboard
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/utm1.png" alt="Pagina Analisi UTM con i pulsanti Aggiorna ed Esporta CSV, la scheda Panoramica (Totale, Con UTM, Copertura), le schede Sorgente e Campagna, la ricerca e i filtri per data, e la tabella con le colonne Utente, Si è unito, Sorgente, Campagna, URL di destinazione e Azioni" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: Analisi UTM prima che un utente si registri con un link UTM.
-</p>
+<Frame caption="Schermata: Analisi UTM prima che un utente si registri con un link UTM.">
+  <img src="/images/utm1.png" alt="Pagina Analisi UTM con i pulsanti Aggiorna ed Esporta CSV, la scheda Panoramica (Totale, Con UTM, Copertura), le schede Sorgente e Campagna, la ricerca e i filtri per data, e la tabella con le colonne Utente, Si è unito, Sorgente, Campagna, URL di destinazione e Azioni" />
+</Frame>
 
 ### Panoramica
 
@@ -64,7 +58,9 @@ Ogni riga è un utente con dati UTM:
 
 Scegli quante righe vedere per pagina (**10**, **20** o **50**) nel selettore a destra. Sopra la tabella vedi quali record stai guardando.
 
-> **Suggerimento:** Puoi vedere i dati UTM di un cliente anche da [Utenti](/it/Automations/Whitelabel/Clients), nella scheda **UTM** dei suoi dettagli.
+<Tip>
+  Puoi vedere i dati UTM di un cliente anche da [Utenti](/it/Automations/Whitelabel/Clients), nella scheda **UTM** dei suoi dettagli.
+</Tip>
 
 ## Come cercare e filtrare
 
@@ -82,13 +78,9 @@ Clicca su **Filtri** per mostrare tre campi in più: **Sorgente**, **Campagna** 
 
 Il numero accanto a **Filtri** indica quanti filtri sono attivi, e ognuno compare come un’etichetta sotto i campi (ad esempio, **Sorgente: newsletter**). Clicca sulla **×** di un’etichetta per rimuovere quel filtro.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-utm-filters.png" alt="Filtri aperti con i campi Sorgente, Campagna e Mezzo compilati con newsletter, spring_offer ed email, le etichette dei tre filtri attivi e il pulsante Pulisci" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: tre filtri attivi, ognuno come un’etichetta che puoi rimuovere.
-</p>
+<Frame caption="Schermata: tre filtri attivi, ognuno come un’etichetta che puoi rimuovere.">
+  <img src="/images/wl-utm-filters.png" alt="Filtri aperti con i campi Sorgente, Campagna e Mezzo compilati con newsletter, spring_offer ed email, le etichette dei tre filtri attivi e il pulsante Pulisci" />
+</Frame>
 
 ### Pulisci
 
@@ -114,7 +106,9 @@ I parametri UTM sono etichette aggiunte a un link per sapere da dove arriva il t
 | ID clic Google (gclid)  | Aggiunto automaticamente da Google Ads            | —                                  |
 | ID clic Facebook (fbclid)| Aggiunto automaticamente da Facebook e Instagram | —                                  |
 
-> **Errore comune:** Usare nomi diversi per la stessa cosa (ad esempio `Facebook`, `facebook`, `fb`). Scegli uno stile e mantienilo, così i report restano puliti.
+<Warning>
+  **Errore comune:** Usare nomi diversi per la stessa cosa (ad esempio `Facebook`, `facebook`, `fb`). Scegli uno stile e mantienilo, così i report restano puliti.
+</Warning>
 
 ## Esempi pratici
 
@@ -139,8 +133,18 @@ Dopo una settimana, usa le date **Da** e **a** e confronta la scheda **Campagna*
 
 Una breve lista di controllo:
 
-1. Cerca l’utente in **Analisi UTM**
-2. Controlla la sua **Sorgente** e la sua **Campagna**, oppure clicca su **Azioni** per vedere tutti i campi
-3. Se è vuoto, verifica che abbia usato il link corretto (con parametri UTM)
+<Steps>
+  <Step>
+    Cerca l’utente in **Analisi UTM**
+  </Step>
+  <Step>
+    Controlla la sua **Sorgente** e la sua **Campagna**, oppure clicca su **Azioni** per vedere tutti i campi
+  </Step>
+  <Step>
+    Se è vuoto, verifica che abbia usato il link corretto (con parametri UTM)
+  </Step>
+</Steps>
 
-> **Suggerimento:** Per report coerenti, crea una “regola per i nomi dei link” per il tuo team (ad esempio: sorgente in minuscolo, campagne con trattini bassi e senza spazi).
+<Tip>
+  Per report coerenti, crea una “regola per i nomi dei link” per il tuo team (ad esempio: sorgente in minuscolo, campagne con trattini bassi e senza spazi).
+</Tip>

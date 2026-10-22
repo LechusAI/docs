@@ -12,13 +12,9 @@ Hier verbinden Sie externe Dienste, die Ihren Agenten Echtzeitdaten liefern, wen
 
 Mit dieser Integration fragt der Agent eine Bestellung automatisch ab, sobald eine Kunden-E-Mail eine Amazon-Bestellnummer enthält. Er kann diese Daten in seiner Antwort verwenden, statt den Kunden danach zu fragen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents3.png" alt="Bereich Tools mit der Karte Amazon Seller API im Status Verbunden, den Kontodaten und den Schaltflächen Verbindung testen und Trennen" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Die Karte Amazon Seller API, verbunden.
-</p>
+<Frame caption="Die Karte Amazon Seller API, verbunden.">
+  <img src="/images/mailagents3.png" alt="Bereich Tools mit der Karte Amazon Seller API im Status Verbunden, den Kontodaten und den Schaltflächen Verbindung testen und Trennen" />
+</Frame>
 
 Wenn die Integration aktiv ist, zeigt ihre Karte das grüne Badge **Verbunden** und die Verbindungsdaten: **Name des Verkäuferkontos**, **Selling Partner ID**, **Region**, **Marketplace-ID** und **Verbunden am**. Auf der Karte können Sie:
 
@@ -35,13 +31,9 @@ Beispiel-Prompt:
 
 > Wenn der Kunde nach Versand oder Lieferung fragt, nenne den aktuellen Versandstatus aus `{{amazon_shipment_status}}` (und `{{amazon_tracking_updates}}`, wenn verfügbar), und füge dann diesen Sendungsverfolgungslink ein: `{{amazon_tracking_url}}`. Wenn die Bestellung älter als einen Monat ist oder nicht die letzte Bestellung des Käufers, bitte ihn zuerst, die Bestellnummer zu bestätigen.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-tracking.png" alt="Panel Tracking-Links in Entwürfen und automatischen Antworten mit einem Beispiel-Prompt, der Liste der verfügbaren Variablen und den Voraussetzungen" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Klicken Sie unter der Karte auf Tracking-Links in Entwürfen & automatischen Antworten, um die Variablen in der App zu sehen.
-</p>
+<Frame caption="Klicken Sie unter der Karte auf Tracking-Links in Entwürfen & automatischen Antworten, um die Variablen in der App zu sehen.">
+  <img src="/images/mail-agent-tracking.png" alt="Panel Tracking-Links in Entwürfen und automatischen Antworten mit einem Beispiel-Prompt, der Liste der verfügbaren Variablen und den Voraussetzungen" />
+</Frame>
 
 Das sind die verfügbaren Variablen:
 
@@ -66,6 +58,8 @@ Das sind die verfügbaren Variablen:
 
 Das System erkennt außerdem Fotos, die der Kunde bereits im Verlauf geschickt hat, und bittet um Bestätigung, wenn die Bestellung sehr alt ist oder nicht die letzte des Kunden.
 
-> **Hinweis:** Damit die Sendungsdaten ausgefüllt werden, muss die Integration verbunden sein, der Verlauf muss eine Amazon-Bestellnummer enthalten, die Bestellung muss bereits versendet sein, und Ihr Prompt muss die Sendungsverfolgung oder den Versandstatus erwähnen oder `{{amazon_tracking_url}}` verwenden.
+<Note>
+  Damit die Sendungsdaten ausgefüllt werden, muss die Integration verbunden sein, der Verlauf muss eine Amazon-Bestellnummer enthalten, die Bestellung muss bereits versendet sein, und Ihr Prompt muss die Sendungsverfolgung oder den Versandstatus erwähnen oder `{{amazon_tracking_url}}` verwenden.
+</Note>
 
 Weitere Tools kommen in diesen Bereich, sobald der KI-E-Mail-Manager die Beta-Phase verlässt.

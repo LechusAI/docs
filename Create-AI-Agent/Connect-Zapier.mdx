@@ -23,19 +23,23 @@ With them you can:
 - Trigger outbound calls from your CRM or form tools.
 - Connect Callin.io with thousands of compatible applications.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/zapier-connect.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Integrations → Zapier → invitation → the Get Transcription trigger and the Activate Agent action in the Zap editor → your API key in Profile → API Keys.
-</p>
+<Frame caption="Video: Integrations → Zapier → invitation → the Get Transcription trigger and the Activate Agent action in the Zap editor → your API key in Profile → API Keys.">
+  <video autoPlay muted loop playsInline src="/images/zapier-connect.mp4" />
+</Frame>
 
 ## Step 1. Open the Integrations Panel in Callin.io
 
-1. Log in to your [Callin.io account](https://app.callin.io).
-2. From the left menu, open **Integrations → Actions** ([open it here](https://app.callin.io/actions)).
-3. Use the **Automation** filter (or scroll through **All**), find **Zapier** and click **Connect**.
+<Steps>
+  <Step>
+    Log in to your [Callin.io account](https://app.callin.io).
+  </Step>
+  <Step>
+    From the left menu, open **Integrations → Actions** ([open it here](https://app.callin.io/actions)).
+  </Step>
+  <Step>
+    Use the **Automation** filter (or scroll through **All**), find **Zapier** and click **Connect**.
+  </Step>
+</Steps>
 
 A new tab opens on Zapier to complete the setup.
 
@@ -46,30 +50,42 @@ If not, you can create one for free at [zapier.com](https://zapier.com).
 
 Once inside, you’ll see the page **“You have been invited to use Callin.io on Zapier!”**, sent by the Callin.io team. Click **Accept Invite & Build a Zap** to enable the integration. Zapier opens the Zap editor.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-invite.png" alt="The Zapier invitation page: You have been invited to use Callin.io on Zapier, with the Callin.io and Zapier logos, a short description of Callin.io and the Accept Invite & Build a Zap button" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: The invitation to use Callin.io on Zapier.">
+  <img src="/images/zapier-invite.png" alt="The Zapier invitation page: You have been invited to use Callin.io on Zapier, with the Callin.io and Zapier logos, a short description of Callin.io and the Accept Invite & Build a Zap button" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The invitation to use Callin.io on Zapier.
-</p>
-
-> **Note:** The Callin.io app is shared with you by invitation and Zapier shows it as **Draft**. It works normally.
+<Note>
+  The Callin.io app is shared with you by invitation and Zapier shows it as **Draft**. It works normally.
+</Note>
 
 ## Step 3. Get Your API Key from Callin.io
 
 Zapier needs to verify your account securely using an API Key.
 
-1. Open your [Callin.io profile](https://app.callin.io/profile) and go to the **API Keys** tab.
-2. If you don’t have a key yet (“No API key found”), click **Regenerate Key** to create one.
-3. Use the copy icon to copy the key.
+<Steps>
+  <Step>
+    Open your [Callin.io profile](https://app.callin.io/profile) and go to the **API Keys** tab.
+  </Step>
+  <Step>
+    If you don’t have a key yet (“No API key found”), click **Regenerate Key** to create one.
+  </Step>
+  <Step>
+    Use the copy icon to copy the key.
+  </Step>
+</Steps>
 
 Keep your API Key safe. If it becomes compromised, regenerate it immediately. Remember that regenerating it stops the old key from working, so you’ll need to reconnect your account in Zapier.
 
 ## Step 4. Authorize the Connection in Zapier
 
-1. In a Callin.io step of your Zap, go to **Account** and click **Sign in** (or **Change** → **Connect a new account**).
-2. A Zapier window asks for access to your Callin.io account. Paste your API Key and confirm.
+<Steps>
+  <Step>
+    In a Callin.io step of your Zap, go to **Account** and click **Sign in** (or **Change** → **Connect a new account**).
+  </Step>
+  <Step>
+    A Zapier window asks for access to your Callin.io account. Paste your API Key and confirm.
+  </Step>
+</Steps>
 
 Your Callin.io account will now appear as connected in **Account**.
 
@@ -79,18 +95,24 @@ If you see **“This account connection is expired,”** click **Reconnect this 
 
 Let’s create your first automation: receiving call transcriptions automatically.
 
-1. In Zapier, click **Create** → **Zaps**.
-2. Click **Trigger**, search for **callin** and choose **Callin.io (1.0.1)**.
-3. In **Trigger event**, choose **Get Transcription** (“Triggers when receives transcription data from external service”).
-4. Select your Callin.io account and click **Continue**.
+<Steps>
+  <Step>
+    In Zapier, click **Create** → **Zaps**.
+  </Step>
+  <Step>
+    Click **Trigger**, search for **callin** and choose **Callin.io (1.0.1)**.
+  </Step>
+  <Step>
+    In **Trigger event**, choose **Get Transcription** (“Triggers when receives transcription data from external service”).
+  </Step>
+  <Step>
+    Select your Callin.io account and click **Continue**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-trigger.png" alt="Zap editor with Callin.io as the trigger app and the Trigger event list open, showing Get Transcription (Instant), plus the Account section" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Get Transcription trigger of Callin.io in the Zap editor.
-</p>
+<Frame caption="Screenshot: The Get Transcription trigger of Callin.io in the Zap editor.">
+  <img src="/images/zapier-trigger.png" alt="Zap editor with Callin.io as the trigger app and the Trigger event list open, showing Get Transcription (Instant), plus the Account section" />
+</Frame>
 
 Now choose what happens next. For example:
 
@@ -100,7 +122,9 @@ Now choose what happens next. For example:
 
 Every time a call ends, Zapier will automatically perform the chosen action.
 
-> **Tip:** When you search for **callin**, you may see two versions: **Callin.io (1.0.1)** and **Callin.io (1.0.2)**, which appears as **Callin** with a **Legacy** label. Use **Callin.io (1.0.1)**: it has the **Get Transcription** trigger and the **Activate Agent** action.
+<Tip>
+  When you search for **callin**, you may see two versions: **Callin.io (1.0.1)** and **Callin.io (1.0.2)**, which appears as **Callin** with a **Legacy** label. Use **Callin.io (1.0.1)**: it has the **Get Transcription** trigger and the **Activate Agent** action.
+</Tip>
 
 ## Advanced Configuration
 
@@ -110,13 +134,9 @@ You can do much more with this integration:
 - Sync call data with Airtable, Notion, or analytics platforms.
 - Send events to marketing tools for reporting or tracking.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/zapier-action.png" alt="Zap editor with Callin.io as the action app and the Action event list open, showing Activate Agent: Activates an Agent on Callin.io" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: The Activate Agent action of Callin.io in the Zap editor.
-</p>
+<Frame caption="Screenshot: The Activate Agent action of Callin.io in the Zap editor.">
+  <img src="/images/zapier-action.png" alt="Zap editor with Callin.io as the action app and the Action event list open, showing Activate Agent: Activates an Agent on Callin.io" />
+</Frame>
 
 You start the connection from [Integrations → Actions → Zapier](https://app.callin.io/actions) in your Callin.io dashboard, and you manage your Zaps in Zapier.
 

@@ -13,25 +13,21 @@ icon: "palette"
 
 Ábrela aquí: [Abrir Configuración White-Label](https://app.callin.io/cms/white-label-configuration)
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel01.png" alt="Página Configuración White-Label en la pestaña Configuración con Nombre de la app, Dominio personalizado con el botón Configuración DNS, Moneda e Idioma de la App" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la pestaña Configuración, con un nombre de app y un dominio de ejemplo.">
+  <img src="/images/whitelabel01.png" alt="Página Configuración White-Label en la pestaña Configuración con Nombre de la app, Dominio personalizado con el botón Configuración DNS, Moneda e Idioma de la App" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Configuración, con un nombre de app y un dominio de ejemplo.
-</p>
+En el vídeo verás toda la configuración, paso a paso:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: nombre de la app y dominio → Configuración DNS (Proveedor y Manual) → moneda, idioma y ubicación del servidor → correo de aviso por minutos agotados y su vista previa → pestaña Apariencia.
-</p>
+<Frame caption="Vídeo: nombre de la app y dominio → Configuración DNS (Proveedor y Manual) → moneda, idioma y ubicación del servidor → correo de aviso por minutos agotados y su vista previa → pestaña Apariencia.">
+  <video autoPlay muted loop playsInline src="/images/wl-config.mp4" />
+</Frame>
 
 Cuando cambias algo, aparece abajo una barra con **Borrar** (deshace tus cambios) y **Guardar**. Haz clic en **Guardar** antes de salir de la página.
 
-> **Importante:** Algunos ajustes pueden variar según tu plan y tus permisos.
+<Warning>
+  Algunos ajustes pueden variar según tu plan y tus permisos.
+</Warning>
 
 ## Configuración
 
@@ -55,7 +51,9 @@ Por qué importa usar un subdominio:
 - Tu **dominio raíz** (como `tudominio.com`) suele alojar tu web, tus landing pages, tu blog y tus scripts de seguimiento.
 - Tener el producto en `app.tudominio.com` evita conflictos y mantiene tu web independiente.
 
-> **Consejo:** Elige un subdominio fácil de recordar: `app`, `portal` o `dashboard`.
+<Tip>
+  Elige un subdominio fácil de recordar: `app`, `portal` o `dashboard`.
+</Tip>
 
 ### Configuración de DNS
 
@@ -72,24 +70,30 @@ Usa **Proveedor** si tu dominio está en **Cloudflare**, **GoDaddy** o **Nameche
 
 Qué tienes que hacer:
 
-1. Abre la pestaña **Proveedor**.
-2. En **Proveedor DNS**, elige el tuyo: **Cloudflare**, **GoDaddy** o **Namecheap**.
-3. Haz clic en **Descubrir**.
+<Steps>
+  <Step>
+    Abre la pestaña **Proveedor**.
+  </Step>
+  <Step>
+    En **Proveedor DNS**, elige el tuyo: **Cloudflare**, **GoDaddy** o **Namecheap**.
+  </Step>
+  <Step>
+    Haz clic en **Descubrir**.
+  </Step>
+</Steps>
 
 Qué esperar:
 
 - Callin intentará guiarte en la configuración DNS del dominio que has escrito.
 - Si algo falla, verás un aviso de error que te pide revisar la configuración y los registros DNS e intentarlo más tarde. Suele significar que los registros DNS aún no coinciden con lo esperado. Espera un poco o usa **Manual**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel2.png" alt="Panel Configuración DNS en la pestaña Proveedor con la lista Proveedor DNS abierta (Cloudflare, GoDaddy, Namecheap) y un aviso de error arriba" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la pestaña Proveedor, donde eliges Cloudflare, GoDaddy o Namecheap y haces clic en Descubrir.">
+  <img src="/images/whitelabel2.png" alt="Panel Configuración DNS en la pestaña Proveedor con la lista Proveedor DNS abierta (Cloudflare, GoDaddy, Namecheap) y un aviso de error arriba" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Proveedor, donde eliges Cloudflare, GoDaddy o Namecheap y haces clic en Descubrir.
-</p>
-
-> **Error común:** Los cambios de DNS no se aplican al instante. Si acabas de editar los registros, espera un poco y vuelve a intentarlo.
+<Warning>
+  **Error común:** Los cambios de DNS no se aplican al instante. Si acabas de editar los registros, espera un poco y vuelve a intentarlo.
+</Warning>
 
 #### Manual (añadir los registros DNS tú mismo)
 
@@ -115,21 +119,29 @@ La tabla incluye:
 
 Los pasos son:
 
-1. Abre **Manual**.
-2. Añade cada registro DNS exactamente como aparece en la tabla.
-3. Cuando estén los registros, haz clic en **Instalar SSL** para terminar.
+<Steps>
+  <Step>
+    Abre **Manual**.
+  </Step>
+  <Step>
+    Añade cada registro DNS exactamente como aparece en la tabla.
+  </Step>
+  <Step>
+    Cuando estén los registros, haz clic en **Instalar SSL** para terminar.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel3.png" alt="Panel Configuración DNS en la pestaña Manual con el aviso Añade estos registros DNS en tu registrador, una tabla con un registro A y un registro CNAME, y el botón Instalar SSL" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: la pestaña Manual con los registros para un dominio de ejemplo y el botón Instalar SSL.">
+  <img src="/images/whitelabel3.png" alt="Panel Configuración DNS en la pestaña Manual con el aviso Añade estos registros DNS en tu registrador, una tabla con un registro A y un registro CNAME, y el botón Instalar SSL" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Manual con los registros para un dominio de ejemplo y el botón Instalar SSL.
-</p>
+<Warning>
+  Haz clic en **Instalar SSL** solo cuando hayas añadido los registros DNS y se hayan propagado. El tiempo de propagación depende de tu proveedor DNS.
+</Warning>
 
-> **Importante:** Haz clic en **Instalar SSL** solo cuando hayas añadido los registros DNS y se hayan propagado. El tiempo de propagación depende de tu proveedor DNS.
-
-> **Consejo:** Si no sabes dónde añadir los registros, busca en la ayuda de tu proveedor DNS “añadir registro A” y “añadir registro CNAME”. Los nombres de los campos pueden variar.
+<Tip>
+  Si no sabes dónde añadir los registros, busca en la ayuda de tu proveedor DNS “añadir registro A” y “añadir registro CNAME”. Los nombres de los campos pueden variar.
+</Tip>
 
 ### Moneda
 
@@ -158,41 +170,49 @@ Estos campos enlazan a tus páginas legales:
 
 Pega la URL completa de cada página, por ejemplo `https://tudominio.com/privacidad`.
 
-> **Consejo:** Aunque seas una agencia, trátalo como un producto: publica estas páginas en tu web (dominio raíz) y enlázalas aquí.
+<Tip>
+  Aunque seas una agencia, trátalo como un producto: publica estas páginas en tu web (dominio raíz) y enlázalas aquí.
+</Tip>
 
 ### Correo de aviso por minutos agotados
 
 El **Correo de aviso por minutos agotados** avisa a tus clientes por correo cuando han gastado todos los minutos incluidos.
 
-1. Activa **Activar correo de aviso**. Se abre el editor del correo.
-2. Escribe el **Asunto**.
-3. Elige el **Tipo de cuerpo**: **Texto normal** (texto plano; se respetan los saltos de línea) o **HTML** (HTML sin procesar).
-4. Escribe el **Cuerpo**. Por defecto incluye el nombre de tu app y tu dominio.
-5. Haz clic en **Vista previa del correo** para ver el correo final que recibirán tus clientes, y luego en **Cerrar**.
+<Steps>
+  <Step>
+    Activa **Activar correo de aviso**. Se abre el editor del correo.
+  </Step>
+  <Step>
+    Escribe el **Asunto**.
+  </Step>
+  <Step>
+    Elige el **Tipo de cuerpo**: **Texto normal** (texto plano; se respetan los saltos de línea) o **HTML** (HTML sin procesar).
+  </Step>
+  <Step>
+    Escribe el **Cuerpo**. Por defecto incluye el nombre de tu app y tu dominio.
+  </Step>
+  <Step>
+    Haz clic en **Vista previa del correo** para ver el correo final que recibirán tus clientes, y luego en **Cerrar**.
+  </Step>
+</Steps>
 
 Para editarlo más tarde, haz clic en **Configurar correo**. Recuerda hacer clic en **Guardar**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-config-warning-email.png" alt="Editor del correo de aviso por minutos agotados con el Asunto, los tipos de cuerpo Texto normal y HTML, el Cuerpo y los botones Vista previa del correo y Cerrar" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Captura: el editor del correo de aviso, con un nombre de app y un dominio de ejemplo.">
+  <img src="/images/wl-config-warning-email.png" alt="Editor del correo de aviso por minutos agotados con el Asunto, los tipos de cuerpo Texto normal y HTML, el Cuerpo y los botones Vista previa del correo y Cerrar" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: el editor del correo de aviso, con un nombre de app y un dominio de ejemplo.
-</p>
-
-> **Consejo:** Dile a tu cliente qué puede hacer, por ejemplo: “Mejora tu plan o escríbenos para añadir más minutos”.
+<Tip>
+  Dile a tu cliente qué puede hacer, por ejemplo: “Mejora tu plan o escríbenos para añadir más minutos”.
+</Tip>
 
 ## Apariencia
 
 Cuando tengas listos el dominio y los ajustes básicos, pasa a la pestaña **Apariencia** para adaptar la app a tu marca.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/whitelabel4.png" alt="Página Configuración White-Label en la pestaña Apariencia con Color primario, Color secundario, Color primario del correo, Color del botón CTA, Idioma del correo y la subida de Logotipo y Logotipo oscuro" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la pestaña Apariencia, donde eliges tus colores, el idioma del correo, los logotipos, el favicon y el tema por defecto.
-</p>
+<Frame caption="Captura: la pestaña Apariencia, donde eliges tus colores, el idioma del correo, los logotipos, el favicon y el tema por defecto.">
+  <img src="/images/whitelabel4.png" alt="Página Configuración White-Label en la pestaña Apariencia con Color primario, Color secundario, Color primario del correo, Color del botón CTA, Idioma del correo y la subida de Logotipo y Logotipo oscuro" />
+</Frame>
 
 ### Colores
 
@@ -203,7 +223,9 @@ Haz clic en un cuadrado de color para elegir el color:
 - **Color Primario del Correo**: el color principal de tus correos transaccionales.
 - **Color del Botón CTA**: el color de los botones y enlaces principales de tus correos.
 
-> **Consejo:** Si tu marca ya tiene una guía de estilo, empieza por tu color principal y elige un secundario que quede bien sobre fondo claro y oscuro.
+<Tip>
+  Si tu marca ya tiene una guía de estilo, empieza por tu color principal y elige un secundario que quede bien sobre fondo claro y oscuro.
+</Tip>
 
 ### Idioma del correo
 
@@ -218,7 +240,9 @@ Sube dos versiones de tu logotipo:
 
 Usa PNG o SVG, de hasta 2 MB, mejor con fondo transparente. El mismo logotipo no siempre se lee bien en los dos temas.
 
-> **Importante:** Si tu logotipo se ve muy pequeño, normalmente la imagen tiene un margen blanco grande alrededor: Callin reduce la imagen entera para que quepa. Un PNG transparente y bien recortado suele resolverlo.
+<Warning>
+  Si tu logotipo se ve muy pequeño, normalmente la imagen tiene un margen blanco grande alrededor: Callin reduce la imagen entera para que quepa. Un PNG transparente y bien recortado suele resolverlo.
+</Warning>
 
 ### Favicon
 

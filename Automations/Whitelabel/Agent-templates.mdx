@@ -13,13 +13,9 @@ Use this section when you want:
 - Faster onboarding for new users.
 - A curated set of “approved” agent configurations.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: the empty page → Create Template → Select Fields to Include → Set Default Values → Pre Deployed and Template Status → the template in the list → the row menu.
-</p>
+<Frame caption="Video: the empty page → Create Template → Select Fields to Include → Set Default Values → Pre Deployed and Template Status → the template in the list → the row menu.">
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" />
+</Frame>
 
 ## Open Agent Templates
 
@@ -27,25 +23,35 @@ You’ll find it in the White Label Platform, under **Content Management** ([ope
 
 The list shows each template’s **Template Name** (with its description), the number of **Fields** it includes, its **Status** and the **Created At** date. Use **Search templates…** to find one.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-list.png" alt="Custom Agent Templates page with the Create Template button, the search bar and one template in the list with 6 Fields, the Active status, its creation date and the Actions menu" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: the list with an example template.
-</p>
+<Frame caption="Screenshot: the list with an example template.">
+  <img src="/images/wl-templates-list.png" alt="Custom Agent Templates page with the Create Template button, the search bar and one template in the list with 6 Fields, the Active status, its creation date and the Actions menu" />
+</Frame>
 
 ## Create a template
 
-1. Open **Custom Agent Templates**.
-2. Click **Create Template**. A panel opens on the right.
-3. Fill out the template details (both required):
-   - **Template Name**: A clear name your subaccounts will recognize.
-   - **Description**: A short explanation of what the template is for.
-4. Choose the fields to include and set their default values (see below).
-5. Click **Create Template** at the bottom of the panel.
+<Steps>
+  <Step>
+    Open **Custom Agent Templates**.
+  </Step>
+  <Step>
+    Click **Create Template**. A panel opens on the right.
+  </Step>
+  <Step>
+    Fill out the template details (both required):
+    - **Template Name**: A clear name your subaccounts will recognize.
+    - **Description**: A short explanation of what the template is for.
+  </Step>
+  <Step>
+    Choose the fields to include and set their default values (see below).
+  </Step>
+  <Step>
+    Click **Create Template** at the bottom of the panel.
+  </Step>
+</Steps>
 
-> **Tip:** Use names that describe the job, not the team. Example: **“Inbound Customer Support”** instead of **“Support - Team A”**.
+<Tip>
+  Use names that describe the job, not the team. Example: **“Inbound Customer Support”** instead of **“Support - Team A”**.
+</Tip>
 
 ## Choose what subaccounts can configure
 
@@ -53,13 +59,9 @@ Under **1. Select Fields to Include**, you’ll see a list of checkboxes.\
 **Checked = included in the template flow for subaccounts.**\
 Unchecked fields won’t be part of the template setup.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-fields.png" alt="Create Template panel with the Template Name and Description filled in and six fields checked under Select Fields to Include" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: an example template with six fields checked.
-</p>
+<Frame caption="Screenshot: an example template with six fields checked.">
+  <img src="/images/wl-templates-fields.png" alt="Create Template panel with the Template Name and Description filled in and six fields checked under Select Fields to Include" />
+</Frame>
 
 ### Basic information
 
@@ -76,7 +78,9 @@ You can include fields such as:
 - **Voicemail Detection**
 - **User Speaks First**
 
-> **Important:** Only include fields you actually want subaccounts to touch. Fewer fields usually means fewer mistakes.
+<Warning>
+  Only include fields you actually want subaccounts to touch. Fewer fields usually means fewer mistakes.
+</Warning>
 
 ### Voice & language
 
@@ -87,7 +91,9 @@ You can include fields such as:
 - **Speech Speed**
 - **Temperature**
 
-> **Tip:** If you support multiple regions, include **Primary Language** and **Timezone** so subaccounts can adapt quickly without breaking the template’s intent.
+<Tip>
+  If you support multiple regions, include **Primary Language** and **Timezone** so subaccounts can adapt quickly without breaking the template’s intent.
+</Tip>
 
 ### Call action
 
@@ -104,7 +110,9 @@ You can include fields such as:
 - **Retry Count**
 - **Retry Delay (minutes)**
 
-> **Common mistake:** Including **Webhook URL** for subaccounts when you want that to remain controlled by your organization. If you need centralized tracking, keep webhook-related fields restricted.
+<Warning>
+  **Common mistake:** Including **Webhook URL** for subaccounts when you want that to remain controlled by your organization. If you need centralized tracking, keep webhook-related fields restricted.
+</Warning>
 
 ### Set default values
 
@@ -119,13 +127,9 @@ Each field shows a short help text. For example:
 - **Primary Language**: the main language the agent will use.
 - **Voice**: the voice the agent uses, chosen from the ElevenLabs list.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-defaults.png" alt="Set Default Values section with example values for Agent Name, Greeting Message, System Prompt, Timezone and Primary Language" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: default values for the example template.
-</p>
+<Frame caption="Screenshot: default values for the example template.">
+  <img src="/images/wl-templates-defaults.png" alt="Set Default Values section with example values for Agent Name, Greeting Message, System Prompt, Timezone and Primary Language" />
+</Frame>
 
 ## Pre-deployed templates
 
@@ -133,7 +137,9 @@ At the bottom of the panel you’ll see **Pre Deployed**.
 
 When enabled, an agent will be **automatically created using this template** in newly registered user accounts.
 
-> **Important:** Turn this on only for your “default starter” template. Otherwise, new users may get agents they didn’t intend to create.
+<Warning>
+  Turn this on only for your “default starter” template. Otherwise, new users may get agents they didn’t intend to create.
+</Warning>
 
 ## Template status
 
@@ -169,7 +175,9 @@ Here’s a realistic way to structure a template for an inbound support agent:
 - Agent Name: “Front Desk”
 - Greeting Message: “Hello, thanks for calling. How can I help you today?”
 
-> **Tip:** If your subaccounts shouldn’t change core behavior, include the **System Prompt** but avoid exposing too many advanced toggles at the same time.
+<Tip>
+  If your subaccounts shouldn’t change core behavior, include the **System Prompt** but avoid exposing too many advanced toggles at the same time.
+</Tip>
 
 ## Notes and limitations
 

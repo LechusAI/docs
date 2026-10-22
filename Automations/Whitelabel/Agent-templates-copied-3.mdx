@@ -18,13 +18,23 @@ Puoi accedere alla pagina qui: [Modelli di agenti](https://app.callin.io/cms/age
 
 ## Creare un modello
 
-1. Apri **Modelli di agenti**.
-2. Clicca su **Crea modello**.
-3. Compila i dettagli del modello:
-   - **Nome del modello**: un nome chiaro che i subaccount riconosceranno.
-   - **Descrizione**: una breve spiegazione di a cosa serve il modello.
+<Steps>
+  <Step>
+    Apri **Modelli di agenti**.
+  </Step>
+  <Step>
+    Clicca su **Crea modello**.
+  </Step>
+  <Step>
+    Compila i dettagli del modello:
+    - **Nome del modello**: un nome chiaro che i subaccount riconosceranno.
+    - **Descrizione**: una breve spiegazione di a cosa serve il modello.
+  </Step>
+</Steps>
 
-> **Suggerimento:** Usa nomi che descrivono il caso d’uso, non il team. Esempio: **“Supporto clienti in entrata”** invece di **“Supporto - Team A”**.
+<Tip>
+  Usa nomi che descrivono il caso d’uso, non il team. Esempio: **“Supporto clienti in entrata”** invece di **“Supporto - Team A”**.
+</Tip>
 
 ## Scegliere cosa possono configurare i subaccount
 
@@ -47,7 +57,9 @@ Puoi includere campi come:
 - **Rilevamento segreteria telefonica**
 - **L’utente parla per primo**
 
-> **Importante:** Includi solo i campi che vuoi davvero far modificare ai subaccount. Meno campi di solito significa meno errori.
+<Warning>
+  Includi solo i campi che vuoi davvero far modificare ai subaccount. Meno campi di solito significa meno errori.
+</Warning>
 
 ### Voce e lingua
 
@@ -58,7 +70,9 @@ Puoi includere campi come:
 - **Velocità del parlato**
 - **Temperatura**
 
-> **Suggerimento:** Se supporti più aree geografiche, includi **Lingua principale** e **Fuso orario** così i subaccount possono adattare rapidamente senza snaturare l’intento del modello.
+<Tip>
+  Se supporti più aree geografiche, includi **Lingua principale** e **Fuso orario** così i subaccount possono adattare rapidamente senza snaturare l’intento del modello.
+</Tip>
 
 ### Azione di chiamata
 
@@ -75,7 +89,9 @@ Puoi includere campi come:
 - **Numero di tentativi**
 - **Ritardo tentativo (minuti)**
 
-> **Errore comune:** Includere **URL webhook** per i subaccount quando vuoi che resti controllato dalla tua organizzazione. Se ti serve un tracciamento centralizzato, limita i campi legati ai webhook.
+<Warning>
+  **Errore comune:** Includere **URL webhook** per i subaccount quando vuoi che resti controllato dalla tua organizzazione. Se ti serve un tracciamento centralizzato, limita i campi legati ai webhook.
+</Warning>
 
 ## Modelli pre-distribuiti
 
@@ -83,7 +99,9 @@ Potresti vedere un’opzione chiamata **Pre-distribuito**.
 
 Quando è abilitata, un agente può essere **creato automaticamente usando questo modello** per i nuovi account utente registrati (il comportamento può variare in base a account/piano).
 
-> **Importante:** Attivalo solo per il tuo modello “starter” predefinito. Altrimenti, i nuovi utenti potrebbero ritrovarsi agenti che non intendevano creare.
+<Warning>
+  Attivalo solo per il tuo modello “starter” predefinito. Altrimenti, i nuovi utenti potrebbero ritrovarsi agenti che non intendevano creare.
+</Warning>
 
 ## Stato del modello
 
@@ -110,7 +128,9 @@ Ecco un modo realistico per strutturare un modello per un agente di supporto in 
 - Voce
 - Trasferisci chiamata (solo se il tuo flusso prevede escalation)
 
-> **Suggerimento:** Se i subaccount non dovrebbero modificare il comportamento di base, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate contemporaneamente.
+<Tip>
+  Se i subaccount non dovrebbero modificare il comportamento di base, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate contemporaneamente.
+</Tip>
 
 ## Note e limitazioni
 

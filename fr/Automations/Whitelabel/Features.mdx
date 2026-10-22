@@ -17,23 +17,15 @@ Si vous ne créez pas d’abord les fonctionnalités ici, l’assistant des forf
 
 Vous la trouverez dans la Plateforme white label, dans **Plans et facturation** ([ouvrez-la ici](https://app.callin.io/cms/features-capabilities)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : la page vide → Créer Fonctionnalité/Capacité → une traduction en espagnol → une deuxième fonctionnalité dans une nouvelle catégorie → la liste groupée par catégorie → Modifier.
-</p>
+<Frame caption="Vidéo : la page vide → Créer Fonctionnalité/Capacité → une traduction en espagnol → une deuxième fonctionnalité dans une nouvelle catégorie → la liste groupée par catégorie → Modifier.">
+  <video autoPlay muted loop playsInline src="/images/wl-features.mp4" />
+</Frame>
 
 La liste regroupe vos fonctionnalités par **Catégorie**. Chaque ligne affiche le **Nom** et le **Type**. Utilisez **Rechercher des fonctionnalités et capacités…** pour en trouver une rapidement.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/features1.png" alt="Page Fonctionnalités et Capacités avec la recherche, le bouton Créer Fonctionnalité/Capacité et trois fonctionnalités groupées dans les catégories Limites, Options et Capacités" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : trois fonctionnalités d’exemple, une de chaque type, groupées par catégorie.
-</p>
+<Frame caption="Capture d’écran : trois fonctionnalités d’exemple, une de chaque type, groupées par catégorie.">
+  <img src="/images/features1.png" alt="Page Fonctionnalités et Capacités avec la recherche, le bouton Créer Fonctionnalité/Capacité et trois fonctionnalités groupées dans les catégories Limites, Options et Capacités" />
+</Frame>
 
 ## Comment les fonctionnalités sont utilisées dans les forfaits d’abonnement
 
@@ -45,23 +37,29 @@ Quand vous créez un forfait, l’étape **Vérifier et confirmer** comprend **C
 
 Le déroulement est donc :
 
-1. Créez une fonctionnalité (ici)
-2. Donnez une valeur à cette fonctionnalité dans chaque forfait (dans [Forfaits d’abonnement](/fr/Automations/Whitelabel/SubscriptionsPlans))
-3. La valeur du forfait est ce que reçoivent les sous-comptes qui utilisent ce forfait
+<Steps>
+  <Step>
+    Créez une fonctionnalité (ici)
+  </Step>
+  <Step>
+    Donnez une valeur à cette fonctionnalité dans chaque forfait (dans [Forfaits d’abonnement](/fr/Automations/Whitelabel/SubscriptionsPlans))
+  </Step>
+  <Step>
+    La valeur du forfait est ce que reçoivent les sous-comptes qui utilisent ce forfait
+  </Step>
+</Steps>
 
-> **Important :** Pour créer des forfaits, votre White Label doit avoir Stripe connecté. Vous pouvez créer des fonctionnalités à tout moment, même avant de connecter Stripe.
+<Warning>
+  Pour créer des forfaits, votre White Label doit avoir Stripe connecté. Vous pouvez créer des fonctionnalités à tout moment, même avant de connecter Stripe.
+</Warning>
 
 ## Créer une fonctionnalité ou une capacité
 
 Cliquez sur **Créer Fonctionnalité/Capacité** et remplissez ces champs. Les champs marqués d’un **\*** sont obligatoires. Quand vous avez terminé, cliquez sur **Créer**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-create.png" alt="Fenêtre Créer Fonctionnalité/Capacité avec les onglets Traductions, les champs Nom et Description, les trois façons dont les forfaits accordent la fonctionnalité, une nouvelle catégorie et les boutons Annuler et Créer" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la fenêtre Créer Fonctionnalité/Capacité remplie pour « Minutes par mois ».
-</p>
+<Frame caption="Capture d’écran : la fenêtre Créer Fonctionnalité/Capacité remplie pour « Minutes par mois ».">
+  <img src="/images/wl-features-create.png" alt="Fenêtre Créer Fonctionnalité/Capacité avec les onglets Traductions, les champs Nom et Description, les trois façons dont les forfaits accordent la fonctionnalité, une nouvelle catégorie et les boutons Annuler et Créer" />
+</Frame>
 
 ### Nom
 
@@ -79,9 +77,13 @@ Mauvais exemples (trop vagues) :
 - **Fonctionnalité 1**
 - **Accès**
 
-> **Astuce :** Utilisez des noms qui se lisent comme un avantage ou une règle claire. « Minutes par mois » est plus clair que « Minutes ».
+<Tip>
+  Utilisez des noms qui se lisent comme un avantage ou une règle claire. « Minutes par mois » est plus clair que « Minutes ».
+</Tip>
 
-> **Erreur fréquente :** Si **Créer** affiche une erreur avec `duplicate key value`, ce nom est déjà pris. Choisissez un nom plus précis (par exemple, « Option d’enregistrement des appels » au lieu de « Enregistrement des appels »).
+<Warning>
+  **Erreur fréquente :** Si **Créer** affiche une erreur avec `duplicate key value`, ce nom est déjà pris. Choisissez un nom plus précis (par exemple, « Option d’enregistrement des appels » au lieu de « Enregistrement des appels »).
+</Warning>
 
 ### Description
 
@@ -99,13 +101,9 @@ Les onglets du haut vous permettent de traduire le **Nom** et la **Description**
 - Les onglets de langue sont facultatifs. Les champs vides affichent en gris le texte de **Par défaut**.
 - Le type et la catégorie sont les mêmes pour toutes les langues.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-features-translations.png" alt="Fenêtre Créer Fonctionnalité/Capacité sur l’onglet Español, avec le nom et la description en espagnol" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : l’onglet Español avec le nom et la description en espagnol de la même fonctionnalité.
-</p>
+<Frame caption="Capture d’écran : l’onglet Español avec le nom et la description en espagnol de la même fonctionnalité.">
+  <img src="/images/wl-features-translations.png" alt="Fenêtre Créer Fonctionnalité/Capacité sur l’onglet Español, avec le nom et la description en espagnol" />
+</Frame>
 
 ### Comment les formules accordent-elles cette fonctionnalité ?
 
@@ -153,7 +151,9 @@ Idéal pour :
 
 - Les droits du type « choisissez un de ces packs » ou « choisissez un niveau »
 
-> **Erreur fréquente :** Choisir **toggle** pour quelque chose qui devrait être un nombre (comme les minutes). Si cela peut varier selon le forfait, c’est généralement un **limit**.
+<Warning>
+  **Erreur fréquente :** Choisir **toggle** pour quelque chose qui devrait être un nombre (comme les minutes). Si cela peut varier selon le forfait, c’est généralement un **limit**.
+</Warning>
 
 ### Catégorie
 
@@ -168,7 +168,9 @@ Catégories pratiques :
 - **Options** (enregistrement, portail à votre marque, etc.)
 - **Capacités** (packs de voix, modes de routage, intégrations… selon ce que vous proposez)
 
-> **Astuce :** Gardez des catégories cohérentes entre les fonctionnalités. Si vous créez « Limite » et « Limites », le regroupement sera désordonné.
+<Tip>
+  Gardez des catégories cohérentes entre les fonctionnalités. Si vous créez « Limite » et « Limites », le regroupement sera désordonné.
+</Tip>
 
 ## Exemple pratique (configuration réaliste)
 
@@ -179,10 +181,16 @@ Imaginez que vous vendez deux niveaux à vos sous-comptes :
 
 Créez ces fonctionnalités dans **Fonctionnalités et Capacités** :
 
-1. **Minutes par mois** → **Limite d'utilisation (limit)**, catégorie **Limites**\
-   Description : « Minutes d’appel incluses chaque mois dans le forfait. »
-2. **Option d’enregistrement des appels** → **Activé / Désactivé (toggle)**, catégorie **Options**\
-   Description : « Enregistre les appels traités par les agents. »
+<Steps>
+  <Step>
+    **Minutes par mois** → **Limite d'utilisation (limit)**, catégorie **Limites**\
+    Description : « Minutes d’appel incluses chaque mois dans le forfait. »
+  </Step>
+  <Step>
+    **Option d’enregistrement des appels** → **Activé / Désactivé (toggle)**, catégorie **Options**\
+    Description : « Enregistre les appels traités par les agents. »
+  </Step>
+</Steps>
 
 Ensuite, dans **Forfaits d’abonnement** :
 
@@ -202,4 +210,6 @@ Dans la liste, cliquez sur **⋮** sur la ligne de la fonctionnalité :
 - **Modifier** ouvre **Modifier Fonctionnalité/Capacité**, avec les mêmes champs : **Nom**, **Description**, traductions, type et **Catégorie**. Cliquez sur **Mettre à jour** pour enregistrer.
 - **Supprimer** efface la fonctionnalité. Cette action ne peut pas être annulée.
 
-> **Important :** Changer le type d’une fonctionnalité déjà utilisée dans des forfaits peut modifier la façon dont les forfaits enregistrent ou affichent cette valeur. En cas de doute, créez une nouvelle fonctionnalité et passez vos forfaits dessus.
+<Warning>
+  Changer le type d’une fonctionnalité déjà utilisée dans des forfaits peut modifier la façon dont les forfaits enregistrent ou affichent cette valeur. En cas de doute, créez une nouvelle fonctionnalité et passez vos forfaits dessus.
+</Warning>

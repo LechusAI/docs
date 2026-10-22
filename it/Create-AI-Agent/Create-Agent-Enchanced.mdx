@@ -10,25 +10,17 @@ La pagina **Agenti AI** è il posto in cui crei e gestisci gli agenti che rispon
 
 L'editor di ogni agente è organizzato in nove schede in alto: **Agente**, **Flusso di lavoro**, **Base di conoscenza**, **Conversazione**, **Analisi**, **Strumenti**, **Azione chiamata**, **Widget del sito web** e **Avanzate**. Questa pagina ti spiega come creare un agente e cosa puoi fare in ogni scheda.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: un rapido giro tra le nove schede dell’editor dell’agente.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-tour.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: un rapido giro tra le nove schede dell’editor dell’agente.
-</p>
+Tutto parte dall’elenco degli agenti, dove ogni riga è uno dei tuoi agenti:
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la pagina Agenti AI. Ogni riga è un agente, con le azioni rapide a destra.">
   <img
     src="/images/agentesia1.png"
-    alt="La pagina Agenti AI di Callin.io con il pulsante Crea agente, la barra di ricerca, i filtri Direzione e Ordina e l'elenco degli agenti."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la pagina Agenti AI. Ogni riga è un agente, con le azioni rapide a destra.
-</p>
+    alt="La pagina Agenti AI di Callin.io con il pulsante Crea agente, la barra di ricerca, i filtri Direzione e Ordina e l'elenco degli agenti." />
+</Frame>
 
 ### L'elenco degli agenti
 
@@ -44,43 +36,45 @@ A destra di ogni riga hai tre azioni rapide:
 - **Prova l'agente IA** — ti permette di parlare con l'agente dal browser.
 - **Altre opzioni** (⋮) — **Copia ID**, **Clona**, **Modifica**, **Assegna numero**, **Visualizza calendario eventi** ed **Elimina**.
 
-> **Suggerimento:** Usa **Clona** per provare le modifiche su una copia prima di toccare un agente che sta già gestendo chiamate reali.
+<Tip>
+  Usa **Clona** per provare le modifiche su una copia prima di toccare un agente che sta già gestendo chiamate reali.
+</Tip>
 
 ### Creare un nuovo agente
 
 Fai clic su **Crea agente**, in alto a destra. Callin.io ti chiede come vuoi iniziare.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: scegli come iniziare il tuo nuovo agente.">
   <img
     src="/images/ai-agents-new-agent.png"
-    alt="La schermata Nuovo agente con tre opzioni: Inizia da zero, Sfoglia i nostri modelli e Modelli predefiniti."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: scegli come iniziare il tuo nuovo agente.
-</p>
+    alt="La schermata Nuovo agente con tre opzioni: Inizia da zero, Sfoglia i nostri modelli e Modelli predefiniti." />
+</Frame>
 
 **Inizia da zero** crea un agente con un prompt e un saluto di base che poi adatti nell'editor. Sceglilo quando sai già cosa deve fare l'agente. Devi solo inserire il **Nome agente** (fino a 50 caratteri) e scegliere lo **Stack dell'agente**.
 
 **Sfoglia i nostri modelli** parte da un agente già pronto per un tipo di attività e un caso d'uso specifici. È il modo più rapido per avere una prima versione funzionante:
 
-1. **Settore** — scegli quello che descrive meglio la tua attività: Retail & E-commerce, Sanità & Medicale, Finanza & Banking, Immobiliare, Istruzione & Formazione, Hospitality & Viaggi, Automotive, Servizi professionali, Tecnologia & Software, Pubblica amministrazione, Food & Beverage, Manifattura, Fitness & Benessere, Servizi legali, Non profit o Media & Intrattenimento.
-2. **Caso d'uso** — scegli in cosa aiuterà l'agente. Le opzioni dipendono dal settore. Per esempio, Sanità & Medicale offre Assistenza clienti, Fissare appuntamenti, Accettazione pazienti, Verifica assicurazione, Promemoria ricette e altro.
-3. **Completa il tuo agente** — inserisci il **Nome agente**, scegli lo **Stack dell'agente** e compila:
-   - **Sito web** *(opzionale)* — l'indirizzo del tuo sito. Callin.io legge solo le informazioni pubbliche per personalizzare l'agente.
-   - **Obiettivo principale** — in massimo 300 caratteri, cosa deve ottenere l'agente in ogni chiamata.
+<Steps>
+  <Step>
+    **Settore** — scegli quello che descrive meglio la tua attività: Retail & E-commerce, Sanità & Medicale, Finanza & Banking, Immobiliare, Istruzione & Formazione, Hospitality & Viaggi, Automotive, Servizi professionali, Tecnologia & Software, Pubblica amministrazione, Food & Beverage, Manifattura, Fitness & Benessere, Servizi legali, Non profit o Media & Intrattenimento.
+  </Step>
+  <Step>
+    **Caso d'uso** — scegli in cosa aiuterà l'agente. Le opzioni dipendono dal settore. Per esempio, Sanità & Medicale offre Assistenza clienti, Fissare appuntamenti, Accettazione pazienti, Verifica assicurazione, Promemoria ricette e altro.
+  </Step>
+  <Step>
+    **Completa il tuo agente** — inserisci il **Nome agente**, scegli lo **Stack dell'agente** e compila:
+    - **Sito web** *(opzionale)* — l'indirizzo del tuo sito. Callin.io legge solo le informazioni pubbliche per personalizzare l'agente.
+    - **Obiettivo principale** — in massimo 300 caratteri, cosa deve ottenere l'agente in ogni chiamata.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Sfoglia i nostri modelli → settore → caso d’uso → completare l’agente.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Sfoglia i nostri modelli → settore → caso d’uso → completare l’agente.
-</p>
-
-> **Suggerimento:** Scrivi l'**Obiettivo principale** come un unico risultato chiaro, per esempio "Prenotare, confermare o spostare gli appuntamenti dei pazienti e rispondere alle domande sugli orari". Più l'obiettivo è chiaro, migliore sarà la prima versione del prompt.
+<Tip>
+  Scrivi l'**Obiettivo principale** come un unico risultato chiaro, per esempio "Prenotare, confermare o spostare gli appuntamenti dei pazienti e rispondere alle domande sugli orari". Più l'obiettivo è chiaro, migliore sarà la prima versione del prompt.
+</Tip>
 
 **Modelli predefiniti** *(Beta)* usa modelli creati dalla tua organizzazione, così ogni nuovo agente parte con la configurazione standard della tua azienda. Ogni scheda mostra il nome del modello, una breve descrizione e quanti campi compila (per esempio *Nome agente*, *Prompt*, *Messaggio di benvenuto*, *Direzione*). Scegline uno, controlla il **Nome agente**, scegli lo **Stack dell'agente** e fai clic su **Crea agente**. Se la tua organizzazione non ha ancora creato modelli, l'elenco è vuoto.
 
@@ -94,7 +88,9 @@ Lo **Stack dell'agente** decide quale voce e quale tecnologia di IA usa l'agente
 
 Fai clic su **Crea agente** per finire. L'agente si apre direttamente nel suo editor, nella scheda **Agente**.
 
-> **Importante:** Le sezioni seguenti descrivono un agente creato con lo stack **Voce premium**. Gli agenti con altri stack possono mostrare opzioni diverse.
+<Warning>
+  Le sezioni seguenti descrivono un agente creato con lo stack **Voce premium**. Gli agenti con altri stack possono mostrare opzioni diverse.
+</Warning>
 
 ### Salvare le modifiche
 
@@ -105,17 +101,11 @@ Quando cambi qualcosa nell'editor, in basso compare una barra con il messaggio *
 
 Finché ci sono modifiche non salvate, **Chiamata di prova** è disattivato. Se c'è qualcosa da correggere prima di salvare (per esempio un flusso incompleto), la barra ti dice cosa manca oppure mostra il pulsante **Visualizza errori**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la barra delle modifiche non salvate. Salva per conservarle oppure annullale.">
   <img
     src="/images/ai-agents-unsaved-changes.png"
-    alt="L'editor dell'agente con la barra delle modifiche non salvate e i pulsanti per annullare e salvare in basso."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la barra delle modifiche non salvate. Salva per conservarle oppure annullale.
-</p>
+    alt="L'editor dell'agente con la barra delle modifiche non salvate e i pulsanti per annullare e salvare in basso." />
+</Frame>
 
 ### Provare il tuo agente
 
@@ -125,23 +115,19 @@ Usa i pulsanti in alto a destra dell'editor per provare senza uscire dalla pagin
 - **Prova l'agente IA** — ti permette di parlare con l'agente dal browser.
 - **Console** — apre la console per sviluppatori.
 
-> **Suggerimento:** La prima volta percorri le schede in ordine e prova dopo ogni modifica importante. Un buon agente deve suonare bene in una chiamata reale, non solo sembrare a posto nell'editor.
+<Tip>
+  La prima volta percorri le schede in ordine e prova dopo ogni modifica importante. Un buon agente deve suonare bene in una chiamata reale, non solo sembrare a posto nell'editor.
+</Tip>
 
 ## Sezione 1: Agente
 
 La scheda **Agente** è dove definisci l'identità e il comportamento principale del tuo assistente: cosa dice, quale voce e lingua usa, quale modello di IA lo alimenta e se risponde alle chiamate in entrata, fa chiamate in uscita o entrambe.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Agente, dove imposti il prompt, la voce, la lingua, il modello e la direzione della chiamata.">
   <img
     src="/images/agentesia2.png"
-    alt="La scheda Agente con l'editor del Prompt conversazionale a sinistra e i pannelli Voce, Lingua, Intelligenza IA (LLM) e Direzione chiamata a destra."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Agente, dove imposti il prompt, la voce, la lingua, il modello e la direzione della chiamata.
-</p>
+    alt="La scheda Agente con l'editor del Prompt conversazionale a sinistra e i pannelli Voce, Lingua, Intelligenza IA (LLM) e Direzione chiamata a destra." />
+</Frame>
 
 ### Prompt di conversazione
 
@@ -161,7 +147,9 @@ Dopo queste tre, aggiungi regole operative che guidino le decisioni dell'agente 
 - Rispondi in modo breve, a meno che l'utente non chieda più dettagli.
 - Non inventare risposte. Se l'informazione non è chiara, dillo.
 
-> **Suggerimento:** Scrivi il prompt come se stessi spiegando il lavoro a un nuovo collega al primo giorno. Operativo e chiaro, non decorativo.
+<Tip>
+  Scrivi il prompt come se stessi spiegando il lavoro a un nuovo collega al primo giorno. Operativo e chiaro, non decorativo.
+</Tip>
 
 ### Aggiungi variabili e variabili dinamiche
 
@@ -200,7 +188,9 @@ Alcuni esempi:
 
 **Consenti interruzioni**, accanto al saluto, permette a chi chiama di interrompere l'agente mentre pronuncia il primo messaggio. È attivato per impostazione predefinita, cosa che risulta naturale nella maggior parte dei flussi di supporto, reception e assistenza clienti.
 
-> **Errore comune:** Lasciare attive le interruzioni quando il saluto contiene informazioni che chi chiama deve sentire per intero, come un avviso legale o l'avviso di registrazione. In questo caso, disattivale.
+<Warning>
+  **Errore comune:** Lasciare attive le interruzioni quando il saluto contiene informazioni che chi chiama deve sentire per intero, come un avviso legale o l'avviso di registrazione. In questo caso, disattivale.
+</Warning>
 
 ### Voce
 
@@ -278,17 +268,11 @@ La scheda **Flusso di lavoro** è dove decidi come si sviluppa la conversazione.
 
 Lo costruisci su una tela visiva posizionando nodi e collegandoli. Usa i pulsanti in alto a sinistra per ingrandire, ridurre e adattare tutto il flusso allo schermo, e quelli in alto a destra per la visualizzazione a schermo intero o per eliminare il flusso.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: un flusso con due percorsi dall'inizio. Il pannello a destra mostra cosa manca e le impostazioni del nodo selezionato.">
   <img
     src="/images/agentesia3.png"
-    alt="La scheda Flusso di lavoro con un nodo Inizio collegato a un Subagente e a un nodo di trasferimento verso un numero di telefono, un nodo Fine, il pannello Completa la configurazione del workflow e le impostazioni del Subagente a destra."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: un flusso con due percorsi dall'inizio. Il pannello a destra mostra cosa manca e le impostazioni del nodo selezionato.
-</p>
+    alt="La scheda Flusso di lavoro con un nodo Inizio collegato a un Subagente e a un nodo di trasferimento verso un numero di telefono, un nodo Fine, il pannello Completa la configurazione del workflow e le impostazioni del Subagente a destra." />
+</Frame>
 
 ### Cosa puoi costruire qui
 
@@ -308,13 +292,9 @@ Per aggiungere un nodo, trascina un collegamento da un nodo esistente (per esemp
 
 Il nuovo nodo compare collegato al precedente e le sue impostazioni si aprono nel pannello a destra.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: crea un flusso con due percorsi da Inizio: un Sottoagente che prenota gli appuntamenti e poi chiude la chiamata, e un trasferimento a un numero di telefono.
-</p>
+<Frame caption="Video: crea un flusso con due percorsi da Inizio: un Sottoagente che prenota gli appuntamenti e poi chiude la chiamata, e un trasferimento a un numero di telefono.">
+  <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" />
+</Frame>
 
 ### Inizio
 
@@ -408,23 +388,19 @@ Quando nessun nodo è selezionato, il pannello a destra mostra le **Impostazioni
 
 Per disattivare un flusso senza eliminarlo, scollega il nodo **Inizio**. Senza un inizio collegato, il flusso non ha un punto di ingresso e non viene eseguito.
 
-> **Errore comune:** Un flusso che sembra completo sulla tela può comunque fallire nella pratica. Prova ogni percorso con una conversazione reale prima di pubblicarlo.
+<Warning>
+  **Errore comune:** Un flusso che sembra completo sulla tela può comunque fallire nella pratica. Prova ogni percorso con una conversazione reale prima di pubblicarlo.
+</Warning>
 
 ## Sezione 3: Base di conoscenza
 
 La scheda **Base di conoscenza** dà al tuo agente informazioni aggiuntive per rispondere alle domande. È ideale per contenuti lunghi o dettagliati —come manuali, FAQ o policy— che non entrano nel prompt principale.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Base di conoscenza. Aggiungi i documenti che questo agente può usare per rispondere.">
   <img
     src="/images/agentesia4.png"
-    alt="La scheda Base di conoscenza di un agente con il pulsante per aggiungere documenti e l'elenco dei documenti che l'agente può usare."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Base di conoscenza. Aggiungi i documenti che questo agente può usare per rispondere.
-</p>
+    alt="La scheda Base di conoscenza di un agente con il pulsante per aggiungere documenti e l'elenco dei documenti che l'agente può usare." />
+</Frame>
 
 ### A cosa serve questa scheda
 
@@ -476,26 +452,28 @@ Nel gestore della Base di conoscenza puoi passare da **File** a **Web**, cercare
 
 Il modo più ordinato di lavorare è separare la creazione dalla selezione:
 
-1. Crea e organizza i tuoi documenti nel gestore della Base di conoscenza.
-2. Torna in questa scheda e aggiungi i documenti di cui l'agente ha bisogno.
+<Steps>
+  <Step>
+    Crea e organizza i tuoi documenti nel gestore della Base di conoscenza.
+  </Step>
+  <Step>
+    Torna in questa scheda e aggiungi i documenti di cui l'agente ha bisogno.
+  </Step>
+</Steps>
 
-> **Suggerimento:** Tieni le regole di comportamento nel prompt e i contenuti di riferimento nella Base di conoscenza. Questa separazione rende gli aggiornamenti molto più semplici.
+<Tip>
+  Tieni le regole di comportamento nel prompt e i contenuti di riferimento nella Base di conoscenza. Questa separazione rende gli aggiornamenti molto più semplici.
+</Tip>
 
 ## Sezione 4: Conversazione
 
 La scheda **Conversazione** elenca tutte le chiamate gestite da questo agente, in entrata e in uscita. È qui che controlli cosa è successo in ogni chiamata. Ha due sottoschede: **Conversazioni** (chiamate telefoniche e web) e **Sessioni Google Meet**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Conversazione. Cerca nelle trascrizioni e filtra le chiamate dell'agente.">
   <img
     src="/images/ai-agents-conversation.png"
-    alt="La scheda Conversazione con le sottoschede Conversazioni e Sessioni Google Meet, la ricerca nelle trascrizioni e i filtri delle chiamate dell'agente."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Conversazione. Cerca nelle trascrizioni e filtra le chiamate dell'agente.
-</p>
+    alt="La scheda Conversazione con le sottoschede Conversazioni e Sessioni Google Meet, la ricerca nelle trascrizioni e i filtri delle chiamate dell'agente." />
+</Frame>
 
 ### Ricerca e filtri
 
@@ -508,23 +486,19 @@ Finché l'agente non fa o riceve la sua prima chiamata, la scheda mostra *Nessun
 
 Questa sottoscheda elenca le riunioni Google Meet a cui l’agente ha partecipato (con il pulsante **Partecipa a Meet**, in alto nell’editor). Cerca per URL o codice di accesso della riunione e filtra l’elenco per **Stato**. Se l’agente non ha partecipato a nessuna riunione, vedrai *Nessuna sessione Google Meet trovata*.
 
-> **Suggerimento:** Dopo aver modificato il prompt o il flusso, fai qualche chiamata di prova e controllala qui. Leggere le trascrizioni è il modo più veloce per capire dove l'agente esce dal percorso.
+<Tip>
+  Dopo aver modificato il prompt o il flusso, fai qualche chiamata di prova e controllala qui. Leggere le trascrizioni è il modo più veloce per capire dove l'agente esce dal percorso.
+</Tip>
 
 ## Sezione 5: Analisi
 
 La scheda **Analisi** mostra come sta andando questo agente, rispetto al periodo precedente della stessa durata.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Analisi. Scegli il periodo e come raggruppare i dati.">
   <img
     src="/images/ai-agents-analytics.png"
-    alt="La scheda Analisi con i selettori del periodo e del raggruppamento."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Analisi. Scegli il periodo e come raggruppare i dati.
-</p>
+    alt="La scheda Analisi con i selettori del periodo e del raggruppamento." />
+</Frame>
 
 ### Periodo e raggruppamento
 
@@ -539,17 +513,11 @@ La scheda **Strumenti** decide cosa può *fare* il tuo agente durante la chiamat
 
 La scheda ha due sottoschede: **Strumenti**, per i tuoi strumenti personalizzati e gli **Strumenti di sistema**, e **MCP**, per i server MCP.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Strumenti. Aggiungi strumenti personalizzati a sinistra e attiva o disattiva quelli di sistema a destra.">
   <img
     src="/images/agentesia5.png"
-    alt="La scheda Strumenti con il pulsante per aggiungere strumenti a sinistra e l'elenco degli strumenti di sistema a destra, incluso Accesso ai dati immobiliari."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Strumenti. Aggiungi strumenti personalizzati a sinistra e attiva o disattiva quelli di sistema a destra.
-</p>
+    alt="La scheda Strumenti con il pulsante per aggiungere strumenti a sinistra e l'elenco degli strumenti di sistema a destra, incluso Accesso ai dati immobiliari." />
+</Frame>
 
 Accesso rapido:
 
@@ -573,17 +541,11 @@ Il pulsante **Aggiungi strumento** apre un selettore in cui puoi cercare i tuoi 
 
 La sottoscheda **MCP** ti permette di collegare server MCP (Model Context Protocol) per dare al tuo agente strumenti e integrazioni aggiuntivi senza doverli creare uno per uno.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la sottoscheda MCP. Collega server MCP all'agente.">
   <img
     src="/images/ai-agents-mcp.png"
-    alt="La sottoscheda MCP della scheda Strumenti con il pulsante per aggiungere un MCP."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la sottoscheda MCP. Collega server MCP all'agente.
-</p>
+    alt="La sottoscheda MCP della scheda Strumenti con il pulsante per aggiungere un MCP." />
+</Frame>
 
 Fai clic su **Aggiungi MCP** per cercare i server MCP disponibili nel tuo account e collegarne uno all'agente. Se non ce ne sono ancora, fai clic su **Gestisci MCP** per configurarli.
 
@@ -659,23 +621,19 @@ Non attivare tutto. Scegli ciò che si adatta al tuo caso:
 - Un agente che passa le chiamate alle persone usa **Trasferisci a numero** con regole di trasferimento chiare.
 - Un agente in uscita usa spesso **Segreteria intelligente**, **Riaggancio smart** e **Cambio lingua**.
 
-> **Errore comune:** Attivare troppi strumenti insieme. Il comportamento diventa più difficile da prevedere, da provare e da mantenere.
+<Warning>
+  **Errore comune:** Attivare troppi strumenti insieme. Il comportamento diventa più difficile da prevedere, da provare e da mantenere.
+</Warning>
 
 ## Sezione 7: Azione di chiamata
 
 La scheda **Azione chiamata** è dove l'agente smette di essere solo una voce e inizia a produrre risultati utili: prenotazioni, email di follow-up, ticket, dati strutturati e record sincronizzati, durante e dopo la chiamata.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Azione chiamata. Attiva solo le azioni che il tuo team userà davvero.">
   <img
     src="/images/agentesia6.png"
-    alt="La scheda Azione chiamata con gli interruttori di Pianificazione appuntamenti, Email di riepilogo post-chiamata, Opt-out intelligente e Tracciamento problemi e reclami, il campo del webhook e il selettore Lingua del riepilogo."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Azione chiamata. Attiva solo le azioni che il tuo team userà davvero.
-</p>
+    alt="La scheda Azione chiamata con gli interruttori di Pianificazione appuntamenti, Email di riepilogo post-chiamata, Opt-out intelligente e Tracciamento problemi e reclami, il campo del webhook e il selettore Lingua del riepilogo." />
+</Frame>
 
 Accesso rapido:
 
@@ -693,7 +651,9 @@ Quando la attivi, il pannello **Configurazione pianificazione** ti chiede un **F
 
 Poi scegli il calendario e il modello di prenotazione che l'agente deve usare. Puoi creare più modelli di prenotazione per calendario e assegnare modelli di calendari diversi ad agenti diversi.
 
-> **Importante:** Il fuso orario dell'agente e quello del calendario devono coincidere. Altrimenti l'agente proporrà o confermerà orari sbagliati.
+<Warning>
+  Il fuso orario dell'agente e quello del calendario devono coincidere. Altrimenti l'agente proporrà o confermerà orari sbagliati.
+</Warning>
 
 ### Email di riepilogo dopo la chiamata
 
@@ -756,7 +716,9 @@ Puoi configurare:
 - **Tentativi di richiamo (numero)** — quante volte il sistema deve riprovare prima di fermarsi (predefinito: **0**, nessun nuovo tentativo).
 - **Tempo di attesa tra i tentativi (minuti)** — quanti minuti attendere tra un tentativo e l'altro (predefinito: **30**).
 
-> **Suggerimento:** Attiva solo le azioni che il tuo team userà davvero. Ogni automazione che attivi è un piccolo impegno di manutenzione. Poche azioni ben scelte sono meglio di un lungo elenco usato a metà.
+<Tip>
+  Attiva solo le azioni che il tuo team userà davvero. Ogni automazione che attivi è un piccolo impegno di manutenzione. Poche azioni ben scelte sono meglio di un lungo elenco usato a metà.
+</Tip>
 
 ## Sezione 8: Widget per sito web
 
@@ -764,17 +726,11 @@ La scheda **Widget del sito web** ti permette di pubblicare il tuo agente su una
 
 Questa scheda unisce due cose: lo snippet tecnico di incorporamento e la personalizzazione visiva e testuale dell'esperienza.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Widget del sito web. Copia lo snippet e personalizza l'aspetto e il comportamento del widget.">
   <img
     src="/images/agentesia7.png"
-    alt="La scheda Widget del sito web con lo snippet di incorporamento, il pulsante Copia e le opzioni di Layout e comportamento: modalità widget, tema e modalità conversazione."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Widget del sito web. Copia lo snippet e personalizza l'aspetto e il comportamento del widget.
-</p>
+    alt="La scheda Widget del sito web con lo snippet di incorporamento, il pulsante Copia e le opzioni di Layout e comportamento: modalità widget, tema e modalità conversazione." />
+</Frame>
 
 ### Frammento di integrazione
 
@@ -877,7 +833,9 @@ Alcune combinazioni che funzionano bene:
 - **Supporto sul sito** — Launcher flottante, **Solo chat** o **Voce + Chat**, variante **Compatto** e testi orientati all'aiuto.
 - **Esperienza basata sulla voce** — Incorporamento inline, **Solo voce**, dial più grande, pulsante mute visibile ed etichette brevi e dirette.
 
-> **Suggerimento:** Prima di pubblicare, controlla sempre il widget sulla pagina reale. Dimensioni, colori ed etichette spesso sembrano diversi fuori dall'editor.
+<Tip>
+  Prima di pubblicare, controlla sempre il widget sulla pagina reale. Dimensioni, colori ed etichette spesso sembrano diversi fuori dall'editor.
+</Tip>
 
 ## Sezione 9: Avanzate
 
@@ -885,17 +843,11 @@ La scheda **Avanzate** è dove affini l'agente: come acquisisce l'audio, come ge
 
 La maggior parte degli agenti funziona bene senza toccare nulla qui. Apri questa scheda quando vuoi più precisione o quando qualcosa di specifico non va del tutto bene.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la scheda Avanzate. La maggior parte degli agenti funziona bene con i valori predefiniti.">
   <img
     src="/images/agentesia8.png"
-    alt="La scheda Avanzate con il blocco Memoria (Ricorda chi chiama), il blocco Voce e comprensione e il blocco Flusso di conversazione."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la scheda Avanzate. La maggior parte degli agenti funziona bene con i valori predefiniti.
-</p>
+    alt="La scheda Avanzate con il blocco Memoria (Ricorda chi chiama), il blocco Voce e comprensione e il blocco Flusso di conversazione." />
+</Frame>
 
 La scheda è divisa in sette blocchi: **Memoria**, **Voce e comprensione**, **Flusso di conversazione**, **Suono di sottofondo**, **Timeout soft**, **Privacy e dati** ed **Extra telefonia**.
 
@@ -903,7 +855,9 @@ La scheda è divisa in sette blocchi: **Memoria**, **Voce e comprensione**, **Fl
 
 **Ricorda chi chiama** salva i dettagli utili dopo ogni chiamata e li usa la volta successiva in cui l’agente riconosce la stessa persona. Per impostazione predefinita, ogni persona viene riconosciuta dal numero da cui chiama. È disattivato per impostazione predefinita.
 
-> **Suggerimento:** Attivalo negli agenti che parlano spesso con gli stessi clienti, come quelli di assistenza o di appuntamenti, così chi chiama non deve ripetere i propri dati.
+<Tip>
+  Attivalo negli agenti che parlano spesso con gli stessi clienti, come quelli di assistenza o di appuntamenti, così chi chiama non deve ripetere i propri dati.
+</Tip>
 
 ### Voce e comprensione
 
@@ -952,7 +906,9 @@ Quanti secondi di silenzio devono passare prima che la chiamata termini automati
 
 La durata massima di una singola chiamata, in minuti (predefinito: **10**). È una rete di sicurezza per mantenere le chiamate concise ed evitare che durino all'infinito.
 
-> **Suggerimento:** Se non sai cosa impostare nei campi di silenzio e durata, lasciali al valore predefinito e regolali solo dopo aver provato chiamate reali.
+<Tip>
+  Se non sai cosa impostare nei campi di silenzio e durata, lasciali al valore predefinito e regolali solo dopo aver provato chiamate reali.
+</Tip>
 
 ### Suono di sottofondo
 
@@ -996,4 +952,6 @@ Quando **Rotazione dei Numeri** è attiva e il tuo account ha dei numeri, scegli
 
 **Limitazione Basata sullo Stato** aumenta il tasso di risposta facendo chiamare ogni contatto da un numero del suo stesso stato. Al momento supporta solo numeri locali degli Stati Uniti: verifica che il tuo account abbia una numerazione locale compatibile prima di attivarla.
 
-> **Importante:** Modifica le impostazioni avanzate solo quando hai un motivo chiaro e puoi provare il risultato con chiamate reali. Le modifiche casuali di solito creano nuovi problemi invece di risolvere quello vecchio.
+<Warning>
+  Modifica le impostazioni avanzate solo quando hai un motivo chiaro e puoi provare il risultato con chiamate reali. Le modifiche casuali di solito creano nuovi problemi invece di risolvere quello vecchio.
+</Warning>

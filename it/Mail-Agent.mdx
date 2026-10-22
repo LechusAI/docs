@@ -15,7 +15,9 @@ Un **agente mail** è un assistente che controlla una casella di posta al posto 
 
 Configurare il primo agente richiede una decina di minuti e non servono competenze tecniche.
 
-> **Nota:** Il Gestore email IA è contrassegnato come **Beta**. È ancora in crescita, quindi alcune schermate potrebbero apparire un po' diverse nel tuo account.
+<Note>
+  Il Gestore email IA è contrassegnato come **Beta**. È ancora in crescita, quindi alcune schermate potrebbero apparire un po' diverse nel tuo account.
+</Note>
 
 ## Cosa ti serve prima di iniziare
 
@@ -30,33 +32,39 @@ Non serve avere la casella pronta adesso. Puoi creare prima l'agente e collegare
 
 Apri **Agenti mail**. È l'elenco di tutti gli agenti che hai creato. Clicca su **Crea agente** in alto a destra.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mailagents1.png" alt="Elenco Agenti mail con quattro agenti, ciascuno con l'avviso Nessuna email assegnata, una casella di ricerca e il pulsante Crea agente" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  L'elenco Agenti mail. Ogni agente mostra il nome, la data di creazione e un avviso arancione finché non ha una casella collegata.
-</p>
+<Frame caption="L'elenco Agenti mail. Ogni agente mostra il nome, la data di creazione e un avviso arancione finché non ha una casella collegata.">
+  <img src="/images/mailagents1.png" alt="Elenco Agenti mail con quattro agenti, ciascuno con l'avviso Nessuna email assegnata, una casella di ricerca e il pulsante Crea agente" />
+</Frame>
 
 Si apre una breve procedura guidata in cinque passi:
 
-1. **Nomina l'agente mail**: un nome che il tuo team riconosca, come "Assistenza ordini" o "Casella vendite". Fino a 50 caratteri.
-2. **Prompt di sistema**: come l'agente deve gestire le email. Facoltativo.
-3. **Categorie email**: etichette per classificare la posta in arrivo. Facoltativo.
-4. **Regole di automazione**: quali mittenti ricevono risposte automatiche e chi riceve una copia.
-5. **Collega email**: la casella di cui si occuperà l'agente.
+<Steps>
+  <Step>
+    **Nomina l'agente mail**: un nome che il tuo team riconosca, come "Assistenza ordini" o "Casella vendite". Fino a 50 caratteri.
+  </Step>
+  <Step>
+    **Prompt di sistema**: come l'agente deve gestire le email. Facoltativo.
+  </Step>
+  <Step>
+    **Categorie email**: etichette per classificare la posta in arrivo. Facoltativo.
+  </Step>
+  <Step>
+    **Regole di automazione**: quali mittenti ricevono risposte automatiche e chi riceve una copia.
+  </Step>
+  <Step>
+    **Collega email**: la casella di cui si occuperà l'agente.
+  </Step>
+</Steps>
 
 Ogni passo dopo il nome ha **Salta**, e puoi cambiare tutto in seguito dalle schede dell'agente.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: i cinque passi della procedura guidata, dal nome al collegamento della casella.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-create.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: i cinque passi della procedura guidata, dal nome al collegamento della casella.
-</p>
-
-> **Importante:** L'agente viene creato quando superi il passo **Categorie email**. Se chiudi la procedura dopo quel passo, l'agente resta nell'elenco. Da lì puoi completarlo o eliminarlo.
+<Warning>
+  L'agente viene creato quando superi il passo **Categorie email**. Se chiudi la procedura dopo quel passo, l'agente resta nell'elenco. Da lì puoi completarlo o eliminarlo.
+</Warning>
 
 Sotto il nome, nell'elenco, vedrai **Nessuna email assegnata** in arancione. È normale: non c'è ancora una casella collegata. Lo risolverai al passo 4.
 
@@ -68,13 +76,9 @@ Ogni riga ha un menu **⋮** con tre azioni:
 
 La configurazione dell'agente ha quattro schede: **Agente**, **Categorie**, **Casella** e **Avanzate**. I passi successivi le seguono in ordine. Puoi rinominare l'agente dal campo di testo in alto.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Modifica un agente → scrivi il prompt conversazionale → scegli il modello → aggiungi una categoria → controlla la scheda Avanzate.
-</p>
+<Frame caption="Video: Modifica un agente → scrivi il prompt conversazionale → scegli il modello → aggiungi una categoria → controlla la scheda Avanzate.">
+  <video autoPlay muted loop playsInline src="/images/mail-agent-configure.mp4" />
+</Frame>
 
 ## Passo 2 — Spiega all'agente come comportarsi
 
@@ -92,7 +96,9 @@ Più sei preciso, più i risultati saranno prevedibili. Una versione più utile 
 
 Il contatore in basso a destra mostra quanto hai usato dei 4000 caratteri. Le modifiche salvate si applicano alle nuove email in arrivo.
 
-> **Suggerimento:** Scrivi cosa l'agente **non** deve fare, non solo cosa deve fare. Frasi come "non confermare mai appuntamenti", "non promettere mai rimborsi" o "non parlare mai di prezzi via email" evitano la maggior parte delle sorprese.
+<Tip>
+  Scrivi cosa l'agente **non** deve fare, non solo cosa deve fare. Frasi come "non confermare mai appuntamenti", "non promettere mai rimborsi" o "non parlare mai di prezzi via email" evitano la maggior parte delle sorprese.
+</Tip>
 
 ### Intelligenza IA (LLM)
 
@@ -111,7 +117,9 @@ I nuovi agenti partono con **GPT 4.1 Mini**.
 
 Nello stesso pannello trovi **Temperatura**, un cursore da 0 a 1 che parte da 0,7. I valori bassi mantengono la scrittura costante e ripetibile. Quelli alti la rendono più varia e naturale, ma meno prevedibile.
 
-> **Per chi inizia:** Non devi toccare niente di tutto questo. Se le risposte sembrano robotiche, prova Claude Sonnet o alza un po' la temperatura. Se variano troppo, abbassala.
+<Info>
+  **Per chi inizia:** Non devi toccare niente di tutto questo. Se le risposte sembrano robotiche, prova Claude Sonnet o alza un po' la temperatura. Se variano troppo, abbassala.
+</Info>
 
 ## Passo 3 — Organizza la posta con le categorie
 
@@ -129,13 +137,9 @@ Clicca su **Aggiungi categoria**. Si apre una finestra con questi campi:
 
 Puoi scegliere uno dei colori predefiniti o crearne uno tuo con il campione **\+**.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/mail-agent-categories.png" alt="Finestra Aggiungi categoria con un nome, una descrizione, il colore verde e i due interruttori di risposta attivi" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  La finestra Aggiungi categoria. Il badge a destra mostra come apparirà l'etichetta.
-</p>
+<Frame caption="La finestra Aggiungi categoria. Il badge a destra mostra come apparirà l'etichetta.">
+  <img src="/images/mail-agent-categories.png" alt="Finestra Aggiungi categoria con un nome, una descrizione, il colore verde e i due interruttori di risposta attivi" />
+</Frame>
 
 Sotto i colori ci sono due interruttori:
 
@@ -146,9 +150,13 @@ Se li disattivi entrambi, l'agente si limita a etichettare il messaggio (**Solo 
 
 Clicca su **Aggiungi categoria** per aggiungerla. Ogni categoria richiede un nome e una descrizione.
 
-> **Errore comune:** Scrivere una descrizione vaga, come "cose importanti". L'agente usa questo testo per decidere quali email vanno qui, quindi descrivi il contenuto reale: "messaggi che chiedono una fattura, un rimborso o un cambio del metodo di pagamento". Se le email finiscono nella categoria sbagliata, precisare la descrizione è di solito la soluzione più rapida.
+<Warning>
+  **Errore comune:** Scrivere una descrizione vaga, come "cose importanti". L'agente usa questo testo per decidere quali email vanno qui, quindi descrivi il contenuto reale: "messaggi che chiedono una fattura, un rimborso o un cambio del metodo di pagamento". Se le email finiscono nella categoria sbagliata, precisare la descrizione è di solito la soluzione più rapida.
+</Warning>
 
-> **Importante:** Inizia con **Genera bozza di risposta** attivo e **Risposta automatica** disattivato. Leggi le bozze per qualche giorno. Quando l'agente azzecca tono e contenuti, attiva le risposte automatiche dove un errore non avrebbe conseguenze.
+<Warning>
+  Inizia con **Genera bozza di risposta** attivo e **Risposta automatica** disattivato. Leggi le bozze per qualche giorno. Quando l'agente azzecca tono e contenuti, attiva le risposte automatiche dove un errore non avrebbe conseguenze.
+</Warning>
 
 ## Passo 4 — Collega la casella
 
@@ -174,7 +182,9 @@ Se scegli **Altra email (IMAP e SMTP)**, il modulo **Configurazione IMAP / SMTP*
 
 Clicca su **Collega casella**. Le tue credenziali vengono cifrate e conservate in modo sicuro. Callin.io importa poi i messaggi del periodo scelto (**Sincronizzazione della casella**). Finché la sincronizzazione non termina, i nuovi messaggi potrebbero richiedere un momento per apparire.
 
-> **Nota:** Puoi saltare questo passo e collegare la casella in seguito. Tutto il resto resta salvato, ma l'agente non elaborerà nulla finché non c'è una casella collegata.
+<Note>
+  Puoi saltare questo passo e collegare la casella in seguito. Tutto il resto resta salvato, ma l'agente non elaborerà nulla finché non c'è una casella collegata.
+</Note>
 
 ## Passo 5 — Perfeziona il comportamento (facoltativo)
 
@@ -191,9 +201,13 @@ Apri la scheda **Avanzate**. Tutto qui è facoltativo, ed entrambe le regole par
 
 È utile quando un responsabile vuole controllare cosa invia l'agente.
 
-> **Suggerimento:** Se attivi le risposte automatiche in una categoria, attiva anche la copia, almeno finché non ti fidi dell'agente.
+<Tip>
+  Se attivi le risposte automatiche in una categoria, attiva anche la copia, almeno finché non ti fidi dell'agente.
+</Tip>
 
-> **Attenzione:** Se la copia va a un collega, scegli **CCN (nascosto)**. Con **CC (visibile)**, il tuo cliente vede l'indirizzo del collega in ogni messaggio.
+<Info>
+  **Attenzione:** Se la copia va a un collega, scegli **CCN (nascosto)**. Con **CC (visibile)**, il tuo cliente vede l'indirizzo del collega in ogni messaggio.
+</Info>
 
 ### Priorità dell'agente
 
@@ -207,7 +221,9 @@ Puoi cambiare l'ordine solo quando c'è una casella collegata. Fino ad allora, l
 
 Quando hai modifiche non salvate, in basso compare una barra con due pulsanti: **Annulla modifiche**, che le annulla, e **Salva**, che le salva.
 
-> **Importante:** Non uscire dalla schermata finché la barra è visibile. Se esci senza cliccare su **Salva**, perdi le modifiche.
+<Warning>
+  Non uscire dalla schermata finché la barra è visibile. Se esci senza cliccare su **Salva**, perdi le modifiche.
+</Warning>
 
 ## La sezione Email: leggi e rispondi in un unico posto
 
@@ -221,9 +237,17 @@ Quando hai modifiche non salvate, in basso compare una barra con due pulsanti: *
 
 Tre segnali rapidi che tutto è a posto:
 
-1. Nell'elenco **Agenti mail**, il tuo agente non mostra più **Nessuna email assegnata** sotto il nome.
-2. Invia un'email di prova alla casella collegata da un altro tuo indirizzo, con parole che corrispondano a una delle tue categorie.
-3. Aspetta qualche minuto e apri [Email](/it/Mail-Agent-Email). A seconda della categoria, troverai una bozza pronta da rivedere o una risposta già inviata.
+<Steps>
+  <Step>
+    Nell'elenco **Agenti mail**, il tuo agente non mostra più **Nessuna email assegnata** sotto il nome.
+  </Step>
+  <Step>
+    Invia un'email di prova alla casella collegata da un altro tuo indirizzo, con parole che corrispondano a una delle tue categorie.
+  </Step>
+  <Step>
+    Aspetta qualche minuto e apri [Email](/it/Mail-Agent-Email). A seconda della categoria, troverai una bozza pronta da rivedere o una risposta già inviata.
+  </Step>
+</Steps>
 
 Se non succede nulla, controlla in quest'ordine:
 

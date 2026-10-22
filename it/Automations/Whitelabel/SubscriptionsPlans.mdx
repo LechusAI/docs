@@ -15,17 +15,11 @@ In pratica, questa sezione ti aiuta a:
 
 La trovi nella Piattaforma white label, in **Piani e fatturazione** ([aprila qui](https://app.callin.io/cms/subscription-plans)).
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: la pagina Piani di abbonamento prima di collegare Stripe. Crea piano resta disattivato finché non lo colleghi.">
   <img
     src="/images/subscriptionsplans1.png"
-    alt="Pagina Piani di abbonamento con i pulsanti Tariffa di ricarica e Crea piano, l'avviso Collega Stripe per creare i piani con il pulsante Collega Stripe, la ricerca e il messaggio che non ci sono piani"
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la pagina Piani di abbonamento prima di collegare Stripe. Crea piano resta disattivato finché non lo colleghi.
-</p>
+    alt="Pagina Piani di abbonamento con i pulsanti Tariffa di ricarica e Crea piano, l'avviso Collega Stripe per creare i piani con il pulsante Collega Stripe, la ricerca e il messaggio che non ci sono piani" />
+</Frame>
 
 ### Collega prima Stripe
 
@@ -37,37 +31,39 @@ Clicca su **Collega Stripe** nell’avviso, oppure collegalo da [Integrazioni](/
 
 Oltre ai piani, i tuoi clienti possono acquistare minuti di credito dalla loro pagina di fatturazione. La **Tariffa di ricarica** è il prezzo al minuto che pagano quando ricaricano.
 
-1. Clicca su **Tariffa di ricarica**. Si apre la finestra **Imposta tariffa di ricarica**.
-2. In **Tariffa al minuto**, inserisci il prezzo al minuto nella tua valuta (ad esempio `0.16`).
-3. Clicca su **Aggiorna**.
+<Steps>
+  <Step>
+    Clicca su **Tariffa di ricarica**. Si apre la finestra **Imposta tariffa di ricarica**.
+  </Step>
+  <Step>
+    In **Tariffa al minuto**, inserisci il prezzo al minuto nella tua valuta (ad esempio `0.16`).
+  </Step>
+  <Step>
+    Clicca su **Aggiorna**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-plans-recharge.png" alt="Finestra Imposta tariffa di ricarica con il campo Tariffa al minuto e i pulsanti Annulla e Aggiorna" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Schermata: la finestra Imposta tariffa di ricarica.">
+  <img src="/images/wl-plans-recharge.png" alt="Finestra Imposta tariffa di ricarica con il campo Tariffa al minuto e i pulsanti Annulla e Aggiorna" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: la finestra Imposta tariffa di ricarica.
-</p>
-
-> **Suggerimento:** Imposta una tariffa di ricarica superiore al tuo costo al minuto, così le ricariche mantengono il tuo margine. Vedi [Fatturazione e commissioni](/it/Billing).
+<Tip>
+  Imposta una tariffa di ricarica superiore al tuo costo al minuto, così le ricariche mantengono il tuo margine. Vedi [Fatturazione e commissioni](/it/Billing).
+</Tip>
 
 ## Creare un nuovo piano di abbonamento
 
 Da **Piani e fatturazione → Piani di abbonamento**, premi il pulsante per **creare un piano**. Si aprirà una procedura guidata con più passaggi.
 
-> **Consiglio:** Prima di creare i piani, definisci livelli e prezzi su un promemoria (ad esempio: “Base: 400 minuti/mese a 300”). Ti evita correzioni dell’ultimo minuto.
+<Tip>
+  Prima di creare i piani, definisci livelli e prezzi su un promemoria (ad esempio: “Base: 400 minuti/mese a 300”). Ti evita correzioni dell’ultimo minuto.
+</Tip>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: primo passaggio della procedura, dove inserisci nome e descrizione e definisci la disponibilità del piano.">
   <img
     src="/images/subscriptionsplans2.png"
-    alt="Procedura guidata di creazione del piano nella fase di informazioni di base, con campi per nome del piano e descrizione, e opzioni per renderlo attivo o metterlo in evidenza."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: primo passaggio della procedura, dove inserisci nome e descrizione e definisci la disponibilità del piano.
-</p>
+    alt="Procedura guidata di creazione del piano nella fase di informazioni di base, con campi per nome del piano e descrizione, e opzioni per renderlo attivo o metterlo in evidenza." />
+</Frame>
 
 ### Passaggio 1: Informazioni di base
 
@@ -84,7 +80,9 @@ Compila l’essenziale:
 - Attivo: **Attivato**
 - In evidenza: **Attivato** (solo per il piano che vuoi mettere in risalto)
 
-> **Errore comune:** Lasciare la descrizione vuota. Una descrizione chiara riduce dubbi e richieste al supporto.
+<Warning>
+  **Errore comune:** Lasciare la descrizione vuota. Una descrizione chiara riduce dubbi e richieste al supporto.
+</Warning>
 
 ### Passaggio 2: Tipo di piano
 
@@ -93,7 +91,9 @@ Scegli il modello di addebito. Di solito troverai opzioni come:
 - **Acquisto singolo**: Un pagamento unico per una quantità fissa di minuti.
 - **Pagamento a consumo**: Addebito al minuto con utilizzo flessibile.
 
-> **Importante:** Le opzioni disponibili possono variare in base al tuo account o al tuo piano.
+<Warning>
+  Le opzioni disponibili possono variare in base al tuo account o al tuo piano.
+</Warning>
 
 ### Passaggio 3: Prezzo e minuti
 
@@ -142,7 +142,9 @@ Prima di concludere, vedrai un riepilogo con:
 
 Se qualcosa non torna, usa l’opzione **modifica** nella sezione interessata e ricontrolla. Quando è tutto corretto, crea il piano.
 
-> **Consiglio:** Controlla sempre insieme “minuti inclusi” e “prezzo”. Gli errori più comuni sono disallineamenti tra i livelli.
+<Tip>
+  Controlla sempre insieme “minuti inclusi” e “prezzo”. Gli errori più comuni sono disallineamenti tra i livelli.
+</Tip>
 
 ## Modificare un piano esistente
 
@@ -153,19 +155,15 @@ Nell’editor, di solito trovi schede come:
 - **Funzionalità**: Regolare i valori inclusi nel piano.
 - **Prezzo e minuti**: Modificare minuti inclusi, prezzo e minuti aggiuntivi.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+<Frame caption="Schermata: modifica di prezzo e minuti, inclusi minuti aggiuntivi e un avviso relativo alla creazione di un nuovo prezzo in Stripe.">
   <img
     src="/images/subscriptionsplans3.png"
-    alt="Schermata di modifica del piano nella sezione prezzo e minuti, con un avviso sui cambi prezzo, campi per minuti inclusi e prezzo, e un’opzione per attivare minuti aggiuntivi con la relativa tariffa al minuto."
-    style={{ width:"100%", display:"block" }}
-  />
-</div>
+    alt="Schermata di modifica del piano nella sezione prezzo e minuti, con un avviso sui cambi prezzo, campi per minuti inclusi e prezzo, e un’opzione per attivare minuti aggiuntivi con la relativa tariffa al minuto." />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: modifica di prezzo e minuti, inclusi minuti aggiuntivi e un avviso relativo alla creazione di un nuovo prezzo in Stripe.
-</p>
-
-> **Importante:** Cambiando il prezzo, la piattaforma può creare un **nuovo prezzo in Stripe**. Gli abbonati esistenti possono mantenere il prezzo attuale e non essere influenzati (può variare in base alla configurazione).
+<Warning>
+  Cambiando il prezzo, la piattaforma può creare un **nuovo prezzo in Stripe**. Gli abbonati esistenti possono mantenere il prezzo attuale e non essere influenzati (può variare in base alla configurazione).
+</Warning>
 
 ## Gestione di base (ricerca, copia ID, disattivazione)
 
@@ -174,4 +172,6 @@ Dall’elenco, in genere puoi:
 - **Copiare l’ID del piano** per supporto o verifiche interne.
 - **Disattivare** un piano per non offrirlo ai nuovi utenti.
 
-> **Errore comune:** Disattivare un piano senza crearne prima uno sostitutivo. Se devi ritirarlo, crea prima il nuovo piano e poi disattiva quello precedente.
+<Warning>
+  **Errore comune:** Disattivare un piano senza crearne prima uno sostitutivo. Se devi ritirarlo, crea prima il nuovo piano e poi disattiva quello precedente.
+</Warning>

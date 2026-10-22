@@ -13,13 +13,9 @@ Usa esta sección cuando quieras:
 - Una puesta en marcha más rápida para los usuarios nuevos.
 - Un conjunto seleccionado de configuraciones de agente “aprobadas”.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vídeo: la página vacía → Crear plantilla → Seleccionar campos → Establecer valores predeterminados → Pre-implementado y Estado de la plantilla → la plantilla en la lista → el menú de la fila.
-</p>
+<Frame caption="Vídeo: la página vacía → Crear plantilla → Seleccionar campos → Establecer valores predeterminados → Pre-implementado y Estado de la plantilla → la plantilla en la lista → el menú de la fila.">
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" />
+</Frame>
 
 ## Abrir Plantillas de agentes
 
@@ -27,25 +23,35 @@ La encontrarás en la Plataforma white label, dentro de **Gestión de contenido*
 
 La lista muestra el **Nombre de plantilla** de cada una (con su descripción), cuántos **Campos** incluye, su **Estado** y la fecha de creación. Usa **Buscar plantillas...** para encontrar una.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-list.png" alt="Página Plantillas de agente personalizadas con el botón Crear plantilla, el buscador y una plantilla en la lista con 6 campos, el estado Activo, su fecha de creación y el menú de acciones" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: la lista con una plantilla de ejemplo.
-</p>
+<Frame caption="Captura: la lista con una plantilla de ejemplo.">
+  <img src="/images/wl-templates-list.png" alt="Página Plantillas de agente personalizadas con el botón Crear plantilla, el buscador y una plantilla en la lista con 6 campos, el estado Activo, su fecha de creación y el menú de acciones" />
+</Frame>
 
 ## Crear una plantilla
 
-1. Abre **Plantillas de agente personalizadas**.
-2. Haz clic en **Crear plantilla**. Se abre un panel a la derecha.
-3. Rellena los datos de la plantilla (los dos son obligatorios):
-   - **Nombre de plantilla**: un nombre claro que tus subcuentas reconozcan.
-   - **Descripción**: una explicación corta de para qué sirve la plantilla.
-4. Elige los campos que incluye y pon sus valores predeterminados (ver más abajo).
-5. Haz clic en **Crear plantilla** al final del panel.
+<Steps>
+  <Step>
+    Abre **Plantillas de agente personalizadas**.
+  </Step>
+  <Step>
+    Haz clic en **Crear plantilla**. Se abre un panel a la derecha.
+  </Step>
+  <Step>
+    Rellena los datos de la plantilla (los dos son obligatorios):
+    - **Nombre de plantilla**: un nombre claro que tus subcuentas reconozcan.
+    - **Descripción**: una explicación corta de para qué sirve la plantilla.
+  </Step>
+  <Step>
+    Elige los campos que incluye y pon sus valores predeterminados (ver más abajo).
+  </Step>
+  <Step>
+    Haz clic en **Crear plantilla** al final del panel.
+  </Step>
+</Steps>
 
-> **Consejo:** Usa nombres que describan la tarea, no el equipo. Por ejemplo: **“Atención al cliente entrante”** en lugar de **“Soporte - Equipo A”**.
+<Tip>
+  Usa nombres que describan la tarea, no el equipo. Por ejemplo: **“Atención al cliente entrante”** en lugar de **“Soporte - Equipo A”**.
+</Tip>
 
 ## Elegir qué pueden configurar las subcuentas
 
@@ -53,13 +59,9 @@ En **1. Seleccionar campos** verás una lista de casillas.\
 **Marcada = incluida en el flujo de la plantilla para las subcuentas.**\
 Los campos sin marcar no forman parte de la plantilla.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-fields.png" alt="Panel Crear plantilla con el Nombre de plantilla y la Descripción rellenados y seis campos marcados en Seleccionar campos" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: una plantilla de ejemplo con seis campos marcados.
-</p>
+<Frame caption="Captura: una plantilla de ejemplo con seis campos marcados.">
+  <img src="/images/wl-templates-fields.png" alt="Panel Crear plantilla con el Nombre de plantilla y la Descripción rellenados y seis campos marcados en Seleccionar campos" />
+</Frame>
 
 ### Información básica
 
@@ -76,7 +78,9 @@ Puedes incluir campos como:
 - **Detección de buzón de voz**
 - **El usuario habla primero**
 
-> **Importante:** Incluye solo los campos que de verdad quieras que toquen las subcuentas. Menos campos suele significar menos errores.
+<Warning>
+  Incluye solo los campos que de verdad quieras que toquen las subcuentas. Menos campos suele significar menos errores.
+</Warning>
 
 ### Voz e idioma
 
@@ -87,7 +91,9 @@ Puedes incluir campos como:
 - **Velocidad de habla**
 - **Temperatura**
 
-> **Consejo:** Si trabajas en varias regiones, incluye **Idioma principal** y **Zona horaria** para que las subcuentas se adapten rápido sin romper la intención de la plantilla.
+<Tip>
+  Si trabajas en varias regiones, incluye **Idioma principal** y **Zona horaria** para que las subcuentas se adapten rápido sin romper la intención de la plantilla.
+</Tip>
 
 ### Acción de llamada
 
@@ -104,7 +110,9 @@ Puedes incluir campos como:
 - **Número de reintentos**
 - **Retraso (minutos)**
 
-> **Error común:** Incluir **URL del webhook** para las subcuentas cuando quieres que lo controle tu organización. Si necesitas un seguimiento centralizado, no expongas los campos de webhook.
+<Warning>
+  **Error común:** Incluir **URL del webhook** para las subcuentas cuando quieres que lo controle tu organización. Si necesitas un seguimiento centralizado, no expongas los campos de webhook.
+</Warning>
 
 ### Valores predeterminados
 
@@ -119,13 +127,9 @@ Cada campo muestra una breve ayuda. Por ejemplo:
 - **Idioma principal**: el idioma principal que usará el agente.
 - **Voz**: la voz del agente, elegida de la lista de ElevenLabs.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-defaults.png" alt="Apartado Establecer valores predeterminados con valores de ejemplo para Nombre del agente, Mensaje de bienvenida, Prompt del sistema, Zona horaria e Idioma principal" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Captura: valores predeterminados de la plantilla de ejemplo.
-</p>
+<Frame caption="Captura: valores predeterminados de la plantilla de ejemplo.">
+  <img src="/images/wl-templates-defaults.png" alt="Apartado Establecer valores predeterminados con valores de ejemplo para Nombre del agente, Mensaje de bienvenida, Prompt del sistema, Zona horaria e Idioma principal" />
+</Frame>
 
 ## Plantillas predesplegadas
 
@@ -133,7 +137,9 @@ Al final del panel verás **Pre-implementado**.
 
 Si lo activas, se **creará automáticamente un agente con esta plantilla** en las cuentas de usuario que se registren a partir de ahora.
 
-> **Importante:** Actívalo solo en tu plantilla “de inicio por defecto”. Si no, los usuarios nuevos pueden recibir agentes que no querían crear.
+<Warning>
+  Actívalo solo en tu plantilla “de inicio por defecto”. Si no, los usuarios nuevos pueden recibir agentes que no querían crear.
+</Warning>
 
 ## Estado de la plantilla
 
@@ -169,7 +175,9 @@ Así podrías estructurar una plantilla para un agente de soporte de llamadas en
 - Nombre del agente: “Recepción”
 - Mensaje de bienvenida: “Hola, gracias por llamar. ¿En qué puedo ayudarte?”
 
-> **Consejo:** Si tus subcuentas no deben cambiar el comportamiento principal, incluye el **Prompt del sistema** pero evita exponer demasiados ajustes avanzados a la vez.
+<Tip>
+  Si tus subcuentas no deben cambiar el comportamiento principal, incluye el **Prompt del sistema** pero evita exponer demasiados ajustes avanzados a la vez.
+</Tip>
 
 ## Notas y limitaciones
 

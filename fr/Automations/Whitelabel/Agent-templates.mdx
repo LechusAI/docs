@@ -13,13 +13,9 @@ Utilisez cette section quand vous voulez :
 - Une prise en main plus rapide pour les nouveaux utilisateurs.
 - Une sélection de configurations d’agent « approuvées ».
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Vidéo : la page vide → Créer un modèle → Sélectionner les champs → Définir les valeurs par défaut → Pré-déployé et Statut du modèle → le modèle dans la liste → le menu de la ligne.
-</p>
+<Frame caption="Vidéo : la page vide → Créer un modèle → Sélectionner les champs → Définir les valeurs par défaut → Pré-déployé et Statut du modèle → le modèle dans la liste → le menu de la ligne.">
+  <video autoPlay muted loop playsInline src="/images/wl-templates.mp4" />
+</Frame>
 
 ## Ouvrir Modèles d’agents
 
@@ -27,25 +23,35 @@ Vous les trouverez dans la Plateforme white label, dans **Gestion du contenu** (
 
 La liste affiche le **Nom du modèle** (avec sa description), le nombre de **Champs** inclus, le **Statut** et la date de création. Utilisez **Rechercher des modèles...** pour en trouver un.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-list.png" alt="Page Modèles d’agent personnalisés avec le bouton Créer un modèle, la recherche et un modèle dans la liste avec 6 champs, le statut Actif, sa date de création et le menu des actions" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : la liste avec un modèle d’exemple.
-</p>
+<Frame caption="Capture d’écran : la liste avec un modèle d’exemple.">
+  <img src="/images/wl-templates-list.png" alt="Page Modèles d’agent personnalisés avec le bouton Créer un modèle, la recherche et un modèle dans la liste avec 6 champs, le statut Actif, sa date de création et le menu des actions" />
+</Frame>
 
 ## Créer un modèle
 
-1. Ouvrez **Modèles d’agent personnalisés**.
-2. Cliquez sur **Créer un modèle**. Un panneau s’ouvre à droite.
-3. Remplissez les informations du modèle (les deux sont obligatoires) :
-   - **Nom du modèle** : un nom clair que vos sous-comptes reconnaîtront.
-   - **Description** : une courte explication de l’usage du modèle.
-4. Choisissez les champs à inclure et définissez leurs valeurs par défaut (voir ci-dessous).
-5. Cliquez sur **Créer un modèle** en bas du panneau.
+<Steps>
+  <Step>
+    Ouvrez **Modèles d’agent personnalisés**.
+  </Step>
+  <Step>
+    Cliquez sur **Créer un modèle**. Un panneau s’ouvre à droite.
+  </Step>
+  <Step>
+    Remplissez les informations du modèle (les deux sont obligatoires) :
+    - **Nom du modèle** : un nom clair que vos sous-comptes reconnaîtront.
+    - **Description** : une courte explication de l’usage du modèle.
+  </Step>
+  <Step>
+    Choisissez les champs à inclure et définissez leurs valeurs par défaut (voir ci-dessous).
+  </Step>
+  <Step>
+    Cliquez sur **Créer un modèle** en bas du panneau.
+  </Step>
+</Steps>
 
-> **Astuce :** Utilisez des noms qui décrivent la tâche, pas l’équipe. Exemple : **« Support client entrant »** plutôt que **« Support - Équipe A »**.
+<Tip>
+  Utilisez des noms qui décrivent la tâche, pas l’équipe. Exemple : **« Support client entrant »** plutôt que **« Support - Équipe A »**.
+</Tip>
 
 ## Choisir ce que les sous-comptes peuvent configurer
 
@@ -53,13 +59,9 @@ Dans **1. Sélectionner les champs**, vous verrez une liste de cases à cocher.\
 **Cochée = incluse dans le parcours du modèle pour les sous-comptes.**\
 Les champs non cochés ne font pas partie du modèle.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-fields.png" alt="Panneau Créer un modèle avec le Nom du modèle et la Description remplis et six champs cochés dans Sélectionner les champs" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : un modèle d’exemple avec six champs cochés.
-</p>
+<Frame caption="Capture d’écran : un modèle d’exemple avec six champs cochés.">
+  <img src="/images/wl-templates-fields.png" alt="Panneau Créer un modèle avec le Nom du modèle et la Description remplis et six champs cochés dans Sélectionner les champs" />
+</Frame>
 
 ### Informations de base
 
@@ -76,7 +78,9 @@ Vous pouvez inclure des champs comme :
 - **Détection de messagerie vocale**
 - **L’utilisateur parle d’abord**
 
-> **Important :** N’incluez que les champs que vous voulez vraiment laisser modifier aux sous-comptes. Moins de champs signifie généralement moins d’erreurs.
+<Warning>
+  N’incluez que les champs que vous voulez vraiment laisser modifier aux sous-comptes. Moins de champs signifie généralement moins d’erreurs.
+</Warning>
 
 ### Voix et langue
 
@@ -87,7 +91,9 @@ Vous pouvez inclure des champs comme :
 - **Vitesse de parole**
 - **Température**
 
-> **Astuce :** Si vous travaillez dans plusieurs régions, incluez **Langue principale** et **Fuseau horaire** pour que les sous-comptes s’adaptent vite sans dénaturer le modèle.
+<Tip>
+  Si vous travaillez dans plusieurs régions, incluez **Langue principale** et **Fuseau horaire** pour que les sous-comptes s’adaptent vite sans dénaturer le modèle.
+</Tip>
 
 ### Action d’appel
 
@@ -104,7 +110,9 @@ Vous pouvez inclure des champs comme :
 - **Nombre de tentatives**
 - **Délai de tentative (minutes)**
 
-> **Erreur fréquente :** Inclure **URL du webhook** pour les sous-comptes alors que vous voulez garder ce réglage sous le contrôle de votre organisation. Si vous avez besoin d’un suivi centralisé, n’exposez pas les champs de webhook.
+<Warning>
+  **Erreur fréquente :** Inclure **URL du webhook** pour les sous-comptes alors que vous voulez garder ce réglage sous le contrôle de votre organisation. Si vous avez besoin d’un suivi centralisé, n’exposez pas les champs de webhook.
+</Warning>
 
 ### Valeurs par défaut
 
@@ -119,13 +127,9 @@ Chaque champ affiche un court texte d’aide. Par exemple :
 - **Langue principale** : la langue principale que l’agent utilisera.
 - **Voix** : la voix de l’agent, choisie dans la liste ElevenLabs.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/wl-templates-defaults.png" alt="Section Définir les valeurs par défaut avec des valeurs d’exemple pour Nom de l’agent, Message d’accueil, Prompt système, Fuseau horaire et Langue principale" style={{ width:"100%", maxWidth:"470px", display:"block", margin:"0 auto" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Capture d’écran : les valeurs par défaut du modèle d’exemple.
-</p>
+<Frame caption="Capture d’écran : les valeurs par défaut du modèle d’exemple.">
+  <img src="/images/wl-templates-defaults.png" alt="Section Définir les valeurs par défaut avec des valeurs d’exemple pour Nom de l’agent, Message d’accueil, Prompt système, Fuseau horaire et Langue principale" />
+</Frame>
 
 ## Modèles pré-déployés
 
@@ -133,7 +137,9 @@ En bas du panneau, vous verrez **Pré-déployé**.
 
 Si vous l’activez, un agent sera **automatiquement créé avec ce modèle** dans les comptes utilisateurs nouvellement inscrits.
 
-> **Important :** Activez-le uniquement pour votre modèle « de démarrage par défaut ». Sinon, les nouveaux utilisateurs pourraient recevoir des agents qu’ils ne voulaient pas créer.
+<Warning>
+  Activez-le uniquement pour votre modèle « de démarrage par défaut ». Sinon, les nouveaux utilisateurs pourraient recevoir des agents qu’ils ne voulaient pas créer.
+</Warning>
 
 ## Statut du modèle
 
@@ -169,7 +175,9 @@ Voici une façon réaliste de structurer un modèle pour un agent de support ent
 - Nom de l’agent : « Accueil »
 - Message d’accueil : « Bonjour, merci de votre appel. Comment puis-je vous aider ? »
 
-> **Astuce :** Si vos sous-comptes ne doivent pas changer le comportement principal, incluez le **Prompt système** mais évitez d’exposer trop de réglages avancés à la fois.
+<Tip>
+  Si vos sous-comptes ne doivent pas changer le comportement principal, incluez le **Prompt système** mais évitez d’exposer trop de réglages avancés à la fois.
+</Tip>
 
 ## Notes et limites
 

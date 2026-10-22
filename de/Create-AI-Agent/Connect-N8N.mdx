@@ -9,15 +9,13 @@ icon: "diagram-project"
 
 Erstelle leistungsstarke Automatisierungen zwischen Callin.io und deinen bevorzugten Tools mit n8n. Callin.io stellt dir unter **n8n.callin.io** einen eigenen n8n-Bereich bereit, mit einem fertigen **Callin.io**-Knoten, über den deine KI-Agenten Anrufe starten.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <video autoPlay muted loop playsInline src="/images/n8n-connect.mp4" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Video: Integrationen → Zu n8n → Anmelden → Callin.io-Knoten hinzufügen → Anruf starten → Zugangsdaten mit dem API-Schlüssel aus dem Profil einrichten.">
+  <video autoPlay muted loop playsInline src="/images/n8n-connect.mp4" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Video: Integrationen → Zu n8n → Anmelden → Callin.io-Knoten hinzufügen → Anruf starten → Zugangsdaten mit dem API-Schlüssel aus dem Profil einrichten.
-</p>
-
-> **Hinweis:** Die Oberfläche von n8n ist auf Englisch: Die Namen der Schaltflächen und Felder in dieser Anleitung sind übersetzt, auf dem Bildschirm siehst du sie also auf Englisch.
+<Note>
+  Die Oberfläche von n8n ist auf Englisch: Die Namen der Schaltflächen und Felder in dieser Anleitung sind übersetzt, auf dem Bildschirm siehst du sie also auf Englisch.
+</Note>
 
 ## Schritte
 
@@ -32,20 +30,40 @@ Mit Callin.io kannst du mit dieser Integration:
 
 Kurz gesagt: n8n macht aus Ereignissen in deinen anderen Tools Anrufe – und aus Anrufen Aktionen in deinen anderen Tools.
 
-> **Wichtig:** Der **Callin.io**-Knoten hat keine eigenen Auslöser. Um einen Workflow zu starten, nutze einen n8n-Auslöser (zum Beispiel **Bei einem Webhook-Aufruf**, **Nach Zeitplan** oder einen Auslöser deines CRM) und füge danach den **Callin.io**-Knoten hinzu.
+<Warning>
+  Der **Callin.io**-Knoten hat keine eigenen Auslöser. Um einen Workflow zu starten, nutze einen n8n-Auslöser (zum Beispiel **Bei einem Webhook-Aufruf**, **Nach Zeitplan** oder einen Auslöser deines CRM) und füge danach den **Callin.io**-Knoten hinzu.
+</Warning>
 
 ### Schritt 2: Das Integrations-Panel von Callin.io öffnen
 
-1. Melde dich in deinem Callin.io-Konto an.
-2. Klicke im linken Menü auf **Integrationen → Aktionen** ([hier öffnen](https://app.callin.io/actions)).
-3. Nutze den Filter **Automatisierung** (oder suche unter **Alle**).
-4. Suche die Karte **N8N** und klicke auf **Zu n8n**.
+<Steps>
+  <Step>
+    Melde dich in deinem Callin.io-Konto an.
+  </Step>
+  <Step>
+    Klicke im linken Menü auf **Integrationen → Aktionen** ([hier öffnen](https://app.callin.io/actions)).
+  </Step>
+  <Step>
+    Nutze den Filter **Automatisierung** (oder suche unter **Alle**).
+  </Step>
+  <Step>
+    Suche die Karte **N8N** und klicke auf **Zu n8n**.
+  </Step>
+</Steps>
 
 ### Schritt 3: In dein n8n-Konto einloggen
 
-1. Ein neuer Tab öffnet sich auf **n8n.callin.io**.
-2. Gib deine n8n-**E-Mail** und dein **Passwort** ein und klicke auf **Anmelden**.
-3. Wenn du noch keinen Zugang hast, wende dich an den Administrator deines Callin.io-Kontos.
+<Steps>
+  <Step>
+    Ein neuer Tab öffnet sich auf **n8n.callin.io**.
+  </Step>
+  <Step>
+    Gib deine n8n-**E-Mail** und dein **Passwort** ein und klicke auf **Anmelden**.
+  </Step>
+  <Step>
+    Wenn du noch keinen Zugang hast, wende dich an den Administrator deines Callin.io-Kontos.
+  </Step>
+</Steps>
 
 Danach siehst du die n8n-**Übersicht** mit deinen Workflows und der Schaltfläche **Workflow erstellen**.
 
@@ -53,33 +71,43 @@ Danach siehst du die n8n-**Übersicht** mit deinen Workflows und der Schaltfläc
 
 Der **Callin.io**-Knoten braucht einen API-Schlüssel, um in deinem Konto zu handeln.
 
-1. Öffne in Callin.io dein Profil ([app.callin.io/profile](https://app.callin.io/profile)) und gehe zum Tab **API-Schlüssel**.
-2. Wenn du noch keinen Schlüssel hast („Kein API-Schlüssel gefunden“), klicke auf **Schlüssel erneuern**, um einen zu erstellen.
-3. Kopiere den Schlüssel über das Kopier-Symbol.
+<Steps>
+  <Step>
+    Öffne in Callin.io dein Profil ([app.callin.io/profile](https://app.callin.io/profile)) und gehe zum Tab **API-Schlüssel**.
+  </Step>
+  <Step>
+    Wenn du noch keinen Schlüssel hast („Kein API-Schlüssel gefunden“), klicke auf **Schlüssel erneuern**, um einen zu erstellen.
+  </Step>
+  <Step>
+    Kopiere den Schlüssel über das Kopier-Symbol.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/n8n-api-key.png" alt="Der Tab API-Schlüssel im Callin.io-Profil mit der Schaltfläche Schlüssel erneuern, einem Sicherheitshinweis und dem Schlüsselfeld mit den Symbolen zum Anzeigen und Kopieren" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: Profil → API-Schlüssel, wo du deinen API-Schlüssel erstellst und kopierst.">
+  <img src="/images/n8n-api-key.png" alt="Der Tab API-Schlüssel im Callin.io-Profil mit der Schaltfläche Schlüssel erneuern, einem Sicherheitshinweis und dem Schlüsselfeld mit den Symbolen zum Anzeigen und Kopieren" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Profil → API-Schlüssel, wo du deinen API-Schlüssel erstellst und kopierst.
-</p>
-
-> **Wichtig:** Bewahre diesen API-Schlüssel sicher auf. Wenn du auf **Schlüssel erneuern** klickst, obwohl du schon einen hast, funktioniert der alte nicht mehr – alle Workflows, die ihn nutzen, musst du dann mit dem neuen Schlüssel aktualisieren.
+<Warning>
+  Bewahre diesen API-Schlüssel sicher auf. Wenn du auf **Schlüssel erneuern** klickst, obwohl du schon einen hast, funktioniert der alte nicht mehr – alle Workflows, die ihn nutzen, musst du dann mit dem neuen Schlüssel aktualisieren.
+</Warning>
 
 ### Schritt 5: Deine erste Automatisierung erstellen
 
-1. Klicke in n8n auf **Workflow erstellen**.
-2. Füge einen Auslöser hinzu, der den Workflow startet (zum Beispiel **Bei einem Webhook-Aufruf**, um einen neuen Lead von deiner Website oder deinem CRM zu empfangen).
-3. Klicke auf **+**, um den nächsten Schritt hinzuzufügen, suche nach **Callin.io** und wähle die Aktion **Anruf starten**.
+<Steps>
+  <Step>
+    Klicke in n8n auf **Workflow erstellen**.
+  </Step>
+  <Step>
+    Füge einen Auslöser hinzu, der den Workflow startet (zum Beispiel **Bei einem Webhook-Aufruf**, um einen neuen Lead von deiner Website oder deinem CRM zu empfangen).
+  </Step>
+  <Step>
+    Klicke auf **+**, um den nächsten Schritt hinzuzufügen, suche nach **Callin.io** und wähle die Aktion **Anruf starten**.
+  </Step>
+</Steps>
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/n8n-node.png" alt="n8n-Workflow-Editor mit einem Auslöser, der mit dem Callin.io-Knoten Anruf starten verbunden ist, und rechts den Details des Callin.io-Knotens mit der Aktion Anruf starten" style={{ width:"100%", display:"block" }} />
-</div>
-
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Der Callin.io-Knoten in n8n mit seiner Aktion Anruf starten.
-</p>
+<Frame caption="Screenshot: Der Callin.io-Knoten in n8n mit seiner Aktion Anruf starten.">
+  <img src="/images/n8n-node.png" alt="n8n-Workflow-Editor mit einem Auslöser, der mit dem Callin.io-Knoten Anruf starten verbunden ist, und rechts den Details des Callin.io-Knotens mit der Aktion Anruf starten" />
+</Frame>
 
 4. Klicke unter **Zugangsdaten** auf **Zugangsdaten einrichten**, füge deinen Callin.io-**API-Schlüssel** ein und klicke auf **Speichern**.
 5. Fülle die Felder von **Anruf starten** aus:
@@ -90,20 +118,24 @@ Der **Callin.io**-Knoten braucht einen API-Schlüssel, um in deinem Konto zu han
    - **Webhook-URL (optional)**: eine URL, an die die Anrufdaten gesendet werden.
    - **Zusätzliche Felder**: Klicke auf **Feld hinzufügen**, um zusätzliche Daten als Paare aus **Feldname** und **Feldwert** zu senden.
 
-<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img src="/images/n8n-start-call.png" alt="Parameter des Knotens Anruf starten in n8n: Zugangsdaten, Ressource Callin, Vorgang Anruf starten, Telefon, Name, E-Mail, Name oder ID des Agenten, Webhook-URL (optional) und Zusätzliche Felder" style={{ width:"100%", display:"block" }} />
-</div>
+<Frame caption="Screenshot: Die Parameter von Anruf starten, ausgefüllt mit einem Beispielkontakt.">
+  <img src="/images/n8n-start-call.png" alt="Parameter des Knotens Anruf starten in n8n: Zugangsdaten, Ressource Callin, Vorgang Anruf starten, Telefon, Name, E-Mail, Name oder ID des Agenten, Webhook-URL (optional) und Zusätzliche Felder" />
+</Frame>
 
-<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: Die Parameter von Anruf starten, ausgefüllt mit einem Beispielkontakt.
-</p>
-
-> **Tipp:** Statt feste Werte einzutippen, übernimm die Daten aus dem vorherigen Schritt mit n8n-Ausdrücken (zum Beispiel `{{ $json.phone }}` für die Telefonnummer aus deinem Formular oder CRM).
+<Tip>
+  Statt feste Werte einzutippen, übernimm die Daten aus dem vorherigen Schritt mit n8n-Ausdrücken (zum Beispiel `{{ $json.phone }}` für die Telefonnummer aus deinem Formular oder CRM).
+</Tip>
 
 ### Schritt 6: Aktivieren und testen
 
-1. Klicke auf **Schritt ausführen** (oder **Workflow ausführen**), um einen Testanruf an eine echte Nummer zu machen, die du kontrollierst.
-2. Wenn alles funktioniert, klicke auf **Veröffentlichen**, damit der Workflow automatisch läuft.
+<Steps>
+  <Step>
+    Klicke auf **Schritt ausführen** (oder **Workflow ausführen**), um einen Testanruf an eine echte Nummer zu machen, die du kontrollierst.
+  </Step>
+  <Step>
+    Wenn alles funktioniert, klicke auf **Veröffentlichen**, damit der Workflow automatisch läuft.
+  </Step>
+</Steps>
 
 ## Tipps & Hinweise
 
