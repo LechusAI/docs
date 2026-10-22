@@ -7,7 +7,7 @@
   }
   document.addEventListener('click', function (e) {
     if (e.target.closest && e.target.closest('#video-zoom')) { close(); return; }
-    var video = e.target.closest && e.target.closest('div.not-prose video');
+    var video = e.target.closest && e.target.closest('.frame video, div.not-prose video');
     if (!video) return;
     var overlay = document.createElement('div');
     overlay.id = 'video-zoom';
