@@ -10,7 +10,9 @@ h1, h2, h3 {
   letter-spacing: -0.02em;
 }
 
-/* Screenshots and videos (<Frame>): violet border in the callin.io colour */
+/* Screenshots and videos (<Frame>): violet border in the callin.io colour.
+   The live site renders frames as figure.frame; the local preview as div.not-prose. */
+figure.frame,
 div.not-prose.rounded-2xl:has(> div.rounded-xl img),
 div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
   border: 1px solid #8771FF;
@@ -19,6 +21,7 @@ div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
   margin-top: 1.25rem;
   margin-bottom: 1.75rem;
 }
+.dark figure.frame,
 .dark div.not-prose.rounded-2xl:has(> div.rounded-xl img),
 .dark div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
   border-color: #5235EF;
@@ -26,6 +29,7 @@ div.not-prose.rounded-2xl:has(> div.rounded-xl video) {
 }
 
 /* Videos open enlarged on click (zoom-videos.js) */
+.frame video,
 div.not-prose video {
   cursor: zoom-in;
 }
