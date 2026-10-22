@@ -4,90 +4,143 @@ description: "Erkennen Sie, woher Registrierungen kommen, anhand von UTM-Daten, 
 icon: "chart-line"
 ---
 
-## Wofür dieser Bereich gedacht ist
+## Wofür dieser Bereich da ist
 
-**UTM-Analyse** hilft Ihnen zu verstehen, welche Marketing-Links und Kampagnen Nutzer in Ihre White-Label-Umgebung bringen. Hier sehen Sie die UTM-Zuordnung, die erfasst wird, wenn sich ein Nutzer **registriert** und wenn er **eine kostenlose Testphase startet**.
+**UTM-Analytics** hilft Ihnen zu verstehen, welche Marketing-Links Nutzer in Ihren White-Label-Bereich bringen. Es zeigt die Marketing-Attribution, **erfasst bei der Registrierung und beim Start der kostenlosen Testphase**.
 
-Das ist hilfreich für Fragen wie:
-- „Welche Kampagne bringt tatsächlich Registrierungen?“
-- „Kommen Nutzer über Anzeigen, Partner oder organische Quellen?“
+So beantworten Sie Fragen wie:
+
+- „Welche Kampagne bringt wirklich Registrierungen?“
+- „Kommen die Nutzer über Anzeigen, Partner oder organische Quellen?“
 - „Welche Landingpage konvertiert am besten?“
 
-[Klicken Sie hier, um die UTM-Analyse zu öffnen](https://app.callin.io/cms/utm)
+Sie finden es in der White-Label-Plattform unter **Analyse und Marketing** ([hier öffnen](https://app.callin.io/cms/utm)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/utm1.png"
-    alt="UTM-Analyse-Dashboard mit Übersichtskennzahlen, Aufschlüsselung nach Quelle und Kampagne, Filtern (Suche und Datum) sowie einer Tabelle der Registrierungen."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Screenshot: UTM-Dashboard mit Kennzahlen, Aufteilung nach Quelle/Kampagne, Filtern und einer Nutzerliste.
+  Video: die Seite UTM-Analytics → Filter nach Quelle, Kampagne und Medium → Leeren.
 </p>
 
-> **Tipp:** Wenn Sie 0 Einträge oder „keine UTM-Daten“ sehen, wurden Registrierungen meist ohne UTM-Parameter im Link durchgeführt oder die Kampagne hat noch keine Registrierungen erzeugt.
+> **Tipp:** Wenn Sie **Keine passenden Einträge** und „Für diese Abfrage sind keine UTM-Daten verfügbar.“ sehen, haben sich die Nutzer ohne UTM-Parameter im Link registriert, oder die Kampagne hat noch keine Registrierungen gebracht.
 
-> **Wichtig:** Die genauen Bezeichnungen und verfügbaren Optionen können je nach Konto, Tarif und UI-Sprache variieren.
+## Das Dashboard lesen
 
-## So lesen Sie das Dashboard
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/utm1.png" alt="Seite UTM-Analytics mit den Schaltflächen Aktualisieren und CSV exportieren, der Karte Übersicht (Gesamt, Mit UTM, Abdeckung), den Karten Quelle und Kampagne, der Suche und den Datumsfiltern sowie der Tabelle mit den Spalten Benutzer, Beigetreten, Quelle, Kampagne, Landing-URL und Aktionen" style={{ width:"100%", display:"block" }} />
+</div>
 
-Oben sehen Sie häufig Übersichtskennzahlen wie:
-- **Gesamt**: Gesamtzahl der Nutzer/Registrierungen in der aktuellen Ansicht.
-- **Mit UTM**: wie viele Registrierungen UTM-Zuordnung enthalten.
-- **Abdeckung**: Anteil der Registrierungen mit UTM im Verhältnis zum Gesamtwert.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: UTM-Analytics, bevor sich ein Nutzer über einen UTM-Link registriert hat.
+</p>
 
-Zusätzlich sind oft Schnellaktionen vorhanden wie:
-- **Aktualisieren**: lädt die neuesten Daten neu.
-- **Als CSV exportieren**: lädt die Liste für Auswertungen herunter.
+### Übersicht
+
+- **Gesamt**: die Nutzer in der aktuellen Ansicht
+- **Mit UTM**: wie viele davon erfasste UTM-Daten haben
+- **Abdeckung**: der Prozentsatz der Nutzer in der Ansicht mit UTM-Daten
+
+Darunter sehen Sie die Anzahl der **Datensätze** und die aktuelle Seite.
+
+### Quelle und Kampagne
+
+Diese Karten schlüsseln Ihre Nutzer mit UTM-Daten nach **Quelle** und nach **Kampagne** auf. Solange keine Daten vorliegen, zeigen sie **—**.
+
+### Aktualisieren und CSV exportieren
+
+- **Aktualisieren**: lädt die neuesten Daten
+- **CSV exportieren**: lädt die Liste für Ihre Berichte herunter. Verfügbar, sobald die Liste Datensätze enthält.
+
+### Die Tabelle
+
+Jede Zeile ist ein Nutzer mit UTM-Daten:
+
+- **Benutzer**
+- **Beigetreten**: das Registrierungsdatum
+- **Quelle**, **Kampagne** und **Landing-URL**
+- **Aktionen**: öffnet alle für diesen Nutzer erfassten UTM-Felder
+
+Wählen Sie im Auswahlfeld rechts, wie viele Zeilen pro Seite Sie sehen möchten (**10**, **20** oder **50**). Über der Tabelle sehen Sie, welche Datensätze angezeigt werden.
+
+> **Tipp:** Die UTM-Daten eines Kunden sehen Sie auch unter [Benutzer](/de/Automations/Whitelabel/Clients), im Tab **UTM** seiner Details.
 
 ## Suchen und filtern
 
-### Nutzer suchen
-Verwenden Sie die Suchleiste, um einen bestimmten Nutzer zu finden (zum Beispiel per E-Mail oder Name).
+### Suche
 
-### Zeitraum filtern
-Nutzen Sie die Datumsfelder **Von** und **Bis**, um einen Zeitraum auszuwählen (zum Beispiel „letzte 7 Tage“ oder „dieser Monat“).
+Mit **Benutzer suchen…** finden Sie einen bestimmten Nutzer (zum Beispiel per E-Mail oder Name).
 
-### Filter anwenden
-Verwenden Sie **Filter**, um nach Quelle oder Kampagne einzuschränken (Optionen können je nach Konto variieren).
+### Zeitraum
 
-### Zurücksetzen
-Verwenden Sie **Zurücksetzen**, um zur Standardansicht zurückzukehren.
+Mit den Datumsfeldern **Von** und **bis** grenzen Sie einen Zeitraum ein (zum Beispiel die letzten 7 Tage oder diesen Monat).
 
-## Bedeutung der UTM-Felder (einfach erklärt)
+### Filter
 
-UTM-Parameter sind Etiketten, die an einen Link angehängt werden, um die Herkunft des Traffics zu erkennen.
+Klicken Sie auf **Filter**, um drei weitere Felder einzublenden: **Quelle**, **Kampagne** und **Medium**. Geben Sie in eines davon einen Wert ein, um die Ergebnisse einzugrenzen.
 
-Häufige Felder:
-- **Quelle**: die Herkunftsplattform (z. B. `google`, `facebook`, `newsletter`).
-- **Kampagne**: der Kampagnenname (z. B. `sommer_promo`, `launch_2026`).
-- **Landing-URL**: die Seite, auf der der Nutzer landet (z. B. `/preise`, `/registrierung`, `/promo`).
+Die Zahl neben **Filter** zeigt, wie viele Filter aktiv sind, und jeder erscheint als Tag unter den Feldern (zum Beispiel **Quelle: newsletter**). Klicken Sie auf das **×** eines Tags, um diesen Filter zu entfernen.
 
-> **Häufiger Fehler:** Uneinheitliche Namen (z. B. `Facebook`, `facebook`, `fb`). Legen Sie eine Konvention fest und bleiben Sie dabei, damit Berichte sauber sind.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-utm-filters.png" alt="Geöffnete Filter mit den Feldern Quelle, Kampagne und Medium, ausgefüllt mit newsletter, spring_offer und email, den Tags der drei aktiven Filter und der Schaltfläche Leeren" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Screenshot: drei aktive Filter, jeder als Tag, den Sie entfernen können.
+</p>
+
+### Leeren
+
+Mit **Leeren** entfernen Sie alle Filter und kehren zur Standardansicht zurück.
+
+## Was die UTM-Felder bedeuten (einfach erklärt)
+
+UTM-Parameter sind Kennzeichnungen in einem Link, mit denen Sie erkennen, woher der Traffic kommt. Die Tabelle zeigt die wichtigsten, und **Aktionen** zeigt alle für einen Nutzer erfassten Felder:
+
+| Feld                       | Bedeutung                                         | Beispiel                           |
+| -------------------------- | ------------------------------------------------- | ---------------------------------- |
+| Quelle                     | Die Plattform oder Herkunft                       | `google`, `facebook`, `newsletter` |
+| Medium                     | Die Art des Kanals                                | `cpc`, `email`, `social`           |
+| Kampagne                   | Der Name der Kampagne                             | `summer_promo`, `launch_2026`      |
+| Inhalt                     | Die Version der Anzeige oder des Links            | `banner_a`, `cta_button`           |
+| Suchbegriff                | Das Keyword der bezahlten Suche                   | `ai_receptionist`                  |
+| Kampagnen-ID               | Die ID der Kampagne in Ihrer Anzeigenplattform    | `spring_2026_01`                   |
+| Quellplattform             | Die Plattform, die die Kampagne verwaltet         | `google_ads`                       |
+| Kreativformat              | Das Anzeigenformat                                | `video`, `display`                 |
+| Marketing-Taktik           | Der Targeting-Ansatz                              | `remarketing`, `prospecting`       |
+| Referrer                   | Die Seite, von der der Nutzer kam                 | `https://partner.example/blog`     |
+| Landing-URL                | Die Seite, auf der der Nutzer gelandet ist        | `/pricing`, `/signup`, `/promo`    |
+| Google Click ID (gclid)    | Wird von Google Ads automatisch hinzugefügt       | —                                  |
+| Facebook Click ID (fbclid) | Wird von Facebook und Instagram automatisch hinzugefügt | —                            |
+
+> **Häufiger Fehler:** Unterschiedliche Namen für dasselbe verwenden (z. B. `Facebook`, `facebook`, `fb`). Wählen Sie einen Stil und bleiben Sie dabei, damit die Berichte sauber bleiben.
 
 ## Praxisbeispiele
 
-### Beispiel 1: Eine bezahlte Anzeige messen
-Für eine Anzeige können Sie einen Link mit folgenden Angaben verwenden:
-- Quelle: `facebook`
-- Kampagne: `starter_angebot`
+### Beispiel 1: Einen Newsletter verfolgen
 
-Danach prüfen Sie in der **UTM-Analyse**, ob die Kampagne Registrierungen erzeugt.
+Fügen Sie dem Link in Ihrem Newsletter UTM-Parameter hinzu, zum Beispiel:
 
-### Beispiel 2: Zwei Landingpages vergleichen
-Erstellen Sie zwei Links mit unterschiedlichen Kampagnennamen:
-- Kampagne A: `test_preise`
-- Kampagne B: `test_startseite`
+`?utm_source=newsletter&utm_medium=email&utm_campaign=spring_offer`
 
-Nach einer Woche filtern Sie nach Datum und vergleichen die Ergebnisse, um zu sehen, welche Seite mehr Registrierungen bringt (und mit besserer UTM-Abdeckung).
+Geben Sie dann unter **Filter** `newsletter` bei **Quelle** und `spring_offer` bei **Kampagne** ein, um die Nutzer zu sehen, die sich über diese E-Mail registriert haben.
 
-## Wenn ein Kunde fragt „Woher kommt diese Registrierung?“
+### Beispiel 2: Landingpages vergleichen
 
-Schnell-Checkliste:
-1) Suchen Sie den Nutzer in der **UTM-Analyse**.
-2) Prüfen Sie **Quelle** und **Kampagne**.
-3) Wenn es leer ist, stellen Sie sicher, dass der richtige Link mit UTM-Parametern verwendet wurde.
+Versenden Sie zwei Versionen einer Landingpage mit unterschiedlichen Kampagnennamen:
 
-> **Tipp:** Definieren Sie eine interne Benennungsregel (zum Beispiel: Quellen klein schreiben, Kampagnen mit Unterstrichen, keine Leerzeichen).
+- Kampagne A: `pricing_page_test`
+- Kampagne B: `homepage_test`
+
+Nach einer Woche wählen Sie die Daten unter **Von** und **bis** und vergleichen die Karte **Kampagne**, um zu sehen, welche Seite mehr Registrierungen gebracht hat.
+
+## Wenn jemand fragt: „Woher kommt diese Registrierung?“
+
+Eine kurze Checkliste:
+
+1. Suchen Sie den Nutzer in **UTM-Analytics**
+2. Prüfen Sie seine **Quelle** und **Kampagne**, oder klicken Sie auf **Aktionen**, um alle Felder zu sehen
+3. Ist das Feld leer, prüfen Sie, ob er den richtigen Link (mit UTM-Parametern) verwendet hat
+
+> **Tipp:** Für einheitliche Berichte legen Sie für Ihr Team eine „Benennungsregel für Links“ fest (zum Beispiel: Quelle in Kleinbuchstaben, Kampagnen mit Unterstrichen und ohne Leerzeichen).

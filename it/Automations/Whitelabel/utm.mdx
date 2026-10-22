@@ -6,88 +6,141 @@ icon: "chart-line"
 
 ## A cosa serve questa sezione
 
-**Analisi UTM** ti aiuta a capire quali link e campagne di marketing portano utenti nel tuo ambiente in white label. Qui trovi l’attribuzione UTM acquisita quando un utente **si registra** e quando **avvia una prova gratuita**.
+**Analisi UTM** ti aiuta a capire quali link di marketing portano utenti nel tuo spazio white label. Mostra l’attribuzione marketing **acquisita alla registrazione e all’avvio della prova gratuita**.
 
 È utile per rispondere a domande come:
-- “Quale campagna sta generando davvero registrazioni?”
-- “Gli utenti arrivano da annunci, partner o fonti organiche?”
-- “Quale pagina di atterraggio converte meglio?”
 
-[Fai clic qui per aprire Analisi UTM](https://app.callin.io/cms/utm)
+- “Quale campagna porta davvero registrazioni?”
+- “Gli utenti arrivano da annunci, partner o fonti organiche?”
+- “Quale pagina di destinazione converte meglio?”
+
+La trovi nella Piattaforma white label, in **Analisi e Marketing** ([aprila qui](https://app.callin.io/cms/utm)).
 
 <div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
-  <img
-    src="/images/utm1.png"
-    alt="Dashboard di analisi UTM con schede riepilogative, pannelli per sorgente e campagna, filtri (ricerca e date) e una tabella delle registrazioni."
-    style={{ width:"100%", display:"block" }}
-  />
+  <video autoPlay muted loop playsInline src="/images/wl-utm.mp4" style={{ width:"100%", display:"block" }} />
 </div>
 
 <p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
-  Schermata: dashboard dei dati UTM con metriche, suddivisione per sorgente/campagna, filtri e lista utenti.
+  Video: la pagina Analisi UTM → Filtri per Sorgente, Campagna e Mezzo → Pulisci.
 </p>
 
-> **Consiglio:** Se vedi 0 record o “nessun dato UTM”, di solito significa che gli utenti si sono registrati senza parametri UTM nel link, oppure che la campagna non ha ancora generato registrazioni.
-
-> **Importante:** Le diciture esatte e le opzioni disponibili possono variare in base al tuo account, al tuo piano e alla lingua configurata.
+> **Suggerimento:** Se vedi **Nessun record corrispondente** e “Nessun dato UTM disponibile per questa query”, gli utenti si sono registrati senza parametri UTM nel link, oppure la campagna non ha ancora generato registrazioni.
 
 ## Come leggere la dashboard
 
-In alto compaiono spesso metriche riepilogative come:
-- **Totale**: numero totale di utenti/registrazioni nella vista corrente.
-- **Con UTM**: quante registrazioni hanno attribuzione UTM.
-- **Copertura**: percentuale di registrazioni con UTM sul totale.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/utm1.png" alt="Pagina Analisi UTM con i pulsanti Aggiorna ed Esporta CSV, la scheda Panoramica (Totale, Con UTM, Copertura), le schede Sorgente e Campagna, la ricerca e i filtri per data, e la tabella con le colonne Utente, Si è unito, Sorgente, Campagna, URL di destinazione e Azioni" style={{ width:"100%", display:"block" }} />
+</div>
 
-Potresti anche trovare azioni rapide come:
-- **Aggiorna**: ricarica i dati più recenti.
-- **Esporta CSV**: scarica l’elenco per i report.
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: Analisi UTM prima che un utente si registri con un link UTM.
+</p>
+
+### Panoramica
+
+- **Totale**: gli utenti nella vista attuale
+- **Con UTM**: quanti di loro hanno dati UTM acquisiti
+- **Copertura**: la percentuale di utenti nella vista che hanno dati UTM
+
+Sotto vedi il numero di **record** e la pagina in cui ti trovi.
+
+### Sorgente e Campagna
+
+Queste schede suddividono gli utenti con dati UTM per **Sorgente** e per **Campagna**. Finché non ci sono dati, mostrano **—**.
+
+### Aggiorna ed Esporta CSV
+
+- **Aggiorna**: carica i dati più recenti
+- **Esporta CSV**: scarica l’elenco per i tuoi report. È disponibile quando l’elenco contiene record.
+
+### La tabella
+
+Ogni riga è un utente con dati UTM:
+
+- **Utente**
+- **Si è unito**: la data di registrazione
+- **Sorgente**, **Campagna** e **URL di destinazione**
+- **Azioni**: apre tutti i campi UTM acquisiti per quell’utente
+
+Scegli quante righe vedere per pagina (**10**, **20** o **50**) nel selettore a destra. Sopra la tabella vedi quali record stai guardando.
+
+> **Suggerimento:** Puoi vedere i dati UTM di un cliente anche da [Utenti](/it/Automations/Whitelabel/Clients), nella scheda **UTM** dei suoi dettagli.
 
 ## Come cercare e filtrare
 
-### Cercare utenti
-Usa la barra di ricerca per trovare un utente specifico (per esempio tramite e-mail o nome).
+### Ricerca
 
-### Filtrare per intervallo di date
-Usa i selettori **Da** e **A** per concentrarti su un periodo (per esempio “ultimi 7 giorni” o “questo mese”).
+Usa **Cerca utenti…** per trovare un utente specifico (ad esempio per email o nome).
 
-### Applicare filtri
-Usa **Filtri** per restringere per sorgente o campagna (le opzioni possono variare in base al tuo account).
+### Intervallo di date
 
-### Ripristinare
-Usa **Cancella** per tornare alla vista predefinita.
+Usa i selettori di data **Da** e **a** per concentrarti su un periodo (ad esempio, gli ultimi 7 giorni o questo mese).
 
-## Significato dei campi UTM (in modo semplice)
+### Filtri
 
-I parametri UTM sono etichette aggiunte a un link per capire da dove proviene il traffico.
+Clicca su **Filtri** per mostrare tre campi in più: **Sorgente**, **Campagna** e **Mezzo**. Scrivi un valore in uno qualsiasi di essi per restringere i risultati.
 
-Campi più comuni:
-- **Sorgente**: la piattaforma di origine (es. `google`, `facebook`, `newsletter`).
-- **Campagna**: il nome della campagna (es. `promo_estate`, `lancio_2026`).
-- **URL di atterraggio**: la pagina su cui arriva l’utente (es. `/prezzi`, `/registrazione`, `/promo`).
+Il numero accanto a **Filtri** indica quanti filtri sono attivi, e ognuno compare come un’etichetta sotto i campi (ad esempio, **Sorgente: newsletter**). Clicca sulla **×** di un’etichetta per rimuovere quel filtro.
 
-> **Errore comune:** Usare nomi non coerenti (es. `Facebook`, `facebook`, `fb`). Scegli una convenzione e rispettala per avere report puliti.
+<div style={{ border:"2px solid #e5e7eb", borderRadius:"12px", padding:"8px", boxShadow:"0 4px 12px rgba(0,0,0,0.10)", maxWidth:"100%", overflow:"hidden", backgroundColor:"#0b0b0b", marginBottom:"0.75rem" }}>
+  <img src="/images/wl-utm-filters.png" alt="Filtri aperti con i campi Sorgente, Campagna e Mezzo compilati con newsletter, spring_offer ed email, le etichette dei tre filtri attivi e il pulsante Pulisci" style={{ width:"100%", display:"block" }} />
+</div>
+
+<p style={{ marginTop:"0", marginBottom:"1.5rem", color:"#6b7280", fontSize:"0.95rem" }}>
+  Schermata: tre filtri attivi, ognuno come un’etichetta che puoi rimuovere.
+</p>
+
+### Pulisci
+
+Usa **Pulisci** per rimuovere tutti i filtri e tornare alla vista predefinita.
+
+## Cosa significano i campi UTM (in parole semplici)
+
+I parametri UTM sono etichette aggiunte a un link per sapere da dove arriva il traffico. La tabella mostra i principali, e **Azioni** mostra tutti i campi acquisiti per un utente:
+
+| Campo                   | Cosa significa                                    | Esempio                            |
+| ----------------------- | ------------------------------------------------- | ---------------------------------- |
+| Sorgente                | La piattaforma o l’origine                        | `google`, `facebook`, `newsletter` |
+| Mezzo                   | Il tipo di canale                                 | `cpc`, `email`, `social`           |
+| Campagna                | Il nome della campagna                            | `summer_promo`, `launch_2026`      |
+| Contenuto               | La versione dell’annuncio o del link              | `banner_a`, `cta_button`           |
+| Termine                 | La parola chiave della ricerca a pagamento        | `ai_receptionist`                  |
+| ID campagna             | L’ID della campagna nella tua piattaforma di annunci | `spring_2026_01`                |
+| Piattaforma sorgente    | La piattaforma che gestisce la campagna           | `google_ads`                       |
+| Formato creativo        | Il formato dell’annuncio                          | `video`, `display`                 |
+| Tattica di marketing    | L’approccio di targeting                          | `remarketing`, `prospecting`       |
+| Referente               | La pagina da cui arriva l’utente                  | `https://partner.example/blog`     |
+| URL di destinazione     | La pagina su cui è arrivato l’utente              | `/pricing`, `/signup`, `/promo`    |
+| ID clic Google (gclid)  | Aggiunto automaticamente da Google Ads            | —                                  |
+| ID clic Facebook (fbclid)| Aggiunto automaticamente da Facebook e Instagram | —                                  |
+
+> **Errore comune:** Usare nomi diversi per la stessa cosa (ad esempio `Facebook`, `facebook`, `fb`). Scegli uno stile e mantienilo, così i report restano puliti.
 
 ## Esempi pratici
 
-### Esempio 1: Misurare un annuncio a pagamento
-Per un annuncio puoi usare un link etichettato:
-- Sorgente: `facebook`
-- Campagna: `offerta_starter`
+### Esempio 1: Monitorare una newsletter
 
-Poi, in **Analisi UTM**, controlli subito se la campagna sta portando registrazioni.
+Aggiungi i parametri UTM al link della tua newsletter, ad esempio:
 
-### Esempio 2: Confrontare due pagine di atterraggio
-Crea due link con campagne diverse:
-- Campagna A: `test_prezzi`
-- Campagna B: `test_home`
+`?utm_source=newsletter&utm_medium=email&utm_campaign=spring_offer`
 
-Dopo una settimana, filtra per data e confronta i risultati per capire quale pagina porta più registrazioni (e con migliore copertura UTM).
+Poi, in **Filtri**, scrivi `newsletter` in **Sorgente** e `spring_offer` in **Campagna** per vedere gli utenti che si sono registrati da quella email.
 
-## Quando un cliente chiede “da dove arriva questa registrazione?”
+### Esempio 2: Confrontare pagine di destinazione
 
-Checklist rapida:
-1) Cerca l’utente in **Analisi UTM**.
-2) Controlla **Sorgente** e **Campagna**.
-3) Se è vuoto, verifica che sia stato usato il link corretto con parametri UTM.
+Invia due versioni di una pagina di destinazione con nomi di campagna diversi:
 
-> **Consiglio:** Definisci una regola interna di denominazione (per esempio: sorgenti in minuscolo e campagne con trattini bassi, senza spazi).
+- Campagna A: `pricing_page_test`
+- Campagna B: `homepage_test`
+
+Dopo una settimana, usa le date **Da** e **a** e confronta la scheda **Campagna** per vedere quale pagina ha portato più registrazioni.
+
+## Quando qualcuno chiede “Da dove arriva questa registrazione?”
+
+Una breve lista di controllo:
+
+1. Cerca l’utente in **Analisi UTM**
+2. Controlla la sua **Sorgente** e la sua **Campagna**, oppure clicca su **Azioni** per vedere tutti i campi
+3. Se è vuoto, verifica che abbia usato il link corretto (con parametri UTM)
+
+> **Suggerimento:** Per report coerenti, crea una “regola per i nomi dei link” per il tuo team (ad esempio: sorgente in minuscolo, campagne con trattini bassi e senza spazi).
