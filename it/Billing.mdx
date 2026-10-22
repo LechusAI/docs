@@ -37,7 +37,7 @@ Quando crei un piano, sei tu a fissare il prezzo che pagheranno i tuoi utenti fi
 
 È tutto qui il modello di business. Callin ti vende i minuti al costo; tu li vendi al prezzo di mercato.
 
-Immagina di decidere di far pagare \*\*0,32 $$al minuto**, il doppio del tuo costo. Un piano di 1.000 minuti viene quindi a 320$$, e i conti tornano così:
+Immagina di decidere di far pagare **0,32 \$ al minuto**, il doppio del tuo costo. Un piano di 1.000 minuti viene quindi a 320 \$, e i conti tornano così:
 
 |  | Importo |
 | --- | --- |
@@ -45,9 +45,9 @@ Immagina di decidere di far pagare \*\*0,32 $$al minuto**, il doppio del tuo cos
 | Commissione della piattaforma (1.000 × 0,16 \$) | −160 \$ |
 | **Il tuo margine lordo** | **160 \$** |
 
-Se applichi 0,30 $$, il tuo margine è di 140 $$. Se applichi 0,25 $$, è di 90 $$. Se applichi 0,16 \$, stai lavorando gratis.
+Se applichi 0,30 \$, il tuo margine è di 140 \$. Se applichi 0,25 \$, è di 90 \$. Se applichi 0,16 \$, stai lavorando gratis.
 
-> **Importante:** Fissa il prezzo di ogni piano sopra 0,16 \$ al minuto. La piattaforma non ti impedisce di applicare un prezzo pari o inferiore al tuo costo, quindi questo controllo spetta a te.
+> **Importante:** Fissa il prezzo di ogni piano sopra 0,16 \$ al minuto. Quando crei un piano in [Piani di abbonamento](/it/Automations/Whitelabel/SubscriptionsPlans), la procedura guidata ti avvisa se il prezzo non sarà redditizio dopo la commissione della piattaforma. In ogni caso, controlla i tuoi numeri prima di pubblicarlo.
 
 ## Perché il consumo non cambia quello che paghi
 
@@ -84,7 +84,7 @@ La commissione di elaborazione è l'addebito di Stripe: di norma una piccola per
 
 ## Un esempio completo
 
-Vendi un piano di \*\*1.000 minuti a 0,32 $$al minuto** a Clinica Dentale Demo. Il piano viene a 320$$ al mese.
+Vendi un piano di **1.000 minuti a 0,32 \$ al minuto** a Clinica Dentale Demo. Il piano viene a 320 \$ al mese.
 
 | Voce | Importo |
 | --- | --- |
@@ -93,7 +93,7 @@ Vendi un piano di \*\*1.000 minuti a 0,32 $$al minuto** a Clinica Dentale Demo. 
 | Commissione di elaborazione | −9,58 \$ |
 | **Importo netto per te** | **150,42 \$** |
 
-Ogni mese in cui quell'abbonamento si rinnova, ricevi circa 150 $$. La commissione della piattaforma di 160 $$ è fissa e prevedibile. La commissione di elaborazione si muove un po' a seconda di come paga il tuo cliente, quindi considerala una stima e non un numero esatto.
+Ogni mese in cui quell'abbonamento si rinnova, ricevi circa 150 \$. La commissione della piattaforma di 160 \$ è fissa e prevedibile. La commissione di elaborazione si muove un po' a seconda di come paga il tuo cliente, quindi considerala una stima e non un numero esatto.
 
 Se Clinica Dentale Demo ha consumato 120 minuti quel mese, la tabella non cambia. Se ne ha consumati 990, nemmeno.
 
@@ -112,10 +112,16 @@ I due modelli funzionano su principi opposti:
 
 Poiché il pagamento a consumo viene addebitato al costo, non ti lascia margine. Serve per accedere alla piattaforma e per fare prove, non per rivendere. Per vendere con margine, crea un piano fisso e fissane il prezzo sopra 0,16 \$ al minuto.
 
+### Vendere minuti a consumo ai tuoi clienti
+
+Puoi anche creare un piano **Pay-as-you-go** per i tuoi clienti in [Piani di abbonamento](/it/Automations/Whitelabel/SubscriptionsPlans). Lì imposti la tariffa al minuto che pagano, e deve essere almeno pari alla commissione della piattaforma: se è inferiore, la procedura guidata ti chiede di aumentarla.
+
+I tuoi clienti possono anche acquistare minuti extra dalla loro pagina di fatturazione. Il prezzo al minuto di queste ricariche è la tua **Tariffa di ricarica**, che imposti in **Piani di abbonamento** → **Tariffa di ricarica**. Impostala sopra 0,16 \$ così le ricariche mantengono il tuo margine.
+
 ## Quando un pagamento fallisce
 
 Se la carta del tuo utente finale non può essere addebitata, non avviene nessuna suddivisione, perché non è stato incassato niente. Non ti viene addebitata nessuna commissione della piattaforma per un pagamento che non si è mai verificato.
 
 L'abbonamento passa allo stato **Scaduto** e i minuti disponibili dell'utente scendono a zero, così i suoi agenti smettono di rispondere alle chiamate finché la situazione non si risolve. Quando il pagamento va a buon fine, l'abbonamento torna attivo, i minuti vengono ripristinati e la suddivisione funziona normalmente su quel pagamento.
 
-Puoi vedere lo stato di tutti gli abbonamenti in **Abbonamenti**, nel tuo pannello white label, dove ogni riga mostra l'utente, il suo piano, il prezzo, i minuti rimanenti e lo stato attuale. Vale la pena controllarlo con una certa frequenza: un abbonamento scaduto è un cliente con il servizio interrotto, e di solito la via più rapida è parlargli direttamente perché aggiorni la sua carta.
+Puoi vedere lo stato di tutti gli abbonamenti in [Abbonamenti](/it/Automations/Whitelabel/Subscriptions), nel tuo pannello white label, dove ogni riga mostra l'utente, il suo piano, il prezzo, i minuti e lo stato attuale. Vale la pena controllarlo con una certa frequenza: un abbonamento scaduto è un cliente con il servizio interrotto, e di solito la via più rapida è parlargli direttamente perché aggiorni la sua carta.

@@ -37,7 +37,7 @@ When you create a plan, you set the price your end users will pay. **This price 
 
 That's the whole business model. Callin sells you minutes at cost; you sell them at retail.
 
-Say you decide to charge \*\*$$0.32 per minute** — double your cost. A plan of 1,000 minutes is then priced at $$320, and the maths works out like this:
+Say you decide to charge **\$0.32 per minute** — double your cost. A plan of 1,000 minutes is then priced at \$320, and the maths works out like this:
 
 |  | Amount |
 | --- | --- |
@@ -45,9 +45,9 @@ Say you decide to charge \*\*$$0.32 per minute** — double your cost. A plan of
 | Platform fee (1,000 × \$0.16) | −\$160 |
 | **Your gross margin** | **\$160** |
 
-Charge $$0.30 and your margin is $$140. Charge $$0.25 and it's $$90. Charge \$0.16 and you're working for free.
+Charge \$0.30 and your margin is \$140. Charge \$0.25 and it's \$90. Charge \$0.16 and you're working for free.
 
-> **Important:** Set the price of every plan above \$0.16 per minute. There's nothing in the platform stopping you from pricing at or below your cost, so the check is yours to make.
+> **Important:** Set the price of every plan above \$0.16 per minute. When you create a plan in [Subscription Plans](/Automations/Whitelabel/SubscriptionsPlans), the wizard warns you if the price won't be profitable after the platform fee. Still, check your numbers before you publish.
 
 ## Why usage doesn't change what you pay
 
@@ -84,7 +84,7 @@ The processing fee is Stripe's own charge, typically a small percentage of the t
 
 ## A complete example
 
-You sell a plan of \*\*1,000 minutes at $$0.32 per minute** to Demo Dental Clinic. The plan is priced at $$320 per month.
+You sell a plan of **1,000 minutes at \$0.32 per minute** to Demo Dental Clinic. The plan is priced at \$320 per month.
 
 | Line | Amount |
 | --- | --- |
@@ -93,7 +93,7 @@ You sell a plan of \*\*1,000 minutes at $$0.32 per minute** to Demo Dental Clini
 | Processing fee | −\$9.58 |
 | **Net amount for you** | **\$150.42** |
 
-Every month that subscription renews, you receive around $$150. The $$160 platform fee is fixed and predictable. The processing fee moves a little depending on how your customer pays, so treat that figure as an estimate rather than an exact number.
+Every month that subscription renews, you receive around \$150. The \$160 platform fee is fixed and predictable. The processing fee moves a little depending on how your customer pays, so treat that figure as an estimate rather than an exact number.
 
 If Demo Dental Clinic used 120 minutes that month, the table is unchanged. If they used 990, it's also unchanged.
 
@@ -112,10 +112,16 @@ The two models work on opposite principles:
 
 Because Pay as you go is charged at cost, it carries no margin for you. It's there for accessing the platform and for testing, not for reselling. To sell with a margin, create a fixed plan and price it above \$0.16 per minute.
 
+### Selling minutes per use to your customers
+
+You can also create a **Pay as You Go** plan for your own customers in [Subscription Plans](/Automations/Whitelabel/SubscriptionsPlans). There you set the rate per minute they pay, and it must be at least the platform fee: if it's lower, the wizard asks you to increase it.
+
+Your customers can also buy extra minutes from their billing page. The price per minute of those top-ups is your **Recharge rate**, which you set in **Subscription Plans** → **Recharge rate**. Set it above \$0.16 so top-ups keep your margin.
+
 ## When a payment fails
 
 If your end user's card can't be charged, no split takes place, because no money was collected. You aren't charged a platform fee on a payment that never happened.
 
-The subscription moves to a **Past due** state and the user's available minutes drop to zero, so their agents stop taking calls until the situation is resolved. Once the payment goes through, the subscription returns to active, the minutes are restored, and the split runs normally on that payment.
+The subscription moves to a **Past Due** state and the user's available minutes drop to zero, so their agents stop taking calls until the situation is resolved. Once the payment goes through, the subscription returns to active, the minutes are restored, and the split runs normally on that payment.
 
-You can see the state of every subscription in **Subscriptions** on your white label panel, where each row shows the user, their plan, the price, the minutes remaining and the current status. It's worth checking periodically: a subscription sitting in past due is a customer whose service is interrupted, and usually the fastest fix is a direct conversation about updating their card.
+You can see the state of every subscription in [Subscriptions](/Automations/Whitelabel/Subscriptions) on your white label panel, where each row shows the user, their plan, the price, the minutes and the current status. It's worth checking periodically: a subscription sitting in past due is a customer whose service is interrupted, and usually the fastest fix is a direct conversation about updating their card.

@@ -37,7 +37,7 @@ Quand tu crées un forfait, c'est toi qui fixes le prix que paieront tes utilisa
 
 C'est tout le modèle économique. Callin te vend les minutes au coût ; toi, tu les revends au prix du marché.
 
-Imagine que tu décides de facturer \*\*0,32 $$la minute**, le double de ton coût. Un forfait de 1 000 minutes revient alors à 320$$, et les calculs donnent ceci :
+Imagine que tu décides de facturer **0,32 \$ la minute**, le double de ton coût. Un forfait de 1 000 minutes revient alors à 320 \$, et les calculs donnent ceci :
 
 |  | Montant |
 | --- | --- |
@@ -45,9 +45,9 @@ Imagine que tu décides de facturer \*\*0,32 $$la minute**, le double de ton co�
 | Commission de la plateforme (1 000 × 0,16 \$) | −160 \$ |
 | **Ta marge brute** | **160 \$** |
 
-À 0,30 $$, ta marge est de 140 $$. À 0,25 $$, elle est de 90 $$. À 0,16 \$, tu travailles gratuitement.
+À 0,30 \$, ta marge est de 140 \$. À 0,25 \$, elle est de 90 \$. À 0,16 \$, tu travailles gratuitement.
 
-> **Important :** Fixe le prix de chaque forfait au-dessus de 0,16 \$ la minute. Rien dans la plateforme ne t'empêche de vendre à ton coût ou en dessous, donc cette vérification t'appartient.
+> **Important :** Fixe le prix de chaque forfait au-dessus de 0,16 \$ la minute. Quand tu crées un forfait dans [Forfaits d’abonnement](/fr/Automations/Whitelabel/SubscriptionsPlans), l’assistant t’avertit si le prix ne sera pas rentable après la commission de la plateforme. Vérifie quand même tes calculs avant de le publier.
 
 ## Pourquoi la consommation ne change pas ce que tu paies
 
@@ -84,7 +84,7 @@ Les frais de traitement sont le prélèvement propre à Stripe : en général un
 
 ## Un exemple complet
 
-Tu vends un forfait de \*\*1 000 minutes à 0,32 $$la minute** à Clinique Dentaire Demo. Le forfait est à 320$$ par mois.
+Tu vends un forfait de **1 000 minutes à 0,32 \$ la minute** à Clinique Dentaire Demo. Le forfait est à 320 \$ par mois.
 
 | Ligne | Montant |
 | --- | --- |
@@ -93,7 +93,7 @@ Tu vends un forfait de \*\*1 000 minutes à 0,32 $$la minute** à Clinique Denta
 | Frais de traitement | −9,58 \$ |
 | **Montant net pour toi** | **150,42 \$** |
 
-Chaque mois où cet abonnement se renouvelle, tu reçois environ 150 $$. La commission de plateforme de 160 $$ est fixe et prévisible. Les frais de traitement bougent un peu selon la façon dont ton client paie, alors prends ce chiffre comme une estimation et non comme un montant exact.
+Chaque mois où cet abonnement se renouvelle, tu reçois environ 150 \$. La commission de plateforme de 160 \$ est fixe et prévisible. Les frais de traitement bougent un peu selon la façon dont ton client paie, alors prends ce chiffre comme une estimation et non comme un montant exact.
 
 Si Clinique Dentaire Demo a consommé 120 minutes ce mois-là, le tableau ne change pas. Si elle en a consommé 990, non plus.
 
@@ -112,10 +112,16 @@ Les deux modèles reposent sur des principes opposés :
 
 Comme le paiement à la consommation est facturé au coût, il ne te laisse aucune marge. Il sert à accéder à la plateforme et à faire des essais, pas à revendre. Pour vendre avec une marge, crée un forfait fixe et fixe son prix au-dessus de 0,16 \$ la minute.
 
+### Vendre des minutes à l’usage à tes clients
+
+Tu peux aussi créer un forfait **Paiement à l'usage** pour tes propres clients dans [Forfaits d’abonnement](/fr/Automations/Whitelabel/SubscriptionsPlans). Tu y fixes le tarif par minute qu’ils paient, et il doit être au moins égal à la commission de la plateforme : s’il est plus bas, l’assistant te demande de l’augmenter.
+
+Tes clients peuvent aussi acheter des minutes supplémentaires depuis leur page de facturation. Le prix par minute de ces recharges est ton **Tarif de recharge**, que tu définis dans **Forfaits d’abonnement** → **Tarif de recharge**. Fixe-le au-dessus de 0,16 \$ pour que les recharges préservent ta marge.
+
 ## Quand un paiement échoue
 
 Si la carte de ton utilisateur final ne peut pas être débitée, aucune répartition n'a lieu, parce que rien n'a été encaissé. Aucune commission de plateforme ne t'est facturée pour un paiement qui n'a jamais eu lieu.
 
 L'abonnement passe à l'état **Expiré** et les minutes disponibles de l'utilisateur tombent à zéro, si bien que ses agents cessent de prendre les appels jusqu'à ce que la situation soit réglée. Une fois le paiement passé, l'abonnement redevient actif, les minutes sont rétablies et la répartition se fait normalement sur ce paiement.
 
-Tu peux voir l'état de tous les abonnements dans **Abonnements**, sur ton panneau white label, où chaque ligne affiche l'utilisateur, son forfait, le prix, les minutes restantes et l'état actuel. Cela vaut la peine de le consulter régulièrement : un abonnement expiré, c'est un client dont le service est interrompu, et le plus rapide est en général de lui parler directement pour qu'il mette sa carte à jour.
+Tu peux voir l'état de tous les abonnements dans [Abonnements](/fr/Automations/Whitelabel/Subscriptions), sur ton panneau white label, où chaque ligne affiche l'utilisateur, son forfait, le prix, les minutes et l'état actuel. Cela vaut la peine de le consulter régulièrement : un abonnement expiré, c'est un client dont le service est interrompu, et le plus rapide est en général de lui parler directement pour qu'il mette sa carte à jour.

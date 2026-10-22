@@ -37,7 +37,7 @@ Cuando creas un plan, tú fijas el precio que pagarán tus usuarios finales. **E
 
 Ese es todo el modelo de negocio. Callin te vende los minutos a coste; tú los vendes a precio de mercado.
 
-Imagina que decides cobrar \*\*0,32 $$por minuto**, el doble de tu coste. Un plan de 1.000 minutos queda entonces en 320$$, y las cuentas salen así:
+Imagina que decides cobrar **0,32 \$ por minuto**, el doble de tu coste. Un plan de 1.000 minutos queda entonces en 320 \$, y las cuentas salen así:
 
 |  | Importe |
 | --- | --- |
@@ -45,9 +45,9 @@ Imagina que decides cobrar \*\*0,32 $$por minuto**, el doble de tu coste. Un pla
 | Comisión de la plataforma (1.000 × 0,16 \$) | −160 \$ |
 | **Tu margen bruto** | **160 \$** |
 
-Si cobras 0,30 $$, tu margen es de 140 $$. Si cobras 0,25 $$, es de 90 $$. Si cobras 0,16 \$, estás trabajando gratis.
+Si cobras 0,30 \$, tu margen es de 140 \$. Si cobras 0,25 \$, es de 90 \$. Si cobras 0,16 \$, estás trabajando gratis.
 
-> **Importante:** Fija el precio de cada plan por encima de 0,16 \$ por minuto. La plataforma no te impide poner un precio igual o inferior a tu coste, así que esa comprobación te toca a ti.
+> **Importante:** Fija el precio de cada plan por encima de 0,16 \$ por minuto. Cuando creas un plan en [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans), el asistente te avisa si el precio no será rentable después de la comisión de la plataforma. Aun así, revisa tus números antes de publicarlo.
 
 ## Por qué el consumo no cambia lo que pagas
 
@@ -84,7 +84,7 @@ La comisión de procesamiento es el cargo propio de Stripe: normalmente un peque
 
 ## Un ejemplo completo
 
-Vendes un plan de \*\*1.000 minutos a 0,32 $$por minuto** a Clínica Dental Demo. El plan queda en 320$$ al mes.
+Vendes un plan de **1.000 minutos a 0,32 \$ por minuto** a Clínica Dental Demo. El plan queda en 320 \$ al mes.
 
 | Línea | Importe |
 | --- | --- |
@@ -93,7 +93,7 @@ Vendes un plan de \*\*1.000 minutos a 0,32 $$por minuto** a Clínica Dental Demo
 | Comisión de procesamiento | −9,58 \$ |
 | **Importe neto para ti** | **150,42 \$** |
 
-Cada mes que esa suscripción se renueve, recibirás alrededor de 150 $$. La comisión de plataforma de 160 $$ es fija y predecible. La comisión de procesamiento se mueve un poco según cómo pague tu cliente, así que toma esa cifra como una estimación y no como un número exacto.
+Cada mes que esa suscripción se renueve, recibirás alrededor de 150 \$. La comisión de plataforma de 160 \$ es fija y predecible. La comisión de procesamiento se mueve un poco según cómo pague tu cliente, así que toma esa cifra como una estimación y no como un número exacto.
 
 Si Clínica Dental Demo consumió 120 minutos ese mes, la tabla no cambia. Si consumió 990, tampoco.
 
@@ -112,10 +112,16 @@ Los dos modelos funcionan con principios opuestos:
 
 Como el pago por consumo se cobra a coste, no te deja margen. Está pensado para acceder a la plataforma y para hacer pruebas, no para revender. Para vender con margen, crea un plan fijo y ponle un precio por encima de 0,16 \$ por minuto.
 
+### Vender minutos por uso a tus clientes
+
+También puedes crear un plan **Pago por uso** para tus propios clientes en [Planes de suscripción](/es/Automations/Whitelabel/SubscriptionsPlans). Ahí fijas la tarifa por minuto que pagan, y tiene que ser al menos la comisión de la plataforma: si es menor, el asistente te pide que la subas.
+
+Tus clientes también pueden comprar minutos extra desde su página de facturación. El precio por minuto de esas recargas es tu **Tarifa de recarga**, que configuras en **Planes de suscripción** → **Tarifa de recarga**. Ponla por encima de 0,16 \$ para que las recargas mantengan tu margen.
+
 ## Cuando un pago falla
 
 Si no se consigue cobrar la tarjeta de tu usuario final, no hay reparto, porque no se ha recaudado nada. No se te aplica ninguna comisión de plataforma por un pago que no ha llegado a producirse.
 
 La suscripción pasa al estado **Vencido** y los minutos disponibles del usuario bajan a cero, de modo que sus agentes dejan de atender llamadas hasta que se resuelva la situación. Cuando el pago se complete, la suscripción vuelve a estar activa, los minutos se restauran y el reparto funciona con normalidad en ese pago.
 
-Puedes ver el estado de todas las suscripciones en **Suscripciones**, dentro de tu panel white label, donde cada fila muestra el usuario, su plan, el precio, los minutos restantes y el estado actual. Merece la pena revisarlo con cierta frecuencia: una suscripción vencida es un cliente con el servicio interrumpido, y normalmente la vía más rápida es hablar directamente con él para que actualice su tarjeta.
+Puedes ver el estado de todas las suscripciones en [Suscripciones](/es/Automations/Whitelabel/Subscriptions), dentro de tu panel white label, donde cada fila muestra el usuario, su plan, el precio, los minutos y el estado actual. Merece la pena revisarlo con cierta frecuencia: una suscripción vencida es un cliente con el servicio interrumpido, y normalmente la vía más rápida es hablar directamente con él para que actualice su tarjeta.
