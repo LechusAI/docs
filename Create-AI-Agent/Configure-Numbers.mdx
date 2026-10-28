@@ -583,6 +583,12 @@ Personal numbers are **outbound-only**, and calls made using a personal number c
 - Make sure the number is **assigned to an agent**
 - If using BYOC, confirm your SIP trunk settings are correct (SBC/FQDN, transport, credentials)
 
+### “My agent doesn’t answer incoming calls”
+
+- Check that the number is **assigned to the agent**: go to **AI Agents**, open the agent’s **⋮** menu and select **Assign Number** (see [Assign numbers to agents](#assign-numbers-to-agents-so-they-can-be-used))
+- Check **Call Direction** in the agent’s **Agent** tab: it must be **Inbound** or **Both**. New agents start as **Outbound**, and an outbound agent doesn’t answer incoming calls
+- You don’t need transfer rules for the agent to answer
+
 ### “My personal number isn’t receiving inbound calls”
 
 - That’s expected: **Personal Numbers are outbound-only**

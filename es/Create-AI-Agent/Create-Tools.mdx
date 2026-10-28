@@ -16,6 +16,10 @@ Con una herramienta, tu agente puede:
 - **Consultar datos** de un sistema externo (por ejemplo: estado, disponibilidad, verificación).
 - **Lanzar automatizaciones** en plataformas externas (CRM, tickets, mensajería, flujos de trabajo, etc.).
 
+<Note>
+  Los agentes de Callin no pueden enviar tonos de teclado (DTMF), por ejemplo para pulsar el 1 cuando contesta un menú telefónico. No es posible con una herramienta, con un webhook ni con ningún otro ajuste.
+</Note>
+
 La página **Herramientas** tiene dos pestañas:
 
 - **Herramientas**: tus herramientas webhook. Es lo que explica esta guía paso a paso.
@@ -452,6 +456,7 @@ Una buena práctica es probar el webhook con una URL de inspección temporal (pa
 | No llega información al endpoint    | Endpoint inaccesible o URL incorrecta                             | Verifica que la URL sea **HTTPS** y accesible públicamente                                       |
 | Faltan campos                       | “Identificador / Requerido” mal definidos o el agente no los recopila | Revisa los **Parámetros del cuerpo** y ajusta el **Prompt de conversación** para exigir y confirmar los datos |
 | Se ejecuta en el momento equivocado | El Prompt de conversación no define condiciones claras               | Especifica reglas del tipo “solo al final”, “solo tras confirmar email y teléfono”               |
+| El agente tendría que pulsar una tecla (por ejemplo, el 1 en un menú telefónico) | Callin no puede enviar tonos de teclado (DTMF) | No es posible con una herramienta ni con un webhook. Llama a un número que atienda una persona o que no pida pulsar teclas |
 
 ---
 

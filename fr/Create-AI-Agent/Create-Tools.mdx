@@ -16,6 +16,10 @@ Avec un outil, votre agent peut :
 - **Consulter des données** dans un système externe (par exemple : statut, disponibilité, vérification).
 - **Déclencher des automatisations** sur des plateformes externes (CRM, tickets, messagerie, workflows, etc.).
 
+<Note>
+  Les agents Callin ne peuvent pas envoyer de tonalités du clavier (DTMF), par exemple pour appuyer sur 1 quand un menu téléphonique répond. Ce n’est pas possible avec un outil, un webhook ni aucun autre réglage.
+</Note>
+
 La page **Outils** comporte deux onglets :
 
 - **Outils** : vos outils webhook. C’est ce que ce guide explique pas à pas.
@@ -452,6 +456,7 @@ Une bonne pratique consiste à tester le webhook avec une URL d’inspection tem
 | Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                            | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                                  |
 | Champs manquants                         | « Identifiant / Obligatoire » mal définis ou l’agent ne les collecte pas | Vérifiez les **Paramètres du corps** et ajustez l’**Invite de conversation** pour exiger et confirmer les données      |
 | Exécution au mauvais moment              | L’Invite de conversation ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
+| L’agent devrait appuyer sur une touche (par exemple 1 dans un menu téléphonique) | Callin ne peut pas envoyer de tonalités du clavier (DTMF) | Ce n’est pas possible avec un outil ni avec un webhook. Appelez un numéro où répond une personne ou qui ne demande pas d’appuyer sur des touches |
 
 ---
 
