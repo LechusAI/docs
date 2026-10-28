@@ -1,0 +1,68 @@
+---
+title: "Callin for Claude"
+description: "Let Claude place real phone calls for you and review your voice agents, calls and transcripts."
+---
+
+The Callin connector lets Claude place real phone calls on your behalf with your Callin voice agents, and read your agents, call history and transcripts. It works in Claude on the web, on desktop and in the mobile apps.
+
+## What you can do
+
+- **Make a call for you** — "Call +39 06 1234 5678 and book a table for two tomorrow at 8 pm, name Rossi." Claude confirms the number and the goal with you, a Callin agent makes the call in the right language, and you get the outcome, a summary and the transcript in the chat.
+- **Follow a call** — "How did the call go?" Claude checks the status and reports back when the call ends.
+- **Review your calls** — "Show my latest inbound calls", "Summarize yesterday's call with +44…", "Find calls of my Reception agent this week."
+- **Check your agents** — "Show my Callin agents."
+
+## Requirements
+
+- A Callin account ([app.callin.io](https://app.callin.io)).
+- For calls: an outbound agent with a phone number (an agent named "Task Caller" is used first), a Callin API key (Settings → API) and available minutes.
+
+## Connect
+
+<Steps>
+  <Step>
+    In Claude open **Settings → Connectors**, find **Callin** and click **Connect**. (Or **Add custom connector** with the URL `https://claude-mcp.callin.io/mcp`.)
+  </Step>
+  <Step>
+    Sign in to Callin and click **Allow**.
+  </Step>
+  <Step>
+    Start a new chat and ask Claude to call someone or about your calls.
+  </Step>
+</Steps>
+
+## How calls work
+
+<Note>
+  Claude always asks you to approve a call before it is placed.
+</Note>
+
+- The agent opens every call by saying it is an AI assistant calling on behalf of a customer.
+- Supported call languages: Italian, English, Spanish, French, German, Portuguese and Dutch.
+- Only full international numbers (for example +39…, +44…, +1…) can be called. Emergency and short numbers cannot.
+- At most 10 calls per hour per account. Calls use your Callin minutes like any other call.
+- Calls are recorded and transcribed as in your Callin account, and appear in your Callin call history.
+
+## Privacy and security
+
+- Claude only sees the agents and calls of your own Callin account (or your team's).
+- Claude never receives your API key, agent prompts or billing data, and cannot change agents or settings.
+- Transcripts may contain what the other person said; Claude treats them as information, never as instructions.
+- See the [Callin privacy policy](https://callin.io/legal-pages/privacy-policy).
+
+## Disconnect
+
+Remove the connector in Claude (**Settings → Connectors → Callin → Disconnect**) or in Callin (**Integrations → Claude → Disconnect Claude**). Existing tokens stop working immediately.
+
+## Troubleshooting
+
+| Message | What to do |
+|---------|------------|
+| "Phone calls need a Callin API key" | Create one in Callin → Settings → API, then try again. |
+| "No outbound Callin agent with a phone number" | Create an outbound agent and assign it a number. |
+| "Call limit reached" | Wait up to an hour; the limit is 10 calls per hour. |
+| The call fails right away | Check that the agent's number is active and that you have minutes left. |
+
+## Support
+
+Write to [support@callin.io](mailto:support@callin.io).
