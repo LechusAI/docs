@@ -16,6 +16,10 @@ Mit einem Tool kann dein Agent:
 - **Daten abfragen** aus einem externen System (zum Beispiel: Status, Verfügbarkeit, Prüfung).
 - **Automatisierungen auslösen** auf externen Plattformen (CRM, Tickets, Messaging, Workflows usw.).
 
+<Note>
+  Callin-Agenten können keine Tastentöne (DTMF) senden, zum Beispiel um die 1 zu drücken, wenn ein Telefonmenü antwortet. Das geht weder mit einem Tool noch mit einem Webhook oder einer anderen Einstellung.
+</Note>
+
 Die Seite **Werkzeuge** hat zwei Tabs:
 
 - **Tools**: deine Webhook-Tools. Darum geht es Schritt für Schritt in dieser Anleitung.
@@ -452,6 +456,7 @@ Bewährt hat sich, den Webhook zuerst mit einer temporären Inspektions-URL zu t
 | Am Endpoint kommen keine Daten an    | Der Endpoint ist nicht erreichbar oder die URL ist falsch                        | Prüfe, ob die URL **HTTPS** nutzt und öffentlich erreichbar ist                                                  |
 | Es fehlen Felder                     | „Bezeichner / Erforderlich“ falsch definiert oder der Agent sammelt sie nicht    | Prüfe die **Body-Parameter** und passe den **Konversations-Prompt** an, damit er die Daten verlangt und bestätigt |
 | Es läuft zum falschen Zeitpunkt      | Der Konversations-Prompt legt keine klaren Bedingungen fest                      | Lege Regeln fest wie „nur am Ende“ oder „erst nach Bestätigung von E-Mail und Telefon“                          |
+| Der Agent soll eine Taste drücken (zum Beispiel die 1 in einem Telefonmenü) | Callin kann keine Tastentöne (DTMF) senden | Das geht weder mit einem Tool noch mit einem Webhook. Rufe eine Nummer an, bei der eine Person abnimmt oder bei der man keine Tasten drücken muss |
 
 ---
 

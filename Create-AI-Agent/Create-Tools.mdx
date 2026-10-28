@@ -16,6 +16,10 @@ With a tool, your agent can:
 - **Query data** from an external system (for example: status, availability, verification).
 - **Trigger automations** in external platforms (CRM, tickets, messaging, workflows, etc.).
 
+<Note>
+  Callin agents can't send keypad tones (DTMF), for example to press 1 when a phone menu answers. This isn't possible with a tool, a webhook or any other setting.
+</Note>
+
 The **Tools** page has two tabs:
 
 - **Tools**: your webhook tools. This is what this guide covers step by step.
@@ -452,6 +456,7 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 | No information reaches the endpoint | Endpoint is inaccessible or URL is incorrect                                  | Verify the URL is **HTTPS** and publicly accessible                                               |
 | Missing fields                      | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body Parameters** and adjust the **Conversation Prompt** to require and confirm the data |
 | It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                       | Specify rules like “only at the end”, “only after confirming email and phone”                     |
+| The agent should press a key (for example, 1 in a phone menu) | Callin can’t send keypad tones (DTMF) | Not possible with a tool or a webhook. Call a number that is answered by a person or that doesn’t need keys |
 
 ---
 
