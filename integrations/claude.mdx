@@ -12,24 +12,110 @@ The Callin connector lets Claude place real phone calls on your behalf with your
 - **Review your calls** — "Show my latest inbound calls", "Summarize yesterday's call with +44…", "Find calls of my Reception agent this week."
 - **Check your agents** — "Show my Callin agents."
 
+Once connected, Claude has these tools:
+
+| Tool | What Claude uses it for |
+|------|-------------------------|
+| **List Callin agents** / **Get Callin agent** | See your agents and the details of one agent |
+| **List Callin calls** / **Get Callin call** | See your call history and the details of one call |
+| **Search Callin calls** | Find calls by agent, date, direction or phone number |
+| **Read Callin transcript** | Read what was said in a call |
+| **Get phone call status** | Follow a call while it is in progress |
+| **Place a phone call** | Make a call for you, only after you approve it |
+
+More questions you can ask:
+
+- "Show my latest 10 calls."
+- "Summarize my latest customer call."
+- "Show my inbound calls from today."
+- "Find calls handled by my sales agent this week."
+
 ## Requirements
 
 - A Callin account ([app.callin.io](https://app.callin.io)).
-- For calls: an outbound agent with a phone number (an agent named "Task Caller" is used first), a Callin API key ([Profile → API Keys](https://app.callin.io/profile?subSection=api)) and available minutes.
+- A Claude account (web, desktop or mobile app).
+- For calls: an outbound agent with a phone number (an agent named "Task Caller" is used first), a Callin API key and available minutes.
+
+You'll find your API key in Callin, in your **Profile → API Keys** ([open it](https://app.callin.io/profile?subSection=api)). If it says "No API key found", click **Regenerate Key** to create one.
+
+<Frame caption="Screenshot: Profile → API Keys, where you create and copy your Callin API key.">
+  <img src="/images/claude-api-keys.png" alt="Callin Profile page on the API Keys tab, with the Regenerate Key button, the security notice and the API key field showing No API key found" />
+</Frame>
 
 ## Connect
 
+You can start from Claude or from Callin. Both ways end on the same Callin consent screen.
+
+### From Claude
+
 <Steps>
   <Step>
-    In Claude open **Customize → Connectors**, find **Callin** and click **Connect**. (Or **Add custom connector** with the URL `https://claude-mcp.callin.io/mcp`.)
+    In Claude, open **Customize → Connectors**.
   </Step>
   <Step>
-    Sign in to Callin and click **Allow access**.
+    Find **Callin** and click **Connect**. If Callin isn't listed yet, click **Add → Add custom connector**, enter the name **Callin** and the URL `https://claude-mcp.callin.io/mcp`, click **Add**, and then **Connect**.
+  </Step>
+  <Step>
+    Sign in to Callin if asked, and click **Allow access** on the consent screen.
   </Step>
   <Step>
     Start a new chat and ask Claude to call someone or about your calls.
   </Step>
 </Steps>
+
+### From Callin
+
+<Steps>
+  <Step>
+    In Callin, go to **Actions** and click **Connect** on the **Claude** card. The **Claude × Callin** page opens.
+  </Step>
+  <Step>
+    Under **Callin connector URL**, click **Copy URL**.
+  </Step>
+  <Step>
+    Click **Connect Claude**. Claude opens in a new tab.
+  </Step>
+  <Step>
+    In Claude, open **Customize → Connectors**, click **Add → Add custom connector**, and paste the URL. Then click **Add** and **Connect**.
+  </Step>
+  <Step>
+    Click **Allow access** on the Callin consent screen.
+  </Step>
+</Steps>
+
+<Frame caption="Video: Actions → Claude card → Callin connector URL → consent screen → Connected.">
+  <video autoPlay muted loop playsInline src="/images/claude-connect.mp4" />
+</Frame>
+
+This is the connector URL block on the **Claude × Callin** page:
+
+<Frame caption="Screenshot: The Callin connector URL with the Copy URL button.">
+  <img src="/images/claude-connector-url.png" alt="Callin connector URL block showing https://claude-mcp.callin.io/mcp and the Copy URL button" />
+</Frame>
+
+The consent screen lists everything Claude will be able to do in your Callin account, including placing phone calls (billed per minute). Access lasts up to 30 days, or until you disconnect.
+
+<Frame caption="Screenshot: The Callin consent screen. Click Allow access to connect.">
+  <img src="/images/claude-consent.png" alt="Connect Claude to Callin consent screen with Client: Claude, the requested permissions (account information, AI agents, calls, call transcripts, placing phone calls with your outbound agents, access for up to 30 days) and the Allow access and Cancel buttons" />
+</Frame>
+
+<Tip>
+  The consent screen also offers **Use an API key instead**. Use it only if you want to connect a different Callin account from the one you are signed in with: paste that account's API key and Claude connects to it.
+</Tip>
+
+Once connected, the **Claude × Callin** page in Callin shows **Connected**, the access you authorized, and a **Disconnect Claude** button:
+
+<Frame caption="Screenshot: The Claude × Callin page after connecting.">
+  <img src="/images/claude-connected.png" alt="Claude × Callin page with the Connected status, the list of what you can do, the Connect Claude, Learn more and Disconnect Claude buttons, and the authorized access" />
+</Frame>
+
+### Choose when Claude can use each tool
+
+In Claude, open **Customize → Connectors → Callin** to see the connector's tools, grouped as read-only tools and write tools (**Place a phone call**). By default, each one needs your approval: the first time Claude wants to use a tool in a chat, it asks you, and you can allow it once or always.
+
+<Note>
+  Keep **Place a phone call** on approval, so that no call is placed without your OK.
+</Note>
 
 ## How calls work
 
@@ -62,6 +148,9 @@ Remove the connector in Claude (**Customize → Connectors → Callin → Discon
 | "No outbound Callin agent with a phone number" | Create an outbound agent and assign it a number. |
 | "Call limit reached" | Wait up to an hour; the limit is 10 calls per hour. |
 | The call fails right away | Check that the agent's number is active and that you have minutes left. |
+| Callin doesn't appear in Claude's connector list | Use **Add custom connector** with the URL `https://claude-mcp.callin.io/mcp`. |
+| Claude says you have no agents or calls | The connector may be connected to another Callin account. Disconnect it and connect again with the right account. |
+| "Connection request expired" on the consent screen | Start the connection again from Claude. If it keeps happening, check that your browser isn't blocking cookies. |
 
 ## Support
 

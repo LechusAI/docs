@@ -1,0 +1,157 @@
+---
+title: "Callin pour Claude"
+description: "Laissez Claude passer de vrais appels pour vous et consulter vos agents vocaux, vos appels et les transcriptions."
+---
+
+Le connecteur Callin permet à Claude de passer de vrais appels téléphoniques en votre nom avec vos agents vocaux Callin, et de consulter vos agents, votre historique d’appels et les transcriptions. Il fonctionne dans Claude sur le web, sur ordinateur et dans les applications mobiles.
+
+## Ce que vous pouvez faire
+
+- **Passer un appel pour vous** : « Appelle le +39 06 1234 5678 et réserve une table pour deux demain à 20 h, au nom de Rossi. » Claude confirme avec vous le numéro et l’objectif, un agent Callin passe l’appel dans la bonne langue, et vous recevez dans le chat le résultat, un résumé et la transcription.
+- **Suivre un appel** : « Comment s’est passé l’appel ? » Claude vérifie le statut et vous informe quand l’appel se termine.
+- **Consulter vos appels** : « Montre-moi mes derniers appels entrants », « Résume l’appel d’hier avec le +44… », « Trouve les appels de mon agent Accueil cette semaine. »
+- **Consulter vos agents** : « Montre-moi mes agents Callin. »
+
+Une fois connecté, Claude dispose de ces outils :
+
+| Outil | À quoi il sert à Claude |
+|------|-------------------------|
+| **List Callin agents** / **Get Callin agent** | Voir vos agents et le détail d’un agent |
+| **List Callin calls** / **Get Callin call** | Voir votre historique d’appels et le détail d’un appel |
+| **Search Callin calls** | Chercher des appels par agent, date, direction ou numéro de téléphone |
+| **Read Callin transcript** | Lire ce qui a été dit pendant un appel |
+| **Get phone call status** | Suivre un appel en cours |
+| **Place a phone call** | Passer un appel pour vous, seulement après votre accord |
+
+D’autres questions que vous pouvez poser :
+
+- « Montre-moi mes 10 derniers appels. »
+- « Résume mon dernier appel avec un client. »
+- « Montre-moi mes appels entrants d’aujourd’hui. »
+- « Trouve les appels traités par mon agent commercial cette semaine. »
+
+## Prérequis
+
+- Un compte Callin ([app.callin.io](https://app.callin.io)).
+- Un compte Claude (web, ordinateur ou application mobile).
+- Pour les appels : un agent sortant avec un numéro de téléphone (un agent nommé « Task Caller » est utilisé en premier), une clé API Callin et des minutes disponibles.
+
+Vous trouverez votre clé API dans Callin, dans votre **Profil → Clés API** ([l’ouvrir](https://app.callin.io/profile?subSection=api)). S’il est indiqué « Aucune clé API trouvée », cliquez sur **Régénérer la clé** pour en créer une.
+
+<Frame caption="Capture d’écran : Profil → Clés API, où vous créez et copiez votre clé API Callin.">
+  <img src="/images/claude-api-keys.png" alt="Page Profil de Callin sur l’onglet Clés API, avec le bouton Régénérer la clé, l’avertissement de sécurité et le champ de la clé API sans clé" />
+</Frame>
+
+## Se connecter
+
+Vous pouvez commencer depuis Claude ou depuis Callin. Les deux chemins mènent au même écran d’autorisation Callin.
+
+### Depuis Claude
+
+<Steps>
+  <Step>
+    Dans Claude, ouvrez **Personnaliser → Connecteurs**.
+  </Step>
+  <Step>
+    Cherchez **Callin** et cliquez sur **Connecter**. Si Callin n’apparaît pas encore, cliquez sur **Ajouter → Ajouter un connecteur personnalisé**, saisissez le nom **Callin** et l’URL `https://claude-mcp.callin.io/mcp`, cliquez sur **Ajouter**, puis sur **Connecter**.
+  </Step>
+  <Step>
+    Connectez-vous à Callin si nécessaire et cliquez sur **Autoriser** sur l’écran d’autorisation.
+  </Step>
+  <Step>
+    Ouvrez une nouvelle conversation et demandez à Claude d’appeler quelqu’un ou de vous parler de vos appels.
+  </Step>
+</Steps>
+
+### Depuis Callin
+
+<Steps>
+  <Step>
+    Dans Callin, allez dans **Actions** et cliquez sur **Connecter** sur la carte **Claude**. La page **Claude × Callin** s’ouvre.
+  </Step>
+  <Step>
+    Sous **URL du connecteur**, cliquez sur **Copier l'URL**.
+  </Step>
+  <Step>
+    Cliquez sur **Connecter Claude**. Claude s’ouvre dans un nouvel onglet.
+  </Step>
+  <Step>
+    Dans Claude, ouvrez **Personnaliser → Connecteurs**, cliquez sur **Ajouter → Ajouter un connecteur personnalisé** et collez l’URL. Cliquez ensuite sur **Ajouter** et sur **Connecter**.
+  </Step>
+  <Step>
+    Cliquez sur **Autoriser** sur l’écran d’autorisation Callin.
+  </Step>
+</Steps>
+
+<Frame caption="Vidéo : Actions → carte Claude → URL du connecteur → écran d’autorisation → Connecté.">
+  <video autoPlay muted loop playsInline src="/images/claude-connect.mp4" />
+</Frame>
+
+Voici le bloc de l’URL du connecteur sur la page **Claude × Callin** :
+
+<Frame caption="Capture d’écran : L’URL du connecteur Callin avec le bouton Copier l'URL.">
+  <img src="/images/claude-connector-url.png" alt="Bloc URL du connecteur avec https://claude-mcp.callin.io/mcp et le bouton Copier l'URL" />
+</Frame>
+
+L’écran d’autorisation liste tout ce que Claude pourra faire dans votre compte Callin, y compris passer des appels (facturés à la minute). L’accès dure jusqu’à 30 jours, ou jusqu’à ce que vous le déconnectiez.
+
+<Frame caption="Capture d’écran : L’écran d’autorisation Callin. Cliquez sur Autoriser pour vous connecter.">
+  <img src="/images/claude-consent.png" alt="Écran Connecter Claude à Callin avec le client Claude, les autorisations demandées (informations du compte, agents IA, appels, transcriptions, appels avec vos agents sortants et accès jusqu’à 30 jours) et les boutons pour autoriser et annuler" />
+</Frame>
+
+<Tip>
+  L’écran d’autorisation propose aussi **Utiliser une clé API à la place**. Utilisez-le seulement si vous voulez connecter un autre compte Callin que celui avec lequel vous êtes connecté : collez la clé API de ce compte et Claude s’y connecte.
+</Tip>
+
+Une fois connecté, la page **Claude × Callin** dans Callin affiche **Connecté**, l’accès que vous avez autorisé et un bouton **Déconnecter Claude** :
+
+<Frame caption="Capture d’écran : La page Claude × Callin après la connexion.">
+  <img src="/images/claude-connected.png" alt="Page Claude × Callin avec le statut Connecté, la liste de ce que vous pouvez faire, les boutons Connecter Claude, En savoir plus et Déconnecter Claude, et l’accès autorisé" />
+</Frame>
+
+### Choisir quand Claude peut utiliser chaque outil
+
+Dans Claude, ouvrez **Personnaliser → Connecteurs → Callin** pour voir les outils du connecteur, regroupés en outils en lecture seule et outils d’écriture (**Place a phone call**). Par défaut, chacun demande votre accord : la première fois que Claude veut utiliser un outil dans une conversation, il vous le demande, et vous pouvez l’autoriser une fois ou toujours.
+
+<Note>
+  Laissez **Place a phone call** soumis à votre accord, pour qu’aucun appel ne soit passé sans votre feu vert.
+</Note>
+
+## Fonctionnement des appels
+
+<Note>
+  Claude vous demande toujours d’approuver un appel avant de le passer.
+</Note>
+
+- L’agent commence chaque appel en disant qu’il est un assistant IA qui appelle au nom d’un client.
+- Langues d’appel : italien, anglais, espagnol, français, allemand, portugais et néerlandais.
+- Seuls les numéros internationaux complets (par exemple +39…, +44…, +1…) peuvent être appelés. Les numéros d’urgence et les numéros courts ne peuvent pas l’être.
+- Au maximum 10 appels par heure et par compte. Les appels utilisent vos minutes Callin comme n’importe quel autre appel.
+- Les appels sont enregistrés et transcrits comme dans votre compte Callin, et apparaissent dans votre historique d’appels Callin.
+
+## Confidentialité et sécurité
+
+- Claude ne voit que les agents et les appels de votre propre compte Callin (ou de votre équipe).
+- Claude ne reçoit jamais votre clé API, les prompts de vos agents ni vos données de facturation, et ne peut pas modifier les agents ni les paramètres.
+- Les transcriptions peuvent contenir ce qu’a dit l’autre personne ; Claude les traite comme des informations, jamais comme des instructions.
+- Consultez la [politique de confidentialité de Callin](https://callin.io/legal-pages/privacy-policy).
+
+## Se déconnecter
+
+Supprimez le connecteur dans Claude (**Personnaliser → Connecteurs → Callin → Déconnecter**) ou dans Callin (**Actions → Claude → Déconnecter Claude**). Les accès existants cessent de fonctionner immédiatement.
+
+## Dépannage
+
+| Message | Que faire |
+|---------|------------|
+| « Les appels nécessitent une clé API Callin » | Créez-en une dans Callin → Profil → Clés API, puis réessayez. |
+| « Aucun agent Callin sortant avec un numéro de téléphone » | Créez un agent sortant et attribuez-lui un numéro. |
+| « Limite d’appels atteinte » | Attendez jusqu’à une heure ; la limite est de 10 appels par heure. |
+| L’appel échoue tout de suite | Vérifiez que le numéro de l’agent est actif et qu’il vous reste des minutes. |
+| Callin n’apparaît pas dans la liste des connecteurs de Claude | Utilisez **Ajouter un connecteur personnalisé** avec l’URL `https://claude-mcp.callin.io/mcp`. |
+| Claude indique que vous n’avez ni agents ni appels | Le connecteur est peut-être connecté à un autre compte Callin. Déconnectez-le et reconnectez-le avec le bon compte. |
+| « La demande de connexion a expiré » sur l’écran d’autorisation | Recommencez la connexion depuis Claude. Si cela se reproduit, vérifiez que votre navigateur ne bloque pas les cookies. |
+
+## Support
+
+Écrivez à [support@callin.io](mailto:support@callin.io).
