@@ -15,16 +15,16 @@ The Callin connector lets Claude place real phone calls on your behalf with your
 ## Requirements
 
 - A Callin account ([app.callin.io](https://app.callin.io)).
-- For calls: an outbound agent with a phone number (an agent named "Task Caller" is used first), a Callin API key (Settings → API) and available minutes.
+- For calls: an outbound agent with a phone number (an agent named "Task Caller" is used first), a Callin API key ([Profile → API Keys](https://app.callin.io/profile?subSection=api)) and available minutes.
 
 ## Connect
 
 <Steps>
   <Step>
-    In Claude open **Settings → Connectors**, find **Callin** and click **Connect**. (Or **Add custom connector** with the URL `https://claude-mcp.callin.io/mcp`.)
+    In Claude open **Customize → Connectors**, find **Callin** and click **Connect**. (Or **Add custom connector** with the URL `https://claude-mcp.callin.io/mcp`.)
   </Step>
   <Step>
-    Sign in to Callin and click **Allow**.
+    Sign in to Callin and click **Allow access**.
   </Step>
   <Step>
     Start a new chat and ask Claude to call someone or about your calls.
@@ -52,13 +52,13 @@ The Callin connector lets Claude place real phone calls on your behalf with your
 
 ## Disconnect
 
-Remove the connector in Claude (**Settings → Connectors → Callin → Disconnect**) or in Callin (**Integrations → Claude → Disconnect Claude**). Existing tokens stop working immediately.
+Remove the connector in Claude (**Customize → Connectors → Callin → Disconnect**) or in Callin (**Actions → Claude → Disconnect Claude**). Existing tokens stop working immediately.
 
 ## Troubleshooting
 
 | Message | What to do |
 |---------|------------|
-| "Phone calls need a Callin API key" | Create one in Callin → Settings → API, then try again. |
+| "Phone calls need a Callin API key" | Create one in Callin → Profile → API Keys, then try again. |
 | "No outbound Callin agent with a phone number" | Create an outbound agent and assign it a number. |
 | "Call limit reached" | Wait up to an hour; the limit is 10 calls per hour. |
 | The call fails right away | Check that the agent's number is active and that you have minutes left. |
