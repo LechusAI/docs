@@ -609,6 +609,12 @@ In its settings, **Voicemail Message** *(optional)* decides what happens:
 - Leave it blank to end the call immediately when voicemail is detected.
 - Write a message (for example, "Hello, this is an automated call. Please call us back at your convenience. Thank you.") to play it before ending the call.
 
+The gear icon only appears while **Voicemail Intelligence** is on. Click it to open **Edit Voicemail Detection Tool**, where you'll find **Voicemail Message**.
+
+<Warning>
+  **Common mistake:** Writing the voicemail message in the **Conversation Prompt** and leaving **Voicemail Message** empty. The agent hangs up as soon as it detects voicemail and doesn't say the message in your prompt. Write the message in **Voicemail Message**, or turn **Voicemail Intelligence** off if you want the agent to follow your prompt instead.
+</Warning>
+
 #### Access Property Data
 
 Lets the agent use configured HTTPS XML feed URLs with property listings during the conversation. It's designed for real estate agents that need to answer questions about available properties. It's off by default.
