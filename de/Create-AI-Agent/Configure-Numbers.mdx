@@ -585,7 +585,8 @@ Persönliche Nummern sind **nur für ausgehende Anrufe**, und Anrufe mit einer p
 ### „Mein Agent nimmt keine eingehenden Anrufe an“
 
 - Prüfen Sie, ob die Nummer **dem Agenten zugewiesen** ist: Gehen Sie zu **KI-Agenten**, öffnen Sie das Menü **⋮** des Agenten und wählen Sie **Nummer zuweisen** (siehe „Eine Nummer einem Agenten zuweisen“ weiter oben)
-- Prüfen Sie die **Anrufrichtung** im Tab **Agent**: Sie muss auf **Eingehend** oder **Beides** stehen. Neue Agenten starten mit **Ausgehend**, und ein ausgehender Agent nimmt keine eingehenden Anrufe an
+- Prüfen Sie die **Anrufrichtung** im Tab **Agent**: Sie muss auf **Eingehend** oder **Beides** stehen. Neue Agenten starten mit **Ausgehend**, und ein ausgehender Agent nimmt keine eingehenden Anrufe an. Agenten mit **Ultraniedrige Latenz** (Erweitert) haben keine **Anrufrichtung**: In der Agentenliste erscheinen sie als **Eingehend & Ausgehend**, Sie müssen also nur die Nummer zuweisen
+- Bei einem Agenten mit **Ultraniedrige Latenz** können Sie im Tab **Erweitert** außerdem eine Nummer für **Inbound-Fallback** eintragen. Wenn der Agent nicht annehmen kann, wird der Anruf an diese Nummer weitergeleitet. Siehe [Agenten mit ultraniedriger Latenz](/de/Create-AI-Agent/Ultra-Low-Latency-Agents#inbound-fallback)
 - Damit der Agent Anrufe annimmt, sind keine Weiterleitungsregeln nötig
 
 ### „Meine persönliche Nummer erhält keine eingehenden Anrufe“

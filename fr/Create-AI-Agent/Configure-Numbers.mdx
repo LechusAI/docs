@@ -585,7 +585,8 @@ Les numéros personnels servent **uniquement aux appels sortants**, et les appel
 ### “Mon agent ne répond pas aux appels entrants”
 
 - Vérifiez que le numéro est **attribué à l’agent** : allez dans **Agents IA**, ouvrez le menu **⋮** de l’agent et choisissez **Attribuer un numéro** (voir « Attribuer un numéro à un agent », plus haut)
-- Vérifiez la **Direction d'appel** dans l’onglet **Agent** : elle doit être sur **Entrant** ou **Les deux**. Les nouveaux agents commencent en **Sortant**, et un agent sortant ne répond pas aux appels entrants
+- Vérifiez la **Direction d'appel** dans l’onglet **Agent** : elle doit être sur **Entrant** ou **Les deux**. Les nouveaux agents commencent en **Sortant**, et un agent sortant ne répond pas aux appels entrants. Les agents **Ultra-faible latence** (Amélioré) n’ont pas de **Direction d'appel** : dans la liste des agents, ils apparaissent comme **Entrant & Sortant**, il suffit donc de leur attribuer le numéro
+- Dans un agent **Ultra-faible latence**, vous pouvez aussi indiquer un numéro de **Secours entrant** dans l’onglet **Avancé**. Si l’agent ne peut pas répondre, l’appel est transféré vers ce numéro. Voir [Agents à ultra-faible latence](/fr/Create-AI-Agent/Ultra-Low-Latency-Agents#secours-entrant)
 - Il n’est pas nécessaire d’avoir des règles de transfert pour que l’agent réponde
 
 ### “Mon numéro personnel ne reçoit pas d’appels entrants”

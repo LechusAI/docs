@@ -586,7 +586,8 @@ Personal numbers are **outbound-only**, and calls made using a personal number c
 ### “My agent doesn’t answer incoming calls”
 
 - Check that the number is **assigned to the agent**: go to **AI Agents**, open the agent’s **⋮** menu and select **Assign Number** (see [Assign numbers to agents](#assign-numbers-to-agents-so-they-can-be-used))
-- Check **Call Direction** in the agent’s **Agent** tab: it must be **Inbound** or **Both**. New agents start as **Outbound**, and an outbound agent doesn’t answer incoming calls
+- Check **Call Direction** in the agent’s **Agent** tab: it must be **Inbound** or **Both**. New agents start as **Outbound**, and an outbound agent doesn’t answer incoming calls. **Ultra-low latency** (Enhanced) agents don’t have **Call Direction**: they show as **Inbound & Outbound** in the agents list, so you only need to assign the number
+- In an **Ultra-low latency** agent, you can also set an **Inbound fallback** number in the **Advanced** tab. If the agent can’t answer, the call is forwarded to that number. See [Ultra-low latency agents](/Create-AI-Agent/Ultra-Low-Latency-Agents#inbound-fallback)
 - You don’t need transfer rules for the agent to answer
 
 ### “My personal number isn’t receiving inbound calls”

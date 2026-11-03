@@ -585,7 +585,8 @@ I numeri personali sono **solo per chiamate in uscita**, e le chiamate fatte con
 ### “Il mio agente non risponde alle chiamate in entrata”
 
 - Verifica che il numero sia **assegnato all’agente**: vai su **Agenti AI**, apri il menu **⋮** dell’agente e seleziona **Assegna numero** (vedi «Assegnare un numero a un agente», più sopra)
-- Verifica la **Direzione chiamata** nella scheda **Agente**: deve essere **In entrata** o **Entrambi**. I nuovi agenti partono **In uscita**, e un agente in uscita non risponde alle chiamate in entrata
+- Verifica la **Direzione chiamata** nella scheda **Agente**: deve essere **In entrata** o **Entrambi**. I nuovi agenti partono **In uscita**, e un agente in uscita non risponde alle chiamate in entrata. Gli agenti a **Latenza ultra-bassa** (Avanzato) non hanno **Direzione chiamata**: nell’elenco degli agenti compaiono come **In entrata & In uscita**, quindi basta assegnare il numero
+- In un agente a **Latenza ultra-bassa** puoi anche impostare un numero di **Fallback in ingresso** nella scheda **Avanzate**. Se l’agente non può rispondere, la chiamata viene inoltrata a quel numero. Vedi [Agenti a latenza ultra-bassa](/it/Create-AI-Agent/Ultra-Low-Latency-Agents#fallback-in-ingresso)
 - Non servono regole di trasferimento perché l’agente risponda
 
 ### “Il mio numero personale non riceve chiamate in entrata”
