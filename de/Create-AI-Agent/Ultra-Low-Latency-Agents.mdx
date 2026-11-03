@@ -170,7 +170,7 @@ Der Tab **Erweitert** hat fünf Bereiche.
 
 ### Inbound-Fallback
 
-Wenn der Agent einen eingehenden Anruf nicht annehmen kann, wird der Anrufer an die **Fallback-Nummer** weitergeleitet, statt dass der Anruf endet. Das greift, wenn der Agent nicht verfügbar ist oder die Verbindung fehlschlägt. Die Nummer gilt für die Telefonnummer, die dem Agenten zugewiesen ist.
+**Inbound-Fallback** ist eine Telefonnummer. Wenn der Agent einen eingehenden Anruf nicht annehmen kann (er ist nicht verfügbar oder die Verbindung schlägt fehl), wird der Anruf an diese Nummer weitergeleitet, statt zu enden. Sie tragen sie unter **Fallback-Nummer** ein. Die Nummer gilt für die Telefonnummer, die dem Agenten zugewiesen ist.
 
 Bleibt das Feld leer, endet der Anruf in diesen Fällen mit einem Fehler.
 
@@ -189,6 +189,10 @@ Bleibt das Feld leer, endet der Anruf in diesen Fällen mit einem Fehler.
 
 **Ursache:** Agenten mit ultraniedriger Latenz haben die Einstellungen **KI-Intelligenz (LLM)** und **Anrufrichtung** nicht.\
 **Lösung:** Hier ist nichts zu beheben. Die Agentenliste zeigt diese Agenten als **Eingehend & Ausgehend** an. Wenn Sie ein bestimmtes KI-Modell brauchen, nutzen Sie einen Agenten mit **Premium-Stimme**.
+
+### „Wie lege ich eine Nummer für eingehende Anrufe fest, wenn der Agent nicht annehmen kann?“
+
+Nutzen Sie **Inbound-Fallback** im Tab **Erweitert**: Tragen Sie die **Fallback-Nummer** ein. Bleibt das Feld leer, endet der Anruf mit einem Fehler, wenn der Agent nicht annehmen kann. Siehe [Inbound-Fallback](#inbound-fallback).
 
 ### „Ich kann meinen Agenten keinem Squad hinzufügen“
 

@@ -170,7 +170,7 @@ The **Advanced** tab has five blocks.
 
 ### Inbound fallback
 
-If the agent can't answer an incoming call, the caller is transferred to the **Fallback number** instead of hearing the call end. It's used when the agent is unavailable or the connection fails. The number applies to the phone number assigned to the agent.
+**Inbound fallback** is a phone number. If the agent can't answer an incoming call (it's unavailable or the connection fails), the call is forwarded to that number instead of ending. Enter it in **Fallback number**. The number applies to the phone number assigned to the agent.
 
 Leave it empty and the call ends with an error in those cases.
 
@@ -189,6 +189,10 @@ Leave it empty and the call ends with an error in those cases.
 
 **Cause:** Ultra-low latency agents don't have the **AI Intelligence (LLM)** or **Call Direction** settings.\
 **Fix:** Nothing to fix. The agents list shows these agents as **Inbound & Outbound**. If you need to choose a specific AI model, use a **Premium Voice** agent.
+
+### "How do I set a number for incoming calls when the agent can't answer?"
+
+Use **Inbound fallback** in the **Advanced** tab: enter the **Fallback number**. If you leave it empty, the call ends with an error when the agent can't answer. See [Inbound fallback](#inbound-fallback).
 
 ### "I can't add my agent to a squad"
 

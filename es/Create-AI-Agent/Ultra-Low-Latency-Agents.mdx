@@ -170,7 +170,7 @@ La pestaña **Avanzado** tiene cinco bloques.
 
 ### Respaldo de entrada
 
-Si el agente no puede contestar una llamada entrante, la llamada se pasa al **Número de respaldo** en vez de cortarse. Se usa cuando el agente no está disponible o falla la conexión. El número se aplica al número de teléfono asignado al agente.
+El **Respaldo de entrada** es un número de teléfono. Si el agente no puede contestar una llamada entrante (no está disponible o falla la conexión), la llamada se pasa a ese número en vez de cortarse. Se escribe en **Número de respaldo**. El número se aplica al número de teléfono asignado al agente.
 
 Si lo dejas vacío, en esos casos la llamada termina con un error.
 
@@ -189,6 +189,10 @@ Si lo dejas vacío, en esos casos la llamada termina con un error.
 
 **Causa:** Los agentes de ultra baja latencia no tienen los ajustes **Inteligencia de IA (LLM)** ni **Dirección de llamada**.\
 **Solución:** No hay nada que arreglar. La lista de agentes muestra estos agentes como **Entrante & Saliente**. Si necesitas elegir un modelo de IA concreto, usa un agente de **Voz premium**.
+
+### «¿Cómo pongo un número para las llamadas entrantes cuando el agente no puede contestar?»
+
+Usa **Respaldo de entrada** en la pestaña **Avanzado**: escribe el **Número de respaldo**. Si lo dejas vacío, la llamada termina con un error cuando el agente no puede contestar. Consulta [Respaldo de entrada](#respaldo-de-entrada).
 
 ### «No puedo añadir mi agente a un squad»
 

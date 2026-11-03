@@ -170,7 +170,7 @@ La scheda **Avanzate** ha cinque blocchi.
 
 ### Fallback in ingresso
 
-Se l'agente non può rispondere a una chiamata in entrata, il chiamante viene trasferito al **Numero di fallback** invece di sentire la chiamata chiudersi. Si usa quando l'agente non è disponibile o la connessione non riesce. Il numero si applica al numero di telefono assegnato all'agente.
+Il **Fallback in ingresso** è un numero di telefono. Se l'agente non può rispondere a una chiamata in entrata (non è disponibile o la connessione non riesce), la chiamata viene inoltrata a quel numero invece di chiudersi. Si inserisce in **Numero di fallback**. Il numero si applica al numero di telefono assegnato all'agente.
 
 Se lo lasci vuoto, in questi casi la chiamata termina con un errore.
 
@@ -189,6 +189,10 @@ Se lo lasci vuoto, in questi casi la chiamata termina con un errore.
 
 **Causa:** Gli agenti a latenza ultra-bassa non hanno le impostazioni **Intelligenza IA (LLM)** e **Direzione chiamata**.\
 **Soluzione:** Non c'è niente da correggere. L'elenco degli agenti mostra questi agenti come **In entrata & In uscita**. Se ti serve un modello di IA specifico, usa un agente **Voce premium**.
+
+### «Come imposto un numero per le chiamate in entrata quando l'agente non può rispondere?»
+
+Usa **Fallback in ingresso** nella scheda **Avanzate**: inserisci il **Numero di fallback**. Se lo lasci vuoto, la chiamata termina con un errore quando l'agente non può rispondere. Vedi [Fallback in ingresso](#fallback-in-ingresso).
 
 ### «Non riesco ad aggiungere il mio agente a una squad»
 
