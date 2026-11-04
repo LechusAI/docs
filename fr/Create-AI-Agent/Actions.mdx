@@ -314,7 +314,7 @@ Pour la configuration complète, voir [Google Calendar](/fr/Create-AI-Agent/Goog
     - **Champs obligatoires** : les données que votre requête doit contenir. Par défaut : **name**, **phone** et **email**, chacun avec sa définition. Utilisez **Ajouter une entité** pour en ajouter d’autres (par exemple `firstName`, `appointmentDate` ou `isInterested`).
   </Step>
   <Step>
-    Cliquez sur **Sauvegarder**. Chaque flux a sa propre **URL de webhook** : copiez-la et utilisez-la pour envoyer des données depuis vos services externes. Veillez à inclure les champs obligatoires dans votre requête.
+    Cliquez sur **Sauvegarder**. Chaque flux a sa propre **URL de webhook** : copiez-la et utilisez-la pour envoyer des données depuis vos services externes. Veillez à inclure les champs obligatoires dans votre requête. Envoyez vos requêtes avec l’en-tête `Authorization: Bearer`. L’URL de webhook lance uniquement les appels de ce flux.
   </Step>
   <Step>
     Consultez l’onglet **Logs** pour voir les requêtes reçues.

@@ -314,7 +314,7 @@ Die vollständige Einrichtung findest du unter [Google Calendar](/de/Create-AI-A
     - **Pflichtfelder**: die Daten, die deine Anfrage enthalten muss. Standardmäßig: **name**, **phone** und **email**, jeweils mit einer Definition. Mit **Entität hinzufügen** fügst du weitere hinzu (zum Beispiel `firstName`, `appointmentDate` oder `isInterested`).
   </Step>
   <Step>
-    Klicke auf **Speichern**. Jeder Workflow hat seine eigene **Webhook-URL**: Kopiere sie und nutze sie, um Daten aus deinen externen Diensten zu senden. Achte darauf, die Pflichtfelder in deiner Anfrage mitzuschicken.
+    Klicke auf **Speichern**. Jeder Workflow hat seine eigene **Webhook-URL**: Kopiere sie und nutze sie, um Daten aus deinen externen Diensten zu senden. Achte darauf, die Pflichtfelder in deiner Anfrage mitzuschicken. Sende deine Anfragen mit dem Header `Authorization: Bearer`. Die Webhook-URL startet nur Anrufe dieses Workflows.
   </Step>
   <Step>
     Im Tab **Logs** siehst du die empfangenen Anfragen.
