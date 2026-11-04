@@ -13,6 +13,10 @@ La configuration se fait à deux endroits :
 - **Transfert d’appel** (menu de gauche, sous **Téléphonie**) : votre liste de **règles de transfert d’appel**, chacune avec un nom, un numéro et une condition.
 - L’onglet **Outils** de l’agent : les outils système **Transfert vers un numéro** et **Transfert vers un agent**, qui activent les transferts pour cet agent.
 
+<Note>
+  Créer une règle dans **Transfert d’appel** ne suffit pas pour que l’agent transfère les appels. L’agent ne transfère que lorsque vous activez l’outil et ajoutez la règle dans son onglet **Outils** (étape 2).
+</Note>
+
 ---
 
 ## Étape 1 : Créer une configuration de transfert
@@ -88,10 +92,6 @@ Le panneau propose aussi deux réglages facultatifs :
 
 - **Description (optionnel)** : indique au LLM comment et quand utiliser l’outil. Laissez-la vide pour utiliser les instructions optimisées par défaut.
 - **Désactiver les interruptions** : l’appelant ne peut pas interrompre pendant le transfert.
-
-<Note>
-  Créer une règle dans **Transfert d’appel** ne suffit pas pour que l’agent transfère les appels. L’agent ne transfère que lorsque vous activez l’outil et ajoutez la règle dans son onglet **Outils** (étape 2).
-</Note>
 
 <Tip>
   Utilisez le même numéro et la même condition que dans vos **règles de transfert d’appel**, pour que votre liste dans **Transfert d’appel** et vos agents restent cohérents.

@@ -13,6 +13,10 @@ Du richtest das an zwei Stellen ein:
 - **Anrufweiterleitung** (linkes Menü, unter **Telefonie**): deine Liste von **Anrufweiterleitungsregeln**, jede mit einem Namen, einer Nummer und einer Bedingung.
 - Der Tab **Tools** des Agenten: die System-Tools **An Nummer übergeben** und **An Agent übergeben**, mit denen du Weiterleitungen für diesen Agenten einschaltest.
 
+<Note>
+  Eine Regel unter **Anrufweiterleitung** anzulegen reicht nicht aus, damit der Agent Anrufe übergibt. Der Agent übergibt erst, wenn das Tool aktiviert und die Regel in seinem Tab **Tools** hinzugefügt ist (Schritt 2).
+</Note>
+
 ---
 
 ## Schritt 1: Eine Weiterleitungskonfiguration erstellen
@@ -88,10 +92,6 @@ Das Fenster hat außerdem zwei optionale Einstellungen:
 
 - **Beschreibung (optional)**: sagt dem LLM, wie und wann es das Tool nutzen soll. Lass sie leer, um die optimierten Standardanweisungen zu verwenden.
 - **Unterbrechungen deaktivieren**: Der Anrufer kann während der Weiterleitung nicht unterbrechen.
-
-<Note>
-  Eine Regel unter **Anrufweiterleitung** anzulegen reicht nicht aus, damit der Agent Anrufe übergibt. Der Agent übergibt erst, wenn das Tool aktiviert und die Regel in seinem Tab **Tools** hinzugefügt ist (Schritt 2).
-</Note>
 
 <Tip>
   Nutze dieselbe Nummer und Bedingung wie in deinen **Anrufweiterleitungsregeln**, damit deine Liste unter **Anrufweiterleitung** und deine Agenten übereinstimmen.
