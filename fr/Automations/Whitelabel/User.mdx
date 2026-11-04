@@ -64,6 +64,10 @@ Après avoir saisi votre domaine, cliquez sur **Enregistrer**, puis sur **Config
 - **Fournisseur** (assistée)
 - **Manuel** (vous ajoutez les enregistrements vous-même)
 
+#### Quels enregistrements DNS ajouter pour un sous-domaine ?
+
+Ajoutez un seul enregistrement : un **enregistrement A** avec votre sous-domaine comme nom (par exemple `app`) et l’adresse IP indiquée dans votre panneau. N’ajoutez pas d’enregistrement A sur `@` ni d’enregistrement CNAME : votre site web principal continue ainsi de fonctionner. Si le panneau affiche un enregistrement A sur `@` et un enregistrement CNAME, ignorez-les.
+
 #### Fournisseur (configuration assistée/automatique)
 
 Utilisez **Fournisseur** si votre domaine est chez **Cloudflare**, **GoDaddy** ou **Namecheap**. Vous choisissez votre fournisseur et Callin vous aide à configurer le domaine automatiquement.

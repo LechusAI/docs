@@ -64,6 +64,10 @@ After you enter your custom domain, click **Save**, then click **DNS Configurati
 - **Provider** (automatic-assisted)
 - **Manual** (you add the records yourself)
 
+#### Which DNS records do I add for a subdomain?
+
+Add one record only: an **A record** with your subdomain as the name (for example, `app`) and the IP address shown in your panel. Don't add an A record on `@` or a CNAME record, so your main website keeps working. If the panel shows an A record on `@` and a CNAME record, ignore them.
+
 #### Provider (automatic-assisted setup)
 
 Use **Provider** when your domain is managed by **Cloudflare**, **GoDaddy** or **Namecheap**. You select your provider and Callin helps you set up the domain automatically.
