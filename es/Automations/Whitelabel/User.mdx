@@ -103,17 +103,26 @@ Usa **Manual** si:
 - La configuración con proveedor falla, o
 - Prefieres gestionar tú el DNS.
 
-En la pestaña **Manual**, Callin muestra **Añade estos registros DNS en tu registrador** y una tabla con los registros de tu dominio. Por ejemplo, para `app.northwindreception.com`:
+En la pestaña **Manual**, Callin muestra **Añade estos registros DNS en tu registrador**. Para un subdominio como `app.northwindreception.com`, solo necesitas un registro:
 
 | Tipo | Nombre | Valor | TTL |
 | --- | --- | --- | --- |
-| A | `@` | la dirección IP que aparece en tu panel | 300 o automático |
-| CNAME | `app` | `northwindreception.com` | 300 o automático |
+| A | `app` | la dirección IP que aparece en tu panel | 300 o automático |
 
-La tabla incluye:
+<Warning>
+  **Error común:** Añadir un registro A en `@` cuando usas un subdominio. `@` es tu dominio raíz, así que tu web principal deja de funcionar. No cambies el registro `@` ni añadas un registro CNAME.
+</Warning>
 
-- **Tipo** (por ejemplo, A o CNAME)
-- **Nombre** (por ejemplo, `@` o `app`)
+<Note>
+  Si tu panel todavía muestra un registro A en `@` y un registro CNAME, ignóralos. Añade solo el registro de arriba, con la misma dirección IP.
+</Note>
+
+Añade un registro A en `@` solo si quieres que la app esté en el propio dominio raíz (como `northwindreception.com`). Tu web en ese dominio dejará de funcionar.
+
+El registro incluye:
+
+- **Tipo** (por ejemplo, A)
+- **Nombre** (por ejemplo, `app`)
 - **Valor** (el destino)
 - **TTL** (suele ser “300 o automático”, según tu proveedor)
 
@@ -124,23 +133,19 @@ Los pasos son:
     Abre **Manual**.
   </Step>
   <Step>
-    Añade cada registro DNS exactamente como aparece en la tabla.
+    Añade el registro en tu proveedor DNS.
   </Step>
   <Step>
-    Cuando estén los registros, haz clic en **Instalar SSL** para terminar.
+    Cuando esté el registro, haz clic en **Instalar SSL** para terminar.
   </Step>
 </Steps>
 
-<Frame caption="Captura: la pestaña Manual con los registros para un dominio de ejemplo y el botón Instalar SSL.">
-  <img src="/images/whitelabel3.png" alt="Panel Configuración DNS en la pestaña Manual con el aviso Añade estos registros DNS en tu registrador, una tabla con un registro A y un registro CNAME, y el botón Instalar SSL" />
-</Frame>
-
 <Warning>
-  Haz clic en **Instalar SSL** solo cuando hayas añadido los registros DNS y se hayan propagado. El tiempo de propagación depende de tu proveedor DNS.
+  Haz clic en **Instalar SSL** solo cuando hayas añadido el registro DNS y se haya propagado. El tiempo de propagación depende de tu proveedor DNS.
 </Warning>
 
 <Tip>
-  Si no sabes dónde añadir los registros, busca en la ayuda de tu proveedor DNS “añadir registro A” y “añadir registro CNAME”. Los nombres de los campos pueden variar.
+  Si no sabes dónde añadir el registro, busca en la ayuda de tu proveedor DNS “añadir registro A”. Los nombres de los campos pueden variar.
 </Tip>
 
 ### Moneda

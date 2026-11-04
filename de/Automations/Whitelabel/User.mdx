@@ -103,17 +103,26 @@ Nutzen Sie **Manuell**, wenn:
 - die Einrichtung über den Anbieter fehlschlägt, oder
 - Sie DNS lieber selbst verwalten.
 
-Im Tab **Manuell** zeigt Callin **Füge diese DNS-Einträge beim Registrar hinzu** und eine Tabelle mit den Einträgen für Ihre Domain. Zum Beispiel für `app.northwindreception.com`:
+Im Tab **Manuell** zeigt Callin **Füge diese DNS-Einträge beim Registrar hinzu**. Für eine Subdomain wie `app.northwindreception.com` brauchen Sie nur einen Eintrag:
 
 | Typ | Name | Wert | TTL |
 | --- | --- | --- | --- |
-| A | `@` | die IP-Adresse aus Ihrem Panel | 300 oder automatisch |
-| CNAME | `app` | `northwindreception.com` | 300 oder automatisch |
+| A | `app` | die IP-Adresse aus Ihrem Panel | 300 oder automatisch |
 
-Die Tabelle enthält:
+<Warning>
+  **Häufiger Fehler:** Einen A-Eintrag auf `@` anlegen, obwohl Sie eine Subdomain nutzen. `@` ist Ihre Hauptdomain, Ihre Website funktioniert dann nicht mehr. Ändern Sie den Eintrag `@` nicht und legen Sie keinen CNAME-Eintrag an.
+</Warning>
 
-- **Typ** (zum Beispiel A oder CNAME)
-- **Name** (zum Beispiel `@` oder `app`)
+<Note>
+  Wenn Ihr Panel noch einen A-Eintrag auf `@` und einen CNAME-Eintrag zeigt, ignorieren Sie beide. Legen Sie nur den Eintrag oben an, mit derselben IP-Adresse.
+</Note>
+
+Legen Sie einen A-Eintrag auf `@` nur an, wenn die App direkt auf der Hauptdomain liegen soll (zum Beispiel `northwindreception.com`). Ihre Website auf dieser Domain funktioniert dann nicht mehr.
+
+Der Eintrag enthält:
+
+- **Typ** (zum Beispiel A)
+- **Name** (zum Beispiel `app`)
 - **Wert** (das Ziel)
 - **TTL** (oft „300 oder automatisch“, je nach Anbieter)
 
@@ -124,23 +133,19 @@ So gehen Sie vor:
     Öffnen Sie **Manuell**.
   </Step>
   <Step>
-    Legen Sie jeden DNS-Eintrag genau wie in der Tabelle an.
+    Legen Sie den Eintrag bei Ihrem DNS-Anbieter an.
   </Step>
   <Step>
-    Wenn die Einträge stehen, klicken Sie auf **SSL installieren**, um abzuschließen.
+    Wenn der Eintrag steht, klicken Sie auf **SSL installieren**, um abzuschließen.
   </Step>
 </Steps>
 
-<Frame caption="Screenshot: der Tab Manuell mit den Einträgen für eine Beispiel-Domain und der Schaltfläche SSL installieren.">
-  <img src="/images/whitelabel3.png" alt="Panel DNS-Konfiguration im Tab Manuell mit der Meldung Füge diese DNS-Einträge beim Registrar hinzu, einer Tabelle mit einem A- und einem CNAME-Eintrag und der Schaltfläche SSL installieren" />
-</Frame>
-
 <Warning>
-  Klicken Sie erst auf **SSL installieren**, wenn die DNS-Einträge angelegt und verbreitet sind. Wie lange das dauert, hängt von Ihrem DNS-Anbieter ab.
+  Klicken Sie erst auf **SSL installieren**, wenn der DNS-Eintrag angelegt und verbreitet ist. Wie lange das dauert, hängt von Ihrem DNS-Anbieter ab.
 </Warning>
 
 <Tip>
-  Wenn Sie nicht wissen, wo Sie die Einträge anlegen, suchen Sie in der Hilfe Ihres DNS-Anbieters nach „A-Eintrag hinzufügen“ und „CNAME-Eintrag hinzufügen“. Die Feldnamen können abweichen.
+  Wenn Sie nicht wissen, wo Sie den Eintrag anlegen, suchen Sie in der Hilfe Ihres DNS-Anbieters nach „A-Eintrag hinzufügen“. Die Feldnamen können abweichen.
 </Tip>
 
 ### Währung

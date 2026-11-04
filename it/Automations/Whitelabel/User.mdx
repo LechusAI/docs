@@ -103,17 +103,26 @@ Usa **Manuale** se:
 - La configurazione con provider non riesce, oppure
 - Preferisci gestire tu il DNS.
 
-Nella scheda **Manuale**, Callin mostra **Aggiungi questi record DNS presso il tuo registrar** e una tabella con i record del tuo dominio. Ad esempio, per `app.northwindreception.com`:
+Nella scheda **Manuale**, Callin mostra **Aggiungi questi record DNS presso il tuo registrar**. Per un sottodominio come `app.northwindreception.com`, ti serve un solo record:
 
 | Tipo | Nome | Valore | TTL |
 | --- | --- | --- | --- |
-| A | `@` | l’indirizzo IP indicato nel tuo pannello | 300 o automatico |
-| CNAME | `app` | `northwindreception.com` | 300 o automatico |
+| A | `app` | l’indirizzo IP indicato nel tuo pannello | 300 o automatico |
 
-La tabella include:
+<Warning>
+  **Errore comune:** Aggiungere un record A su `@` quando usi un sottodominio. `@` è il tuo dominio principale, quindi il tuo sito web smette di funzionare. Non modificare il record `@` e non aggiungere un record CNAME.
+</Warning>
 
-- **Tipo** (ad esempio A o CNAME)
-- **Nome** (ad esempio `@` o `app`)
+<Note>
+  Se il tuo pannello mostra ancora un record A su `@` e un record CNAME, ignorali. Aggiungi solo il record qui sopra, con lo stesso indirizzo IP.
+</Note>
+
+Aggiungi un record A su `@` solo se vuoi che l’app sia sul dominio principale stesso (come `northwindreception.com`). Il tuo sito web su quel dominio smetterà di funzionare.
+
+Il record include:
+
+- **Tipo** (ad esempio A)
+- **Nome** (ad esempio `app`)
 - **Valore** (la destinazione)
 - **TTL** (spesso “300 o automatico”, in base al provider)
 
@@ -124,23 +133,19 @@ I passaggi sono:
     Apri **Manuale**.
   </Step>
   <Step>
-    Aggiungi ogni record DNS esattamente come nella tabella.
+    Aggiungi il record presso il tuo provider DNS.
   </Step>
   <Step>
-    Quando i record sono a posto, clicca su **Installa SSL** per finire.
+    Quando il record è a posto, clicca su **Installa SSL** per finire.
   </Step>
 </Steps>
 
-<Frame caption="Screenshot: la scheda Manuale con i record per un dominio di esempio e il pulsante Installa SSL.">
-  <img src="/images/whitelabel3.png" alt="Pannello Configurazione DNS nella scheda Manuale con l’avviso Aggiungi questi record DNS presso il tuo registrar, una tabella con un record A e un record CNAME, e il pulsante Installa SSL" />
-</Frame>
-
 <Warning>
-  Clicca su **Installa SSL** solo dopo aver aggiunto i record DNS e quando si sono propagati. Il tempo di propagazione dipende dal tuo provider DNS.
+  Clicca su **Installa SSL** solo dopo aver aggiunto il record DNS e quando si è propagato. Il tempo di propagazione dipende dal tuo provider DNS.
 </Warning>
 
 <Tip>
-  Se non sai dove aggiungere i record, cerca nella guida del tuo provider DNS “aggiungere record A” e “aggiungere record CNAME”. I nomi dei campi possono variare.
+  Se non sai dove aggiungere il record, cerca nella guida del tuo provider DNS “aggiungere record A”. I nomi dei campi possono variare.
 </Tip>
 
 ### Valuta
