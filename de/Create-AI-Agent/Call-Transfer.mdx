@@ -13,6 +13,10 @@ Du richtest das an zwei Stellen ein:
 - **Anrufweiterleitung** (linkes Menü, unter **Telefonie**): deine Liste von **Anrufweiterleitungsregeln**, jede mit einem Namen, einer Nummer und einer Bedingung.
 - Der Tab **Tools** des Agenten: die System-Tools **An Nummer übergeben** und **An Agent übergeben**, mit denen du Weiterleitungen für diesen Agenten einschaltest.
 
+<Note>
+  Eine Regel unter **Anrufweiterleitung** anzulegen reicht nicht aus, damit der Agent Anrufe übergibt. Der Agent übergibt erst, wenn das Tool aktiviert und die Regel in seinem Tab **Tools** hinzugefügt ist (Schritt 2).
+</Note>
+
 ---
 
 ## Schritt 1: Eine Weiterleitungskonfiguration erstellen
@@ -143,6 +147,8 @@ Wenn du den Agenten änderst, erscheint unten eine Leiste mit **Sie haben nicht 
   So findest du Regeln schnell, wenn du viele Agenten verwaltest.
 - **Nutze immer das internationale Format.**\
   Nummern müssen mit **\+** und der Ländervorwahl beginnen (E.164).
+- **Nicht an eine Nummer übergeben, die an den Agenten weiterleitet.**\
+  Leitet die Hauptnummer an den Agenten weiter, kommt der Anruf bei einer Übergabe an diese Nummer zum Agenten zurück und läuft im Kreis. Nutze eine Durchwahl oder ein Mobiltelefon.
 
 ---
 

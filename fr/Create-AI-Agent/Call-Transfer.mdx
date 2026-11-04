@@ -13,6 +13,10 @@ La configuration se fait à deux endroits :
 - **Transfert d’appel** (menu de gauche, sous **Téléphonie**) : votre liste de **règles de transfert d’appel**, chacune avec un nom, un numéro et une condition.
 - L’onglet **Outils** de l’agent : les outils système **Transfert vers un numéro** et **Transfert vers un agent**, qui activent les transferts pour cet agent.
 
+<Note>
+  Créer une règle dans **Transfert d’appel** ne suffit pas pour que l’agent transfère les appels. L’agent ne transfère que lorsque vous activez l’outil et ajoutez la règle dans son onglet **Outils** (étape 2).
+</Note>
+
 ---
 
 ## Étape 1 : Créer une configuration de transfert
@@ -143,6 +147,8 @@ Après l’appel, ouvrez l’**Historique des appels** et utilisez le filtre **T
   Vous retrouvez ainsi vos règles rapidement quand vous gérez de nombreux agents.
 - **Utilisez toujours le format international.**\
   Les numéros doivent commencer par **\+** et l’indicatif du pays (E.164).
+- **Ne transférez pas vers un numéro qui renvoie vers l’agent.**\
+  Si votre numéro principal renvoie vers l’agent, transférer vers ce numéro ramène l’appel à l’agent, et il tourne en boucle. Utilisez une ligne directe ou un mobile.
 
 ---
 

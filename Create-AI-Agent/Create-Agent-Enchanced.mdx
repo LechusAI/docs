@@ -235,7 +235,7 @@ Only enable the languages you actually need. Adding extra languages "just in cas
 
 **AI Intelligence (LLM)** is the language model that powers the agent. The **LLM** (Large Language Model) is what understands the caller, follows the rules in your prompt, uses the knowledge base, and generates each response.
 
-Click the selected model to open the **LLM** panel, and click it again to see the list. Each model shows a short description and its approximate latency, like *~179ms*. The models available are **Neuron 1.0**, **Neuron 2.0**, **Neuron 3.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, and **Gemini 2.5 Flash** (the default).
+Click the selected model to open the **LLM** panel, and click it again to see the list. Each model shows a short description and its approximate latency, like *~179ms*. The models available include **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite**, and **Gemini 2.5 Flash** (the default).
 
 The model directly affects three things:
 
@@ -688,7 +688,7 @@ Once configured, a gear icon next to the toggle reopens the panel.
 
 ### Smart Opt-Out
 
-Gives callers a polite way to decline future contact. Important for outbound flows: it keeps your lead lists clean and your outreach compliant with communication standards.
+Gives callers a polite way to decline future contact. Important for outbound flows: it keeps your lead lists clean. On its own, it doesn’t make your campaigns compliant with the rules of your country.
 
 ### Issue and Complaint Tracking
 
@@ -914,7 +914,7 @@ How many seconds the agent waits for the caller's reply before speaking again (d
 
 #### End conversation after silence
 
-How many seconds of silence before the call ends automatically when the caller stops responding. It helps manage costs and keeps your call logs clean. The default, **-1**, means the call never ends because of silence.
+How many seconds of silence before the call ends automatically when the caller stops responding. It helps manage costs and keeps your call logs clean. The default, **-1**, means the call never ends because of silence: it keeps running, and using minutes, until someone hangs up or it reaches **Max conversation duration**.
 
 #### Max conversation duration
 
@@ -945,7 +945,7 @@ Gives the caller immediate audio feedback when the model takes longer than expec
 
 #### Record Calls
 
-On by default. Securely stores the transcripts and audio of every call, so you can review the agent's performance, stay compliant, and keep a history of your customer interactions. Turn it off only if it's not compatible with your internal privacy, storage, and compliance policies.
+On by default. Securely stores the transcripts and audio of every call, so you can review the agent's performance and keep a history of your customer interactions. Turn it off only if it's not compatible with your internal privacy, storage, and compliance policies.
 
 ### Telephony Extras
 
