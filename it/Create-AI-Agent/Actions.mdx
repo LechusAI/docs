@@ -314,7 +314,7 @@ Per la configurazione completa, vedi [Google Calendar](/it/Create-AI-Agent/Googl
     - **Campi obbligatori**: i dati che la tua richiesta deve includere. Per impostazione predefinita: **name**, **phone** ed **email**, ognuno con la sua definizione. Usa **Aggiungi entità** per aggiungerne altri (ad esempio `firstName`, `appointmentDate` o `isInterested`).
   </Step>
   <Step>
-    Clicca su **Salva**. Ogni flusso ha il proprio **URL del webhook**: copialo e usalo per inviare dati dai tuoi servizi esterni. Assicurati di includere i campi obbligatori nella richiesta.
+    Clicca su **Salva**. Ogni flusso ha il proprio **URL del webhook**: copialo e usalo per inviare dati dai tuoi servizi esterni. Assicurati di includere i campi obbligatori nella richiesta. Invia le richieste con l’intestazione `Authorization: Bearer`. L’URL del webhook avvia solo le chiamate di questo flusso.
   </Step>
   <Step>
     Controlla la scheda **Logs** per vedere le richieste ricevute.

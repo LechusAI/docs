@@ -314,7 +314,7 @@ For the full setup, see [Google Calendar](/Create-AI-Agent/Google-Calendar).
     - **Mandatory Fields**: the data your request must include. By default: **name**, **phone** and **email**, each with a definition. Use **Add Entity** to add more (for example, `firstName`, `appointmentDate` or `isInterested`).
   </Step>
   <Step>
-    Click **Save**. Each workflow gets its own unique **Webhook URL**: copy it and use it to send data from your external services. Make sure to include the mandatory fields in your request.
+    Click **Save**. Each workflow gets its own unique **Webhook URL**: copy it and use it to send data from your external services. Make sure to include the mandatory fields in your request. Send your requests with the `Authorization: Bearer` header. The Webhook URL only starts calls for this workflow.
   </Step>
   <Step>
     Check the **Logs** tab to see the requests received.
