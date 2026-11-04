@@ -555,18 +555,15 @@ Los **minutos de cómputo** son el tiempo en que tu agente de IA está activo (e
 
 ### Aviso de facturación importante (primer minuto)
 
-Cuando haces llamadas con la **telefonía gestionada por Callin** (por ejemplo, números comprados a través de Callin.io y enrutados por el operador de Callin), se aplica una regla de **facturación del primer minuto**:
+Cuando haces llamadas salientes con la **telefonía gestionada por Callin** (números comprados a través de Callin.io y enrutados por el operador de Callin), se aplica la regla de **facturación del primer minuto**:
 
 - El cobro mínimo es de **1 minuto**
-- A partir del primer minuto, se factura la duración real de la llamada
+- Las llamadas de 60 segundos o más se facturan por su duración real
 - Esta regla **no se aplica** a:
+  - **Llamadas entrantes**
   - **Llamadas de prueba en el navegador**
   - **Numeración propia importada** (Telnyx o Twilio)
   - **Troncal SIP externa (BYOC)**
-
-<Warning>
-  El comportamiento exacto puede variar según tu configuración y el enrutamiento del proveedor. Si quieres evitar las reglas de la telefonía gestionada por Callin, importa tus propios números o usa BYOC.
-</Warning>
 
 ### Recordatorio: facturación con número personal
 

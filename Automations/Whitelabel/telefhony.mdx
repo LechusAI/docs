@@ -17,7 +17,7 @@ Across the three tabs you'll see four summary cards at the top. They give you a 
 - **Global number coverage** — you can browse phone numbers from many countries from a single place. Useful when your clients operate in different regions.
 - **Buy inside the platform** — numbers are purchased directly through Callin's managed Telnyx infrastructure. You don't need a Telnyx account of your own.
 - **Assign to subaccounts** — once a number is in your inventory, you can link it to the subaccount of any client in your environment.
-- **First-minute rounding** — call billing is enforced with a one-minute minimum. The Billing tab explains it in detail.
+- **First-minute rounding** — outbound call billing is enforced with a one-minute minimum. The Billing tab explains it in detail.
 
 You’ll find it in the White Label Platform, under **App Configuration** ([open it here](https://app.callin.io/cms/telephony)).
 
@@ -136,7 +136,7 @@ The **Billing** tab explains the rules that apply to every call made through the
 
 ### First-minute rounding
 
-Whenever a call uses Callin's carrier and the numbers you bought through the platform, the **first minute is billed as a full minute**, even if the call lasts only a few seconds. After that first minute, billing continues normally based on real call duration.
+Whenever an outbound call uses Callin's carrier and the numbers you bought through the platform, a call under 60 seconds is **billed as a full minute**, even if it lasts only a few seconds. Calls of 60 seconds or more are billed for their actual duration. Inbound calls, browser test calls, imported numbers, and external SIP trunks are always billed for their actual duration.
 
 In practical terms:
 

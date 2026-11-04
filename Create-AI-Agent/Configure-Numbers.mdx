@@ -556,18 +556,15 @@ Billing can have two parts: **Callin usage** and **telephony carrier charges**. 
 
 ### Callin-managed telephony: important billing notice (first-minute billing)
 
-When you place calls using **Callin-managed telephony** (for example, numbers purchased through Callin.io and routed through Callin’s carrier), you may see a **first-minute billing** rule:
+When you place outbound calls using **Callin-managed telephony** (numbers purchased through Callin.io and routed through Callin’s carrier), the **first-minute billing** rule applies:
 
 - Minimum charge is **1 minute**
-- After the first minute, billing typically follows the actual call duration
-- This rule typically **does not apply** to:
+- Calls of 60 seconds or more are billed for their actual duration
+- This rule **does not apply** to:
+  - **Inbound calls**
   - **Browser test calls**
   - **Imported own numbering** (Telnyx or Twilio imports)
   - **External SIP trunk (BYOC)**
-
-<Warning>
-  The exact billing behavior can vary based on your setup and provider routing. If you want to avoid Callin-managed telephony rules, import your own numbers or use BYOC.
-</Warning>
 
 ### Personal number billing reminder
 
