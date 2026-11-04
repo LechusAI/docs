@@ -1,10 +1,10 @@
 ---
-title: "Agenti IA"
+title: "Agenti AI"
 description: "Come creare un agente in Callin.io e cosa fa ciascuna delle nove schede dell'editor dell'agente."
 icon: "robot"
 ---
 
-[Apri la pagina degli Agenti IA in Callin.io](https://app.callin.io/agents)
+[Apri la pagina degli Agenti AI in Callin.io](https://app.callin.io/agents)
 
 La pagina **Agenti AI** è il posto in cui crei e gestisci gli agenti che rispondono alle tue chiamate telefoniche e alle conversazioni del sito web. Da qui puoi creare un nuovo agente, trovarne uno esistente, provarlo e aprire il suo editor.
 
@@ -42,7 +42,7 @@ A destra di ogni riga hai tre azioni rapide:
 
 ### Creare un nuovo agente
 
-Fai clic su **Crea agente**, in alto a destra. Callin.io ti chiede come vuoi iniziare.
+Clicca su **Crea agente**, in alto a destra. Callin.io ti chiede come vuoi iniziare.
 
 <Frame caption="Schermata: scegli come iniziare il tuo nuovo agente.">
   <img
@@ -76,17 +76,17 @@ Fai clic su **Crea agente**, in alto a destra. Callin.io ti chiede come vuoi ini
   Scrivi l'**Obiettivo principale** come un unico risultato chiaro, per esempio "Prenotare, confermare o spostare gli appuntamenti dei pazienti e rispondere alle domande sugli orari". Più l'obiettivo è chiaro, migliore sarà la prima versione del prompt.
 </Tip>
 
-**Modelli predefiniti** *(Beta)* usa modelli creati dalla tua organizzazione, così ogni nuovo agente parte con la configurazione standard della tua azienda. Ogni scheda mostra il nome del modello, una breve descrizione e quanti campi compila (per esempio *Nome agente*, *Prompt*, *Messaggio di benvenuto*, *Direzione*). Scegline uno, controlla il **Nome agente**, scegli lo **Stack dell'agente** e fai clic su **Crea agente**. Se la tua organizzazione non ha ancora creato modelli, l'elenco è vuoto.
+**Modelli predefiniti** *(Beta)* usa modelli creati dalla tua organizzazione, così ogni nuovo agente parte con la configurazione standard della tua azienda. Ogni scheda mostra il nome del modello, una breve descrizione e quanti campi compila (per esempio *Nome agente*, *Prompt*, *Messaggio di benvenuto*, *Direzione*). Scegline uno, controlla il **Nome agente**, scegli lo **Stack dell'agente** e clicca su **Crea agente**. Se la tua organizzazione non ha ancora creato modelli, l'elenco è vuoto.
 
 ### Scegliere lo stack dell'agente
 
-Lo **Stack dell'agente** decide quale voce e quale tecnologia di IA usa l'agente:
+Lo **Stack dell'agente** decide quale voce e quale tecnologia di AI usa l'agente:
 
 - **Voce premium** — voci naturali di Callin.io, pronte in pochi minuti. È l'opzione predefinita e quella giusta per la maggior parte degli agenti.
 - **Stack personalizzato** *(Alpha)* — usa il tuo LLM, TTS e STT per avere il pieno controllo su ogni parte della voce.
 - **Latenza ultra-bassa** — risposte quasi istantanee per conversazioni fluide dal vivo. Questi agenti hanno le loro schede nell'editor e sono gli unici che possono far parte di una squad. Vedi [Agenti a latenza ultra-bassa](/it/Create-AI-Agent/Ultra-Low-Latency-Agents).
 
-Fai clic su **Crea agente** per finire. L'agente si apre direttamente nel suo editor, nella scheda **Agente**.
+Clicca su **Crea agente** per finire. L'agente si apre direttamente nel suo editor, nella scheda **Agente**.
 
 <Warning>
   Le sezioni seguenti descrivono un agente creato con lo stack **Voce premium**. Gli agenti con altri stack possono mostrare opzioni diverse. Per gli agenti creati con **Latenza ultra-bassa**, vedi [Agenti a latenza ultra-bassa](/it/Create-AI-Agent/Ultra-Low-Latency-Agents).
@@ -121,7 +121,7 @@ Usa i pulsanti in alto a destra dell'editor per provare senza uscire dalla pagin
 
 ## Sezione 1: Agente
 
-La scheda **Agente** è dove definisci l'identità e il comportamento principale del tuo assistente: cosa dice, quale voce e lingua usa, quale modello di IA lo alimenta e se risponde alle chiamate in entrata, fa chiamate in uscita o entrambe.
+La scheda **Agente** è dove definisci l'identità e il comportamento principale del tuo assistente: cosa dice, quale voce e lingua usa, quale modello di AI lo alimenta e se risponde alle chiamate in entrata, fa chiamate in uscita o entrambe.
 
 <Frame caption="Schermata: la scheda Agente, dove imposti il prompt, la voce, la lingua, il modello e la direzione della chiamata.">
   <img
@@ -156,7 +156,7 @@ Dopo queste tre, aggiungi regole operative che guidino le decisioni dell'agente 
 Il pulsante **Aggiungi variabili**, sotto l'editor del prompt (e sotto il saluto), inserisce segnaposto che vengono sostituiti con valori reali durante la chiamata. Il menu ha due gruppi:
 
 - **Variabili di sistema** — valori che Callin.io compila automaticamente: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone` e `system__call_id`.
-- **Variabili personalizzate** — le tue variabili, come `agent_name`. Fai clic su **Nuova variabile** per crearne una.
+- **Variabili personalizzate** — le tue variabili, come `agent_name`. Clicca su **Nuova variabile** per crearne una.
 
 Le variabili compaiono come chip sotto l'editor e nel pannello **Variabili Dinamiche**, in fondo alla scheda, dove ne imposti il valore. Per esempio, `{{agent_name}}` prende per impostazione predefinita il nome dell'agente.
 
@@ -196,25 +196,25 @@ Alcuni esempi:
 
 La **Voce** controlla come suona il tuo agente. Non cambia ciò che dice, ma influisce molto su come si sente chi chiama: chiarezza, fiducia e impressione generale.
 
-Fai clic sulla voce selezionata (indicata come **Principale**) per aprire il pannello della voce:
+Clicca sulla voce selezionata (indicata come **Principale**) per aprire il pannello della voce:
 
-- **Voce** — fai clic per aprire **Seleziona voce**, che ha tre schede:
+- **Voce** — clicca per aprire **Seleziona voce**, che ha tre schede:
   - **Esplora** — il catalogo delle voci disponibili, con ricerca e filtri per lingua e genere.
   - **Clonato** — le voci che hai clonato nel tuo account.
   - **Aggiungi** — importa una voce da ElevenLabs incollando il suo link di condivisione di VoiceLab e dandole un nome.
 - **Modalità espressiva** — attiva per impostazione predefinita. Permette all'agente di esprimersi con tag audio, come un'emozione, una velocità o un accento.
-- **Tag audio suggeriti** — fino a 20 tag che la voce può usare per le sfumature emotive, come *entusiasta*, *preoccupato*, *paziente*, *sussurrando*, *accento americano* o *ridendo*. Fai clic su un tag per aggiungerlo e indica quando l'agente deve usarlo, oppure fai clic su **Aggiungi** per crearne uno tuo. Sono suggerimenti: l'agente può usare anche tag non presenti nell'elenco.
+- **Tag audio suggeriti** — fino a 20 tag che la voce può usare per le sfumature emotive, come *entusiasta*, *preoccupato*, *paziente*, *sussurrando*, *accento americano* o *ridendo*. Clicca su un tag per aggiungerlo e indica quando l'agente deve usarlo, oppure clicca su **Aggiungi** per crearne uno tuo. Sono suggerimenti: l'agente può usare anche tag non presenti nell'elenco.
 
 ### Aggiungi voce aggiuntiva
 
-Fai clic su **Aggiungi voce aggiuntiva** per aggiungere voci secondarie, utili quando lo stesso agente gestisce più lingue o segmenti di clienti diversi. Per ognuna imposti:
+Clicca su **Aggiungi voce aggiuntiva** per aggiungere voci secondarie, utili quando lo stesso agente gestisce più lingue o segmenti di clienti diversi. Per ognuna imposti:
 
 - **Voce** — la voce da usare.
 - **Etichetta** — un identificatore unico che il modello usa per riferirsi a questa voce.
 - **Lingua** — la lingua di questa voce (per impostazione predefinita, *Come agente*).
 - **Descrizione** — quando l'agente deve usare questa voce, per esempio "Per qualsiasi parola in spagnolo" o "Ogni volta che parla Joe".
 
-Fai clic su **Aggiungi voce** per salvarla.
+Clicca su **Aggiungi voce** per salvarla.
 
 ### Impostazioni voce comuni
 
@@ -225,9 +225,9 @@ L'icona a ingranaggio accanto a **Voce** apre le **Impostazioni voce comuni**, d
 
 ### Lingua
 
-**Lingua** imposta la lingua predefinita dell'agente (indicata come **Predefinito**). Fai clic per sceglierne un'altra dall'elenco con ricerca.
+**Lingua** imposta la lingua predefinita dell'agente (indicata come **Predefinito**). Clicca per sceglierne un'altra dall'elenco con ricerca.
 
-Fai clic su **Aggiungi altre lingue** per scegliere le altre lingue in cui l'agente può passare durante la conversazione. Il pannello ha una ricerca e l'opzione **Seleziona tutte le lingue**.
+Clicca su **Aggiungi altre lingue** per scegliere le altre lingue in cui l'agente può passare durante la conversazione. Il pannello ha una ricerca e l'opzione **Seleziona tutte le lingue**.
 
 Attiva solo le lingue che ti servono davvero. Aggiungere lingue "per sicurezza" rende di solito il comportamento meno prevedibile. Per cambiare lingua automaticamente deve essere attivo anche lo strumento di sistema **Cambio lingua** (vedi la **Sezione 6: Strumenti**).
 
@@ -235,7 +235,7 @@ Attiva solo le lingue che ti servono davvero. Aggiungere lingue "per sicurezza" 
 
 **Intelligenza IA (LLM)** è il modello linguistico che alimenta l'agente. L'**LLM** (Large Language Model) è ciò che capisce chi chiama, segue le regole del prompt, usa la base di conoscenza e genera ogni risposta.
 
-Fai clic sul modello selezionato per aprire il pannello **LLM**, e fai clic di nuovo per vedere l'elenco. Ogni modello mostra una breve descrizione e la latenza approssimativa, come *~179ms*. I modelli disponibili sono **Neuron 1.0**, **Neuron 2.0**, **Neuron 3.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite** e **Gemini 2.5 Flash** (il modello predefinito).
+Clicca sul modello selezionato per aprire il pannello **LLM**, e clicca di nuovo per vedere l'elenco. Ogni modello mostra una breve descrizione e la latenza approssimativa, come *~179ms*. I modelli disponibili sono **Neuron 1.0**, **Neuron 2.0**, **Neuron 3.0**, **GPT-OSS 120B**, **GLM-4.5 Air**, **GPT-4.1 Nano**, **GPT-5 Nano**, **Gemini 2.5 Flash Lite** e **Gemini 2.5 Flash** (il modello predefinito).
 
 Il modello influisce direttamente su tre cose:
 
@@ -300,7 +300,7 @@ Per aggiungere un nodo, trascina un collegamento da un nodo esistente (per esemp
 
 Il nuovo nodo compare collegato al precedente e le sue impostazioni si aprono nel pannello a destra.
 
-<Frame caption="Video: crea un flusso con due percorsi da Inizio: un Sottoagente che prenota gli appuntamenti e poi chiude la chiamata, e un trasferimento a un numero di telefono.">
+<Frame caption="Video: crea un flusso con due percorsi da Inizio: un Subagente che prenota gli appuntamenti e poi chiude la chiamata, e un trasferimento a un numero di telefono.">
   <video autoPlay muted loop playsInline src="/images/ai-agents-workflow.mp4" />
 </Frame>
 
@@ -315,7 +315,7 @@ Il pannello laterale di **Inizio** ha due schede:
 
 ### Transizioni e condizioni LLM
 
-Una transizione è la linea che collega un nodo al successivo. Fai clic sulla sua etichetta per aprirne le impostazioni. La scheda **Avanti** definisce la transizione:
+Una transizione è la linea che collega un nodo al successivo. Clicca sulla sua etichetta per aprirne le impostazioni. La scheda **Avanti** definisce la transizione:
 
 - **Tipo di transizione** — **Condizione LLM** (il modello decide quando prendere questo percorso), **Nessuna** o **Espressione** (non ancora modificabile in questo pannello).
 - **Etichetta** — il nome mostrato sulla tela.
@@ -338,7 +338,7 @@ Voci comuni che segnala:
 - Un nodo **Strumento** senza strumento selezionato.
 - Una transizione senza testo della condizione LLM.
 
-### Sottoagente
+### Subagente
 
 Un **Subagente** è una fase specializzata all'interno dello stesso flusso. Usalo quando una parte della conversazione ha bisogno di obiettivo, voce, modello o comportamento propri, diversi dall'agente principale. Dagli un nome in cima al pannello e configura le sue schede:
 
@@ -447,10 +447,10 @@ La scheda elenca tutti i documenti che l'agente può usare. Se non ce ne sono an
 
 ### Azioni principali
 
-Fai clic su **Aggiungi documento** per aprire il selettore dei documenti:
+Clicca su **Aggiungi documento** per aprire il selettore dei documenti:
 
 - Usa la ricerca per trovare un documento della tua Base di conoscenza e selezionalo per renderlo disponibile a questo agente.
-- Se il documento non esiste ancora, fai clic su **Aggiungi documento** in fondo al selettore. Ti porta al gestore della Base di conoscenza, dove puoi crearlo.
+- Se il documento non esiste ancora, clicca su **Aggiungi documento** in fondo al selettore. Ti porta al gestore della Base di conoscenza, dove puoi crearlo.
 
 ### Pannello di selezione della base di conoscenza
 
@@ -555,7 +555,7 @@ La sottoscheda **MCP** ti permette di collegare server MCP (Model Context Protoc
     alt="La sottoscheda MCP della scheda Strumenti con il pulsante per aggiungere un MCP." />
 </Frame>
 
-Fai clic su **Aggiungi MCP** per cercare i server MCP disponibili nel tuo account e collegarne uno all'agente. Se non ce ne sono ancora, fai clic su **Gestisci MCP** per configurarli.
+Clicca su **Aggiungi MCP** per cercare i server MCP disponibili nel tuo account e collegarne uno all'agente. Se non ce ne sono ancora, clicca su **Gestisci MCP** per configurarli.
 
 ### Strumenti di sistema
 
@@ -580,9 +580,9 @@ Fa restare in silenzio l'agente quando chi chiama dice cose come "dammi un secon
 
 #### Trasferisci ad agente
 
-Passa la chiamata a un agente IA più specializzato quando la richiesta di chi chiama esce dall'ambito dell'agente attuale, per esempio da un assistente generico a un agente commerciale.
+Passa la chiamata a un agente AI più specializzato quando la richiesta di chi chiama esce dall'ambito dell'agente attuale, per esempio da un assistente generico a un agente commerciale.
 
-Quando lo attivi, il suo pannello include **Regole di trasferimento**. Fai clic su **Aggiungi regola** per definirne ognuna:
+Quando lo attivi, il suo pannello include **Regole di trasferimento**. Clicca su **Aggiungi regola** per definirne ognuna:
 
 - **Agente** — l'agente a cui trasferire.
 - **Condizione** — quando deve avvenire il trasferimento.
@@ -596,7 +596,7 @@ Mette in contatto chi chiama con una persona del team quando serve un tocco uman
 
 #### Regole trasferimento umano
 
-Il pannello di **Trasferisci a numero** include le **Regole trasferimento umano**, dove definisci le condizioni per trasferire agli operatori. Fai clic su **Aggiungi regola** per ognuna:
+Il pannello di **Trasferisci a numero** include le **Regole trasferimento umano**, dove definisci le condizioni per trasferire agli operatori. Clicca su **Aggiungi regola** per ognuna:
 
 - **Tipo destinazione** — un **Numero di telefono** fisso o un numero fornito tramite una variabile dinamica.
 - **Numero di telefono** — il numero a cui trasferire.
@@ -675,7 +675,7 @@ Poi scegli il calendario e il modello di prenotazione che l'agente deve usare. P
 
 Quando la attivi, si apre il pannello **Configurazione e-mail post-chiamata**. Scegli un tipo di modello:
 
-- **Modello predefinito** — compila **Destinatari** (scrivi un indirizzo e premi Invio o fai clic su **Aggiungi**), **Oggetto** e **Messaggio**.
+- **Modello predefinito** — compila **Destinatari** (scrivi un indirizzo e premi Invio o clicca su **Aggiungi**), **Oggetto** e **Messaggio**.
 - **Modello personalizzato** — scrivi l'intera email in HTML in **Corpo del modello**. Usa **Aggiungi variabili** per inserire dati della chiamata come `userName`, `phoneNumber`, `direction`, `agent_name`, `duration`, `extractedDataHtml`, `keyMomentsHtml`, `transcriptHtml` e `rawDataHtml`. **Formatta HTML** riordina il codice e **Anteprima email** mostra il risultato.
 
 Puoi anche impostare:
@@ -708,7 +708,7 @@ Imposta la lingua dei riepiloghi della conversazione. L'opzione predefinita, **A
 
 Trasforma la conversazione in dati strutturati: nomi, date, preferenze, città, prodotti di interesse, motivi del contatto e così via.
 
-Fai clic su **Aggiungi entità** per definire ogni dato da acquisire. Il pannello **Configura estrazione dati** ti chiede:
+Clicca su **Aggiungi entità** per definire ogni dato da acquisire. Il pannello **Configura estrazione dati** ti chiede:
 
 - **Tipo di dato** — **Stringa**, **Booleano**, **Numero** o **Intero**.
 - **Identificatore** — il nome interno con cui viene salvato.
@@ -764,7 +764,7 @@ Questo blocco decide come viene incorporato il widget e come interagiscono i vis
 Come compare il widget sul tuo sito:
 
 - **Incorporamento inline** — mostra il widget completo direttamente nella pagina, dove hai messo lo snippet.
-- **Launcher flottante** — mostra una piccola sfera che apre il widget in un pannello quando ci fai clic.
+- **Launcher flottante** — mostra una piccola sfera che apre il widget in un pannello quando ci clicca.
 
 #### Tema del widget incorporato
 
