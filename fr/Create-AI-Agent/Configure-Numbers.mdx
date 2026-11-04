@@ -555,18 +555,15 @@ Les **minutes de traitement** correspondent au temps pendant lequel votre agent 
 
 ### Avis important de facturation (première minute)
 
-Quand vous passez des appels avec la **téléphonie gérée par Callin** (par exemple, des numéros achetés via Callin.io et acheminés par l’opérateur de Callin), une règle de **facturation de la première minute** s’applique :
+Quand vous passez des appels sortants avec la **téléphonie gérée par Callin** (des numéros achetés via Callin.io et acheminés par l’opérateur de Callin), la règle de **facturation de la première minute** s’applique :
 
 - La facturation minimale est de **1 minute**
-- Après la première minute, la facturation suit la durée réelle de l’appel
+- Les appels de 60 secondes ou plus sont facturés à leur durée réelle
 - Cette règle **ne s’applique pas** :
+  - Aux **appels entrants**
   - Aux **appels de test dans le navigateur**
   - À la **numérotation propre importée** (Telnyx ou Twilio)
   - Au **tronc SIP externe (BYOC)**
-
-<Warning>
-  Le comportement exact peut varier selon votre configuration et le routage du fournisseur. Si vous voulez éviter les règles de la téléphonie gérée par Callin, importez vos propres numéros ou utilisez BYOC.
-</Warning>
 
 ### Rappel : facturation avec un numéro personnel
 

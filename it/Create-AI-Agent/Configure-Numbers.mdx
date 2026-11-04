@@ -555,18 +555,15 @@ I **minuti di elaborazione** rappresentano il tempo in cui il tuo agente IA è a
 
 ### Avviso importante sulla fatturazione (primo minuto)
 
-Quando effettui chiamate con la **telefonia gestita da Callin** (per esempio, numeri acquistati tramite Callin.io e instradati sull’operatore di Callin), si applica una regola di **fatturazione del primo minuto**:
+Quando effettui chiamate in uscita con la **telefonia gestita da Callin** (numeri acquistati tramite Callin.io e instradati sull’operatore di Callin), si applica la regola di **fatturazione del primo minuto**:
 
 - L’addebito minimo è di **1 minuto**
-- Dopo il primo minuto, si paga la durata reale della chiamata
+- Le chiamate di 60 secondi o più vengono fatturate per la durata reale
 - Questa regola **non si applica** a:
+  - **Chiamate in entrata**
   - **Chiamate di prova dal browser**
   - **Numerazione propria importata** (Telnyx o Twilio)
   - **Tronco SIP esterno (BYOC)**
-
-<Warning>
-  Il comportamento esatto può variare in base alla tua configurazione e all’instradamento del provider. Se vuoi evitare le regole della telefonia gestita da Callin, importa i tuoi numeri o usa BYOC.
-</Warning>
 
 ### Promemoria: fatturazione con numero personale
 

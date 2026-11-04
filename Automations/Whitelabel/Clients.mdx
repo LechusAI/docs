@@ -136,11 +136,11 @@ Click the orange person icon (**More User Details**) to open the customer detail
 
 ### 1-Min Billing
 
-**Outbound billing (1-minute rule)**: Callin looks at the customer’s last 100 completed outbound calls. The rule only counts once the customer has 100 completed outbound calls. If 50% of them are under 50 seconds, the customer’s outbound calls under 60 seconds are billed as 1 minute. Calls over 60 seconds are always billed for their actual duration. The tab shows:
+Outbound calls under 60 seconds made with Callin numbers and carrier are billed as 1 minute (see [Telephony](/Automations/Whitelabel/telefhony)). This tab shows information about the customer’s recent outbound calls:
 
-- **Rule eligible** and **Rule applies now**, with how many calls were considered and how many were short.
+- **Rule eligible** and **Rule applies now**: whether 50% of the last 100 completed outbound calls are under 50 seconds. This is for information only and doesn’t decide the billing. **Rule eligible: No** is normal until the customer has 100 completed outbound calls.
 - The **Avg duration** and the **Success rate** of their recent outbound calls.
-- **Recent outbound calls (last 100)**: each call with its status, duration and the minutes billed if the rule applies.
+- **Recent outbound calls (last 100)**: each call with its status and duration.
 
 <Frame caption="Screenshot: the 1-Min Billing tab. Click Refresh to update the figures.">
   <img src="/images/wl-users-billing.png" alt="1-Min Billing tab with the Outbound billing (1-minute rule) explanation, the Rule eligible, Rule applies now, Avg duration and Success rate boxes" />

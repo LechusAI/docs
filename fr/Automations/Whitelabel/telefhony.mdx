@@ -17,7 +17,7 @@ Dans les trois onglets, tu verras quatre cartes de résumé en haut. Elles te do
 - **Couverture mondiale des numéros** — tu peux parcourir des numéros de téléphone de nombreux pays depuis un seul endroit. Utile quand tes clients opèrent dans des régions différentes.
 - **Achat depuis la plateforme** — les numéros s'achètent directement via l'infrastructure Telnyx gérée par Callin. Tu n'as pas besoin d'avoir ton propre compte Telnyx.
 - **Attribution aux sous-comptes** — une fois qu'un numéro est dans ton inventaire, tu peux le rattacher au sous-compte de n'importe quel client de ton environnement.
-- **Arrondi de la première minute** — la facturation des appels applique un minimum d'une minute. L'onglet **Facturation** l'explique en détail.
+- **Arrondi de la première minute** — la facturation des appels sortants applique un minimum d'une minute. L'onglet **Facturation** l'explique en détail.
 
 Tu la trouveras dans la Plateforme white label, dans **Configuration de l'application** ([ouvre-la ici](https://app.callin.io/cms/telephony)).
 
@@ -136,7 +136,7 @@ L'onglet **Facturation** explique les règles qui s'appliquent à chaque appel p
 
 ### Arrondi de la première minute
 
-Chaque fois qu'un appel utilise l'opérateur de Callin et les numéros que tu as achetés via la plateforme, **la première minute est facturée comme une minute entière**, même si l'appel ne dure que quelques secondes. Après cette première minute, la facturation continue normalement en fonction de la durée réelle.
+Chaque fois qu'un appel sortant utilise l'opérateur de Callin et les numéros que tu as achetés via la plateforme, un appel de moins de 60 secondes **est facturé comme une minute entière**, même s'il ne dure que quelques secondes. Les appels de 60 secondes ou plus sont facturés à leur durée réelle. Les appels entrants, les appels de test dans le navigateur, les numéros importés et les troncs SIP externes sont toujours facturés à leur durée réelle.
 
 En pratique :
 
