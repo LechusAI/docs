@@ -1,15 +1,15 @@
 ---
 title: "Modelli agente"
-description: "Prepara modelli di agente in anticipo, così i tuoi utenti (sottoaccount) possono creare agenti più velocemente e con impostazioni coerenti."
+description: "Prepara modelli di agente in anticipo, così i tuoi utenti (sottoconti) possono creare agenti più velocemente e con impostazioni coerenti."
 icon: "copy"
 ---
 
 ## Panoramica
 
-I **Modelli di agente personalizzati** ti permettono di preparare una configurazione di agente “pronta all’uso” che i tuoi **sottoaccount** possono applicare quando creano nuovi agenti. Invece di configurare tutto da zero ogni volta, decidi quali impostazioni include il modello, ne precompili i valori e i tuoi utenti completano solo ciò che serve.
+I **Modelli di agente personalizzati** ti permettono di preparare una configurazione di agente “pronta all’uso” che i tuoi **sottoconti** possono applicare quando creano nuovi agenti. Invece di configurare tutto da zero ogni volta, decidi quali impostazioni include il modello, ne precompili i valori e i tuoi utenti completano solo ciò che serve.
 
 Usa questa sezione quando vuoi:
-- **Un comportamento coerente** degli agenti su più sottoaccount.
+- **Un comportamento coerente** degli agenti su più sottoconti.
 - Un avvio più rapido per i nuovi utenti.
 - Una selezione di configurazioni di agente “approvate”.
 
@@ -38,7 +38,7 @@ L’elenco mostra il **Nome modello** di ciascuno (con la descrizione), quanti *
   </Step>
   <Step>
     Compila i dati del modello (entrambi obbligatori):
-    - **Nome modello**: un nome chiaro che i tuoi sottoaccount riconoscano.
+    - **Nome modello**: un nome chiaro che i tuoi sottoconti riconoscano.
     - **Descrizione**: una breve spiegazione dello scopo del modello.
   </Step>
   <Step>
@@ -53,10 +53,10 @@ L’elenco mostra il **Nome modello** di ciascuno (con la descrizione), quanti *
   Usa nomi che descrivano il compito, non il team. Esempio: **“Assistenza clienti in entrata”** invece di **“Supporto - Team A”**.
 </Tip>
 
-## Scegliere cosa possono configurare i sottoaccount
+## Scegliere cosa possono configurare i sottoconti
 
 In **1. Seleziona campi** vedrai un elenco di caselle.\
-**Selezionata = inclusa nel flusso del modello per i sottoaccount.**\
+**Selezionata = inclusa nel flusso del modello per i sottoconti.**\
 I campi non selezionati non fanno parte del modello.
 
 <Frame caption="Schermata: un modello di esempio con sei campi selezionati.">
@@ -79,7 +79,7 @@ Puoi includere campi come:
 - **Utente parla per primo**
 
 <Warning>
-  Includi solo i campi che vuoi davvero far modificare ai sottoaccount. Meno campi di solito significa meno errori.
+  Includi solo i campi che vuoi davvero far modificare ai sottoconti. Meno campi di solito significa meno errori.
 </Warning>
 
 ### Voce e lingua
@@ -92,7 +92,7 @@ Puoi includere campi come:
 - **Temperatura**
 
 <Tip>
-  Se lavori in più regioni, includi **Lingua principale** e **Fuso orario**, così i sottoaccount si adattano rapidamente senza stravolgere lo scopo del modello.
+  Se lavori in più regioni, includi **Lingua principale** e **Fuso orario**, così i sottoconti si adattano rapidamente senza stravolgere lo scopo del modello.
 </Tip>
 
 ### Azione chiamata
@@ -111,16 +111,16 @@ Puoi includere campi come:
 - **Ritardo tentativi (minuti)**
 
 <Warning>
-  **Errore comune:** Includere **URL webhook** per i sottoaccount quando vuoi che resti sotto il controllo della tua organizzazione. Se ti serve un monitoraggio centralizzato, non esporre i campi dei webhook.
+  **Errore comune:** Includere **URL webhook** per i sottoconti quando vuoi che resti sotto il controllo della tua organizzazione. Se ti serve un monitoraggio centralizzato, non esporre i campi dei webhook.
 </Warning>
 
 ### Valori predefiniti
 
-Appena selezioni un campo, compare in **2. Imposta valori predefiniti**. Lì ne precompili il valore: i sottoaccount partono da quello quando creano un agente con questo modello.
+Appena selezioni un campo, compare in **2. Imposta valori predefiniti**. Lì ne precompili il valore: i sottoconti partono da quello quando creano un agente con questo modello.
 
 Ogni campo mostra un breve testo di aiuto. Ad esempio:
 
-- **Nome agente**: il nome dell’agente (il sottoaccount può cambiarlo).
+- **Nome agente**: il nome dell’agente (il sottoconto può cambiarlo).
 - **Messaggio di benvenuto**: il primo messaggio che l’agente dice all’inizio della chiamata.
 - **Prompt di sistema**: le istruzioni che definiscono il comportamento dell’agente.
 - **Fuso orario**: influisce sulle risposte legate all’orario. Parte da **UTC**.
@@ -144,7 +144,7 @@ Se lo attivi, verrà **creato automaticamente un agente con questo modello** neg
 ## Stato del modello
 
 Vedrai anche **Stato del modello**. È attivo per impostazione predefinita.\
-Solo i modelli **attivi** sono visibili ai sottoaccount.
+Solo i modelli **attivi** sono visibili ai sottoconti.
 
 Usalo quando vuoi:
 - Nascondere temporaneamente i modelli vecchi senza eliminarli.
@@ -176,12 +176,12 @@ Ecco come potresti strutturare un modello per un agente di supporto in entrata:
 - Messaggio di benvenuto: “Buongiorno, grazie per aver chiamato. Come posso aiutarti?”
 
 <Tip>
-  Se i tuoi sottoaccount non devono cambiare il comportamento principale, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate insieme.
+  Se i tuoi sottoconti non devono cambiare il comportamento principale, includi il **Prompt di sistema** ma evita di esporre troppe opzioni avanzate insieme.
 </Tip>
 
 ## Note e limitazioni
 
-- Ciò che vedono i sottoaccount può dipendere dai permessi del ruolo e dal piano.
+- Ciò che vedono i sottoconti può dipendere dai permessi del ruolo e dal piano.
 - Alcune opzioni ed etichette possono variare leggermente tra account.
 
-Se vuoi, puoi creare più modelli per caso d’uso (ad esempio **Qualificazione vendite**, **Pianificazione appuntamenti**, **Smistamento supporto**) così i sottoaccount partono sempre da quello più simile.
+Se vuoi, puoi creare più modelli per caso d’uso (ad esempio **Qualificazione vendite**, **Pianificazione appuntamenti**, **Smistamento supporto**) così i sottoconti partono sempre da quello più simile.
