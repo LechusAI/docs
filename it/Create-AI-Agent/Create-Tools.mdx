@@ -104,7 +104,7 @@ Sotto l’URL puoi decidere come si comporta lo strumento durante la conversazio
   - **Asincrono**: viene eseguito in background, così la conversazione può continuare mentre lavora.
 - **Suono strumento**: un suono facoltativo mentre lo strumento è in esecuzione: **Nessuno**, **Digitazione** o **Musica d’ascensore 1–4**. Usa il pulsante di riproduzione accanto per ascoltarlo.
 
-<Frame caption="Screenshot: il pannello Crea strumento con le impostazioni di tempo e di voce.">
+<Frame caption="Schermata: il pannello Crea strumento con le impostazioni di tempo e di voce.">
   <img
     src="/images/tools-create.png"
     alt="Il pannello Crea strumento con il metodo POST e un URL di esempio, seguito da Timeout di risposta, Disabilita interruzioni, Discorso pre-strumento, Modalità di esecuzione e Suono strumento, e dalle sezioni Headers e Parametri del corpo." />
@@ -133,7 +133,7 @@ Se il tuo strumento invia informazioni (POST), definisci esattamente quali dati 
   </Step>
 </Steps>
 
-- **Tipo di dati**: **String** (testo), **Numero**, **Boolean** (vero/falso) o **Integer** (numero intero).
+- **Tipo di dati**: **Stringa** (testo), **Numero**, **Booleano** (vero/falso) o **Intero** (numero intero).
 - **Identificatore**: il nome esatto del campo che si aspetta il tuo endpoint (ad esempio: `email`, `phone`, `full_name`).
 - **Obbligatorio**: selezionato per impostazione predefinita. Deselezionalo se il campo è facoltativo.
 - **Tipo di valore**: da dove arriva il valore:
@@ -143,10 +143,10 @@ Se il tuo strumento invia informazioni (POST), definisci esattamente quali dati 
 
 Per inviare altri campi, clicca di nuovo su **Aggiungi proprietà**. Per rimuoverne uno, clicca su **Elimina**.
 
-<Frame caption="Screenshot: un parametro del corpo che l’agente compila a partire dalla conversazione (Prompt LLM).">
+<Frame caption="Schermata: un parametro del corpo che l’agente compila a partire dalla conversazione (Prompt LLM).">
   <img
     src="/images/tools-body.png"
-    alt="La sezione Parametri del corpo con una proprietà: tipo di dati String, identificatore email, Obbligatorio selezionato, tipo di valore Prompt LLM, una descrizione e il campo facoltativo Valori Enum." />
+    alt="La sezione Parametri del corpo con una proprietà: tipo di dati Stringa, identificatore email, Obbligatorio selezionato, tipo di valore Prompt LLM, una descrizione e il campo facoltativo Valori Enum." />
 </Frame>
 
 > Consiglio pratico: se segni un campo come **Obbligatorio**, devi obbligare l’agente (tramite il Prompt conversazionale) a **chiederlo e confermarlo** prima di eseguire lo strumento. Altrimenti il webhook riceverà dati incompleti o il flusso fallirà.
@@ -233,7 +233,7 @@ Creare lo strumento non basta. Devi assegnarlo all’agente:
 
 Per aggiungere un server MCP all’agente, apri la sottoscheda **MCP** e clicca su **Aggiungi MCP**.
 
-<Frame caption="Screenshot: la scheda Strumenti dell’agente. Aggiungi strumento mostra gli strumenti creati nella sezione Strumenti.">
+<Frame caption="Schermata: la scheda Strumenti dell’agente. Aggiungi strumento mostra gli strumenti creati nella sezione Strumenti.">
   <img
     src="/images/tools-agent.png"
     alt="La scheda Strumenti dell'agente con le sottoschede Strumenti e MCP, l'elenco Aggiungi strumento con la ricerca e il pulsante Aggiungi strumento webhook, e gli strumenti di sistema a destra." />
@@ -243,7 +243,7 @@ Per aggiungere un server MCP all’agente, apri la sottoscheda **MCP** e clicca 
 Se lo strumento compare nell’elenco dell’agente, è assegnato correttamente. Se non compare, l’agente non potrà eseguirlo.
 
 <Tip>
-  A destra della stessa scheda trovi gli **Strumenti di sistema** (Riaggancio smart, Cambio lingua, Trasferisci a numero…). Sono integrati e basta attivarli. Vedi [Agenti IA](/it/Create-AI-Agent/Create-Agent-Enchanced).
+  A destra della stessa scheda trovi gli **Strumenti di sistema** (Riaggancio smart, Cambio lingua, Trasferisci a numero…). Sono integrati e basta attivarli. Vedi [Agenti AI](/it/Create-AI-Agent/Create-Agent-Enchanced).
 </Tip>
 
 ---
@@ -409,7 +409,7 @@ Di seguito trovi un esempio completo (inventato) con due strumenti: un link prin
 
 ---
 
-**Strumento 2: Invia_Link_Portal (Link B)**\
+**Strumento 2: Invia_Link_Portale (Link B)**\
 **Obiettivo:** inviare il link di accesso al portale sicuro per controllare lo stato più tardi.\
 **Quando si usa:** solo alla fine della chiamata.
 
