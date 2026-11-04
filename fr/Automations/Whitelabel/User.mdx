@@ -103,17 +103,26 @@ Utilisez **Manuel** si :
 - La configuration par fournisseur échoue, ou
 - Vous préférez gérer le DNS vous-même.
 
-Dans l’onglet **Manuel**, Callin affiche **Ajoutez ces enregistrements DNS chez votre registrar** et un tableau avec les enregistrements de votre domaine. Par exemple, pour `app.northwindreception.com` :
+Dans l’onglet **Manuel**, Callin affiche **Ajoutez ces enregistrements DNS chez votre registrar**. Pour un sous-domaine comme `app.northwindreception.com`, un seul enregistrement suffit :
 
 | Type | Nom | Valeur | TTL |
 | --- | --- | --- | --- |
-| A | `@` | l’adresse IP indiquée dans votre panneau | 300 ou automatique |
-| CNAME | `app` | `northwindreception.com` | 300 ou automatique |
+| A | `app` | l’adresse IP indiquée dans votre panneau | 300 ou automatique |
 
-Le tableau comprend :
+<Warning>
+  **Erreur fréquente :** Ajouter un enregistrement A sur `@` alors que vous utilisez un sous-domaine. `@` est votre domaine racine : votre site web principal cesse de fonctionner. Ne modifiez pas l’enregistrement `@` et n’ajoutez pas d’enregistrement CNAME.
+</Warning>
 
-- **Type** (par exemple A ou CNAME)
-- **Nom** (par exemple `@` ou `app`)
+<Note>
+  Si votre panneau affiche encore un enregistrement A sur `@` et un enregistrement CNAME, ignorez-les. Ajoutez seulement l’enregistrement ci-dessus, avec la même adresse IP.
+</Note>
+
+N’ajoutez un enregistrement A sur `@` que si vous voulez que l’application soit sur le domaine racine lui-même (comme `northwindreception.com`). Votre site web sur ce domaine cessera de fonctionner.
+
+L’enregistrement comprend :
+
+- **Type** (par exemple A)
+- **Nom** (par exemple `app`)
 - **Valeur** (la destination)
 - **TTL** (souvent « 300 ou automatique », selon votre fournisseur)
 
@@ -124,23 +133,19 @@ Les étapes :
     Ouvrez **Manuel**.
   </Step>
   <Step>
-    Ajoutez chaque enregistrement DNS exactement comme dans le tableau.
+    Ajoutez l’enregistrement chez votre fournisseur DNS.
   </Step>
   <Step>
-    Une fois les enregistrements en place, cliquez sur **Installer le SSL** pour terminer.
+    Une fois l’enregistrement en place, cliquez sur **Installer le SSL** pour terminer.
   </Step>
 </Steps>
 
-<Frame caption="Capture d’écran : l’onglet Manuel avec les enregistrements d’un domaine d’exemple et le bouton Installer le SSL.">
-  <img src="/images/whitelabel3.png" alt="Panneau Configuration DNS sur l’onglet Manuel avec le message Ajoutez ces enregistrements DNS chez votre registrar, un tableau avec un enregistrement A et un enregistrement CNAME, et le bouton Installer le SSL" />
-</Frame>
-
 <Warning>
-  Ne cliquez sur **Installer le SSL** qu’une fois les enregistrements DNS ajoutés et propagés. Le délai de propagation dépend de votre fournisseur DNS.
+  Ne cliquez sur **Installer le SSL** qu’une fois l’enregistrement DNS ajouté et propagé. Le délai de propagation dépend de votre fournisseur DNS.
 </Warning>
 
 <Tip>
-  Si vous ne savez pas où ajouter les enregistrements, cherchez « ajouter un enregistrement A » et « ajouter un enregistrement CNAME » dans l’aide de votre fournisseur DNS. Les noms des champs peuvent varier.
+  Si vous ne savez pas où ajouter l’enregistrement, cherchez « ajouter un enregistrement A » dans l’aide de votre fournisseur DNS. Les noms des champs peuvent varier.
 </Tip>
 
 ### Devise

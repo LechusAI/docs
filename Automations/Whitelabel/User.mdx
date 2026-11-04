@@ -103,17 +103,26 @@ Use **Manual** if:
 - Provider setup fails, or
 - You prefer to manage DNS yourself.
 
-On the **Manual** tab, Callin shows **Add these DNS records at your registrar** and a table with the records for your domain. For example, for `app.northwindreception.com`:
+On the **Manual** tab, Callin shows **Add these DNS records at your registrar**. For a subdomain like `app.northwindreception.com`, you only need one record:
 
 | Type | Name | Value | TTL |
 | --- | --- | --- | --- |
-| A | `@` | the IP address shown in your panel | 300 or auto |
-| CNAME | `app` | `northwindreception.com` | 300 or auto |
+| A | `app` | the IP address shown in your panel | 300 or auto |
 
-The table includes:
+<Warning>
+  **Common mistake:** Adding an A record on `@` when you use a subdomain. `@` is your root domain, so your main website stops working. Don't change the `@` record, and don't add a CNAME record.
+</Warning>
 
-- **Type** (for example, A or CNAME)
-- **Name** (for example, `@` or `app`)
+<Note>
+  If your panel still shows an A record on `@` and a CNAME record, ignore them. Add only the record above, with the same IP address.
+</Note>
+
+Only add an A record on `@` if you want the root domain itself (like `northwindreception.com`) to be the app. Your website on that domain will stop working.
+
+The record includes:
+
+- **Type** (for example, A)
+- **Name** (for example, `app`)
 - **Value** (the destination)
 - **TTL** (often “300 or auto” depending on your provider)
 
@@ -124,23 +133,19 @@ Your workflow looks like this:
     Open **Manual**.
   </Step>
   <Step>
-    Add each DNS record exactly as shown in the table.
+    Add the record at your DNS provider.
   </Step>
   <Step>
-    When the records are in place, click **Install SSL** to finish.
+    When the record is in place, click **Install SSL** to finish.
   </Step>
 </Steps>
 
-<Frame caption="Screenshot: the Manual tab with the records to add for an example domain, and the Install SSL button.">
-  <img src="/images/whitelabel3.png" alt="DNS Configuration panel on the Manual tab with the message Add these DNS records at your registrar, a table with an A record and a CNAME record, and the Install SSL button" />
-</Frame>
-
 <Warning>
-  Only click **Install SSL** after the DNS records are added and have propagated. Propagation time depends on your DNS provider.
+  Only click **Install SSL** after the DNS record is added and has propagated. Propagation time depends on your DNS provider.
 </Warning>
 
 <Tip>
-  If you’re unsure where to add records, search your DNS provider’s help for “add A record” and “add CNAME record.” The field names in their interface can vary.
+  If you’re unsure where to add the record, search your DNS provider’s help for “add A record.” The field names in their interface can vary.
 </Tip>
 
 ### Currency
