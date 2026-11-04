@@ -89,6 +89,10 @@ Das Fenster hat außerdem zwei optionale Einstellungen:
 - **Beschreibung (optional)**: sagt dem LLM, wie und wann es das Tool nutzen soll. Lass sie leer, um die optimierten Standardanweisungen zu verwenden.
 - **Unterbrechungen deaktivieren**: Der Anrufer kann während der Weiterleitung nicht unterbrechen.
 
+<Note>
+  Eine Regel unter **Anrufweiterleitung** anzulegen reicht nicht aus, damit der Agent Anrufe übergibt. Der Agent übergibt erst, wenn das Tool aktiviert und die Regel in seinem Tab **Tools** hinzugefügt ist (Schritt 2).
+</Note>
+
 <Tip>
   Nutze dieselbe Nummer und Bedingung wie in deinen **Anrufweiterleitungsregeln**, damit deine Liste unter **Anrufweiterleitung** und deine Agenten übereinstimmen.
 </Tip>
@@ -143,6 +147,8 @@ Wenn du den Agenten änderst, erscheint unten eine Leiste mit **Sie haben nicht 
   So findest du Regeln schnell, wenn du viele Agenten verwaltest.
 - **Nutze immer das internationale Format.**\
   Nummern müssen mit **\+** und der Ländervorwahl beginnen (E.164).
+- **Nicht an eine Nummer übergeben, die an den Agenten weiterleitet.**\
+  Leitet die Hauptnummer an den Agenten weiter, kommt der Anruf bei einer Übergabe an diese Nummer zum Agenten zurück und läuft im Kreis. Nutze eine Durchwahl oder ein Mobiltelefon.
 
 ---
 

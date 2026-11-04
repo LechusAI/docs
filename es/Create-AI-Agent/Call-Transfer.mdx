@@ -89,6 +89,10 @@ El panel tiene también dos ajustes opcionales:
 - **Descripción (opcional)**: indica al LLM cómo y cuándo usar la herramienta. Déjala en blanco para usar las instrucciones optimizadas por defecto.
 - **Desactivar interrupciones**: el cliente no puede interrumpir mientras se hace la transferencia.
 
+<Note>
+  Crear una regla en **Transferencia de llamadas** no hace que el agente transfiera llamadas. El agente solo transfiere cuando activas la herramienta y añades la regla en su pestaña **Herramientas** (paso 2).
+</Note>
+
 <Tip>
   Usa el mismo número y la misma condición que escribiste en tus **reglas de transferencia de llamadas**, para que tu lista de **Transferencia de llamadas** y tus agentes coincidan.
 </Tip>
@@ -143,6 +147,8 @@ Después de la llamada, abre el **Historial de llamadas** y usa el filtro **Tran
   Así encuentras las reglas rápido cuando gestionas muchos agentes.
 - **Usa siempre el formato internacional.**\
   Los números deben empezar por **\+** y el prefijo del país (E.164).
+- **No transfieras a un número que desvía al agente.**\
+  Si tu número principal desvía al agente, transferir a ese número devuelve la llamada al agente, y da vueltas sin fin. Usa una línea directa o un móvil.
 
 ---
 
