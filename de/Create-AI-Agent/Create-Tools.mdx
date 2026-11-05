@@ -20,7 +20,7 @@ Mit einem Tool kann dein Agent:
   Callin-Agenten können keine Tastentöne (DTMF) senden, zum Beispiel um die 1 zu drücken, wenn ein Telefonmenü antwortet. Das geht weder mit einem Tool noch mit einem Webhook oder einer anderen Einstellung.
 </Note>
 
-Die Seite **Werkzeuge** hat zwei Tabs:
+Die Seite **Tools und MCP** hat zwei Tabs:
 
 - **Tools**: deine Webhook-Tools. Darum geht es Schritt für Schritt in dieser Anleitung.
 - **MCPs**: Verbindungen zu MCP-Servern, die deinem Agenten auf einen Schlag eine ganze Reihe fertiger Tools geben (siehe „MCP-Server verbinden“ weiter unten).
@@ -49,7 +49,7 @@ Fehlt einer dieser 3 Schritte, funktioniert das Tool nicht wie erwartet.
 - **URL**: die Adresse, an die Callin die Anfrage sendet.
 - **GET**: dient zum **Abfragen** von Informationen („Gibt es diesen Kontakt?“).
 - **POST**: dient zum **Senden** von Informationen („Lege diesen Lead mit diesen Daten an.“). Außerdem gibt es **PUT** (aktualisieren) und **DELETE** (löschen).
-- **Body-Parameter**: die **Daten**, die der Agent sendet (E-Mail, Telefon, Name usw.).
+- **Body**: die **Daten**, die der Agent sendet (E-Mail, Telefon, Name usw.).
 - **Erforderlich**: **Pflichtfelder**. Fehlt eines, kann das Ergebnis unvollständig sein oder der Ablauf fehlschlagen.
 
 > Wenn du nicht technisch unterwegs bist, merk dir: **Das Tool stellt die Verbindung her**, und der **Konversations-Prompt entscheidet, wann und mit welchen Daten es genutzt wird**.
@@ -62,7 +62,7 @@ So erstellst du ein Tool in Callin:
 
 <Steps>
   <Step>
-    Öffne **Werkzeuge** im Callin-Dashboard ([Werkzeuge öffnen](https://app.callin.io/tools)).
+    Öffne **Tools und MCP** im Callin-Dashboard ([Tools und MCP öffnen](https://app.callin.io/tools)).
   </Step>
   <Step>
     Klicke auf **\+ Werkzeug hinzufügen**. Rechts öffnet sich das Fenster **Werkzeug erstellen**.
@@ -87,7 +87,7 @@ So erstellst du ein Tool in Callin:
 
 > Achte darauf, dass die URL **HTTPS** nutzt und öffentlich erreichbar ist. Ist der Endpoint nicht erreichbar, funktioniert das Tool nicht.
 
-<Frame caption="Video: Werkzeug hinzufügen → Name, Beschreibung, Methode und URL → Sprach- und Sound-Einstellungen → ein Header → ein Body-Parameter.">
+<Frame caption="Video: Werkzeug hinzufügen → Name, Beschreibung, Methode und URL → Sprach- und Sound-Einstellungen → ein Header → ein Body-Feld.">
   <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
 </Frame>
 
@@ -95,58 +95,55 @@ So erstellst du ein Tool in Callin:
 
 Unter der URL legst du fest, wie sich das Tool im Gespräch verhält:
 
-- **Antwort-Timeout (Sekunden)**: wie lange auf die Antwort deines Endpoints gewartet wird, bevor abgebrochen wird. Standard: **20 Sekunden**.
-- **Unterbrechungen deaktivieren**: Aktiviere dieses Kästchen, damit der Anrufer den Agenten nicht unterbrechen kann, während das Tool läuft.
-- **Vor-Werkzeug-Sprache**: **Automatisch** (der Agent entscheidet je nach üblicher Laufzeit, ob er vor der Ausführung etwas sagt) oder **Erzwingen** (der Agent spricht immer vorher, zum Beispiel „Einen Moment, ich schaue nach“).
-- **Ausführungsmodus**: wann das Tool im Verhältnis zur Rede des Agenten ausgeführt wird:
+- **Wartezeit**: wie lange auf die Antwort deines Endpoints gewartet wird, bevor abgebrochen wird, von 5 bis 120 Sekunden. Standard: **20 Sekunden**.
+- **Unterbrechungen blockieren**: Schalte es ein, damit der Anrufer nicht unterbrechen kann, während das Tool läuft.
+- **Zuerst sprechen**: **Agent entscheidet** (der Agent entscheidet je nach üblicher Laufzeit, ob er vor der Ausführung etwas sagt) oder **Immer sprechen** (der Agent spricht immer vorher, zum Beispiel „Einen Moment, ich schaue nach“).
+- **Wann ausführen**: wann das Tool im Verhältnis zur Rede des Agenten ausgeführt wird:
   - **Sofort**: Es läuft direkt los.
-  - **Nach der Sprache**: Es läuft, wenn der Agent fertig gesprochen hat.
-  - **Asynchron**: Es läuft im Hintergrund, sodass das Gespräch weitergehen kann.
-- **Werkzeug-Sound**: ein optionaler Sound, während das Tool läuft: **Keiner**, **Tippgeräusch** oder **Fahrstuhlmusik 1–4**. Mit der Wiedergabe-Schaltfläche daneben hörst du ihn dir an.
+  - **Nach dem Sprechen**: Es läuft, wenn der Agent fertig gesprochen hat.
+  - **Im Hintergrund**: Es läuft im Hintergrund, sodass das Gespräch weitergehen kann.
+- **Ton**: ein optionaler Ton, während das Tool läuft: **Keiner**, **Tippgeräusch** oder **Aufzug 1–4**. Mit der Wiedergabe-Schaltfläche daneben hörst du ihn dir an. Wenn du einen wählst, erscheint **Wann er spielt**: **Mit Sprache** oder **Immer**.
 
 <Frame caption="Screenshot: Das Fenster Werkzeug erstellen mit den Zeit- und Spracheinstellungen.">
   <img
     src="/images/tools-create.png"
-    alt="Das Fenster Werkzeug erstellen mit der Methode POST und einer Beispiel-URL, darunter Antwort-Timeout, Unterbrechungen deaktivieren, Vor-Werkzeug-Sprache, Ausführungsmodus und Werkzeug-Sound sowie die Bereiche Headers und Body-Parameter." />
+    alt="Das Fenster Werkzeug erstellen mit der Methode POST und einer Beispiel-URL, darunter Wartezeit, Unterbrechungen blockieren, Zuerst sprechen, Wann ausführen und Ton sowie die Bereiche Headers und Body." />
 </Frame>
 
 <Tip>
-  Braucht dein Endpoint ein paar Sekunden, stelle **Vor-Werkzeug-Sprache** auf **Erzwingen** oder füge einen **Werkzeug-Sound** hinzu, damit der Anrufer keine Stille hört.
+  Braucht dein Endpoint ein paar Sekunden, stelle **Zuerst sprechen** auf **Immer sprechen** oder füge einen **Ton** hinzu, damit der Anrufer keine Stille hört.
 </Tip>
 
-### „Body-Parameter“ konfigurieren (bei POST)
+### „Body“ konfigurieren (bei POST)
 
 Wenn dein Tool Informationen sendet (POST), lege genau fest, welche Daten es sendet. Der Agent (das LLM) sammelt diese Parameter im Anruf und sendet sie als Inhalt der Anfrage.
 
 <Steps>
   <Step>
-    Gehe zu **Body-Parameter**.
+    Gehe zu **Body** und klicke auf **Feld hinzufügen**.
   </Step>
   <Step>
     Füge bei Bedarf eine allgemeine **Beschreibung** der gesendeten Daten hinzu.
-  </Step>
-  <Step>
-    Klicke auf **Eigenschaft hinzufügen**.
   </Step>
   <Step>
     Konfiguriere jedes Feld:
   </Step>
 </Steps>
 
-- **Datentyp**: **String** (Text), **Zahl**, **Boolean** (wahr/falsch) oder **Ganzzahl**.
-- **Bezeichner**: der genaue Feldname, den dein Endpoint erwartet (zum Beispiel: `email`, `phone`, `full_name`).
+- **Typ**: **String** (Text), **Zahl**, **Boolean** (wahr/falsch) oder **Ganzzahl**.
+- **Name**: der genaue Feldname, den dein Endpoint erwartet (zum Beispiel: `email`, `phone`, `full_name`).
 - **Erforderlich**: standardmäßig aktiviert. Deaktiviere es, wenn das Feld optional ist.
 - **Werttyp**: woher der Wert kommt:
   - **LLM Prompt**: Der Agent füllt ihn aus dem Gespräch aus. Füge eine **Beschreibung** hinzu, was er bedeutet und in welchem Format er erwartet wird (zum Beispiel: „Telefonnummer im internationalen Format“ oder „Gültige E-Mail-Adresse“). Du kannst auch **Enum-Werte (optional)** hinzufügen: eine Liste erlaubter Werte. Dann kann der Agent nur aus dieser Liste wählen.
   - **Konstanter Wert**: sendet immer denselben festen Wert (zum Beispiel den Namen deiner Kampagne).
-  - **Dynamische Variable**: sendet den Wert einer Anrufvariable. Wähle sie unter **Variablenname** aus, zum Beispiel `system__caller_id` (die Nummer des Anrufers), `system__called_number`, `system__conversation_id` oder `system__time_utc`.
+  - **Dynamische Variable**: sendet den Wert einer Anrufvariable. Gib sie unter **Variable** ein oder wähle sie aus der Liste **System**, zum Beispiel `system__caller_id` (die Nummer des Anrufers), `system__called_number`, `system__conversation_id` oder `system__time_utc`.
 
-Für weitere Felder klickst du erneut auf **Eigenschaft hinzufügen**. Zum Entfernen klickst du auf **Löschen**.
+Für weitere Felder klickst du erneut auf **Feld hinzufügen**. Zum Entfernen klickst du auf das Papierkorbsymbol.
 
-<Frame caption="Screenshot: Ein Body-Parameter, den der Agent aus dem Gespräch ausfüllt (LLM Prompt).">
+<Frame caption="Screenshot: Ein Body-Feld, den der Agent aus dem Gespräch ausfüllt (LLM Prompt).">
   <img
     src="/images/tools-body.png"
-    alt="Der Bereich Body-Parameter mit einer Eigenschaft: Datentyp String, Bezeichner email, Erforderlich aktiviert, Werttyp LLM Prompt, eine Beschreibung und das optionale Feld Enum-Werte." />
+    alt="Der Bereich Body mit einem Feld: Typ String, Name email, Erforderlich aktiviert, Werttyp LLM Prompt, eine Beschreibung und das optionale Feld Enum-Werte." />
 </Frame>
 
 > Praxistipp: Wenn du ein Feld als **Erforderlich** markierst, musst du den Agenten (über den Konversations-Prompt) verpflichten, es **zu erfragen und zu bestätigen**, bevor er das Tool ausführt. Sonst erhält der Webhook unvollständige Daten oder der Ablauf schlägt fehl.
@@ -174,7 +171,7 @@ Ein **MCP-Server** gibt deinem Agenten auf einen Schlag eine ganze Reihe von Too
 
 <Steps>
   <Step>
-    Öffne unter **Werkzeuge** den Tab **MCPs** und klicke auf **\+ MCP hinzufügen**.
+    Öffne unter **Tools und MCP** den Tab **MCPs** und klicke auf **\+ MCP hinzufügen**.
   </Step>
   <Step>
     Trage unter **Grundinformationen** den **Namen** (zum Beispiel „CRM MCP“) und eine **Beschreibung** ein, was der Server bietet.
@@ -428,7 +425,7 @@ Hier ein vollständiges (erfundenes) Beispiel mit zwei Tools: ein Hauptlink wäh
 Bevor du das Tool mit Kunden nutzt, prüfe:
 
 - Die Anfrage läuft erfolgreich durch.
-- Die Felder kommen mit dem erwarteten Namen an (**Bezeichner**).
+- Die Felder kommen mit dem erwarteten Namen an.
 - Die Pflichtfelder (**Erforderlich**) sind immer vorhanden.
 - Der Endpoint antwortet schnell und zuverlässig.
 
@@ -452,7 +449,7 @@ Bewährt hat sich, den Webhook zuerst mit einer temporären Inspektions-URL zu t
 | ------------------------------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
 | Das Tool wird nicht ausgeführt       | Es ist dem Agenten nicht zugewiesen                                              | Gehe zu **KI-Agenten \> dein Agent \> Tools** und füge es hinzu                                                  |
 | Am Endpoint kommen keine Daten an    | Der Endpoint ist nicht erreichbar oder die URL ist falsch                        | Prüfe, ob die URL **HTTPS** nutzt und öffentlich erreichbar ist                                                  |
-| Es fehlen Felder                     | „Bezeichner / Erforderlich“ falsch definiert oder der Agent sammelt sie nicht    | Prüfe die **Body-Parameter** und passe den **Konversations-Prompt** an, damit er die Daten verlangt und bestätigt |
+| Es fehlen Felder                     | „Name / Erforderlich“ falsch definiert oder der Agent sammelt sie nicht    | Prüfe den **Body** und passe den **Konversations-Prompt** an, damit er die Daten verlangt und bestätigt |
 | Es läuft zum falschen Zeitpunkt      | Der Konversations-Prompt legt keine klaren Bedingungen fest                      | Lege Regeln fest wie „nur am Ende“ oder „erst nach Bestätigung von E-Mail und Telefon“                          |
 | Der Agent soll eine Taste drücken (zum Beispiel die 1 in einem Telefonmenü) | Callin kann keine Tastentöne (DTMF) senden | Das geht weder mit einem Tool noch mit einem Webhook. Rufe eine Nummer an, bei der eine Person abnimmt oder bei der man keine Tasten drücken muss |
 

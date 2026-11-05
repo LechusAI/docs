@@ -20,7 +20,7 @@ With a tool, your agent can:
   Callin agents can't send keypad tones (DTMF), for example to press 1 when a phone menu answers. This isn't possible with a tool, a webhook or any other setting.
 </Note>
 
-The **Tools** page has two tabs:
+The **Tools & MCP** page has two tabs:
 
 - **Tools**: your webhook tools. This is what this guide covers step by step.
 - **MCPs**: connections to MCP servers, which give your agent a whole set of ready-made tools at once (see [Connect an MCP server](#connect-an-mcp-server-mcps-tab)).
@@ -49,7 +49,7 @@ If any of these 3 steps is missing, the tool will not run as expected.
 - **URL**: the address Callin sends the request to.
 - **GET**: used to **query** information (“Does this contact exist?”).
 - **POST**: used to **send** information (“Create this lead with these details.”). **PUT** (update) and **DELETE** (remove) are also available.
-- **Body Parameters**: the **data** the agent will send (email, phone, name, etc.).
+- **Body**: the **data** the agent will send (email, phone, name, etc.).
 - **Required**: **mandatory** fields. If one is missing, the result may be incomplete or the flow can fail.
 
 > If your user is not technical, keep this idea: **the tool creates the connection**, and the **Conversation Prompt decides when it is used and with which data**.
@@ -62,7 +62,7 @@ To create a tool in Callin:
 
 <Steps>
   <Step>
-    Go to **Tools** in the Callin dashboard ([open Tools](https://app.callin.io/tools)).
+    Go to **Tools & MCP** in the Callin dashboard ([open Tools & MCP](https://app.callin.io/tools)).
   </Step>
   <Step>
     Click **\+ Add Tool**. The **Create Tool** panel opens on the right.
@@ -87,7 +87,7 @@ To create a tool in Callin:
 
 > Make sure the URL is **HTTPS** and publicly accessible. If the endpoint is not accessible, the tool will not work.
 
-<Frame caption="Video: Add Tool → name, description, method and URL → speech and sound settings → a header → a body parameter.">
+<Frame caption="Video: Add Tool → name, description, method and URL → speech and sound settings → a header → a body field.">
   <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
 </Frame>
 
@@ -95,58 +95,55 @@ To create a tool in Callin:
 
 Below the URL, you can decide how the tool behaves during the conversation:
 
-- **Response Timeout (seconds)**: how long to wait for your endpoint to respond before giving up. Default: **20 seconds**.
-- **Disable Interruptions**: tick this box so the caller cannot interrupt the agent while the tool is running.
-- **Pre Tool Speech**: **Auto** (the agent decides whether to say something before running the tool, based on how long it usually takes) or **Force** (the agent always speaks before running it, for example “Give me a second while I check”).
-- **Execution Mode**: when the tool runs compared to what the agent says:
-  - **Immediate**: it runs right away.
-  - **Post speech**: it runs after the agent finishes speaking.
-  - **Async**: it runs in the background, so the conversation can continue while it works.
-- **Tool Call Sound**: an optional sound while the tool runs: **None**, **Typing** or **Elevator Music 1–4**. Use the play button next to it to preview the sound.
+- **Timeout**: how long to wait for your endpoint to respond before giving up, from 5 to 120 seconds. Default: **20 seconds**.
+- **Block interruptions**: turn it on so the caller can’t cut in while the tool runs.
+- **Speak first**: **Agent decides** (the agent decides whether to say something before running the tool, based on how long it usually takes) or **Always speak** (the agent always speaks before running it, for example “Give me a second while I check”).
+- **When to run**: when the tool runs compared to what the agent says:
+  - **Right away**: it runs immediately.
+  - **After speech**: it runs after the agent finishes speaking.
+  - **In background**: it runs in the background, so the conversation can continue while it works.
+- **Sound**: an optional sound while the tool runs: **None**, **Typing** or **Elevator 1–4**. Use the play button next to it to preview the sound. When you pick one, **When it plays** appears: **With speech** or **Always**.
 
 <Frame caption="Screenshot: The Create Tool panel with the timing and speech settings.">
   <img
     src="/images/tools-create.png"
-    alt="The Create Tool panel with the POST method and an example URL, followed by Response Timeout, Disable Interruptions, Pre Tool Speech, Execution Mode and Tool Call Sound, and the Headers and Body Parameters sections." />
+    alt="The Create Tool panel with the POST method and an example URL, followed by Timeout, Block interruptions, Speak first, When to run and Sound, and the Headers and Body sections." />
 </Frame>
 
 <Tip>
-  If your endpoint takes a few seconds, set **Pre Tool Speech** to **Force** or add a **Tool Call Sound**, so the caller doesn’t hear silence.
+  If your endpoint takes a few seconds, set **Speak first** to **Always speak** or add a **Sound**, so the caller doesn’t hear silence.
 </Tip>
 
-### Configure “Body Parameters” (if you use POST)
+### Configure “Body” (if you use POST)
 
 If your tool sends information (POST), define exactly which data it will send. The agent (the LLM) collects these parameters during the call and sends them as the body of the request.
 
 <Steps>
   <Step>
-    Go to **Body Parameters**.
+    Go to **Body** and click **Add field**.
   </Step>
   <Step>
     Optionally, add a general **Description** of the data you send.
-  </Step>
-  <Step>
-    Click **Add property**.
   </Step>
   <Step>
     Configure each field:
   </Step>
 </Steps>
 
-- **Data Type**: **String** (text), **Number**, **Boolean** (true/false) or **Integer** (whole number).
-- **Identifier**: the exact field name your endpoint expects (for example: `email`, `phone`, `full_name`).
-- **Required**: ticked by default. Untick it if the field is optional.
+- **Type**: **String** (text), **Number**, **Boolean** (true/false) or **Integer** (whole number).
+- **Name**: the exact field name your endpoint expects (for example: `email`, `phone`, `full_name`).
+- **Required**: on by default. Turn it off if the field is optional.
 - **Value Type**: where the value comes from:
   - **LLM Prompt**: the agent fills it in from the conversation. Add a **Description** with what it represents and the expected format (for example: “Phone in international format” or “Valid email address”). You can also add **Enum Values (optional)**: a list of allowed values. If you add them, the agent can only choose from that list.
   - **Constant Value**: always sends the same fixed value (for example, the name of your campaign).
-  - **Dynamic Variable**: sends the value of a call variable. Pick it in **Variable Name**, for example `system__caller_id` (the caller’s number), `system__called_number`, `system__conversation_id` or `system__time_utc`.
+  - **Dynamic Variable**: sends the value of a call variable. Type it in **Variable** or pick it from the **System** list, for example `system__caller_id` (the caller’s number), `system__called_number`, `system__conversation_id` or `system__time_utc`.
 
-To send more fields, click **Add property** again. To remove one, click **Delete**.
+To send more fields, click **Add field** again. To remove one, click the bin icon.
 
-<Frame caption="Screenshot: A body parameter that the agent fills in from the conversation (LLM Prompt).">
+<Frame caption="Screenshot: A body field that the agent fills in from the conversation (LLM Prompt).">
   <img
     src="/images/tools-body.png"
-    alt="The Body Parameters section with a property: Data Type String, Identifier email, Required ticked, Value Type LLM Prompt, a description and the optional Enum Values field." />
+    alt="The Body section with a field: Type String, Name email, Required on, Value Type LLM Prompt, a description and the optional Enum Values field." />
 </Frame>
 
 > Practical recommendation: if you mark a field as **Required**, your agent must be forced (via the Conversation Prompt) to **ask for it and confirm it** before running the tool. Otherwise, the webhook will receive incomplete data or the flow will fail.
@@ -174,7 +171,7 @@ An **MCP server** gives your agent a whole set of tools at once (for example, al
 
 <Steps>
   <Step>
-    In **Tools**, open the **MCPs** tab and click **\+ Add MCP**.
+    In **Tools & MCP**, open the **MCPs** tab and click **\+ Add MCP**.
   </Step>
   <Step>
     In **Basic Information**, fill in the **Name** (for example, “CRM MCP”) and a **Description** of what the server provides.
@@ -428,7 +425,7 @@ Below is a complete (invented) example with two tools: a main link during the ca
 Before using the tool with customers, validate that:
 
 - The request runs successfully.
-- The fields arrive with the expected name (Identifier).
+- The fields arrive with the expected name.
 - The required fields (Required) are always present.
 - The endpoint responds quickly and consistently.
 
@@ -452,7 +449,7 @@ A good practice is to test the webhook with a temporary inspection URL (to see w
 | ----------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
 | The tool does not run               | It is not assigned to the agent                                               | Go to **AI Agents \> your agent \> Tools** and add it                                             |
 | No information reaches the endpoint | Endpoint is inaccessible or URL is incorrect                                  | Verify the URL is **HTTPS** and publicly accessible                                               |
-| Missing fields                      | “Identifier / Required” defined incorrectly or the agent doesn’t collect them | Review **Body Parameters** and adjust the **Conversation Prompt** to require and confirm the data |
+| Missing fields                      | “Name / Required” defined incorrectly or the agent doesn’t collect them | Review **Body Parameters** and adjust the **Conversation Prompt** to require and confirm the data |
 | It runs at the wrong time           | The Conversation Prompt doesn’t define clear conditions                       | Specify rules like “only at the end”, “only after confirming email and phone”                     |
 | The agent should press a key (for example, 1 in a phone menu) | Callin can’t send keypad tones (DTMF) | Not possible with a tool or a webhook. Call a number that is answered by a person or that doesn’t need keys |
 

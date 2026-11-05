@@ -20,7 +20,7 @@ Con una herramienta, tu agente puede:
   Los agentes de Callin no pueden enviar tonos de teclado (DTMF), por ejemplo para pulsar el 1 cuando contesta un menú telefónico. No es posible con una herramienta, con un webhook ni con ningún otro ajuste.
 </Note>
 
-La página **Herramientas** tiene dos pestañas:
+La página **Herramientas y MCP** tiene dos pestañas:
 
 - **Herramientas**: tus herramientas webhook. Es lo que explica esta guía paso a paso.
 - **MCP**: conexiones a servidores MCP, que le dan a tu agente un conjunto completo de herramientas ya hechas de una sola vez (consulta «Conectar un servidor MCP», más abajo).
@@ -49,7 +49,7 @@ Si falta alguno de estos 3 pasos, la herramienta no se ejecutará como esperas.
 - **URL**: la dirección a la que Callin envía la solicitud.
 - **GET**: sirve para **consultar** información (“¿Existe este contacto?”).
 - **POST**: sirve para **enviar** información (“Crea este lead con estos datos.”). También están **PUT** (actualizar) y **DELETE** (eliminar).
-- **Parámetros del cuerpo**: los **datos** que el agente enviará (email, teléfono, nombre, etc.).
+- **Cuerpo**: los **datos** que el agente enviará (email, teléfono, nombre, etc.).
 - **Requerido**: campos **obligatorios**. Si falta alguno, el resultado puede quedar incompleto o el flujo puede fallar.
 
 > Si tu usuario no es técnico, quédate con esta idea: **la herramienta crea la conexión**, y el **Prompt de conversación decide cuándo se usa y con qué datos**.
@@ -62,7 +62,7 @@ Para crear una herramienta en Callin:
 
 <Steps>
   <Step>
-    Ve a **Herramientas** en el panel de Callin ([abrir Herramientas](https://app.callin.io/tools)).
+    Ve a **Herramientas y MCP** en el panel de Callin ([abrir Herramientas y MCP](https://app.callin.io/tools)).
   </Step>
   <Step>
     Haz clic en **\+ Agregar herramienta**. Se abre el panel **Crear herramienta** a la derecha.
@@ -87,7 +87,7 @@ Para crear una herramienta en Callin:
 
 > Asegúrate de que la URL es **HTTPS** y accesible públicamente. Si el endpoint no es accesible, la herramienta no funcionará.
 
-<Frame caption="Vídeo: Agregar herramienta → nombre, descripción, método y URL → ajustes de voz y sonido → un encabezado → un parámetro del cuerpo.">
+<Frame caption="Vídeo: Agregar herramienta → nombre, descripción, método y URL → ajustes de voz y sonido → un encabezado → un campo del cuerpo.">
   <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
 </Frame>
 
@@ -95,58 +95,55 @@ Para crear una herramienta en Callin:
 
 Debajo de la URL puedes decidir cómo se comporta la herramienta durante la conversación:
 
-- **Tiempo de espera de respuesta (segundos)**: cuánto esperar a que tu endpoint responda antes de darse por vencido. Por defecto: **20 segundos**.
-- **Deshabilitar interrupciones**: marca esta casilla para que quien llama no pueda interrumpir al agente mientras se ejecuta la herramienta.
-- **Discurso previo a la herramienta**: **Automático** (el agente decide si dice algo antes de ejecutar la herramienta, según lo que suele tardar) o **Forzar** (el agente siempre habla antes de ejecutarla, por ejemplo “Dame un segundo mientras lo compruebo”).
-- **Modo de ejecución**: cuándo se ejecuta la herramienta respecto a lo que dice el agente:
-  - **Inmediato**: se ejecuta en el momento.
-  - **Después del discurso**: se ejecuta cuando el agente termina de hablar.
-  - **Asíncrono**: se ejecuta en segundo plano, así la conversación puede continuar mientras trabaja.
-- **Sonido de herramienta**: un sonido opcional mientras se ejecuta la herramienta: **Ninguno**, **Teclado** o **Música de ascensor 1–4**. Usa el botón de reproducir que tiene al lado para escucharlo.
+- **Tiempo de espera**: cuánto esperar a que tu endpoint responda antes de darse por vencido, de 5 a 120 segundos. Por defecto: **20 segundos**.
+- **Bloquear interrupciones**: actívalo para que quien llama no pueda interrumpir mientras se ejecuta la herramienta.
+- **Hablar primero**: **El agente decide** (el agente decide si dice algo antes de ejecutar la herramienta, según lo que suele tardar) o **Hablar siempre** (el agente siempre habla antes de ejecutarla, por ejemplo “Dame un segundo mientras lo compruebo”).
+- **Cuándo ejecutar**: cuándo se ejecuta la herramienta respecto a lo que dice el agente:
+  - **Al momento**: se ejecuta enseguida.
+  - **Después de hablar**: se ejecuta cuando el agente termina de hablar.
+  - **En segundo plano**: se ejecuta en segundo plano, así la conversación puede continuar mientras trabaja.
+- **Sonido**: un sonido opcional mientras se ejecuta la herramienta: **Ninguno**, **Teclado** o **Ascensor 1–4**. Usa el botón de reproducir que tiene al lado para escucharlo. Al elegir uno aparece **Cuándo suena**: **Con la voz** o **Siempre**.
 
 <Frame caption="Captura: el panel Crear herramienta con los ajustes de tiempo y de voz.">
   <img
     src="/images/tools-create.png"
-    alt="El panel Crear herramienta con el método POST y una URL de ejemplo, seguido de Tiempo de espera de respuesta, Deshabilitar interrupciones, Discurso previo a la herramienta, Modo de ejecución y Sonido de herramienta, y las secciones Encabezados y Parámetros del cuerpo." />
+    alt="El panel Crear herramienta con el método POST y una URL de ejemplo, seguido de Tiempo de espera, Bloquear interrupciones, Hablar primero, Cuándo ejecutar y Sonido, y las secciones Encabezados y Cuerpo." />
 </Frame>
 
 <Tip>
-  Si tu endpoint tarda unos segundos, pon **Discurso previo a la herramienta** en **Forzar** o añade un **Sonido de herramienta**, para que quien llama no oiga silencio.
+  Si tu endpoint tarda unos segundos, pon **Hablar primero** en **Hablar siempre** o añade un **Sonido**, para que quien llama no oiga silencio.
 </Tip>
 
-### Configurar los “Parámetros del cuerpo” (si usas POST)
+### Configurar el “Cuerpo” (si usas POST)
 
 Si tu herramienta envía información (POST), define exactamente qué datos enviará. El agente (el LLM) recoge estos parámetros durante la llamada y los envía en el cuerpo de la solicitud.
 
 <Steps>
   <Step>
-    Ve a **Parámetros del cuerpo**.
+    Ve a **Cuerpo** y haz clic en **Agregar campo**.
   </Step>
   <Step>
     Si quieres, añade una **Descripción** general de los datos que envías.
-  </Step>
-  <Step>
-    Haz clic en **Agregar propiedad**.
   </Step>
   <Step>
     Configura cada campo:
   </Step>
 </Steps>
 
-- **Tipo de datos**: **String** (texto), **Número**, **Boolean** (verdadero/falso) o **Integer** (número entero).
-- **Identificador**: el nombre exacto del campo que espera tu endpoint (por ejemplo: `email`, `phone`, `full_name`).
-- **Requerido**: viene marcado por defecto. Desmárcalo si el campo es opcional.
+- **Tipo**: **String** (texto), **Número**, **Boolean** (verdadero/falso) o **Integer** (número entero).
+- **Nombre**: el nombre exacto del campo que espera tu endpoint (por ejemplo: `email`, `phone`, `full_name`).
+- **Requerido**: activado por defecto. Desactívalo si el campo es opcional.
 - **Tipo de valor**: de dónde sale el valor:
   - **LLM Prompt**: el agente lo rellena a partir de la conversación. Añade una **Descripción** con lo que representa y el formato esperado (por ejemplo: “Teléfono en formato internacional” o “Dirección de email válida”). También puedes añadir **Valores de Enum (opcional)**: una lista de valores permitidos. Si los añades, el agente solo podrá elegir de esa lista.
   - **Valor constante**: envía siempre el mismo valor fijo (por ejemplo, el nombre de tu campaña).
-  - **Variable dinámica**: envía el valor de una variable de la llamada. Elígela en **Nombre de variable**, por ejemplo `system__caller_id` (el número de quien llama), `system__called_number`, `system__conversation_id` o `system__time_utc`.
+  - **Variable dinámica**: envía el valor de una variable de la llamada. Escríbela en **Variable** o elígela de la lista **Sistema**, por ejemplo `system__caller_id` (el número de quien llama), `system__called_number`, `system__conversation_id` o `system__time_utc`.
 
-Para enviar más campos, vuelve a hacer clic en **Agregar propiedad**. Para quitar uno, haz clic en **Eliminar**.
+Para enviar más campos, vuelve a hacer clic en **Agregar campo**. Para quitar uno, haz clic en el icono de la papelera.
 
-<Frame caption="Captura: un parámetro del cuerpo que el agente rellena a partir de la conversación (LLM Prompt).">
+<Frame caption="Captura: un campo del cuerpo que el agente rellena a partir de la conversación (LLM Prompt).">
   <img
     src="/images/tools-body.png"
-    alt="La sección Parámetros del cuerpo con una propiedad: tipo de datos String, identificador email, Requerido marcado, tipo de valor LLM Prompt, una descripción y el campo opcional de valores de Enum." />
+    alt="La sección Cuerpo con un campo: tipo String, nombre email, Requerido activado, tipo de valor LLM Prompt, una descripción y el campo opcional de valores de Enum." />
 </Frame>
 
 > Recomendación práctica: si marcas un campo como **Requerido**, tienes que obligar al agente (mediante el Prompt de conversación) a **pedirlo y confirmarlo** antes de ejecutar la herramienta. Si no, el webhook recibirá datos incompletos o el flujo fallará.
@@ -174,7 +171,7 @@ Un **servidor MCP** le da a tu agente un conjunto completo de herramientas de un
 
 <Steps>
   <Step>
-    En **Herramientas**, abre la pestaña **MCP** y haz clic en **\+ Agregar MCP**.
+    En **Herramientas y MCP**, abre la pestaña **MCP** y haz clic en **\+ Agregar MCP**.
   </Step>
   <Step>
     En **Información básica**, rellena el **Nombre** (por ejemplo, “CRM MCP”) y una **Descripción** de lo que ofrece el servidor.
@@ -428,7 +425,7 @@ A continuación tienes un ejemplo completo (inventado) con dos herramientas: un 
 Antes de usar la herramienta con clientes, valida que:
 
 - La petición se ejecuta correctamente.
-- Los campos llegan con el nombre esperado (**Identificador**).
+- Los campos llegan con el nombre esperado.
 - Los campos obligatorios (**Requerido**) están siempre presentes.
 - El endpoint responde de forma rápida y consistente.
 
@@ -452,7 +449,7 @@ Una buena práctica es probar el webhook con una URL de inspección temporal (pa
 | ----------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | La herramienta no se ejecuta        | No está asignada al agente                                        | Ve a **Agentes de IA \> tu agente \> Herramientas** y añádela                                               |
 | No llega información al endpoint    | Endpoint inaccesible o URL incorrecta                             | Verifica que la URL sea **HTTPS** y accesible públicamente                                       |
-| Faltan campos                       | “Identificador / Requerido” mal definidos o el agente no los recopila | Revisa los **Parámetros del cuerpo** y ajusta el **Prompt de conversación** para exigir y confirmar los datos |
+| Faltan campos                       | “Nombre / Requerido” mal definidos o el agente no los recopila | Revisa el **Cuerpo** y ajusta el **Prompt de conversación** para exigir y confirmar los datos |
 | Se ejecuta en el momento equivocado | El Prompt de conversación no define condiciones claras               | Especifica reglas del tipo “solo al final”, “solo tras confirmar email y teléfono”               |
 | El agente tendría que pulsar una tecla (por ejemplo, el 1 en un menú telefónico) | Callin no puede enviar tonos de teclado (DTMF) | No es posible con una herramienta ni con un webhook. Llama a un número que atienda una persona o que no pida pulsar teclas |
 
