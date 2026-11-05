@@ -20,7 +20,7 @@ Avec un outil, votre agent peut :
   Les agents Callin ne peuvent pas envoyer de tonalités du clavier (DTMF), par exemple pour appuyer sur 1 quand un menu téléphonique répond. Ce n’est pas possible avec un outil, un webhook ni aucun autre réglage.
 </Note>
 
-La page **Outils** comporte deux onglets :
+La page **Outils et MCP** comporte deux onglets :
 
 - **Outils** : vos outils webhook. C’est ce que ce guide explique pas à pas.
 - **MCP** : des connexions à des serveurs MCP, qui donnent à votre agent tout un ensemble d’outils prêts à l’emploi d’un coup (voir « Connecter un serveur MCP », plus bas).
@@ -49,7 +49,7 @@ S’il manque une de ces 3 étapes, l’outil ne fonctionnera pas comme prévu.
 - **URL** : l’adresse à laquelle Callin envoie la requête.
 - **GET** : sert à **consulter** des informations (« Ce contact existe-t-il ? »).
 - **POST** : sert à **envoyer** des informations (« Crée ce lead avec ces données. »). **PUT** (mettre à jour) et **DELETE** (supprimer) sont aussi disponibles.
-- **Paramètres du corps** : les **données** que l’agent enverra (email, téléphone, nom, etc.).
+- **Corps** : les **données** que l’agent enverra (email, téléphone, nom, etc.).
 - **Obligatoire** : les champs **obligatoires**. S’il en manque un, le résultat peut être incomplet ou le flux peut échouer.
 
 > Si votre utilisateur n’est pas technique, retenez cette idée : **l’outil crée la connexion**, et **l’Invite de conversation décide quand il est utilisé et avec quelles données**.
@@ -62,7 +62,7 @@ Pour créer un outil dans Callin :
 
 <Steps>
   <Step>
-    Allez dans **Outils** dans le tableau de bord Callin ([ouvrir Outils](https://app.callin.io/tools)).
+    Allez dans **Outils et MCP** dans le tableau de bord Callin ([ouvrir Outils et MCP](https://app.callin.io/tools)).
   </Step>
   <Step>
     Cliquez sur **\+ Ajouter un outil**. Le panneau **Créer un outil** s’ouvre à droite.
@@ -87,7 +87,7 @@ Pour créer un outil dans Callin :
 
 > Vérifiez que l’URL est en **HTTPS** et accessible publiquement. Si l’endpoint n’est pas accessible, l’outil ne fonctionnera pas.
 
-<Frame caption="Vidéo : Ajouter un outil → nom, description, méthode et URL → réglages de voix et de son → un en-tête → un paramètre du corps.">
+<Frame caption="Vidéo : Ajouter un outil → nom, description, méthode et URL → réglages de voix et de son → un en-tête → un champ du corps.">
   <video autoPlay muted loop playsInline src="/images/tools-create.mp4" />
 </Frame>
 
@@ -95,58 +95,55 @@ Pour créer un outil dans Callin :
 
 Sous l’URL, vous pouvez choisir comment l’outil se comporte pendant la conversation :
 
-- **Délai d’attente de réponse (secondes)** : combien de temps attendre la réponse de votre endpoint avant d’abandonner. Par défaut : **20 secondes**.
-- **Désactiver les interruptions** : cochez cette case pour que l’appelant ne puisse pas interrompre l’agent pendant l’exécution de l’outil.
-- **Discours avant outil** : **Auto** (l’agent décide s’il dit quelque chose avant d’exécuter l’outil, selon le temps qu’il prend d’habitude) ou **Forcer** (l’agent parle toujours avant de l’exécuter, par exemple « Un instant, je vérifie »).
-- **Mode d’exécution** : quand l’outil s’exécute par rapport à ce que dit l’agent :
-  - **Immédiat** : il s’exécute tout de suite.
-  - **Après le discours** : il s’exécute quand l’agent a fini de parler.
-  - **Asynchrone** : il s’exécute en arrière-plan, la conversation peut donc continuer pendant ce temps.
-- **Son d’outil** : un son facultatif pendant l’exécution de l’outil : **Aucun**, **Frappe au clavier** ou **Musique d’ascenseur 1–4**. Utilisez le bouton de lecture à côté pour l’écouter.
+- **Délai** : combien de temps attendre la réponse de votre endpoint avant d’abandonner, de 5 à 120 secondes. Par défaut : **20 secondes**.
+- **Bloquer les interruptions** : activez-le pour que l’appelant ne puisse pas interrompre pendant l’exécution de l’outil.
+- **Parler d’abord** : **L’agent décide** (l’agent décide s’il dit quelque chose avant d’exécuter l’outil, selon le temps qu’il prend d’habitude) ou **Toujours parler** (l’agent parle toujours avant de l’exécuter, par exemple « Un instant, je vérifie »).
+- **Quand l’exécuter** : quand l’outil s’exécute par rapport à ce que dit l’agent :
+  - **Tout de suite** : il s’exécute immédiatement.
+  - **Après la parole** : il s’exécute quand l’agent a fini de parler.
+  - **En arrière-plan** : il s’exécute en arrière-plan, la conversation peut donc continuer pendant ce temps.
+- **Son** : un son facultatif pendant l’exécution de l’outil : **Aucun**, **Frappe au clavier** ou **Ascenseur 1–4**. Utilisez le bouton de lecture à côté pour l’écouter. Quand vous en choisissez un, **Quand il joue** apparaît : **Avec la parole** ou **Toujours**.
 
 <Frame caption="Capture d’écran : le panneau Créer un outil avec les réglages de délai et de voix.">
   <img
     src="/images/tools-create.png"
-    alt="Le panneau Créer un outil avec la méthode POST et une URL d'exemple, suivi de Délai d'attente de réponse, Désactiver les interruptions, Discours avant outil, Mode d'exécution et Son d'outil, puis des sections En-têtes et Paramètres du corps." />
+    alt="Le panneau Créer un outil avec la méthode POST et une URL d'exemple, suivi de Délai, Bloquer les interruptions, Parler d’abord, Quand l’exécuter et Son, puis des sections En-têtes et Corps." />
 </Frame>
 
 <Tip>
-  Si votre endpoint met quelques secondes à répondre, réglez **Discours avant outil** sur **Forcer** ou ajoutez un **Son d’outil**, pour que l’appelant n’entende pas de silence.
+  Si votre endpoint met quelques secondes à répondre, réglez **Parler d’abord** sur **Toujours parler** ou ajoutez un **Son**, pour que l’appelant n’entende pas de silence.
 </Tip>
 
-### Configurer les « Paramètres du corps » (si vous utilisez POST)
+### Configurer le « Corps » (si vous utilisez POST)
 
 Si votre outil envoie des informations (POST), définissez exactement quelles données il enverra. L’agent (le LLM) collecte ces paramètres pendant l’appel et les envoie dans le corps de la requête.
 
 <Steps>
   <Step>
-    Allez dans **Paramètres du corps**.
+    Allez dans **Corps** et cliquez sur **Ajouter un champ**.
   </Step>
   <Step>
     Si vous le souhaitez, ajoutez une **Description** générale des données envoyées.
-  </Step>
-  <Step>
-    Cliquez sur **Ajouter une propriété**.
   </Step>
   <Step>
     Configurez chaque champ :
   </Step>
 </Steps>
 
-- **Type de données** : **String** (texte), **Nombre**, **Boolean** (vrai/faux) ou **Integer** (nombre entier).
-- **Identifiant** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `phone`, `full_name`).
-- **Obligatoire** : coché par défaut. Décochez-le si le champ est facultatif.
+- **Type** : **String** (texte), **Nombre**, **Boolean** (vrai/faux) ou **Integer** (nombre entier).
+- **Nom** : le nom exact du champ attendu par votre endpoint (par exemple : `email`, `phone`, `full_name`).
+- **Obligatoire** : activé par défaut. Désactivez-le si le champ est facultatif.
 - **Type de valeur** : d’où vient la valeur :
   - **Invite LLM** : l’agent la remplit à partir de la conversation. Ajoutez une **Description** de ce qu’elle représente et du format attendu (par exemple : « Téléphone au format international » ou « Adresse email valide »). Vous pouvez aussi ajouter des **Valeurs Enum (facultatif)** : une liste de valeurs autorisées. Si vous en ajoutez, l’agent ne pourra choisir que dans cette liste.
   - **Valeur constante** : envoie toujours la même valeur fixe (par exemple le nom de votre campagne).
-  - **Variable dynamique** : envoie la valeur d’une variable de l’appel. Choisissez-la dans **Nom de la variable**, par exemple `system__caller_id` (le numéro de l’appelant), `system__called_number`, `system__conversation_id` ou `system__time_utc`.
+  - **Variable dynamique** : envoie la valeur d’une variable de l’appel. Saisissez-la dans **Variable** ou choisissez-la dans la liste **Système**, par exemple `system__caller_id` (le numéro de l’appelant), `system__called_number`, `system__conversation_id` ou `system__time_utc`.
 
-Pour envoyer d’autres champs, cliquez à nouveau sur **Ajouter une propriété**. Pour en retirer un, cliquez sur **Supprimer**.
+Pour envoyer d’autres champs, cliquez à nouveau sur **Ajouter un champ**. Pour en retirer un, cliquez sur l’icône de la corbeille.
 
-<Frame caption="Capture d’écran : un paramètre du corps que l’agent remplit à partir de la conversation (Invite LLM).">
+<Frame caption="Capture d’écran : un champ du corps que l’agent remplit à partir de la conversation (Invite LLM).">
   <img
     src="/images/tools-body.png"
-    alt="La section Paramètres du corps avec une propriété : type de données String, identifiant email, Obligatoire coché, type de valeur Invite LLM, une description et le champ facultatif Valeurs Enum." />
+    alt="La section Corps avec un champ : type String, nom email, Obligatoire activé, type de valeur Invite LLM, une description et le champ facultatif Valeurs Enum." />
 </Frame>
 
 > Recommandation pratique : si vous marquez un champ comme **Obligatoire**, votre agent doit être obligé (via l’Invite de conversation) de **le demander et le confirmer** avant d’exécuter l’outil. Sinon, le webhook recevra des données incomplètes ou le flux échouera.
@@ -174,7 +171,7 @@ Un **serveur MCP** donne à votre agent tout un ensemble d’outils d’un coup 
 
 <Steps>
   <Step>
-    Dans **Outils**, ouvrez l’onglet **MCP** et cliquez sur **\+ Ajouter un MCP**.
+    Dans **Outils et MCP**, ouvrez l’onglet **MCP** et cliquez sur **\+ Ajouter un MCP**.
   </Step>
   <Step>
     Dans **Informations de base**, remplissez le **Nom** (par exemple « CRM MCP ») et une **Description** de ce que propose le serveur.
@@ -428,7 +425,7 @@ Voici un exemple complet (inventé) avec deux outils : un lien principal pendant
 Avant d’utiliser l’outil avec des clients, vérifiez que :
 
 - La requête s’exécute correctement.
-- Les champs arrivent avec le nom attendu (**Identifiant**).
+- Les champs arrivent avec le nom attendu.
 - Les champs obligatoires (**Obligatoire**) sont toujours présents.
 - L’endpoint répond rapidement et de manière cohérente.
 
@@ -452,7 +449,7 @@ Une bonne pratique consiste à tester le webhook avec une URL d’inspection tem
 | ---------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | L’outil ne s’exécute pas                 | Il n’est pas assigné à l’agent                                     | Allez dans **Agents IA \> votre agent \> Outils** et ajoutez-le                                               |
 | Aucune information n’arrive à l’endpoint | Endpoint inaccessible ou URL incorrecte                            | Vérifiez que l’URL est **HTTPS** et accessible publiquement                                                  |
-| Champs manquants                         | « Identifiant / Obligatoire » mal définis ou l’agent ne les collecte pas | Vérifiez les **Paramètres du corps** et ajustez l’**Invite de conversation** pour exiger et confirmer les données      |
+| Champs manquants                         | « Nom / Obligatoire » mal définis ou l’agent ne les collecte pas | Vérifiez le **Corps** et ajustez l’**Invite de conversation** pour exiger et confirmer les données      |
 | Exécution au mauvais moment              | L’Invite de conversation ne définit pas de conditions claires        | Spécifiez des règles comme “uniquement à la fin”, “uniquement après confirmation de l’email et du téléphone” |
 | L’agent devrait appuyer sur une touche (par exemple 1 dans un menu téléphonique) | Callin ne peut pas envoyer de tonalités du clavier (DTMF) | Ce n’est pas possible avec un outil ni avec un webhook. Appelez un numéro où répond une personne ou qui ne demande pas d’appuyer sur des touches |
 
