@@ -155,7 +155,7 @@ After those three, add operational rules that guide the agent's decisions during
 
 The **Add Variables** button below the prompt editor (and below the greeting) inserts placeholders that are replaced with real values during the call. The menu has two groups:
 
-- **System Variables** — values Callin.io fills in automatically: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone`, and `system__call_id`.
+- **System Variables** — values Callin.io fills in automatically: `system__agent_id`, `system__called_number`, `system__time_utc`, `system__time`, `system__timezone`, and `system__call_id`. **Ultra-low latency** agents only have `system__time` and `system__timezone`.
 - **Custom Variables** — your own variables, such as `agent_name`. Click **New Variable** to create one.
 
 Variables appear as chips below the editor and in the **Dynamic Variables** panel at the bottom of the tab, where you set their value. For example, `{{agent_name}}` is set to the agent's name by default.
