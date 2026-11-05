@@ -13,6 +13,8 @@ Cette page explique ce que Callin te facture, comment fixer le prix de tes forfa
 
 Callin te facture **0,16 \$ la minute** pour les minutes incluses dans les forfaits que tu vends. C'est toi qui décides du prix que paieront tes utilisateurs finaux pour ces mêmes minutes. Quand ton utilisateur paie, la commission de la plateforme est déduite automatiquement et le reste est à toi.
 
+Le prix par minute inclut les minutes de l’opérateur.
+
 Il n'y a aucune facture mensuelle de Callin à rapprocher et rien à approuver. La répartition se fait à l'intérieur du paiement lui-même.
 
 ## Ton coût : 0,16 \$ la minute
@@ -55,6 +57,8 @@ Imagine que tu décides de facturer **0,32 \$ la minute**, le double de ton coû
 
 C'est le point qui crée le plus de confusion, alors disons-le clairement : **la commission de la plateforme se calcule sur les minutes incluses dans le forfait, pas sur les minutes que ton utilisateur consomme réellement.**
 
+Avec un forfait mensuel, la commission se calcule sur le prix du forfait, quelle que soit la consommation. Avec le paiement à l’usage, elle se calcule sur la consommation réelle.
+
 Pense à ce que tu as vendu. Ton utilisateur final paie 320 \$ pour un forfait de 1 000 minutes, qu'il passe un appel ou mille. Il paie pour de la capacité — le droit d'utiliser ces minutes — pas pour de la consommation. La commission de la plateforme fonctionne de la même façon, parce qu'elle s'applique sur cette même capacité.
 
 La commission est donc identique dans tous les cas :
@@ -73,6 +77,8 @@ Ce qu'il faut en retenir quand tu fixes tes prix : ta marge est décidée au mom
 
 Les paiements passent par **Stripe Connect**, le système de paiement intégré à ta plateforme white label. C'est ce qui permet à ton utilisateur final de te payer directement pendant que la commission de la plateforme est dirigée vers Callin dans la même transaction.
 
+La facture au client final est émise par le client white label. Stripe Connect répartit les commissions.
+
 Au moment où la carte de ton utilisateur est débitée, le montant se divise en trois parties :
 
 | Partie | Ce que c'est | Qui la reçoit |
@@ -86,7 +92,7 @@ Les frais de traitement sont le prélèvement propre à Stripe : en général un
 
 ## Un exemple complet
 
-Tu vends un forfait de **1 000 minutes à 0,32 \$ la minute** à Clinique Dentaire Demo. Le forfait est à 320 \$ par mois.
+Tu vends un forfait de **1 000 minutes à 0,32 \$ la minute** à Clinica Aurora. Le forfait est à 320 \$ par mois.
 
 | Ligne | Montant |
 | --- | --- |
@@ -97,7 +103,7 @@ Tu vends un forfait de **1 000 minutes à 0,32 \$ la minute** à Clinique Dentai
 
 Chaque mois où cet abonnement se renouvelle, tu reçois environ 150 \$. La commission de plateforme de 160 \$ est fixe et prévisible. Les frais de traitement bougent un peu selon la façon dont ton client paie, alors prends ce chiffre comme une estimation et non comme un montant exact.
 
-Si Clinique Dentaire Demo a consommé 120 minutes ce mois-là, le tableau ne change pas. Si elle en a consommé 990, non plus.
+Si Clinica Aurora a consommé 120 minutes ce mois-là, le tableau ne change pas. Si elle en a consommé 990, non plus.
 
 ## Forfaits à la consommation
 

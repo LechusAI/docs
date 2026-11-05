@@ -13,6 +13,8 @@ Diese Seite erklärt, was Callin dir berechnet, wie du deine Tarife kalkulierst,
 
 Callin berechnet dir **0,16 \$ pro Minute** für die Minuten, die in den Tarifen enthalten sind, die du verkaufst. Du entscheidest, was deine Endnutzer für genau diese Minuten zahlen. Wenn dein Nutzer bezahlt, wird die Plattformgebühr automatisch abgezogen und der Rest gehört dir.
 
+Der Minutenpreis enthält die Minuten des Netzbetreibers.
+
 Es gibt keine monatliche Rechnung von Callin, die du abgleichen müsstest, und nichts zu genehmigen. Die Aufteilung passiert innerhalb der Zahlung selbst.
 
 ## Deine Kosten: 0,16 \$ pro Minute
@@ -55,6 +57,8 @@ Bei 0,30 \$ liegt deine Marge bei 140 \$. Bei 0,25 \$ sind es 90 \$. Bei 0,16 \$
 
 Das ist der Punkt, der die meiste Verwirrung stiftet, deshalb ganz klar: **die Plattformgebühr wird auf die im Tarif enthaltenen Minuten berechnet, nicht auf die Minuten, die dein Nutzer tatsächlich verbraucht.**
 
+Bei einem Monatsplan wird die Gebühr auf den Planpreis berechnet, unabhängig vom Verbrauch. Bei Pay-as-you-go wird sie auf den tatsächlichen Verbrauch berechnet.
+
 Denk daran, was du verkauft hast. Dein Endnutzer zahlt 320 \$ für einen Tarif mit 1.000 Minuten, egal ob er einen Anruf tätigt oder tausend. Er zahlt für Kapazität — das Recht, diese Minuten zu nutzen — nicht für Verbrauch. Die Plattformgebühr funktioniert genauso, weil sie auf dieselbe Kapazität erhoben wird.
 
 Die Gebühr ist also in jedem Szenario identisch:
@@ -73,6 +77,8 @@ Die praktische Erkenntnis für deine Preisgestaltung: deine Marge steht in dem M
 
 Zahlungen laufen über **Stripe Connect**, das in deine White-Label-Plattform integrierte Zahlungssystem. Es sorgt dafür, dass dein Endnutzer direkt an dich zahlt, während die Plattformgebühr in derselben Transaktion an Callin geht.
 
+Die Rechnung an den Endkunden stellt der White-Label-Kunde aus. Stripe Connect verteilt die Gebühren.
+
 In dem Moment, in dem die Karte deines Nutzers belastet wird, teilt sich der Betrag in drei Teile:
 
 | Teil | Was es ist | Wer ihn erhält |
@@ -86,7 +92,7 @@ Die Bearbeitungsgebühr ist Stripes eigene Gebühr: üblicherweise ein kleiner P
 
 ## Ein vollständiges Beispiel
 
-Du verkaufst der Demo Zahnklinik einen Tarif mit **1.000 Minuten zu 0,32 \$ pro Minute**. Der Tarif kostet 320 \$ im Monat.
+Du verkaufst der Clinica Aurora einen Tarif mit **1.000 Minuten zu 0,32 \$ pro Minute**. Der Tarif kostet 320 \$ im Monat.
 
 | Position | Betrag |
 | --- | --- |
@@ -97,7 +103,7 @@ Du verkaufst der Demo Zahnklinik einen Tarif mit **1.000 Minuten zu 0,32 \$ pro 
 
 Jeden Monat, in dem sich dieses Abonnement verlängert, bekommst du rund 150 \$. Die Plattformgebühr von 160 \$ ist fest und planbar. Die Bearbeitungsgebühr schwankt je nachdem, wie dein Kunde bezahlt, betrachte diese Zahl also als Schätzung und nicht als exakten Betrag.
 
-Wenn die Demo Zahnklinik in diesem Monat 120 Minuten verbraucht hat, ändert sich an der Tabelle nichts. Bei 990 Minuten ebenso wenig.
+Wenn die Clinica Aurora in diesem Monat 120 Minuten verbraucht hat, ändert sich an der Tabelle nichts. Bei 990 Minuten ebenso wenig.
 
 ## Tarife nach Verbrauch
 
