@@ -65,11 +65,11 @@ Um eine Nummer zu nutzen, weise sie dem Agenten zu. Damit er eingehende Anrufe a
 
 ## Anrufnutzung und Kosten verstehen
 
-Jeder Anruf verbraucht zwei Arten von Minuten:
+Jeder Anruf verbraucht zwei Dinge:
 
 <Steps>
   <Step>
-    **Anbieter-Minuten**: werden vom Telefonanbieter (Twilio, Telnyx oder dein eigener Anbieter) für die Telefonverbindung berechnet.
+    **Anbieter-Minuten**: die Telefonverbindung. Bei einer Callin-Nummer sind sie im Minutenpreis enthalten. Bei importierten Nummern oder BYOC zahlst du deinen Anbieter separat.
   </Step>
   <Step>
     **Callin-KI-Minuten**: decken die KI ab, die während des Anrufs zuhört, nachdenkt und antwortet.
@@ -77,10 +77,12 @@ Jeder Anruf verbraucht zwei Arten von Minuten:
 </Steps>
 
 <Note>
-**Beispiel:** ein 5-minütiger Anruf = 5 Anbieter-Minuten + 5 Callin-KI-Minuten.
+**Beispiel:** Mit einer Callin-Nummer sind 5 Minuten Anruf 5 Minuten zum Minutenpreis, Anbieter inklusive.
 </Note>
 
 Wenn du eine Nummer über Callin.io kaufst, fällt **keine zusätzliche Plattformgebühr** für die Nummer selbst an.
+
+**Italienische Nummern:** Mit einem Monatsplan ist eine einzige Nummer kostenlos, Einrichtung und Monatsgebühr inklusive. Bei Pay-as-you-go wird sie separat berechnet.
 
 <Warning>
   Ausgehende Anrufe mit Nummern, die über Callin.io gekauft wurden, und über unseren Anbieter werden mit **mindestens 1 Minute** abgerechnet. Ein 20-Sekunden-Anruf wird als 1 Minute berechnet. Anrufe von 60 Sekunden oder länger werden nach ihrer tatsächlichen Dauer abgerechnet. Diese Regel gilt nicht für eingehende Anrufe, Testanrufe im Browser, importierte Nummern (Twilio oder Telnyx) oder deinen eigenen SIP-Trunk.

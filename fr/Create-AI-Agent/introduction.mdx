@@ -65,11 +65,11 @@ Pour utiliser un numéro, attribuez-le à l’agent. Pour répondre aux appels e
 
 ## Comprendre l’usage et les coûts des appels
 
-Chaque appel utilise deux types de minutes :
+Chaque appel utilise deux choses :
 
 <Steps>
   <Step>
-    **Minutes opérateur** : facturées par le fournisseur téléphonique (Twilio, Telnyx ou votre propre opérateur) pour la connexion téléphonique.
+    **Minutes opérateur** : la connexion téléphonique. Avec un numéro Callin, elles sont incluses dans le prix par minute. Avec des numéros importés ou BYOC, vous payez votre opérateur à part.
   </Step>
   <Step>
     **Minutes IA Callin** : couvrent l’IA qui écoute, réfléchit et répond pendant l’appel.
@@ -77,10 +77,12 @@ Chaque appel utilise deux types de minutes :
 </Steps>
 
 <Note>
-**Exemple :** un appel de 5 minutes = 5 minutes opérateur + 5 minutes IA Callin.
+**Exemple :** avec un numéro Callin, un appel de 5 minutes correspond à 5 minutes au prix par minute, opérateur inclus.
 </Note>
 
 Lorsque vous achetez un numéro via Callin.io, **aucuns frais de plateforme supplémentaires** ne s’appliquent au numéro lui-même.
+
+**Numéros italiens :** avec un forfait mensuel, un seul numéro est gratuit, frais de mise en service et abonnement inclus. Avec le paiement à l’usage, il est facturé à part.
 
 <Warning>
   Les appels sortants passés avec des numéros achetés sur Callin.io et notre opérateur sont facturés **1 minute minimum**. Un appel de 20 secondes est facturé 1 minute. Les appels de 60 secondes ou plus sont facturés à leur durée réelle. Cette règle ne s’applique pas aux appels entrants, aux appels de test dans le navigateur, aux numéros importés (Twilio ou Telnyx) ni à votre propre tronc SIP.

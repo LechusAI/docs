@@ -13,6 +13,8 @@ This page explains what Callin charges you, how to price your plans so the margi
 
 Callin charges you **\$0.16 per minute** for the minutes included in the plans you sell. You decide what to charge your end users for those same minutes. When your user pays, the platform fee is deducted automatically and the rest is yours.
 
+With Callin numbers, the price per minute includes the carrier minutes.
+
 There's no monthly bill from Callin to reconcile and no invoice to approve. The split happens inside the payment itself.
 
 ## Your cost: \$0.16 per minute
@@ -55,6 +57,8 @@ Charge \$0.30 and your margin is \$140. Charge \$0.25 and it's \$90. Charge \$0.
 
 This is the point that causes the most confusion, so here it is plainly: **the platform fee is based on the minutes the plan includes, not the minutes your user actually spends.**
 
+With a monthly plan, the fee is calculated on the plan's price, whatever the consumption. With pay as you go, it's calculated on actual consumption.
+
 Think about what you sold. Your end user pays \$320 for a plan of 1,000 minutes whether they make one call or a thousand. They're paying for capacity — the right to use those minutes — not for consumption. The platform fee works the same way, because it's charged against that same capacity.
 
 So the fee is identical in every scenario:
@@ -73,6 +77,8 @@ The practical takeaway when you're setting prices: your margin is decided the mo
 
 Payments run through **Stripe Connect**, the payment system built into your white label platform. It's what makes it possible for your end user to pay you directly while the platform fee is routed to Callin in the same transaction.
 
+The invoice to the end customer is issued by the white label client. Stripe Connect splits the fees.
+
 The moment your user's card is charged, the amount is divided into three parts:
 
 | Part | What it is | Who receives it |
@@ -86,7 +92,7 @@ The processing fee is Stripe's own charge, typically a small percentage of the t
 
 ## A complete example
 
-You sell a plan of **1,000 minutes at \$0.32 per minute** to Demo Dental Clinic. The plan is priced at \$320 per month.
+You sell a plan of **1,000 minutes at \$0.32 per minute** to Clinica Aurora. The plan is priced at \$320 per month.
 
 | Line | Amount |
 | --- | --- |
@@ -97,7 +103,7 @@ You sell a plan of **1,000 minutes at \$0.32 per minute** to Demo Dental Clinic.
 
 Every month that subscription renews, you receive around \$150. The \$160 platform fee is fixed and predictable. The processing fee moves a little depending on how your customer pays, so treat that figure as an estimate rather than an exact number.
 
-If Demo Dental Clinic used 120 minutes that month, the table is unchanged. If they used 990, it's also unchanged.
+If Clinica Aurora used 120 minutes that month, the table is unchanged. If they used 990, it's also unchanged.
 
 ## Pay as you go plans
 

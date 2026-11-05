@@ -36,7 +36,7 @@ Dès que vous modifiez quelque chose, une barre apparaît en bas avec **Effacer*
 Le **Nom de l’app** est affiché dans la barre latérale, les titres et les e-mails. C’est le nom que reconnaîtront vos clients.
 
 Une bonne règle : utilisez le même nom que dans vos supports commerciaux.\
-Exemple : si vous vendez « Northwind Reception », saisissez **Northwind Reception** comme nom de l’app.
+Exemple : si vous vendez « Aurora Reception », saisissez **Aurora Reception** comme nom de l’app.
 
 ### Domaine personnalisé (recommandé : utiliser un sous-domaine)
 
@@ -107,7 +107,7 @@ Utilisez **Manuel** si :
 - La configuration par fournisseur échoue, ou
 - Vous préférez gérer le DNS vous-même.
 
-Dans l’onglet **Manuel**, Callin affiche **Ajoutez ces enregistrements DNS chez votre registrar**. Pour un sous-domaine comme `app.northwindreception.com`, un seul enregistrement suffit :
+Dans l’onglet **Manuel**, Callin affiche **Ajoutez ces enregistrements DNS chez votre registrar**. Pour un sous-domaine comme `app.aurorareception.example`, un seul enregistrement suffit :
 
 | Type | Nom | Valeur | TTL |
 | --- | --- | --- | --- |
@@ -121,7 +121,7 @@ Dans l’onglet **Manuel**, Callin affiche **Ajoutez ces enregistrements DNS che
   Si votre panneau affiche encore un enregistrement A sur `@` et un enregistrement CNAME, ignorez-les. Ajoutez seulement l’enregistrement ci-dessus, avec la même adresse IP.
 </Note>
 
-N’ajoutez un enregistrement A sur `@` que si vous voulez que l’application soit sur le domaine racine lui-même (comme `northwindreception.com`). Votre site web sur ce domaine cessera de fonctionner.
+N’ajoutez un enregistrement A sur `@` que si vous voulez que l’application soit sur le domaine racine lui-même (comme `aurorareception.example`). Votre site web sur ce domaine cessera de fonctionner.
 
 L’enregistrement comprend :
 
@@ -166,7 +166,7 @@ Si vous avez des clients dans plusieurs pays, choisissez la langue de votre publ
 
 ### Emplacement du serveur
 
-L’**Emplacement du serveur** vous permet de choisir la région où vos données sont hébergées, pour respecter les exigences de résidence des données et de conformité. Vous pouvez choisir **États-Unis – Ashburn (Virginie)** ou **Allemagne – Francfort**.
+L’**Emplacement du serveur** vous permet de choisir la région où vos données sont hébergées, pour respecter les exigences de résidence des données et de conformité. Vous pouvez choisir **États-Unis – Ashburn (Virginie)** ou **Allemagne – Francfort**. Nous recommandons **Allemagne – Francfort** pour les données des clients européens.
 
 Si vous travaillez avec des clients aux exigences strictes (santé, finance, secteur public), choisissez ce qui est prévu au contrat.
 

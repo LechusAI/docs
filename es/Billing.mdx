@@ -13,6 +13,8 @@ Esta página explica qué te cobra Callin, cómo fijar el precio de tus planes p
 
 Callin te cobra **0,16 \$ por minuto** por los minutos incluidos en los planes que vendes. Tú decides cuánto cobrar a tus usuarios finales por esos mismos minutos. Cuando tu usuario paga, la comisión de la plataforma se descuenta automáticamente y el resto es para ti.
 
+Con números de Callin, el precio por minuto incluye los minutos del operador.
+
 No hay una factura mensual de Callin que cuadrar ni nada que aprobar. El reparto ocurre dentro del propio pago.
 
 ## Tu coste: 0,16 \$ por minuto
@@ -55,6 +57,8 @@ Si cobras 0,30 \$, tu margen es de 140 \$. Si cobras 0,25 \$, es de 90 \$. Si co
 
 Este es el punto que más confusión genera, así que va directo: **la comisión de la plataforma se calcula sobre los minutos que incluye el plan, no sobre los minutos que gasta tu usuario.**
 
+Con un plan mensual, la comisión se calcula sobre el precio del plan, sea cual sea el consumo. Con pago por uso, se calcula sobre el consumo real.
+
 Piensa en lo que has vendido. Tu usuario final paga 320 \$ por un plan de 1.000 minutos haga una llamada o mil. Está pagando por capacidad —el derecho a usar esos minutos—, no por consumo. La comisión de la plataforma funciona igual, porque se aplica sobre esa misma capacidad.
 
 Así que la comisión es idéntica en todos los escenarios:
@@ -73,6 +77,8 @@ La conclusión práctica cuando fijas precios: tu margen queda decidido en el mo
 
 Los pagos se gestionan con **Stripe Connect**, el sistema de pagos integrado en tu plataforma white label. Es lo que permite que tu usuario final te pague directamente a ti mientras la comisión de la plataforma se dirige a Callin en la misma transacción.
 
+La factura al cliente final la emite el cliente white label. Stripe Connect reparte las comisiones.
+
 En el momento en que se cobra la tarjeta de tu usuario, el importe se divide en tres partes:
 
 | Parte | Qué es | Quién la recibe |
@@ -86,7 +92,7 @@ La comisión de procesamiento es el cargo propio de Stripe: normalmente un peque
 
 ## Un ejemplo completo
 
-Vendes un plan de **1.000 minutos a 0,32 \$ por minuto** a Clínica Dental Demo. El plan queda en 320 \$ al mes.
+Vendes un plan de **1.000 minutos a 0,32 \$ por minuto** a Clinica Aurora. El plan queda en 320 \$ al mes.
 
 | Línea | Importe |
 | --- | --- |
@@ -97,7 +103,7 @@ Vendes un plan de **1.000 minutos a 0,32 \$ por minuto** a Clínica Dental Demo.
 
 Cada mes que esa suscripción se renueve, recibirás alrededor de 150 \$. La comisión de plataforma de 160 \$ es fija y predecible. La comisión de procesamiento se mueve un poco según cómo pague tu cliente, así que toma esa cifra como una estimación y no como un número exacto.
 
-Si Clínica Dental Demo consumió 120 minutos ese mes, la tabla no cambia. Si consumió 990, tampoco.
+Si Clinica Aurora consumió 120 minutos ese mes, la tabla no cambia. Si consumió 990, tampoco.
 
 ## Planes de pago por consumo
 
