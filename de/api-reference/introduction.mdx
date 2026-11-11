@@ -63,3 +63,131 @@ Jede Endpunktseite enthält eine API-Testumgebung. Wählen Sie einen Server, fü
 - **Kampagnen**: ausgehende Anrufkampagnen erstellen, planen, starten und stoppen
 - **Kontakte**: die Kontakte erstellen, importieren und verwalten, die Ihre Agenten anrufen
 - **Anrufprotokolle und Transkripte**: Protokolle, Transkripte und Aufnahmen jedes Anrufs abrufen
+
+## Eine Anrufkampagne mit der API starten
+
+Eine Kampagne ruft eine Liste von Kontakten mit einem Ihrer KI-Agenten an. Sie können Kampagnen vollständig über die API erstellen, starten, planen, stoppen und überwachen.
+
+<Warning>
+  Dem Agenten muss bereits eine **Telefonnummer** zugewiesen sein. Für einen Agenten ohne Nummer lassen sich keine Kampagnen speichern.
+</Warning>
+
+<Warning>
+  **Häufiger Fehler:** Telefonnummern müssen im E.164-Format sein: ein `+`, die Ländervorwahl und die Nummer, ohne Leerzeichen. Zum Beispiel `+14155552671`.
+</Warning>
+
+<Steps>
+  <Step>
+    **Erstellen Sie die Kampagne.** Senden Sie `POST /public/v1/campaigns` mit einem `name`, der `agentId` Ihres Agenten und den anzurufenden Kontakten. Jeder Kontakt braucht eine `phoneNumber`. `name` und `email` sind optional.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Frühjahrsverlängerungen",
+        "agentId": "<agent-id>",
+        "contacts": [
+          { "phoneNumber": "+14155552671", "name": "Jane Smith", "email": "jane@example.com", "plan": "Pro" },
+          { "phoneNumber": "+14155550123", "name": "John Doe" }
+        ]
+      }'
+    ```
+
+    Die Antwort enthält die `campaignId`. Sie brauchen sie für die nächsten Schritte. Ohne `launch` oder `scheduled` wird die Kampagne als Entwurf gespeichert.
+
+    <Note>
+      `agentId` muss die ID eines Agenten sein. Squads können keine Kampagnen ausführen: Wenn Sie die ID einer Squad senden, erhalten Sie den Fehler **Agent not found**.
+    </Note>
+  </Step>
+  <Step>
+    **Starten Sie sie sofort oder planen Sie sie.** Um sofort mit den Anrufen zu beginnen, senden Sie `POST /public/v1/campaigns/{campaignId}/launch`. Ihr Abonnement muss aktiv sein und noch Minuten haben.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/launch \
+      -H "x-api-key: <your-api-key>"
+    ```
+
+    Um nur in einem bestimmten Zeitfenster anzurufen, senden Sie `POST /public/v1/campaigns/{campaignId}/schedule` mit `startTime`, `endTime` und einer IANA-`timezone`. Geben Sie `startTime` und `endTime` als Datum und Uhrzeit in dieser Zeitzone an, zum Beispiel `2026-12-01T09:00:00`. Der Beginn muss in der Zukunft und vor dem Ende liegen. Die Anrufe beginnen zur `startTime`. Nach der `endTime` pausiert die Kampagne bis zur `startTime` am nächsten Tag.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/schedule \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{ "startTime": "2026-12-01T09:00:00", "endTime": "2026-12-01T18:00:00", "timezone": "America/New_York" }'
+    ```
+  </Step>
+  <Step>
+    **Prüfen Sie die Anrufe.** Senden Sie `GET /public/v1/campaigns/{campaignId}/calls`, um jeden Anruf mit Status, Dauer und Anzahl der Folgeanrufe zu sehen. Filtern Sie mit `status` und blättern Sie mit `cursor` und `pageSize` durch die Ergebnisse.
+
+    ```bash
+    curl "https://api.callin.io/api/public/v1/campaigns/<campaign-id>/calls?pageSize=50" \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+  <Step>
+    **Stoppen Sie sie bei Bedarf.** Senden Sie `POST /public/v1/campaigns/{campaignId}/stop`. Eine wartende oder pausierte Kampagne stoppt sofort. Eine laufende Kampagne stoppt vor dem nächsten Kontakt.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/stop \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+  Sie können die Kampagne in derselben Anfrage starten oder planen, mit der Sie sie erstellen. Fügen Sie `"launch": true` hinzu, um sofort anzurufen, oder `"scheduled": true` mit `startTime`, `endTime` und `timezone`.
+</Tip>
+
+<Tip>
+  Zusätzliche Felder eines Kontakts, wie `plan` im Beispiel oben, werden als dynamische Variablen an den Agenten übergeben. Nutzen Sie sie im Prompt, um jeden Anruf zu personalisieren.
+</Tip>
+
+<Note>
+  Eine gestoppte oder pausierte Kampagne macht beim Kontakt weiter, an dem sie aufgehört hat, wenn Sie sie erneut starten oder planen.
+</Note>
+
+### Folgeanrufe
+
+Folgeanrufe versuchen es erneut, wenn ein Anruf mit **besetzt** oder **keine Antwort** endet. Fügen Sie diese Felder beim Erstellen oder Aktualisieren der Kampagne hinzu:
+
+| Feld | Beschreibung |
+|---|---|
+| `followUpCall` | `true`, um Folgeanrufe einzuschalten |
+| `followUpAttempts` | Wie oft es erneut versucht wird, von 1 bis 10 |
+| `followUpIntervals` | Wartezeit in Minuten vor jedem Versuch, ein Wert pro Versuch |
+
+```json
+{
+  "followUpCall": true,
+  "followUpAttempts": 2,
+  "followUpIntervals": [60, 1440]
+}
+```
+
+Dieses Beispiel ruft 1 Stunde nach dem ersten Anruf erneut an und dann noch einmal 24 Stunden später.
+
+### Eine Kampagne aus einer CSV-Datei erstellen
+
+Senden Sie `POST /public/v1/campaigns/csv` als `multipart/form-data` mit `file`, `name` und `agentId`. Die Datei muss eine `.csv` in UTF-8 sein. Wenn Ihre Spalten andere Namen haben, geben Sie `phoneColumn`, `nameColumn` oder `emailColumn` an. `launch`, `scheduled` und die Felder für Folgeanrufe funktionieren genauso. In einer CSV ist `followUpIntervals` eine kommagetrennte Liste, etwa `60,1440`.
+
+```bash
+curl -X POST https://api.callin.io/api/public/v1/campaigns/csv \
+  -H "x-api-key: <your-api-key>" \
+  -F "file=@contacts.csv" \
+  -F "name=Frühjahrsverlängerungen" \
+  -F "agentId=<agent-id>" \
+  -F "launch=true"
+```
+
+<Warning>
+  Ist eine Zeile der CSV ungültig (eine ungültige Telefonnummer oder E-Mail oder eine doppelte Nummer), wird die ganze Datei abgelehnt. Es wird nichts gespeichert und niemand angerufen. Die Fehlerantwort nennt die Zeilen, die Sie korrigieren müssen.
+</Warning>
+
+<Tip>
+  In der CSV werden Leerzeichen und Satzzeichen in Telefonnummern entfernt, und eine führende `00` wird zu `+`.
+</Tip>
+
+### Eine Kampagne ändern oder löschen
+
+Mit `PATCH /public/v1/campaigns/{campaignId}` ändern Sie Name, Agent, Kontakte, Zeitplan oder die Einstellungen für Folgeanrufe. Mit `DELETE /public/v1/campaigns/{campaignId}` löschen Sie sie. Beides funktioniert nicht, solange die Kampagne läuft: Stoppen Sie sie zuerst.

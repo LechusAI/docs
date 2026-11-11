@@ -63,3 +63,131 @@ Cada página de endpoint incluye un entorno de pruebas de la API. Elige un servi
 - **Campañas**: crea, programa, lanza y detén campañas de llamadas salientes
 - **Contactos**: crea, importa y gestiona los contactos a los que llaman tus agentes
 - **Registros y transcripciones**: consulta los registros, las transcripciones y las grabaciones de cada llamada
+
+## Lanzar una campaña de llamadas con la API
+
+Una campaña llama a una lista de contactos con uno de tus agentes de IA. Puedes crear, lanzar, programar, detener y supervisar campañas solo con la API.
+
+<Warning>
+  El agente tiene que tener ya un **número de teléfono** asignado. No se pueden guardar campañas para un agente sin número.
+</Warning>
+
+<Warning>
+  **Error común:** los números de teléfono tienen que estar en formato E.164: un `+`, el prefijo del país y el número, sin espacios. Por ejemplo, `+14155552671`.
+</Warning>
+
+<Steps>
+  <Step>
+    **Crea la campaña.** Envía `POST /public/v1/campaigns` con un `name`, el `agentId` de tu agente y los contactos a los que llamar. Cada contacto necesita un `phoneNumber`. `name` y `email` son opcionales.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Renovaciones de primavera",
+        "agentId": "<agent-id>",
+        "contacts": [
+          { "phoneNumber": "+14155552671", "name": "Jane Smith", "email": "jane@example.com", "plan": "Pro" },
+          { "phoneNumber": "+14155550123", "name": "John Doe" }
+        ]
+      }'
+    ```
+
+    La respuesta incluye el `campaignId`. Lo necesitas para los pasos siguientes. Sin `launch` ni `scheduled`, la campaña se guarda como borrador.
+
+    <Note>
+      `agentId` tiene que ser el ID de un agente. Las squads no pueden hacer campañas: si envías el ID de una squad, recibes el error **Agent not found**.
+    </Note>
+  </Step>
+  <Step>
+    **Lánzala ahora o prográmala.** Para empezar a llamar en el momento, envía `POST /public/v1/campaigns/{campaignId}/launch`. Tu suscripción tiene que estar activa y tener minutos disponibles.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/launch \
+      -H "x-api-key: <your-api-key>"
+    ```
+
+    Para llamar solo dentro de un horario, envía `POST /public/v1/campaigns/{campaignId}/schedule` con `startTime`, `endTime` y una `timezone` IANA. Escribe `startTime` y `endTime` como fecha y hora en esa zona horaria, por ejemplo `2026-12-01T09:00:00`. El inicio tiene que estar en el futuro y ser anterior al fin. Las llamadas empiezan en `startTime`. Después de `endTime`, la campaña se pausa hasta `startTime` del día siguiente.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/schedule \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{ "startTime": "2026-12-01T09:00:00", "endTime": "2026-12-01T18:00:00", "timezone": "America/New_York" }'
+    ```
+  </Step>
+  <Step>
+    **Consulta las llamadas.** Envía `GET /public/v1/campaigns/{campaignId}/calls` para ver cada llamada con su estado, su duración y el número de seguimientos. Filtra con `status` y recorre los resultados por páginas con `cursor` y `pageSize`.
+
+    ```bash
+    curl "https://api.callin.io/api/public/v1/campaigns/<campaign-id>/calls?pageSize=50" \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+  <Step>
+    **Detenla si hace falta.** Envía `POST /public/v1/campaigns/{campaignId}/stop`. Una campaña en espera o en pausa se detiene al momento. Una campaña en curso se detiene antes del siguiente contacto.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/stop \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+  Puedes lanzar o programar la campaña en la misma petición que la crea. Añade `"launch": true` para llamar en el momento, o `"scheduled": true` con `startTime`, `endTime` y `timezone`.
+</Tip>
+
+<Tip>
+  Los campos extra de un contacto, como `plan` en el ejemplo anterior, llegan al agente como variables dinámicas. Úsalos en el prompt para personalizar cada llamada.
+</Tip>
+
+<Note>
+  Una campaña detenida o en pausa continúa desde el contacto en el que se quedó cuando la vuelves a lanzar o programar.
+</Note>
+
+### Llamadas de seguimiento
+
+Las llamadas de seguimiento vuelven a intentarlo cuando una llamada termina como **comunicando** o **sin respuesta**. Añade estos campos al crear o actualizar la campaña:
+
+| Campo | Descripción |
+|---|---|
+| `followUpCall` | `true` para activar las llamadas de seguimiento |
+| `followUpAttempts` | Cuántas veces volver a intentarlo, de 1 a 10 |
+| `followUpIntervals` | Minutos de espera antes de cada intento, un valor por intento |
+
+```json
+{
+  "followUpCall": true,
+  "followUpAttempts": 2,
+  "followUpIntervals": [60, 1440]
+}
+```
+
+Este ejemplo vuelve a llamar 1 hora después de la primera llamada, y otra vez 24 horas después.
+
+### Crear una campaña desde un archivo CSV
+
+Envía `POST /public/v1/campaigns/csv` como `multipart/form-data` con `file`, `name` y `agentId`. El archivo tiene que ser un `.csv` en UTF-8. Si tus columnas tienen otros nombres, indica `phoneColumn`, `nameColumn` o `emailColumn`. `launch`, `scheduled` y los campos de seguimiento funcionan igual. En un CSV, `followUpIntervals` es una lista separada por comas, como `60,1440`.
+
+```bash
+curl -X POST https://api.callin.io/api/public/v1/campaigns/csv \
+  -H "x-api-key: <your-api-key>" \
+  -F "file=@contacts.csv" \
+  -F "name=Renovaciones de primavera" \
+  -F "agentId=<agent-id>" \
+  -F "launch=true"
+```
+
+<Warning>
+  Si alguna fila del CSV no es válida (un teléfono o un email no válido, o un número repetido), se rechaza el archivo entero. No se guarda ni se llama a nadie. La respuesta de error indica las filas que hay que corregir.
+</Warning>
+
+<Tip>
+  En el CSV, los espacios y signos de puntuación de los teléfonos se eliminan, y un `00` inicial se convierte en `+`.
+</Tip>
+
+### Cambiar o eliminar una campaña
+
+Usa `PATCH /public/v1/campaigns/{campaignId}` para cambiar el nombre, el agente, los contactos, el horario o los ajustes de seguimiento. Usa `DELETE /public/v1/campaigns/{campaignId}` para eliminarla. Ninguno de los dos funciona mientras la campaña está en curso: detenla antes.

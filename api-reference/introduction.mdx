@@ -63,3 +63,132 @@ Every endpoint page includes an API playground. Select a server, add your API ke
 - **Campaigns** — create, schedule, launch, and stop outbound call campaigns
 - **Contacts** — create, import, and manage the contacts your agents call
 - **Call logs & transcripts** — retrieve records, transcripts, and recordings for every call
+
+## Run a call campaign with the API
+
+A campaign calls a list of contacts with one of your AI agents. You can create, launch, schedule, stop, and monitor campaigns entirely through the API.
+
+<Warning>
+  The agent must already have a **phone number** assigned. Campaigns can't be saved for an agent without one.
+</Warning>
+
+<Warning>
+  **Common mistake:** phone numbers must be in E.164 format: a `+`, the country code, and the number, with no spaces. For example, `+14155552671`.
+</Warning>
+
+<Steps>
+  <Step>
+    **Create the campaign.** Send `POST /public/v1/campaigns` with a `name`, the `agentId` of your agent, and the contacts to call. Each contact needs a `phoneNumber`. `name` and `email` are optional.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "name": "Spring renewals",
+        "agentId": "<agent-id>",
+        "contacts": [
+          { "phoneNumber": "+14155552671", "name": "Jane Smith", "email": "jane@example.com", "plan": "Pro" },
+          { "phoneNumber": "+14155550123", "name": "John Doe" }
+        ]
+      }'
+    ```
+
+    The response includes the `campaignId`. You need it for the next steps. Without `launch` or `scheduled`, the campaign is saved as a draft.
+
+    <Note>
+      `agentId` must be the ID of an agent. Squads can't run campaigns: if you send a squad ID, you get an **Agent not found** error.
+    </Note>
+  </Step>
+  <Step>
+    **Launch it now, or schedule it.** To start calling right away, send `POST /public/v1/campaigns/{campaignId}/launch`. Your subscription must be active and have minutes remaining.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/launch \
+      -H "x-api-key: <your-api-key>"
+    ```
+
+    To call only during a time window, send `POST /public/v1/campaigns/{campaignId}/schedule` with `startTime`, `endTime`, and an IANA `timezone`. Write `startTime` and `endTime` as a date and time in that timezone, like `2026-12-01T09:00:00`. The start must be in the future and before the end. Calls start at `startTime`. After `endTime`, the campaign pauses until `startTime` the next day.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/schedule \
+      -H "x-api-key: <your-api-key>" \
+      -H "Content-Type: application/json" \
+      -d '{ "startTime": "2026-12-01T09:00:00", "endTime": "2026-12-01T18:00:00", "timezone": "America/New_York" }'
+    ```
+  </Step>
+  <Step>
+    **Check the calls.** Send `GET /public/v1/campaigns/{campaignId}/calls` to see each call with its status, duration, and number of follow-ups. Filter with `status` and page through results with `cursor` and `pageSize`.
+
+    ```bash
+    curl "https://api.callin.io/api/public/v1/campaigns/<campaign-id>/calls?pageSize=50" \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+  <Step>
+    **Stop it if needed.** Send `POST /public/v1/campaigns/{campaignId}/stop`. A waiting or paused campaign stops immediately. A running campaign stops before the next contact.
+
+    ```bash
+    curl -X POST https://api.callin.io/api/public/v1/campaigns/<campaign-id>/stop \
+      -H "x-api-key: <your-api-key>"
+    ```
+  </Step>
+</Steps>
+
+<Tip>
+  You can launch or schedule in the same request that creates the campaign. Add `"launch": true` to call right away, or `"scheduled": true` with `startTime`, `endTime`, and `timezone`.
+</Tip>
+
+<Tip>
+  Extra fields in a contact, like `plan` in the example above, are passed to the agent as dynamic variables. Use them in the prompt to personalize each call.
+</Tip>
+
+<Note>
+  A stopped or paused campaign resumes from the contact where it stopped when you launch or schedule it again.
+</Note>
+
+### Follow-up calls
+
+Follow-up calls try again when a call ends as **busy** or **no answer**. Add these fields when you create or update the campaign:
+
+| Field | Description |
+|---|---|
+| `followUpCall` | `true` to turn on follow-up calls |
+| `followUpAttempts` | How many times to try again, from 1 to 10 |
+| `followUpIntervals` | Minutes to wait before each attempt, one value per attempt |
+
+```json
+{
+  "followUpCall": true,
+  "followUpAttempts": 2,
+  "followUpIntervals": [60, 1440]
+}
+```
+
+This example tries again 1 hour after the first call, and again 24 hours later.
+
+### Create a campaign from a CSV file
+
+Send `POST /public/v1/campaigns/csv` as `multipart/form-data` with the `file`, `name`, and `agentId`. The file must be a UTF-8 `.csv`. If your columns have other names, set `phoneColumn`, `nameColumn`, or `emailColumn`. `launch`, `scheduled`, and the follow-up fields work the same way. In a CSV, `followUpIntervals` is a comma-separated list, like `60,1440`.
+
+```bash
+curl -X POST https://api.callin.io/api/public/v1/campaigns/csv \
+  -H "x-api-key: <your-api-key>" \
+  -F "file=@contacts.csv" \
+  -F "name=Spring renewals" \
+  -F "agentId=<agent-id>" \
+  -F "launch=true"
+```
+
+<Warning>
+  If any row in the CSV is not valid (an invalid phone number or email, or a duplicate number), the whole file is rejected. Nothing is saved or called. The error response lists the rows to fix.
+</Warning>
+
+<Tip>
+  In the CSV, spaces and punctuation in phone numbers are removed, and a leading `00` becomes `+`.
+</Tip>
+
+### Change or delete a campaign
+
+Use `PATCH /public/v1/campaigns/{campaignId}` to change the name, agent, contacts, schedule, or follow-up settings. Use `DELETE /public/v1/campaigns/{campaignId}` to delete it. Neither works while the campaign is running: stop it first.
+
