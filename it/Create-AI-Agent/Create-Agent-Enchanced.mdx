@@ -742,117 +742,143 @@ Puoi configurare:
 
 La scheda **Widget del sito web** ti permette di pubblicare il tuo agente su una pagina web. I visitatori possono parlarci con la voce, in chat o in entrambi i modi, direttamente dal tuo sito, da una landing page, dalla pagina di supporto o dal portale clienti.
 
-Questa scheda unisce due cose: lo snippet tecnico di incorporamento e la personalizzazione visiva e testuale dell'esperienza.
+A sinistra configuri il widget: lo snippet di incorporamento, come si comporta, come appare e i suoi testi. A destra, l'**Anteprima** mostra il widget dal vivo, così vedi ogni modifica mentre la fai.
 
-<Frame caption="Schermata: la scheda Widget del sito web. Copia lo snippet e personalizza l'aspetto e il comportamento del widget.">
+<Frame caption="Schermata: la scheda Widget del sito web. Copia lo snippet, configura il widget e controlla l'Anteprima dal vivo a destra.">
   <img
     src="/images/agentesia7.png"
-    alt="La scheda Widget del sito web con lo snippet di incorporamento, il pulsante Copia e le opzioni di Layout e comportamento: modalità widget, tema e modalità conversazione." />
+    alt="La scheda Widget del sito web con lo snippet di incorporamento, il pulsante Copia e l'interruttore Pubblicato, le opzioni di Layout e comportamento (modalità widget, modalità conversazione, trascrizione in tempo reale) e l'Anteprima dal vivo a destra." />
 </Frame>
+
+Le modifiche non si applicano finché non le salvi. Quando cambi qualcosa, in basso compare una barra: fai clic su **Salva** per mantenere le modifiche o su **Pulisci** per annullarle.
 
 ### Snippet di incorporamento
 
-Lo **Snippet di incorporamento** è il frammento di codice da copiare nell'HTML del tuo sito per far apparire il widget. Include già l'ID del tuo agente. Il pulsante **Copia** lo copia così puoi incollarlo direttamente.
+Lo **Snippet di incorporamento** è il codice da copiare nell'HTML del tuo sito per far apparire il widget. Include già l'ID del tuo agente. Il pulsante **Copia** lo copia, così puoi incollarlo direttamente.
 
-Dove incollarlo dipende dalla modalità del widget:
+Dove incollare lo snippet dipende dalla modalità del widget:
 
-- **Incorporamento inline** — incollalo esattamente dove vuoi che il widget compaia nella pagina.
-- **Launcher flottante** — incollalo verso la fine del body della pagina, così resta come punto di accesso flottante.
+- **Incorporamento inline** — incollalo esattamente dove vuoi che il widget appaia nella pagina.
+- **Launcher flottante** — incollalo verso la fine del corpo della pagina (`<body>`), così resta come punto di accesso flottante.
+
+L'interruttore **Pubblicato** attiva o disattiva il widget sul tuo sito. Disattivalo per nascondere il widget senza toccare il sito: lo snippet può restare dov'è, e il widget torna appena lo riattivi.
+
+<Tip>
+  Usa **Pubblicato** per mettere il widget offline per un po', per esempio durante una manutenzione, invece di togliere lo snippet dal sito.
+</Tip>
 
 ### Layout e comportamento
 
-Questo blocco decide come viene incorporato il widget e come interagiscono i visitatori.
+Questo blocco decide come viene incorporato il widget e come i visitatori interagiscono con esso.
 
 #### Modalità widget
 
-Come compare il widget sul tuo sito:
+Come appare il widget sul tuo sito:
 
-- **Incorporamento inline** — mostra il widget completo direttamente nella pagina, dove hai messo lo snippet.
-- **Launcher flottante** — mostra una piccola sfera che apre il widget in un pannello quando ci clicca.
+- **Incorporamento inline** — mostra il widget completo direttamente nella pagina, dove hai incollato lo snippet.
+- **Launcher flottante** — mostra una piccola sfera che, al clic, apre il widget in un pannello.
 
-#### Tema del widget incorporato
-
-Controlla l'aspetto generale:
-
-- **Segui il tema dell'app** — segue il tema usato dal tuo sito.
-- **Chiaro** — modalità chiara.
-- **Scuro** — modalità scura.
-
-Scegli l'opzione adatta al design del tuo sito. Leggibilità e coerenza con il brand vengono prima di tutto.
+<Frame caption="Schermata: con Launcher flottante, la scheda aggiunge Posizione del launcher e Variante widget. L'Anteprima mostra il launcher chiuso.">
+  <img
+    src="/images/website-widget-floating-launcher.png"
+    alt="La scheda Widget del sito web con Launcher flottante selezionato: Modalità conversazione, Posizione del launcher su In basso a destra, Trascrizione in tempo reale, Tema del widget incorporato e Variante widget con Tiny, Compatto e Completo. L'Anteprima mostra il launcher chiuso con Serve aiuto? e Avvia una chiamata." />
+</Frame>
 
 #### Modalità conversazione
 
 Come possono interagire i visitatori:
 
-- **Solo voce** — solo voce.
+- **Solo voce** — solo con la voce.
 - **Solo chat** — solo testo.
 - **Voce + Chat** — entrambi.
 
+#### Posizione del launcher
+
+Solo con **Launcher flottante**. Sceglie l'angolo della pagina in cui appare la sfera flottante: **In basso a destra**, **In basso a sinistra**, **In alto a destra** o **In alto a sinistra**.
+
+#### Trascrizione in tempo reale
+
+Mostra una trascrizione testuale dal vivo mentre la conversazione è in corso. È disponibile con **Solo voce** e **Voce + Chat**. Con **Solo chat** l'opzione non compare, perché la conversazione è già scritta.
+
 ### Aspetto
 
-Controlla lo stile visivo del dial e del launcher.
+Controlla il tema, i colori e il pulsante chiuso del widget.
 
-#### Variante widget e dimensione del dial
+#### Tema del widget incorporato
 
-- **Variante widget** — dimensione visiva di base del widget: **Tiny**, **Compatto** o **Completo**.
-- **Dimensione dial (px)** — il diametro minimo e massimo del dial, in pixel.
+Controlla se il widget pubblico ha un aspetto chiaro o scuro:
 
-#### Trascrizione in tempo reale e pulsante mute
+- **Segui il tema dell'app** — segue il tema usato dal tuo sito.
+- **Chiaro** — modalità chiara.
+- **Scuro** — modalità scura.
 
-- **Trascrizione in tempo reale** — mostra la trascrizione dal vivo mentre la conversazione è in corso.
-- **Mostra pulsante mute** — permette ai visitatori di disattivare e riattivare il microfono durante la chiamata.
+Scegli l'opzione più adatta al design del tuo sito. Leggibilità e coerenza con il brand vengono prima di tutto.
+
+#### Variante widget
+
+Solo con **Launcher flottante**. Imposta la dimensione del pulsante chiuso: **Tiny**, **Compatto** o **Completo**.
 
 #### Colori della sfera
 
-- **Colore primario della sfera** e **Colore secondario della sfera** — i colori principali del widget.
+La sfera è la palla animata al centro del widget. La definiscono tre colori:
 
-Usa i colori del tuo brand ma con un contrasto sufficiente per la leggibilità.
+- **Colore primario della sfera** e **Colore secondario della sfera** — i colori principali della sfera.
+- **Colore di profondità della sfera** — il colore più scuro, che dà alla sfera il senso di profondità.
 
-### Etichette del dial
+Scrivi un codice esadecimale (per esempio, `#06B6D4`) o fai clic sul pallino colorato per sceglierlo. Usa i colori del tuo brand, ma con un contrasto sufficiente per la leggibilità.
 
-Testi mostrati al centro del dial a seconda dello stato della conversazione:
+<Frame caption="Schermata: il blocco Aspetto con il tema e i tre colori della sfera, e le prime Etichette.">
+  <img
+    src="/images/website-widget-appearance.png"
+    alt="Il blocco Aspetto con Tema del widget incorporato su Segui il tema dell'app e i campi Colore primario, Colore secondario e Colore di profondità della sfera, seguito dal blocco Etichette con Titolo dell'intestazione e Sottotitolo dell'intestazione." />
+</Frame>
 
-- **Centro (inattivo)**
-- **Centro (connessione)**
-- **Centro (in ascolto)**
-- **Centro (interrompi)**
+### Etichette
+
+I testi del launcher e del pannello aperto. Se lasci un campo vuoto, si usa il testo predefinito, che compare in grigio nel campo.
+
+- **Launcher** (solo con **Launcher flottante**):
+  - **Etichetta principale** — il testo accanto al pulsante chiuso. Predefinito: *Serve aiuto?*
+  - **Avvia chiamata** — il testo del pulsante che apre il widget. Predefinito: *Avvia una chiamata*.
+- **Pannello aperto**:
+  - **Titolo dell'intestazione** — il titolo in alto nel widget aperto. Predefinito: *Parla con il nostro agente IA*.
+  - **Sottotitolo dell'intestazione** — la riga sotto il titolo. Predefinito: *Fai domande e ricevi risposte in tempo reale.*
+
+### Etichette dell'orb
+
+Il testo mostrato al centro della sfera, a seconda dello stato della conversazione:
+
+- **Centro (inattivo)** — prima che inizi la conversazione. Predefinito: *Chiama l'agente IA*.
+- **Centro (connessione)** — mentre la chiamata si collega. Predefinito: *Connessione…*
+- **Centro (in ascolto)** — mentre l'agente ascolta. Predefinito: *In ascolto*.
+- **Centro (parlando)** — mentre l'agente parla. Predefinito: *Parla per interrompere*.
 
 ### Etichette di testo
 
-Sovrascrivi alcuni testi importanti dell'interfaccia. Quelli che lasci vuoti usano il valore predefinito:
+I testi nella casella dei messaggi e sulle etichette della conversazione (i brevi avvisi che segnano quando inizia e finisce una chiamata o una chat). Se lasci un campo vuoto, si usa il testo predefinito:
 
-- **Etichetta principale**
-- **Avvia chiamata**
-- **Avvia chat**
-- **Termina chiamata**
-- **Stato chat**
-- **Placeholder (nuova conversazione)**
+- **Placeholder input (inattivo)** e **Placeholder input (attivo)** — il suggerimento nella casella dei messaggi prima e durante una chat.
+- **Chiamata avviata** e **Chat avviata**
+- **Chiamata terminata** e **Chat terminata**
+- **Copia ID conversazione**
+- **Avvia una nuova chiamata**
 
-### Etichette UI chat
-
-Testi specifici dell'esperienza di chat:
-
-- **Etichetta tab voce**
-- **Etichetta tab chat**
-- **Titolo chat**
-- **Sottotitolo chat**
-- **Stato chat (inattivo)**, **Stato chat (connessione)** e **Stato chat (live)**
-- **Etichetta avvio chat**
-- **Etichetta fine chat**
-- **Stato vuoto chat**
-- **Placeholder input (inattivo)** e **Placeholder input (attivo)**
-- **Etichetta invio**
+<Frame caption="Schermata: i blocchi Etichette dell'orb ed Etichette di testo. I campi vuoti usano il testo predefinito, in grigio.">
+  <img
+    src="/images/website-widget-labels.png"
+    alt="Il blocco Etichette dell'orb con Centro (connessione), Centro (in ascolto) e Centro (parlando), e il blocco Etichette di testo con Placeholder input (inattivo), Placeholder input (attivo), Chiamata avviata, Chat avviata, Chiamata terminata, Chat terminata e Copia ID conversazione." />
+</Frame>
 
 ### Adattare il widget al tuo caso
 
 Alcune combinazioni che funzionano bene:
 
-- **Landing page commerciale** — Incorporamento inline, tema chiaro o allineato, **Voce + Chat**, variante **Completo** e testi orientati al contatto.
-- **Supporto sul sito** — Launcher flottante, **Solo chat** o **Voce + Chat**, variante **Compatto** e testi orientati all'aiuto.
-- **Esperienza basata sulla voce** — Incorporamento inline, **Solo voce**, dial più grande, pulsante mute visibile ed etichette brevi e dirette.
+- **Landing page commerciale** — **Incorporamento inline**, tema chiaro o allineato, **Voce + Chat**, e un titolo e un sottotitolo che invitino a fare domande.
+- **Supporto sul sito** — **Launcher flottante** in un angolo in basso, **Solo chat** o **Voce + Chat**, variante **Compatto** e testi orientati all'aiuto, come *Serve aiuto?*
+- **Esperienza basata sulla voce** — **Incorporamento inline**, **Solo voce**, **Trascrizione in tempo reale** attiva ed etichette dell'orb brevi e dirette.
 
 <Tip>
-  Prima di pubblicare, controlla sempre il widget sulla pagina reale. Dimensioni, colori ed etichette spesso sembrano diversi fuori dall'editor.
+  Controlla l'**Anteprima** prima di salvare e poi il widget sulla pagina reale. Dimensioni, colori ed etichette spesso sembrano diversi fuori dall'editor.
 </Tip>
 
 ## Sezione 9: Avanzate
