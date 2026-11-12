@@ -742,22 +742,30 @@ Sie können konfigurieren:
 
 Mit dem Tab **Website-Widget** veröffentlichen Sie Ihren Agenten auf einer Webseite. Besucher können per Sprache, per Chat oder auf beide Arten mit ihm sprechen — direkt auf Ihrer Website, einer Landingpage, Ihrer Support-Seite oder Ihrem Kundenportal.
 
-Dieser Tab vereint zwei Dinge: den technischen Einbettungscode und die visuelle und textliche Anpassung des Erlebnisses.
+Links richten Sie das Widget ein: den Einbettungscode, sein Verhalten, sein Aussehen und seine Texte. Rechts zeigt die **Vorschau** das Widget live, sodass Sie jede Änderung sofort sehen.
 
-<Frame caption="Screenshot: der Tab Website-Widget. Kopieren Sie den Code und passen Sie Aussehen und Verhalten des Widgets an.">
+<Frame caption="Screenshot: der Tab Website-Widget. Kopieren Sie den Code, richten Sie das Widget ein und prüfen Sie rechts die Live-Vorschau.">
   <img
     src="/images/agentesia7.png"
-    alt="Der Tab Website-Widget mit dem Einbettungscode, der Schaltfläche Kopieren und den Optionen unter Layout & Verhalten: Widget-Modus, Theme und Konversationsmodus." />
+    alt="Der Tab Website-Widget mit dem Einbettungscode, der Schaltfläche Kopieren und dem Schalter Veröffentlicht, den Optionen unter Layout & Verhalten (Widget-Modus, Konversationsmodus, Live-Transkript) und rechts der Live-Vorschau." />
 </Frame>
+
+Änderungen gelten erst, wenn Sie sie speichern. Sobald Sie etwas ändern, erscheint unten eine Leiste: Klicken Sie auf **Speichern**, um die Änderungen zu übernehmen, oder auf **Leeren**, um sie zu verwerfen.
 
 ### Einbettungscode
 
-Der **Einbettungscode** ist das Codefragment, das Sie in das HTML Ihrer Website kopieren, damit das Widget erscheint. Er enthält bereits die ID Ihres Agenten. Die Schaltfläche **Kopieren** kopiert ihn, damit Sie ihn direkt einfügen können.
+Der **Einbettungscode** ist das Codefragment, das Sie in das HTML Ihrer Website kopieren, damit das Widget erscheint. Er enthält bereits die ID Ihres Agenten. Mit der Schaltfläche **Kopieren** kopieren Sie ihn und können ihn direkt einfügen.
 
 Wo Sie den Code einfügen, hängt vom Widget-Modus ab:
 
 - **Inline-Einbettung** — fügen Sie ihn genau dort ein, wo das Widget auf der Seite erscheinen soll.
-- **Schwebender Launcher** — fügen Sie ihn gegen Ende des Body der Seite ein, damit er als schwebender Einstiegspunkt dient.
+- **Schwebender Launcher** — fügen Sie ihn gegen Ende des Seiteninhalts (`<body>`) ein, damit er als schwebender Einstiegspunkt erscheint.
+
+Mit dem Schalter **Veröffentlicht** schalten Sie das Widget auf Ihrer Website ein oder aus. Schalten Sie ihn aus, um das Widget auszublenden, ohne Ihre Website anzufassen: Der Code kann bleiben, wo er ist, und das Widget kommt zurück, sobald Sie ihn wieder einschalten.
+
+<Tip>
+  Nutzen Sie **Veröffentlicht**, um das Widget eine Zeit lang offline zu nehmen, zum Beispiel während einer Wartung, statt den Code von Ihrer Website zu entfernen.
+</Tip>
 
 ### Layout & Verhalten
 
@@ -767,18 +775,14 @@ Dieser Block legt fest, wie das Widget eingebettet wird und wie Besucher damit i
 
 Wie das Widget auf Ihrer Website erscheint:
 
-- **Inline-Einbettung** — zeigt das vollständige Widget direkt auf der Seite, dort, wo Sie den Code platziert haben.
-- **Schwebender Launcher** — zeigt eine kleine Kugel, die das Widget beim Anklicken in einem Bereich öffnet.
+- **Inline-Einbettung** — zeigt das vollständige Widget direkt in der Seite, dort, wo Sie den Code eingefügt haben.
+- **Schwebender Launcher** — zeigt eine kleine Kugel, die das Widget per Klick in einem Panel öffnet.
 
-#### Widget-Theme
-
-**Widget-Theme einbetten** steuert das allgemeine Erscheinungsbild:
-
-- **App-Theme übernehmen** — folgt dem Theme Ihrer Website.
-- **Hell** — heller Modus.
-- **Dunkel** — dunkler Modus.
-
-Wählen Sie die Option, die zum Design Ihrer Website passt. Lesbarkeit und Markenkonsistenz haben Vorrang.
+<Frame caption="Screenshot: Mit Schwebender Launcher kommen Launcher-Position und Widget-Variante hinzu. Die Vorschau zeigt den geschlossenen Launcher.">
+  <img
+    src="/images/website-widget-floating-launcher.png"
+    alt="Der Tab Website-Widget mit ausgewähltem Schwebender Launcher: Konversationsmodus, Launcher-Position auf Unten rechts, Live-Transkript, Widget-Theme einbetten und Widget-Variante mit Sehr klein, Kompakt und Voll. Die Vorschau zeigt den geschlossenen Launcher mit Brauchen Sie Hilfe? und Anruf starten." />
+</Frame>
 
 #### Konversationsmodus
 
@@ -788,71 +792,93 @@ Wie Besucher interagieren können:
 - **Nur Chat** — nur per Text.
 - **Sprache + Chat** — beides.
 
+#### Launcher-Position
+
+Nur mit **Schwebender Launcher**. Legt fest, in welcher Ecke der Seite die schwebende Kugel erscheint: **Unten rechts**, **Unten links**, **Oben rechts** oder **Oben links**.
+
+#### Live-Transkript
+
+Zeigt während des Gesprächs ein Live-Texttranskript an. Verfügbar mit **Nur Sprache** und **Sprache + Chat**. Mit **Nur Chat** erscheint die Option nicht, weil das Gespräch ohnehin schriftlich ist.
+
 ### Erscheinungsbild
 
-Steuert den visuellen Stil des Dials und des Launchers.
+Steuert das Design, die Farben und den geschlossenen Button des Widgets.
 
-#### Widget-Variante und Dial-Größe
+#### Widget-Theme einbetten
 
-- **Widget-Variante** — die grundlegende Größe des Widgets: **Sehr klein**, **Kompakt** oder **Voll**.
-- **Dial-Größe (px)** — der minimale und maximale Durchmesser des Dials in Pixeln.
+Legt fest, ob das öffentliche Widget hell oder dunkel aussieht:
 
-#### Live-Transkript und Stummschalt-Button
+- **App-Theme übernehmen** — folgt dem Theme, das Ihre Website verwendet.
+- **Hell** — heller Modus.
+- **Dunkel** — dunkler Modus.
 
-- **Live-Transkript** — zeigt während des Gesprächs ein Live-Transkript an.
-- **Stummschalt-Button anzeigen** — ermöglicht Besuchern, ihr Mikrofon während des Anrufs stumm- und wieder einzuschalten.
+Wählen Sie die Option, die zum Design Ihrer Website passt. Lesbarkeit und ein einheitlicher Markenauftritt haben Vorrang.
+
+#### Widget-Variante
+
+Nur mit **Schwebender Launcher**. Legt die Größe des geschlossenen Buttons fest: **Sehr klein**, **Kompakt** oder **Voll**.
 
 #### Kugelfarben
 
-- **Primärfarbe der Kugel** und **Sekundärfarbe der Kugel** — die Hauptfarben des Widgets.
+Die Kugel ist die animierte Sphäre in der Mitte des Widgets. Drei Farben bestimmen sie:
 
-Verwenden Sie Ihre Markenfarben, achten Sie aber auf ausreichenden Kontrast für die Lesbarkeit.
+- **Primärfarbe der Kugel** und **Sekundärfarbe der Kugel** — die Hauptfarben der Kugel.
+- **Tiefenfarbe der Kugel** — die dunklere Farbe, die der Kugel Tiefe verleiht.
 
-### Dial-Beschriftungen
+Geben Sie einen Hex-Farbcode ein (zum Beispiel `#06B6D4`) oder klicken Sie auf den Farbpunkt, um eine Farbe zu wählen. Verwenden Sie Ihre Markenfarben, aber mit genug Kontrast für gute Lesbarkeit.
 
-Texte in der Mitte des Dials, je nach Gesprächsstatus:
+<Frame caption="Screenshot: der Block Erscheinungsbild mit dem Theme und den drei Kugelfarben, darunter die ersten Beschriftungen.">
+  <img
+    src="/images/website-widget-appearance.png"
+    alt="Der Block Erscheinungsbild mit Widget-Theme einbetten auf App-Theme übernehmen und den Feldern Primärfarbe, Sekundärfarbe und Tiefenfarbe der Kugel, darunter der Block Beschriftungen mit Titel in der Kopfzeile und Untertitel in der Kopfzeile." />
+</Frame>
 
-- **Mitte (inaktiv)**
-- **Mitte (verbindet)**
-- **Mitte (hört zu)**
-- **Mitte (unterbrechen)**
+### Beschriftungen
+
+Die Texte auf dem Launcher und im geöffneten Panel. Lassen Sie ein Feld leer, wird der Standardtext verwendet, der grau im Feld steht.
+
+- **Launcher** (nur mit **Schwebender Launcher**):
+  - **Hauptlabel** — der Text neben dem geschlossenen Button. Standard: *Brauchen Sie Hilfe?*
+  - **Anruf starten** — der Text des Buttons, der das Widget öffnet. Standard: *Anruf starten*.
+- **Geöffnetes Panel**:
+  - **Titel in der Kopfzeile** — der Titel oben im geöffneten Widget. Standard: *Sprechen Sie mit unserem KI-Agenten*.
+  - **Untertitel in der Kopfzeile** — die Zeile unter dem Titel. Standard: *Stellen Sie Fragen und erhalten Sie Antworten in Echtzeit.*
+
+### Orb-Beschriftungen
+
+Der Text in der Mitte der Kugel, je nach Gesprächsstatus:
+
+- **Mitte (inaktiv)** — bevor das Gespräch beginnt. Standard: *KI-Agent anrufen*.
+- **Mitte (verbindet)** — während der Anruf verbunden wird. Standard: *Verbindung…*
+- **Mitte (hört zu)** — während der Agent zuhört. Standard: *Hört zu*.
+- **Mitte (spricht)** — während der Agent spricht. Standard: *Sprechen zum Unterbrechen*.
 
 ### Textbeschriftungen
 
-Überschreiben Sie einige wichtige Texte der Oberfläche. Felder, die Sie leer lassen, verwenden den Standardwert:
+Hinweise im Nachrichtenfeld und Texte auf den Gesprächs-Chips (die kurzen Hinweise, die anzeigen, wann ein Anruf oder Chat beginnt und endet). Lassen Sie ein Feld leer, wird der Standardtext verwendet:
 
-- **Hauptlabel**
-- **Anruf starten**
-- **Chat starten**
-- **Anruf beenden**
-- **Chat-Status**
-- **Platzhalter (neue Unterhaltung)**
+- **Eingabe-Platzhalter (inaktiv)** und **Eingabe-Platzhalter (aktiv)** — der Hinweis im Nachrichtenfeld vor und während eines Chats.
+- **Anruf gestartet** und **Chat gestartet**
+- **Anruf beendet** und **Chat beendet**
+- **Unterhaltungs-ID kopieren**
+- **Neuen Anruf starten**
 
-### Chat-UI-Beschriftungen
-
-Texte speziell für das Chat-Erlebnis:
-
-- **Voice-Tab-Label**
-- **Chat-Tab-Label**
-- **Chat-Titel**
-- **Chat-Untertitel**
-- **Chat-Status (inaktiv)**, **Chat-Status (verbindet)** und **Chat-Status (live)**
-- **Chat-Start-Label**
-- **Chat-Ende-Label**
-- **Chat-Leerzustand**
-- **Eingabe-Platzhalter (inaktiv)** und **Eingabe-Platzhalter (aktiv)**
-- **Senden-Label**
+<Frame caption="Screenshot: die Blöcke Orb-Beschriftungen und Textbeschriftungen. Leere Felder verwenden den grauen Standardtext.">
+  <img
+    src="/images/website-widget-labels.png"
+    alt="Der Block Orb-Beschriftungen mit Mitte (verbindet), Mitte (hört zu) und Mitte (spricht) und der Block Textbeschriftungen mit Eingabe-Platzhalter (inaktiv), Eingabe-Platzhalter (aktiv), Anruf gestartet, Chat gestartet, Anruf beendet, Chat beendet und Unterhaltungs-ID kopieren." />
+</Frame>
 
 ### Das Widget an Ihren Anwendungsfall anpassen
 
 Einige Kombinationen, die gut funktionieren:
 
-- **Kommerzielle Landingpage** — Inline-Einbettung, helles oder übernommenes Theme, **Sprache + Chat**, Variante **Voll** und kontaktorientierte Texte.
-- **Website-Support** — Schwebender Launcher, **Nur Chat** oder **Sprache + Chat**, Variante **Kompakt** und hilfeorientierte Texte.
-- **Sprachorientiertes Erlebnis** — Inline-Einbettung, **Nur Sprache**, größeres Dial, sichtbarer Stummschalt-Button und kurze, direkte Beschriftungen.
+- **Kommerzielle Landingpage** — **Inline-Einbettung**, helles oder übernommenes Theme, **Sprache + Chat** und ein Titel und Untertitel, die zum Fragen einladen.
+- **Support auf der Website** — **Schwebender Launcher** in einer unteren Ecke, **Nur Chat** oder **Sprache + Chat**, Variante **Kompakt** und hilfeorientierte Texte wie *Brauchen Sie Hilfe?*
+- **Sprachorientiertes Erlebnis** — **Inline-Einbettung**, **Nur Sprache**, **Live-Transkript** an und kurze, direkte Orb-Beschriftungen.
 
 <Tip>
-  Prüfen Sie das Widget vor der Veröffentlichung immer auf der echten Seite. Größen, Farben und Beschriftungen wirken außerhalb des Editors oft anders.
+  Prüfen Sie vor dem Speichern die **Vorschau** und danach das Widget auf der echten Seite. Größen, Farben und Beschriftungen wirken außerhalb des Editors oft anders.
 </Tip>
 
 ## Abschnitt 9: Erweitert

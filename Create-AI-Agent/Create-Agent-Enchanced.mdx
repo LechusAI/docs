@@ -742,13 +742,15 @@ You can configure:
 
 The **Website widget** tab lets you publish your agent on a web page. Visitors can talk to it by voice, by chat, or both, directly from your site, landing page, support page, or client portal.
 
-This tab combines two things: the technical embed snippet, and the visual and textual customization of the experience.
+On the left you set up the widget: the embed snippet, how it behaves, how it looks, and its texts. On the right, the **Preview** shows the widget live, so you see every change as you make it.
 
-<Frame caption="Screenshot: the Website widget tab. Copy the snippet and customize how the widget looks and behaves.">
+<Frame caption="Screenshot: the Website widget tab. Copy the snippet, set up the widget, and check the live Preview on the right.">
   <img
     src="/images/agentesia7.png"
-    alt="The Website widget tab showing the Embed snippet with the Copy button and the Layout & behavior options: Widget mode, Embed widget theme, and Conversation mode." />
+    alt="The Website widget tab showing the Embed snippet with the Copy button and the Published switch, the Layout & behavior options (Widget mode, Conversation mode, Realtime transcript), and the live Preview on the right." />
 </Frame>
+
+Changes aren't applied until you save them. When you change something, a bar appears at the bottom: click **Save** to keep the changes, or **Clear** to discard them.
 
 ### Embed snippet
 
@@ -757,7 +759,13 @@ The **Embed snippet** is the code fragment you copy into your site's HTML to mak
 Where to paste the snippet depends on the widget mode:
 
 - **Inline embed** — paste it exactly where you want the widget to render on the page.
-- **Floating launcher** — paste it near the end of the page body so it sits as a floating entry point.
+- **Floating launcher** — paste it near the end of the page body (`<body>`) so it sits as a floating entry point.
+
+The **Published** switch turns the widget on or off on your site. Turn it off to hide the widget without touching your website: the snippet can stay where it is, and the widget comes back when you turn it on again.
+
+<Tip>
+  Use **Published** to take the widget offline for a while, for example during maintenance, instead of removing the snippet from your site.
+</Tip>
 
 ### Layout & behavior
 
@@ -770,15 +778,11 @@ How the widget appears on your site:
 - **Inline embed** — renders the full widget directly inside the page, where you placed the snippet.
 - **Floating launcher** — shows a small orb that opens the widget in a sheet when clicked.
 
-#### Embed widget theme
-
-Controls the overall look:
-
-- **Match app theme** — follows whatever theme your site uses.
-- **Light** — light mode.
-- **Dark** — dark mode.
-
-Pick the option that fits your site's design. Readability and brand consistency come first.
+<Frame caption="Screenshot: with Floating launcher, the tab adds Launcher position and Widget variant. The Preview shows the closed launcher.">
+  <img
+    src="/images/website-widget-floating-launcher.png"
+    alt="The Website widget tab with Floating launcher selected, showing Conversation mode, Launcher position set to Bottom right, Realtime transcript, Embed widget theme and Widget variant with Tiny, Compact and Full. The Preview shows the closed launcher with Need help? and Start a call." />
+</Frame>
 
 #### Conversation mode
 
@@ -788,71 +792,93 @@ How visitors can interact:
 - **Chat only** — text only.
 - **Voice + Chat** — both.
 
+#### Launcher position
+
+Only with **Floating launcher**. Chooses the corner of the page where the floating orb appears: **Bottom right**, **Bottom left**, **Top right**, or **Top left**.
+
+#### Realtime transcript
+
+Shows a live text transcript while the conversation is running. It's available with **Voice only** and **Voice + Chat**. With **Chat only** the option doesn't appear, because the conversation is already written.
+
 ### Appearance
 
-Controls the visual style of the dial and the launcher.
+Controls the theme, the colors, and the closed button of the widget.
 
-#### Widget variant and dial size
+#### Embed widget theme
 
-- **Widget variant** — base visual size of the widget: **Tiny**, **Compact**, or **Full**.
-- **Dial size (px)** — the minimum and maximum diameter of the dial, in pixels.
+Controls whether the public widget uses a light or dark look:
 
-#### Realtime transcript and mute button
+- **Match app theme** — follows whatever theme your site uses.
+- **Light** — light mode.
+- **Dark** — dark mode.
 
-- **Realtime transcript** — shows a live text transcript while the conversation is happening.
-- **Show mute button** — lets visitors mute and unmute their microphone during the call.
+Pick the option that fits your site's design. Readability and brand consistency come first.
+
+#### Widget variant
+
+Only with **Floating launcher**. Sets the size of the closed button: **Tiny**, **Compact**, or **Full**.
 
 #### Orb colors
 
-- **Orb primary color** and **Orb secondary color** — the main colors of the widget.
+The orb is the animated sphere in the center of the widget. Three colors define it:
 
-Use brand colors but keep enough contrast for readability.
+- **Orb primary color** and **Orb secondary color** — the main colors of the orb.
+- **Orb depth color** — the darker color that gives the orb its sense of depth.
 
-### Dial labels
+Type a hex code (for example, `#06B6D4`) or click the color dot to pick one. Use brand colors but keep enough contrast for readability.
 
-Texts shown in the center of the dial depending on the conversation state:
+<Frame caption="Screenshot: the Appearance block with the theme and the three orb colors, and the first Labels.">
+  <img
+    src="/images/website-widget-appearance.png"
+    alt="The Appearance block with Embed widget theme set to Match app theme and the Orb primary color, Orb secondary color and Orb depth color fields, followed by the Labels block with Header title and Header subtitle." />
+</Frame>
 
-- **Center (idle)**
-- **Center (connecting)**
-- **Center (listening)**
-- **Center (interrupt)**
+### Labels
+
+The texts on the launcher and in the open panel. Any field you leave empty uses the default text, shown in grey inside the field.
+
+- **Launcher** (only with **Floating launcher**):
+  - **Main label** — the text next to the closed button. By default, *Need help?*
+  - **Start call** — the text of the button that opens the widget. By default, *Start a call*.
+- **Open panel**:
+  - **Header title** — the title at the top of the open widget. By default, *Talk to our AI agent*.
+  - **Header subtitle** — the line below the title. By default, *Ask questions, get answers in real time.*
+
+### Orb labels
+
+The text shown in the center of the orb, depending on the conversation state:
+
+- **Center (idle)** — before the conversation starts. By default, *Call AI agent*.
+- **Center (connecting)** — while the call connects. By default, *Connecting…*
+- **Center (listening)** — while the agent listens. By default, *Listening*.
+- **Center (speaking)** — while the agent speaks. By default, *Talk to interrupt*.
 
 ### Text labels
 
-Override some important interface texts. Any you leave empty use the default:
+Hints in the message box, and the text on the conversation chips (the short notices that mark when a call or chat starts and ends). Any field you leave empty uses the default:
 
-- **Main label**
-- **Start call**
-- **Start chat**
-- **End call**
-- **Chatting status**
-- **Placeholder (new conversation)**
+- **Chat input placeholder (idle)** and **Chat input placeholder (active)** — the hint in the message box before and during a chat.
+- **Call started** and **Chat started**
+- **Call ended** and **Chat ended**
+- **Copy conversation ID**
+- **Start a new call**
 
-### Chat UI labels
-
-Texts specific to the chat experience:
-
-- **Voice tab label**
-- **Chat tab label**
-- **Chat title**
-- **Chat subtitle**
-- **Chat status (idle)**, **Chat status (connecting)**, and **Chat status (live)**
-- **Chat start label**
-- **Chat end label**
-- **Chat empty state**
-- **Input placeholder (idle)** and **Input placeholder (active)**
-- **Send label**
+<Frame caption="Screenshot: the Orb labels and Text labels blocks. Empty fields use the default text shown in grey.">
+  <img
+    src="/images/website-widget-labels.png"
+    alt="The Orb labels block with Center (connecting), Center (listening) and Center (speaking), and the Text labels block with Chat input placeholder (idle), Chat input placeholder (active), Call started, Chat started, Call ended, Chat ended and Copy conversation ID." />
+</Frame>
 
 ### Adapting the widget to your use case
 
 A few combinations that work well:
 
-- **Commercial landing page** — Inline embed, light or matched theme, **Voice + Chat**, **Full** variant, contact-oriented copy.
-- **Website support** — Floating launcher, **Chat only** or **Voice + Chat**, **Compact** variant, help-oriented text.
-- **Voice-first experience** — Inline embed, **Voice only**, larger dial, visible mute button, short and direct labels.
+- **Commercial landing page** — **Inline embed**, light or matched theme, **Voice + Chat**, and a header title and subtitle that invite visitors to ask.
+- **Website support** — **Floating launcher** in a bottom corner, **Chat only** or **Voice + Chat**, **Compact** variant, and help-oriented texts such as *Need help?*
+- **Voice-first experience** — **Inline embed**, **Voice only**, **Realtime transcript** on, and short, direct orb labels.
 
 <Tip>
-  Always preview the widget on the real page before publishing. Sizes, colors, and labels often feel different outside the editor.
+  Check the **Preview** before you save, and then the widget on the real page. Sizes, colors, and labels often feel different outside the editor.
 </Tip>
 
 ## Section 9: Advanced

@@ -742,22 +742,30 @@ Tu peux configurer :
 
 L'onglet **Widget de site web** te permet de publier ton agent sur une page web. Les visiteurs peuvent lui parler par la voix, par chat ou les deux, directement depuis ton site, une landing page, ta page de support ou ton portail client.
 
-Cet onglet réunit deux choses : le code technique d'intégration et la personnalisation visuelle et textuelle de l'expérience.
+À gauche, tu configures le widget : le code d'intégration, son comportement, son apparence et ses textes. À droite, l'**Aperçu** affiche le widget en direct, pour voir chaque modification au moment où tu la fais.
 
-<Frame caption="Capture : l'onglet Widget de site web. Copie le code et personnalise l'apparence et le comportement du widget.">
+<Frame caption="Capture : l'onglet Widget de site web. Copie le code, configure le widget et vérifie l'Aperçu en direct à droite.">
   <img
     src="/images/agentesia7.png"
-    alt="L'onglet Widget de site web avec le code d'intégration, le bouton Copier et les options Mise en page et comportement : mode du widget, thème et mode de conversation." />
+    alt="L'onglet Widget de site web avec le code d'intégration, le bouton Copier et l'interrupteur Publié, les options Mise en page et comportement (mode du widget, mode de conversation, transcription en temps réel) et l'Aperçu en direct à droite." />
 </Frame>
+
+Les modifications ne s'appliquent pas tant que tu ne les enregistres pas. Quand tu modifies quelque chose, une barre apparaît en bas : clique sur **Sauvegarder** pour garder les modifications, ou sur **Effacer** pour les annuler.
 
 ### Code d'intégration
 
-Le **Code d'intégration** est le fragment de code que tu copies dans le HTML de ton site pour faire apparaître le widget. Il contient déjà l'ID de ton agent. Le bouton **Copier** le copie pour que tu puisses le coller directement.
+Le **Code d'intégration** est le fragment de code à copier dans le HTML de ton site pour faire apparaître le widget. Il contient déjà l'ID de ton agent. Le bouton **Copier** le copie pour que tu puisses le coller directement.
 
-L'endroit où le coller dépend du mode du widget :
+L'endroit où coller le code dépend du mode du widget :
 
-- **Intégration en ligne** — colle-le exactement là où tu veux que le widget s'affiche dans la page.
-- **Lanceur flottant** — colle-le vers la fin du body de la page pour qu'il serve de point d'entrée flottant.
+- **Intégration en ligne** — colle-le exactement là où tu veux que le widget s'affiche sur la page.
+- **Lanceur flottant** — colle-le vers la fin du corps de la page (`<body>`) pour qu'il serve de point d'accès flottant.
+
+L'interrupteur **Publié** active ou désactive le widget sur ton site. Désactive-le pour masquer le widget sans toucher à ton site : le code peut rester en place, et le widget revient dès que tu le réactives.
+
+<Tip>
+  Utilise **Publié** pour mettre le widget hors ligne pendant un moment, par exemple pendant une maintenance, au lieu de retirer le code de ton site.
+</Tip>
 
 ### Mise en page et comportement
 
@@ -770,15 +778,11 @@ Comment le widget apparaît sur ton site :
 - **Intégration en ligne** — affiche le widget complet directement dans la page, là où tu as placé le code.
 - **Lanceur flottant** — affiche une petite sphère qui ouvre le widget dans un panneau au clic.
 
-#### Thème du widget intégré
-
-Contrôle l'apparence générale :
-
-- **Suivre le thème de l'application** — suit le thème utilisé par ton site.
-- **Clair** — mode clair.
-- **Sombre** — mode sombre.
-
-Choisis l'option qui correspond au design de ton site. La lisibilité et la cohérence avec ta marque passent en premier.
+<Frame caption="Capture : avec Lanceur flottant, l'onglet ajoute Position du lanceur et Variante du widget. L'Aperçu montre le lanceur fermé.">
+  <img
+    src="/images/website-widget-floating-launcher.png"
+    alt="L'onglet Widget de site web avec Lanceur flottant sélectionné : Mode de conversation, Position du lanceur sur En bas à droite, Transcription en temps réel, Thème du widget intégré et Variante du widget avec Minuscule, Compact et Complet. L'Aperçu montre le lanceur fermé avec Besoin d'aide ? et Démarrer un appel." />
+</Frame>
 
 #### Mode de conversation
 
@@ -788,71 +792,93 @@ Comment les visiteurs peuvent interagir :
 - **Chat uniquement** — uniquement par écrit.
 - **Voix + Chat** — les deux.
 
+#### Position du lanceur
+
+Uniquement avec **Lanceur flottant**. Choisit le coin de la page où apparaît la sphère flottante : **En bas à droite**, **En bas à gauche**, **En haut à droite** ou **En haut à gauche**.
+
+#### Transcription en temps réel
+
+Affiche une transcription texte en direct pendant la conversation. Elle est disponible avec **Voix uniquement** et **Voix + Chat**. Avec **Chat uniquement**, l'option n'apparaît pas, car la conversation est déjà écrite.
+
 ### Apparence
 
-Contrôle le style visuel du cadran et du lanceur.
+Contrôle le thème, les couleurs et le bouton fermé du widget.
 
-#### Variante du widget et taille du cadran
+#### Thème du widget intégré
 
-- **Variante du widget** — taille visuelle de base du widget : **Minuscule**, **Compact** ou **Complet**.
-- **Taille du cadran (px)** — le diamètre minimal et maximal du cadran, en pixels.
+Contrôle si le widget public a un aspect clair ou sombre :
 
-#### Transcription en temps réel et bouton muet
+- **Suivre le thème de l'application** — suit le thème utilisé par ton site.
+- **Clair** — mode clair.
+- **Sombre** — mode sombre.
 
-- **Transcription en temps réel** — affiche la transcription en direct pendant la conversation.
-- **Afficher le bouton Muet** — permet aux visiteurs de couper et réactiver leur micro pendant l'appel.
+Choisis l'option qui correspond au design de ton site. La lisibilité et la cohérence avec ta marque passent en premier.
+
+#### Variante du widget
+
+Uniquement avec **Lanceur flottant**. Définit la taille du bouton fermé : **Minuscule**, **Compact** ou **Complet**.
 
 #### Couleurs de la sphère
 
-- **Couleur principale de la sphère** et **Couleur secondaire de la sphère** — les couleurs principales du widget.
+La sphère est la boule animée au centre du widget. Trois couleurs la définissent :
 
-Utilise les couleurs de ta marque, mais garde assez de contraste pour la lisibilité.
+- **Couleur principale de la sphère** et **Couleur secondaire de la sphère** — les couleurs principales de la sphère.
+- **Couleur de profondeur de la sphère** — la couleur plus sombre qui donne à la sphère son effet de profondeur.
 
-### Libellés du cadran
+Saisis un code hexadécimal (par exemple, `#06B6D4`) ou clique sur la pastille de couleur pour en choisir une. Utilise les couleurs de ta marque, mais garde assez de contraste pour la lisibilité.
 
-Textes affichés au centre du cadran selon l'état de la conversation :
+<Frame caption="Capture : le bloc Apparence avec le thème et les trois couleurs de la sphère, puis les premiers Libellés.">
+  <img
+    src="/images/website-widget-appearance.png"
+    alt="Le bloc Apparence avec Thème du widget intégré sur Suivre le thème de l'application et les champs Couleur principale, Couleur secondaire et Couleur de profondeur de la sphère, suivi du bloc Libellés avec Titre de l'en-tête et Sous-titre de l'en-tête." />
+</Frame>
 
-- **Centre (inactif)**
-- **Centre (connexion)**
-- **Centre (écoute)**
-- **Centre (interrompre)**
+### Libellés
+
+Les textes du lanceur et du panneau ouvert. Si tu laisses un champ vide, le texte par défaut est utilisé ; il apparaît en gris dans le champ.
+
+- **Lanceur** (uniquement avec **Lanceur flottant**) :
+  - **Libellé principal** — le texte à côté du bouton fermé. Par défaut, *Besoin d'aide ?*
+  - **Démarrer un appel** — le texte du bouton qui ouvre le widget. Par défaut, *Démarrer un appel*.
+- **Panneau ouvert** :
+  - **Titre de l'en-tête** — le titre en haut du widget ouvert. Par défaut, *Parlez à notre agent IA*.
+  - **Sous-titre de l'en-tête** — la ligne sous le titre. Par défaut, *Posez des questions et obtenez des réponses en temps réel.*
+
+### Libellés de l'orbe
+
+Le texte affiché au centre de la sphère, selon l'état de la conversation :
+
+- **Centre (inactif)** — avant le début de la conversation. Par défaut, *Appeler l'agent IA*.
+- **Centre (connexion)** — pendant la connexion de l'appel. Par défaut, *Connexion…*
+- **Centre (écoute)** — pendant que l'agent écoute. Par défaut, *Écoute*.
+- **Centre (parole)** — pendant que l'agent parle. Par défaut, *Parlez pour interrompre*.
 
 ### Libellés texte
 
-Remplace quelques textes importants de l'interface. Ceux que tu laisses vides utilisent la valeur par défaut :
+Les textes du champ de message et des pastilles de conversation (les courts avis qui indiquent quand un appel ou un chat commence et se termine). Si tu laisses un champ vide, le texte par défaut est utilisé :
 
-- **Libellé principal**
-- **Démarrer un appel**
-- **Démarrer un chat**
-- **Terminer l'appel**
-- **Statut du chat**
-- **Indication (nouvelle conversation)**
+- **Indication de saisie (inactif)** et **Indication de saisie (actif)** — l'indication du champ de message avant et pendant un chat.
+- **Appel commencé** et **Chat commencé**
+- **Appel terminé** et **Chat terminé**
+- **Copier l'ID de conversation**
+- **Démarrer un nouvel appel**
 
-### Libellés de l'interface de chat
-
-Textes propres à l'expérience de chat :
-
-- **Libellé de l'onglet Voix**
-- **Libellé de l'onglet Chat**
-- **Titre du chat**
-- **Sous-titre du chat**
-- **Statut du chat (inactif)**, **Statut du chat (connexion)** et **Statut du chat (en direct)**
-- **Libellé de démarrage du chat**
-- **Libellé de fin du chat**
-- **État vide du chat**
-- **Indication de saisie (inactif)** et **Indication de saisie (actif)**
-- **Libellé d'envoi**
+<Frame caption="Capture : les blocs Libellés de l'orbe et Libellés texte. Les champs vides utilisent le texte par défaut, en gris.">
+  <img
+    src="/images/website-widget-labels.png"
+    alt="Le bloc Libellés de l'orbe avec Centre (connexion), Centre (écoute) et Centre (parole), et le bloc Libellés texte avec Indication de saisie (inactif), Indication de saisie (actif), Appel commencé, Chat commencé, Appel terminé, Chat terminé et Copier l'ID de conversation." />
+</Frame>
 
 ### Adapter le widget à ton cas
 
 Quelques combinaisons qui fonctionnent bien :
 
-- **Landing page commerciale** — Intégration en ligne, thème clair ou identique au site, **Voix + Chat**, variante **Complet** et textes orientés contact.
-- **Support sur le site** — Lanceur flottant, **Chat uniquement** ou **Voix + Chat**, variante **Compact** et textes orientés aide.
-- **Expérience centrée sur la voix** — Intégration en ligne, **Voix uniquement**, cadran plus grand, bouton muet visible et libellés courts et directs.
+- **Landing page commerciale** — **Intégration en ligne**, thème clair ou aligné, **Voix + Chat**, et un titre et un sous-titre qui invitent à poser des questions.
+- **Support sur le site** — **Lanceur flottant** dans un coin du bas, **Chat uniquement** ou **Voix + Chat**, variante **Compact** et textes orientés aide, comme *Besoin d'aide ?*
+- **Expérience centrée sur la voix** — **Intégration en ligne**, **Voix uniquement**, **Transcription en temps réel** activée et libellés de l'orbe courts et directs.
 
 <Tip>
-  Avant de publier, vérifie toujours le widget sur la vraie page. Les tailles, couleurs et libellés rendent souvent différemment en dehors de l'éditeur.
+  Vérifie l'**Aperçu** avant d'enregistrer, puis le widget sur la vraie page. Les tailles, couleurs et libellés rendent souvent différemment en dehors de l'éditeur.
 </Tip>
 
 ## Section 9 : Avancé

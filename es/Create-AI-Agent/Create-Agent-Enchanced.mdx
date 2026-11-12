@@ -742,22 +742,30 @@ Puedes configurar:
 
 La pestaña **Widget para sitio web** te permite publicar tu agente en una página web. Los visitantes pueden hablar con él por voz, por chat o de las dos formas, directamente desde tu web, una landing, tu página de soporte o tu portal de clientes.
 
-Esta pestaña combina dos cosas: el fragmento técnico de inserción y la personalización visual y de textos de la experiencia.
+A la izquierda configuras el widget: el fragmento de inserción, cómo se comporta, cómo se ve y sus textos. A la derecha, la **Vista previa** muestra el widget en directo, así que ves cada cambio mientras lo haces.
 
-<Frame caption="Captura: la pestaña Widget para sitio web. Copia el fragmento y personaliza el aspecto y el comportamiento del widget.">
+<Frame caption="Captura: la pestaña Widget para sitio web. Copia el fragmento, configura el widget y revisa la Vista previa en directo a la derecha.">
   <img
     src="/images/agentesia7.png"
-    alt="La pestaña Widget para sitio web con el fragmento de inserción, el botón Copiar y las opciones de Diseño y comportamiento: modo del widget, tema y modo de conversación." />
+    alt="La pestaña Widget para sitio web con el fragmento de inserción, el botón Copiar y el interruptor Publicado, las opciones de Diseño y comportamiento (modo del widget, modo de conversación, transcripción en tiempo real) y la Vista previa en directo a la derecha." />
 </Frame>
+
+Los cambios no se aplican hasta que los guardas. Cuando cambias algo, aparece una barra abajo: haz clic en **Guardar** para conservar los cambios o en **Borrar** para descartarlos.
 
 ### Fragmento de inserción
 
-El **Fragmento de inserción** es el trozo de código que copias en el HTML de tu web para que aparezca el widget. Ya incluye el ID de tu agente. El botón **Copiar** lo copia para que puedas pegarlo directamente.
+El **Fragmento de inserción** es el código que copias en el HTML de tu web para que aparezca el widget. Ya incluye el ID de tu agente. El botón **Copiar** lo copia para que puedas pegarlo directamente.
 
-Dónde pegarlo depende del modo del widget:
+Dónde pegar el fragmento depende del modo del widget:
 
-- **Incrustación en línea** — pégalo justo donde quieres que se muestre el widget en la página.
-- **Lanzador flotante** — pégalo cerca del final del body de la página para que quede como un acceso flotante.
+- **Incrustación en línea** — pégalo justo donde quieras que aparezca el widget en la página.
+- **Lanzador flotante** — pégalo cerca del final del cuerpo de la página (`<body>`) para que quede como un punto de acceso flotante.
+
+El interruptor **Publicado** activa o desactiva el widget en tu web. Desactívalo para ocultar el widget sin tocar tu web: el fragmento puede quedarse donde está, y el widget vuelve en cuanto lo activas otra vez.
+
+<Tip>
+  Usa **Publicado** para retirar el widget un tiempo, por ejemplo durante un mantenimiento, en lugar de quitar el fragmento de tu web.
+</Tip>
 
 ### Diseño y comportamiento
 
@@ -767,18 +775,14 @@ Este bloque decide cómo se inserta el widget y cómo interactúan con él los v
 
 Cómo aparece el widget en tu web:
 
-- **Incrustación en línea** — muestra el widget completo dentro de la página, donde has colocado el fragmento.
+- **Incrustación en línea** — muestra el widget completo dentro de la página, donde pegaste el fragmento.
 - **Lanzador flotante** — muestra una pequeña esfera que abre el widget en un panel al hacer clic.
 
-#### Tema del widget incrustado
-
-Controla el aspecto general:
-
-- **Coincidir con el tema de la app** — sigue el tema que use tu web.
-- **Claro** — modo claro.
-- **Oscuro** — modo oscuro.
-
-Elige la opción que encaje con el diseño de tu web. Lo primero es la legibilidad y la coherencia con tu marca.
+<Frame caption="Captura: con Lanzador flotante, la pestaña añade Posición del lanzador y Variante del widget. La Vista previa muestra el lanzador cerrado.">
+  <img
+    src="/images/website-widget-floating-launcher.png"
+    alt="La pestaña Widget para sitio web con Lanzador flotante seleccionado: Modo de conversación, Posición del lanzador en Abajo a la derecha, Transcripción en tiempo real, Tema del widget incrustado y Variante del widget con Muy pequeño, Compacto y Completo. La Vista previa muestra el lanzador cerrado con ¿Necesitas ayuda? e Iniciar una llamada." />
+</Frame>
 
 #### Modo de conversación
 
@@ -788,71 +792,93 @@ Cómo pueden interactuar los visitantes:
 - **Solo chat** — solo por texto.
 - **Voz + Chat** — de las dos formas.
 
+#### Posición del lanzador
+
+Solo con **Lanzador flotante**. Elige la esquina de la página donde aparece la esfera flotante: **Abajo a la derecha**, **Abajo a la izquierda**, **Arriba a la derecha** o **Arriba a la izquierda**.
+
+#### Transcripción en tiempo real
+
+Muestra una transcripción de texto en directo mientras la conversación está en curso. Está disponible con **Solo voz** y **Voz + Chat**. Con **Solo chat** la opción no aparece, porque la conversación ya está escrita.
+
 ### Apariencia
 
-Controla el estilo visual del dial y del lanzador.
+Controla el tema, los colores y el botón cerrado del widget.
 
-#### Variante del widget y tamaño del dial
+#### Tema del widget incrustado
 
-- **Variante del widget** — tamaño visual base del widget: **Muy pequeño**, **Compacto** o **Completo**.
-- **Tamaño del dial (px)** — el diámetro mínimo y máximo del dial, en píxeles.
+Controla si el widget público se ve claro u oscuro:
 
-#### Transcripción en tiempo real y botón de silencio
+- **Coincidir con el tema de la app** — sigue el tema que use tu web.
+- **Claro** — modo claro.
+- **Oscuro** — modo oscuro.
 
-- **Transcripción en tiempo real** — muestra la transcripción en directo mientras dura la conversación.
-- **Mostrar botón de silencio** — permite a los visitantes silenciar y activar su micrófono durante la llamada.
+Elige la opción que encaje con el diseño de tu web. Lo primero es que se lea bien y que sea coherente con tu marca.
+
+#### Variante del widget
+
+Solo con **Lanzador flotante**. Define el tamaño del botón cerrado: **Muy pequeño**, **Compacto** o **Completo**.
 
 #### Colores de la esfera
 
-- **Color primario de la esfera** y **Color secundario de la esfera** — los colores principales del widget.
+La esfera es la bola animada del centro del widget. La definen tres colores:
 
-Usa los colores de tu marca, pero con suficiente contraste para que se lea bien.
+- **Color primario de la esfera** y **Color secundario de la esfera** — los colores principales de la esfera.
+- **Color de profundidad de la esfera** — el color más oscuro, que le da sensación de profundidad.
 
-### Etiquetas del dial
+Escribe un código hexadecimal (por ejemplo, `#06B6D4`) o haz clic en el punto de color para elegirlo. Usa los colores de tu marca, pero con contraste suficiente para que se lea bien.
 
-Textos que aparecen en el centro del dial según el estado de la conversación:
+<Frame caption="Captura: el bloque Apariencia con el tema y los tres colores de la esfera, y las primeras Etiquetas.">
+  <img
+    src="/images/website-widget-appearance.png"
+    alt="El bloque Apariencia con Tema del widget incrustado en Coincidir con el tema de la app y los campos Color primario, Color secundario y Color de profundidad de la esfera, seguido del bloque Etiquetas con Título del encabezado y Subtítulo del encabezado." />
+</Frame>
 
-- **Centro (inactivo)**
-- **Centro (conectando)**
-- **Centro (escuchando)**
-- **Centro (interrumpir)**
+### Etiquetas
+
+Los textos del lanzador y del panel abierto. Si dejas un campo vacío, se usa el texto por defecto, que aparece en gris dentro del campo.
+
+- **Lanzador** (solo con **Lanzador flotante**):
+  - **Etiqueta principal** — el texto junto al botón cerrado. Por defecto, *¿Necesitas ayuda?*
+  - **Iniciar llamada** — el texto del botón que abre el widget. Por defecto, *Iniciar una llamada*.
+- **Panel abierto**:
+  - **Título del encabezado** — el título de la parte de arriba del widget abierto. Por defecto, *Habla con nuestro agente de IA*.
+  - **Subtítulo del encabezado** — la línea debajo del título. Por defecto, *Haz preguntas y obtén respuestas al momento.*
+
+### Etiquetas del orbe
+
+El texto que se muestra en el centro de la esfera, según el estado de la conversación:
+
+- **Centro (inactivo)** — antes de que empiece la conversación. Por defecto, *Llamar al agente de IA*.
+- **Centro (conectando)** — mientras se conecta la llamada. Por defecto, *Conectando…*
+- **Centro (escuchando)** — mientras el agente escucha. Por defecto, *Escuchando*.
+- **Centro (hablando)** — mientras el agente habla. Por defecto, *Habla para interrumpir*.
 
 ### Etiquetas de texto
 
-Sobrescribe algunos textos importantes de la interfaz. Los que dejes vacíos usan el valor predeterminado:
+Los textos del cuadro de mensaje y de las etiquetas de la conversación (los avisos cortos que marcan cuándo empieza y termina una llamada o un chat). Si dejas un campo vacío, se usa el texto por defecto:
 
-- **Etiqueta principal**
-- **Iniciar llamada**
-- **Iniciar chat**
-- **Finalizar llamada**
-- **Estado de chat**
-- **Marcador (nueva conversación)**
+- **Marcador de entrada (inactivo)** y **Marcador de entrada (activo)** — la indicación del cuadro de mensaje antes y durante un chat.
+- **Llamada iniciada** y **Chat iniciado**
+- **Llamada finalizada** y **Chat finalizado**
+- **Copiar ID de la conversación**
+- **Iniciar una nueva llamada**
 
-### Etiquetas de la UI de chat
-
-Textos propios de la experiencia de chat:
-
-- **Etiqueta de pestaña de voz**
-- **Etiqueta de pestaña de chat**
-- **Título del chat**
-- **Subtítulo del chat**
-- **Estado del chat (inactivo)**, **Estado del chat (conectando)** y **Estado del chat (en vivo)**
-- **Etiqueta de iniciar chat**
-- **Etiqueta de finalizar chat**
-- **Estado vacío del chat**
-- **Marcador de entrada (inactivo)** y **Marcador de entrada (activo)**
-- **Etiqueta de enviar**
+<Frame caption="Captura: los bloques Etiquetas del orbe y Etiquetas de texto. Los campos vacíos usan el texto por defecto, en gris.">
+  <img
+    src="/images/website-widget-labels.png"
+    alt="El bloque Etiquetas del orbe con Centro (conectando), Centro (escuchando) y Centro (hablando), y el bloque Etiquetas de texto con Marcador de entrada (inactivo), Marcador de entrada (activo), Llamada iniciada, Chat iniciado, Llamada finalizada, Chat finalizado y Copiar ID de la conversación." />
+</Frame>
 
 ### Adaptar el widget a tu caso
 
 Algunas combinaciones que funcionan bien:
 
-- **Landing comercial** — Incrustación en línea, tema claro o coincidente, **Voz + Chat**, variante **Completo** y textos orientados al contacto.
-- **Soporte en la web** — Lanzador flotante, **Solo chat** o **Voz + Chat**, variante **Compacto** y textos orientados a la ayuda.
-- **Experiencia centrada en la voz** — Incrustación en línea, **Solo voz**, dial más grande, botón de silencio visible y etiquetas cortas y directas.
+- **Landing comercial** — **Incrustación en línea**, tema claro o coincidente, **Voz + Chat**, y un título y un subtítulo que inviten a preguntar.
+- **Soporte en la web** — **Lanzador flotante** en una esquina de abajo, **Solo chat** o **Voz + Chat**, variante **Compacto** y textos orientados a ayudar, como *¿Necesitas ayuda?*
+- **Experiencia centrada en la voz** — **Incrustación en línea**, **Solo voz**, **Transcripción en tiempo real** activada y etiquetas del orbe cortas y directas.
 
 <Tip>
-  Antes de publicar, revisa siempre el widget en la página real. Los tamaños, colores y textos suelen verse distintos fuera del editor.
+  Revisa la **Vista previa** antes de guardar y, después, el widget en la página real. Los tamaños, colores y textos suelen verse distintos fuera del editor.
 </Tip>
 
 ## Sección 9: Avanzado
