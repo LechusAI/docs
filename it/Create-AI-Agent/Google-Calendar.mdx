@@ -130,6 +130,15 @@ Questo è l’editor del modello, dove imposti le regole di pianificazione:
 | **Gestione conflitti**                 | Compare solo se **Consenti sovrapposizione eventi** è su **No**: **Blocca tutti gli eventi sovrapposti** o **Blocca solo gli eventi con lo stesso nome** | Blocca tutti gli eventi sovrapposti             |
 | **Orari di lavoro**                    | Quali giorni sono disponibili, con un orario di inizio e di fine per ciascuno (quando selezioni un giorno: 09:00–17:00 di default)          | Dal lunedì al venerdì, 09:00–17:00              |
 
+<Note>
+  **Dove si trova l’appuntamento e chi riceve un’email?**
+  - L’appuntamento viene creato nel calendario del **modello evento** scelto nell’azione chiamata.
+  - Callin.io **non** invia alcuna email di conferma.
+  - L’email che può arrivare è il promemoria di Google Calendar impostato nel modello (**Minuti promemoria** e **Tipo di promemoria**, ad esempio 15 minuti prima).
+  - Solo il proprietario del calendario riceve quel promemoria.
+  - Chi chiama riceve un invito solo se fornisce la propria email durante la chiamata.
+</Note>
+
 <Warning>
   **Errore comune:** Lasciare gli **Orari di lavoro** senza alcun giorno selezionato. Il modello non si può salvare finché almeno un giorno non è disponibile (“Almeno un giorno deve essere disponibile nella tua pianificazione”).
 </Warning>
@@ -241,7 +250,7 @@ Quando tutto è collegato, l’esperienza migliore è che l’agente segua un fl
 - Chi chiama: “Meglio il pomeriggio.”
 - Agente: “Perfetto, ti va bene giovedì alle 16:00?”
 - Chi chiama: “Sì.”
-- Agente: “Fatto. Hai l’appuntamento giovedì alle 16:00, per 30 minuti. Riceverai anche un promemoria prima dell’appuntamento.”
+- Agente: “Fatto. Hai l’appuntamento giovedì alle 16:00, per 30 minuti.”
 
 <Tip>
   Concentra il prompt sulla **raccolta dei dati e sulla conferma**. Lascia che sia il modello a gestire le regole di pianificazione.

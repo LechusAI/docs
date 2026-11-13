@@ -130,6 +130,15 @@ Das ist der Vorlagen-Editor, in dem Sie die Planungsregeln festlegen:
 | **Konflikte behandeln**                | Erscheint nur, wenn **Event-Überschneidung erlauben** auf **Nein** steht: **Alle überlappenden Ereignisse blockieren** oder **Nur Ereignisse mit demselben Namen blockieren** | Alle überlappenden Ereignisse blockieren      |
 | **Arbeitszeiten**                      | Welche Tage verfügbar sind, jeweils mit Start- und Endzeit (beim Anhaken eines Tages standardmäßig 09:00–17:00)                                  | Montag bis Freitag, 09:00–17:00               |
 
+<Note>
+  **Wo ist der Termin, und wer bekommt eine E-Mail?**
+  - Der Termin wird im Kalender der **Eventvorlage** erstellt, die in der Anruf-Aktion ausgewählt ist.
+  - Callin.io sendet **keine** Bestätigungs-E-Mail.
+  - Die E-Mail, die ankommen kann, ist die Google-Calendar-Erinnerung aus der Vorlage (**Erinnerungsminuten** und **Erinnerungstyp**, zum Beispiel 15 Minuten vorher).
+  - Nur der Kalenderinhaber erhält diese Erinnerung.
+  - Der Anrufer erhält nur dann eine Einladung, wenn er während des Anrufs seine E-Mail-Adresse nennt.
+</Note>
+
 <Warning>
   **Häufiger Fehler:** **Arbeitszeiten** ohne angehakten Tag lassen. Die Vorlage lässt sich erst speichern, wenn mindestens ein Tag verfügbar ist („Mindestens ein Tag muss in Ihrem Zeitplan verfügbar sein“).
 </Warning>
@@ -241,7 +250,7 @@ Wenn alles verbunden ist, funktioniert es am besten, wenn der Agent einem einfac
 - Anrufer: „Lieber später.“
 - Agent: „Gut – passt Ihnen Donnerstag um 16:00 Uhr?“
 - Anrufer: „Ja.“
-- Agent: „Perfekt. Ihr Termin ist am Donnerstag um 16:00 Uhr für 30 Minuten. Sie erhalten vorher auch eine Erinnerung.“
+- Agent: „Perfekt. Ihr Termin ist am Donnerstag um 16:00 Uhr für 30 Minuten.“
 
 <Tip>
   Konzentrieren Sie den Prompt auf **das Erfassen der Angaben und das Bestätigen**. Die Terminregeln übernimmt die Vorlage.

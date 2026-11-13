@@ -130,6 +130,15 @@ Este es el editor de la plantilla, donde defines las reglas de la agenda:
 | **Manejo de conflictos**                | Solo aparece si **Permitir superposición de eventos** está en **No**: **Bloquear todos los eventos superpuestos** o **Solo bloquear eventos con el mismo nombre** | Bloquear todos los eventos superpuestos             |
 | **Horario laboral**                     | Qué días están disponibles, con una hora de inicio y de fin para cada uno (al marcar un día: 09:00–17:00 por defecto)                                | Lunes a viernes, 09:00–17:00                        |
 
+<Note>
+  **¿Dónde está la cita y quién recibe un correo?**
+  - La cita se crea en el calendario de la **plantilla de evento** elegida en la acción de llamada.
+  - Callin.io **no** envía ningún correo de confirmación.
+  - El correo que puede llegar es el recordatorio de Google Calendar configurado en la plantilla (**Minutos de recordatorio** y **Tipo de recordatorio**, por ejemplo 15 minutos antes).
+  - Solo el dueño del calendario recibe ese recordatorio.
+  - La persona que llama solo recibe una invitación si da su correo durante la llamada.
+</Note>
+
 <Warning>
   **Error común:** Dejar el **Horario laboral** sin ningún día marcado. La plantilla no se puede guardar hasta que haya al menos un día disponible (“Al menos un día debe estar disponible en su horario”).
 </Warning>
@@ -241,7 +250,7 @@ Cuando todo está conectado, la mejor experiencia es que el agente siga un flujo
 - Persona que llama: “Mejor por la tarde.”
 - Agente: “Perfecto. ¿Te va bien el jueves a las 16:00?”
 - Persona que llama: “Sí.”
-- Agente: “Listo. Tienes la cita el jueves a las 16:00, de 30 minutos. Además, recibirás un recordatorio antes de la cita.”
+- Agente: “Listo. Tienes la cita el jueves a las 16:00, de 30 minutos.”
 
 <Tip>
   Centra el prompt en **recoger datos y confirmar**. Deja que la plantilla se encargue de las reglas de agenda.

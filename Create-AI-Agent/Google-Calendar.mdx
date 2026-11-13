@@ -130,6 +130,15 @@ This is the template editor, where you set the scheduling rules:
 | **Conflict Handling**      | Only shown when **Allow Event Overlap** is **No**: **Block all overlapping events** or **Only block events with the same name**       | Block all overlapping events       |
 | **Working Hours**          | Which days are available, with a start and end time for each one (when you tick a day: 09:00–17:00 by default)                       | Monday–Friday, 09:00–17:00         |
 
+<Note>
+  **Where is the appointment, and who gets an email?**
+  - The appointment is created in the calendar of the **Event Template** chosen in the Call Action.
+  - Callin.io does **not** send a confirmation email.
+  - The email you may get is the Google Calendar reminder set in the template (**Reminder Minutes** and **Reminder Type**, for example 15 minutes before).
+  - Only the calendar owner receives that reminder.
+  - The caller only receives an invitation if they give their email during the call.
+</Note>
+
 <Warning>
   **Common mistake:** Leaving **Working Hours** with no days selected. The template can’t be saved until at least one day is available (“At least one day must be available in your schedule”).
 </Warning>
@@ -241,7 +250,7 @@ Once everything is connected, the best experience is when the agent follows a si
 - Caller: “Later is better.”
 - Agent: “Great—does Thursday at 4:00 PM work?”
 - Caller: “Yes.”
-- Agent: “Perfect. You’re booked for Thursday at 4:00 PM for 30 minutes. You’ll also receive a reminder before the appointment.”
+- Agent: “Perfect. You’re booked for Thursday at 4:00 PM for 30 minutes.”
 
 <Tip>
   Keep the prompt focused on **collecting details and confirming**. Let the template handle the scheduling rules.
