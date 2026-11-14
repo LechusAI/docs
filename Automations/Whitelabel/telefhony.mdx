@@ -64,9 +64,28 @@ The filter bar lets you find a specific number when your inventory grows:
 
 ### Assigning a number to a subaccount
 
-Once a number is in your inventory, you can assign it to any subaccount in your environment. The number stays in your inventory; the assignment is what authorizes the client to use it inside their agents.
+Once a number is in your inventory, you can assign it to any subaccount in your environment. A subaccount is a customer account from **User Management** ([Users](/Automations/Whitelabel/Clients)). The number stays in your inventory; the assignment is what authorizes the client to use it inside their agents.
 
-Every time you assign a number, the **Assigned numbers** counter goes up by one, so you can always see how much of your inventory is in use.
+<Steps>
+  <Step>
+    In the **Inventory** tab, open the **⋮** menu on the number's row and click **Assign**.
+  </Step>
+  <Step>
+    In the **Assign number** window, open **Select subaccount** and pick the customer. You can search by name or email.
+  </Step>
+  <Step>
+    Click **Assign number**. You'll see **Number assigned successfully**, and the **Assigned numbers** counter goes up by one.
+  </Step>
+  <Step>
+    Assign the number to an agent in the customer's app: **AI Agents** → **⋮** → **Assign Number**. The customer can do it, or you can do it with **Login as this user**. Until then, no agent uses the number.
+  </Step>
+</Steps>
+
+<Warning>
+  **Common mistake:** Creating a user while **Telephony** is already open. The subaccount list loads when you open the page, and **Refresh** only reloads your inventory. If a new customer is missing from **Select subaccount**, reload the page in your browser.
+</Warning>
+
+To move a number to another customer, open the same **⋮** menu and click **Reassign**. To free it, click **Unassign**: the number goes back to being available in your inventory.
 
 ## Marketplace
 
